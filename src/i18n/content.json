@@ -19,7 +19,7 @@
    "Kayıt olmadan misafir başla",
    "11 dil · açık/koyu tema"
   ],
-  "sayExample": "“BTC 85 bin altına düşerse haber ver.”",
+  "sayExample": "“BTC 70 bin üstü, RSI 30 altı, 15 dakikada %2 artış ve 24s zirve olunca haber ver.”",
   "markets": "Binance Spot ve Vadeli · USDT ve USDC · Dört piyasa da her planda açık",
   "f": [
    {
@@ -242,6 +242,28 @@
    "yes": "Kabul et",
    "no": "Reddet",
    "prefs": "Çerez tercihleri"
+  },
+  "hl": {
+   "title": "Neden MarketAlert?",
+   "ai": {
+    "t": "Yapay zekâyla alarm yönet",
+    "d": "Yaz ya da konuş: alarm kur, güncelle, listele, kapat. Önce taslağı görürsün, sen onaylamadan hiçbir şey değişmez."
+   },
+   "scan": {
+    "t": "Popüler indikatörler, tüm coinlerde, 7/24",
+    "d": "Tek alarm; RSI, MACD, hacim ve SMA/EMA koşullarını ilk 100'de ya da tüm coinlerde sürekli tarar, eşleşen coini anında bildirir."
+   },
+   "bg": {
+    "t": "Uygulama kapalıyken bile",
+    "d": "Alarmlar sunucularımızda izlenir; bildirim push, Telegram veya Webhook ile gelir."
+   },
+   "acts": [
+    "Kur",
+    "Güncelle",
+    "Listele",
+    "Kapat"
+   ],
+   "push": "BTC 85.000 altına indi"
   }
  },
  "en": {
@@ -264,7 +286,7 @@
    "Start as a guest, no sign-up",
    "11 languages · light/dark"
   ],
-  "sayExample": "“Notify me if BTC drops below 85,000.”",
+  "sayExample": "“Notify me when BTC is above 70K, RSI below 30, up 2% in 15 minutes and at its 24h high.”",
   "markets": "Binance Spot and Futures · USDT and USDC · All four markets on every plan",
   "f": [
    {
@@ -487,6 +509,28 @@
    "yes": "Accept",
    "no": "Decline",
    "prefs": "Cookie settings"
+  },
+  "hl": {
+   "title": "Why MarketAlert?",
+   "ai": {
+    "t": "Manage alerts with AI",
+    "d": "Type or speak: create, update, list and close alerts. You see a draft first, and nothing changes until you confirm."
+   },
+   "scan": {
+    "t": "Popular indicators, across all coins, 24/7",
+    "d": "One alert continuously scans RSI, MACD, volume and SMA/EMA conditions across the top 100 or every coin, and notifies you the moment one matches."
+   },
+   "bg": {
+    "t": "Even when the app is closed",
+    "d": "Alerts are watched on our servers; notifications arrive via push, Telegram or webhook."
+   },
+   "acts": [
+    "Create",
+    "Update",
+    "List",
+    "Close"
+   ],
+   "push": "BTC dropped below 85,000"
   }
  },
  "zh": {
@@ -509,7 +553,7 @@
    "无需注册，访客即可开始",
    "11 种语言 · 浅色/深色"
   ],
-  "sayExample": "“如果 BTC 跌破 85,000 就提醒我。”",
+  "sayExample": "“BTC 高于 7 万、RSI 低于 30、15 分钟涨 2% 且创 24 小时新高时通知我。”",
   "markets": "Binance 现货和合约 · USDT 和 USDC · 四个市场所有套餐均可用",
   "f": [
    {
@@ -732,6 +776,28 @@
    "yes": "同意",
    "no": "拒绝",
    "prefs": "Cookie 设置"
+  },
+  "hl": {
+   "title": "为什么选择 MarketAlert？",
+   "ai": {
+    "t": "用 AI 管理提醒",
+    "d": "打字或语音：创建、更新、列出、关闭提醒。你会先看到草稿，确认后才会生效。"
+   },
+   "scan": {
+    "t": "热门指标，全部币种，全天候",
+    "d": "一个提醒即可在前 100 或全部币种中持续扫描 RSI、MACD、成交量和 SMA/EMA，一旦匹配立即通知你。"
+   },
+   "bg": {
+    "t": "应用关闭时也能提醒",
+    "d": "提醒在我们的服务器上运行；通知通过推送、Telegram 或 Webhook 送达。"
+   },
+   "acts": [
+    "创建",
+    "更新",
+    "列出",
+    "关闭"
+   ],
+   "push": "BTC 跌破 85,000"
   }
  },
  "es": {
@@ -754,7 +820,7 @@
    "Empieza como invitado, sin registro",
    "11 idiomas · claro/oscuro"
   ],
-  "sayExample": "“Avísame si BTC baja de 85.000.”",
+  "sayExample": "“Avísame cuando BTC esté sobre 70 mil, RSI bajo 30, suba 2 % en 15 minutos y marque máximo de 24 h.”",
   "markets": "Binance Spot y Futuros · USDT y USDC · Los cuatro mercados en todos los planes",
   "f": [
    {
@@ -977,6 +1043,28 @@
    "yes": "Aceptar",
    "no": "Rechazar",
    "prefs": "Preferencias de cookies"
+  },
+  "hl": {
+   "title": "¿Por qué MarketAlert?",
+   "ai": {
+    "t": "Gestiona alertas con IA",
+    "d": "Escribe o habla: crea, actualiza, lista y desactiva alertas. Primero ves un borrador y nada cambia hasta que lo confirmas."
+   },
+   "scan": {
+    "t": "Indicadores populares en todas las monedas, 24/7",
+    "d": "Una sola alerta analiza sin parar RSI, MACD, volumen y SMA/EMA en el top 100 o en todas las monedas, y te avisa en cuanto una coincide."
+   },
+   "bg": {
+    "t": "Incluso con la app cerrada",
+    "d": "Las alertas se vigilan en nuestros servidores; los avisos llegan por push, Telegram o webhook."
+   },
+   "acts": [
+    "Crear",
+    "Actualizar",
+    "Listar",
+    "Desactivar"
+   ],
+   "push": "BTC bajó de 85.000"
   }
  },
  "hi": {
@@ -999,7 +1087,7 @@
    "बिना साइन-अप, गेस्ट के रूप में शुरू करें",
    "11 भाषाएं · लाइट/डार्क"
   ],
-  "sayExample": "“अगर BTC 85,000 से नीचे जाए तो मुझे बताना।”",
+  "sayExample": "“BTC 70 हज़ार से ऊपर, RSI 30 से नीचे, 15 मिनट में 2% बढ़त और 24 घंटे का उच्च हो तो बताना।”",
   "markets": "Binance Spot और Futures · USDT और USDC · चारों मार्केट हर प्लान में",
   "f": [
    {
@@ -1222,6 +1310,28 @@
    "yes": "स्वीकार करें",
    "no": "अस्वीकार करें",
    "prefs": "कुकी सेटिंग"
+  },
+  "hl": {
+   "title": "MarketAlert क्यों?",
+   "ai": {
+    "t": "AI से अलर्ट संभालें",
+    "d": "लिखें या बोलें: अलर्ट बनाएँ, अपडेट करें, सूची देखें, बंद करें। पहले आप ड्राफ़्ट देखते हैं; आपकी पुष्टि के बिना कुछ नहीं बदलता।"
+   },
+   "scan": {
+    "t": "लोकप्रिय इंडिकेटर, सभी कॉइन, 24/7",
+    "d": "एक ही अलर्ट टॉप 100 या सभी कॉइन में RSI, MACD, वॉल्यूम और SMA/EMA लगातार स्कैन करता है और मेल होते ही सूचना देता है।"
+   },
+   "bg": {
+    "t": "ऐप बंद होने पर भी",
+    "d": "अलर्ट हमारे सर्वर पर चलते हैं; सूचनाएँ पुश, Telegram या वेबहुक से आती हैं।"
+   },
+   "acts": [
+    "बनाएँ",
+    "अपडेट",
+    "सूची",
+    "बंद करें"
+   ],
+   "push": "BTC 85,000 से नीचे गिरा"
   }
  },
  "ar": {
@@ -1244,7 +1354,7 @@
    "ابدأ كضيف دون تسجيل",
    "11 لغة · فاتح/داكن"
   ],
-  "sayExample": "«نبّهني إذا هبط BTC تحت 85,000.»",
+  "sayExample": "«نبّهني عندما يكون BTC فوق 70 ألفًا وRSI تحت 30 ويرتفع 2% خلال 15 دقيقة ويبلغ قمة 24 ساعة.»",
   "markets": "Binance الفوري والعقود الآجلة · USDT وUSDC · الأسواق الأربعة متاحة في كل الخطط",
   "f": [
    {
@@ -1467,6 +1577,28 @@
    "yes": "موافق",
    "no": "رفض",
    "prefs": "إعدادات ملفات تعريف الارتباط"
+  },
+  "hl": {
+   "title": "لماذا MarketAlert؟",
+   "ai": {
+    "t": "أدِر تنبيهاتك بالذكاء الاصطناعي",
+    "d": "اكتب أو تحدّث: أنشئ التنبيهات وحدّثها واعرضها وأوقفها. ترى مسودة أولًا ولا يتغير شيء قبل تأكيدك."
+   },
+   "scan": {
+    "t": "مؤشرات شائعة على كل العملات، على مدار الساعة",
+    "d": "تنبيه واحد يفحص باستمرار RSI وMACD والحجم وSMA/EMA في أفضل 100 أو في كل العملات، ويُعلمك فور التطابق."
+   },
+   "bg": {
+    "t": "حتى والتطبيق مغلق",
+    "d": "تُراقَب التنبيهات على خوادمنا، وتصلك الإشعارات عبر الإشعارات الفورية أو Telegram أو Webhook."
+   },
+   "acts": [
+    "إنشاء",
+    "تحديث",
+    "عرض",
+    "إيقاف"
+   ],
+   "push": "انخفض BTC إلى ما دون 85,000"
   }
  },
  "pt-br": {
@@ -1489,7 +1621,7 @@
    "Comece como convidado, sem cadastro",
    "11 idiomas · claro/escuro"
   ],
-  "sayExample": "“Me avise se o BTC cair abaixo de 85.000.”",
+  "sayExample": "“Me avise: BTC acima de 70 mil, RSI abaixo de 30, +2% em 15 min e máxima de 24h.”",
   "markets": "Binance Spot e Futuros · USDT e USDC · Os quatro mercados em todos os planos",
   "f": [
    {
@@ -1712,6 +1844,28 @@
    "yes": "Aceitar",
    "no": "Recusar",
    "prefs": "Preferências de cookies"
+  },
+  "hl": {
+   "title": "Por que MarketAlert?",
+   "ai": {
+    "t": "Gerencie alertas com IA",
+    "d": "Escreva ou fale: crie, atualize, liste e desative alertas. Você vê um rascunho primeiro e nada muda até você confirmar."
+   },
+   "scan": {
+    "t": "Indicadores populares em todas as moedas, 24/7",
+    "d": "Um único alerta verifica sem parar RSI, MACD, volume e SMA/EMA no top 100 ou em todas as moedas e avisa assim que uma bate."
+   },
+   "bg": {
+    "t": "Mesmo com o app fechado",
+    "d": "Os alertas são monitorados nos nossos servidores; as notificações chegam por push, Telegram ou webhook."
+   },
+   "acts": [
+    "Criar",
+    "Atualizar",
+    "Listar",
+    "Desativar"
+   ],
+   "push": "BTC caiu abaixo de 85.000"
   }
  },
  "fr": {
@@ -1734,7 +1888,7 @@
    "Commencez en invité, sans inscription",
    "11 langues · clair/sombre"
   ],
-  "sayExample": "« Préviens-moi si le BTC passe sous 85 000. »",
+  "sayExample": "« Préviens-moi quand BTC dépasse 70 k, RSI sous 30, +2 % en 15 minutes et plus haut sur 24 h. »",
   "markets": "Binance Spot et Futures · USDT et USDC · Les quatre marchés dans toutes les offres",
   "f": [
    {
@@ -1957,6 +2111,28 @@
    "yes": "Accepter",
    "no": "Refuser",
    "prefs": "Préférences cookies"
+  },
+  "hl": {
+   "title": "Pourquoi MarketAlert ?",
+   "ai": {
+    "t": "Gère tes alertes avec l’IA",
+    "d": "Écris ou parle : crée, modifie, liste et désactive tes alertes. Tu vois d’abord un brouillon, rien ne change avant ta confirmation."
+   },
+   "scan": {
+    "t": "Indicateurs populaires, toutes les cryptos, 24 h/24",
+    "d": "Une seule alerte surveille en continu RSI, MACD, volume et SMA/EMA sur le top 100 ou toutes les cryptos, et te prévient dès qu’une correspond."
+   },
+   "bg": {
+    "t": "Même quand l’app est fermée",
+    "d": "Les alertes tournent sur nos serveurs ; les notifications arrivent par push, Telegram ou webhook."
+   },
+   "acts": [
+    "Créer",
+    "Modifier",
+    "Lister",
+    "Désactiver"
+   ],
+   "push": "BTC est passé sous 85 000"
   }
  },
  "ru": {
@@ -1979,7 +2155,7 @@
    "Начните как гость, без регистрации",
    "11 языков · светлая/тёмная тема"
   ],
-  "sayExample": "«Сообщи, если BTC упадёт ниже 85 000».",
+  "sayExample": "«Сообщи: BTC выше 70 тыс., RSI ниже 30, +2% за 15 мин и максимум 24 ч».",
   "markets": "Binance Спот и Фьючерсы · USDT и USDC · Все четыре рынка в каждом тарифе",
   "f": [
    {
@@ -2202,6 +2378,28 @@
    "yes": "Принять",
    "no": "Отклонить",
    "prefs": "Настройки cookie"
+  },
+  "hl": {
+   "title": "Почему MarketAlert?",
+   "ai": {
+    "t": "Управляйте оповещениями с ИИ",
+    "d": "Напишите или скажите: создать, изменить, показать список, отключить. Сначала вы видите черновик — без вашего подтверждения ничего не меняется."
+   },
+   "scan": {
+    "t": "Популярные индикаторы по всем монетам 24/7",
+    "d": "Одно оповещение постоянно проверяет RSI, MACD, объём и SMA/EMA в топ-100 или по всем монетам и сразу сообщает о совпадении."
+   },
+   "bg": {
+    "t": "Даже когда приложение закрыто",
+    "d": "Оповещения отслеживаются на наших серверах; уведомления приходят через push, Telegram или webhook."
+   },
+   "acts": [
+    "Создать",
+    "Изменить",
+    "Список",
+    "Отключить"
+   ],
+   "push": "BTC опустился ниже 85 000"
   }
  },
  "de": {
@@ -2224,7 +2422,7 @@
    "Als Gast starten, ohne Registrierung",
    "11 Sprachen · hell/dunkel"
   ],
-  "sayExample": "„Sag mir Bescheid, wenn BTC unter 85.000 fällt.“",
+  "sayExample": "„Sag Bescheid: BTC über 70.000, RSI unter 30, +2 % in 15 Min. und 24h-Hoch.“",
   "markets": "Binance Spot und Futures · USDT und USDC · Alle vier Märkte in jedem Tarif",
   "f": [
    {
@@ -2447,6 +2645,28 @@
    "yes": "Akzeptieren",
    "no": "Ablehnen",
    "prefs": "Cookie-Einstellungen"
+  },
+  "hl": {
+   "title": "Warum MarketAlert?",
+   "ai": {
+    "t": "Alarme per KI verwalten",
+    "d": "Schreib oder sprich: Alarme erstellen, ändern, auflisten, deaktivieren. Du siehst zuerst einen Entwurf, ohne deine Bestätigung ändert sich nichts."
+   },
+   "scan": {
+    "t": "Beliebte Indikatoren, alle Coins, rund um die Uhr",
+    "d": "Ein einziger Alarm prüft RSI, MACD, Volumen und SMA/EMA laufend in den Top 100 oder allen Coins und meldet sich sofort bei einem Treffer."
+   },
+   "bg": {
+    "t": "Auch wenn die App geschlossen ist",
+    "d": "Alarme laufen auf unseren Servern; Benachrichtigungen kommen per Push, Telegram oder Webhook."
+   },
+   "acts": [
+    "Erstellen",
+    "Ändern",
+    "Auflisten",
+    "Deaktivieren"
+   ],
+   "push": "BTC fiel unter 85.000"
   }
  },
  "ja": {
@@ -2469,7 +2689,7 @@
    "登録不要、ゲストで開始",
    "11言語 · ライト/ダーク"
   ],
-  "sayExample": "「BTC が 85,000 を下回ったら知らせて」",
+  "sayExample": "「BTCが7万超え、RSIが30未満、15分で2%上昇、24時間高値になったら通知して」",
   "markets": "Binance 現物・先物 · USDT と USDC · 4つの市場すべてを全プランで利用可能",
   "f": [
    {
@@ -2692,6 +2912,28 @@
    "yes": "許可する",
    "no": "拒否する",
    "prefs": "Cookie 設定"
+  },
+  "hl": {
+   "title": "MarketAlert が選ばれる理由",
+   "ai": {
+    "t": "AI でアラートを管理",
+    "d": "入力でも音声でも、アラートの作成・更新・一覧・停止ができます。まず下書きを確認し、承認するまで何も変わりません。"
+   },
+   "scan": {
+    "t": "人気インジケーターを全コインで24時間",
+    "d": "1つのアラートで RSI・MACD・出来高・SMA/EMA を上位100または全コインで常時スキャンし、一致した瞬間に通知します。"
+   },
+   "bg": {
+    "t": "アプリを閉じていても",
+    "d": "アラートはサーバーで監視され、通知はプッシュ・Telegram・Webhook で届きます。"
+   },
+   "acts": [
+    "作成",
+    "更新",
+    "一覧",
+    "停止"
+   ],
+   "push": "BTCが85,000を下回りました"
   }
  }
 }

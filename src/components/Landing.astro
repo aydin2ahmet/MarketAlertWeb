@@ -10,6 +10,13 @@ const ICO: Record<string, string> = {
   globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>',
   sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
   moon: '<path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z"/>',
+  spark: '<path d="M12 3l1.8 4.9L19 9.7l-5.2 1.8L12 16.4l-1.8-4.9L5 9.7l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>',
+  edit: '<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/>',
+  list: '<path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/>',
+  power: '<path d="M12 3v8"/><path d="M6.3 7.3a8 8 0 1011.4 0"/>',
+  radar: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12l6-6"/>',
+  bell: '<path d="M6 16V11a6 6 0 1112 0v5l2 2H4z"/><path d="M10 20a2 2 0 004 0"/>',
   candle: '<path d="M7 3v4M7 15v6M17 3v8M17 17v4"/><rect x="4.5" y="7" width="5" height="8" rx="1"/><rect x="14.5" y="11" width="5" height="6" rx="1"/>',
 };
 const svg = (k: string, cls = '') => `<svg class="ic ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICO[k]}</svg>`;
@@ -49,14 +56,49 @@ const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : 
 
 <main>
   <section class="hero">
-    <div>
+    <div class="h-a">
       <p class="prompt" aria-hidden="true"><span>&gt;</span> <span class="type">{t.sayExample}</span><i class="caret"></i></p>
       <h1>{t.heroTitle}</h1>
-      <p class="sub">{t.heroSub}</p>
       <Fragment set:html={stores} />
+    </div>
+    <div class="h-v">
+      <figure class="pf back"><Fragment set:html={shot('all', t.f[3].t)} /></figure>
+      <figure class="pf front"><Fragment set:html={shot('ai', t.f[4].t, true)} /></figure>
+      <span class="fl f1" aria-hidden="true"><Fragment set:html={svg('spark')} />AI</span>
+      <span class="fl f2" aria-hidden="true" dir="ltr">RSI · MACD · EMA</span>
+      <span class="fl f3" aria-hidden="true" dir="ltr">TOP 100 · 24/7</span>
+    </div>
+    <div class="h-b">
+      <p class="sub">{t.heroSub}</p>
       <ul class="chips">{t.chips.map((c: string) => <li><Fragment set:html={svg('check')} />{c}</li>)}</ul>
     </div>
-    <div class="hero-ph"><figure class="pf"><Fragment set:html={shot('hero', t.f[7].t, true)} /></figure></div>
+  </section>
+
+  <section class="hl" aria-labelledby="hl-t">
+    <h2 class="st" id="hl-t">{t.hl.title}</h2>
+    <div class="hlg">
+      <article class="hc" style="--c:var(--cat2)">
+        <span class="hi"><Fragment set:html={svg('spark')} /></span>
+        <h3>{t.hl.ai.t}</h3>
+        <p>{t.hl.ai.d}</p>
+        <p class="bub">{t.sayExample}</p>
+        <ul class="acts">{t.hl.acts.map((a: string, i: number) => <li><Fragment set:html={svg(['plus', 'edit', 'list', 'power'][i])} />{a}</li>)}</ul>
+      </article>
+      <article class="hc" style="--c:var(--cat3)">
+        <span class="hi"><Fragment set:html={svg('radar')} /></span>
+        <h3>{t.hl.scan.t}</h3>
+        <p>{t.hl.scan.d}</p>
+        <div class="dots" aria-hidden="true">{Array.from({ length: 40 }, (_, i) => <i class={[3, 11, 17, 26, 34].includes(i) ? 'up' : [8, 22].includes(i) ? 'dn' : ''}></i>)}</div>
+        <ul class="acts" dir="ltr">{['RSI', 'MACD', 'VOL', 'SMA/EMA'].map(a => <li>{a}</li>)}</ul>
+      </article>
+      <article class="hc" style="--c:var(--cat0)">
+        <span class="hi"><Fragment set:html={svg('bell')} /></span>
+        <h3>{t.hl.bg.t}</h3>
+        <p>{t.hl.bg.d}</p>
+        <div class="push" aria-hidden="true"><img src="/icons/logo-96.png" alt="" width="36" height="36" loading="lazy" /><span><small dir="ltr">MarketAlert · 14:32</small><b>{t.hl.push}</b></span></div>
+        <ul class="acts" dir="ltr">{['Push', 'Telegram', 'Webhook'].map(a => <li>{a}</li>)}</ul>
+      </article>
+    </div>
   </section>
 
   <div class="tape" aria-hidden="true" dir="ltr"><div>{[...TAPE, ...TAPE].map(x => <span>{x}</span>)}</div></div>
@@ -124,6 +166,8 @@ const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : 
   </section>
 </main>
 
+<div class="dlbar" id="dlbar" aria-label={t.download}><b>{t.download}</b><Fragment set:html={stores} /></div>
+
 <footer class="ft">
   <div class="ftop">
     <a class="logo" href={`/${code}/`}><img src="/icons/logo-96.png" alt="" width="32" height="32" loading="lazy" /><b>MarketAlert</b></a>
@@ -172,6 +216,16 @@ const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : 
     if (key && !seen.has(key)) { seen.add(key); track('feature_view', { feature: key }); }
   };
   const seen = new Set<string>();
+  // Telefonda ilk ekran geçilince alttan mağaza barı çıkar.
+  const bar = document.getElementById('dlbar');
+  const heroEl = document.querySelector('.hero .stores');
+  const cta = document.getElementById('download');
+  if (bar && heroEl) {
+    let heroOut = false, ctaIn = false;
+    const sync = () => bar.classList.toggle('on', heroOut && !ctaIn);
+    new IntersectionObserver(([e]) => { heroOut = !e.isIntersecting && e.boundingClientRect.top < 0; sync(); }).observe(heroEl);
+    if (cta) new IntersectionObserver(([e]) => { ctaIn = e.isIntersecting; sync(); }).observe(cta);
+  }
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) show(Number((e.target as HTMLElement).dataset.i)); }), { rootMargin: '-45% 0px -45% 0px' });
   steps.forEach(s => io.observe(s));
 </script>
