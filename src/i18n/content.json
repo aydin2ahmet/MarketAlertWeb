@@ -11,15 +11,15 @@
   "store1": "İndirin",
   "store2s": "Google Play'den",
   "store2": "Alın",
-  "heroKicker": "Kripto alarm uygulaması · iOS ve Android",
-  "heroTitle": "Kripto piyasasını sen değil, MarketAlert izlesin.",
-  "heroSub": "Fiyat, yüzde hareket, RSI, MACD, hacim ve ortalama kesişimleri için alarm kur; tek alarmla tüm coinleri tara. Yaz ya da söyle, gerisini MarketAlert halletsin. Uygulama kapalıyken bile.",
+  "heroKicker": "Konuş veya yaz. MarketAlert kursun.",
+  "heroTitle": "Söyle, alarmın hazır olsun.",
+  "heroSub": "Form doldurma. Karmaşık alarmını bile konuşarak ya da yazarak saniyeler içinde kur. MarketAlert, seçtiğin Binance piyasasındaki tüm coinleri RSI, MACD, hacim ve SMA/EMA koşullarıyla sürekli tarasın.",
   "chips": [
    "7 gün ücretsiz deneme",
    "Kayıt olmadan misafir başla",
    "11 dil · açık/koyu tema"
   ],
-  "sayExample": "“BTC 70 bin üstü, RSI 30 altı, 15 dakikada %2 artış ve 24s zirve olunca haber ver.”",
+  "sayExample": "“BTC 70 bin üstü ve saatlik RSI 30 altıysa haber ver.”",
   "markets": "Binance Spot ve Vadeli · USDT ve USDC · Dört piyasa da her planda açık",
   "f": [
    {
@@ -50,7 +50,7 @@
     "k": "ai",
     "t": "Yaz ya da söyle, asistan kursun",
     "s": "AI ve ses",
-    "d": "“BTC 85 bin altına düşerse haber ver” demen yeterli. Asistan alarmı taslak olarak hazırlar; sen onaylamadan hiçbir alarm kurulmaz. Konuşman cihazında yazıya çevrilir, yalnızca metin gönderilir."
+    "d": "Sesli asistanda net isteğin doğrudan uygulanır. Yazılı sohbette alarm taslağını görüp onaylarsın. Asistanla alarm kurabilir, güncelleyebilir, listeleyebilir ve kapatabilirsin."
    },
    {
     "k": "tpl",
@@ -206,8 +206,8 @@
     "Binance Spot ve Vadeli (perpetual) piyasalarındaki USDT ve USDC çiftleri. Dört piyasa da her planda açıktır."
    ],
    [
-    "Yapay zekâ benden habersiz alarm kurar mı?",
-    "Hayır. Asistan yalnızca taslak hazırlar; alarm sen onaylayınca oluşur. Asistan yatırım tavsiyesi vermez."
+    "Sesli ve yazılı asistan nasıl alarm kurar?",
+    "Sesli asistanda net isteğin doğrudan uygulanır. Yazılı sohbette alarm taslağını görüp onaylarsın. Asistanla alarm kurabilir, güncelleyebilir, listeleyebilir ve kapatabilirsin."
    ],
    [
     "Hangi dilleri destekliyor?",
@@ -247,7 +247,7 @@
    "title": "Neden MarketAlert?",
    "ai": {
     "t": "Yapay zekâyla alarm yönet",
-    "d": "Yaz ya da konuş: alarm kur, güncelle, listele, kapat. Önce taslağı görürsün, sen onaylamadan hiçbir şey değişmez."
+    "d": "Sesli asistanda net isteğin doğrudan uygulanır. Yazılı sohbette alarm taslağını görüp onaylarsın. Asistanla alarm kurabilir, güncelleyebilir, listeleyebilir ve kapatabilirsin."
    },
    "scan": {
     "t": "Popüler indikatörler, tüm coinlerde, 7/24",
@@ -264,7 +264,12 @@
     "Kapat"
    ],
    "push": "BTC 85.000 altına indi"
-  }
+  },
+  "heroTitleSecond": "Tüm coinleri MarketAlert izlesin.",
+  "voiceBadge": "Konuşarak alarm kur",
+  "allCoinsBadge": "TÜM COİNLER · 7/24",
+  "heroListAlt": "Çok koşullu alarmlar ve canlı değerleri",
+  "heroVoiceAlt": "Sesli komutla kurulan iki koşullu alarm"
  },
  "en": {
   "nav": [
@@ -278,15 +283,15 @@
   "store1": "App Store",
   "store2s": "Get it on",
   "store2": "Google Play",
-  "heroKicker": "Crypto alert app · iOS and Android",
-  "heroTitle": "Stop watching the charts. Let MarketAlert watch them.",
-  "heroSub": "Set alerts for price, percent moves, RSI, MACD, volume and moving-average crosses, and scan every coin with a single alert. Type it or say it, and MarketAlert does the rest, even when the app is closed.",
+  "heroKicker": "Speak or type. MarketAlert sets it up.",
+  "heroTitle": "Say it. Your alert is ready.",
+  "heroSub": "Skip the forms. Create even complex alerts in seconds by speaking or typing. MarketAlert continuously scans every coin in your selected Binance market for RSI, MACD, volume and SMA/EMA conditions.",
   "chips": [
    "7-day free trial",
    "Start as a guest, no sign-up",
    "11 languages · light/dark"
   ],
-  "sayExample": "“Notify me when BTC is above 70K, RSI below 30, up 2% in 15 minutes and at its 24h high.”",
+  "sayExample": "“Notify me when BTC is above 70,000 and hourly RSI is below 30.”",
   "markets": "Binance Spot and Futures · USDT and USDC · All four markets on every plan",
   "f": [
    {
@@ -317,7 +322,7 @@
     "k": "ai",
     "t": "Type it or say it, the assistant sets it up",
     "s": "AI and voice",
-    "d": "Just say “Notify me if BTC drops below 85,000”. The assistant prepares a draft, and nothing is created until you approve it. Speech is turned into text on your device; only the text is sent."
+    "d": "The voice assistant carries out clear requests directly. In text chat, you review and approve an alert draft. You can create, update, list and close alerts with the assistant."
    },
    {
     "k": "tpl",
@@ -473,8 +478,8 @@
     "USDT and USDC pairs on Binance Spot and Futures (perpetual). All four markets are open on every plan."
    ],
    [
-    "Can the AI create alerts without me knowing?",
-    "No. The assistant only prepares a draft; the alert is created when you approve it. It does not give investment advice."
+    "How do voice and text alerts work?",
+    "The voice assistant carries out clear requests directly. In text chat, you review and approve an alert draft. You can create, update, list and close alerts with the assistant."
    ],
    [
     "Which languages are supported?",
@@ -514,7 +519,7 @@
    "title": "Why MarketAlert?",
    "ai": {
     "t": "Manage alerts with AI",
-    "d": "Type or speak: create, update, list and close alerts. You see a draft first, and nothing changes until you confirm."
+    "d": "The voice assistant carries out clear requests directly. In text chat, you review and approve an alert draft. You can create, update, list and close alerts with the assistant."
    },
    "scan": {
     "t": "Popular indicators, across all coins, 24/7",
@@ -531,7 +536,12 @@
     "Close"
    ],
    "push": "BTC dropped below 85,000"
-  }
+  },
+  "heroTitleSecond": "Let MarketAlert watch every coin.",
+  "voiceBadge": "Create alerts by voice",
+  "allCoinsBadge": "ALL COINS · 24/7",
+  "heroListAlt": "Multi-condition alerts with live values",
+  "heroVoiceAlt": "A two-condition alert created by voice"
  },
  "zh": {
   "nav": [
@@ -545,15 +555,15 @@
   "store1": "App Store",
   "store2s": "立即获取",
   "store2": "Google Play",
-  "heroKicker": "加密货币提醒应用 · iOS 和 Android",
-  "heroTitle": "不用你盯盘，MarketAlert 替你盯。",
-  "heroSub": "为价格、涨跌幅、RSI、MACD、成交量和均线交叉设置提醒，用一个提醒扫描所有币种。打字或说出来，其余交给 MarketAlert，即使应用已关闭。",
+  "heroKicker": "说出来或打出来，MarketAlert 帮你设置。",
+  "heroTitle": "说出条件，提醒即刻就绪。",
+  "heroSub": "无需填写表单。通过语音或文字，几秒内即可创建复杂提醒。MarketAlert 持续扫描所选币安市场的所有币种，监控 RSI、MACD、成交量及 SMA/EMA 条件。",
   "chips": [
    "7 天免费试用",
    "无需注册，访客即可开始",
    "11 种语言 · 浅色/深色"
   ],
-  "sayExample": "“BTC 高于 7 万、RSI 低于 30、15 分钟涨 2% 且创 24 小时新高时通知我。”",
+  "sayExample": "“BTC 高于 70000 且小时线 RSI 低于 30 时通知我。”",
   "markets": "Binance 现货和合约 · USDT 和 USDC · 四个市场所有套餐均可用",
   "f": [
    {
@@ -584,7 +594,7 @@
     "k": "ai",
     "t": "打字或说话，助手帮你设置",
     "s": "AI 与语音",
-    "d": "只需说“如果 BTC 跌破 85,000 就提醒我”。助手会准备草稿，未经你确认不会创建任何提醒。语音在你的设备上转为文字，只发送文字。"
+    "d": "语音助手会直接执行明确的请求。在文字聊天中，你可以查看并确认提醒草稿。通过助手可以创建、修改、列出和关闭提醒。"
    },
    {
     "k": "tpl",
@@ -740,8 +750,8 @@
     "Binance 现货和合约（永续）的 USDT 与 USDC 交易对。四个市场在所有套餐中均可用。"
    ],
    [
-    "AI 会在我不知情的情况下创建提醒吗？",
-    "不会。助手只准备草稿，你确认后才会创建提醒。它不提供投资建议。"
+    "语音和文字助手如何创建提醒？",
+    "语音助手会直接执行明确的请求。在文字聊天中，你可以查看并确认提醒草稿。通过助手可以创建、修改、列出和关闭提醒。"
    ],
    [
     "支持哪些语言？",
@@ -781,7 +791,7 @@
    "title": "为什么选择 MarketAlert？",
    "ai": {
     "t": "用 AI 管理提醒",
-    "d": "打字或语音：创建、更新、列出、关闭提醒。你会先看到草稿，确认后才会生效。"
+    "d": "语音助手会直接执行明确的请求。在文字聊天中，你可以查看并确认提醒草稿。通过助手可以创建、修改、列出和关闭提醒。"
    },
    "scan": {
     "t": "热门指标，全部币种，全天候",
@@ -798,7 +808,12 @@
     "关闭"
    ],
    "push": "BTC 跌破 85,000"
-  }
+  },
+  "heroTitleSecond": "所有币种，交给 MarketAlert 监控。",
+  "voiceBadge": "语音创建提醒",
+  "allCoinsBadge": "所有币种 · 全天候",
+  "heroListAlt": "多条件提醒及实时数值",
+  "heroVoiceAlt": "通过语音创建的双条件提醒"
  },
  "es": {
   "nav": [
@@ -812,15 +827,15 @@
   "store1": "App Store",
   "store2s": "Disponible en",
   "store2": "Google Play",
-  "heroKicker": "App de alertas cripto · iOS y Android",
-  "heroTitle": "No vigiles el mercado cripto: deja que MarketAlert lo haga.",
-  "heroSub": "Crea alertas de precio, variación porcentual, RSI, MACD, volumen y cruces de medias, y escanea todas las monedas con una sola alerta. Escríbelo o dilo, y MarketAlert hace el resto, incluso con la app cerrada.",
+  "heroKicker": "Habla o escribe. MarketAlert lo configura.",
+  "heroTitle": "Dilo y tu alerta estará lista.",
+  "heroSub": "Sin formularios. Crea incluso alertas complejas en segundos hablando o escribiendo. MarketAlert analiza continuamente todas las monedas del mercado de Binance que elijas según condiciones de RSI, MACD, volumen y SMA/EMA.",
   "chips": [
    "Prueba gratis de 7 días",
    "Empieza como invitado, sin registro",
    "11 idiomas · claro/oscuro"
   ],
-  "sayExample": "“Avísame cuando BTC esté sobre 70 mil, RSI bajo 30, suba 2 % en 15 minutos y marque máximo de 24 h.”",
+  "sayExample": "“Avísame si BTC supera los 70.000 y el RSI de una hora está por debajo de 30.”",
   "markets": "Binance Spot y Futuros · USDT y USDC · Los cuatro mercados en todos los planes",
   "f": [
    {
@@ -851,7 +866,7 @@
     "k": "ai",
     "t": "Escríbelo o dilo, el asistente lo configura",
     "s": "IA y voz",
-    "d": "Solo di “Avísame si BTC baja de 85.000”. El asistente prepara un borrador y no se crea nada sin tu aprobación. Tu voz se convierte en texto en tu dispositivo; solo se envía el texto."
+    "d": "El asistente de voz ejecuta directamente las solicitudes claras. En el chat escrito, revisas y apruebas un borrador. Puedes crear, modificar, listar y desactivar alertas con el asistente."
    },
    {
     "k": "tpl",
@@ -1007,8 +1022,8 @@
     "Pares USDT y USDC de Binance Spot y Futuros (perpetuos). Los cuatro mercados están abiertos en todos los planes."
    ],
    [
-    "¿La IA puede crear alertas sin que lo sepa?",
-    "No. El asistente solo prepara un borrador; la alerta se crea cuando la apruebas. No da consejos de inversión."
+    "¿Cómo funcionan las alertas por voz y por texto?",
+    "El asistente de voz ejecuta directamente las solicitudes claras. En el chat escrito, revisas y apruebas un borrador. Puedes crear, modificar, listar y desactivar alertas con el asistente."
    ],
    [
     "¿Qué idiomas admite?",
@@ -1048,7 +1063,7 @@
    "title": "¿Por qué MarketAlert?",
    "ai": {
     "t": "Gestiona alertas con IA",
-    "d": "Escribe o habla: crea, actualiza, lista y desactiva alertas. Primero ves un borrador y nada cambia hasta que lo confirmas."
+    "d": "El asistente de voz ejecuta directamente las solicitudes claras. En el chat escrito, revisas y apruebas un borrador. Puedes crear, modificar, listar y desactivar alertas con el asistente."
    },
    "scan": {
     "t": "Indicadores populares en todas las monedas, 24/7",
@@ -1065,7 +1080,12 @@
     "Desactivar"
    ],
    "push": "BTC bajó de 85.000"
-  }
+  },
+  "heroTitleSecond": "MarketAlert vigila todas las monedas.",
+  "voiceBadge": "Crea alertas con tu voz",
+  "allCoinsBadge": "TODAS LAS MONEDAS · 24/7",
+  "heroListAlt": "Alertas con varias condiciones y valores en vivo",
+  "heroVoiceAlt": "Alerta de dos condiciones creada por voz"
  },
  "hi": {
   "nav": [
@@ -1079,15 +1099,15 @@
   "store1": "App Store",
   "store2s": "इसे पाएं",
   "store2": "Google Play",
-  "heroKicker": "क्रिप्टो अलर्ट ऐप · iOS और Android",
-  "heroTitle": "क्रिप्टो मार्केट पर नज़र आप नहीं, MarketAlert रखे।",
-  "heroSub": "कीमत, प्रतिशत बदलाव, RSI, MACD, वॉल्यूम और मूविंग एवरेज क्रॉस के लिए अलर्ट बनाएं, और एक ही अलर्ट से सभी कॉइन स्कैन करें। लिखें या बोलें, बाकी काम MarketAlert करेगा, ऐप बंद होने पर भी।",
+  "heroKicker": "बोलें या लिखें। MarketAlert सेट कर देगा।",
+  "heroTitle": "बस बोलें, आपका अलर्ट तैयार।",
+  "heroSub": "फ़ॉर्म भरने की ज़रूरत नहीं। बोलकर या लिखकर जटिल अलर्ट भी सेकंडों में बनाएँ। MarketAlert आपके चुने हुए Binance बाज़ार के सभी कॉइन को RSI, MACD, वॉल्यूम और SMA/EMA की शर्तों पर लगातार स्कैन करता है।",
   "chips": [
    "7 दिन का मुफ़्त ट्रायल",
    "बिना साइन-अप, गेस्ट के रूप में शुरू करें",
    "11 भाषाएं · लाइट/डार्क"
   ],
-  "sayExample": "“BTC 70 हज़ार से ऊपर, RSI 30 से नीचे, 15 मिनट में 2% बढ़त और 24 घंटे का उच्च हो तो बताना।”",
+  "sayExample": "“BTC 70,000 से ऊपर हो और एक घंटे का RSI 30 से नीचे हो तो बताएँ।”",
   "markets": "Binance Spot और Futures · USDT और USDC · चारों मार्केट हर प्लान में",
   "f": [
    {
@@ -1118,7 +1138,7 @@
     "k": "ai",
     "t": "लिखें या बोलें, असिस्टेंट सेट कर देगा",
     "s": "AI और आवाज़",
-    "d": "बस कहें “अगर BTC 85,000 से नीचे जाए तो मुझे बताना”। असिस्टेंट एक ड्राफ़्ट बनाता है, आपकी मंज़ूरी के बिना कोई अलर्ट नहीं बनता। आपकी आवाज़ आपके डिवाइस पर ही टेक्स्ट में बदलती है, सिर्फ़ टेक्स्ट भेजा जाता है।"
+    "d": "वॉइस असिस्टेंट स्पष्ट अनुरोधों को सीधे लागू करता है। टेक्स्ट चैट में आप अलर्ट का ड्राफ़्ट देखकर पुष्टि करते हैं। असिस्टेंट से अलर्ट बना, बदल, सूचीबद्ध और बंद कर सकते हैं।"
    },
    {
     "k": "tpl",
@@ -1274,8 +1294,8 @@
     "Binance Spot और Futures (परपेचुअल) के USDT और USDC पेयर। चारों मार्केट हर प्लान में खुले हैं।"
    ],
    [
-    "क्या AI मेरी जानकारी के बिना अलर्ट बना सकता है?",
-    "नहीं। असिस्टेंट सिर्फ़ ड्राफ़्ट बनाता है; अलर्ट आपकी मंज़ूरी के बाद ही बनता है। यह निवेश सलाह नहीं देता।"
+    "वॉइस और टेक्स्ट असिस्टेंट अलर्ट कैसे बनाते हैं?",
+    "वॉइस असिस्टेंट स्पष्ट अनुरोधों को सीधे लागू करता है। टेक्स्ट चैट में आप अलर्ट का ड्राफ़्ट देखकर पुष्टि करते हैं। असिस्टेंट से अलर्ट बना, बदल, सूचीबद्ध और बंद कर सकते हैं।"
    ],
    [
     "कौन सी भाषाएं समर्थित हैं?",
@@ -1315,7 +1335,7 @@
    "title": "MarketAlert क्यों?",
    "ai": {
     "t": "AI से अलर्ट संभालें",
-    "d": "लिखें या बोलें: अलर्ट बनाएँ, अपडेट करें, सूची देखें, बंद करें। पहले आप ड्राफ़्ट देखते हैं; आपकी पुष्टि के बिना कुछ नहीं बदलता।"
+    "d": "वॉइस असिस्टेंट स्पष्ट अनुरोधों को सीधे लागू करता है। टेक्स्ट चैट में आप अलर्ट का ड्राफ़्ट देखकर पुष्टि करते हैं। असिस्टेंट से अलर्ट बना, बदल, सूचीबद्ध और बंद कर सकते हैं।"
    },
    "scan": {
     "t": "लोकप्रिय इंडिकेटर, सभी कॉइन, 24/7",
@@ -1332,7 +1352,12 @@
     "बंद करें"
    ],
    "push": "BTC 85,000 से नीचे गिरा"
-  }
+  },
+  "heroTitleSecond": "सभी कॉइन पर MarketAlert नज़र रखे।",
+  "voiceBadge": "बोलकर अलर्ट बनाएँ",
+  "allCoinsBadge": "सभी कॉइन · 24/7",
+  "heroListAlt": "कई शर्तों वाले अलर्ट और लाइव मान",
+  "heroVoiceAlt": "बोलकर बनाया गया दो शर्तों वाला अलर्ट"
  },
  "ar": {
   "nav": [
@@ -1346,15 +1371,15 @@
   "store1": "App Store",
   "store2s": "احصل عليه من",
   "store2": "Google Play",
-  "heroKicker": "تطبيق تنبيهات العملات الرقمية · iOS وAndroid",
-  "heroTitle": "لا تراقب سوق العملات الرقمية بنفسك، دع MarketAlert يراقبه.",
-  "heroSub": "أنشئ تنبيهات للسعر ونسبة الحركة وRSI وMACD والحجم وتقاطع المتوسطات، وافحص كل العملات بتنبيه واحد. اكتب أو تحدّث، ويتولى MarketAlert الباقي، حتى والتطبيق مغلق.",
+  "heroKicker": "تحدث أو اكتب. وMarketAlert يتولى الإعداد.",
+  "heroTitle": "قلها، وتنبيهك جاهز.",
+  "heroSub": "بلا تعبئة نماذج. أنشئ حتى التنبيهات المعقدة خلال ثوانٍ بالكلام أو الكتابة. يفحص MarketAlert جميع عملات سوق Binance الذي تختاره باستمرار وفق شروط RSI وMACD وحجم التداول وSMA/EMA.",
   "chips": [
    "تجربة مجانية 7 أيام",
    "ابدأ كضيف دون تسجيل",
    "11 لغة · فاتح/داكن"
   ],
-  "sayExample": "«نبّهني عندما يكون BTC فوق 70 ألفًا وRSI تحت 30 ويرتفع 2% خلال 15 دقيقة ويبلغ قمة 24 ساعة.»",
+  "sayExample": "“أخبرني عندما يتجاوز BTC مستوى 70000 ويكون RSI للساعة أقل من 30.”",
   "markets": "Binance الفوري والعقود الآجلة · USDT وUSDC · الأسواق الأربعة متاحة في كل الخطط",
   "f": [
    {
@@ -1385,7 +1410,7 @@
     "k": "ai",
     "t": "اكتب أو تحدّث، والمساعد يُعدّه",
     "s": "الذكاء الاصطناعي والصوت",
-    "d": "قل فقط «نبّهني إذا هبط BTC تحت 85,000». يجهّز المساعد مسودة، ولا يُنشأ أي تنبيه دون موافقتك. يتحول كلامك إلى نص على جهازك، ويُرسل النص فقط."
+    "d": "ينفذ المساعد الصوتي الطلبات الواضحة مباشرة. في المحادثة النصية، تراجع مسودة التنبيه وتوافق عليها. يمكنك إنشاء التنبيهات وتعديلها وعرضها وإيقافها باستخدام المساعد."
    },
    {
     "k": "tpl",
@@ -1541,8 +1566,8 @@
     "أزواج USDT وUSDC في سوقي Binance الفوري والعقود الآجلة الدائمة. الأسواق الأربعة متاحة في كل الخطط."
    ],
    [
-    "هل ينشئ الذكاء الاصطناعي تنبيهات دون علمي؟",
-    "لا. يجهّز المساعد مسودة فقط، ويُنشأ التنبيه عند موافقتك. ولا يقدم نصائح استثمارية."
+    "كيف ينشئ المساعد تنبيهات بالصوت والنص؟",
+    "ينفذ المساعد الصوتي الطلبات الواضحة مباشرة. في المحادثة النصية، تراجع مسودة التنبيه وتوافق عليها. يمكنك إنشاء التنبيهات وتعديلها وعرضها وإيقافها باستخدام المساعد."
    ],
    [
     "ما اللغات المدعومة؟",
@@ -1582,7 +1607,7 @@
    "title": "لماذا MarketAlert؟",
    "ai": {
     "t": "أدِر تنبيهاتك بالذكاء الاصطناعي",
-    "d": "اكتب أو تحدّث: أنشئ التنبيهات وحدّثها واعرضها وأوقفها. ترى مسودة أولًا ولا يتغير شيء قبل تأكيدك."
+    "d": "ينفذ المساعد الصوتي الطلبات الواضحة مباشرة. في المحادثة النصية، تراجع مسودة التنبيه وتوافق عليها. يمكنك إنشاء التنبيهات وتعديلها وعرضها وإيقافها باستخدام المساعد."
    },
    "scan": {
     "t": "مؤشرات شائعة على كل العملات، على مدار الساعة",
@@ -1599,7 +1624,12 @@
     "إيقاف"
    ],
    "push": "انخفض BTC إلى ما دون 85,000"
-  }
+  },
+  "heroTitleSecond": "دع MarketAlert يراقب جميع العملات.",
+  "voiceBadge": "أنشئ تنبيهًا بصوتك",
+  "allCoinsBadge": "جميع العملات · 24/7",
+  "heroListAlt": "تنبيهات متعددة الشروط بقيم مباشرة",
+  "heroVoiceAlt": "تنبيه بشرطين تم إنشاؤه بالصوت"
  },
  "pt-br": {
   "nav": [
@@ -1613,15 +1643,15 @@
   "store1": "App Store",
   "store2s": "Disponível no",
   "store2": "Google Play",
-  "heroKicker": "App de alertas cripto · iOS e Android",
-  "heroTitle": "Não fique vigiando o mercado cripto. Deixe o MarketAlert vigiar.",
-  "heroSub": "Crie alertas de preço, variação percentual, RSI, MACD, volume e cruzamento de médias, e escaneie todas as moedas com um único alerta. Digite ou fale, e o MarketAlert faz o resto, mesmo com o app fechado.",
+  "heroKicker": "Fale ou escreva. O MarketAlert configura.",
+  "heroTitle": "É só falar. Seu alerta está pronto.",
+  "heroSub": "Sem preencher formulários. Crie até alertas complexos em segundos, falando ou digitando. O MarketAlert analisa continuamente todas as moedas do mercado da Binance escolhido, com condições de RSI, MACD, volume e SMA/EMA.",
   "chips": [
    "7 dias de teste grátis",
    "Comece como convidado, sem cadastro",
    "11 idiomas · claro/escuro"
   ],
-  "sayExample": "“Me avise: BTC acima de 70 mil, RSI abaixo de 30, +2% em 15 min e máxima de 24h.”",
+  "sayExample": "“Avise quando o BTC estiver acima de 70.000 e o RSI de uma hora abaixo de 30.”",
   "markets": "Binance Spot e Futuros · USDT e USDC · Os quatro mercados em todos os planos",
   "f": [
    {
@@ -1652,7 +1682,7 @@
     "k": "ai",
     "t": "Digite ou fale, o assistente configura",
     "s": "IA e voz",
-    "d": "Basta dizer “Me avise se o BTC cair abaixo de 85.000”. O assistente prepara um rascunho, e nada é criado sem sua aprovação. A fala vira texto no seu aparelho; só o texto é enviado."
+    "d": "O assistente de voz executa solicitações claras diretamente. No chat de texto, você revisa e aprova um rascunho. Com o assistente, você pode criar, atualizar, listar e desativar alertas."
    },
    {
     "k": "tpl",
@@ -1808,8 +1838,8 @@
     "Pares USDT e USDC da Binance Spot e Futuros (perpétuos). Os quatro mercados estão abertos em todos os planos."
    ],
    [
-    "A IA pode criar alertas sem eu saber?",
-    "Não. O assistente só prepara um rascunho; o alerta é criado quando você aprova. Ele não dá recomendação de investimento."
+    "Como funcionam os alertas por voz e por texto?",
+    "O assistente de voz executa solicitações claras diretamente. No chat de texto, você revisa e aprova um rascunho. Com o assistente, você pode criar, atualizar, listar e desativar alertas."
    ],
    [
     "Quais idiomas são suportados?",
@@ -1849,7 +1879,7 @@
    "title": "Por que MarketAlert?",
    "ai": {
     "t": "Gerencie alertas com IA",
-    "d": "Escreva ou fale: crie, atualize, liste e desative alertas. Você vê um rascunho primeiro e nada muda até você confirmar."
+    "d": "O assistente de voz executa solicitações claras diretamente. No chat de texto, você revisa e aprova um rascunho. Com o assistente, você pode criar, atualizar, listar e desativar alertas."
    },
    "scan": {
     "t": "Indicadores populares em todas as moedas, 24/7",
@@ -1866,7 +1896,12 @@
     "Desativar"
    ],
    "push": "BTC caiu abaixo de 85.000"
-  }
+  },
+  "heroTitleSecond": "O MarketAlert monitora todas as moedas.",
+  "voiceBadge": "Crie alertas por voz",
+  "allCoinsBadge": "TODAS AS MOEDAS · 24/7",
+  "heroListAlt": "Alertas com várias condições e valores ao vivo",
+  "heroVoiceAlt": "Alerta com duas condições criado por voz"
  },
  "fr": {
   "nav": [
@@ -1880,15 +1915,15 @@
   "store1": "l’App Store",
   "store2s": "Disponible sur",
   "store2": "Google Play",
-  "heroKicker": "App d’alertes crypto · iOS et Android",
-  "heroTitle": "Ne surveillez plus le marché crypto : MarketAlert s’en charge.",
-  "heroSub": "Créez des alertes de prix, de variation en pourcentage, RSI, MACD, volume et croisements de moyennes, et scannez toutes les cryptos avec une seule alerte. Écrivez-le ou dites-le, MarketAlert s’occupe du reste, même app fermée.",
+  "heroKicker": "Parlez ou écrivez. MarketAlert s’en charge.",
+  "heroTitle": "Dites-le, votre alerte est prête.",
+  "heroSub": "Plus de formulaire. Créez même des alertes complexes en quelques secondes, à la voix ou par écrit. MarketAlert analyse en continu toutes les cryptos du marché Binance choisi selon vos conditions de RSI, MACD, volume et SMA/EMA.",
   "chips": [
    "Essai gratuit de 7 jours",
    "Commencez en invité, sans inscription",
    "11 langues · clair/sombre"
   ],
-  "sayExample": "« Préviens-moi quand BTC dépasse 70 k, RSI sous 30, +2 % en 15 minutes et plus haut sur 24 h. »",
+  "sayExample": "“Préviens-moi si le BTC dépasse 70 000 et si le RSI horaire passe sous 30.”",
   "markets": "Binance Spot et Futures · USDT et USDC · Les quatre marchés dans toutes les offres",
   "f": [
    {
@@ -1919,7 +1954,7 @@
     "k": "ai",
     "t": "Écrivez-le ou dites-le, l’assistant s’en occupe",
     "s": "IA et voix",
-    "d": "Dites simplement « Préviens-moi si le BTC passe sous 85 000 ». L’assistant prépare un brouillon, et rien n’est créé sans votre accord. La voix est transcrite sur votre appareil ; seul le texte est envoyé."
+    "d": "L’assistant vocal exécute directement les demandes claires. Dans le chat écrit, vous vérifiez et approuvez un brouillon. L’assistant permet de créer, modifier, lister et désactiver vos alertes."
    },
    {
     "k": "tpl",
@@ -2075,8 +2110,8 @@
     "Les paires USDT et USDC de Binance Spot et Futures (perpétuels). Les quatre marchés sont ouverts dans toutes les offres."
    ],
    [
-    "L’IA peut-elle créer des alertes à mon insu ?",
-    "Non. L’assistant prépare seulement un brouillon ; l’alerte est créée quand vous la validez. Il ne donne pas de conseil en investissement."
+    "Comment fonctionnent les alertes vocales et écrites ?",
+    "L’assistant vocal exécute directement les demandes claires. Dans le chat écrit, vous vérifiez et approuvez un brouillon. L’assistant permet de créer, modifier, lister et désactiver vos alertes."
    ],
    [
     "Quelles langues sont prises en charge ?",
@@ -2116,7 +2151,7 @@
    "title": "Pourquoi MarketAlert ?",
    "ai": {
     "t": "Gère tes alertes avec l’IA",
-    "d": "Écris ou parle : crée, modifie, liste et désactive tes alertes. Tu vois d’abord un brouillon, rien ne change avant ta confirmation."
+    "d": "L’assistant vocal exécute directement les demandes claires. Dans le chat écrit, vous vérifiez et approuvez un brouillon. L’assistant permet de créer, modifier, lister et désactiver vos alertes."
    },
    "scan": {
     "t": "Indicateurs populaires, toutes les cryptos, 24 h/24",
@@ -2133,7 +2168,12 @@
     "Désactiver"
    ],
    "push": "BTC est passé sous 85 000"
-  }
+  },
+  "heroTitleSecond": "MarketAlert surveille toutes les cryptos.",
+  "voiceBadge": "Créez une alerte à la voix",
+  "allCoinsBadge": "TOUTES LES CRYPTOS · 24/7",
+  "heroListAlt": "Alertes à plusieurs conditions et valeurs en direct",
+  "heroVoiceAlt": "Alerte à deux conditions créée à la voix"
  },
  "ru": {
   "nav": [
@@ -2147,15 +2187,15 @@
   "store1": "App Store",
   "store2s": "Доступно в",
   "store2": "Google Play",
-  "heroKicker": "Приложение крипто-оповещений · iOS и Android",
-  "heroTitle": "Не следите за криптовалютным рынком сами — пусть следит MarketAlert.",
-  "heroSub": "Создавайте оповещения по цене, процентному движению, RSI, MACD, объёму и пересечению средних и сканируйте все монеты одним оповещением. Напишите или скажите — остальное сделает MarketAlert, даже когда приложение закрыто.",
+  "heroKicker": "Скажите или напишите. MarketAlert настроит.",
+  "heroTitle": "Скажите — и оповещение готово.",
+  "heroSub": "Без заполнения форм. Создавайте даже сложные оповещения за секунды голосом или текстом. MarketAlert непрерывно проверяет все монеты выбранного рынка Binance по условиям RSI, MACD, объёма и SMA/EMA.",
   "chips": [
    "7 дней бесплатно",
    "Начните как гость, без регистрации",
    "11 языков · светлая/тёмная тема"
   ],
-  "sayExample": "«Сообщи: BTC выше 70 тыс., RSI ниже 30, +2% за 15 мин и максимум 24 ч».",
+  "sayExample": "“Сообщи, когда BTC выше 70 000, а часовой RSI ниже 30.”",
   "markets": "Binance Спот и Фьючерсы · USDT и USDC · Все четыре рынка в каждом тарифе",
   "f": [
    {
@@ -2186,7 +2226,7 @@
     "k": "ai",
     "t": "Напишите или скажите — ассистент всё настроит",
     "s": "ИИ и голос",
-    "d": "Просто скажите «Сообщи, если BTC упадёт ниже 85 000». Ассистент подготовит черновик, и без вашего подтверждения ничего не будет создано. Речь распознаётся на вашем устройстве, отправляется только текст."
+    "d": "Голосовой помощник выполняет понятные запросы напрямую. В текстовом чате вы проверяете и подтверждаете черновик. Помощник позволяет создавать, изменять, просматривать и отключать оповещения."
    },
    {
     "k": "tpl",
@@ -2342,8 +2382,8 @@
     "Пары USDT и USDC на Binance Спот и Фьючерсы (бессрочные). Все четыре рынка открыты в каждом тарифе."
    ],
    [
-    "Может ли ИИ создать оповещение без моего ведома?",
-    "Нет. Ассистент только готовит черновик; оповещение создаётся после вашего подтверждения. Он не даёт инвестиционных советов."
+    "Как работают голосовые и текстовые оповещения?",
+    "Голосовой помощник выполняет понятные запросы напрямую. В текстовом чате вы проверяете и подтверждаете черновик. Помощник позволяет создавать, изменять, просматривать и отключать оповещения."
    ],
    [
     "Какие языки поддерживаются?",
@@ -2383,7 +2423,7 @@
    "title": "Почему MarketAlert?",
    "ai": {
     "t": "Управляйте оповещениями с ИИ",
-    "d": "Напишите или скажите: создать, изменить, показать список, отключить. Сначала вы видите черновик — без вашего подтверждения ничего не меняется."
+    "d": "Голосовой помощник выполняет понятные запросы напрямую. В текстовом чате вы проверяете и подтверждаете черновик. Помощник позволяет создавать, изменять, просматривать и отключать оповещения."
    },
    "scan": {
     "t": "Популярные индикаторы по всем монетам 24/7",
@@ -2400,7 +2440,12 @@
     "Отключить"
    ],
    "push": "BTC опустился ниже 85 000"
-  }
+  },
+  "heroTitleSecond": "MarketAlert проследит за всеми монетами.",
+  "voiceBadge": "Создавайте оповещения голосом",
+  "allCoinsBadge": "ВСЕ МОНЕТЫ · 24/7",
+  "heroListAlt": "Оповещения с несколькими условиями и текущими значениями",
+  "heroVoiceAlt": "Оповещение с двумя условиями, созданное голосом"
  },
  "de": {
   "nav": [
@@ -2414,15 +2459,15 @@
   "store1": "App Store",
   "store2s": "Jetzt bei",
   "store2": "Google Play",
-  "heroKicker": "Krypto-Alarm-App · iOS und Android",
-  "heroTitle": "Nicht du beobachtest den Kryptomarkt, sondern MarketAlert.",
-  "heroSub": "Alarme für Preis, prozentuale Bewegungen, RSI, MACD, Volumen und Durchschnittskreuzungen – und mit einem einzigen Alarm alle Coins durchsuchen. Tippen oder sprechen, den Rest erledigt MarketAlert. Auch wenn die App geschlossen ist.",
+  "heroKicker": "Sprich oder schreib. MarketAlert richtet es ein.",
+  "heroTitle": "Sag es. Dein Alarm ist bereit.",
+  "heroSub": "Keine Formulare. Erstelle selbst komplexe Alarme in Sekunden per Sprache oder Text. MarketAlert prüft kontinuierlich alle Coins im gewählten Binance-Markt auf RSI-, MACD-, Volumen- und SMA/EMA-Bedingungen.",
   "chips": [
    "7 Tage kostenlos testen",
    "Als Gast starten, ohne Registrierung",
    "11 Sprachen · hell/dunkel"
   ],
-  "sayExample": "„Sag Bescheid: BTC über 70.000, RSI unter 30, +2 % in 15 Min. und 24h-Hoch.“",
+  "sayExample": "“Benachrichtige mich, wenn BTC über 70.000 und der Stunden-RSI unter 30 liegt.”",
   "markets": "Binance Spot und Futures · USDT und USDC · Alle vier Märkte in jedem Tarif",
   "f": [
    {
@@ -2453,7 +2498,7 @@
     "k": "ai",
     "t": "Tippen oder sprechen – der Assistent richtet es ein",
     "s": "KI und Sprache",
-    "d": "Sag einfach „Sag mir Bescheid, wenn BTC unter 85.000 fällt“. Der Assistent erstellt einen Entwurf; ohne deine Bestätigung wird nichts angelegt. Sprache wird auf deinem Gerät in Text umgewandelt, nur der Text wird gesendet."
+    "d": "Der Sprachassistent führt klare Anfragen direkt aus. Im Textchat prüfst und bestätigst du einen Entwurf. Mit dem Assistenten kannst du Alarme erstellen, ändern, auflisten und deaktivieren."
    },
    {
     "k": "tpl",
@@ -2609,8 +2654,8 @@
     "USDT- und USDC-Paare auf Binance Spot und Futures (Perpetual). Alle vier Märkte sind in jedem Tarif offen."
    ],
    [
-    "Legt die KI ohne mein Wissen Alarme an?",
-    "Nein. Der Assistent erstellt nur einen Entwurf; der Alarm entsteht erst nach deiner Bestätigung. Er gibt keine Anlageberatung."
+    "Wie funktionieren Alarme per Sprache und Text?",
+    "Der Sprachassistent führt klare Anfragen direkt aus. Im Textchat prüfst und bestätigst du einen Entwurf. Mit dem Assistenten kannst du Alarme erstellen, ändern, auflisten und deaktivieren."
    ],
    [
     "Welche Sprachen werden unterstützt?",
@@ -2650,7 +2695,7 @@
    "title": "Warum MarketAlert?",
    "ai": {
     "t": "Alarme per KI verwalten",
-    "d": "Schreib oder sprich: Alarme erstellen, ändern, auflisten, deaktivieren. Du siehst zuerst einen Entwurf, ohne deine Bestätigung ändert sich nichts."
+    "d": "Der Sprachassistent führt klare Anfragen direkt aus. Im Textchat prüfst und bestätigst du einen Entwurf. Mit dem Assistenten kannst du Alarme erstellen, ändern, auflisten und deaktivieren."
    },
    "scan": {
     "t": "Beliebte Indikatoren, alle Coins, rund um die Uhr",
@@ -2667,7 +2712,12 @@
     "Deaktivieren"
    ],
    "push": "BTC fiel unter 85.000"
-  }
+  },
+  "heroTitleSecond": "MarketAlert überwacht alle Coins.",
+  "voiceBadge": "Alarme per Sprache erstellen",
+  "allCoinsBadge": "ALLE COINS · 24/7",
+  "heroListAlt": "Alarme mit mehreren Bedingungen und Live-Werten",
+  "heroVoiceAlt": "Per Sprache erstellter Alarm mit zwei Bedingungen"
  },
  "ja": {
   "nav": [
@@ -2681,15 +2731,15 @@
   "store1": "App Store",
   "store2s": "今すぐ手に入れよう",
   "store2": "Google Play",
-  "heroKicker": "暗号資産アラートアプリ · iOS / Android",
-  "heroTitle": "相場を見張るのは、あなたではなく MarketAlert。",
-  "heroSub": "価格、変動率、RSI、MACD、出来高、移動平均のクロスでアラートを設定し、1つのアラートで全銘柄をスキャン。入力するか話すだけで、あとは MarketAlert におまかせ。アプリを閉じていても動きます。",
+  "heroKicker": "話すだけ、入力するだけ。設定はMarketAlertに。",
+  "heroTitle": "話せば、アラートの準備完了。",
+  "heroSub": "フォーム入力は不要。複雑なアラートも、音声やテキストで数秒で作成。MarketAlertは選択したBinance市場の全コインを、RSI・MACD・出来高・SMA/EMAの条件で継続的にスキャンします。",
   "chips": [
    "7日間無料トライアル",
    "登録不要、ゲストで開始",
    "11言語 · ライト/ダーク"
   ],
-  "sayExample": "「BTCが7万超え、RSIが30未満、15分で2%上昇、24時間高値になったら通知して」",
+  "sayExample": "“BTCが70000を超え、1時間足のRSIが30を下回ったら知らせて。”",
   "markets": "Binance 現物・先物 · USDT と USDC · 4つの市場すべてを全プランで利用可能",
   "f": [
    {
@@ -2720,7 +2770,7 @@
     "k": "ai",
     "t": "入力しても話しても、アシスタントが設定",
     "s": "AI と音声",
-    "d": "「BTC が 85,000 を下回ったら知らせて」と言うだけ。アシスタントが下書きを作成し、あなたの承認なしにアラートは作られません。音声は端末上で文字に変換され、送信されるのは文字だけです。"
+    "d": "音声アシスタントは明確なリクエストを直接実行します。テキストチャットでは、アラートの下書きを確認して承認します。アシスタントでアラートの作成、変更、一覧表示、停止ができます。"
    },
    {
     "k": "tpl",
@@ -2876,8 +2926,8 @@
     "Binance 現物と先物（無期限）の USDT・USDC ペアです。4つの市場はすべてのプランで利用できます。"
    ],
    [
-    "AI が勝手にアラートを作ることはありますか？",
-    "いいえ。アシスタントは下書きを作るだけで、あなたが承認したときにアラートが作成されます。投資助言は行いません。"
+    "音声とテキストのアシスタントはどう動作しますか？",
+    "音声アシスタントは明確なリクエストを直接実行します。テキストチャットでは、アラートの下書きを確認して承認します。アシスタントでアラートの作成、変更、一覧表示、停止ができます。"
    ],
    [
     "対応言語は？",
@@ -2917,7 +2967,7 @@
    "title": "MarketAlert が選ばれる理由",
    "ai": {
     "t": "AI でアラートを管理",
-    "d": "入力でも音声でも、アラートの作成・更新・一覧・停止ができます。まず下書きを確認し、承認するまで何も変わりません。"
+    "d": "音声アシスタントは明確なリクエストを直接実行します。テキストチャットでは、アラートの下書きを確認して承認します。アシスタントでアラートの作成、変更、一覧表示、停止ができます。"
    },
    "scan": {
     "t": "人気インジケーターを全コインで24時間",
@@ -2934,6 +2984,11 @@
     "停止"
    ],
    "push": "BTCが85,000を下回りました"
-  }
+  },
+  "heroTitleSecond": "すべてのコインをMarketAlertが監視。",
+  "voiceBadge": "音声でアラートを作成",
+  "allCoinsBadge": "全コイン · 24時間",
+  "heroListAlt": "複数条件のアラートとリアルタイム値",
+  "heroVoiceAlt": "音声で作成した2条件のアラート"
  }
 }

@@ -11,6 +11,7 @@ const ICO: Record<string, string> = {
   sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
   moon: '<path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z"/>',
   spark: '<path d="M12 3l1.8 4.9L19 9.7l-5.2 1.8L12 16.4l-1.8-4.9L5 9.7l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/>',
+  mic: '<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0014 0v-2M12 19v3M8 22h8"/>',
   plus: '<path d="M12 5v14M5 12h14"/>',
   edit: '<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/>',
   list: '<path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/>',
@@ -25,8 +26,8 @@ const KEY: Record<string, string> = { price: 'PRICE_WICK', types: 'CONDITIONS', 
 const TAPE = ['PRICE ≥ 70,000 USDT', 'RSI(14) < 30 · 1h', 'Δ +5% / 5m', 'EMA(9) ↗ EMA(21) · 4h', 'MACD(12,26,9) ↗ SIGNAL · 1d', 'VOL > 3× SMA(20) · 15m', '24h HIGH ↑', 'ALL COINS · TOP 100', 'PRICE ↘ SMA(50) · 1h', 'AND · OR'];
 const n = t.f.length;
 const pad = (i: number) => String(i).padStart(2, '0');
-const shot = (k: string, alt: string, eager = false) =>
-  `<img class="sh-l" src="/shots/${code}/light/${k}.webp" alt="${alt}" width="600" height="1268" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"><img class="sh-d" src="/shots/${code}/dark/${k}.webp" alt="" width="600" height="1268" loading="lazy" decoding="async">`;
+const shot = (k: string, alt: string, eager = false, tall = false) =>
+  `<img class="sh-l" src="/shots/${code}/light/${k}.webp" alt="${alt}" width="${tall ? 360 : 600}" height="${tall ? 940 : 1268}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"><img class="sh-d" src="/shots/${code}/dark/${k}.webp" alt="" width="${tall ? 360 : 600}" height="${tall ? 940 : 1268}" loading="lazy" decoding="async">`;
 const APPLE = '<svg viewBox="0 0 24 24" class="sbi" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7-1.3-.1-2.5.8-3.2.8-.7 0-1.7-.7-2.7-.7-1.4 0-2.7.8-3.5 2.1-1.5 2.6-.4 6.3 1.1 8.4.7 1 1.5 2.2 2.6 2.1 1-.1 1.5-.7 2.7-.7 1.3 0 1.6.7 2.7.7 1.1 0 1.9-1 2.5-2 .8-1.2 1.1-2.3 1.2-2.4-.1 0-2.2-.8-2.2-3.4zM14.3 6.4c.6-.7 1-1.7.9-2.6-.8 0-1.8.6-2.4 1.3-.5.6-1 1.6-.9 2.6.9 0 1.9-.6 2.4-1.3z"/></svg>';
 const PLAY = '<svg viewBox="0 0 24 24" class="sbi" aria-hidden="true"><path fill="#00D7FE" d="M4 3.2l9.6 8.8L4 20.8c-.3-.2-.5-.6-.5-1V4.2c0-.4.2-.8.5-1z"/><path fill="#00F076" d="M16.7 9.2L13.6 12 4 3.2c.2-.1.5-.1.8 0z"/><path fill="#FF3A44" d="M16.7 14.8L4.8 20.8c-.3.1-.6.1-.8 0l9.6-8.8z"/><path fill="#FFD500" d="M20 11.1c.7.4.7 1.4 0 1.8l-3.3 1.9-3.1-2.8 3.1-2.8z"/></svg>';
 // Mağaza adresi boşsa tıklanmayan "Yakında" rozeti çıkar.
@@ -58,15 +59,16 @@ const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : 
   <section class="hero">
     <div class="h-a">
       <p class="prompt" aria-hidden="true"><span>&gt;</span> <span class="type">{t.sayExample}</span><i class="caret"></i></p>
-      <h1>{t.heroTitle}</h1>
+      <p class="hero-category">{t.heroKicker}</p>
+      <h1>{t.heroTitle}<br /><span class="hero-title-second">{t.heroTitleSecond}</span></h1>
       <Fragment set:html={stores} />
     </div>
     <div class="h-v">
-      <figure class="pf back"><Fragment set:html={shot('all', t.f[3].t)} /></figure>
-      <figure class="pf front"><Fragment set:html={shot('ai', t.f[4].t, true)} /></figure>
-      <span class="fl f1" aria-hidden="true"><Fragment set:html={svg('spark')} />AI</span>
+      <figure class="pf back"><Fragment set:html={shot('hero-list', t.heroListAlt, false, true)} /></figure>
+      <figure class="pf front"><Fragment set:html={shot('hero-voice', t.heroVoiceAlt, true, true)} /></figure>
+      <span class="fl f1 voice-badge" aria-hidden="true"><Fragment set:html={svg('mic')} />{t.voiceBadge}</span>
       <span class="fl f2" aria-hidden="true" dir="ltr">RSI · MACD · EMA</span>
-      <span class="fl f3" aria-hidden="true" dir="ltr">TOP 100 · 24/7</span>
+      <span class="fl f3" aria-hidden="true">{t.allCoinsBadge}</span>
     </div>
     <div class="h-b">
       <p class="sub">{t.heroSub}</p>
@@ -114,7 +116,7 @@ const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : 
       {t.f.map((f: any, i: number) => (
         <article class={`step${i === 0 ? ' on' : ''}`} data-i={i} data-k={f.k} style={`--c:var(--cat${CAT[f.k]})`}>
           <p class="meta"><span class="num">{pad(i + 1)}/{pad(n)}</span><code class="tag">{KEY[f.k]}</code></p>
-          <p class="skip">{f.s}</p>
+          <p class="feature-label">{f.s}</p>
           <h2>{f.t}</h2>
           <p>{f.d}</p>
           <figure class="pf"><Fragment set:html={shot(f.k, f.t)} /></figure>
