@@ -1,5 +1,6 @@
 ---
-// Kök adres: dil seçimi (x-default). Zorla yönlendirme yok; tarayıcı dili öne çıkarılır.
+// Kök adres (x-default): ziyaretçiyi son seçtiği dile, yoksa tarayıcı diline, o da yoksa İngilizceye yönlendirir.
+// JavaScript kapalıysa dil listesi görünür.
 import Base from '../layouts/Base.astro';
 import content from '../i18n/content.json';
 import { LOCALES, STORE, SITE } from '../config';
@@ -7,6 +8,23 @@ const t = (content as any).en;
 const jsonLd = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: 'MarketAlert', url: SITE + '/', inLanguage: LOCALES.map(l => l.hreflang) }];
 ---
 <Base lang="en" dir="ltr" title={t.meta.title} description={t.meta.desc} path="/" ogImage="/og/en.png" jsonLd={jsonLd}>
+  <script is:inline define:vars={{ codes: LOCALES.map(l => l.code) }}>
+    (function () {
+      var pick = null;
+      try { pick = localStorage.getItem('lang'); } catch (e) {}
+      if (codes.indexOf(pick) < 0) {
+        pick = null;
+        var list = navigator.languages || [navigator.language];
+        for (var i = 0; i < list.length && !pick; i++) {
+          var raw = String(list[i]).toLowerCase();
+          var base = raw.split('-')[0];
+          var c = base === 'pt' ? 'pt-br' : base;
+          if (codes.indexOf(c) >= 0) pick = c;
+        }
+      }
+      location.replace('/' + (pick || 'en') + '/' + location.search + location.hash);
+    })();
+  </script>
   <main class="pick">
     <div>
       <img class="app" src="/icons/icon-192.png" alt="MarketAlert" width="88" height="88" />

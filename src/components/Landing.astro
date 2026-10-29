@@ -144,6 +144,8 @@ const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : 
   // Analytics olayları (izin verilmişse Base.astro gönderir).
   const track = (name: string, params?: Record<string, string>) => (window as any).maTrack?.(name, params);
   const root = document.documentElement;
+  // Ana adres bir sonraki ziyarette bu dili açsın.
+  try { localStorage.setItem('lang', location.pathname.split('/')[1]); } catch (e) { /* depolama kapalı olabilir */ }
   document.getElementById('theme')?.addEventListener('click', () => {
     const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
     root.dataset.theme = dark ? 'light' : 'dark';
