@@ -28,7 +28,7 @@ export const STORE = {
 };
 
 /** Google Analytics 4 ölçüm kimliği (G-XXXXXXXXXX). Boşken Analytics ve çerez bandı yüklenmez. */
-export const GA_ID = '';
+export const GA_ID = 'G-8QXDNRJWRG';
 
 /** Yasal belgeler backend'de (wwwroot/legal), uygulamayla aynı adres. */
 export const legalUrl = (doc: 'privacy' | 'terms', appLocale: string) =>
