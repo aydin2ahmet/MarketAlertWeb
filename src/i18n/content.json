@@ -238,7 +238,7 @@
   },
   "soon": "Yakında",
   "consent": {
-   "msg": "Siteyi geliştirmek için Google Analytics ile ziyaret istatistikleri topluyoruz. İzin veriyor musun?",
+   "msg": "Siteyi geliştirmek için Google Analytics kullanıyoruz.",
    "yes": "Kabul et",
    "no": "Reddet",
    "prefs": "Çerez tercihleri"
@@ -505,7 +505,7 @@
   },
   "soon": "Coming soon",
   "consent": {
-   "msg": "We use Google Analytics to collect visit statistics that help us improve this site. Do you allow it?",
+   "msg": "We use Google Analytics to improve this site.",
    "yes": "Accept",
    "no": "Decline",
    "prefs": "Cookie settings"
@@ -772,7 +772,7 @@
   },
   "soon": "即将上线",
   "consent": {
-   "msg": "我们使用 Google Analytics 收集访问统计，以改进本网站。是否允许？",
+   "msg": "我们使用 Google Analytics 改进本网站。",
    "yes": "同意",
    "no": "拒绝",
    "prefs": "Cookie 设置"
@@ -1039,7 +1039,7 @@
   },
   "soon": "Próximamente",
   "consent": {
-   "msg": "Usamos Google Analytics para recopilar estadísticas de visitas que nos ayudan a mejorar este sitio. ¿Lo permites?",
+   "msg": "Usamos Google Analytics para mejorar el sitio.",
    "yes": "Aceptar",
    "no": "Rechazar",
    "prefs": "Preferencias de cookies"
@@ -1306,7 +1306,7 @@
   },
   "soon": "जल्द आ रहा है",
   "consent": {
-   "msg": "इस साइट को बेहतर बनाने के लिए हम Google Analytics से विज़िट के आँकड़े इकट्ठा करते हैं। क्या आप अनुमति देते हैं?",
+   "msg": "साइट बेहतर बनाने के लिए हम Google Analytics का उपयोग करते हैं।",
    "yes": "स्वीकार करें",
    "no": "अस्वीकार करें",
    "prefs": "कुकी सेटिंग"
@@ -1573,7 +1573,7 @@
   },
   "soon": "قريبًا",
   "consent": {
-   "msg": "نستخدم Google Analytics لجمع إحصاءات الزيارات بهدف تحسين هذا الموقع. هل توافق؟",
+   "msg": "نستخدم Google Analytics لتحسين الموقع.",
    "yes": "موافق",
    "no": "رفض",
    "prefs": "إعدادات ملفات تعريف الارتباط"
@@ -1840,7 +1840,7 @@
   },
   "soon": "Em breve",
   "consent": {
-   "msg": "Usamos o Google Analytics para coletar estatísticas de visitas que nos ajudam a melhorar este site. Você permite?",
+   "msg": "Usamos o Google Analytics para melhorar o site.",
    "yes": "Aceitar",
    "no": "Recusar",
    "prefs": "Preferências de cookies"
@@ -2107,7 +2107,7 @@
   },
   "soon": "Bientôt",
   "consent": {
-   "msg": "Nous utilisons Google Analytics pour mesurer les visites et améliorer ce site. L’acceptez-vous ?",
+   "msg": "Nous utilisons Google Analytics pour améliorer le site.",
    "yes": "Accepter",
    "no": "Refuser",
    "prefs": "Préférences cookies"
@@ -2374,7 +2374,7 @@
   },
   "soon": "Скоро",
   "consent": {
-   "msg": "Мы используем Google Analytics, чтобы собирать статистику посещений и улучшать сайт. Разрешаете?",
+   "msg": "Мы используем Google Analytics, чтобы улучшать сайт.",
    "yes": "Принять",
    "no": "Отклонить",
    "prefs": "Настройки cookie"
@@ -2641,7 +2641,7 @@
   },
   "soon": "Demnächst",
   "consent": {
-   "msg": "Wir nutzen Google Analytics, um Besuchsstatistiken zur Verbesserung dieser Seite zu erfassen. Erlaubst du das?",
+   "msg": "Wir nutzen Google Analytics, um die Seite zu verbessern.",
    "yes": "Akzeptieren",
    "no": "Ablehnen",
    "prefs": "Cookie-Einstellungen"
@@ -2908,7 +2908,7 @@
   },
   "soon": "近日公開",
   "consent": {
-   "msg": "サイト改善のため、Google Analytics で訪問統計を収集しています。許可しますか？",
+   "msg": "サイト改善のため Google Analytics を使用しています。",
    "yes": "許可する",
    "no": "拒否する",
    "prefs": "Cookie 設定"
