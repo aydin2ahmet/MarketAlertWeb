@@ -9,9 +9,13 @@ export default defineConfig({
   build: { format: 'directory' },
   integrations: [
     sitemap({
+      filter: page => new URL(page).pathname !== '/legal/',
       i18n: {
-        defaultLocale: 'en',
-        locales: Object.fromEntries(LOCALES.map(l => [l.code, l.hreflang])),
+        defaultLocale: 'x-default',
+        locales: {
+          'x-default': 'x-default',
+          ...Object.fromEntries(LOCALES.map(l => [l.code, l.hreflang])),
+        },
       },
     }),
   ],
