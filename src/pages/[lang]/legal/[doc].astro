@@ -1,6 +1,6 @@
 ---
 import LegalPage from '../../../components/LegalPage.astro';
 import { LOCALES } from '../../../config';
-export const getStaticPaths = () => LOCALES.flatMap(l => (['privacy', 'terms'] as const).map(doc => ({ params: { lang: l.code, doc } })));
+export const getStaticPaths = () => LOCALES.flatMap(l => (['privacy', 'terms', 'delete-account'] as const).map(doc => ({ params: { lang: l.code, doc } })));
 ---
-<LegalPage code={Astro.params.lang!} doc={Astro.params.doc as 'privacy' | 'terms'} />
+<LegalPage code={Astro.params.lang!} doc={Astro.params.doc as 'privacy' | 'terms' | 'delete-account'} />

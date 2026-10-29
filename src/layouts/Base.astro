@@ -30,6 +30,21 @@ const cs = ((content as any)[lang.toLowerCase()] ?? (content as any).en).consent
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {GA_ID && (
+      <script is:inline define:vars={{ GA_ID, PAGE_LANG: lang }}>
+        // Google etiketi (gtag.js) izin moduyla: ziyaretçi kabul edene kadar çerez yazılmaz, reklam izinleri hep kapalı.
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        var saved = null;
+        try { saved = localStorage.getItem('consent-analytics'); } catch (e) {}
+        window.gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: saved === 'granted' ? 'granted' : 'denied' });
+        window.gtag('js', new Date());
+        window.gtag('config', GA_ID, { page_language: PAGE_LANG });
+        // Sayfa içinden olay göndermek için.
+        window.maTrack = function (name, params) { window.gtag('event', name, Object.assign({ page_language: PAGE_LANG }, params || {})); };
+      </script>
+    )}
+    {GA_ID && <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>}
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -70,44 +85,27 @@ const cs = ((content as any)[lang.toLowerCase()] ?? (content as any).en).consent
       </div>
     )}
     {GA_ID && (
-      <script is:inline define:vars={{ GA_ID, PAGE_LANG: lang }}>
-        // Google Analytics yalnızca ziyaretçi izin verirse yüklenir (KVKK/GDPR). Tercih bu tarayıcıda saklanır.
+      <script is:inline define:vars={{ GA_ID }}>
+        // Çerez bandı: tercih bu tarayıcıda saklanır ve Google izin moduna iletilir.
         (function () {
           var KEY = 'consent-analytics';
           var box = document.getElementById('consent');
-          var loaded = false;
-          window.dataLayer = window.dataLayer || [];
-          function gtag() { window.dataLayer.push(arguments); }
-          function load() {
-            if (loaded) return;
-            loaded = true;
-            var s = document.createElement('script');
-            s.async = true;
-            s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-            document.head.appendChild(s);
-            gtag('js', new Date());
-            gtag('config', GA_ID, { anonymize_ip: true, page_language: PAGE_LANG });
-          }
           var choice = null;
           try { choice = localStorage.getItem(KEY); } catch (e) {}
-          if (choice === 'granted') load();
-          else if (choice !== 'denied') box.hidden = false;
+          if (choice !== 'granted' && choice !== 'denied') box.hidden = false;
           document.addEventListener('click', function (e) {
             var c = e.target.closest('[data-consent]');
             if (c) {
               var v = c.getAttribute('data-consent');
               try { localStorage.setItem(KEY, v); } catch (err) {}
               box.hidden = true;
-              if (v === 'granted') load();
-              else if (loaded) location.reload();
+              window.gtag('consent', 'update', { analytics_storage: v });
               return;
             }
             if (e.target.closest('[data-consent-open]')) { box.hidden = false; return; }
             var t = e.target.closest('[data-ev]');
             if (t) window.maTrack(t.getAttribute('data-ev'), { store: t.getAttribute('data-store') || undefined, to_lang: t.getAttribute('data-to') || undefined });
           });
-          // Sayfa içinden olay göndermek için: izin yoksa sessizce düşer.
-          window.maTrack = function (name, params) { if (loaded) gtag('event', name, Object.assign({ page_language: PAGE_LANG }, params || {})); };
         })();
       </script>
     )}

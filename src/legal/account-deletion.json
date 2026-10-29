@@ -1,0 +1,233 @@
+{
+ "tr": {
+  "title": "Hesabı sil",
+  "intro": "MarketAlert hesabını ve ona bağlı tüm verileri uygulamanın içinden istediğin zaman silebilirsin.",
+  "stepsH": "Uygulamadan silme",
+  "steps": [
+   "MarketAlert uygulamasını aç ve alttaki Ayarlar sekmesine gir.",
+   "Profil satırına dokun (misafir hesapta “Misafir hesap”).",
+   "En alttaki “Hesabı sil” bölümünde “Hesabımı sil” butonuna dokun.",
+   "Kalıcı hesapta parolanı, misafir hesapta SİL kelimesini yaz ve “Hesabımı kalıcı olarak sil” butonuna dokun."
+  ],
+  "whatH": "Neler silinir",
+  "what": [
+   "Hesabın, tüm alarmların, bildirim kanalların ve destek taleplerin kalıcı olarak silinir. Bu işlem geri alınamaz.",
+   "Tüm alarmların kapanır ve silinir.",
+   "Telegram, Webhook ve push bağlantıların kaldırılır.",
+   "Destek taleplerin ve bildirim geçmişin silinir.",
+   "Yasal saklama yükümlülüğü olan kayıtlar dışında verilerin silinir. Hesabı silmek App Store veya Google Play aboneliğini iptal etmez."
+  ],
+  "noAppH": "Uygulamaya erişemiyorsan",
+  "noApp": "Uygulamayı sildiysen veya giriş yapamıyorsan, hesabına kayıtlı e-posta adresinden {email} adresine “Hesap silme talebi” konulu bir e-posta gönder ve kullanıcı adını yaz. Talebini en geç 30 gün içinde tamamlar, sonucu e-postayla bildiririz."
+ },
+ "en": {
+  "title": "Delete account",
+  "intro": "You can delete your MarketAlert account and all data linked to it from inside the app at any time.",
+  "stepsH": "Delete in the app",
+  "steps": [
+   "Open the MarketAlert app and go to the Settings tab at the bottom.",
+   "Tap Profile (on a guest account, “Guest account”).",
+   "In the “Delete account” section at the bottom, tap “Delete my account”.",
+   "Enter your password on a permanent account, or type DELETE on a guest account, then tap “Permanently delete my account”."
+  ],
+  "whatH": "What is deleted",
+  "what": [
+   "Your account, all alerts, notification channels and support requests are permanently deleted. This can't be undone.",
+   "All your alerts are turned off and deleted.",
+   "Your Telegram, webhook and push connections are removed.",
+   "Your support requests and notification history are deleted.",
+   "Your data is deleted except records we are legally required to keep. Deleting your account doesn't cancel an App Store or Google Play subscription."
+  ],
+  "noAppH": "If you can’t access the app",
+  "noApp": "If you have removed the app or can’t sign in, email {email} from the address registered to your account with the subject “Account deletion request” and include your username. We complete requests within 30 days and confirm by email."
+ },
+ "zh": {
+  "title": "删除账户",
+  "intro": "你可以随时在应用内删除你的 MarketAlert 账户及其关联的全部数据。",
+  "stepsH": "在应用内删除",
+  "steps": [
+   "打开 MarketAlert 应用，进入底部的“设置”标签。",
+   "点击“个人资料”（访客账户为“访客账户”）。",
+   "在底部的“删除账户”部分点击“删除我的账户”。",
+   "永久账户请输入密码，访客账户请输入“删除”，然后点击“永久删除我的账户”。"
+  ],
+  "whatH": "将删除的内容",
+  "what": [
+   "你的账户、所有提醒、通知渠道和支持请求都将被永久删除，且无法恢复。",
+   "你的所有提醒都将被关闭并删除。",
+   "你的 Telegram、Webhook 和推送连接将被移除。",
+   "你的支持请求和通知记录将被删除。",
+   "除法律要求我们保留的记录外，你的数据都将被删除。删除账户不会取消 App Store 或 Google Play 订阅。"
+  ],
+  "noAppH": "如果无法使用应用",
+  "noApp": "如果你已卸载应用或无法登录，请用账户注册邮箱向 {email} 发送主题为“账户删除请求”的邮件，并注明你的用户名。我们会在 30 天内完成处理并通过邮件告知结果。"
+ },
+ "es": {
+  "title": "Eliminar cuenta",
+  "intro": "Puedes eliminar tu cuenta de MarketAlert y todos los datos vinculados desde la app en cualquier momento.",
+  "stepsH": "Eliminar desde la app",
+  "steps": [
+   "Abre la app MarketAlert y entra en la pestaña Ajustes de la parte inferior.",
+   "Toca Perfil (en una cuenta de invitado, «Cuenta de invitado»).",
+   "En la sección «Eliminar cuenta» del final, toca «Eliminar mi cuenta».",
+   "Introduce tu contraseña en una cuenta permanente o escribe ELIMINAR en una cuenta de invitado, y toca «Eliminar mi cuenta para siempre»."
+  ],
+  "whatH": "Qué se elimina",
+  "what": [
+   "Tu cuenta, todas tus alertas, canales de notificación y solicitudes de soporte se eliminarán para siempre. Esta acción no se puede deshacer.",
+   "Todas tus alertas se desactivarán y se eliminarán.",
+   "Se eliminarán tus conexiones de Telegram, webhook y push.",
+   "Se eliminarán tus solicitudes de soporte y tu historial de notificaciones.",
+   "Tus datos se eliminarán, salvo los registros que la ley nos obliga a conservar. Eliminar tu cuenta no cancela una suscripción de App Store o Google Play."
+  ],
+  "noAppH": "Si no puedes acceder a la app",
+  "noApp": "Si has borrado la app o no puedes iniciar sesión, envía un correo a {email} desde la dirección registrada en tu cuenta con el asunto «Solicitud de eliminación de cuenta» e indica tu nombre de usuario. Completamos la solicitud en un plazo de 30 días y te lo confirmamos por correo."
+ },
+ "hi": {
+  "title": "अकाउंट डिलीट करें",
+  "intro": "आप ऐप के अंदर से कभी भी अपना MarketAlert अकाउंट और उससे जुड़ा सारा डेटा डिलीट कर सकते हैं।",
+  "stepsH": "ऐप से डिलीट करें",
+  "steps": [
+   "MarketAlert ऐप खोलें और नीचे सेटिंग टैब पर जाएँ।",
+   "प्रोफ़ाइल पर टैप करें (गेस्ट अकाउंट में “गेस्ट अकाउंट”)।",
+   "सबसे नीचे “अकाउंट डिलीट करें” भाग में “मेरा अकाउंट डिलीट करें” पर टैप करें।",
+   "स्थायी अकाउंट में अपना पासवर्ड डालें, गेस्ट अकाउंट में हटाएँ लिखें, फिर “मेरा अकाउंट हमेशा के लिए डिलीट करें” पर टैप करें।"
+  ],
+  "whatH": "क्या डिलीट होता है",
+  "what": [
+   "आपका अकाउंट, सभी अलर्ट, नोटिफ़िकेशन चैनल और सपोर्ट अनुरोध हमेशा के लिए डिलीट हो जाएँगे। इसे वापस नहीं किया जा सकता।",
+   "आपके सभी अलर्ट बंद करके डिलीट कर दिए जाएँगे।",
+   "आपके Telegram, Webhook और पुश कनेक्शन हटा दिए जाएँगे।",
+   "आपके सपोर्ट अनुरोध और नोटिफ़िकेशन हिस्ट्री डिलीट कर दिए जाएँगे।",
+   "कानूनन जिन रिकॉर्ड को हमें रखना ज़रूरी है, उनके अलावा आपका सारा डेटा डिलीट कर दिया जाएगा। अकाउंट डिलीट करने से App Store या Google Play सब्सक्रिप्शन रद्द नहीं होता।"
+  ],
+  "noAppH": "अगर आप ऐप तक नहीं पहुँच सकते",
+  "noApp": "अगर आपने ऐप हटा दिया है या लॉग इन नहीं कर पा रहे हैं, तो अपने अकाउंट के रजिस्टर्ड ईमेल से {email} पर “अकाउंट डिलीट करने का अनुरोध” विषय के साथ ईमेल भेजें और अपना यूज़रनेम लिखें। हम 30 दिनों के भीतर अनुरोध पूरा करके ईमेल से पुष्टि करते हैं।"
+ },
+ "ar": {
+  "title": "حذف الحساب",
+  "intro": "يمكنك حذف حسابك في MarketAlert وجميع البيانات المرتبطة به من داخل التطبيق في أي وقت.",
+  "stepsH": "الحذف من التطبيق",
+  "steps": [
+   "افتح تطبيق MarketAlert وانتقل إلى علامة التبويب «الإعدادات» في الأسفل.",
+   "اضغط على «الملف الشخصي» (في حساب الضيف: «حساب ضيف»).",
+   "في قسم «حذف الحساب» في الأسفل، اضغط على «حذف حسابي».",
+   "أدخل كلمة المرور في الحساب الدائم، أو اكتب حذف في حساب الضيف، ثم اضغط على «حذف حسابي نهائيًا»."
+  ],
+  "whatH": "ما الذي يُحذف",
+  "what": [
+   "سيتم حذف حسابك وجميع التنبيهات وقنوات الإشعارات وطلبات الدعم نهائيًا. لا يمكن التراجع عن ذلك.",
+   "سيتم إيقاف جميع تنبيهاتك وحذفها.",
+   "ستتم إزالة اتصالات Telegram والـ Webhook والإشعارات الفورية.",
+   "سيتم حذف طلبات الدعم وسجل الإشعارات الخاص بك.",
+   "سيتم حذف بياناتك باستثناء السجلات التي يُلزمنا القانون بالاحتفاظ بها. حذف حسابك لا يلغي أي اشتراك في App Store أو Google Play."
+  ],
+  "noAppH": "إذا لم تتمكن من الوصول إلى التطبيق",
+  "noApp": "إذا حذفت التطبيق أو لم تتمكن من تسجيل الدخول، أرسل رسالة إلى {email} من البريد المسجل في حسابك بعنوان «طلب حذف الحساب» واذكر اسم المستخدم. ننفذ الطلب خلال 30 يومًا ونؤكد ذلك عبر البريد الإلكتروني."
+ },
+ "pt-br": {
+  "title": "Excluir conta",
+  "intro": "Você pode excluir sua conta MarketAlert e todos os dados vinculados a ela pelo próprio app a qualquer momento.",
+  "stepsH": "Excluir pelo app",
+  "steps": [
+   "Abra o app MarketAlert e entre na aba Ajustes, na parte de baixo.",
+   "Toque em Perfil (em conta de convidado, “Conta de convidado”).",
+   "Na seção “Excluir conta”, no final, toque em “Excluir minha conta”.",
+   "Digite sua senha em uma conta permanente ou EXCLUIR em uma conta de convidado e toque em “Excluir minha conta permanentemente”."
+  ],
+  "whatH": "O que é excluído",
+  "what": [
+   "Sua conta, todos os alertas, canais de notificação e solicitações de suporte serão excluídos permanentemente. Isso não pode ser desfeito.",
+   "Todos os seus alertas serão desativados e excluídos.",
+   "Suas conexões de Telegram, webhook e push serão removidas.",
+   "Suas solicitações de suporte e seu histórico de notificações serão excluídos.",
+   "Seus dados serão excluídos, exceto os registros que somos legalmente obrigados a manter. Excluir sua conta não cancela assinaturas da App Store ou do Google Play."
+  ],
+  "noAppH": "Se você não consegue acessar o app",
+  "noApp": "Se você removeu o app ou não consegue entrar, envie um e-mail para {email} a partir do endereço cadastrado na sua conta, com o assunto “Solicitação de exclusão de conta”, informando seu nome de usuário. Concluímos o pedido em até 30 dias e confirmamos por e-mail."
+ },
+ "fr": {
+  "title": "Supprimer le compte",
+  "intro": "Tu peux supprimer ton compte MarketAlert et toutes les données associées depuis l’application à tout moment.",
+  "stepsH": "Supprimer depuis l’application",
+  "steps": [
+   "Ouvre l’application MarketAlert et va dans l’onglet Réglages en bas.",
+   "Touche Profil (pour un compte invité, « Compte invité »).",
+   "Dans la section « Supprimer le compte » tout en bas, touche « Supprimer mon compte ».",
+   "Saisis ton mot de passe pour un compte permanent, ou SUPPRIMER pour un compte invité, puis touche « Supprimer définitivement mon compte »."
+  ],
+  "whatH": "Ce qui est supprimé",
+  "what": [
+   "Votre compte, toutes vos alertes, vos canaux de notification et vos demandes d’assistance sont définitivement supprimés. Cette action est irréversible.",
+   "Toutes vos alertes sont désactivées et supprimées.",
+   "Vos connexions Telegram, webhook et push sont supprimées.",
+   "Vos demandes d’assistance et votre historique de notifications sont supprimés.",
+   "Vos données sont supprimées, à l’exception de celles que nous sommes légalement tenus de conserver. La suppression de votre compte n’annule pas un abonnement App Store ou Google Play."
+  ],
+  "noAppH": "Si tu n’as plus accès à l’application",
+  "noApp": "Si tu as supprimé l’application ou ne peux pas te connecter, écris à {email} depuis l’adresse enregistrée sur ton compte avec l’objet « Demande de suppression de compte » en indiquant ton nom d’utilisateur. Nous traitons la demande sous 30 jours et te le confirmons par e-mail."
+ },
+ "ru": {
+  "title": "Удаление аккаунта",
+  "intro": "Вы можете в любой момент удалить аккаунт MarketAlert и все связанные с ним данные прямо в приложении.",
+  "stepsH": "Удаление в приложении",
+  "steps": [
+   "Откройте приложение MarketAlert и перейдите на вкладку «Настройки» внизу.",
+   "Нажмите «Профиль» (для гостевого аккаунта — «Гостевой аккаунт»).",
+   "В разделе «Удаление аккаунта» внизу нажмите «Удалить мой аккаунт».",
+   "Для постоянного аккаунта введите пароль, для гостевого — слово УДАЛИТЬ, затем нажмите «Удалить аккаунт навсегда»."
+  ],
+  "whatH": "Что удаляется",
+  "what": [
+   "Ваш аккаунт, все оповещения, каналы уведомлений и обращения в поддержку будут удалены навсегда. Это действие нельзя отменить.",
+   "Все ваши оповещения будут отключены и удалены.",
+   "Подключения Telegram, вебхука и push будут удалены.",
+   "Ваши обращения в поддержку и история уведомлений будут удалены.",
+   "Ваши данные будут удалены, кроме записей, которые мы обязаны хранить по закону. Удаление аккаунта не отменяет подписку в App Store или Google Play."
+  ],
+  "noAppH": "Если у вас нет доступа к приложению",
+  "noApp": "Если вы удалили приложение или не можете войти, напишите на {email} с адреса, указанного в аккаунте, с темой «Запрос на удаление аккаунта» и укажите имя пользователя. Мы выполним запрос в течение 30 дней и подтвердим это по почте."
+ },
+ "de": {
+  "title": "Konto löschen",
+  "intro": "Du kannst dein MarketAlert-Konto und alle damit verbundenen Daten jederzeit in der App löschen.",
+  "stepsH": "In der App löschen",
+  "steps": [
+   "Öffne die MarketAlert-App und gehe unten zum Tab Einstellungen.",
+   "Tippe auf Profil (bei einem Gastkonto auf „Gastkonto“).",
+   "Tippe ganz unten im Bereich „Konto löschen“ auf „Mein Konto löschen“.",
+   "Gib bei einem dauerhaften Konto dein Passwort ein, bei einem Gastkonto LÖSCHEN, und tippe auf „Mein Konto dauerhaft löschen“."
+  ],
+  "whatH": "Was gelöscht wird",
+  "what": [
+   "Dein Konto, alle Alarme, Benachrichtigungskanäle und Support-Anfragen werden dauerhaft gelöscht. Das kann nicht rückgängig gemacht werden.",
+   "Alle deine Alarme werden deaktiviert und gelöscht.",
+   "Deine Telegram-, Webhook- und Push-Verbindungen werden entfernt.",
+   "Deine Support-Anfragen und dein Benachrichtigungsverlauf werden gelöscht.",
+   "Deine Daten werden gelöscht, außer Aufzeichnungen, die wir gesetzlich aufbewahren müssen. Das Löschen deines Kontos kündigt kein Abo im App Store oder bei Google Play."
+  ],
+  "noAppH": "Wenn du keinen Zugriff auf die App hast",
+  "noApp": "Wenn du die App entfernt hast oder dich nicht anmelden kannst, schreibe von der in deinem Konto hinterlegten Adresse eine E-Mail an {email} mit dem Betreff „Antrag auf Kontolöschung“ und nenne deinen Benutzernamen. Wir erledigen den Antrag innerhalb von 30 Tagen und bestätigen ihn per E-Mail."
+ },
+ "ja": {
+  "title": "アカウントを削除",
+  "intro": "MarketAlert のアカウントと関連するすべてのデータは、アプリ内からいつでも削除できます。",
+  "stepsH": "アプリから削除する",
+  "steps": [
+   "MarketAlert アプリを開き、下部の「設定」タブを開きます。",
+   "「プロフィール」をタップします（ゲストアカウントの場合は「ゲストアカウント」）。",
+   "一番下の「アカウントを削除」セクションで「アカウントを削除する」をタップします。",
+   "通常のアカウントではパスワードを、ゲストアカウントでは「削除」を入力し、「アカウントを完全に削除」をタップします。"
+  ],
+  "whatH": "削除される内容",
+  "what": [
+   "アカウント、すべてのアラート、通知チャネル、サポートリクエストが完全に削除されます。この操作は取り消せません。",
+   "すべてのアラートがオフになり、削除されます。",
+   "Telegram、Webhook、プッシュ通知の連携が解除されます。",
+   "サポートリクエストと通知履歴が削除されます。",
+   "法律で保管が義務付けられている記録を除き、データは削除されます。アカウントを削除しても、App StoreやGoogle Playのサブスクリプションは解約されません。"
+  ],
+  "noAppH": "アプリを利用できない場合",
+  "noApp": "アプリを削除した、またはログインできない場合は、アカウントに登録したメールアドレスから {email} 宛てに件名「アカウント削除のリクエスト」でメールを送り、ユーザー名を記載してください。30日以内に対応し、メールでお知らせします。"
+ }
+}

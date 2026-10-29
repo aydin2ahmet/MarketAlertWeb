@@ -32,3 +32,6 @@ export const GA_ID = 'G-8QXDNRJWRG';
 
 /** Yasal belgeler bu sitede: /xx/legal/privacy/ ve /xx/legal/terms/. */
 export const legalUrl = (doc: 'privacy' | 'terms', code: string) => `/${code}/legal/${doc}/`;
+
+/** Hesap silme talepleri için e-posta (Google Play zorunluluğu). Boşken "uygulamaya erişemiyorsan" bölümü gizlenir. */
+export const SUPPORT_EMAIL = '';

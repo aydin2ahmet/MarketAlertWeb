@@ -68,7 +68,7 @@
     },
     {
      "heading": "Web sitesi ve çerezler",
-     "body": "www.marketalertapp.com tanıtım sitesinde Google Analytics yalnızca izin verirsen çalışır. Analytics ziyaret edilen sayfaları, tıklanan butonları, yaklaşık konumu (ülke ve şehir), cihaz ve tarayıcı türünü toplar ve bunun için tarayıcına çerez yerleştirir. Bu verileri yalnızca siteyi geliştirmek için kullanırız. İznini sitenin altındaki “Çerez tercihleri” bağlantısından istediğin zaman geri alabilirsin. Uygulamanın kendisi Google Analytics kullanmaz."
+     "body": "www.marketalertapp.com tanıtım sitesi Google Analytics kullanır. Analytics ziyaret edilen sayfaları, tıklanan butonları, yaklaşık konumu (ülke ve şehir), cihaz ve tarayıcı türünü toplar. Analytics çerezleri yalnızca izin verirsen tarayıcına yazılır; izin vermezsen yalnızca çerez kullanmayan ve seni tanımlamayan sayım sinyalleri gönderilir. Reklam amaçlı izinler her zaman kapalıdır. Bu verileri yalnızca siteyi geliştirmek için kullanırız. Tercihini sitenin altındaki “Çerez tercihleri” bağlantısından istediğin zaman değiştirebilirsin. Uygulamanın kendisi Google Analytics kullanmaz."
     },
     {
      "heading": "İletişim ve değişiklikler",
@@ -146,7 +146,7 @@
     },
     {
      "heading": "Website and cookies",
-     "body": "On the www.marketalertapp.com website, Google Analytics runs only if you allow it. It collects the pages visited, buttons clicked, approximate location (country and city), and device and browser type, and stores cookies in your browser for this. We use this data only to improve the website. You can withdraw consent at any time via the “Cookie settings” link at the bottom of the site. The app itself does not use Google Analytics."
+     "body": "The www.marketalertapp.com website uses Google Analytics. It collects the pages visited, buttons clicked, approximate location (country and city), and device and browser type. Analytics cookies are stored in your browser only if you allow them; otherwise only cookieless signals that do not identify you are sent. Advertising permissions are always off. We use this data only to improve the website. You can change your choice at any time via the “Cookie settings” link at the bottom of the site. The app itself does not use Google Analytics."
     },
     {
      "heading": "Contact and changes",
@@ -224,7 +224,7 @@
     },
     {
      "heading": "网站与 Cookie",
-     "body": "在 www.marketalertapp.com 网站上，只有在你同意后才会运行 Google Analytics。它会收集访问的页面、点击的按钮、大致位置（国家和城市）以及设备和浏览器类型，并为此在你的浏览器中存储 Cookie。我们仅将这些数据用于改进网站。你可以随时通过网站底部的“Cookie 设置”链接撤回同意。应用本身不使用 Google Analytics。"
+     "body": "www.marketalertapp.com 网站使用 Google Analytics，收集访问的页面、点击的按钮、大致位置（国家和城市）以及设备和浏览器类型。只有在你同意后，Analytics Cookie 才会存储在你的浏览器中；否则只会发送不使用 Cookie、无法识别你身份的统计信号。广告相关权限始终关闭。我们仅将这些数据用于改进网站。你可以随时通过网站底部的“Cookie 设置”链接更改选择。应用本身不使用 Google Analytics。"
     },
     {
      "heading": "联系方式与政策变更",
@@ -302,7 +302,7 @@
     },
     {
      "heading": "Sitio web y cookies",
-     "body": "En el sitio www.marketalertapp.com, Google Analytics solo funciona si lo permites. Recoge las páginas visitadas, los botones pulsados, la ubicación aproximada (país y ciudad) y el tipo de dispositivo y navegador, y para ello guarda cookies en tu navegador. Usamos estos datos solo para mejorar el sitio. Puedes retirar tu consentimiento en cualquier momento desde el enlace «Preferencias de cookies» al pie del sitio. La app en sí no usa Google Analytics."
+     "body": "El sitio www.marketalertapp.com usa Google Analytics, que recoge las páginas visitadas, los botones pulsados, la ubicación aproximada (país y ciudad) y el tipo de dispositivo y navegador. Las cookies de Analytics solo se guardan en tu navegador si lo permites; si no, solo se envían señales sin cookies que no te identifican. Los permisos publicitarios están siempre desactivados. Usamos estos datos solo para mejorar el sitio. Puedes cambiar tu elección en cualquier momento desde el enlace «Preferencias de cookies» al pie del sitio. La app en sí no usa Google Analytics."
     },
     {
      "heading": "Contacto y cambios",
@@ -380,7 +380,7 @@
     },
     {
      "heading": "वेबसाइट और कुकीज़",
-     "body": "www.marketalertapp.com वेबसाइट पर Google Analytics केवल आपकी अनुमति से चलता है। यह देखे गए पेज, क्लिक किए गए बटन, अनुमानित स्थान (देश और शहर) तथा डिवाइस और ब्राउज़र का प्रकार एकत्र करता है और इसके लिए आपके ब्राउज़र में कुकीज़ रखता है। हम इस डेटा का उपयोग केवल वेबसाइट को बेहतर बनाने के लिए करते हैं। आप साइट के नीचे दिए “कुकी सेटिंग” लिंक से कभी भी अपनी अनुमति वापस ले सकते हैं। ऐप स्वयं Google Analytics का उपयोग नहीं करता।"
+     "body": "www.marketalertapp.com वेबसाइट Google Analytics का उपयोग करती है, जो देखे गए पेज, क्लिक किए गए बटन, अनुमानित स्थान (देश और शहर) तथा डिवाइस और ब्राउज़र का प्रकार एकत्र करता है। Analytics कुकीज़ आपके ब्राउज़र में केवल आपकी अनुमति से रखी जाती हैं; अन्यथा केवल बिना कुकी वाले, आपकी पहचान न करने वाले संकेत भेजे जाते हैं। विज्ञापन से जुड़ी अनुमतियाँ हमेशा बंद रहती हैं। हम इस डेटा का उपयोग केवल वेबसाइट को बेहतर बनाने के लिए करते हैं। आप साइट के नीचे दिए “कुकी सेटिंग” लिंक से कभी भी अपनी पसंद बदल सकते हैं। ऐप स्वयं Google Analytics का उपयोग नहीं करता।"
     },
     {
      "heading": "संपर्क और परिवर्तन",
@@ -458,7 +458,7 @@
     },
     {
      "heading": "الموقع الإلكتروني وملفات تعريف الارتباط",
-     "body": "على موقع www.marketalertapp.com لا يعمل Google Analytics إلا بموافقتك. فهو يجمع الصفحات التي تمت زيارتها والأزرار التي نُقر عليها والموقع التقريبي (الدولة والمدينة) ونوع الجهاز والمتصفح، ويحفظ لهذا الغرض ملفات تعريف الارتباط في متصفحك. نستخدم هذه البيانات فقط لتحسين الموقع. يمكنك سحب موافقتك في أي وقت من رابط «إعدادات ملفات تعريف الارتباط» أسفل الموقع. التطبيق نفسه لا يستخدم Google Analytics."
+     "body": "يستخدم موقع www.marketalertapp.com خدمة Google Analytics التي تجمع الصفحات التي تمت زيارتها والأزرار التي نُقر عليها والموقع التقريبي (الدولة والمدينة) ونوع الجهاز والمتصفح. لا تُحفظ ملفات تعريف الارتباط الخاصة بـ Analytics في متصفحك إلا بموافقتك؛ وإلا تُرسل فقط إشارات إحصائية بلا ملفات تعريف ارتباط ولا تحدد هويتك. أذونات الإعلانات معطلة دائمًا. نستخدم هذه البيانات فقط لتحسين الموقع. يمكنك تغيير اختيارك في أي وقت من رابط «إعدادات ملفات تعريف الارتباط» أسفل الموقع. التطبيق نفسه لا يستخدم Google Analytics."
     },
     {
      "heading": "التواصل والتغييرات",
@@ -536,7 +536,7 @@
     },
     {
      "heading": "Site e cookies",
-     "body": "No site www.marketalertapp.com, o Google Analytics só funciona se você permitir. Ele coleta as páginas visitadas, os botões clicados, a localização aproximada (país e cidade) e o tipo de dispositivo e navegador, e para isso grava cookies no seu navegador. Usamos esses dados apenas para melhorar o site. Você pode retirar o consentimento a qualquer momento pelo link “Preferências de cookies” no rodapé do site. O app em si não usa o Google Analytics."
+     "body": "O site www.marketalertapp.com usa o Google Analytics, que coleta as páginas visitadas, os botões clicados, a localização aproximada (país e cidade) e o tipo de dispositivo e navegador. Os cookies do Analytics só são gravados no seu navegador se você permitir; caso contrário, são enviados apenas sinais sem cookies que não identificam você. As permissões de publicidade ficam sempre desativadas. Usamos esses dados apenas para melhorar o site. Você pode mudar sua escolha a qualquer momento pelo link “Preferências de cookies” no rodapé do site. O app em si não usa o Google Analytics."
     },
     {
      "heading": "Contato e alterações",
@@ -614,7 +614,7 @@
     },
     {
      "heading": "Site web et cookies",
-     "body": "Sur le site www.marketalertapp.com, Google Analytics ne fonctionne que si tu l’acceptes. Il collecte les pages consultées, les boutons cliqués, la localisation approximative (pays et ville) ainsi que le type d’appareil et de navigateur, et enregistre pour cela des cookies dans ton navigateur. Nous utilisons ces données uniquement pour améliorer le site. Tu peux retirer ton consentement à tout moment via le lien « Préférences cookies » en bas du site. L’application elle-même n’utilise pas Google Analytics."
+     "body": "Le site www.marketalertapp.com utilise Google Analytics, qui collecte les pages consultées, les boutons cliqués, la localisation approximative (pays et ville) ainsi que le type d’appareil et de navigateur. Les cookies Analytics ne sont enregistrés dans ton navigateur que si tu l’acceptes ; sinon, seuls des signaux sans cookies qui ne t’identifient pas sont envoyés. Les autorisations publicitaires sont toujours désactivées. Nous utilisons ces données uniquement pour améliorer le site. Tu peux modifier ton choix à tout moment via le lien « Préférences cookies » en bas du site. L’application elle-même n’utilise pas Google Analytics."
     },
     {
      "heading": "Contact et modifications",
@@ -692,7 +692,7 @@
     },
     {
      "heading": "Сайт и файлы cookie",
-     "body": "На сайте www.marketalertapp.com Google Analytics работает только с вашего согласия. Он собирает просмотренные страницы, нажатые кнопки, примерное местоположение (страна и город), тип устройства и браузера и для этого сохраняет файлы cookie в вашем браузере. Мы используем эти данные только для улучшения сайта. Вы можете отозвать согласие в любой момент по ссылке «Настройки cookie» внизу сайта. Само приложение Google Analytics не использует."
+     "body": "Сайт www.marketalertapp.com использует Google Analytics, который собирает просмотренные страницы, нажатые кнопки, примерное местоположение (страна и город), тип устройства и браузера. Файлы cookie Analytics сохраняются в браузере только с вашего согласия; без него отправляются лишь сигналы без cookie, не позволяющие вас идентифицировать. Рекламные разрешения всегда выключены. Мы используем эти данные только для улучшения сайта. Изменить выбор можно в любой момент по ссылке «Настройки cookie» внизу сайта. Само приложение Google Analytics не использует."
     },
     {
      "heading": "Связь и изменения",
@@ -770,7 +770,7 @@
     },
     {
      "heading": "Website und Cookies",
-     "body": "Auf der Website www.marketalertapp.com läuft Google Analytics nur, wenn du zustimmst. Erfasst werden besuchte Seiten, angeklickte Schaltflächen, ungefährer Standort (Land und Stadt) sowie Geräte- und Browsertyp; dafür werden Cookies in deinem Browser gespeichert. Wir nutzen diese Daten nur, um die Website zu verbessern. Du kannst deine Einwilligung jederzeit über den Link „Cookie-Einstellungen“ unten auf der Seite widerrufen. Die App selbst verwendet Google Analytics nicht."
+     "body": "Die Website www.marketalertapp.com nutzt Google Analytics. Erfasst werden besuchte Seiten, angeklickte Schaltflächen, ungefährer Standort (Land und Stadt) sowie Geräte- und Browsertyp. Analytics-Cookies werden nur mit deiner Zustimmung in deinem Browser gespeichert; ohne Zustimmung werden nur cookielose Signale gesendet, die dich nicht identifizieren. Werbebezogene Berechtigungen sind immer deaktiviert. Wir nutzen diese Daten nur, um die Website zu verbessern. Du kannst deine Wahl jederzeit über den Link „Cookie-Einstellungen“ unten auf der Seite ändern. Die App selbst verwendet Google Analytics nicht."
     },
     {
      "heading": "Kontakt und Änderungen",
@@ -848,7 +848,7 @@
     },
     {
      "heading": "ウェブサイトと Cookie",
-     "body": "www.marketalertapp.com のウェブサイトでは、同意いただいた場合にのみ Google Analytics が動作します。閲覧ページ、クリックしたボタン、おおよその位置（国・都市）、端末とブラウザの種類を収集し、そのためにブラウザへ Cookie を保存します。これらのデータはサイトの改善にのみ使用します。同意はサイト下部の「Cookie 設定」リンクからいつでも取り消せます。アプリ自体は Google Analytics を使用しません。"
+     "body": "www.marketalertapp.com のウェブサイトは Google Analytics を使用し、閲覧ページ、クリックしたボタン、おおよその位置（国・都市）、端末とブラウザの種類を収集します。Analytics の Cookie は同意いただいた場合にのみブラウザに保存されます。同意がない場合は、Cookie を使わず個人を特定しない計測信号のみが送信されます。広告関連の許可は常にオフです。これらのデータはサイトの改善にのみ使用します。選択はサイト下部の「Cookie 設定」リンクからいつでも変更できます。アプリ自体は Google Analytics を使用しません。"
     },
     {
      "heading": "お問い合わせと変更",
