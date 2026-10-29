@@ -41,7 +41,7 @@ const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : 
 <header class="hd">
   <a class="logo" href={`/${code}/`}><img src="/icons/logo-96.png" alt="" width="32" height="32" /><b>MarketAlert</b></a>
   <nav aria-label="MarketAlert">
-    <a href="#features">{t.nav[0]}</a><a href="#how">{t.nav[1]}</a><a href="#plans">{t.nav[2]}</a><a href="#faq">{t.nav[3]}</a>
+    <a href="#how">{t.nav[1]}</a><a href="#features">{t.nav[0]}</a><a href="#plans">{t.nav[2]}</a><a href="#faq">{t.nav[3]}</a>
   </nav>
   <div class="hx">
     <label class="lsel"><Fragment set:html={svg('globe')} /><span class="skip">{t.ui.lang}</span>
@@ -72,6 +72,11 @@ const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : 
       <p class="sub">{t.heroSub}</p>
       <ul class="chips">{t.chips.map((c: string) => <li><Fragment set:html={svg('check')} />{c}</li>)}</ul>
     </div>
+  </section>
+
+  <section id="how" class="sec how-sec">
+    <h2 class="st"><span class="hash">#</span> {t.howTitle}</h2>
+    <ol class="how">{t.how.map((h: string[], i: number) => <li><span class="n">{i + 1}</span><div><h3>{h[0]}</h3><p>{h[1]}</p></div></li>)}</ol>
   </section>
 
   <section class="hl" aria-labelledby="hl-t">
@@ -123,11 +128,6 @@ const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : 
       <div class="hud" dir="ltr" style={`--c:var(--cat${CAT[t.f[0].k]})`}><span id="hud-n">01/{pad(n)}</span><span class="hud-key" id="hud-k">{KEY[t.f[0].k]}</span></div>
       <div class="prog">{t.f.map((f: any, i: number) => <i class={i === 0 ? 'on' : ''} data-i={i} style={`--c:var(--cat${CAT[f.k]})`}></i>)}</div>
     </div>
-  </section>
-
-  <section id="how" class="sec">
-    <h2 class="st"><span class="hash">#</span> {t.howTitle}</h2>
-    <ol class="how">{t.how.map((h: string[], i: number) => <li><span class="n">{i + 1}</span><div><h3>{h[0]}</h3><p>{h[1]}</p></div></li>)}</ol>
   </section>
 
   <section id="why" class="sec">
