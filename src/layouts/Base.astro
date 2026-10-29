@@ -16,8 +16,11 @@ interface Props {
   path: string;
   ogImage: string;
   jsonLd: object[];
+  /** Dil alternatifleri; verilmezse ana sayfanın 11 dili. */
+  alternates?: { hreflang: string; href: string }[];
 }
-const { lang, dir, title, description, path, ogImage, jsonLd } = Astro.props;
+const { lang, dir, title, description, path, ogImage, jsonLd, alternates } = Astro.props;
+const alts = alternates ?? LOCALES.map(l => ({ hreflang: l.hreflang, href: `/${l.code}/` }));
 const canonical = SITE + path;
 const ogLocale = lang.replace('-', '_');
 const cs = ((content as any)[lang.toLowerCase()] ?? (content as any).en).consent;
@@ -30,8 +33,8 @@ const cs = ((content as any)[lang.toLowerCase()] ?? (content as any).en).consent
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    {LOCALES.map(l => <link rel="alternate" hreflang={l.hreflang} href={`${SITE}/${l.code}/`} />)}
-    <link rel="alternate" hreflang="x-default" href={`${SITE}/`} />
+    {alts.map(a => <link rel="alternate" hreflang={a.hreflang} href={SITE + a.href} />)}
+    {!alternates && <link rel="alternate" hreflang="x-default" href={`${SITE}/`} />}
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAFAF6" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07090C" />

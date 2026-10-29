@@ -128,8 +128,8 @@ const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : 
   <div class="ftop">
     <a class="logo" href={`/${code}/`}><img src="/icons/logo-96.png" alt="" width="32" height="32" loading="lazy" /><b>MarketAlert</b></a>
     <nav class="legal">
-      <a href={legalUrl('privacy', appLocale)} rel="noopener">{t.legal[0]}</a>
-      <a href={legalUrl('terms', appLocale)} rel="noopener">{t.legal[1]}</a>
+      <a href={legalUrl('privacy', code)} rel="noopener">{t.legal[0]}</a>
+      <a href={legalUrl('terms', code)} rel="noopener">{t.legal[1]}</a>
       {GA_ID && <button type="button" class="lnk" data-consent-open>{t.consent.prefs}</button>}
     </nav>
   </div>

@@ -1,0 +1,860 @@
+{
+ "tr": {
+  "effectiveDateLabel": "Yürürlük tarihi: {date}",
+  "closeLabel": "Kapat",
+  "terms": {
+   "title": "Kullanım Koşulları",
+   "effectiveDate": "2026-10-24",
+   "intro": "MarketAlert uygulamasını kullanarak aşağıdaki koşulları kabul etmiş olursun. Koşulları kabul etmiyorsan uygulamayı kullanma.",
+   "sections": [
+    {
+     "heading": "Hizmetin kapsamı",
+     "body": "MarketAlert, kripto para piyasalarında belirlediğin koşullar gerçekleştiğinde sana bildirim gönderen bir alarm uygulamasıdır. Fiyat ve gösterge verileri Binance üzerinden alınır. Uygulama alım satım işlemi yapmaz, cüzdanına veya borsa hesabına erişmez."
+    },
+    {
+     "heading": "Yatırım tavsiyesi değildir",
+     "body": "Uygulamadaki hiçbir veri, alarm, grafik veya yapay zekâ yanıtı yatırım tavsiyesi, finansal danışmanlık veya alım satım önerisi değildir. Kripto varlıklar yüksek risk taşır ve yatırdığın tutarın tamamını kaybedebilirsin. Verdiğin her yatırım kararı senin sorumluluğundadır."
+    },
+    {
+     "heading": "Hesabın ve güvenliğin",
+     "body": "Hesap bilgilerinin gizliliğinden ve hesabın üzerinden yapılan işlemlerden sen sorumlusun. Parolanı kimseyle paylaşma. Hesabının izinsiz kullanıldığını düşünüyorsan parolanı değiştir ve bizimle iletişime geç. Cihaz kimliğiyle açılan misafir hesaplar yalnızca o cihaza bağlıdır; uygulamayı silersen bu hesaba ve alarmlarına erişimini kaybedersin."
+    },
+    {
+     "heading": "Alarmların ve bildirimlerin sınırları",
+     "body": "Alarmların zamanında iletileceğini garanti edemeyiz. Bildirimler; borsa verisindeki gecikmeler, ağ sorunları, işletim sistemi kısıtlamaları, Telegram veya push servis sağlayıcılarındaki aksaklıklar ya da planlı bakım nedeniyle gecikebilir veya hiç ulaşmayabilir. Uygulamayı zamana duyarlı finansal kararlarda tek bilgi kaynağı olarak kullanma."
+    },
+    {
+     "heading": "Kabul edilebilir kullanım",
+     "body": "Uygulamayı yasalara aykırı amaçlarla, başkalarının hakkını ihlal edecek şekilde veya sistemlerimize aşırı yük bindirerek kullanamazsın. Servisi tersine mühendislikle çözmeye, otomatik araçlarla izinsiz veri çekmeye veya güvenlik önlemlerini aşmaya çalışmak yasaktır."
+    },
+    {
+     "heading": "Ücretlendirme ve planlar",
+     "body": "Uygulamanın temel özellikleri ücretsizdir. Plus veya Pro aboneliği satın alırsan ödeme, indirdiğin mağaza (Apple App Store veya Google Play) üzerinden alınır ve aboneliğin iptali ile iade talepleri o mağazanın kurallarına tabidir. Plus ve Pro planlarının kapsamı zaman içinde değişebilir."
+    },
+    {
+     "heading": "Sorumluluk sınırı ve değişiklikler",
+     "body": "Uygulamayı olduğu gibi sunuyoruz; kesintisiz veya hatasız çalışacağını taahhüt etmiyoruz. Yürürlükteki yasaların izin verdiği ölçüde, uygulamanın kullanımından doğan dolaylı zararlardan sorumlu değiliz. Bu koşulları değiştirebiliriz; önemli değişiklikleri uygulama üzerinden duyururuz ve kullanıma devam etmen yeni koşulları kabul ettiğin anlamına gelir."
+    }
+   ]
+  },
+  "privacy": {
+   "title": "Gizlilik Politikası",
+   "effectiveDate": "2026-10-29",
+   "intro": "Bu politika, MarketAlert uygulamasında hangi verileri topladığımızı, neden topladığımızı ve bunlar üzerinde hangi haklara sahip olduğunu açıklar.",
+   "sections": [
+    {
+     "heading": "Topladığımız veriler",
+     "body": "Hesap oluşturduğunda kullanıcı adını ve e-posta adresini saklarız; parolan yalnızca geri döndürülemez bir özet (hash) olarak tutulur. Hesap açmadan devam edersen, uygulamanın cihazında ürettiği rastgele bir cihaz kimliğini saklarız. Ayrıca kurduğun alarmları, tetiklenme geçmişini, bildirim tercihlerini ve dil seçimini tutarız."
+    },
+    {
+     "heading": "Verileri neden kullanıyoruz",
+     "body": "Verileri yalnızca hizmeti sunmak için kullanırız: alarmlarını değerlendirmek, bildirimlerini iletmek, hesabını doğrulamak, Plus veya Pro aboneliğini yönetmek ve destek taleplerini yanıtlamak. Verilerini reklam amacıyla kullanmıyor ve üçüncü taraflara satmıyoruz."
+    },
+    {
+     "heading": "Üçüncü taraf servisler",
+     "body": "Piyasa verilerini Binance üzerinden alırız. Push bildirimleri için Google Firebase, Telegram bildirimleri için Telegram servislerini kullanırız; bu durumda bildirim içeriği ilgili servise iletilir. Yapay zekâ sohbet özelliğini kullanırsan mesajın işlenmek üzere OpenAI servislerine gönderilir. Bu sağlayıcıların kendi gizlilik politikaları geçerlidir."
+    },
+    {
+     "heading": "Saklama süresi",
+     "body": "Verilerini hesabın aktif olduğu sürece saklarız. Hesabını sildiğinde kişisel verilerin ve alarmların makul bir süre içinde silinir; yasal saklama yükümlülüğü bulunan kayıtlar bu sürenin dışındadır. Oturum tokenları süresi dolduğunda geçersiz hale gelir."
+    },
+    {
+     "heading": "Haklarının kapsamı",
+     "body": "Verilerine erişme, düzeltilmesini veya silinmesini isteme, işlenmesine itiraz etme ve verilerini taşınabilir biçimde talep etme hakların vardır. Bu haklar Türkiye’de KVKK, Avrupa Birliği’nde GDPR kapsamındadır. Talebini iletişim adresimize gönderebilirsin."
+    },
+    {
+     "heading": "Güvenlik",
+     "body": "Verilerini korumak için makul teknik ve idari önlemler alırız: parolalar özetlenerek saklanır, oturum tokenları cihazda güvenli depoda tutulur ve sunucu iletişimi şifrelenir. Hiçbir sistemin tamamen güvenli olmadığını hatırlatırız."
+    },
+    {
+     "heading": "Web sitesi ve çerezler",
+     "body": "www.marketalertapp.com tanıtım sitesinde Google Analytics yalnızca izin verirsen çalışır. Analytics ziyaret edilen sayfaları, tıklanan butonları, yaklaşık konumu (ülke ve şehir), cihaz ve tarayıcı türünü toplar ve bunun için tarayıcına çerez yerleştirir. Bu verileri yalnızca siteyi geliştirmek için kullanırız. İznini sitenin altındaki “Çerez tercihleri” bağlantısından istediğin zaman geri alabilirsin. Uygulamanın kendisi Google Analytics kullanmaz."
+    },
+    {
+     "heading": "İletişim ve değişiklikler",
+     "body": "Gizlilikle ilgili sorularını uygulama içindeki destek bölümünden iletebilirsin. Bu politikayı güncelleyebiliriz; önemli değişiklikleri uygulama üzerinden duyururuz ve yürürlük tarihini bu sayfada güncelleriz."
+    }
+   ]
+  }
+ },
+ "en": {
+  "effectiveDateLabel": "Effective date: {date}",
+  "closeLabel": "Close",
+  "terms": {
+   "title": "Terms of Use",
+   "effectiveDate": "2026-10-24",
+   "intro": "By using MarketAlert you accept the terms below. If you do not accept them, please do not use the app.",
+   "sections": [
+    {
+     "heading": "What the service does",
+     "body": "MarketAlert is an alerting app that notifies you when the conditions you define occur in crypto markets. Price and indicator data come from Binance. The app does not trade on your behalf and has no access to your wallet or exchange account."
+    },
+    {
+     "heading": "Not investment advice",
+     "body": "No data, alert, chart or AI answer in this app is investment advice, financial guidance or a recommendation to trade. Crypto assets carry high risk and you may lose the entire amount you invest. Every investment decision you make is your own responsibility."
+    },
+    {
+     "heading": "Your account and security",
+     "body": "You are responsible for keeping your credentials confidential and for activity under your account. Never share your password. If you believe your account has been used without permission, change your password and contact us. Guest accounts created from a device identifier are tied to that device only; deleting the app means losing access to that account and its alerts."
+    },
+    {
+     "heading": "Limits of alerts and notifications",
+     "body": "We cannot guarantee that alerts will be delivered on time. Notifications may be delayed or may not arrive at all because of exchange data delays, network issues, operating system restrictions, problems at Telegram or push providers, or scheduled maintenance. Do not rely on the app as your only source for time-sensitive financial decisions."
+    },
+    {
+     "heading": "Acceptable use",
+     "body": "You may not use the app for unlawful purposes, in ways that infringe the rights of others, or in ways that place excessive load on our systems. Reverse engineering the service, scraping data with automated tools without permission, or attempting to bypass security measures is prohibited."
+    },
+    {
+     "heading": "Pricing and plans",
+     "body": "The core features are free. If you buy a Plus or Pro subscription, payment is taken through the store you installed from (Apple App Store or Google Play), and cancellation and refund requests follow that store’s rules. The scope of the Plus and Pro plans may change over time."
+    },
+    {
+     "heading": "Liability and changes",
+     "body": "The app is provided as is; we do not promise uninterrupted or error-free operation. To the extent permitted by applicable law, we are not liable for indirect damages arising from use of the app. We may change these terms; we will announce significant changes in the app, and continued use means you accept the updated terms."
+    }
+   ]
+  },
+  "privacy": {
+   "title": "Privacy Policy",
+   "effectiveDate": "2026-10-29",
+   "intro": "This policy explains what data MarketAlert collects, why we collect it, and what rights you have over it.",
+   "sections": [
+    {
+     "heading": "Data we collect",
+     "body": "When you create an account we store your username and email address; your password is kept only as an irreversible hash. If you continue without an account, we store a random device identifier generated by the app on your device. We also keep the alerts you create, their trigger history, your notification preferences and your language choice."
+    },
+    {
+     "heading": "Why we use it",
+     "body": "We use your data only to provide the service: to evaluate your alerts, deliver your notifications, authenticate your account, manage your Plus or Pro subscription and answer support requests. We do not use your data for advertising and we do not sell it to third parties."
+    },
+    {
+     "heading": "Third party services",
+     "body": "Market data comes from Binance. We use Google Firebase for push notifications and Telegram services for Telegram notifications, which means notification content is passed to those services. If you use the AI chat feature, your message is sent to OpenAI services for processing. Those providers’ own privacy policies apply."
+    },
+    {
+     "heading": "How long we keep it",
+     "body": "We keep your data while your account is active. When you delete your account, your personal data and alerts are deleted within a reasonable period, except for records we are legally required to retain. Session tokens become invalid once they expire."
+    },
+    {
+     "heading": "Your rights",
+     "body": "You have the right to access your data, to ask for it to be corrected or deleted, to object to its processing and to request it in a portable format. These rights are covered by KVKK in Türkiye and by GDPR in the European Union. You can send your request to our contact address."
+    },
+    {
+     "heading": "Security",
+     "body": "We take reasonable technical and organisational measures to protect your data: passwords are stored as hashes, session tokens are kept in secure storage on your device, and communication with our servers is encrypted. Please note that no system is completely secure."
+    },
+    {
+     "heading": "Website and cookies",
+     "body": "On the www.marketalertapp.com website, Google Analytics runs only if you allow it. It collects the pages visited, buttons clicked, approximate location (country and city), and device and browser type, and stores cookies in your browser for this. We use this data only to improve the website. You can withdraw consent at any time via the “Cookie settings” link at the bottom of the site. The app itself does not use Google Analytics."
+    },
+    {
+     "heading": "Contact and changes",
+     "body": "You can send privacy questions through the support section in the app. We may update this policy; we will announce significant changes in the app and update the effective date on this page."
+    }
+   ]
+  }
+ },
+ "zh": {
+  "effectiveDateLabel": "生效日期：{date}",
+  "closeLabel": "关闭",
+  "terms": {
+   "title": "使用条款",
+   "effectiveDate": "2026-10-24",
+   "intro": "使用 MarketAlert 即表示你接受以下条款。如不接受，请勿使用本应用。",
+   "sections": [
+    {
+     "heading": "服务范围",
+     "body": "MarketAlert 是一款提醒应用，当你设定的条件在加密货币市场出现时向你发送通知。价格与指标数据来自 Binance。本应用不代你交易，也无法访问你的钱包或交易所账户。"
+    },
+    {
+     "heading": "不构成投资建议",
+     "body": "应用中的任何数据、提醒、图表或 AI 回答都不构成投资建议、财务咨询或交易推荐。加密资产风险很高，你可能损失全部投入资金。你做出的每一项投资决定均由你自行负责。"
+    },
+    {
+     "heading": "账号与安全",
+     "body": "你有责任保管账号信息并对账号下的活动负责。请勿分享密码。如怀疑账号被他人使用，请立即修改密码并联系我们。以设备标识创建的访客账号仅绑定该设备；卸载应用将失去该账号及其提醒。"
+    },
+    {
+     "heading": "提醒与通知的限制",
+     "body": "我们无法保证提醒一定准时送达。由于交易所数据延迟、网络问题、系统限制、Telegram 或推送服务故障以及计划维护，通知可能延迟或无法送达。请勿将本应用作为时间敏感型财务决策的唯一信息来源。"
+    },
+    {
+     "heading": "可接受的使用",
+     "body": "不得将本应用用于违法目的、侵犯他人权利，或对我们的系统造成过度负载。禁止对服务进行逆向工程、未经许可用自动化工具抓取数据或试图绕过安全措施。"
+    },
+    {
+     "heading": "收费与方案",
+     "body": "核心功能免费。购买 Plus 或 Pro 订阅时，付款通过你安装应用的商店（Apple App Store 或 Google Play）收取，取消与退款遵循该商店规则。Plus 和 Pro 方案的范围可能随时间变化。"
+    },
+    {
+     "heading": "责任限制与条款变更",
+     "body": "本应用按现状提供，我们不保证服务不中断或无错误。在适用法律允许的范围内，我们不对因使用本应用而产生的间接损失负责。我们可能修改本条款；重要变更会在应用内公告，继续使用即表示你接受更新后的条款。"
+    }
+   ]
+  },
+  "privacy": {
+   "title": "隐私政策",
+   "effectiveDate": "2026-10-29",
+   "intro": "本政策说明 MarketAlert 收集哪些数据、为何收集，以及你对这些数据享有的权利。",
+   "sections": [
+    {
+     "heading": "我们收集的数据",
+     "body": "创建账号时我们保存你的用户名和电子邮箱；密码仅以不可逆的哈希形式存储。若你选择免注册使用，我们会保存应用在你设备上生成的随机设备标识。我们还保存你创建的提醒、触发记录、通知偏好和语言选择。"
+    },
+    {
+     "heading": "数据用途",
+     "body": "我们仅为提供服务而使用你的数据：评估提醒、发送通知、验证账号、管理 Plus 或 Pro 订阅以及回复支持请求。我们不将你的数据用于广告，也不出售给第三方。"
+    },
+    {
+     "heading": "第三方服务",
+     "body": "市场数据来自 Binance。推送通知使用 Google Firebase，Telegram 通知使用 Telegram 服务，通知内容会传递给相应服务。如果你使用 AI 聊天功能，你的消息会发送至 OpenAI 服务进行处理。上述服务商各自的隐私政策同样适用。"
+    },
+    {
+     "heading": "保存期限",
+     "body": "账号处于活跃状态期间我们会保留你的数据。你删除账号后，个人数据和提醒会在合理期限内删除，法律要求保留的记录除外。会话令牌到期后即失效。"
+    },
+    {
+     "heading": "你的权利",
+     "body": "你有权访问数据、要求更正或删除、反对处理，以及以可携带格式索取数据。这些权利在土耳其受 KVKK 保护，在欧盟受 GDPR 保护。你可以将请求发送至我们的联系地址。"
+    },
+    {
+     "heading": "安全",
+     "body": "我们采取合理的技术与管理措施保护你的数据：密码以哈希形式存储，会话令牌保存在设备的安全存储中，与服务器的通信经过加密。请注意，没有任何系统是绝对安全的。"
+    },
+    {
+     "heading": "网站与 Cookie",
+     "body": "在 www.marketalertapp.com 网站上，只有在你同意后才会运行 Google Analytics。它会收集访问的页面、点击的按钮、大致位置（国家和城市）以及设备和浏览器类型，并为此在你的浏览器中存储 Cookie。我们仅将这些数据用于改进网站。你可以随时通过网站底部的“Cookie 设置”链接撤回同意。应用本身不使用 Google Analytics。"
+    },
+    {
+     "heading": "联系方式与政策变更",
+     "body": "你可以通过应用内的支持板块提出隐私相关问题。我们可能更新本政策；重要变更会在应用内公告，并在本页更新生效日期。"
+    }
+   ]
+  }
+ },
+ "es": {
+  "effectiveDateLabel": "Fecha de entrada en vigor: {date}",
+  "closeLabel": "Cerrar",
+  "terms": {
+   "title": "Condiciones de uso",
+   "effectiveDate": "2026-10-24",
+   "intro": "Al usar MarketAlert aceptas las condiciones siguientes. Si no las aceptas, no uses la aplicación.",
+   "sections": [
+    {
+     "heading": "Alcance del servicio",
+     "body": "MarketAlert es una aplicación de alertas que te avisa cuando se cumplen las condiciones que defines en los mercados de criptomonedas. Los datos de precio e indicadores provienen de Binance. La aplicación no opera por ti ni accede a tu monedero o a tu cuenta de exchange."
+    },
+    {
+     "heading": "No es asesoramiento de inversión",
+     "body": "Ningún dato, alerta, gráfico o respuesta de IA de esta aplicación constituye asesoramiento de inversión, consejo financiero ni una recomendación de compra o venta. Los criptoactivos conllevan un riesgo alto y puedes perder todo el importe invertido. Cada decisión de inversión es responsabilidad tuya."
+    },
+    {
+     "heading": "Tu cuenta y tu seguridad",
+     "body": "Eres responsable de mantener tus credenciales en secreto y de la actividad realizada con tu cuenta. No compartas tu contraseña. Si crees que alguien ha usado tu cuenta sin permiso, cámbiala y contacta con nosotros. Las cuentas de invitado creadas con un identificador de dispositivo están vinculadas solo a ese dispositivo; si desinstalas la aplicación perderás el acceso a esa cuenta y a sus alertas."
+    },
+    {
+     "heading": "Límites de las alertas y notificaciones",
+     "body": "No podemos garantizar que las alertas lleguen a tiempo. Las notificaciones pueden retrasarse o no llegar por retrasos en los datos del exchange, problemas de red, restricciones del sistema operativo, incidencias en Telegram o en los proveedores de notificaciones push, o por mantenimiento programado. No uses la aplicación como única fuente en decisiones financieras sensibles al tiempo."
+    },
+    {
+     "heading": "Uso aceptable",
+     "body": "No puedes usar la aplicación con fines ilícitos, de forma que vulnere los derechos de terceros ni sobrecargando nuestros sistemas. Está prohibido aplicar ingeniería inversa al servicio, extraer datos con herramientas automatizadas sin permiso o intentar eludir las medidas de seguridad."
+    },
+    {
+     "heading": "Precios y planes",
+     "body": "Las funciones básicas son gratuitas. Si compras una suscripción Plus o Pro, el pago se realiza a través de la tienda desde la que instalaste la aplicación (Apple App Store o Google Play), y las cancelaciones y reembolsos siguen las reglas de esa tienda. El alcance de los planes Plus y Pro puede cambiar con el tiempo."
+    },
+    {
+     "heading": "Responsabilidad y cambios",
+     "body": "La aplicación se ofrece tal cual; no garantizamos un funcionamiento ininterrumpido ni libre de errores. En la medida permitida por la ley aplicable, no somos responsables de daños indirectos derivados del uso de la aplicación. Podemos modificar estas condiciones; anunciaremos los cambios importantes en la aplicación y seguir usándola implica que aceptas las nuevas condiciones."
+    }
+   ]
+  },
+  "privacy": {
+   "title": "Política de privacidad",
+   "effectiveDate": "2026-10-29",
+   "intro": "Esta política explica qué datos recoge MarketAlert, por qué los recoge y qué derechos tienes sobre ellos.",
+   "sections": [
+    {
+     "heading": "Datos que recogemos",
+     "body": "Al crear una cuenta guardamos tu nombre de usuario y tu correo electrónico; tu contraseña se conserva solo como un hash irreversible. Si continúas sin cuenta, guardamos un identificador de dispositivo aleatorio generado por la aplicación. También conservamos las alertas que creas, su historial de activación, tus preferencias de notificación y tu idioma."
+    },
+    {
+     "heading": "Para qué los usamos",
+     "body": "Usamos tus datos solo para prestar el servicio: evaluar tus alertas, entregar tus notificaciones, autenticar tu cuenta, gestionar tu suscripción Plus o Pro y responder a solicitudes de soporte. No usamos tus datos con fines publicitarios ni los vendemos a terceros."
+    },
+    {
+     "heading": "Servicios de terceros",
+     "body": "Los datos de mercado provienen de Binance. Usamos Google Firebase para notificaciones push y los servicios de Telegram para las notificaciones de Telegram, por lo que el contenido de la notificación se transmite a esos servicios. Si usas la función de chat con IA, tu mensaje se envía a los servicios de OpenAI para su procesamiento. Se aplican las políticas de privacidad de esos proveedores."
+    },
+    {
+     "heading": "Plazo de conservación",
+     "body": "Conservamos tus datos mientras tu cuenta esté activa. Cuando eliminas tu cuenta, tus datos personales y tus alertas se borran en un plazo razonable, salvo los registros que estemos obligados a conservar por ley. Los tokens de sesión dejan de ser válidos al caducar."
+    },
+    {
+     "heading": "Tus derechos",
+     "body": "Tienes derecho a acceder a tus datos, a solicitar su corrección o supresión, a oponerte a su tratamiento y a pedirlos en un formato portable. Estos derechos están cubiertos por la KVKK en Türkiye y por el RGPD en la Unión Europea. Puedes enviar tu solicitud a nuestra dirección de contacto."
+    },
+    {
+     "heading": "Seguridad",
+     "body": "Adoptamos medidas técnicas y organizativas razonables para proteger tus datos: las contraseñas se guardan como hash, los tokens de sesión se almacenan en el almacenamiento seguro del dispositivo y la comunicación con nuestros servidores está cifrada. Ten en cuenta que ningún sistema es completamente seguro."
+    },
+    {
+     "heading": "Sitio web y cookies",
+     "body": "En el sitio www.marketalertapp.com, Google Analytics solo funciona si lo permites. Recoge las páginas visitadas, los botones pulsados, la ubicación aproximada (país y ciudad) y el tipo de dispositivo y navegador, y para ello guarda cookies en tu navegador. Usamos estos datos solo para mejorar el sitio. Puedes retirar tu consentimiento en cualquier momento desde el enlace «Preferencias de cookies» al pie del sitio. La app en sí no usa Google Analytics."
+    },
+    {
+     "heading": "Contacto y cambios",
+     "body": "Puedes enviar tus preguntas sobre privacidad desde la sección de soporte de la aplicación. Podemos actualizar esta política; anunciaremos los cambios importantes en la aplicación y actualizaremos la fecha de entrada en vigor en esta página."
+    }
+   ]
+  }
+ },
+ "hi": {
+  "effectiveDateLabel": "प्रभावी तिथि: {date}",
+  "closeLabel": "बंद करें",
+  "terms": {
+   "title": "उपयोग की शर्तें",
+   "effectiveDate": "2026-10-24",
+   "intro": "MarketAlert का उपयोग करके आप नीचे दी गई शर्तें स्वीकार करते हैं। यदि आप इन्हें स्वीकार नहीं करते तो कृपया ऐप का उपयोग न करें।",
+   "sections": [
+    {
+     "heading": "सेवा का दायरा",
+     "body": "MarketAlert एक अलर्ट ऐप है जो क्रिप्टो बाज़ारों में आपकी तय की गई शर्तें पूरी होने पर आपको सूचित करता है। मूल्य और संकेतक डेटा Binance से आता है। ऐप आपकी ओर से ट्रेडिंग नहीं करता और आपके वॉलेट या एक्सचेंज खाते तक उसकी पहुँच नहीं है।"
+    },
+    {
+     "heading": "यह निवेश सलाह नहीं है",
+     "body": "इस ऐप का कोई भी डेटा, अलर्ट, चार्ट या एआई उत्तर निवेश सलाह, वित्तीय परामर्श या खरीद-बिक्री की सिफ़ारिश नहीं है। क्रिप्टो संपत्तियाँ अत्यधिक जोखिम भरी हैं और आप निवेश की गई पूरी राशि खो सकते हैं। हर निवेश निर्णय की ज़िम्मेदारी आपकी है।"
+    },
+    {
+     "heading": "आपका खाता और सुरक्षा",
+     "body": "अपने खाते की जानकारी गोपनीय रखना और खाते से हुई गतिविधि की ज़िम्मेदारी आपकी है। अपना पासवर्ड किसी से साझा न करें। यदि आपको लगे कि किसी ने बिना अनुमति आपका खाता इस्तेमाल किया है तो पासवर्ड बदलें और हमसे संपर्क करें। डिवाइस पहचानकर्ता से बने अतिथि खाते केवल उसी डिवाइस से जुड़े होते हैं; ऐप हटाने पर उस खाते और उसके अलर्ट तक पहुँच समाप्त हो जाती है।"
+    },
+    {
+     "heading": "अलर्ट और सूचनाओं की सीमाएँ",
+     "body": "हम यह गारंटी नहीं दे सकते कि अलर्ट समय पर पहुँचेंगे। एक्सचेंज डेटा में देरी, नेटवर्क समस्याएँ, ऑपरेटिंग सिस्टम की पाबंदियाँ, Telegram या पुश सेवा प्रदाताओं की गड़बड़ी या नियोजित रखरखाव के कारण सूचनाएँ देर से आ सकती हैं या बिल्कुल न आएँ। समय-संवेदनशील वित्तीय निर्णयों में इस ऐप को एकमात्र स्रोत न मानें।"
+    },
+    {
+     "heading": "स्वीकार्य उपयोग",
+     "body": "आप ऐप का उपयोग गैरकानूनी उद्देश्यों के लिए, दूसरों के अधिकारों का उल्लंघन करते हुए, या हमारी प्रणालियों पर अत्यधिक भार डालते हुए नहीं कर सकते। सेवा की रिवर्स इंजीनियरिंग, बिना अनुमति स्वचालित उपकरणों से डेटा निकालना या सुरक्षा उपायों को दरकिनार करने का प्रयास निषिद्ध है।"
+    },
+    {
+     "heading": "शुल्क और प्लान",
+     "body": "मुख्य सुविधाएँ निःशुल्क हैं। Plus या Pro सदस्यता खरीदने पर भुगतान उसी स्टोर से लिया जाता है जहाँ से आपने ऐप इंस्टॉल किया (Apple App Store या Google Play), और रद्दीकरण तथा धनवापसी उसी स्टोर के नियमों के अधीन हैं। Plus और Pro प्लान का दायरा समय के साथ बदल सकता है।"
+    },
+    {
+     "heading": "दायित्व की सीमा और परिवर्तन",
+     "body": "ऐप जैसा है वैसा प्रदान किया जाता है; हम निर्बाध या त्रुटिरहित संचालन का वादा नहीं करते। लागू कानून की अनुमति की सीमा तक, ऐप के उपयोग से उत्पन्न अप्रत्यक्ष नुकसान के लिए हम उत्तरदायी नहीं हैं। हम इन शर्तों को बदल सकते हैं; महत्वपूर्ण बदलावों की सूचना ऐप में दी जाएगी और उपयोग जारी रखने का अर्थ है कि आप नई शर्तें स्वीकार करते हैं।"
+    }
+   ]
+  },
+  "privacy": {
+   "title": "गोपनीयता नीति",
+   "effectiveDate": "2026-10-29",
+   "intro": "यह नीति बताती है कि MarketAlert कौन-सा डेटा एकत्र करता है, क्यों करता है और उस पर आपके क्या अधिकार हैं।",
+   "sections": [
+    {
+     "heading": "हम कौन-सा डेटा एकत्र करते हैं",
+     "body": "खाता बनाते समय हम आपका उपयोगकर्ता नाम और ईमेल पता सहेजते हैं; आपका पासवर्ड केवल अपरिवर्तनीय हैश के रूप में रखा जाता है। बिना खाते के जारी रखने पर हम ऐप द्वारा आपके डिवाइस पर बनाया गया यादृच्छिक डिवाइस पहचानकर्ता सहेजते हैं। इसके अलावा आपके बनाए अलर्ट, उनका ट्रिगर इतिहास, सूचना प्राथमिकताएँ और भाषा चयन भी रखा जाता है।"
+    },
+    {
+     "heading": "हम इसका उपयोग क्यों करते हैं",
+     "body": "हम आपका डेटा केवल सेवा देने के लिए उपयोग करते हैं: आपके अलर्ट का मूल्यांकन, सूचनाएँ भेजना, खाते का सत्यापन, Plus या Pro सदस्यता का प्रबंधन और सहायता अनुरोधों का उत्तर देना। हम आपका डेटा विज्ञापन के लिए उपयोग नहीं करते और न ही तीसरे पक्ष को बेचते हैं।"
+    },
+    {
+     "heading": "तृतीय-पक्ष सेवाएँ",
+     "body": "बाज़ार डेटा Binance से आता है। पुश सूचनाओं के लिए Google Firebase और Telegram सूचनाओं के लिए Telegram सेवाओं का उपयोग होता है, जिससे सूचना की सामग्री उन सेवाओं तक पहुँचती है। एआई चैट सुविधा का उपयोग करने पर आपका संदेश प्रसंस्करण हेतु OpenAI सेवाओं को भेजा जाता है। इन प्रदाताओं की अपनी गोपनीयता नीतियाँ लागू होती हैं।"
+    },
+    {
+     "heading": "डेटा कब तक रखा जाता है",
+     "body": "जब तक आपका खाता सक्रिय है, हम आपका डेटा रखते हैं। खाता हटाने पर आपका व्यक्तिगत डेटा और अलर्ट उचित अवधि के भीतर हटा दिए जाते हैं; कानूनी रूप से रखे जाने वाले रिकॉर्ड इसके अपवाद हैं। सत्र टोकन समाप्त होते ही अमान्य हो जाते हैं।"
+    },
+    {
+     "heading": "आपके अधिकार",
+     "body": "आपको अपने डेटा तक पहुँचने, उसमें सुधार या उसे हटाने की माँग करने, प्रसंस्करण पर आपत्ति करने और डेटा को पोर्टेबल रूप में माँगने का अधिकार है। ये अधिकार तुर्किये में KVKK और यूरोपीय संघ में GDPR के अंतर्गत आते हैं। आप अपना अनुरोध हमारे संपर्क पते पर भेज सकते हैं।"
+    },
+    {
+     "heading": "सुरक्षा",
+     "body": "आपके डेटा की सुरक्षा के लिए हम उचित तकनीकी और प्रशासनिक उपाय अपनाते हैं: पासवर्ड हैश के रूप में रखे जाते हैं, सत्र टोकन डिवाइस के सुरक्षित भंडारण में रहते हैं और सर्वर से संचार एन्क्रिप्टेड होता है। ध्यान रखें कि कोई भी प्रणाली पूर्णतः सुरक्षित नहीं होती।"
+    },
+    {
+     "heading": "वेबसाइट और कुकीज़",
+     "body": "www.marketalertapp.com वेबसाइट पर Google Analytics केवल आपकी अनुमति से चलता है। यह देखे गए पेज, क्लिक किए गए बटन, अनुमानित स्थान (देश और शहर) तथा डिवाइस और ब्राउज़र का प्रकार एकत्र करता है और इसके लिए आपके ब्राउज़र में कुकीज़ रखता है। हम इस डेटा का उपयोग केवल वेबसाइट को बेहतर बनाने के लिए करते हैं। आप साइट के नीचे दिए “कुकी सेटिंग” लिंक से कभी भी अपनी अनुमति वापस ले सकते हैं। ऐप स्वयं Google Analytics का उपयोग नहीं करता।"
+    },
+    {
+     "heading": "संपर्क और परिवर्तन",
+     "body": "गोपनीयता संबंधी प्रश्न आप ऐप के सहायता अनुभाग से भेज सकते हैं। हम इस नीति को अद्यतन कर सकते हैं; महत्वपूर्ण परिवर्तनों की सूचना ऐप में दी जाएगी और इस पृष्ठ पर प्रभावी तिथि अद्यतन की जाएगी।"
+    }
+   ]
+  }
+ },
+ "ar": {
+  "effectiveDateLabel": "تاريخ السريان: {date}",
+  "closeLabel": "إغلاق",
+  "terms": {
+   "title": "شروط الاستخدام",
+   "effectiveDate": "2026-10-24",
+   "intro": "باستخدامك تطبيق MarketAlert فإنك توافق على الشروط أدناه. إذا كنت لا توافق عليها فلا تستخدم التطبيق.",
+   "sections": [
+    {
+     "heading": "نطاق الخدمة",
+     "body": "MarketAlert تطبيق تنبيهات يُعلمك عند تحقق الشروط التي تحددها في أسواق العملات الرقمية. تأتي بيانات الأسعار والمؤشرات من Binance. لا ينفذ التطبيق أي عمليات تداول نيابة عنك ولا يصل إلى محفظتك أو حسابك في المنصة."
+    },
+    {
+     "heading": "ليست نصيحة استثمارية",
+     "body": "لا تُعد أي بيانات أو تنبيهات أو رسوم بيانية أو إجابات ذكاء اصطناعي في هذا التطبيق نصيحة استثمارية أو استشارة مالية أو توصية بالشراء أو البيع. تنطوي الأصول الرقمية على مخاطر عالية وقد تخسر كامل المبلغ المستثمر. كل قرار استثماري تتخذه يقع على مسؤوليتك."
+    },
+    {
+     "heading": "حسابك وأمانك",
+     "body": "أنت مسؤول عن سرية بيانات حسابك وعن النشاط الذي يتم من خلاله. لا تشارك كلمة المرور مع أحد. إذا اعتقدت أن حسابك استُخدم دون إذن فغيّر كلمة المرور وتواصل معنا. ترتبط حسابات الضيف المنشأة عبر معرّف الجهاز بذلك الجهاز فقط؛ وحذف التطبيق يعني فقدان الوصول إلى ذلك الحساب وتنبيهاته."
+    },
+    {
+     "heading": "حدود التنبيهات والإشعارات",
+     "body": "لا يمكننا ضمان وصول التنبيهات في وقتها. قد تتأخر الإشعارات أو لا تصل إطلاقًا بسبب تأخر بيانات المنصة أو مشكلات الشبكة أو قيود نظام التشغيل أو أعطال لدى Telegram أو مزودي الإشعارات أو أعمال الصيانة المجدولة. لا تعتمد على التطبيق كمصدر وحيد في القرارات المالية الحساسة للوقت."
+    },
+    {
+     "heading": "الاستخدام المقبول",
+     "body": "لا يجوز استخدام التطبيق لأغراض غير قانونية أو بما ينتهك حقوق الآخرين أو بما يُحمّل أنظمتنا فوق طاقتها. يُحظر إجراء الهندسة العكسية للخدمة أو استخراج البيانات بأدوات آلية دون إذن أو محاولة تجاوز إجراءات الأمان."
+    },
+    {
+     "heading": "التسعير والخطط",
+     "body": "الميزات الأساسية مجانية. عند شراء اشتراك Plus أو Pro يتم الدفع عبر المتجر الذي ثبّتت منه التطبيق (Apple App Store أو Google Play)، ويخضع الإلغاء واسترداد المبالغ لقواعد ذلك المتجر. قد يتغير نطاق خطتي Plus وPro بمرور الوقت."
+    },
+    {
+     "heading": "حدود المسؤولية والتغييرات",
+     "body": "يُقدَّم التطبيق كما هو، ولا نتعهد بعمله دون انقطاع أو دون أخطاء. وفق ما يسمح به القانون الساري، لا نتحمل مسؤولية الأضرار غير المباشرة الناشئة عن استخدام التطبيق. قد نعدّل هذه الشروط؛ وسنعلن التغييرات المهمة داخل التطبيق، ويعني استمرارك في الاستخدام قبولك للشروط المحدثة."
+    }
+   ]
+  },
+  "privacy": {
+   "title": "سياسة الخصوصية",
+   "effectiveDate": "2026-10-29",
+   "intro": "توضح هذه السياسة البيانات التي يجمعها MarketAlert وسبب جمعها وحقوقك تجاهها.",
+   "sections": [
+    {
+     "heading": "البيانات التي نجمعها",
+     "body": "عند إنشاء حساب نحفظ اسم المستخدم والبريد الإلكتروني؛ وتُحفظ كلمة المرور على هيئة بصمة غير قابلة للعكس فقط. وإذا تابعت دون حساب فإننا نحفظ معرّف جهاز عشوائيًا يولده التطبيق على جهازك. كما نحتفظ بالتنبيهات التي تنشئها وسجل تفعيلها وتفضيلات الإشعارات واختيارك للغة."
+    },
+    {
+     "heading": "سبب استخدام البيانات",
+     "body": "نستخدم بياناتك لتقديم الخدمة فقط: تقييم تنبيهاتك، وإيصال إشعاراتك، والتحقق من حسابك، وإدارة اشتراكك في Plus أو Pro، والرد على طلبات الدعم. لا نستخدم بياناتك لأغراض إعلانية ولا نبيعها لأطراف ثالثة."
+    },
+    {
+     "heading": "خدمات الأطراف الثالثة",
+     "body": "تأتي بيانات السوق من Binance. نستخدم Google Firebase للإشعارات الفورية وخدمات Telegram لإشعارات Telegram، ما يعني نقل محتوى الإشعار إلى تلك الخدمات. وإذا استخدمت ميزة المحادثة بالذكاء الاصطناعي تُرسل رسالتك إلى خدمات OpenAI للمعالجة. وتسري سياسات الخصوصية الخاصة بتلك الجهات."
+    },
+    {
+     "heading": "مدة الاحتفاظ",
+     "body": "نحتفظ ببياناتك ما دام حسابك نشطًا. وعند حذف حسابك تُحذف بياناتك الشخصية وتنبيهاتك خلال مدة معقولة، باستثناء السجلات التي يلزمنا القانون بالاحتفاظ بها. وتصبح رموز الجلسة غير صالحة فور انتهاء صلاحيتها."
+    },
+    {
+     "heading": "حقوقك",
+     "body": "يحق لك الوصول إلى بياناتك وطلب تصحيحها أو حذفها والاعتراض على معالجتها وطلبها بصيغة قابلة للنقل. وتندرج هذه الحقوق ضمن قانون KVKK في تركيا وضمن GDPR في الاتحاد الأوروبي. يمكنك إرسال طلبك إلى عنوان التواصل الخاص بنا."
+    },
+    {
+     "heading": "الأمان",
+     "body": "نتخذ تدابير تقنية وتنظيمية معقولة لحماية بياناتك: تُحفظ كلمات المرور كبصمات، وتُخزَّن رموز الجلسة في التخزين الآمن على جهازك، والاتصال بخوادمنا مشفَّر. ونذكّر بأنه لا يوجد نظام آمن تمامًا."
+    },
+    {
+     "heading": "الموقع الإلكتروني وملفات تعريف الارتباط",
+     "body": "على موقع www.marketalertapp.com لا يعمل Google Analytics إلا بموافقتك. فهو يجمع الصفحات التي تمت زيارتها والأزرار التي نُقر عليها والموقع التقريبي (الدولة والمدينة) ونوع الجهاز والمتصفح، ويحفظ لهذا الغرض ملفات تعريف الارتباط في متصفحك. نستخدم هذه البيانات فقط لتحسين الموقع. يمكنك سحب موافقتك في أي وقت من رابط «إعدادات ملفات تعريف الارتباط» أسفل الموقع. التطبيق نفسه لا يستخدم Google Analytics."
+    },
+    {
+     "heading": "التواصل والتغييرات",
+     "body": "يمكنك إرسال أسئلتك المتعلقة بالخصوصية عبر قسم الدعم داخل التطبيق. قد نحدّث هذه السياسة؛ وسنعلن التغييرات المهمة داخل التطبيق ونحدّث تاريخ السريان في هذه الصفحة."
+    }
+   ]
+  }
+ },
+ "pt-br": {
+  "effectiveDateLabel": "Data de vigência: {date}",
+  "closeLabel": "Fechar",
+  "terms": {
+   "title": "Termos de Uso",
+   "effectiveDate": "2026-10-24",
+   "intro": "Ao usar o MarketAlert você aceita os termos abaixo. Se não os aceita, não use o aplicativo.",
+   "sections": [
+    {
+     "heading": "Escopo do serviço",
+     "body": "O MarketAlert é um aplicativo de alertas que avisa quando as condições que você define ocorrem nos mercados de criptomoedas. Os dados de preço e indicadores vêm da Binance. O aplicativo não negocia por você e não acessa sua carteira nem sua conta na corretora."
+    },
+    {
+     "heading": "Não é recomendação de investimento",
+     "body": "Nenhum dado, alerta, gráfico ou resposta de IA neste aplicativo constitui recomendação de investimento, consultoria financeira ou sugestão de compra e venda. Criptoativos têm risco elevado e você pode perder todo o valor investido. Cada decisão de investimento é de sua responsabilidade."
+    },
+    {
+     "heading": "Sua conta e sua segurança",
+     "body": "Você é responsável por manter suas credenciais em sigilo e pela atividade realizada na sua conta. Não compartilhe sua senha. Se achar que sua conta foi usada sem autorização, troque a senha e entre em contato conosco. Contas de convidado criadas a partir de um identificador de dispositivo ficam vinculadas somente àquele aparelho; desinstalar o aplicativo significa perder o acesso a essa conta e aos seus alertas."
+    },
+    {
+     "heading": "Limites dos alertas e notificações",
+     "body": "Não podemos garantir que os alertas cheguem no tempo esperado. As notificações podem atrasar ou não chegar por atrasos nos dados da corretora, problemas de rede, restrições do sistema operacional, falhas no Telegram ou nos provedores de push, ou manutenção programada. Não use o aplicativo como única fonte em decisões financeiras sensíveis ao tempo."
+    },
+    {
+     "heading": "Uso aceitável",
+     "body": "Você não pode usar o aplicativo para fins ilícitos, de modo que viole direitos de terceiros ou que sobrecarregue nossos sistemas. É proibido fazer engenharia reversa do serviço, extrair dados com ferramentas automatizadas sem autorização ou tentar burlar as medidas de segurança."
+    },
+    {
+     "heading": "Preços e planos",
+     "body": "Os recursos principais são gratuitos. Ao comprar uma assinatura Plus ou Pro, o pagamento é feito pela loja de onde você instalou o aplicativo (Apple App Store ou Google Play), e cancelamentos e reembolsos seguem as regras dessa loja. O escopo dos planos Plus e Pro pode mudar com o tempo."
+    },
+    {
+     "heading": "Limitação de responsabilidade e alterações",
+     "body": "O aplicativo é fornecido no estado em que se encontra; não prometemos funcionamento ininterrupto ou livre de erros. Na medida permitida pela lei aplicável, não respondemos por danos indiretos decorrentes do uso do aplicativo. Podemos alterar estes termos; anunciaremos mudanças relevantes no aplicativo e continuar usando significa que você aceita os termos atualizados."
+    }
+   ]
+  },
+  "privacy": {
+   "title": "Política de Privacidade",
+   "effectiveDate": "2026-10-29",
+   "intro": "Esta política explica quais dados o MarketAlert coleta, por que os coleta e quais direitos você tem sobre eles.",
+   "sections": [
+    {
+     "heading": "Dados que coletamos",
+     "body": "Ao criar uma conta guardamos seu nome de usuário e seu e-mail; sua senha é mantida apenas como um hash irreversível. Se você continuar sem conta, guardamos um identificador de dispositivo aleatório gerado pelo aplicativo. Também mantemos os alertas que você cria, o histórico de disparos, suas preferências de notificação e o idioma escolhido."
+    },
+    {
+     "heading": "Por que usamos",
+     "body": "Usamos seus dados apenas para prestar o serviço: avaliar seus alertas, entregar suas notificações, autenticar sua conta, gerenciar sua assinatura Plus ou Pro e responder a pedidos de suporte. Não usamos seus dados para publicidade e não os vendemos a terceiros."
+    },
+    {
+     "heading": "Serviços de terceiros",
+     "body": "Os dados de mercado vêm da Binance. Usamos o Google Firebase para notificações push e os serviços do Telegram para notificações no Telegram, o que significa que o conteúdo da notificação é transmitido a esses serviços. Se você usar o chat com IA, sua mensagem é enviada aos serviços da OpenAI para processamento. As políticas de privacidade desses provedores também se aplicam."
+    },
+    {
+     "heading": "Prazo de retenção",
+     "body": "Mantemos seus dados enquanto sua conta estiver ativa. Quando você exclui a conta, seus dados pessoais e alertas são apagados em prazo razoável, exceto os registros que somos obrigados a guardar por lei. Os tokens de sessão deixam de valer quando expiram."
+    },
+    {
+     "heading": "Seus direitos",
+     "body": "Você tem direito de acessar seus dados, pedir correção ou exclusão, opor-se ao tratamento e solicitá-los em formato portável. Esses direitos são amparados pela KVKK na Türkiye e pelo GDPR na União Europeia. Envie seu pedido para nosso endereço de contato."
+    },
+    {
+     "heading": "Segurança",
+     "body": "Adotamos medidas técnicas e organizacionais razoáveis para proteger seus dados: senhas são guardadas como hash, tokens de sessão ficam no armazenamento seguro do aparelho e a comunicação com nossos servidores é criptografada. Lembre-se de que nenhum sistema é totalmente seguro."
+    },
+    {
+     "heading": "Site e cookies",
+     "body": "No site www.marketalertapp.com, o Google Analytics só funciona se você permitir. Ele coleta as páginas visitadas, os botões clicados, a localização aproximada (país e cidade) e o tipo de dispositivo e navegador, e para isso grava cookies no seu navegador. Usamos esses dados apenas para melhorar o site. Você pode retirar o consentimento a qualquer momento pelo link “Preferências de cookies” no rodapé do site. O app em si não usa o Google Analytics."
+    },
+    {
+     "heading": "Contato e alterações",
+     "body": "Você pode enviar dúvidas sobre privacidade pela seção de suporte do aplicativo. Podemos atualizar esta política; anunciaremos mudanças relevantes no aplicativo e atualizaremos a data de vigência nesta página."
+    }
+   ]
+  }
+ },
+ "fr": {
+  "effectiveDateLabel": "Date d’entrée en vigueur : {date}",
+  "closeLabel": "Fermer",
+  "terms": {
+   "title": "Conditions d’utilisation",
+   "effectiveDate": "2026-10-24",
+   "intro": "En utilisant MarketAlert, tu acceptes les conditions ci-dessous. Si tu ne les acceptes pas, n’utilise pas l’application.",
+   "sections": [
+    {
+     "heading": "Étendue du service",
+     "body": "MarketAlert est une application d’alertes qui te prévient lorsque les conditions que tu définis se produisent sur les marchés crypto. Les données de prix et d’indicateurs proviennent de Binance. L’application ne passe aucun ordre à ta place et n’accède ni à ton portefeuille ni à ton compte sur une plateforme d’échange."
+    },
+    {
+     "heading": "Ce n’est pas un conseil en investissement",
+     "body": "Aucune donnée, alerte, courbe ou réponse d’IA de cette application ne constitue un conseil en investissement, un conseil financier ou une recommandation d’achat ou de vente. Les cryptoactifs comportent un risque élevé et tu peux perdre la totalité du montant investi. Chaque décision d’investissement relève de ta responsabilité."
+    },
+    {
+     "heading": "Ton compte et ta sécurité",
+     "body": "Tu es responsable de la confidentialité de tes identifiants et de l’activité effectuée depuis ton compte. Ne partage pas ton mot de passe. Si tu penses que ton compte a été utilisé sans autorisation, change ton mot de passe et contacte-nous. Les comptes invités créés à partir d’un identifiant d’appareil sont liés à cet appareil uniquement ; désinstaller l’application signifie perdre l’accès à ce compte et à ses alertes."
+    },
+    {
+     "heading": "Limites des alertes et notifications",
+     "body": "Nous ne pouvons pas garantir que les alertes arrivent à temps. Les notifications peuvent être retardées ou ne jamais arriver en raison de retards dans les données de la plateforme, de problèmes réseau, de restrictions du système d’exploitation, d’incidents chez Telegram ou les fournisseurs de notifications push, ou d’une maintenance planifiée. N’utilise pas l’application comme unique source pour des décisions financières sensibles au temps."
+    },
+    {
+     "heading": "Usage acceptable",
+     "body": "Tu ne peux pas utiliser l’application à des fins illicites, d’une manière qui porte atteinte aux droits d’autrui ou qui surcharge nos systèmes. Il est interdit de faire de la rétro-ingénierie sur le service, d’extraire des données avec des outils automatisés sans autorisation ou de tenter de contourner les mesures de sécurité."
+    },
+    {
+     "heading": "Tarifs et formules",
+     "body": "Les fonctions principales sont gratuites. Si tu souscris un abonnement Plus ou Pro, le paiement est prélevé par la boutique depuis laquelle tu as installé l’application (Apple App Store ou Google Play), et les annulations et remboursements suivent les règles de cette boutique. L’étendue des formules Plus et Pro peut évoluer."
+    },
+    {
+     "heading": "Limitation de responsabilité et modifications",
+     "body": "L’application est fournie en l’état ; nous ne promettons pas un fonctionnement continu ni exempt d’erreurs. Dans la limite permise par la loi applicable, nous ne sommes pas responsables des dommages indirects résultant de l’utilisation de l’application. Nous pouvons modifier ces conditions ; les changements importants seront annoncés dans l’application et poursuivre l’utilisation vaut acceptation des nouvelles conditions."
+    }
+   ]
+  },
+  "privacy": {
+   "title": "Politique de confidentialité",
+   "effectiveDate": "2026-10-29",
+   "intro": "Cette politique explique quelles données MarketAlert collecte, pourquoi elle les collecte et quels droits tu as sur ces données.",
+   "sections": [
+    {
+     "heading": "Données collectées",
+     "body": "À la création du compte, nous conservons ton nom d’utilisateur et ton adresse e-mail ; ton mot de passe n’est stocké que sous forme d’empreinte irréversible. Si tu continues sans compte, nous conservons un identifiant d’appareil aléatoire généré par l’application. Nous conservons également les alertes que tu crées, leur historique de déclenchement, tes préférences de notification et ta langue."
+    },
+    {
+     "heading": "Finalités",
+     "body": "Nous utilisons tes données uniquement pour fournir le service : évaluer tes alertes, acheminer tes notifications, authentifier ton compte, gérer ton abonnement Plus ou Pro et répondre aux demandes d’assistance. Nous n’utilisons pas tes données à des fins publicitaires et ne les vendons pas à des tiers."
+    },
+    {
+     "heading": "Services tiers",
+     "body": "Les données de marché proviennent de Binance. Nous utilisons Google Firebase pour les notifications push et les services Telegram pour les notifications Telegram ; le contenu de la notification est donc transmis à ces services. Si tu utilises la fonction de chat IA, ton message est envoyé aux services d’OpenAI pour traitement. Les politiques de confidentialité de ces prestataires s’appliquent."
+    },
+    {
+     "heading": "Durée de conservation",
+     "body": "Nous conservons tes données tant que ton compte est actif. Lorsque tu supprimes ton compte, tes données personnelles et tes alertes sont effacées dans un délai raisonnable, à l’exception des enregistrements que la loi nous oblige à conserver. Les jetons de session deviennent invalides à leur expiration."
+    },
+    {
+     "heading": "Tes droits",
+     "body": "Tu as le droit d’accéder à tes données, d’en demander la rectification ou l’effacement, de t’opposer à leur traitement et de les demander dans un format portable. Ces droits relèvent de la KVKK en Türkiye et du RGPD dans l’Union européenne. Tu peux envoyer ta demande à notre adresse de contact."
+    },
+    {
+     "heading": "Sécurité",
+     "body": "Nous prenons des mesures techniques et organisationnelles raisonnables pour protéger tes données : les mots de passe sont stockés sous forme d’empreinte, les jetons de session sont conservés dans le stockage sécurisé de l’appareil et les échanges avec nos serveurs sont chiffrés. Rappelle-toi qu’aucun système n’est totalement sûr."
+    },
+    {
+     "heading": "Site web et cookies",
+     "body": "Sur le site www.marketalertapp.com, Google Analytics ne fonctionne que si tu l’acceptes. Il collecte les pages consultées, les boutons cliqués, la localisation approximative (pays et ville) ainsi que le type d’appareil et de navigateur, et enregistre pour cela des cookies dans ton navigateur. Nous utilisons ces données uniquement pour améliorer le site. Tu peux retirer ton consentement à tout moment via le lien « Préférences cookies » en bas du site. L’application elle-même n’utilise pas Google Analytics."
+    },
+    {
+     "heading": "Contact et modifications",
+     "body": "Tu peux poser tes questions sur la confidentialité depuis la section d’assistance de l’application. Nous pouvons mettre à jour cette politique ; les changements importants seront annoncés dans l’application et la date d’entrée en vigueur sera actualisée sur cette page."
+    }
+   ]
+  }
+ },
+ "ru": {
+  "effectiveDateLabel": "Дата вступления в силу: {date}",
+  "closeLabel": "Закрыть",
+  "terms": {
+   "title": "Условия использования",
+   "effectiveDate": "2026-10-24",
+   "intro": "Используя MarketAlert, вы принимаете приведённые ниже условия. Если вы с ними не согласны, не используйте приложение.",
+   "sections": [
+    {
+     "heading": "Что делает сервис",
+     "body": "MarketAlert — приложение оповещений, которое уведомляет вас, когда на криптовалютных рынках выполняются заданные вами условия. Данные о ценах и индикаторах поступают с Binance. Приложение не совершает сделок за вас и не имеет доступа к вашему кошельку или счёту на бирже."
+    },
+    {
+     "heading": "Это не инвестиционная рекомендация",
+     "body": "Никакие данные, оповещения, графики или ответы ИИ в этом приложении не являются инвестиционной рекомендацией, финансовой консультацией или советом о покупке либо продаже. Криптоактивы связаны с высоким риском, и вы можете потерять всю вложенную сумму. Каждое инвестиционное решение — ваша ответственность."
+    },
+    {
+     "heading": "Ваш аккаунт и безопасность",
+     "body": "Вы отвечаете за сохранность своих учётных данных и за действия, совершённые в вашем аккаунте. Не сообщайте пароль никому. Если вы считаете, что аккаунтом воспользовались без разрешения, смените пароль и свяжитесь с нами. Гостевые аккаунты, созданные по идентификатору устройства, привязаны только к этому устройству; удаление приложения означает потерю доступа к такому аккаунту и его оповещениям."
+    },
+    {
+     "heading": "Ограничения оповещений и уведомлений",
+     "body": "Мы не можем гарантировать своевременную доставку оповещений. Уведомления могут задержаться или не прийти из-за задержек данных биржи, проблем сети, ограничений операционной системы, сбоев в Telegram или у поставщиков push-уведомлений, а также планового обслуживания. Не используйте приложение как единственный источник для финансовых решений, чувствительных ко времени."
+    },
+    {
+     "heading": "Допустимое использование",
+     "body": "Запрещено использовать приложение в противоправных целях, способами, нарушающими права других лиц, или создавая чрезмерную нагрузку на наши системы. Запрещены обратная разработка сервиса, сбор данных автоматическими средствами без разрешения и попытки обойти меры защиты."
+    },
+    {
+     "heading": "Оплата и тарифы",
+     "body": "Основные функции бесплатны. При покупке подписки Plus или Pro оплата производится через магазин, из которого вы установили приложение (Apple App Store или Google Play); отмена и возврат подчиняются правилам этого магазина. Состав тарифов Plus и Pro может со временем меняться."
+    },
+    {
+     "heading": "Ограничение ответственности и изменения",
+     "body": "Приложение предоставляется «как есть»; мы не обещаем бесперебойной и безошибочной работы. В пределах, допускаемых применимым правом, мы не отвечаем за косвенный ущерб, возникший из-за использования приложения. Мы можем изменять эти условия; о существенных изменениях сообщим в приложении, и дальнейшее использование означает принятие обновлённых условий."
+    }
+   ]
+  },
+  "privacy": {
+   "title": "Политика конфиденциальности",
+   "effectiveDate": "2026-10-29",
+   "intro": "Эта политика объясняет, какие данные собирает MarketAlert, зачем он их собирает и какие права у вас есть.",
+   "sections": [
+    {
+     "heading": "Какие данные мы собираем",
+     "body": "При создании аккаунта мы сохраняем имя пользователя и адрес электронной почты; пароль хранится только в виде необратимого хеша. Если вы продолжаете без аккаунта, мы сохраняем случайный идентификатор устройства, созданный приложением. Также мы храним созданные вами оповещения, историю их срабатываний, настройки уведомлений и выбранный язык."
+    },
+    {
+     "heading": "Зачем мы их используем",
+     "body": "Мы используем ваши данные только для предоставления сервиса: оценки оповещений, доставки уведомлений, аутентификации аккаунта, управления подпиской Plus или Pro и ответов на обращения в поддержку. Мы не используем данные для рекламы и не продаём их третьим лицам."
+    },
+    {
+     "heading": "Сторонние сервисы",
+     "body": "Рыночные данные поступают с Binance. Для push-уведомлений мы используем Google Firebase, для уведомлений в Telegram — сервисы Telegram, поэтому содержимое уведомления передаётся этим сервисам. Если вы пользуетесь ИИ-чатом, ваше сообщение отправляется в сервисы OpenAI для обработки. Действуют политики конфиденциальности этих поставщиков."
+    },
+    {
+     "heading": "Срок хранения",
+     "body": "Мы храним ваши данные, пока аккаунт активен. После удаления аккаунта персональные данные и оповещения удаляются в разумный срок, кроме записей, которые мы обязаны хранить по закону. Токены сессии становятся недействительными по истечении срока действия."
+    },
+    {
+     "heading": "Ваши права",
+     "body": "Вы вправе получить доступ к своим данным, требовать их исправления или удаления, возражать против обработки и запросить их в переносимом формате. Эти права закреплены KVKK в Турции и GDPR в Европейском союзе. Запрос можно отправить на наш контактный адрес."
+    },
+    {
+     "heading": "Безопасность",
+     "body": "Мы принимаем разумные технические и организационные меры для защиты данных: пароли хранятся в виде хешей, токены сессии — в защищённом хранилище устройства, обмен с серверами шифруется. Напоминаем, что полностью безопасных систем не существует."
+    },
+    {
+     "heading": "Сайт и файлы cookie",
+     "body": "На сайте www.marketalertapp.com Google Analytics работает только с вашего согласия. Он собирает просмотренные страницы, нажатые кнопки, примерное местоположение (страна и город), тип устройства и браузера и для этого сохраняет файлы cookie в вашем браузере. Мы используем эти данные только для улучшения сайта. Вы можете отозвать согласие в любой момент по ссылке «Настройки cookie» внизу сайта. Само приложение Google Analytics не использует."
+    },
+    {
+     "heading": "Связь и изменения",
+     "body": "Вопросы о конфиденциальности можно отправить через раздел поддержки в приложении. Мы можем обновлять эту политику; о существенных изменениях сообщим в приложении и обновим дату вступления в силу на этой странице."
+    }
+   ]
+  }
+ },
+ "de": {
+  "effectiveDateLabel": "Gültig ab: {date}",
+  "closeLabel": "Schließen",
+  "terms": {
+   "title": "Nutzungsbedingungen",
+   "effectiveDate": "2026-10-24",
+   "intro": "Mit der Nutzung von MarketAlert akzeptierst du die folgenden Bedingungen. Wenn du sie nicht akzeptierst, nutze die App bitte nicht.",
+   "sections": [
+    {
+     "heading": "Umfang des Dienstes",
+     "body": "MarketAlert ist eine Alarm-App, die dich benachrichtigt, wenn die von dir festgelegten Bedingungen an den Kryptomärkten eintreten. Preis- und Indikatordaten stammen von Binance. Die App handelt nicht für dich und hat keinen Zugriff auf deine Wallet oder dein Börsenkonto."
+    },
+    {
+     "heading": "Keine Anlageberatung",
+     "body": "Keine Daten, Alarme, Charts oder KI-Antworten in dieser App sind Anlageberatung, Finanzberatung oder eine Kauf- bzw. Verkaufsempfehlung. Kryptowerte bergen hohe Risiken und du kannst den gesamten eingesetzten Betrag verlieren. Jede Anlageentscheidung liegt in deiner Verantwortung."
+    },
+    {
+     "heading": "Dein Konto und deine Sicherheit",
+     "body": "Du bist dafür verantwortlich, deine Zugangsdaten geheim zu halten, und für Aktivitäten unter deinem Konto. Teile dein Passwort mit niemandem. Wenn du vermutest, dass dein Konto unbefugt genutzt wurde, ändere dein Passwort und kontaktiere uns. Gastkonten, die über eine Gerätekennung erstellt wurden, sind nur mit diesem Gerät verknüpft; wird die App gelöscht, verlierst du den Zugang zu diesem Konto und seinen Alarmen."
+    },
+    {
+     "heading": "Grenzen von Alarmen und Benachrichtigungen",
+     "body": "Wir können nicht garantieren, dass Alarme rechtzeitig zugestellt werden. Benachrichtigungen können sich verzögern oder ausbleiben – durch Verzögerungen bei Börsendaten, Netzwerkprobleme, Einschränkungen des Betriebssystems, Störungen bei Telegram oder Push-Anbietern oder geplante Wartung. Nutze die App nicht als einzige Quelle für zeitkritische finanzielle Entscheidungen."
+    },
+    {
+     "heading": "Zulässige Nutzung",
+     "body": "Du darfst die App nicht für rechtswidrige Zwecke, in einer Weise, die Rechte Dritter verletzt, oder mit übermäßiger Last auf unseren Systemen nutzen. Reverse Engineering des Dienstes, das Auslesen von Daten mit automatisierten Werkzeugen ohne Erlaubnis sowie Versuche, Sicherheitsmaßnahmen zu umgehen, sind untersagt."
+    },
+    {
+     "heading": "Preise und Pläne",
+     "body": "Die Kernfunktionen sind kostenlos. Beim Kauf eines Plus- oder Pro-Abonnements erfolgt die Zahlung über den Store, aus dem du die App installiert hast (Apple App Store oder Google Play); Kündigung und Erstattung richten sich nach den Regeln dieses Stores. Der Umfang der Pläne Plus und Pro kann sich im Laufe der Zeit ändern."
+    },
+    {
+     "heading": "Haftung und Änderungen",
+     "body": "Die App wird wie besehen bereitgestellt; wir sagen keinen unterbrechungs- oder fehlerfreien Betrieb zu. Soweit gesetzlich zulässig, haften wir nicht für mittelbare Schäden aus der Nutzung der App. Wir können diese Bedingungen ändern; wesentliche Änderungen kündigen wir in der App an, und die weitere Nutzung gilt als Zustimmung zu den neuen Bedingungen."
+    }
+   ]
+  },
+  "privacy": {
+   "title": "Datenschutzerklärung",
+   "effectiveDate": "2026-10-29",
+   "intro": "Diese Erklärung beschreibt, welche Daten MarketAlert erhebt, warum wir sie erheben und welche Rechte du daran hast.",
+   "sections": [
+    {
+     "heading": "Erhobene Daten",
+     "body": "Beim Anlegen eines Kontos speichern wir deinen Benutzernamen und deine E-Mail-Adresse; dein Passwort wird ausschließlich als nicht umkehrbarer Hash gespeichert. Wenn du ohne Konto fortfährst, speichern wir eine zufällige Gerätekennung, die die App auf deinem Gerät erzeugt. Außerdem bewahren wir die von dir erstellten Alarme, deren Auslöseverlauf, deine Benachrichtigungseinstellungen und deine Sprachwahl auf."
+    },
+    {
+     "heading": "Zweck der Verarbeitung",
+     "body": "Wir nutzen deine Daten ausschließlich zur Erbringung des Dienstes: um deine Alarme auszuwerten, Benachrichtigungen zuzustellen, dein Konto zu authentifizieren, dein Plus- oder Pro-Abonnement zu verwalten und Supportanfragen zu beantworten. Wir nutzen deine Daten nicht für Werbung und verkaufen sie nicht an Dritte."
+    },
+    {
+     "heading": "Dienste Dritter",
+     "body": "Marktdaten stammen von Binance. Für Push-Benachrichtigungen nutzen wir Google Firebase, für Telegram-Benachrichtigungen die Telegram-Dienste; dabei wird der Inhalt der Benachrichtigung an diese Dienste übermittelt. Wenn du den KI-Chat nutzt, wird deine Nachricht zur Verarbeitung an OpenAI-Dienste gesendet. Es gelten die Datenschutzerklärungen dieser Anbieter."
+    },
+    {
+     "heading": "Speicherdauer",
+     "body": "Wir speichern deine Daten, solange dein Konto aktiv ist. Löschst du dein Konto, werden deine personenbezogenen Daten und Alarme innerhalb einer angemessenen Frist gelöscht; davon ausgenommen sind Aufzeichnungen, zu deren Aufbewahrung wir gesetzlich verpflichtet sind. Sitzungstoken verlieren mit Ablauf ihre Gültigkeit."
+    },
+    {
+     "heading": "Deine Rechte",
+     "body": "Du hast das Recht auf Auskunft, Berichtigung, Löschung, Widerspruch gegen die Verarbeitung und auf Herausgabe deiner Daten in einem übertragbaren Format. Diese Rechte ergeben sich in der Türkei aus dem KVKK und in der Europäischen Union aus der DSGVO. Deine Anfrage kannst du an unsere Kontaktadresse senden."
+    },
+    {
+     "heading": "Sicherheit",
+     "body": "Wir treffen angemessene technische und organisatorische Maßnahmen zum Schutz deiner Daten: Passwörter werden als Hash gespeichert, Sitzungstoken liegen im sicheren Speicher deines Geräts und die Kommunikation mit unseren Servern ist verschlüsselt. Bitte beachte, dass kein System vollständig sicher ist."
+    },
+    {
+     "heading": "Website und Cookies",
+     "body": "Auf der Website www.marketalertapp.com läuft Google Analytics nur, wenn du zustimmst. Erfasst werden besuchte Seiten, angeklickte Schaltflächen, ungefährer Standort (Land und Stadt) sowie Geräte- und Browsertyp; dafür werden Cookies in deinem Browser gespeichert. Wir nutzen diese Daten nur, um die Website zu verbessern. Du kannst deine Einwilligung jederzeit über den Link „Cookie-Einstellungen“ unten auf der Seite widerrufen. Die App selbst verwendet Google Analytics nicht."
+    },
+    {
+     "heading": "Kontakt und Änderungen",
+     "body": "Fragen zum Datenschutz kannst du über den Supportbereich in der App stellen. Wir können diese Erklärung aktualisieren; wesentliche Änderungen kündigen wir in der App an und aktualisieren das Gültigkeitsdatum auf dieser Seite."
+    }
+   ]
+  }
+ },
+ "ja": {
+  "effectiveDateLabel": "発効日：{date}",
+  "closeLabel": "閉じる",
+  "terms": {
+   "title": "利用規約",
+   "effectiveDate": "2026-10-24",
+   "intro": "MarketAlert をご利用いただくことで、以下の規約に同意したものとみなされます。同意いただけない場合は本アプリをご利用にならないでください。",
+   "sections": [
+    {
+     "heading": "サービスの範囲",
+     "body": "MarketAlert は、暗号資産市場であなたが設定した条件が満たされたときに通知するアラートアプリです。価格および指標データは Binance から取得しています。本アプリが代わりに取引を行うことはなく、ウォレットや取引所口座にアクセスすることもありません。"
+    },
+    {
+     "heading": "投資助言ではありません",
+     "body": "本アプリのデータ、アラート、チャート、AI の回答はいずれも投資助言、金融アドバイス、売買の推奨ではありません。暗号資産は高いリスクを伴い、投資額の全額を失う可能性があります。投資判断はすべてご自身の責任で行ってください。"
+    },
+    {
+     "heading": "アカウントと安全性",
+     "body": "アカウント情報の機密保持と、アカウントで行われた操作についてはご自身の責任となります。パスワードは誰にも共有しないでください。無断で利用された疑いがある場合はパスワードを変更のうえ当社へご連絡ください。端末識別子で作成したゲストアカウントはその端末にのみ紐づきます。アプリを削除すると、そのアカウントとアラートへのアクセスは失われます。"
+    },
+    {
+     "heading": "アラートと通知の限界",
+     "body": "通知が必ず時間どおりに届くことは保証できません。取引所データの遅延、ネットワークの問題、OS の制限、Telegram やプッシュ配信事業者の障害、計画メンテナンスなどにより、通知が遅れたり届かなかったりする場合があります。時間に敏感な財務判断において、本アプリを唯一の情報源としないでください。"
+    },
+    {
+     "heading": "許容される利用",
+     "body": "違法な目的、第三者の権利を侵害する方法、または当社システムに過度な負荷をかける方法で本アプリを利用することはできません。サービスのリバースエンジニアリング、許可のない自動ツールによるデータ取得、セキュリティ対策の回避の試みは禁止されています。"
+    },
+    {
+     "heading": "料金とプラン",
+     "body": "主要機能は無料です。Plus または Pro の購読を購入した場合、支払いはインストール元のストア（Apple App Store または Google Play）を通じて行われ、解約および返金は当該ストアの規定に従います。Plus と Pro の各プランの範囲は将来変更される場合があります。"
+    },
+    {
+     "heading": "責任の制限と規約の変更",
+     "body": "本アプリは現状有姿で提供され、中断や不具合がないことを保証するものではありません。適用法が認める範囲において、本アプリの利用により生じた間接的な損害について当社は責任を負いません。本規約は変更されることがあります。重要な変更はアプリ内でお知らせし、利用の継続をもって新しい規約に同意したものとみなされます。"
+    }
+   ]
+  },
+  "privacy": {
+   "title": "プライバシーポリシー",
+   "effectiveDate": "2026-10-29",
+   "intro": "本ポリシーは、MarketAlert が収集するデータ、その目的、および利用者の権利について説明します。",
+   "sections": [
+    {
+     "heading": "収集するデータ",
+     "body": "アカウント作成時にユーザー名とメールアドレスを保存します。パスワードは復元できないハッシュとしてのみ保持します。アカウントを作成せずに利用する場合は、アプリが端末上で生成したランダムな端末識別子を保存します。また、作成したアラート、その発動履歴、通知設定、言語設定も保持します。"
+    },
+    {
+     "heading": "利用目的",
+     "body": "データはサービス提供のためにのみ利用します。アラートの評価、通知の配信、アカウントの認証、Plus または Pro の購読の管理、サポート対応がこれにあたります。広告目的での利用や第三者への販売は行いません。"
+    },
+    {
+     "heading": "第三者サービス",
+     "body": "市場データは Binance から取得しています。プッシュ通知には Google Firebase を、Telegram 通知には Telegram のサービスを利用しており、通知内容はこれらのサービスに送信されます。AI チャット機能を利用した場合、メッセージは処理のため OpenAI のサービスへ送信されます。各提供事業者のプライバシーポリシーが適用されます。"
+    },
+    {
+     "heading": "保存期間",
+     "body": "アカウントが有効な間、データを保持します。アカウントを削除すると、個人データとアラートは合理的な期間内に削除されます。ただし法令により保存が義務づけられた記録は除きます。セッショントークンは有効期限を過ぎると無効になります。"
+    },
+    {
+     "heading": "利用者の権利",
+     "body": "ご自身のデータへのアクセス、訂正または削除の請求、処理への異議、移行可能な形式での提供の請求が可能です。これらの権利はトルコでは KVKK、欧州連合では GDPR に基づきます。ご請求は当社の連絡先までお送りください。"
+    },
+    {
+     "heading": "セキュリティ",
+     "body": "データ保護のため、合理的な技術的・組織的措置を講じています。パスワードはハッシュとして保存し、セッショントークンは端末の安全な保管領域に保持し、サーバーとの通信は暗号化されています。完全に安全なシステムは存在しないことにご留意ください。"
+    },
+    {
+     "heading": "ウェブサイトと Cookie",
+     "body": "www.marketalertapp.com のウェブサイトでは、同意いただいた場合にのみ Google Analytics が動作します。閲覧ページ、クリックしたボタン、おおよその位置（国・都市）、端末とブラウザの種類を収集し、そのためにブラウザへ Cookie を保存します。これらのデータはサイトの改善にのみ使用します。同意はサイト下部の「Cookie 設定」リンクからいつでも取り消せます。アプリ自体は Google Analytics を使用しません。"
+    },
+    {
+     "heading": "お問い合わせと変更",
+     "body": "プライバシーに関するご質問はアプリ内のサポートからお送りいただけます。本ポリシーは更新されることがあります。重要な変更はアプリ内でお知らせし、本ページの発効日を更新します。"
+    }
+   ]
+  }
+ }
+}

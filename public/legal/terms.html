@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Use · MarketAlert</title><meta name="robots" content="noindex">
+<link rel="canonical" href="https://www.marketalertapp.com/en/legal/terms/">
+<script>var DOC = 'terms/';
+(function () {
+  var codes = ['tr','en','zh','es','hi','ar','pt-br','fr','ru','de','ja'];
+  var norm = function (v) { v = String(v || '').toLowerCase(); var b = v.split('-')[0]; return b === 'pt' ? 'pt-br' : b; };
+  var pick = norm(new URLSearchParams(location.search).get('lang'));
+  if (codes.indexOf(pick) < 0) { try { pick = localStorage.getItem('lang'); } catch (e) { pick = null; } }
+  if (codes.indexOf(pick) < 0) {
+    pick = null;
+    var list = navigator.languages || [navigator.language];
+    for (var i = 0; i < list.length && !pick; i++) if (codes.indexOf(norm(list[i])) >= 0) pick = norm(list[i]);
+  }
+  location.replace('/' + (pick || 'en') + '/legal/' + DOC + location.hash);
+})();</script></head>
+<body style="font-family:system-ui,sans-serif;padding:24px"><noscript><a href="/en/legal/terms/">Terms of Use</a></noscript></body></html>

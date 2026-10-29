@@ -1,0 +1,71 @@
+---
+// Yasal belge sayfaları (/xx/legal/, /xx/legal/privacy/, /xx/legal/terms/). Metinler src/legal/documents.json.
+import Base from '../layouts/Base.astro';
+import content from '../i18n/content.json';
+import docs from '../legal/documents.json';
+import { GA_ID, LOCALES } from '../config';
+
+interface Props { code: string; doc?: 'privacy' | 'terms' }
+const { code, doc } = Astro.props;
+const locale = LOCALES.find(l => l.code === code)!;
+const t = (content as any)[code];
+const d = (docs as any)[code];
+const LEGAL: Record<string, string> = { tr: 'Yasal belgeler', en: 'Legal', zh: '法律文件', es: 'Documentos legales', hi: 'कानूनी दस्तावेज़', ar: 'المستندات القانونية', 'pt-br': 'Documentos legais', fr: 'Documents légaux', ru: 'Правовые документы', de: 'Rechtliches', ja: '法的文書' };
+const page = doc ? d[doc] : null;
+const title = page ? page.title : LEGAL[code];
+const path = doc ? `/${code}/legal/${doc}/` : `/${code}/legal/`;
+const lang = code === 'pt-br' ? 'pt-BR' : code;
+const fmt = (iso: string) => new Intl.DateTimeFormat(code === 'ar' ? 'ar-u-nu-latn' : code === 'hi' ? 'hi-IN-u-nu-latn' : code, { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(iso + 'T00:00:00Z'));
+const desc = page ? page.intro : `${d.privacy.title} · ${d.terms.title} · MarketAlert`;
+const ICON = (cls: string, d: string) => `<svg class="ic ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+const THEME_ICONS = ICON('i-moon', '<path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z"/>') + ICON('i-sun', '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>');
+const alt = (c: string) => (doc ? `/${c}/legal/${doc}/` : `/${c}/legal/`);
+---
+<Base lang={lang} dir={locale.dir} title={`${title} · MarketAlert`} description={desc} path={path} ogImage={`/og/${code}.png`} jsonLd={[]} alternates={LOCALES.map(l => ({ hreflang: l.hreflang, href: alt(l.code) }))}>
+  <header class="hd">
+    <a class="logo" href={`/${code}/`}><img src="/icons/logo-96.png" alt="" width="32" height="32" /><b>MarketAlert</b></a>
+    <div class="hx">
+      <label class="lsel"><span class="skip">{t.ui.lang}</span>
+        <select id="lang" aria-label={t.ui.lang} data-base={doc ? `legal/${doc}/` : 'legal/'}>
+          {LOCALES.map(l => <option value={l.code} selected={l.code === code} lang={l.code}>{l.name}</option>)}
+        </select>
+      </label>
+      <button class="thm" id="theme" type="button" aria-label={t.ui.theme} title={t.ui.theme}><Fragment set:html={THEME_ICONS} /></button>
+    </div>
+  </header>
+  <main class="doc">
+    <nav class="crumbs"><a href={`/${code}/`}>MarketAlert</a> / <a href={`/${code}/legal/`}>{LEGAL[code]}</a></nav>
+    <h1>{title}</h1>
+    {page ? (
+      <>
+        <p class="eff">{d.effectiveDateLabel.replace('{date}', fmt(page.effectiveDate))}</p>
+        <p class="intro">{page.intro}</p>
+        {page.sections.map((s: any) => <section><h2>{s.heading}</h2><p>{s.body}</p></section>)}
+      </>
+    ) : (
+      <ul class="docs">
+        <li><a href={`/${code}/legal/privacy/`}><b>{d.privacy.title}</b><span>{d.privacy.intro}</span></a></li>
+        <li><a href={`/${code}/legal/terms/`}><b>{d.terms.title}</b><span>{d.terms.intro}</span></a></li>
+      </ul>
+    )}
+  </main>
+  <footer class="ft">
+    <nav class="legal">
+      <a href={`/${code}/legal/privacy/`}>{d.privacy.title}</a>
+      <a href={`/${code}/legal/terms/`}>{d.terms.title}</a>
+      {GA_ID && <button type="button" class="lnk" data-consent-open>{t.consent.prefs}</button>}
+    </nav>
+    <p class="disc">{t.disclaimer}</p>
+    <p class="copy">© 2026 MarketAlert · marketalertapp.com</p>
+  </footer>
+  <script>
+    const root = document.documentElement;
+    document.getElementById('theme')?.addEventListener('click', () => {
+      const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+      root.dataset.theme = dark ? 'light' : 'dark';
+      try { localStorage.setItem('theme', root.dataset.theme); } catch (e) { /* depolama kapalı olabilir */ }
+    });
+    const sel = document.getElementById('lang') as HTMLSelectElement | null;
+    sel?.addEventListener('change', () => { location.href = '/' + sel.value + '/' + sel.dataset.base; });
+  </script>
+</Base>

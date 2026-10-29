@@ -1,0 +1,6 @@
+---
+import LegalPage from '../../../components/LegalPage.astro';
+import { LOCALES } from '../../../config';
+export const getStaticPaths = () => LOCALES.map(l => ({ params: { lang: l.code } }));
+---
+<LegalPage code={Astro.params.lang!} />
