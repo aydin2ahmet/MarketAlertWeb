@@ -1,0 +1,2697 @@
+{
+ "tr": {
+  "nav": [
+   "Özellikler",
+   "Nasıl çalışır",
+   "Planlar",
+   "SSS"
+  ],
+  "download": "İndir",
+  "store1s": "App Store'dan",
+  "store1": "İndirin",
+  "store2s": "Google Play'den",
+  "store2": "Alın",
+  "heroKicker": "Kripto alarm uygulaması · iOS ve Android",
+  "heroTitle": "Kripto piyasasını sen değil, MarketAlert izlesin.",
+  "heroSub": "Fiyat, yüzde hareket, RSI, MACD, hacim ve ortalama kesişimleri için alarm kur; tek alarmla tüm coinleri tara. Yaz ya da söyle, gerisini MarketAlert halletsin. Uygulama kapalıyken bile.",
+  "chips": [
+   "7 gün ücretsiz deneme",
+   "Kayıt olmadan misafir başla",
+   "11 dil · açık/koyu tema"
+  ],
+  "sayExample": "“BTC 85 bin altına düşerse haber ver.”",
+  "markets": "Binance Spot ve Vadeli · USDT ve USDC · Dört piyasa da her planda açık",
+  "f": [
+   {
+    "k": "price",
+    "t": "Hedefe dokunan iğne bile kaçmaz",
+    "s": "Fiyat alarmı",
+    "d": "Fiyat alarmları işlemleri 250 ms'lik pencerelerin en yüksek ve en düşük değeriyle kontrol eder. Fiyat hedefe bir an değip dönse bile haber alırsın; bildirimde dokunuş fiyatı ve son fiyat birlikte yazar."
+   },
+   {
+    "k": "types",
+    "t": "8 koşul tipi, 1 dakikadan 1 güne",
+    "s": "Koşullar",
+    "d": "Fiyat, belli sürede yüzde hareket, 24 saatlik tepe/dip, RSI, MACD, hacim artışı, SMA/EMA kesişimi ve fiyatın ortalamayı kesmesi. İndikatörler 1dk–1g mumlarında, kapanmış mumla değerlendirilir."
+   },
+   {
+    "k": "multi",
+    "t": "Koşulları VE / VEYA ile birleştir",
+    "s": "Çok koşul",
+    "d": "“RSI 30'un altına insin VE fiyat 60.000'in üstünde kalsın” gibi kurallar tek alarmda. Planına göre bir alarma 5 koşula kadar ekleyebilirsin."
+   },
+   {
+    "k": "all",
+    "t": "Tek alarmla tüm coinleri tara",
+    "s": "Tüm coinler",
+    "d": "İlk 100, ilk 200 ya da piyasadaki tüm coinler. Eşleşen her coin ayrı kaydedilir; bildirim yoğunluğunu sen seçersin: Anlık, Dengeli ya da 15 dakikada bir Özet."
+   },
+   {
+    "k": "ai",
+    "t": "Yaz ya da söyle, asistan kursun",
+    "s": "AI ve ses",
+    "d": "“BTC 85 bin altına düşerse haber ver” demen yeterli. Asistan alarmı taslak olarak hazırlar; sen onaylamadan hiçbir alarm kurulmaz. Konuşman cihazında yazıya çevrilir, yalnızca metin gönderilir."
+   },
+   {
+    "k": "tpl",
+    "t": "Hazır şablonlarla saniyeler içinde başla",
+    "s": "Şablonlar",
+    "d": "Pump, Dump, Pump + hacim, Aşırı satım, Aşırı alım, Trend kesişmesi, 24 saatlik zirve kırılımı, Piyasa taraması. Değerleri kontrol et, tek dokunuşla kur."
+   },
+   {
+    "k": "ch",
+    "t": "Bildirim nereye istersen",
+    "s": "Kanallar",
+    "d": "Kendi alarm sesinle push, MarketAlert botuyla Telegram ya da HMAC-SHA256 imzalı webhook ile kendi sunucun. Telegram'ı bağlamak için sohbet kimliği girmen gerekmez."
+   },
+   {
+    "k": "live",
+    "t": "Alarmın şu an nerede, her an gör",
+    "s": "Canlı durum",
+    "d": "Her alarm canlı değeri, hedefe kalan mesafeyi ve koşulun şu an sağlanıp sağlanmadığını gösterir. Alarmın neden çalmadığını tahmin etmek zorunda kalmazsın."
+   },
+   {
+    "k": "log",
+    "t": "Bir push kaçsa bile kayıt kaybolmaz",
+    "s": "Bildirim kaydı",
+    "d": "Her eşleşme Bildirimler sayfasında saklanır: koşulun ne zaman gerçekleştiği, bildirimin ne zaman gönderildiği ve telefonuna ne kadar sürede ulaştığı adım adım görünür."
+   }
+  ],
+  "howTitle": "Üç adımda alarm",
+  "how": [
+   [
+    "Coin ve piyasayı seç",
+    "Spot ya da Vadeli, USDT ya da USDC. İstersen tek coin, istersen tüm coinler."
+   ],
+   [
+    "Koşulu kur ya da söyle",
+    "Formla, hazır şablonla, yazarak ya da konuşarak. Gözden geçir ve onayla."
+   ],
+   [
+    "Bildirim gelsin",
+    "Push, Telegram ya da webhook. Uygulama kapalıyken bile."
+   ]
+  ],
+  "whyTitle": "Neden MarketAlert?",
+  "whySub": "Sıradan bir fiyat alarmının yapamadıkları, tek uygulamada.",
+  "cmpUs": "MarketAlert",
+  "cmpThem": "Sıradan fiyat alarmı",
+  "cmp": [
+   [
+    "Fiyat ve yüzde değişim alarmı",
+    1,
+    1
+   ],
+   [
+    "RSI, MACD, hacim, ortalama kesişimi",
+    1,
+    "Çoğunlukla yok"
+   ],
+   [
+    "Koşulları VE / VEYA ile birleştirme",
+    1,
+    0
+   ],
+   [
+    "Tek alarmla tüm coinleri tarama",
+    1,
+    0
+   ],
+   [
+    "Yazarak ya da konuşarak alarm kurma",
+    1,
+    0
+   ],
+   [
+    "Kısa iğne dokunuşunu yakalama",
+    1,
+    "Belirsiz"
+   ],
+   [
+    "Bildirim yoğunluğu: Anlık / Dengeli / Özet",
+    1,
+    0
+   ],
+   [
+    "Telegram ve imzalı webhook",
+    1,
+    "Nadiren"
+   ]
+  ],
+  "plansTitle": "Ücretsiz başla, ihtiyacın büyüdükçe yükselt",
+  "plansNote": "Plus ve Pro 7 gün ücretsiz denenebilir. Fiyatlar mağazada, ülkene göre gösterilir.",
+  "planRows": [
+   [
+    "Alarm",
+    "3",
+    "20",
+    "100"
+   ],
+   [
+    "Koşul tipleri",
+    "Fiyat, %, 24s tepe/dip",
+    "Tümü (8)",
+    "Tümü (8)"
+   ],
+   [
+    "Alarm başına koşul",
+    "1",
+    "3",
+    "5"
+   ],
+   [
+    "Tüm coinler alarmı",
+    "—",
+    "2 · İlk 100",
+    "10 · Tümü"
+   ],
+   [
+    "Tekrarlı alarm",
+    "—",
+    "✓",
+    "✓"
+   ],
+   [
+    "Kanallar",
+    "Push",
+    "+ Telegram",
+    "+ Webhook"
+   ],
+   [
+    "AI / ses",
+    "5/gün",
+    "200/hafta",
+    "1000/hafta"
+   ],
+   [
+    "Geçmiş",
+    "7 gün",
+    "90 gün",
+    "365 gün"
+   ]
+  ],
+  "popular": "En çok seçilen",
+  "faqTitle": "Sık sorulan sorular",
+  "faq": [
+   [
+    "MarketAlert ücretsiz mi?",
+    "Evet. Ücretsiz planla 3 alarm kurabilir; fiyat, yüzde değişim ve 24 saatlik tepe/dip koşullarını kullanabilirsin. Plus ve Pro 7 gün ücretsiz denenebilir."
+   ],
+   [
+    "Uygulama kapalıyken alarm çalışır mı?",
+    "Evet. Alarmlar MarketAlert sunucularında sürekli izlenir; uygulama kapalı ya da arka planda olsa da koşul gerçekleştiğinde bildirim gönderilir."
+   ],
+   [
+    "Hangi borsa ve piyasaları destekliyor?",
+    "Binance Spot ve Vadeli (perpetual) piyasalarındaki USDT ve USDC çiftleri. Dört piyasa da her planda açıktır."
+   ],
+   [
+    "Yapay zekâ benden habersiz alarm kurar mı?",
+    "Hayır. Asistan yalnızca taslak hazırlar; alarm sen onaylayınca oluşur. Asistan yatırım tavsiyesi vermez."
+   ],
+   [
+    "Hangi dilleri destekliyor?",
+    "Türkçe, English, 中文, Español, हिन्दी, العربية, Português, Français, Русский, Deutsch ve 日本語. Uygulama ve bildirimler bu 11 dilde çalışır."
+   ],
+   [
+    "Borsa hesabıma erişiyor mu?",
+    "Hayır. MarketAlert senin belirlediğin koşulları izleyen bir bildirim aracıdır; alım satım yapmaz, borsa hesabına ya da cüzdanına bağlanmaz."
+   ]
+  ],
+  "ctaTitle": "İlk alarmını bir dakikada kur.",
+  "ctaSub": "Kayıt olmadan misafir olarak başla, alarmların sunucuda izlensin.",
+  "legal": [
+   "Gizlilik",
+   "Kullanım koşulları",
+   "Destek",
+   "İletişim"
+  ],
+  "disclaimer": "MarketAlert, Binance ile bağlantılı değildir. Bildirimler bilgilendirme amaçlıdır, yatırım tavsiyesi değildir.",
+  "meta": {
+   "title": "MarketAlert – Kripto Fiyat ve RSI Alarmı, Tüm Coinleri Tara",
+   "desc": "Fiyat, RSI, MACD, hacim ve ortalama kesişimi için kripto alarmı kur; tek alarmla tüm coinleri tara. Sesle ya da AI ile alarm kur. iOS ve Android'de ücretsiz."
+  },
+  "ui": {
+   "theme": "Temayı değiştir",
+   "lang": "Dil",
+   "suggest": "Bu sayfa Türkçe olarak da var"
+  },
+  "soon": "Yakında",
+  "consent": {
+   "msg": "Siteyi geliştirmek için Google Analytics ile ziyaret istatistikleri topluyoruz. İzin veriyor musun?",
+   "yes": "Kabul et",
+   "no": "Reddet",
+   "prefs": "Çerez tercihleri"
+  }
+ },
+ "en": {
+  "nav": [
+   "Features",
+   "How it works",
+   "Plans",
+   "FAQ"
+  ],
+  "download": "Download",
+  "store1s": "Download on the",
+  "store1": "App Store",
+  "store2s": "Get it on",
+  "store2": "Google Play",
+  "heroKicker": "Crypto alert app · iOS and Android",
+  "heroTitle": "Stop watching the charts. Let MarketAlert watch them.",
+  "heroSub": "Set alerts for price, percent moves, RSI, MACD, volume and moving-average crosses, and scan every coin with a single alert. Type it or say it, and MarketAlert does the rest, even when the app is closed.",
+  "chips": [
+   "7-day free trial",
+   "Start as a guest, no sign-up",
+   "11 languages · light/dark"
+  ],
+  "sayExample": "“Notify me if BTC drops below 85,000.”",
+  "markets": "Binance Spot and Futures · USDT and USDC · All four markets on every plan",
+  "f": [
+   {
+    "k": "price",
+    "t": "Even a quick wick won't slip past",
+    "s": "Price alerts",
+    "d": "Price alerts check the high and low of every 250 ms trade window. If the price touches your target for a split second, you still hear about it, with both the touch price and the last price."
+   },
+   {
+    "k": "types",
+    "t": "8 condition types, from 1 minute to 1 day",
+    "s": "Conditions",
+    "d": "Price, percent move within a time window, 24-hour high/low, RSI, MACD, volume spike, SMA/EMA cross and price crossing an average. Indicators are checked on closed 1m–1d candles."
+   },
+   {
+    "k": "multi",
+    "t": "Combine conditions with AND / OR",
+    "s": "Multi-condition",
+    "d": "Rules like “RSI falls below 30 AND price stays above 60,000” in a single alert. Add up to 5 conditions per alert, depending on your plan."
+   },
+   {
+    "k": "all",
+    "t": "Scan every coin with one alert",
+    "s": "All coins",
+    "d": "Top 100, top 200 or every coin in the market. Each match is saved separately, and you choose the pace: Instant, Balanced, or a Digest every 15 minutes."
+   },
+   {
+    "k": "ai",
+    "t": "Type it or say it, the assistant sets it up",
+    "s": "AI and voice",
+    "d": "Just say “Notify me if BTC drops below 85,000”. The assistant prepares a draft, and nothing is created until you approve it. Speech is turned into text on your device; only the text is sent."
+   },
+   {
+    "k": "tpl",
+    "t": "Start in seconds with ready-made templates",
+    "s": "Templates",
+    "d": "Pump, Dump, Pump + volume, Oversold, Overbought, Trend crossover, 24-hour high breakout, Market scan. Check the values and set it up in one tap."
+   },
+   {
+    "k": "ch",
+    "t": "Notifications wherever you want them",
+    "s": "Channels",
+    "d": "Push with your own alarm sound, Telegram via the MarketAlert bot, or an HMAC-SHA256 signed webhook to your own server. Connecting Telegram never asks for a chat ID."
+   },
+   {
+    "k": "live",
+    "t": "See where every alert stands, live",
+    "s": "Live status",
+    "d": "Each alert shows the live value, the distance to the target and whether the condition is met right now. No more guessing why an alert hasn't fired."
+   },
+   {
+    "k": "log",
+    "t": "Miss a push? The record is still there",
+    "s": "Notification log",
+    "d": "Every match is kept in Notifications: when the condition was met, when the notification was sent and how long it took to reach your phone, step by step."
+   }
+  ],
+  "howTitle": "An alert in three steps",
+  "how": [
+   [
+    "Pick the coin and market",
+    "Spot or Futures, USDT or USDC. One coin, or all of them."
+   ],
+   [
+    "Set the condition, or say it",
+    "With the form, a template, by typing or by voice. Review and approve."
+   ],
+   [
+    "Get notified",
+    "Push, Telegram or webhook. Even when the app is closed."
+   ]
+  ],
+  "whyTitle": "Why MarketAlert?",
+  "whySub": "What a basic price alert can't do, in one app.",
+  "cmpUs": "MarketAlert",
+  "cmpThem": "Basic price alert",
+  "cmp": [
+   [
+    "Price and percent-change alerts",
+    1,
+    1
+   ],
+   [
+    "RSI, MACD, volume, average crosses",
+    1,
+    "Usually not"
+   ],
+   [
+    "Combine conditions with AND / OR",
+    1,
+    0
+   ],
+   [
+    "Scan all coins with one alert",
+    1,
+    0
+   ],
+   [
+    "Create alerts by typing or voice",
+    1,
+    0
+   ],
+   [
+    "Catch quick wick touches",
+    1,
+    "Unclear"
+   ],
+   [
+    "Pace: Instant / Balanced / Digest",
+    1,
+    0
+   ],
+   [
+    "Telegram and signed webhook",
+    1,
+    "Rarely"
+   ]
+  ],
+  "plansTitle": "Start free, upgrade as you grow",
+  "plansNote": "Plus and Pro come with a 7-day free trial. Prices are shown in the store for your country.",
+  "planRows": [
+   [
+    "Alerts",
+    "3",
+    "20",
+    "100"
+   ],
+   [
+    "Condition types",
+    "Price, %, 24h high/low",
+    "All (8)",
+    "All (8)"
+   ],
+   [
+    "Conditions per alert",
+    "1",
+    "3",
+    "5"
+   ],
+   [
+    "All-coins alerts",
+    "—",
+    "2 · Top 100",
+    "10 · All"
+   ],
+   [
+    "Repeating alerts",
+    "—",
+    "✓",
+    "✓"
+   ],
+   [
+    "Channels",
+    "Push",
+    "+ Telegram",
+    "+ Webhook"
+   ],
+   [
+    "AI / voice",
+    "5/day",
+    "200/week",
+    "1000/week"
+   ],
+   [
+    "History",
+    "7 days",
+    "90 days",
+    "365 days"
+   ]
+  ],
+  "popular": "Most popular",
+  "faqTitle": "Frequently asked questions",
+  "faq": [
+   [
+    "Is MarketAlert free?",
+    "Yes. The free plan gives you 3 alerts with price, percent-change and 24-hour high/low conditions. Plus and Pro come with a 7-day free trial."
+   ],
+   [
+    "Do alerts work when the app is closed?",
+    "Yes. Alerts are watched continuously on MarketAlert servers, so you are notified even when the app is closed or in the background."
+   ],
+   [
+    "Which exchanges and markets are supported?",
+    "USDT and USDC pairs on Binance Spot and Futures (perpetual). All four markets are open on every plan."
+   ],
+   [
+    "Can the AI create alerts without me knowing?",
+    "No. The assistant only prepares a draft; the alert is created when you approve it. It does not give investment advice."
+   ],
+   [
+    "Which languages are supported?",
+    "Türkçe, English, 中文, Español, हिन्दी, العربية, Português, Français, Русский, Deutsch and 日本語. The app and its notifications work in all 11."
+   ],
+   [
+    "Does it access my exchange account?",
+    "No. MarketAlert is a notification tool that watches the conditions you set. It does not trade and never connects to your exchange account or wallet."
+   ]
+  ],
+  "ctaTitle": "Set your first alert in a minute.",
+  "ctaSub": "Start as a guest without signing up; your alerts are watched on our servers.",
+  "legal": [
+   "Privacy",
+   "Terms",
+   "Support",
+   "Contact"
+  ],
+  "disclaimer": "MarketAlert is not affiliated with Binance. Notifications are for information only and are not investment advice.",
+  "meta": {
+   "title": "MarketAlert – Crypto Price & RSI Alerts for Every Coin",
+   "desc": "Crypto alerts for price, RSI, MACD, volume and moving-average crosses; scan every coin with one alert. Create alerts by voice or AI. Free on iOS and Android."
+  },
+  "ui": {
+   "theme": "Toggle theme",
+   "lang": "Language",
+   "suggest": "This page is also available in English"
+  },
+  "soon": "Coming soon",
+  "consent": {
+   "msg": "We use Google Analytics to collect visit statistics that help us improve this site. Do you allow it?",
+   "yes": "Accept",
+   "no": "Decline",
+   "prefs": "Cookie settings"
+  }
+ },
+ "zh": {
+  "nav": [
+   "功能",
+   "使用方法",
+   "套餐",
+   "常见问题"
+  ],
+  "download": "下载",
+  "store1s": "下载于",
+  "store1": "App Store",
+  "store2s": "立即获取",
+  "store2": "Google Play",
+  "heroKicker": "加密货币提醒应用 · iOS 和 Android",
+  "heroTitle": "不用你盯盘，MarketAlert 替你盯。",
+  "heroSub": "为价格、涨跌幅、RSI、MACD、成交量和均线交叉设置提醒，用一个提醒扫描所有币种。打字或说出来，其余交给 MarketAlert，即使应用已关闭。",
+  "chips": [
+   "7 天免费试用",
+   "无需注册，访客即可开始",
+   "11 种语言 · 浅色/深色"
+  ],
+  "sayExample": "“如果 BTC 跌破 85,000 就提醒我。”",
+  "markets": "Binance 现货和合约 · USDT 和 USDC · 四个市场所有套餐均可用",
+  "f": [
+   {
+    "k": "price",
+    "t": "即使是瞬间的影线也不会错过",
+    "s": "价格提醒",
+    "d": "价格提醒会检查每个 250 毫秒成交窗口的最高价和最低价。价格哪怕只触及目标一瞬间，你也会收到通知，通知中同时显示触及价和最新价。"
+   },
+   {
+    "k": "types",
+    "t": "8 种条件类型，从 1 分钟到 1 天",
+    "s": "条件",
+    "d": "价格、一段时间内的涨跌幅、24 小时最高/最低、RSI、MACD、放量、SMA/EMA 交叉以及价格穿越均线。指标按所选周期（1 分钟至 1 天）的已收盘 K 线计算。"
+   },
+   {
+    "k": "multi",
+    "t": "用“且 / 或”组合条件",
+    "s": "多条件",
+    "d": "例如“RSI 跌破 30 且价格保持在 60,000 以上”，一个提醒即可完成。根据套餐，每个提醒最多可添加 5 个条件。"
+   },
+   {
+    "k": "all",
+    "t": "一个提醒扫描所有币种",
+    "s": "全部币种",
+    "d": "前 100、前 200 或市场上的全部币种。每次匹配都会单独保存，通知节奏由你选择：即时、均衡，或每 15 分钟一次汇总。"
+   },
+   {
+    "k": "ai",
+    "t": "打字或说话，助手帮你设置",
+    "s": "AI 与语音",
+    "d": "只需说“如果 BTC 跌破 85,000 就提醒我”。助手会准备草稿，未经你确认不会创建任何提醒。语音在你的设备上转为文字，只发送文字。"
+   },
+   {
+    "k": "tpl",
+    "t": "用现成模板几秒钟开始",
+    "s": "模板",
+    "d": "急涨、急跌、急涨 + 放量、超卖、超买、趋势交叉、24 小时新高突破、市场扫描。检查数值，一键设置。"
+   },
+   {
+    "k": "ch",
+    "t": "通知发到你想要的地方",
+    "s": "通知渠道",
+    "d": "使用自选铃声的推送、通过 MarketAlert 机器人发送的 Telegram 消息，或带 HMAC-SHA256 签名的 Webhook 发送到你的服务器。连接 Telegram 无需输入聊天 ID。"
+   },
+   {
+    "k": "live",
+    "t": "随时看到每个提醒的状态",
+    "s": "实时状态",
+    "d": "每个提醒都显示实时数值、距目标的距离，以及条件此刻是否满足。不必再猜提醒为什么没有触发。"
+   },
+   {
+    "k": "log",
+    "t": "错过推送？记录仍在",
+    "s": "通知记录",
+    "d": "每次匹配都保存在“通知”中：条件何时满足、通知何时发送、多久送达你的手机，一步一步清清楚楚。"
+   }
+  ],
+  "howTitle": "三步设置提醒",
+  "how": [
+   [
+    "选择币种和市场",
+    "现货或合约，USDT 或 USDC。一个币种，或全部币种。"
+   ],
+   [
+    "设置条件，或直接说出来",
+    "用表单、模板、打字或语音。检查后确认。"
+   ],
+   [
+    "接收通知",
+    "推送、Telegram 或 Webhook。即使应用已关闭。"
+   ]
+  ],
+  "whyTitle": "为什么选择 MarketAlert？",
+  "whySub": "普通价格提醒做不到的，都在一个应用里。",
+  "cmpUs": "MarketAlert",
+  "cmpThem": "普通价格提醒",
+  "cmp": [
+   [
+    "价格和涨跌幅提醒",
+    1,
+    1
+   ],
+   [
+    "RSI、MACD、成交量、均线交叉",
+    1,
+    "通常没有"
+   ],
+   [
+    "用“且 / 或”组合条件",
+    1,
+    0
+   ],
+   [
+    "一个提醒扫描所有币种",
+    1,
+    0
+   ],
+   [
+    "打字或语音创建提醒",
+    1,
+    0
+   ],
+   [
+    "捕捉瞬间影线触及",
+    1,
+    "不明确"
+   ],
+   [
+    "通知节奏：即时 / 均衡 / 汇总",
+    1,
+    0
+   ],
+   [
+    "Telegram 和签名 Webhook",
+    1,
+    "很少"
+   ]
+  ],
+  "plansTitle": "免费开始，按需升级",
+  "plansNote": "Plus 和 Pro 可免费试用 7 天。价格以你所在国家/地区的应用商店显示为准。",
+  "planRows": [
+   [
+    "提醒",
+    "3",
+    "20",
+    "100"
+   ],
+   [
+    "条件类型",
+    "价格、%、24h 高/低",
+    "全部 (8)",
+    "全部 (8)"
+   ],
+   [
+    "每个提醒的条件数",
+    "1",
+    "3",
+    "5"
+   ],
+   [
+    "全部币种提醒",
+    "—",
+    "2 · 前 100",
+    "10 · 全部"
+   ],
+   [
+    "重复提醒",
+    "—",
+    "✓",
+    "✓"
+   ],
+   [
+    "渠道",
+    "推送",
+    "+ Telegram",
+    "+ Webhook"
+   ],
+   [
+    "AI / 语音",
+    "5/天",
+    "200/周",
+    "1000/周"
+   ],
+   [
+    "历史记录",
+    "7 天",
+    "90 天",
+    "365 天"
+   ]
+  ],
+  "popular": "最受欢迎",
+  "faqTitle": "常见问题",
+  "faq": [
+   [
+    "MarketAlert 免费吗？",
+    "是的。免费套餐提供 3 个提醒，可使用价格、涨跌幅和 24 小时最高/最低条件。Plus 和 Pro 可免费试用 7 天。"
+   ],
+   [
+    "应用关闭时提醒还有效吗？",
+    "有效。提醒在 MarketAlert 服务器上持续监控，即使应用关闭或在后台，条件满足时也会通知你。"
+   ],
+   [
+    "支持哪些交易所和市场？",
+    "Binance 现货和合约（永续）的 USDT 与 USDC 交易对。四个市场在所有套餐中均可用。"
+   ],
+   [
+    "AI 会在我不知情的情况下创建提醒吗？",
+    "不会。助手只准备草稿，你确认后才会创建提醒。它不提供投资建议。"
+   ],
+   [
+    "支持哪些语言？",
+    "Türkçe、English、中文、Español、हिन्दी、العربية、Português、Français、Русский、Deutsch 和 日本語。应用及其通知支持全部 11 种语言。"
+   ],
+   [
+    "它会访问我的交易所账户吗？",
+    "不会。MarketAlert 只是监控你所设条件的通知工具，不进行交易，也不会连接你的交易所账户或钱包。"
+   ]
+  ],
+  "ctaTitle": "一分钟设置你的第一个提醒。",
+  "ctaSub": "无需注册即可以访客身份开始，你的提醒会在我们的服务器上持续监控。",
+  "legal": [
+   "隐私",
+   "条款",
+   "支持",
+   "联系我们"
+  ],
+  "disclaimer": "MarketAlert 与 Binance 无关联。通知仅供参考，不构成投资建议。",
+  "meta": {
+   "title": "MarketAlert – 加密货币价格与 RSI 提醒，扫描所有币种",
+   "desc": "为价格、RSI、MACD、成交量和均线交叉设置加密货币提醒，一个提醒扫描所有币种。iOS 和 Android 免费下载。"
+  },
+  "ui": {
+   "theme": "切换主题",
+   "lang": "语言",
+   "suggest": "此页面也有中文版本"
+  },
+  "soon": "即将上线",
+  "consent": {
+   "msg": "我们使用 Google Analytics 收集访问统计，以改进本网站。是否允许？",
+   "yes": "同意",
+   "no": "拒绝",
+   "prefs": "Cookie 设置"
+  }
+ },
+ "es": {
+  "nav": [
+   "Funciones",
+   "Cómo funciona",
+   "Planes",
+   "Preguntas"
+  ],
+  "download": "Descargar",
+  "store1s": "Descárgalo en el",
+  "store1": "App Store",
+  "store2s": "Disponible en",
+  "store2": "Google Play",
+  "heroKicker": "App de alertas cripto · iOS y Android",
+  "heroTitle": "No vigiles el mercado cripto: deja que MarketAlert lo haga.",
+  "heroSub": "Crea alertas de precio, variación porcentual, RSI, MACD, volumen y cruces de medias, y escanea todas las monedas con una sola alerta. Escríbelo o dilo, y MarketAlert hace el resto, incluso con la app cerrada.",
+  "chips": [
+   "Prueba gratis de 7 días",
+   "Empieza como invitado, sin registro",
+   "11 idiomas · claro/oscuro"
+  ],
+  "sayExample": "“Avísame si BTC baja de 85.000.”",
+  "markets": "Binance Spot y Futuros · USDT y USDC · Los cuatro mercados en todos los planes",
+  "f": [
+   {
+    "k": "price",
+    "t": "Ni una mecha rápida se te escapa",
+    "s": "Alertas de precio",
+    "d": "Las alertas de precio revisan el máximo y el mínimo de cada ventana de operaciones de 250 ms. Si el precio toca tu objetivo un instante, igual te avisamos, con el precio de toque y el último precio."
+   },
+   {
+    "k": "types",
+    "t": "8 tipos de condición, de 1 minuto a 1 día",
+    "s": "Condiciones",
+    "d": "Precio, variación porcentual en un periodo, máximo/mínimo de 24 horas, RSI, MACD, pico de volumen, cruce SMA/EMA y precio que cruza una media. Los indicadores se evalúan con velas cerradas de 1 min a 1 día."
+   },
+   {
+    "k": "multi",
+    "t": "Combina condiciones con Y / O",
+    "s": "Varias condiciones",
+    "d": "Reglas como “el RSI baja de 30 Y el precio sigue por encima de 60.000” en una sola alerta. Hasta 5 condiciones por alerta, según tu plan."
+   },
+   {
+    "k": "all",
+    "t": "Escanea todas las monedas con una alerta",
+    "s": "Todas las monedas",
+    "d": "Top 100, top 200 o todas las monedas del mercado. Cada coincidencia se guarda por separado y tú eliges el ritmo: Instantáneo, Equilibrado o un Resumen cada 15 minutos."
+   },
+   {
+    "k": "ai",
+    "t": "Escríbelo o dilo, el asistente lo configura",
+    "s": "IA y voz",
+    "d": "Solo di “Avísame si BTC baja de 85.000”. El asistente prepara un borrador y no se crea nada sin tu aprobación. Tu voz se convierte en texto en tu dispositivo; solo se envía el texto."
+   },
+   {
+    "k": "tpl",
+    "t": "Empieza en segundos con plantillas",
+    "s": "Plantillas",
+    "d": "Pump, Dump, Pump + volumen, Sobreventa, Sobrecompra, Cruce de tendencia, Ruptura del máximo de 24 h, Escaneo del mercado. Revisa los valores y actívala con un toque."
+   },
+   {
+    "k": "ch",
+    "t": "Avisos donde tú quieras",
+    "s": "Canales",
+    "d": "Push con tu propio sonido de alarma, Telegram con el bot de MarketAlert o un webhook firmado con HMAC-SHA256 hacia tu servidor. Para conectar Telegram nunca necesitas un ID de chat."
+   },
+   {
+    "k": "live",
+    "t": "Ve en todo momento dónde está cada alerta",
+    "s": "Estado en vivo",
+    "d": "Cada alerta muestra el valor en vivo, la distancia al objetivo y si la condición se cumple ahora mismo. Se acabó adivinar por qué no saltó una alerta."
+   },
+   {
+    "k": "log",
+    "t": "¿Te perdiste un push? El registro sigue ahí",
+    "s": "Registro de avisos",
+    "d": "Cada coincidencia queda en Notificaciones: cuándo se cumplió la condición, cuándo se envió el aviso y cuánto tardó en llegar a tu teléfono, paso a paso."
+   }
+  ],
+  "howTitle": "Una alerta en tres pasos",
+  "how": [
+   [
+    "Elige la moneda y el mercado",
+    "Spot o Futuros, USDT o USDC. Una moneda o todas."
+   ],
+   [
+    "Define la condición, o dila",
+    "Con el formulario, una plantilla, escribiendo o por voz. Revisa y aprueba."
+   ],
+   [
+    "Recibe el aviso",
+    "Push, Telegram o webhook. Incluso con la app cerrada."
+   ]
+  ],
+  "whyTitle": "¿Por qué MarketAlert?",
+  "whySub": "Lo que una alerta de precio básica no puede hacer, en una sola app.",
+  "cmpUs": "MarketAlert",
+  "cmpThem": "Alerta de precio básica",
+  "cmp": [
+   [
+    "Alertas de precio y variación porcentual",
+    1,
+    1
+   ],
+   [
+    "RSI, MACD, volumen, cruces de medias",
+    1,
+    "Normalmente no"
+   ],
+   [
+    "Combinar condiciones con Y / O",
+    1,
+    0
+   ],
+   [
+    "Escanear todas las monedas con una alerta",
+    1,
+    0
+   ],
+   [
+    "Crear alertas escribiendo o por voz",
+    1,
+    0
+   ],
+   [
+    "Detectar toques rápidos de mecha",
+    1,
+    "No está claro"
+   ],
+   [
+    "Ritmo: Instantáneo / Equilibrado / Resumen",
+    1,
+    0
+   ],
+   [
+    "Telegram y webhook firmado",
+    1,
+    "Rara vez"
+   ]
+  ],
+  "plansTitle": "Empieza gratis y mejora cuando lo necesites",
+  "plansNote": "Plus y Pro incluyen 7 días de prueba gratis. Los precios se muestran en la tienda para tu país.",
+  "planRows": [
+   [
+    "Alertas",
+    "3",
+    "20",
+    "100"
+   ],
+   [
+    "Tipos de condición",
+    "Precio, %, máx./mín. 24 h",
+    "Todos (8)",
+    "Todos (8)"
+   ],
+   [
+    "Condiciones por alerta",
+    "1",
+    "3",
+    "5"
+   ],
+   [
+    "Alertas de todas las monedas",
+    "—",
+    "2 · Top 100",
+    "10 · Todas"
+   ],
+   [
+    "Alertas repetidas",
+    "—",
+    "✓",
+    "✓"
+   ],
+   [
+    "Canales",
+    "Push",
+    "+ Telegram",
+    "+ Webhook"
+   ],
+   [
+    "IA / voz",
+    "5/día",
+    "200/sem.",
+    "1000/sem."
+   ],
+   [
+    "Historial",
+    "7 días",
+    "90 días",
+    "365 días"
+   ]
+  ],
+  "popular": "Más popular",
+  "faqTitle": "Preguntas frecuentes",
+  "faq": [
+   [
+    "¿MarketAlert es gratis?",
+    "Sí. El plan gratuito incluye 3 alertas con condiciones de precio, variación porcentual y máximo/mínimo de 24 horas. Plus y Pro tienen 7 días de prueba gratis."
+   ],
+   [
+    "¿Las alertas funcionan con la app cerrada?",
+    "Sí. Las alertas se vigilan continuamente en los servidores de MarketAlert, así que te avisamos aunque la app esté cerrada o en segundo plano."
+   ],
+   [
+    "¿Qué exchanges y mercados admite?",
+    "Pares USDT y USDC de Binance Spot y Futuros (perpetuos). Los cuatro mercados están abiertos en todos los planes."
+   ],
+   [
+    "¿La IA puede crear alertas sin que lo sepa?",
+    "No. El asistente solo prepara un borrador; la alerta se crea cuando la apruebas. No da consejos de inversión."
+   ],
+   [
+    "¿Qué idiomas admite?",
+    "Türkçe, English, 中文, Español, हिन्दी, العربية, Português, Français, Русский, Deutsch y 日本語. La app y sus avisos funcionan en los 11."
+   ],
+   [
+    "¿Accede a mi cuenta del exchange?",
+    "No. MarketAlert es una herramienta de avisos que vigila las condiciones que defines. No opera y nunca se conecta a tu cuenta del exchange ni a tu billetera."
+   ]
+  ],
+  "ctaTitle": "Crea tu primera alerta en un minuto.",
+  "ctaSub": "Empieza como invitado sin registrarte; tus alertas se vigilan en nuestros servidores.",
+  "legal": [
+   "Privacidad",
+   "Términos",
+   "Soporte",
+   "Contacto"
+  ],
+  "disclaimer": "MarketAlert no está afiliado a Binance. Los avisos son solo informativos y no constituyen asesoramiento de inversión.",
+  "meta": {
+   "title": "MarketAlert – Alertas cripto de precio y RSI para cada moneda",
+   "desc": "Alertas cripto de precio, RSI, MACD, volumen y cruces de medias; escanea todas las monedas con una alerta. Crea alertas por voz o con IA. Gratis en iOS y Android."
+  },
+  "ui": {
+   "theme": "Cambiar tema",
+   "lang": "Idioma",
+   "suggest": "Esta página también está en español"
+  },
+  "soon": "Próximamente",
+  "consent": {
+   "msg": "Usamos Google Analytics para recopilar estadísticas de visitas que nos ayudan a mejorar este sitio. ¿Lo permites?",
+   "yes": "Aceptar",
+   "no": "Rechazar",
+   "prefs": "Preferencias de cookies"
+  }
+ },
+ "hi": {
+  "nav": [
+   "फ़ीचर",
+   "कैसे काम करता है",
+   "प्लान",
+   "सवाल-जवाब"
+  ],
+  "download": "डाउनलोड",
+  "store1s": "डाउनलोड करें",
+  "store1": "App Store",
+  "store2s": "इसे पाएं",
+  "store2": "Google Play",
+  "heroKicker": "क्रिप्टो अलर्ट ऐप · iOS और Android",
+  "heroTitle": "क्रिप्टो मार्केट पर नज़र आप नहीं, MarketAlert रखे।",
+  "heroSub": "कीमत, प्रतिशत बदलाव, RSI, MACD, वॉल्यूम और मूविंग एवरेज क्रॉस के लिए अलर्ट बनाएं, और एक ही अलर्ट से सभी कॉइन स्कैन करें। लिखें या बोलें, बाकी काम MarketAlert करेगा, ऐप बंद होने पर भी।",
+  "chips": [
+   "7 दिन का मुफ़्त ट्रायल",
+   "बिना साइन-अप, गेस्ट के रूप में शुरू करें",
+   "11 भाषाएं · लाइट/डार्क"
+  ],
+  "sayExample": "“अगर BTC 85,000 से नीचे जाए तो मुझे बताना।”",
+  "markets": "Binance Spot और Futures · USDT और USDC · चारों मार्केट हर प्लान में",
+  "f": [
+   {
+    "k": "price",
+    "t": "तेज़ विक भी नहीं छूटेगी",
+    "s": "प्राइस अलर्ट",
+    "d": "प्राइस अलर्ट हर 250 ms ट्रेड विंडो के उच्चतम और न्यूनतम को जांचते हैं। अगर कीमत पल भर के लिए भी आपके टारगेट को छू ले, तो भी आपको सूचना मिलेगी, टच प्राइस और आख़िरी कीमत के साथ।"
+   },
+   {
+    "k": "types",
+    "t": "8 तरह की शर्तें, 1 मिनट से 1 दिन तक",
+    "s": "शर्तें",
+    "d": "कीमत, तय समय में प्रतिशत बदलाव, 24 घंटे का उच्च/निम्न, RSI, MACD, वॉल्यूम उछाल, SMA/EMA क्रॉस और कीमत का एवरेज को काटना। इंडिकेटर 1 मिनट से 1 दिन तक की बंद कैंडल पर जांचे जाते हैं।"
+   },
+   {
+    "k": "multi",
+    "t": "शर्तों को AND / OR से जोड़ें",
+    "s": "कई शर्तें",
+    "d": "“RSI 30 से नीचे जाए AND कीमत 60,000 से ऊपर रहे” जैसे नियम एक ही अलर्ट में। प्लान के अनुसार हर अलर्ट में 5 शर्तें तक।"
+   },
+   {
+    "k": "all",
+    "t": "एक अलर्ट से सभी कॉइन स्कैन करें",
+    "s": "सभी कॉइन",
+    "d": "टॉप 100, टॉप 200 या मार्केट के सभी कॉइन। हर मैच अलग से सेव होता है, और रफ़्तार आप चुनते हैं: तुरंत, संतुलित या हर 15 मिनट पर सारांश।"
+   },
+   {
+    "k": "ai",
+    "t": "लिखें या बोलें, असिस्टेंट सेट कर देगा",
+    "s": "AI और आवाज़",
+    "d": "बस कहें “अगर BTC 85,000 से नीचे जाए तो मुझे बताना”। असिस्टेंट एक ड्राफ़्ट बनाता है, आपकी मंज़ूरी के बिना कोई अलर्ट नहीं बनता। आपकी आवाज़ आपके डिवाइस पर ही टेक्स्ट में बदलती है, सिर्फ़ टेक्स्ट भेजा जाता है।"
+   },
+   {
+    "k": "tpl",
+    "t": "तैयार टेम्पलेट से सेकंडों में शुरुआत",
+    "s": "टेम्पलेट",
+    "d": "पंप, डंप, पंप + वॉल्यूम, ओवरसोल्ड, ओवरबॉट, ट्रेंड क्रॉसओवर, 24 घंटे के हाई का ब्रेकआउट, मार्केट स्कैन। वैल्यू जांचें और एक टैप में सेट करें।"
+   },
+   {
+    "k": "ch",
+    "t": "सूचना वहीं, जहां आप चाहें",
+    "s": "चैनल",
+    "d": "अपनी अलार्म ध्वनि वाला पुश, MarketAlert बॉट के ज़रिए Telegram, या आपके सर्वर पर HMAC-SHA256 से साइन किया गया वेबहुक। Telegram जोड़ने के लिए कभी चैट ID नहीं डालनी पड़ती।"
+   },
+   {
+    "k": "live",
+    "t": "हर अलर्ट की स्थिति हर पल देखें",
+    "s": "लाइव स्थिति",
+    "d": "हर अलर्ट लाइव वैल्यू, टारगेट से दूरी और यह दिखाता है कि शर्त अभी पूरी हो रही है या नहीं। अब अंदाज़ा नहीं लगाना पड़ेगा कि अलर्ट क्यों नहीं बजा।"
+   },
+   {
+    "k": "log",
+    "t": "पुश छूट गया? रिकॉर्ड बना रहता है",
+    "s": "सूचना रिकॉर्ड",
+    "d": "हर मैच सूचनाओं में सेव रहता है: शर्त कब पूरी हुई, सूचना कब भेजी गई और आपके फ़ोन तक पहुंचने में कितना समय लगा, कदम-दर-कदम।"
+   }
+  ],
+  "howTitle": "तीन कदमों में अलर्ट",
+  "how": [
+   [
+    "कॉइन और मार्केट चुनें",
+    "Spot या Futures, USDT या USDC। एक कॉइन या सभी।"
+   ],
+   [
+    "शर्त सेट करें, या बोल दें",
+    "फ़ॉर्म, टेम्पलेट, लिखकर या आवाज़ से। जांचें और मंज़ूर करें।"
+   ],
+   [
+    "सूचना पाएं",
+    "पुश, Telegram या वेबहुक। ऐप बंद होने पर भी।"
+   ]
+  ],
+  "whyTitle": "MarketAlert क्यों?",
+  "whySub": "जो एक साधारण प्राइस अलर्ट नहीं कर सकता, वह सब एक ऐप में।",
+  "cmpUs": "MarketAlert",
+  "cmpThem": "साधारण प्राइस अलर्ट",
+  "cmp": [
+   [
+    "कीमत और प्रतिशत बदलाव अलर्ट",
+    1,
+    1
+   ],
+   [
+    "RSI, MACD, वॉल्यूम, एवरेज क्रॉस",
+    1,
+    "आमतौर पर नहीं"
+   ],
+   [
+    "शर्तों को AND / OR से जोड़ना",
+    1,
+    0
+   ],
+   [
+    "एक अलर्ट से सभी कॉइन स्कैन",
+    1,
+    0
+   ],
+   [
+    "लिखकर या बोलकर अलर्ट बनाना",
+    1,
+    0
+   ],
+   [
+    "तेज़ विक टच पकड़ना",
+    1,
+    "स्पष्ट नहीं"
+   ],
+   [
+    "रफ़्तार: तुरंत / संतुलित / सारांश",
+    1,
+    0
+   ],
+   [
+    "Telegram और साइन किया वेबहुक",
+    1,
+    "कम ही"
+   ]
+  ],
+  "plansTitle": "मुफ़्त शुरू करें, ज़रूरत पर अपग्रेड करें",
+  "plansNote": "Plus और Pro के साथ 7 दिन का मुफ़्त ट्रायल। कीमतें आपके देश के स्टोर में दिखाई जाती हैं।",
+  "planRows": [
+   [
+    "अलर्ट",
+    "3",
+    "20",
+    "100"
+   ],
+   [
+    "शर्तों के प्रकार",
+    "कीमत, %, 24h उच्च/निम्न",
+    "सभी (8)",
+    "सभी (8)"
+   ],
+   [
+    "हर अलर्ट में शर्तें",
+    "1",
+    "3",
+    "5"
+   ],
+   [
+    "सभी कॉइन अलर्ट",
+    "—",
+    "2 · टॉप 100",
+    "10 · सभी"
+   ],
+   [
+    "दोहराए जाने वाले अलर्ट",
+    "—",
+    "✓",
+    "✓"
+   ],
+   [
+    "चैनल",
+    "पुश",
+    "+ Telegram",
+    "+ Webhook"
+   ],
+   [
+    "AI / आवाज़",
+    "5/दिन",
+    "200/हफ़्ता",
+    "1000/हफ़्ता"
+   ],
+   [
+    "इतिहास",
+    "7 दिन",
+    "90 दिन",
+    "365 दिन"
+   ]
+  ],
+  "popular": "सबसे लोकप्रिय",
+  "faqTitle": "अक्सर पूछे जाने वाले सवाल",
+  "faq": [
+   [
+    "क्या MarketAlert मुफ़्त है?",
+    "हां। मुफ़्त प्लान में कीमत, प्रतिशत बदलाव और 24 घंटे उच्च/निम्न शर्तों के साथ 3 अलर्ट मिलते हैं। Plus और Pro के साथ 7 दिन का मुफ़्त ट्रायल है।"
+   ],
+   [
+    "क्या ऐप बंद होने पर भी अलर्ट काम करते हैं?",
+    "हां। अलर्ट MarketAlert के सर्वर पर लगातार देखे जाते हैं, इसलिए ऐप बंद हो या बैकग्राउंड में, शर्त पूरी होते ही सूचना मिलती है।"
+   ],
+   [
+    "कौन से एक्सचेंज और मार्केट समर्थित हैं?",
+    "Binance Spot और Futures (परपेचुअल) के USDT और USDC पेयर। चारों मार्केट हर प्लान में खुले हैं।"
+   ],
+   [
+    "क्या AI मेरी जानकारी के बिना अलर्ट बना सकता है?",
+    "नहीं। असिस्टेंट सिर्फ़ ड्राफ़्ट बनाता है; अलर्ट आपकी मंज़ूरी के बाद ही बनता है। यह निवेश सलाह नहीं देता।"
+   ],
+   [
+    "कौन सी भाषाएं समर्थित हैं?",
+    "Türkçe, English, 中文, Español, हिन्दी, العربية, Português, Français, Русский, Deutsch और 日本語। ऐप और उसकी सूचनाएं सभी 11 भाषाओं में काम करती हैं।"
+   ],
+   [
+    "क्या यह मेरे एक्सचेंज खाते तक पहुंचता है?",
+    "नहीं। MarketAlert आपकी तय की गई शर्तों पर नज़र रखने वाला सूचना टूल है। यह ट्रेड नहीं करता और आपके एक्सचेंज खाते या वॉलेट से कभी नहीं जुड़ता।"
+   ]
+  ],
+  "ctaTitle": "अपना पहला अलर्ट एक मिनट में बनाएं।",
+  "ctaSub": "बिना साइन-अप गेस्ट के रूप में शुरू करें; आपके अलर्ट हमारे सर्वर पर देखे जाते हैं।",
+  "legal": [
+   "गोपनीयता",
+   "शर्तें",
+   "सहायता",
+   "संपर्क"
+  ],
+  "disclaimer": "MarketAlert का Binance से कोई संबंध नहीं है। सूचनाएं केवल जानकारी के लिए हैं, निवेश सलाह नहीं।",
+  "meta": {
+   "title": "MarketAlert – हर कॉइन के लिए क्रिप्टो प्राइस और RSI अलर्ट",
+   "desc": "कीमत, RSI, MACD, वॉल्यूम और एवरेज क्रॉस के लिए क्रिप्टो अलर्ट; एक अलर्ट से सभी कॉइन स्कैन करें। आवाज़ या AI से अलर्ट बनाएं। iOS और Android पर मुफ़्त।"
+  },
+  "ui": {
+   "theme": "थीम बदलें",
+   "lang": "भाषा",
+   "suggest": "यह पेज हिन्दी में भी है"
+  },
+  "soon": "जल्द आ रहा है",
+  "consent": {
+   "msg": "इस साइट को बेहतर बनाने के लिए हम Google Analytics से विज़िट के आँकड़े इकट्ठा करते हैं। क्या आप अनुमति देते हैं?",
+   "yes": "स्वीकार करें",
+   "no": "अस्वीकार करें",
+   "prefs": "कुकी सेटिंग"
+  }
+ },
+ "ar": {
+  "nav": [
+   "الميزات",
+   "كيف يعمل",
+   "الخطط",
+   "الأسئلة"
+  ],
+  "download": "تنزيل",
+  "store1s": "حمّله من",
+  "store1": "App Store",
+  "store2s": "احصل عليه من",
+  "store2": "Google Play",
+  "heroKicker": "تطبيق تنبيهات العملات الرقمية · iOS وAndroid",
+  "heroTitle": "لا تراقب سوق العملات الرقمية بنفسك، دع MarketAlert يراقبه.",
+  "heroSub": "أنشئ تنبيهات للسعر ونسبة الحركة وRSI وMACD والحجم وتقاطع المتوسطات، وافحص كل العملات بتنبيه واحد. اكتب أو تحدّث، ويتولى MarketAlert الباقي، حتى والتطبيق مغلق.",
+  "chips": [
+   "تجربة مجانية 7 أيام",
+   "ابدأ كضيف دون تسجيل",
+   "11 لغة · فاتح/داكن"
+  ],
+  "sayExample": "«نبّهني إذا هبط BTC تحت 85,000.»",
+  "markets": "Binance الفوري والعقود الآجلة · USDT وUSDC · الأسواق الأربعة متاحة في كل الخطط",
+  "f": [
+   {
+    "k": "price",
+    "t": "حتى الذيل السريع لن يفوتك",
+    "s": "تنبيهات السعر",
+    "d": "تفحص تنبيهات السعر أعلى وأدنى قيمة في كل نافذة تداول مدتها 250 مللي ثانية. إذا لمس السعر هدفك للحظة، يصلك التنبيه مع سعر اللمس وآخر سعر."
+   },
+   {
+    "k": "types",
+    "t": "8 أنواع شروط، من دقيقة إلى يوم",
+    "s": "الشروط",
+    "d": "السعر، ونسبة الحركة خلال مدة، وأعلى/أدنى 24 ساعة، وRSI، وMACD، وارتفاع الحجم، وتقاطع SMA/EMA، وتقاطع السعر مع المتوسط. تُقيَّم المؤشرات على الشموع المغلقة من 1د إلى 1ي."
+   },
+   {
+    "k": "multi",
+    "t": "اجمع الشروط بـ «و» / «أو»",
+    "s": "شروط متعددة",
+    "d": "قواعد مثل «ينخفض RSI تحت 30 و يبقى السعر فوق 60,000» في تنبيه واحد. حتى 5 شروط لكل تنبيه حسب خطتك."
+   },
+   {
+    "k": "all",
+    "t": "افحص كل العملات بتنبيه واحد",
+    "s": "كل العملات",
+    "d": "أفضل 100 أو أفضل 200 أو كل عملات السوق. تُحفظ كل مطابقة على حدة، وتختار الإيقاع: فوري أو متوازن أو ملخص كل 15 دقيقة."
+   },
+   {
+    "k": "ai",
+    "t": "اكتب أو تحدّث، والمساعد يُعدّه",
+    "s": "الذكاء الاصطناعي والصوت",
+    "d": "قل فقط «نبّهني إذا هبط BTC تحت 85,000». يجهّز المساعد مسودة، ولا يُنشأ أي تنبيه دون موافقتك. يتحول كلامك إلى نص على جهازك، ويُرسل النص فقط."
+   },
+   {
+    "k": "tpl",
+    "t": "ابدأ خلال ثوانٍ بقوالب جاهزة",
+    "s": "القوالب",
+    "d": "صعود حاد، هبوط حاد، صعود + حجم، تشبع بيعي، تشبع شرائي، تقاطع الاتجاه، اختراق قمة 24 ساعة، مسح السوق. راجع القيم وفعّل بلمسة."
+   },
+   {
+    "k": "ch",
+    "t": "التنبيهات أينما تريد",
+    "s": "القنوات",
+    "d": "إشعار بنغمة تنبيه تختارها، أو Telegram عبر بوت MarketAlert، أو Webhook موقّع بـ HMAC-SHA256 إلى خادمك. لا تحتاج أبدًا إلى إدخال معرّف المحادثة."
+   },
+   {
+    "k": "live",
+    "t": "اعرف أين يقف تنبيهك في كل لحظة",
+    "s": "الحالة المباشرة",
+    "d": "يعرض كل تنبيه القيمة المباشرة والمسافة إلى الهدف وهل الشرط متحقق الآن. لا مزيد من التخمين لماذا لم يعمل التنبيه."
+   },
+   {
+    "k": "log",
+    "t": "فاتك إشعار؟ السجل باقٍ",
+    "s": "سجل التنبيهات",
+    "d": "تُحفظ كل مطابقة في صفحة التنبيهات: متى تحقق الشرط، ومتى أُرسل التنبيه، وكم استغرق للوصول إلى هاتفك، خطوة بخطوة."
+   }
+  ],
+  "howTitle": "تنبيه في ثلاث خطوات",
+  "how": [
+   [
+    "اختر العملة والسوق",
+    "فوري أو عقود آجلة، USDT أو USDC. عملة واحدة أو كل العملات."
+   ],
+   [
+    "حدّد الشرط أو قله",
+    "بالنموذج أو بقالب أو بالكتابة أو بالصوت. راجع ووافق."
+   ],
+   [
+    "استلم التنبيه",
+    "إشعار أو Telegram أو Webhook. حتى والتطبيق مغلق."
+   ]
+  ],
+  "whyTitle": "لماذا MarketAlert؟",
+  "whySub": "ما لا يستطيعه تنبيه السعر العادي، في تطبيق واحد.",
+  "cmpUs": "MarketAlert",
+  "cmpThem": "تنبيه سعر عادي",
+  "cmp": [
+   [
+    "تنبيهات السعر ونسبة التغير",
+    1,
+    1
+   ],
+   [
+    "RSI وMACD والحجم وتقاطع المتوسطات",
+    1,
+    "غالبًا لا"
+   ],
+   [
+    "جمع الشروط بـ «و» / «أو»",
+    1,
+    0
+   ],
+   [
+    "فحص كل العملات بتنبيه واحد",
+    1,
+    0
+   ],
+   [
+    "إنشاء التنبيه بالكتابة أو الصوت",
+    1,
+    0
+   ],
+   [
+    "التقاط لمسات الذيل السريعة",
+    1,
+    "غير واضح"
+   ],
+   [
+    "الإيقاع: فوري / متوازن / ملخص",
+    1,
+    0
+   ],
+   [
+    "Telegram وWebhook موقّع",
+    1,
+    "نادرًا"
+   ]
+  ],
+  "plansTitle": "ابدأ مجانًا، وارتقِ عندما تحتاج",
+  "plansNote": "يمكن تجربة Plus وPro مجانًا لمدة 7 أيام. تُعرض الأسعار في المتجر حسب بلدك.",
+  "planRows": [
+   [
+    "التنبيهات",
+    "3",
+    "20",
+    "100"
+   ],
+   [
+    "أنواع الشروط",
+    "السعر، %، أعلى/أدنى 24س",
+    "الكل (8)",
+    "الكل (8)"
+   ],
+   [
+    "شروط لكل تنبيه",
+    "1",
+    "3",
+    "5"
+   ],
+   [
+    "تنبيهات كل العملات",
+    "—",
+    "2 · أفضل 100",
+    "10 · الكل"
+   ],
+   [
+    "تنبيهات متكررة",
+    "—",
+    "✓",
+    "✓"
+   ],
+   [
+    "القنوات",
+    "إشعار",
+    "+ Telegram",
+    "+ Webhook"
+   ],
+   [
+    "ذكاء اصطناعي / صوت",
+    "5/يوم",
+    "200/أسبوع",
+    "1000/أسبوع"
+   ],
+   [
+    "السجل",
+    "7 أيام",
+    "90 يومًا",
+    "365 يومًا"
+   ]
+  ],
+  "popular": "الأكثر اختيارًا",
+  "faqTitle": "الأسئلة الشائعة",
+  "faq": [
+   [
+    "هل MarketAlert مجاني؟",
+    "نعم. تمنحك الخطة المجانية 3 تنبيهات بشروط السعر ونسبة التغير وأعلى/أدنى 24 ساعة. يمكن تجربة Plus وPro مجانًا لمدة 7 أيام."
+   ],
+   [
+    "هل تعمل التنبيهات والتطبيق مغلق؟",
+    "نعم. تُراقَب التنبيهات باستمرار على خوادم MarketAlert، فيصلك التنبيه حتى لو كان التطبيق مغلقًا."
+   ],
+   [
+    "ما المنصات والأسواق المدعومة؟",
+    "أزواج USDT وUSDC في سوقي Binance الفوري والعقود الآجلة الدائمة. الأسواق الأربعة متاحة في كل الخطط."
+   ],
+   [
+    "هل ينشئ الذكاء الاصطناعي تنبيهات دون علمي؟",
+    "لا. يجهّز المساعد مسودة فقط، ويُنشأ التنبيه عند موافقتك. ولا يقدم نصائح استثمارية."
+   ],
+   [
+    "ما اللغات المدعومة؟",
+    "Türkçe وEnglish و中文 وEspañol وहिन्दी والعربية وPortuguês وFrançais وРусский وDeutsch و日本語. يعمل التطبيق وتنبيهاته باللغات الإحدى عشرة."
+   ],
+   [
+    "هل يصل إلى حسابي في المنصة؟",
+    "لا. MarketAlert أداة تنبيه تراقب الشروط التي تحددها. لا يتداول ولا يتصل أبدًا بحسابك في المنصة أو بمحفظتك."
+   ]
+  ],
+  "ctaTitle": "أنشئ تنبيهك الأول في دقيقة.",
+  "ctaSub": "ابدأ كضيف دون تسجيل، وتُراقَب تنبيهاتك على خوادمنا.",
+  "legal": [
+   "الخصوصية",
+   "الشروط",
+   "الدعم",
+   "اتصل بنا"
+  ],
+  "disclaimer": "MarketAlert غير تابع لـ Binance. التنبيهات للمعلومات فقط وليست نصيحة استثمارية.",
+  "meta": {
+   "title": "MarketAlert – تنبيهات السعر وRSI لكل العملات الرقمية",
+   "desc": "تنبيهات للعملات الرقمية حسب السعر وRSI وMACD والحجم وتقاطع المتوسطات؛ افحص كل العملات بتنبيه واحد. أنشئ التنبيهات بالصوت أو بالذكاء الاصطناعي. مجاني على iOS وAndroid."
+  },
+  "ui": {
+   "theme": "تبديل المظهر",
+   "lang": "اللغة",
+   "suggest": "هذه الصفحة متاحة أيضًا بالعربية"
+  },
+  "soon": "قريبًا",
+  "consent": {
+   "msg": "نستخدم Google Analytics لجمع إحصاءات الزيارات بهدف تحسين هذا الموقع. هل توافق؟",
+   "yes": "موافق",
+   "no": "رفض",
+   "prefs": "إعدادات ملفات تعريف الارتباط"
+  }
+ },
+ "pt-br": {
+  "nav": [
+   "Recursos",
+   "Como funciona",
+   "Planos",
+   "Dúvidas"
+  ],
+  "download": "Baixar",
+  "store1s": "Baixar na",
+  "store1": "App Store",
+  "store2s": "Disponível no",
+  "store2": "Google Play",
+  "heroKicker": "App de alertas cripto · iOS e Android",
+  "heroTitle": "Não fique vigiando o mercado cripto. Deixe o MarketAlert vigiar.",
+  "heroSub": "Crie alertas de preço, variação percentual, RSI, MACD, volume e cruzamento de médias, e escaneie todas as moedas com um único alerta. Digite ou fale, e o MarketAlert faz o resto, mesmo com o app fechado.",
+  "chips": [
+   "7 dias de teste grátis",
+   "Comece como convidado, sem cadastro",
+   "11 idiomas · claro/escuro"
+  ],
+  "sayExample": "“Me avise se o BTC cair abaixo de 85.000.”",
+  "markets": "Binance Spot e Futuros · USDT e USDC · Os quatro mercados em todos os planos",
+  "f": [
+   {
+    "k": "price",
+    "t": "Nem um pavio rápido passa despercebido",
+    "s": "Alertas de preço",
+    "d": "Os alertas de preço verificam a máxima e a mínima de cada janela de negociação de 250 ms. Se o preço tocar seu alvo por um instante, você é avisado mesmo assim, com o preço do toque e o último preço."
+   },
+   {
+    "k": "types",
+    "t": "8 tipos de condição, de 1 minuto a 1 dia",
+    "s": "Condições",
+    "d": "Preço, variação percentual em um período, máxima/mínima de 24 horas, RSI, MACD, pico de volume, cruzamento SMA/EMA e preço cruzando uma média. Os indicadores são avaliados em velas fechadas de 1 min a 1 dia."
+   },
+   {
+    "k": "multi",
+    "t": "Combine condições com E / OU",
+    "s": "Várias condições",
+    "d": "Regras como “o RSI cai abaixo de 30 E o preço fica acima de 60.000” em um único alerta. Até 5 condições por alerta, conforme o plano."
+   },
+   {
+    "k": "all",
+    "t": "Escaneie todas as moedas com um alerta",
+    "s": "Todas as moedas",
+    "d": "Top 100, top 200 ou todas as moedas do mercado. Cada correspondência é salva separadamente e você escolhe o ritmo: Instantâneo, Equilibrado ou um Resumo a cada 15 minutos."
+   },
+   {
+    "k": "ai",
+    "t": "Digite ou fale, o assistente configura",
+    "s": "IA e voz",
+    "d": "Basta dizer “Me avise se o BTC cair abaixo de 85.000”. O assistente prepara um rascunho, e nada é criado sem sua aprovação. A fala vira texto no seu aparelho; só o texto é enviado."
+   },
+   {
+    "k": "tpl",
+    "t": "Comece em segundos com modelos prontos",
+    "s": "Modelos",
+    "d": "Pump, Dump, Pump + volume, Sobrevendido, Sobrecomprado, Cruzamento de tendência, Rompimento da máxima de 24 h, Varredura do mercado. Confira os valores e ative com um toque."
+   },
+   {
+    "k": "ch",
+    "t": "Avisos onde você quiser",
+    "s": "Canais",
+    "d": "Push com seu próprio som de alarme, Telegram pelo bot do MarketAlert ou um webhook assinado com HMAC-SHA256 para o seu servidor. Para conectar o Telegram, você nunca precisa de um ID de chat."
+   },
+   {
+    "k": "live",
+    "t": "Veja a qualquer momento onde cada alerta está",
+    "s": "Status ao vivo",
+    "d": "Cada alerta mostra o valor ao vivo, a distância até o alvo e se a condição está sendo atendida agora. Chega de adivinhar por que um alerta não disparou."
+   },
+   {
+    "k": "log",
+    "t": "Perdeu um push? O registro continua lá",
+    "s": "Registro de avisos",
+    "d": "Cada correspondência fica em Notificações: quando a condição foi atendida, quando o aviso foi enviado e quanto tempo levou para chegar ao seu celular, passo a passo."
+   }
+  ],
+  "howTitle": "Um alerta em três passos",
+  "how": [
+   [
+    "Escolha a moeda e o mercado",
+    "Spot ou Futuros, USDT ou USDC. Uma moeda ou todas."
+   ],
+   [
+    "Defina a condição, ou fale",
+    "Pelo formulário, por um modelo, digitando ou por voz. Revise e aprove."
+   ],
+   [
+    "Receba o aviso",
+    "Push, Telegram ou webhook. Mesmo com o app fechado."
+   ]
+  ],
+  "whyTitle": "Por que o MarketAlert?",
+  "whySub": "O que um alerta de preço básico não faz, em um só app.",
+  "cmpUs": "MarketAlert",
+  "cmpThem": "Alerta de preço básico",
+  "cmp": [
+   [
+    "Alertas de preço e variação percentual",
+    1,
+    1
+   ],
+   [
+    "RSI, MACD, volume, cruzamento de médias",
+    1,
+    "Geralmente não"
+   ],
+   [
+    "Combinar condições com E / OU",
+    1,
+    0
+   ],
+   [
+    "Escanear todas as moedas com um alerta",
+    1,
+    0
+   ],
+   [
+    "Criar alertas digitando ou por voz",
+    1,
+    0
+   ],
+   [
+    "Pegar toques rápidos de pavio",
+    1,
+    "Não está claro"
+   ],
+   [
+    "Ritmo: Instantâneo / Equilibrado / Resumo",
+    1,
+    0
+   ],
+   [
+    "Telegram e webhook assinado",
+    1,
+    "Raramente"
+   ]
+  ],
+  "plansTitle": "Comece grátis e evolua quando precisar",
+  "plansNote": "Plus e Pro têm 7 dias de teste grátis. Os preços aparecem na loja para o seu país.",
+  "planRows": [
+   [
+    "Alertas",
+    "3",
+    "20",
+    "100"
+   ],
+   [
+    "Tipos de condição",
+    "Preço, %, máx./mín. 24 h",
+    "Todos (8)",
+    "Todos (8)"
+   ],
+   [
+    "Condições por alerta",
+    "1",
+    "3",
+    "5"
+   ],
+   [
+    "Alertas de todas as moedas",
+    "—",
+    "2 · Top 100",
+    "10 · Todas"
+   ],
+   [
+    "Alertas repetidos",
+    "—",
+    "✓",
+    "✓"
+   ],
+   [
+    "Canais",
+    "Push",
+    "+ Telegram",
+    "+ Webhook"
+   ],
+   [
+    "IA / voz",
+    "5/dia",
+    "200/sem.",
+    "1000/sem."
+   ],
+   [
+    "Histórico",
+    "7 dias",
+    "90 dias",
+    "365 dias"
+   ]
+  ],
+  "popular": "Mais popular",
+  "faqTitle": "Perguntas frequentes",
+  "faq": [
+   [
+    "O MarketAlert é grátis?",
+    "Sim. O plano gratuito tem 3 alertas com condições de preço, variação percentual e máxima/mínima de 24 horas. Plus e Pro têm 7 dias de teste grátis."
+   ],
+   [
+    "Os alertas funcionam com o app fechado?",
+    "Sim. Os alertas são monitorados continuamente nos servidores do MarketAlert, então você é avisado mesmo com o app fechado ou em segundo plano."
+   ],
+   [
+    "Quais exchanges e mercados são suportados?",
+    "Pares USDT e USDC da Binance Spot e Futuros (perpétuos). Os quatro mercados estão abertos em todos os planos."
+   ],
+   [
+    "A IA pode criar alertas sem eu saber?",
+    "Não. O assistente só prepara um rascunho; o alerta é criado quando você aprova. Ele não dá recomendação de investimento."
+   ],
+   [
+    "Quais idiomas são suportados?",
+    "Türkçe, English, 中文, Español, हिन्दी, العربية, Português, Français, Русский, Deutsch e 日本語. O app e seus avisos funcionam nos 11."
+   ],
+   [
+    "Ele acessa minha conta na exchange?",
+    "Não. O MarketAlert é uma ferramenta de avisos que monitora as condições que você define. Ele não negocia e nunca se conecta à sua conta na exchange nem à sua carteira."
+   ]
+  ],
+  "ctaTitle": "Crie seu primeiro alerta em um minuto.",
+  "ctaSub": "Comece como convidado, sem cadastro; seus alertas são monitorados em nossos servidores.",
+  "legal": [
+   "Privacidade",
+   "Termos",
+   "Suporte",
+   "Contato"
+  ],
+  "disclaimer": "O MarketAlert não tem vínculo com a Binance. Os avisos são apenas informativos e não são recomendação de investimento.",
+  "meta": {
+   "title": "MarketAlert – Alertas cripto de preço e RSI para todas as moedas",
+   "desc": "Alertas cripto de preço, RSI, MACD, volume e cruzamento de médias; escaneie todas as moedas com um alerta. Crie alertas por voz ou IA. Grátis no iOS e Android."
+  },
+  "ui": {
+   "theme": "Mudar tema",
+   "lang": "Idioma",
+   "suggest": "Esta página também está em português"
+  },
+  "soon": "Em breve",
+  "consent": {
+   "msg": "Usamos o Google Analytics para coletar estatísticas de visitas que nos ajudam a melhorar este site. Você permite?",
+   "yes": "Aceitar",
+   "no": "Recusar",
+   "prefs": "Preferências de cookies"
+  }
+ },
+ "fr": {
+  "nav": [
+   "Fonctionnalités",
+   "Comment ça marche",
+   "Offres",
+   "FAQ"
+  ],
+  "download": "Télécharger",
+  "store1s": "Télécharger dans",
+  "store1": "l’App Store",
+  "store2s": "Disponible sur",
+  "store2": "Google Play",
+  "heroKicker": "App d’alertes crypto · iOS et Android",
+  "heroTitle": "Ne surveillez plus le marché crypto : MarketAlert s’en charge.",
+  "heroSub": "Créez des alertes de prix, de variation en pourcentage, RSI, MACD, volume et croisements de moyennes, et scannez toutes les cryptos avec une seule alerte. Écrivez-le ou dites-le, MarketAlert s’occupe du reste, même app fermée.",
+  "chips": [
+   "Essai gratuit de 7 jours",
+   "Commencez en invité, sans inscription",
+   "11 langues · clair/sombre"
+  ],
+  "sayExample": "« Préviens-moi si le BTC passe sous 85 000. »",
+  "markets": "Binance Spot et Futures · USDT et USDC · Les quatre marchés dans toutes les offres",
+  "f": [
+   {
+    "k": "price",
+    "t": "Même une mèche éclair ne vous échappe pas",
+    "s": "Alertes de prix",
+    "d": "Les alertes de prix vérifient le plus haut et le plus bas de chaque fenêtre de transactions de 250 ms. Si le prix touche votre cible une fraction de seconde, vous êtes quand même prévenu, avec le prix de contact et le dernier prix."
+   },
+   {
+    "k": "types",
+    "t": "8 types de conditions, de 1 minute à 1 jour",
+    "s": "Conditions",
+    "d": "Prix, variation en % sur une durée, plus haut/plus bas sur 24 h, RSI, MACD, pic de volume, croisement SMA/EMA et prix qui croise une moyenne. Les indicateurs sont évalués sur des bougies clôturées de 1 min à 1 jour."
+   },
+   {
+    "k": "multi",
+    "t": "Combinez les conditions avec ET / OU",
+    "s": "Plusieurs conditions",
+    "d": "Des règles comme « le RSI passe sous 30 ET le prix reste au-dessus de 60 000 » dans une seule alerte. Jusqu’à 5 conditions par alerte selon votre offre."
+   },
+   {
+    "k": "all",
+    "t": "Scannez toutes les cryptos avec une alerte",
+    "s": "Toutes les cryptos",
+    "d": "Top 100, top 200 ou toutes les cryptos du marché. Chaque correspondance est enregistrée à part, et vous choisissez le rythme : Instantané, Équilibré ou un Résumé toutes les 15 minutes."
+   },
+   {
+    "k": "ai",
+    "t": "Écrivez-le ou dites-le, l’assistant s’en occupe",
+    "s": "IA et voix",
+    "d": "Dites simplement « Préviens-moi si le BTC passe sous 85 000 ». L’assistant prépare un brouillon, et rien n’est créé sans votre accord. La voix est transcrite sur votre appareil ; seul le texte est envoyé."
+   },
+   {
+    "k": "tpl",
+    "t": "Démarrez en quelques secondes avec des modèles",
+    "s": "Modèles",
+    "d": "Pump, Dump, Pump + volume, Survente, Surachat, Croisement de tendance, Cassure du plus haut 24 h, Scan du marché. Vérifiez les valeurs et activez d’un geste."
+   },
+   {
+    "k": "ch",
+    "t": "Les notifications où vous voulez",
+    "s": "Canaux",
+    "d": "Push avec votre propre son d’alarme, Telegram via le bot MarketAlert ou un webhook signé HMAC-SHA256 vers votre serveur. Pour connecter Telegram, aucun identifiant de discussion n’est demandé."
+   },
+   {
+    "k": "live",
+    "t": "Voyez à tout moment où en est chaque alerte",
+    "s": "État en direct",
+    "d": "Chaque alerte affiche la valeur en direct, la distance jusqu’à la cible et si la condition est remplie en ce moment. Fini de deviner pourquoi une alerte ne s’est pas déclenchée."
+   },
+   {
+    "k": "log",
+    "t": "Un push manqué ? L’historique reste",
+    "s": "Journal des notifications",
+    "d": "Chaque correspondance est conservée dans Notifications : quand la condition a été remplie, quand la notification a été envoyée et combien de temps elle a mis pour arriver sur votre téléphone, étape par étape."
+   }
+  ],
+  "howTitle": "Une alerte en trois étapes",
+  "how": [
+   [
+    "Choisissez la crypto et le marché",
+    "Spot ou Futures, USDT ou USDC. Une crypto ou toutes."
+   ],
+   [
+    "Définissez la condition, ou dites-la",
+    "Avec le formulaire, un modèle, à l’écrit ou à la voix. Vérifiez et validez."
+   ],
+   [
+    "Recevez la notification",
+    "Push, Telegram ou webhook. Même app fermée."
+   ]
+  ],
+  "whyTitle": "Pourquoi MarketAlert ?",
+  "whySub": "Ce qu’une alerte de prix basique ne sait pas faire, dans une seule app.",
+  "cmpUs": "MarketAlert",
+  "cmpThem": "Alerte de prix basique",
+  "cmp": [
+   [
+    "Alertes de prix et de variation en %",
+    1,
+    1
+   ],
+   [
+    "RSI, MACD, volume, croisements de moyennes",
+    1,
+    "Généralement non"
+   ],
+   [
+    "Combiner les conditions avec ET / OU",
+    1,
+    0
+   ],
+   [
+    "Scanner toutes les cryptos avec une alerte",
+    1,
+    0
+   ],
+   [
+    "Créer des alertes à l’écrit ou à la voix",
+    1,
+    0
+   ],
+   [
+    "Détecter les touches de mèche éclair",
+    1,
+    "Pas clair"
+   ],
+   [
+    "Rythme : Instantané / Équilibré / Résumé",
+    1,
+    0
+   ],
+   [
+    "Telegram et webhook signé",
+    1,
+    "Rarement"
+   ]
+  ],
+  "plansTitle": "Commencez gratuitement, évoluez selon vos besoins",
+  "plansNote": "Plus et Pro incluent 7 jours d’essai gratuit. Les prix sont affichés dans le store pour votre pays.",
+  "planRows": [
+   [
+    "Alertes",
+    "3",
+    "20",
+    "100"
+   ],
+   [
+    "Types de conditions",
+    "Prix, %, haut/bas 24 h",
+    "Tous (8)",
+    "Tous (8)"
+   ],
+   [
+    "Conditions par alerte",
+    "1",
+    "3",
+    "5"
+   ],
+   [
+    "Alertes toutes cryptos",
+    "—",
+    "2 · Top 100",
+    "10 · Toutes"
+   ],
+   [
+    "Alertes répétées",
+    "—",
+    "✓",
+    "✓"
+   ],
+   [
+    "Canaux",
+    "Push",
+    "+ Telegram",
+    "+ Webhook"
+   ],
+   [
+    "IA / voix",
+    "5/jour",
+    "200/sem.",
+    "1000/sem."
+   ],
+   [
+    "Historique",
+    "7 jours",
+    "90 jours",
+    "365 jours"
+   ]
+  ],
+  "popular": "Le plus choisi",
+  "faqTitle": "Questions fréquentes",
+  "faq": [
+   [
+    "MarketAlert est-il gratuit ?",
+    "Oui. L’offre gratuite comprend 3 alertes avec les conditions de prix, de variation en % et de plus haut/plus bas sur 24 h. Plus et Pro incluent 7 jours d’essai gratuit."
+   ],
+   [
+    "Les alertes fonctionnent-elles app fermée ?",
+    "Oui. Les alertes sont surveillées en continu sur les serveurs de MarketAlert : vous êtes prévenu même si l’app est fermée ou en arrière-plan."
+   ],
+   [
+    "Quels exchanges et marchés sont pris en charge ?",
+    "Les paires USDT et USDC de Binance Spot et Futures (perpétuels). Les quatre marchés sont ouverts dans toutes les offres."
+   ],
+   [
+    "L’IA peut-elle créer des alertes à mon insu ?",
+    "Non. L’assistant prépare seulement un brouillon ; l’alerte est créée quand vous la validez. Il ne donne pas de conseil en investissement."
+   ],
+   [
+    "Quelles langues sont prises en charge ?",
+    "Türkçe, English, 中文, Español, हिन्दी, العربية, Português, Français, Русский, Deutsch et 日本語. L’app et ses notifications fonctionnent dans les 11."
+   ],
+   [
+    "Accède-t-il à mon compte d’exchange ?",
+    "Non. MarketAlert est un outil de notification qui surveille les conditions que vous définissez. Il ne passe aucun ordre et ne se connecte jamais à votre compte d’exchange ni à votre portefeuille."
+   ]
+  ],
+  "ctaTitle": "Créez votre première alerte en une minute.",
+  "ctaSub": "Commencez en invité sans inscription ; vos alertes sont surveillées sur nos serveurs.",
+  "legal": [
+   "Confidentialité",
+   "Conditions",
+   "Assistance",
+   "Contact"
+  ],
+  "disclaimer": "MarketAlert n’est pas affilié à Binance. Les notifications sont fournies à titre d’information et ne constituent pas un conseil en investissement.",
+  "meta": {
+   "title": "MarketAlert – Alertes crypto de prix et RSI pour toutes les cryptos",
+   "desc": "Alertes crypto de prix, RSI, MACD, volume et croisements de moyennes ; scannez toutes les cryptos avec une alerte. Créez vos alertes à la voix ou par IA. Gratuit sur iOS et Android."
+  },
+  "ui": {
+   "theme": "Changer de thème",
+   "lang": "Langue",
+   "suggest": "Cette page existe aussi en français"
+  },
+  "soon": "Bientôt",
+  "consent": {
+   "msg": "Nous utilisons Google Analytics pour mesurer les visites et améliorer ce site. L’acceptez-vous ?",
+   "yes": "Accepter",
+   "no": "Refuser",
+   "prefs": "Préférences cookies"
+  }
+ },
+ "ru": {
+  "nav": [
+   "Возможности",
+   "Как это работает",
+   "Тарифы",
+   "Вопросы"
+  ],
+  "download": "Скачать",
+  "store1s": "Загрузите в",
+  "store1": "App Store",
+  "store2s": "Доступно в",
+  "store2": "Google Play",
+  "heroKicker": "Приложение крипто-оповещений · iOS и Android",
+  "heroTitle": "Не следите за криптовалютным рынком сами — пусть следит MarketAlert.",
+  "heroSub": "Создавайте оповещения по цене, процентному движению, RSI, MACD, объёму и пересечению средних и сканируйте все монеты одним оповещением. Напишите или скажите — остальное сделает MarketAlert, даже когда приложение закрыто.",
+  "chips": [
+   "7 дней бесплатно",
+   "Начните как гость, без регистрации",
+   "11 языков · светлая/тёмная тема"
+  ],
+  "sayExample": "«Сообщи, если BTC упадёт ниже 85 000».",
+  "markets": "Binance Спот и Фьючерсы · USDT и USDC · Все четыре рынка в каждом тарифе",
+  "f": [
+   {
+    "k": "price",
+    "t": "Не пропустите даже быструю тень свечи",
+    "s": "Ценовые оповещения",
+    "d": "Ценовые оповещения проверяют максимум и минимум каждого торгового окна длиной 250 мс. Если цена коснулась цели лишь на мгновение, вы всё равно получите уведомление — с ценой касания и последней ценой."
+   },
+   {
+    "k": "types",
+    "t": "8 типов условий, от 1 минуты до 1 дня",
+    "s": "Условия",
+    "d": "Цена, процентное движение за период, максимум/минимум за 24 часа, RSI, MACD, всплеск объёма, пересечение SMA/EMA и пересечение ценой средней. Индикаторы считаются по закрытым свечам от 1 мин до 1 дня."
+   },
+   {
+    "k": "multi",
+    "t": "Объединяйте условия через И / ИЛИ",
+    "s": "Несколько условий",
+    "d": "Правила вроде «RSI опускается ниже 30 И цена остаётся выше 60 000» в одном оповещении. До 5 условий на оповещение в зависимости от тарифа."
+   },
+   {
+    "k": "all",
+    "t": "Сканируйте все монеты одним оповещением",
+    "s": "Все монеты",
+    "d": "Топ-100, топ-200 или все монеты рынка. Каждое совпадение сохраняется отдельно, а темп выбираете вы: Мгновенно, Сбалансированно или Сводка раз в 15 минут."
+   },
+   {
+    "k": "ai",
+    "t": "Напишите или скажите — ассистент всё настроит",
+    "s": "ИИ и голос",
+    "d": "Просто скажите «Сообщи, если BTC упадёт ниже 85 000». Ассистент подготовит черновик, и без вашего подтверждения ничего не будет создано. Речь распознаётся на вашем устройстве, отправляется только текст."
+   },
+   {
+    "k": "tpl",
+    "t": "Начните за секунды с готовыми шаблонами",
+    "s": "Шаблоны",
+    "d": "Памп, Дамп, Памп + объём, Перепроданность, Перекупленность, Пересечение тренда, Пробой 24-часового максимума, Сканирование рынка. Проверьте значения и включите одним касанием."
+   },
+   {
+    "k": "ch",
+    "t": "Уведомления туда, куда удобно",
+    "s": "Каналы",
+    "d": "Push со своим звуком сигнала, Telegram через бота MarketAlert или webhook с подписью HMAC-SHA256 на ваш сервер. Для подключения Telegram не нужно вводить ID чата."
+   },
+   {
+    "k": "live",
+    "t": "В любой момент видно, где каждое оповещение",
+    "s": "Статус в реальном времени",
+    "d": "Каждое оповещение показывает текущее значение, расстояние до цели и выполняется ли условие прямо сейчас. Больше не нужно гадать, почему оповещение не сработало."
+   },
+   {
+    "k": "log",
+    "t": "Пропустили push? Запись останется",
+    "s": "Журнал уведомлений",
+    "d": "Каждое совпадение хранится в «Уведомлениях»: когда выполнилось условие, когда отправлено уведомление и сколько времени оно шло до вашего телефона — шаг за шагом."
+   }
+  ],
+  "howTitle": "Оповещение в три шага",
+  "how": [
+   [
+    "Выберите монету и рынок",
+    "Спот или Фьючерсы, USDT или USDC. Одна монета или все."
+   ],
+   [
+    "Задайте условие или скажите его",
+    "Через форму, шаблон, текстом или голосом. Проверьте и подтвердите."
+   ],
+   [
+    "Получите уведомление",
+    "Push, Telegram или webhook. Даже когда приложение закрыто."
+   ]
+  ],
+  "whyTitle": "Почему MarketAlert?",
+  "whySub": "То, чего не умеет обычное ценовое оповещение, — в одном приложении.",
+  "cmpUs": "MarketAlert",
+  "cmpThem": "Обычное ценовое оповещение",
+  "cmp": [
+   [
+    "Оповещения по цене и % изменения",
+    1,
+    1
+   ],
+   [
+    "RSI, MACD, объём, пересечение средних",
+    1,
+    "Обычно нет"
+   ],
+   [
+    "Объединение условий через И / ИЛИ",
+    1,
+    0
+   ],
+   [
+    "Сканирование всех монет одним оповещением",
+    1,
+    0
+   ],
+   [
+    "Создание оповещений текстом или голосом",
+    1,
+    0
+   ],
+   [
+    "Фиксация быстрых касаний тенью",
+    1,
+    "Неясно"
+   ],
+   [
+    "Темп: Мгновенно / Сбалансированно / Сводка",
+    1,
+    0
+   ],
+   [
+    "Telegram и подписанный webhook",
+    1,
+    "Редко"
+   ]
+  ],
+  "plansTitle": "Начните бесплатно, расширяйте по мере роста",
+  "plansNote": "Plus и Pro можно попробовать бесплатно 7 дней. Цены показываются в магазине приложений для вашей страны.",
+  "planRows": [
+   [
+    "Оповещения",
+    "3",
+    "20",
+    "100"
+   ],
+   [
+    "Типы условий",
+    "Цена, %, макс./мин. 24 ч",
+    "Все (8)",
+    "Все (8)"
+   ],
+   [
+    "Условий в оповещении",
+    "1",
+    "3",
+    "5"
+   ],
+   [
+    "Оповещения по всем монетам",
+    "—",
+    "2 · Топ-100",
+    "10 · Все"
+   ],
+   [
+    "Повторяющиеся оповещения",
+    "—",
+    "✓",
+    "✓"
+   ],
+   [
+    "Каналы",
+    "Push",
+    "+ Telegram",
+    "+ Webhook"
+   ],
+   [
+    "ИИ / голос",
+    "5/день",
+    "200/нед.",
+    "1000/нед."
+   ],
+   [
+    "История",
+    "7 дней",
+    "90 дней",
+    "365 дней"
+   ]
+  ],
+  "popular": "Самый популярный",
+  "faqTitle": "Частые вопросы",
+  "faq": [
+   [
+    "MarketAlert бесплатный?",
+    "Да. Бесплатный тариф даёт 3 оповещения с условиями по цене, процентному изменению и максимуму/минимуму за 24 часа. Plus и Pro можно попробовать бесплатно 7 дней."
+   ],
+   [
+    "Работают ли оповещения, когда приложение закрыто?",
+    "Да. Оповещения постоянно отслеживаются на серверах MarketAlert, поэтому вы получите уведомление, даже если приложение закрыто или в фоне."
+   ],
+   [
+    "Какие биржи и рынки поддерживаются?",
+    "Пары USDT и USDC на Binance Спот и Фьючерсы (бессрочные). Все четыре рынка открыты в каждом тарифе."
+   ],
+   [
+    "Может ли ИИ создать оповещение без моего ведома?",
+    "Нет. Ассистент только готовит черновик; оповещение создаётся после вашего подтверждения. Он не даёт инвестиционных советов."
+   ],
+   [
+    "Какие языки поддерживаются?",
+    "Türkçe, English, 中文, Español, हिन्दी, العربية, Português, Français, Русский, Deutsch и 日本語. Приложение и его уведомления работают на всех 11."
+   ],
+   [
+    "Есть ли доступ к моему аккаунту на бирже?",
+    "Нет. MarketAlert — инструмент уведомлений, который следит за заданными вами условиями. Он не торгует и никогда не подключается к вашему биржевому аккаунту или кошельку."
+   ]
+  ],
+  "ctaTitle": "Создайте первое оповещение за минуту.",
+  "ctaSub": "Начните как гость без регистрации — ваши оповещения отслеживаются на наших серверах.",
+  "legal": [
+   "Конфиденциальность",
+   "Условия",
+   "Поддержка",
+   "Контакты"
+  ],
+  "disclaimer": "MarketAlert не связан с Binance. Уведомления носят информационный характер и не являются инвестиционной рекомендацией.",
+  "meta": {
+   "title": "MarketAlert – крипто-оповещения по цене и RSI для всех монет",
+   "desc": "Крипто-оповещения по цене, RSI, MACD, объёму и пересечению средних; сканируйте все монеты одним оповещением. Создавайте оповещения голосом или с ИИ. Бесплатно для iOS и Android."
+  },
+  "ui": {
+   "theme": "Сменить тему",
+   "lang": "Язык",
+   "suggest": "Эта страница есть и на русском"
+  },
+  "soon": "Скоро",
+  "consent": {
+   "msg": "Мы используем Google Analytics, чтобы собирать статистику посещений и улучшать сайт. Разрешаете?",
+   "yes": "Принять",
+   "no": "Отклонить",
+   "prefs": "Настройки cookie"
+  }
+ },
+ "de": {
+  "nav": [
+   "Funktionen",
+   "So funktioniert’s",
+   "Tarife",
+   "FAQ"
+  ],
+  "download": "Laden",
+  "store1s": "Laden im",
+  "store1": "App Store",
+  "store2s": "Jetzt bei",
+  "store2": "Google Play",
+  "heroKicker": "Krypto-Alarm-App · iOS und Android",
+  "heroTitle": "Nicht du beobachtest den Kryptomarkt, sondern MarketAlert.",
+  "heroSub": "Alarme für Preis, prozentuale Bewegungen, RSI, MACD, Volumen und Durchschnittskreuzungen – und mit einem einzigen Alarm alle Coins durchsuchen. Tippen oder sprechen, den Rest erledigt MarketAlert. Auch wenn die App geschlossen ist.",
+  "chips": [
+   "7 Tage kostenlos testen",
+   "Als Gast starten, ohne Registrierung",
+   "11 Sprachen · hell/dunkel"
+  ],
+  "sayExample": "„Sag mir Bescheid, wenn BTC unter 85.000 fällt.“",
+  "markets": "Binance Spot und Futures · USDT und USDC · Alle vier Märkte in jedem Tarif",
+  "f": [
+   {
+    "k": "price",
+    "t": "Selbst ein kurzer Docht entgeht dir nicht",
+    "s": "Preisalarme",
+    "d": "Preisalarme prüfen Hoch und Tief jedes 250-ms-Handelsfensters. Berührt der Preis dein Ziel nur kurz, wirst du trotzdem benachrichtigt – mit Berührungspreis und letztem Preis."
+   },
+   {
+    "k": "types",
+    "t": "8 Bedingungstypen, von 1 Minute bis 1 Tag",
+    "s": "Bedingungen",
+    "d": "Preis, prozentuale Bewegung im Zeitfenster, 24-Stunden-Hoch/-Tief, RSI, MACD, Volumenanstieg, SMA/EMA-Kreuzung und Preis kreuzt Durchschnitt. Indikatoren werden auf geschlossenen Kerzen (1 Min–1 T) geprüft."
+   },
+   {
+    "k": "multi",
+    "t": "Bedingungen mit UND / ODER verknüpfen",
+    "s": "Mehrere Bedingungen",
+    "d": "Regeln wie „RSI fällt unter 30 UND der Preis bleibt über 60.000“ in einem Alarm. Je nach Tarif bis zu 5 Bedingungen pro Alarm."
+   },
+   {
+    "k": "all",
+    "t": "Mit einem Alarm alle Coins durchsuchen",
+    "s": "Alle Coins",
+    "d": "Top 100, Top 200 oder alle Coins eines Marktes. Jeder Treffer wird einzeln gespeichert, und du wählst das Tempo: Sofort, Ausgewogen oder alle 15 Minuten eine Zusammenfassung."
+   },
+   {
+    "k": "ai",
+    "t": "Tippen oder sprechen – der Assistent richtet es ein",
+    "s": "KI und Sprache",
+    "d": "Sag einfach „Sag mir Bescheid, wenn BTC unter 85.000 fällt“. Der Assistent erstellt einen Entwurf; ohne deine Bestätigung wird nichts angelegt. Sprache wird auf deinem Gerät in Text umgewandelt, nur der Text wird gesendet."
+   },
+   {
+    "k": "tpl",
+    "t": "In Sekunden starten mit fertigen Vorlagen",
+    "s": "Vorlagen",
+    "d": "Pump, Dump, Pump + Volumen, Überverkauft, Überkauft, Trendkreuzung, 24-Stunden-Hoch-Ausbruch, Marktscan. Werte prüfen und mit einem Tippen einrichten."
+   },
+   {
+    "k": "ch",
+    "t": "Benachrichtigungen, wo du sie willst",
+    "s": "Kanäle",
+    "d": "Push mit eigenem Alarmton, Telegram über den MarketAlert-Bot oder ein mit HMAC-SHA256 signierter Webhook an deinen Server. Für Telegram brauchst du nie eine Chat-ID."
+   },
+   {
+    "k": "live",
+    "t": "Jederzeit sehen, wo dein Alarm steht",
+    "s": "Live-Status",
+    "d": "Jeder Alarm zeigt den Live-Wert, den Abstand zum Ziel und ob die Bedingung gerade erfüllt ist. Kein Rätselraten mehr, warum ein Alarm nicht ausgelöst hat."
+   },
+   {
+    "k": "log",
+    "t": "Push verpasst? Der Eintrag bleibt",
+    "s": "Benachrichtigungsprotokoll",
+    "d": "Jeder Treffer bleibt in „Benachrichtigungen“: wann die Bedingung erfüllt war, wann gesendet wurde und wie lange es bis zu deinem Handy dauerte – Schritt für Schritt."
+   }
+  ],
+  "howTitle": "Ein Alarm in drei Schritten",
+  "how": [
+   [
+    "Coin und Markt wählen",
+    "Spot oder Futures, USDT oder USDC. Ein Coin oder alle."
+   ],
+   [
+    "Bedingung festlegen – oder sagen",
+    "Per Formular, Vorlage, Text oder Sprache. Prüfen und bestätigen."
+   ],
+   [
+    "Benachrichtigt werden",
+    "Push, Telegram oder Webhook. Auch bei geschlossener App."
+   ]
+  ],
+  "whyTitle": "Warum MarketAlert?",
+  "whySub": "Was ein einfacher Preisalarm nicht kann – in einer App.",
+  "cmpUs": "MarketAlert",
+  "cmpThem": "Einfacher Preisalarm",
+  "cmp": [
+   [
+    "Preis- und Prozentalarme",
+    1,
+    1
+   ],
+   [
+    "RSI, MACD, Volumen, Durchschnittskreuzung",
+    1,
+    "Meist nicht"
+   ],
+   [
+    "Bedingungen mit UND / ODER verknüpfen",
+    1,
+    0
+   ],
+   [
+    "Alle Coins mit einem Alarm durchsuchen",
+    1,
+    0
+   ],
+   [
+    "Alarme per Text oder Sprache anlegen",
+    1,
+    0
+   ],
+   [
+    "Kurze Dochte erkennen",
+    1,
+    "Unklar"
+   ],
+   [
+    "Tempo: Sofort / Ausgewogen / Zusammenfassung",
+    1,
+    0
+   ],
+   [
+    "Telegram und signierter Webhook",
+    1,
+    "Selten"
+   ]
+  ],
+  "plansTitle": "Kostenlos starten, bei Bedarf upgraden",
+  "plansNote": "Plus und Pro kannst du 7 Tage kostenlos testen. Preise zeigt der Store für dein Land an.",
+  "planRows": [
+   [
+    "Alarme",
+    "3",
+    "20",
+    "100"
+   ],
+   [
+    "Bedingungstypen",
+    "Preis, %, 24-h-Hoch/Tief",
+    "Alle (8)",
+    "Alle (8)"
+   ],
+   [
+    "Bedingungen pro Alarm",
+    "1",
+    "3",
+    "5"
+   ],
+   [
+    "Alle-Coins-Alarme",
+    "—",
+    "2 · Top 100",
+    "10 · Alle"
+   ],
+   [
+    "Wiederholte Alarme",
+    "—",
+    "✓",
+    "✓"
+   ],
+   [
+    "Kanäle",
+    "Push",
+    "+ Telegram",
+    "+ Webhook"
+   ],
+   [
+    "KI / Sprache",
+    "5/Tag",
+    "200/Wo.",
+    "1000/Wo."
+   ],
+   [
+    "Verlauf",
+    "7 Tage",
+    "90 Tage",
+    "365 Tage"
+   ]
+  ],
+  "popular": "Am beliebtesten",
+  "faqTitle": "Häufige Fragen",
+  "faq": [
+   [
+    "Ist MarketAlert kostenlos?",
+    "Ja. Der kostenlose Tarif bietet 3 Alarme mit Preis-, Prozent- und 24-Stunden-Hoch/Tief-Bedingungen. Plus und Pro kannst du 7 Tage kostenlos testen."
+   ],
+   [
+    "Funktionieren Alarme bei geschlossener App?",
+    "Ja. Alarme werden ständig auf den MarketAlert-Servern überwacht; du wirst auch benachrichtigt, wenn die App geschlossen ist."
+   ],
+   [
+    "Welche Börsen und Märkte werden unterstützt?",
+    "USDT- und USDC-Paare auf Binance Spot und Futures (Perpetual). Alle vier Märkte sind in jedem Tarif offen."
+   ],
+   [
+    "Legt die KI ohne mein Wissen Alarme an?",
+    "Nein. Der Assistent erstellt nur einen Entwurf; der Alarm entsteht erst nach deiner Bestätigung. Er gibt keine Anlageberatung."
+   ],
+   [
+    "Welche Sprachen werden unterstützt?",
+    "Türkçe, English, 中文, Español, हिन्दी, العربية, Português, Français, Русский, Deutsch und 日本語. App und Benachrichtigungen funktionieren in allen 11."
+   ],
+   [
+    "Greift die App auf mein Börsenkonto zu?",
+    "Nein. MarketAlert überwacht nur deine Bedingungen und benachrichtigt dich. Es handelt nicht und verbindet sich nie mit deinem Börsenkonto oder Wallet."
+   ]
+  ],
+  "ctaTitle": "Richte deinen ersten Alarm in einer Minute ein.",
+  "ctaSub": "Starte als Gast ohne Registrierung; deine Alarme werden auf unseren Servern überwacht.",
+  "legal": [
+   "Datenschutz",
+   "Nutzungsbedingungen",
+   "Support",
+   "Kontakt"
+  ],
+  "disclaimer": "MarketAlert ist nicht mit Binance verbunden. Benachrichtigungen dienen nur der Information und sind keine Anlageberatung.",
+  "meta": {
+   "title": "MarketAlert – Krypto-Preis- und RSI-Alarme für alle Coins",
+   "desc": "Krypto-Alarme für Preis, RSI, MACD, Volumen und Durchschnittskreuzungen; alle Coins mit einem Alarm durchsuchen. Alarme per Sprache oder KI. Kostenlos für iOS und Android."
+  },
+  "ui": {
+   "theme": "Design wechseln",
+   "lang": "Sprache",
+   "suggest": "Diese Seite gibt es auch auf Deutsch"
+  },
+  "soon": "Demnächst",
+  "consent": {
+   "msg": "Wir nutzen Google Analytics, um Besuchsstatistiken zur Verbesserung dieser Seite zu erfassen. Erlaubst du das?",
+   "yes": "Akzeptieren",
+   "no": "Ablehnen",
+   "prefs": "Cookie-Einstellungen"
+  }
+ },
+ "ja": {
+  "nav": [
+   "機能",
+   "使い方",
+   "プラン",
+   "よくある質問"
+  ],
+  "download": "ダウンロード",
+  "store1s": "ダウンロード",
+  "store1": "App Store",
+  "store2s": "今すぐ手に入れよう",
+  "store2": "Google Play",
+  "heroKicker": "暗号資産アラートアプリ · iOS / Android",
+  "heroTitle": "相場を見張るのは、あなたではなく MarketAlert。",
+  "heroSub": "価格、変動率、RSI、MACD、出来高、移動平均のクロスでアラートを設定し、1つのアラートで全銘柄をスキャン。入力するか話すだけで、あとは MarketAlert におまかせ。アプリを閉じていても動きます。",
+  "chips": [
+   "7日間無料トライアル",
+   "登録不要、ゲストで開始",
+   "11言語 · ライト/ダーク"
+  ],
+  "sayExample": "「BTC が 85,000 を下回ったら知らせて」",
+  "markets": "Binance 現物・先物 · USDT と USDC · 4つの市場すべてを全プランで利用可能",
+  "f": [
+   {
+    "k": "price",
+    "t": "一瞬のヒゲも見逃さない",
+    "s": "価格アラート",
+    "d": "価格アラートは 250 ミリ秒ごとの取引ウィンドウの高値と安値をチェックします。価格が一瞬だけ目標に触れても通知し、タッチ価格と最新価格を一緒に表示します。"
+   },
+   {
+    "k": "types",
+    "t": "8種類の条件、1分足から日足まで",
+    "s": "条件",
+    "d": "価格、一定時間の変動率、24時間高値/安値、RSI、MACD、出来高急増、SMA/EMA クロス、価格と移動平均のクロス。インジケーターは1分〜1日の確定足で判定します。"
+   },
+   {
+    "k": "multi",
+    "t": "条件を AND / OR で組み合わせ",
+    "s": "複数条件",
+    "d": "「RSI が 30 を下回り、かつ価格が 60,000 以上を維持」といったルールを1つのアラートで。プランに応じて1アラートあたり最大5条件まで。"
+   },
+   {
+    "k": "all",
+    "t": "1つのアラートで全銘柄をスキャン",
+    "s": "全銘柄",
+    "d": "上位100、上位200、または市場の全銘柄。一致した銘柄は個別に保存され、通知のペースは「即時」「バランス」「15分ごとのまとめ」から選べます。"
+   },
+   {
+    "k": "ai",
+    "t": "入力しても話しても、アシスタントが設定",
+    "s": "AI と音声",
+    "d": "「BTC が 85,000 を下回ったら知らせて」と言うだけ。アシスタントが下書きを作成し、あなたの承認なしにアラートは作られません。音声は端末上で文字に変換され、送信されるのは文字だけです。"
+   },
+   {
+    "k": "tpl",
+    "t": "テンプレートで数秒でスタート",
+    "s": "テンプレート",
+    "d": "急騰、急落、急騰＋出来高、売られすぎ、買われすぎ、トレンドクロス、24時間高値ブレイク、マーケットスキャン。値を確認してワンタップで設定。"
+   },
+   {
+    "k": "ch",
+    "t": "通知は好きな場所へ",
+    "s": "通知チャネル",
+    "d": "好きなアラーム音のプッシュ、MarketAlert ボット経由の Telegram、または HMAC-SHA256 署名付き Webhook で自分のサーバーへ。Telegram の連携にチャット ID の入力は不要です。"
+   },
+   {
+    "k": "live",
+    "t": "各アラートの状況がいつでもわかる",
+    "s": "ライブ状況",
+    "d": "各アラートにリアルタイムの値、目標までの距離、条件がいま満たされているかを表示。アラートが鳴らない理由を推測する必要はもうありません。"
+   },
+   {
+    "k": "log",
+    "t": "プッシュを見逃しても記録は残る",
+    "s": "通知履歴",
+    "d": "一致はすべて「通知」に保存されます。条件がいつ満たされ、通知がいつ送られ、スマホに届くまで何秒かかったかを順を追って確認できます。"
+   }
+  ],
+  "howTitle": "3ステップでアラート",
+  "how": [
+   [
+    "銘柄と市場を選ぶ",
+    "現物か先物、USDT か USDC。1銘柄でも全銘柄でも。"
+   ],
+   [
+    "条件を設定、または話す",
+    "フォーム、テンプレート、入力、音声で。確認して承認。"
+   ],
+   [
+    "通知を受け取る",
+    "プッシュ、Telegram、Webhook。アプリを閉じていても。"
+   ]
+  ],
+  "whyTitle": "MarketAlert を選ぶ理由",
+  "whySub": "一般的な価格アラートにできないことを、1つのアプリで。",
+  "cmpUs": "MarketAlert",
+  "cmpThem": "一般的な価格アラート",
+  "cmp": [
+   [
+    "価格・変動率アラート",
+    1,
+    1
+   ],
+   [
+    "RSI、MACD、出来高、移動平均クロス",
+    1,
+    "多くは非対応"
+   ],
+   [
+    "条件を AND / OR で組み合わせ",
+    1,
+    0
+   ],
+   [
+    "1つのアラートで全銘柄をスキャン",
+    1,
+    0
+   ],
+   [
+    "入力や音声でアラート作成",
+    1,
+    0
+   ],
+   [
+    "一瞬のヒゲのタッチを検知",
+    1,
+    "不明"
+   ],
+   [
+    "ペース：即時 / バランス / まとめ",
+    1,
+    0
+   ],
+   [
+    "Telegram と署名付き Webhook",
+    1,
+    "まれ"
+   ]
+  ],
+  "plansTitle": "無料で始めて、必要に応じてアップグレード",
+  "plansNote": "Plus と Pro は7日間無料でお試しいただけます。価格はお住まいの国のストアに表示されます。",
+  "planRows": [
+   [
+    "アラート",
+    "3",
+    "20",
+    "100"
+   ],
+   [
+    "条件の種類",
+    "価格、%、24h 高値/安値",
+    "すべて (8)",
+    "すべて (8)"
+   ],
+   [
+    "1アラートの条件数",
+    "1",
+    "3",
+    "5"
+   ],
+   [
+    "全銘柄アラート",
+    "—",
+    "2 · 上位100",
+    "10 · すべて"
+   ],
+   [
+    "繰り返しアラート",
+    "—",
+    "✓",
+    "✓"
+   ],
+   [
+    "チャネル",
+    "プッシュ",
+    "+ Telegram",
+    "+ Webhook"
+   ],
+   [
+    "AI / 音声",
+    "5/日",
+    "200/週",
+    "1000/週"
+   ],
+   [
+    "履歴",
+    "7日",
+    "90日",
+    "365日"
+   ]
+  ],
+  "popular": "人気No.1",
+  "faqTitle": "よくある質問",
+  "faq": [
+   [
+    "MarketAlert は無料ですか？",
+    "はい。無料プランでは、価格・変動率・24時間高値/安値の条件で3つのアラートを使えます。Plus と Pro は7日間無料でお試しいただけます。"
+   ],
+   [
+    "アプリを閉じていてもアラートは動きますか？",
+    "はい。アラートは MarketAlert のサーバーで常に監視されているため、アプリが閉じていてもバックグラウンドでも通知が届きます。"
+   ],
+   [
+    "対応している取引所と市場は？",
+    "Binance 現物と先物（無期限）の USDT・USDC ペアです。4つの市場はすべてのプランで利用できます。"
+   ],
+   [
+    "AI が勝手にアラートを作ることはありますか？",
+    "いいえ。アシスタントは下書きを作るだけで、あなたが承認したときにアラートが作成されます。投資助言は行いません。"
+   ],
+   [
+    "対応言語は？",
+    "Türkçe、English、中文、Español、हिन्दी、العربية、Português、Français、Русский、Deutsch、日本語。アプリと通知は11言語すべてで動作します。"
+   ],
+   [
+    "取引所のアカウントにアクセスしますか？",
+    "いいえ。MarketAlert はあなたが設定した条件を監視する通知ツールです。取引は行わず、取引所アカウントやウォレットに接続することもありません。"
+   ]
+  ],
+  "ctaTitle": "最初のアラートを1分で。",
+  "ctaSub": "登録不要のゲストで始められます。アラートは当社のサーバーで監視されます。",
+  "legal": [
+   "プライバシー",
+   "利用規約",
+   "サポート",
+   "お問い合わせ"
+  ],
+  "disclaimer": "MarketAlert は Binance とは提携していません。通知は情報提供を目的としたもので、投資助言ではありません。",
+  "meta": {
+   "title": "MarketAlert – 全銘柄対応の暗号資産 価格・RSI アラート",
+   "desc": "価格、RSI、MACD、出来高、移動平均クロスの暗号資産アラート。1つのアラートで全銘柄をスキャン。音声や AI でアラート作成。iOS・Android で無料。"
+  },
+  "ui": {
+   "theme": "テーマを切り替え",
+   "lang": "言語",
+   "suggest": "このページは日本語でもご覧いただけます"
+  },
+  "soon": "近日公開",
+  "consent": {
+   "msg": "サイト改善のため、Google Analytics で訪問統計を収集しています。許可しますか？",
+   "yes": "許可する",
+   "no": "拒否する",
+   "prefs": "Cookie 設定"
+  }
+ }
+}

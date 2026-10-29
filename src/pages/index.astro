@@ -1,0 +1,38 @@
+---
+// Kök adres: dil seçimi (x-default). Zorla yönlendirme yok; tarayıcı dili öne çıkarılır.
+import Base from '../layouts/Base.astro';
+import content from '../i18n/content.json';
+import { LOCALES, STORE, SITE } from '../config';
+const t = (content as any).en;
+const jsonLd = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: 'MarketAlert', url: SITE + '/', inLanguage: LOCALES.map(l => l.hreflang) }];
+---
+<Base lang="en" dir="ltr" title={t.meta.title} description={t.meta.desc} path="/" ogImage="/og/en.png" jsonLd={jsonLd}>
+  <main class="pick">
+    <div>
+      <img class="app" src="/icons/icon-192.png" alt="MarketAlert" width="88" height="88" />
+      <h1>MarketAlert</h1>
+      <p class="sub">{t.heroSub}</p>
+      <ul>
+        {LOCALES.map(l => <li><a href={`/${l.code}/`} hreflang={l.hreflang} lang={l.code} data-l={l.code}>{l.name}</a></li>)}
+      </ul>
+      <div class="stores">
+        {STORE.appStore
+          ? <a class="sb" href={STORE.appStore} data-ev="store_click" data-store="app"><span><small>{t.store1s}</small><b>{t.store1}</b></span></a>
+          : <span class="sb soon" aria-disabled="true"><span><small>{t.soon}</small><b>App Store</b></span></span>}
+        {STORE.play
+          ? <a class="sb" href={STORE.play} data-ev="store_click" data-store="play"><span><small>{t.store2s}</small><b>{t.store2}</b></span></a>
+          : <span class="sb soon" aria-disabled="true"><span><small>{t.soon}</small><b>Google Play</b></span></span>}
+      </div>
+    </div>
+  </main>
+  <script>
+    // Tarayıcı dilini işaretle ve listenin başına al; kullanıcı yine kendisi seçer.
+    const map: Record<string, string> = { pt: 'pt-br', zh: 'zh' };
+    for (const raw of navigator.languages || [navigator.language]) {
+      const base = raw.toLowerCase().split('-')[0];
+      const code = raw.toLowerCase() === 'pt-br' ? 'pt-br' : map[base] ?? base;
+      const a = document.querySelector<HTMLAnchorElement>(`a[data-l="${code}"]`);
+      if (a) { a.classList.add('sug'); a.parentElement?.parentElement?.prepend(a.parentElement); break; }
+    }
+  </script>
+</Base>

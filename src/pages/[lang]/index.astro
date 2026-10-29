@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import Landing from '../../components/Landing.astro';
+import content from '../../i18n/content.json';
+import { LOCALES, SITE, STORE, UPDATED } from '../../config';
+
+export function getStaticPaths() {
+  return LOCALES.map(l => ({ params: { lang: l.code }, props: { locale: l } }));
+}
+const { locale } = Astro.props;
+const t = (content as any)[locale.code];
+const path = `/${locale.code}/`;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'MobileApplication',
+    name: 'MarketAlert',
+    url: SITE + path,
+    inLanguage: locale.hreflang,
+    description: t.meta.desc,
+    operatingSystem: 'iOS, Android',
+    applicationCategory: 'FinanceApplication',
+    image: SITE + '/icons/icon-512.png',
+    dateModified: UPDATED,
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    featureList: t.f.map((f: any) => f.t),
+    sameAs: [STORE.play, STORE.appStore].filter(Boolean),
+    publisher: { '@type': 'Organization', name: 'MarketAlert', url: SITE + '/', logo: SITE + '/icons/icon-512.png' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    inLanguage: locale.hreflang,
+    mainEntity: t.faq.map((q: string[]) => ({ '@type': 'Question', name: q[0], acceptedAnswer: { '@type': 'Answer', text: q[1] } })),
+  },
+];
+---
+<Base lang={locale.code === 'pt-br' ? 'pt-BR' : locale.hreflang === 'zh-Hans' ? 'zh' : locale.code} dir={locale.dir} title={t.meta.title} description={t.meta.desc} path={path} ogImage={`/og/${locale.code}.png`} jsonLd={jsonLd}>
+  <Landing t={t} code={locale.code} appLocale={locale.app} />
+</Base>

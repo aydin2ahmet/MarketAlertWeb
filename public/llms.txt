@@ -1,0 +1,31 @@
+# MarketAlert
+
+> MarketAlert is a crypto alert app for iOS and Android. It watches Binance Spot and Futures markets (USDT and USDC pairs) on its servers and notifies you when your conditions are met, even when the app is closed. It does not trade and never connects to an exchange account or wallet.
+
+## Facts
+- 8 condition types: price, percent move within a time window (5–1440 minutes), 24-hour high/low, RSI, MACD signal cross, volume spike, SMA/EMA cross, price crossing a moving average. Indicators use closed candles on 1m, 5m, 15m, 1h, 4h or 1d.
+- Price alerts check the high and low of every 250 ms trade window, so a brief wick that touches the target also triggers; the notification shows the touch price and the last price.
+- Conditions can be combined with AND / OR (up to 5 per alert, depending on plan).
+- All-coins alerts scan the top 100, top 200 or every coin in a market. Delivery pace: Instant, Balanced, or a Digest at :00, :15, :30 and :45.
+- Alerts can be created with a form, ready-made templates (Pump, Dump, Pump + volume, Oversold, Overbought, Trend crossover, 24-hour high breakout, Market scan), by typing to the AI assistant, or by voice. The assistant only prepares a draft; nothing is created without the user's approval.
+- Channels: push notifications with a chosen alarm sound, Telegram (via the MarketAlert bot, no chat ID needed), and HMAC-SHA256 signed webhooks.
+- Every match is kept in the in-app notification log with timing details.
+- Plans: Free (3 alerts; price, percent move and 24-hour high/low conditions), Plus (20 alerts, all condition types, Telegram, 2 all-coins alerts up to top 100), Pro (100 alerts, webhook, 10 all-coins alerts on all coins). Plus and Pro have a 7-day free trial. Prices are shown in the app stores per country.
+- Availability: coming soon to the App Store (iOS) and Google Play (Android).
+- Languages: Turkish, English, Chinese (Simplified), Spanish, Hindi, Arabic, Portuguese (Brazil), French, Russian, German, Japanese.
+- Not affiliated with Binance. Notifications are informational and not investment advice.
+
+## Pages
+- [English](https://www.marketalertapp.com/en/)
+- [Türkçe](https://www.marketalertapp.com/tr/)
+- [中文](https://www.marketalertapp.com/zh/)
+- [Español](https://www.marketalertapp.com/es/)
+- [हिन्दी](https://www.marketalertapp.com/hi/)
+- [العربية](https://www.marketalertapp.com/ar/)
+- [Português](https://www.marketalertapp.com/pt-br/)
+- [Français](https://www.marketalertapp.com/fr/)
+- [Русский](https://www.marketalertapp.com/ru/)
+- [Deutsch](https://www.marketalertapp.com/de/)
+- [日本語](https://www.marketalertapp.com/ja/)
+- [Privacy policy](https://api.marketalertapp.com/legal/privacy.html)
+- [Terms of use](https://api.marketalertapp.com/legal/terms.html)

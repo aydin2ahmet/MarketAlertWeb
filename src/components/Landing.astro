@@ -1,0 +1,175 @@
+---
+import { GA_ID, LOCALES, STORE, legalUrl } from '../config';
+
+interface Props { t: any; code: string; appLocale: string }
+const { t, code, appLocale } = Astro.props;
+
+const ICO: Record<string, string> = {
+  check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+  x: '<path d="M7 7l10 10M17 7L7 17"/>',
+  globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  moon: '<path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z"/>',
+  candle: '<path d="M7 3v4M7 15v6M17 3v8M17 17v4"/><rect x="4.5" y="7" width="5" height="8" rx="1"/><rect x="14.5" y="11" width="5" height="6" rx="1"/>',
+};
+const svg = (k: string, cls = '') => `<svg class="ic ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICO[k]}</svg>`;
+const CAT: Record<string, number> = { price: 0, types: 3, multi: 8, all: 7, ai: 2, tpl: 5, ch: 1, live: 6, log: 4 };
+const KEY: Record<string, string> = { price: 'PRICE_WICK', types: 'CONDITIONS', multi: 'AND_OR', all: 'ALL_COINS', ai: 'AI_VOICE', tpl: 'TEMPLATES', ch: 'CHANNELS', live: 'LIVE_STATUS', log: 'DELIVERY_LOG' };
+const TAPE = ['PRICE ≥ 70,000 USDT', 'RSI(14) < 30 · 1h', 'Δ +5% / 5m', 'EMA(9) ↗ EMA(21) · 4h', 'MACD(12,26,9) ↗ SIGNAL · 1d', 'VOL > 3× SMA(20) · 15m', '24h HIGH ↑', 'ALL COINS · TOP 100', 'PRICE ↘ SMA(50) · 1h', 'AND · OR'];
+const n = t.f.length;
+const pad = (i: number) => String(i).padStart(2, '0');
+const shot = (k: string, alt: string, eager = false) =>
+  `<img class="sh-l" src="/shots/${code}/light/${k}.webp" alt="${alt}" width="600" height="1268" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"><img class="sh-d" src="/shots/${code}/dark/${k}.webp" alt="" width="600" height="1268" loading="lazy" decoding="async">`;
+const APPLE = '<svg viewBox="0 0 24 24" class="sbi" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7-1.3-.1-2.5.8-3.2.8-.7 0-1.7-.7-2.7-.7-1.4 0-2.7.8-3.5 2.1-1.5 2.6-.4 6.3 1.1 8.4.7 1 1.5 2.2 2.6 2.1 1-.1 1.5-.7 2.7-.7 1.3 0 1.6.7 2.7.7 1.1 0 1.9-1 2.5-2 .8-1.2 1.1-2.3 1.2-2.4-.1 0-2.2-.8-2.2-3.4zM14.3 6.4c.6-.7 1-1.7.9-2.6-.8 0-1.8.6-2.4 1.3-.5.6-1 1.6-.9 2.6.9 0 1.9-.6 2.4-1.3z"/></svg>';
+const PLAY = '<svg viewBox="0 0 24 24" class="sbi" aria-hidden="true"><path fill="#00D7FE" d="M4 3.2l9.6 8.8L4 20.8c-.3-.2-.5-.6-.5-1V4.2c0-.4.2-.8.5-1z"/><path fill="#00F076" d="M16.7 9.2L13.6 12 4 3.2c.2-.1.5-.1.8 0z"/><path fill="#FF3A44" d="M16.7 14.8L4.8 20.8c-.3.1-.6.1-.8 0l9.6-8.8z"/><path fill="#FFD500" d="M20 11.1c.7.4.7 1.4 0 1.8l-3.3 1.9-3.1-2.8 3.1-2.8z"/></svg>';
+// Mağaza adresi boşsa tıklanmayan "Yakında" rozeti çıkar.
+const badge = (store: 'app' | 'play', url: string, small: string, big: string) => url
+  ? `<a class="sb" href="${url}" rel="noopener" data-ev="store_click" data-store="${store}">${store === 'app' ? APPLE : PLAY}<span><small>${small}</small><b>${big}</b></span></a>`
+  : `<span class="sb soon" aria-disabled="true">${store === 'app' ? APPLE : PLAY}<span><small>${t.soon}</small><b>${store === 'app' ? 'App Store' : 'Google Play'}</b></span></span>`;
+const playUrl = STORE.play && `${STORE.play}&hl=${appLocale}`;
+const stores = `<div class="stores">${badge('app', STORE.appStore, t.store1s, t.store1)}${badge('play', playUrl, t.store2s, t.store2)}</div>`;
+const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : v === 0 ? `<span class="no">${svg('x')}</span>` : `<span class="part">${v}</span>`;
+---
+<a class="skip" href="#features">{t.nav[0]}</a>
+<header class="hd">
+  <a class="logo" href={`/${code}/`}><img src="/icons/logo-96.png" alt="" width="32" height="32" /><b>MarketAlert</b></a>
+  <nav aria-label="MarketAlert">
+    <a href="#features">{t.nav[0]}</a><a href="#how">{t.nav[1]}</a><a href="#plans">{t.nav[2]}</a><a href="#faq">{t.nav[3]}</a>
+  </nav>
+  <div class="hx">
+    <label class="lsel"><Fragment set:html={svg('globe')} /><span class="skip">{t.ui.lang}</span>
+      <select id="lang" aria-label={t.ui.lang}>
+        {LOCALES.map(l => <option value={l.code} selected={l.code === code} lang={l.code}>{l.name}</option>)}
+      </select>
+    </label>
+    <button class="thm" id="theme" type="button" aria-label={t.ui.theme} title={t.ui.theme}><Fragment set:html={svg('moon', 'i-moon') + svg('sun', 'i-sun')} /></button>
+    <a class="btn" href="#download" data-ev="cta_click">{t.download}</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div>
+      <p class="prompt" aria-hidden="true"><span>&gt;</span> <span class="type">{t.sayExample}</span><i class="caret"></i></p>
+      <h1>{t.heroTitle}</h1>
+      <p class="sub">{t.heroSub}</p>
+      <Fragment set:html={stores} />
+      <ul class="chips">{t.chips.map((c: string) => <li><Fragment set:html={svg('check')} />{c}</li>)}</ul>
+    </div>
+    <div class="hero-ph"><figure class="pf"><Fragment set:html={shot('hero', t.f[7].t, true)} /></figure></div>
+  </section>
+
+  <div class="tape" aria-hidden="true" dir="ltr"><div>{[...TAPE, ...TAPE].map(x => <span>{x}</span>)}</div></div>
+  <p class="mband"><Fragment set:html={svg('candle')} /><span>{t.markets}</span></p>
+
+  <section id="features" class="tour">
+    <div>
+      {t.f.map((f: any, i: number) => (
+        <article class={`step${i === 0 ? ' on' : ''}`} data-i={i} data-k={f.k} style={`--c:var(--cat${CAT[f.k]})`}>
+          <p class="meta"><span class="num">{pad(i + 1)}/{pad(n)}</span><code class="tag">{KEY[f.k]}</code></p>
+          <p class="skip">{f.s}</p>
+          <h2>{f.t}</h2>
+          <p>{f.d}</p>
+          <figure class="pf"><Fragment set:html={shot(f.k, f.t)} /></figure>
+        </article>
+      ))}
+    </div>
+    <div class="stick" aria-hidden="true">
+      <div class="frame"><div class="screen">
+        {t.f.map((f: any, i: number) => <Fragment set:html={shot(f.k, '').replace(/class="sh-(l|d)"/g, `class="sh-$1${i === 0 ? ' on' : ''}" data-i="${i}"`)} />)}
+      </div></div>
+      <div class="hud" dir="ltr" style={`--c:var(--cat${CAT[t.f[0].k]})`}><span id="hud-n">01/{pad(n)}</span><span class="hud-key" id="hud-k">{KEY[t.f[0].k]}</span></div>
+      <div class="prog">{t.f.map((f: any, i: number) => <i class={i === 0 ? 'on' : ''} data-i={i} style={`--c:var(--cat${CAT[f.k]})`}></i>)}</div>
+    </div>
+  </section>
+
+  <section id="how" class="sec">
+    <h2 class="st"><span class="hash">#</span> {t.howTitle}</h2>
+    <ol class="how">{t.how.map((h: string[], i: number) => <li><span class="n">{i + 1}</span><div><h3>{h[0]}</h3><p>{h[1]}</p></div></li>)}</ol>
+  </section>
+
+  <section id="why" class="sec">
+    <h2 class="st"><span class="hash">#</span> {t.whyTitle}</h2>
+    <p class="ss">{t.whySub}</p>
+    <table class="cmp">
+      <thead><tr><th><span class="skip">{t.whyTitle}</span></th><th class="us">{t.cmpUs}</th><th>{t.cmpThem}</th></tr></thead>
+      <tbody>{t.cmp.map((r: any[]) => <tr><th scope="row">{r[0]}</th><td class="us"><Fragment set:html={cell(r[1])} /></td><td><Fragment set:html={cell(r[2])} /></td></tr>)}</tbody>
+    </table>
+  </section>
+
+  <section id="plans" class="sec">
+    <h2 class="st"><span class="hash">#</span> {t.plansTitle}</h2>
+    <div class="pcards">
+      {['Free', 'Plus', 'Pro'].map((p, i) => (
+        <div class={`pcard${i === 1 ? ' pop' : ''}${i === 2 ? ' pro' : ''}`}>
+          {i === 1 && <span class="popb">{t.popular}</span>}
+          <h3>{p}</h3>
+          <ul>{t.planRows.map((r: string[]) => <li><span>{r[0]}</span><b>{r[i + 1]}</b></li>)}</ul>
+        </div>
+      ))}
+    </div>
+    <p class="pnote">{t.plansNote}</p>
+  </section>
+
+  <section id="faq" class="sec">
+    <h2 class="st"><span class="hash">#</span> {t.faqTitle}</h2>
+    <div class="faq">{t.faq.map((q: string[], i: number) => <details open={i === 0}><summary>{q[0]}</summary><p>{q[1]}</p></details>)}</div>
+  </section>
+
+  <section id="download" class="cta">
+    <img src="/icons/icon-192.png" alt="" width="64" height="64" loading="lazy" />
+    <h2>{t.ctaTitle}</h2>
+    <p>{t.ctaSub}</p>
+    <Fragment set:html={stores} />
+  </section>
+</main>
+
+<footer class="ft">
+  <div class="ftop">
+    <a class="logo" href={`/${code}/`}><img src="/icons/logo-96.png" alt="" width="32" height="32" loading="lazy" /><b>MarketAlert</b></a>
+    <nav class="legal">
+      <a href={legalUrl('privacy', appLocale)} rel="noopener">{t.legal[0]}</a>
+      <a href={legalUrl('terms', appLocale)} rel="noopener">{t.legal[1]}</a>
+      {GA_ID && <button type="button" class="lnk" data-consent-open>{t.consent.prefs}</button>}
+    </nav>
+  </div>
+  <nav class="langs" aria-label={t.ui.lang}>
+    {LOCALES.map(l => <a href={`/${l.code}/`} hreflang={l.hreflang} lang={l.code} aria-current={l.code === code ? 'page' : undefined} data-ev="language_switch" data-to={l.code}>{l.name}</a>)}
+  </nav>
+  <p class="disc">{t.disclaimer}</p>
+  <p class="copy">© 2026 MarketAlert · marketalertapp.com</p>
+</footer>
+
+<script>
+  // Analytics olayları (izin verilmişse Base.astro gönderir).
+  const track = (name: string, params?: Record<string, string>) => (window as any).maTrack?.(name, params);
+  const root = document.documentElement;
+  document.getElementById('theme')?.addEventListener('click', () => {
+    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+    try { localStorage.setItem('theme', root.dataset.theme); } catch (e) { /* tarayıcı depolamayı kapatmış olabilir */ }
+    track('theme_toggle', { theme: root.dataset.theme });
+  });
+  document.getElementById('lang')?.addEventListener('change', e => {
+    track('language_switch', { to_lang: (e.target as HTMLSelectElement).value });
+    location.href = '/' + (e.target as HTMLSelectElement).value + '/' + location.hash;
+  });
+  // Tur: ortadaki adım öne çıkar, sabit telefon onun ekranını gösterir.
+  const steps = [...document.querySelectorAll<HTMLElement>('.step')];
+  const hudN = document.getElementById('hud-n');
+  const hudK = document.getElementById('hud-k');
+  const hud = document.querySelector<HTMLElement>('.hud');
+  const total = String(steps.length).padStart(2, '0');
+  const show = (i: number) => {
+    document.querySelectorAll<HTMLElement>('.step, .screen img, .prog i').forEach(el => el.classList.toggle('on', Number(el.dataset.i) === i));
+    if (hudN) hudN.textContent = String(i + 1).padStart(2, '0') + '/' + total;
+    if (hudK) hudK.textContent = steps[i].querySelector('code')?.textContent ?? '';
+    hud?.style.setProperty('--c', steps[i].style.getPropertyValue('--c'));
+    // Her özellik ekranı sayfa başına bir kez sayılır: hangi özelliğe kadar okunduğunu gösterir.
+    const key = steps[i].dataset.k;
+    if (key && !seen.has(key)) { seen.add(key); track('feature_view', { feature: key }); }
+  };
+  const seen = new Set<string>();
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) show(Number((e.target as HTMLElement).dataset.i)); }), { rootMargin: '-45% 0px -45% 0px' });
+  steps.forEach(s => io.observe(s));
+</script>
