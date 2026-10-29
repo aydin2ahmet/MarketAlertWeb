@@ -19,7 +19,7 @@
    "Kayıt olmadan misafir başla",
    "11 dil · açık/koyu tema"
   ],
-  "sayExample": "“BTC 85 bin altına düşerse haber ver.”",
+  "sayExample": "“BTC 70 bin üstü, RSI 30 altı, 15 dakikada %2 artış ve 24s zirve olunca haber ver.”",
   "markets": "Binance Spot ve Vadeli · USDT ve USDC · Dört piyasa da her planda açık",
   "f": [
    {
@@ -286,7 +286,7 @@
    "Start as a guest, no sign-up",
    "11 languages · light/dark"
   ],
-  "sayExample": "“Notify me if BTC drops below 85,000.”",
+  "sayExample": "“Notify me when BTC is above 70K, RSI below 30, up 2% in 15 minutes and at its 24h high.”",
   "markets": "Binance Spot and Futures · USDT and USDC · All four markets on every plan",
   "f": [
    {
@@ -553,7 +553,7 @@
    "无需注册，访客即可开始",
    "11 种语言 · 浅色/深色"
   ],
-  "sayExample": "“如果 BTC 跌破 85,000 就提醒我。”",
+  "sayExample": "“BTC 高于 7 万、RSI 低于 30、15 分钟涨 2% 且创 24 小时新高时通知我。”",
   "markets": "Binance 现货和合约 · USDT 和 USDC · 四个市场所有套餐均可用",
   "f": [
    {
@@ -820,7 +820,7 @@
    "Empieza como invitado, sin registro",
    "11 idiomas · claro/oscuro"
   ],
-  "sayExample": "“Avísame si BTC baja de 85.000.”",
+  "sayExample": "“Avísame cuando BTC esté sobre 70 mil, RSI bajo 30, suba 2 % en 15 minutos y marque máximo de 24 h.”",
   "markets": "Binance Spot y Futuros · USDT y USDC · Los cuatro mercados en todos los planes",
   "f": [
    {
@@ -1087,7 +1087,7 @@
    "बिना साइन-अप, गेस्ट के रूप में शुरू करें",
    "11 भाषाएं · लाइट/डार्क"
   ],
-  "sayExample": "“अगर BTC 85,000 से नीचे जाए तो मुझे बताना।”",
+  "sayExample": "“BTC 70 हज़ार से ऊपर, RSI 30 से नीचे, 15 मिनट में 2% बढ़त और 24 घंटे का उच्च हो तो बताना।”",
   "markets": "Binance Spot और Futures · USDT और USDC · चारों मार्केट हर प्लान में",
   "f": [
    {
@@ -1354,7 +1354,7 @@
    "ابدأ كضيف دون تسجيل",
    "11 لغة · فاتح/داكن"
   ],
-  "sayExample": "«نبّهني إذا هبط BTC تحت 85,000.»",
+  "sayExample": "«نبّهني عندما يكون BTC فوق 70 ألفًا وRSI تحت 30 ويرتفع 2% خلال 15 دقيقة ويبلغ قمة 24 ساعة.»",
   "markets": "Binance الفوري والعقود الآجلة · USDT وUSDC · الأسواق الأربعة متاحة في كل الخطط",
   "f": [
    {
@@ -1621,7 +1621,7 @@
    "Comece como convidado, sem cadastro",
    "11 idiomas · claro/escuro"
   ],
-  "sayExample": "“Me avise se o BTC cair abaixo de 85.000.”",
+  "sayExample": "“Me avise: BTC acima de 70 mil, RSI abaixo de 30, +2% em 15 min e máxima de 24h.”",
   "markets": "Binance Spot e Futuros · USDT e USDC · Os quatro mercados em todos os planos",
   "f": [
    {
@@ -1888,7 +1888,7 @@
    "Commencez en invité, sans inscription",
    "11 langues · clair/sombre"
   ],
-  "sayExample": "« Préviens-moi si le BTC passe sous 85 000. »",
+  "sayExample": "« Préviens-moi quand BTC dépasse 70 k, RSI sous 30, +2 % en 15 minutes et plus haut sur 24 h. »",
   "markets": "Binance Spot et Futures · USDT et USDC · Les quatre marchés dans toutes les offres",
   "f": [
    {
@@ -2155,7 +2155,7 @@
    "Начните как гость, без регистрации",
    "11 языков · светлая/тёмная тема"
   ],
-  "sayExample": "«Сообщи, если BTC упадёт ниже 85 000».",
+  "sayExample": "«Сообщи: BTC выше 70 тыс., RSI ниже 30, +2% за 15 мин и максимум 24 ч».",
   "markets": "Binance Спот и Фьючерсы · USDT и USDC · Все четыре рынка в каждом тарифе",
   "f": [
    {
@@ -2422,7 +2422,7 @@
    "Als Gast starten, ohne Registrierung",
    "11 Sprachen · hell/dunkel"
   ],
-  "sayExample": "„Sag mir Bescheid, wenn BTC unter 85.000 fällt.“",
+  "sayExample": "„Sag Bescheid: BTC über 70.000, RSI unter 30, +2 % in 15 Min. und 24h-Hoch.“",
   "markets": "Binance Spot und Futures · USDT und USDC · Alle vier Märkte in jedem Tarif",
   "f": [
    {
@@ -2689,7 +2689,7 @@
    "登録不要、ゲストで開始",
    "11言語 · ライト/ダーク"
   ],
-  "sayExample": "「BTC が 85,000 を下回ったら知らせて」",
+  "sayExample": "「BTCが7万超え、RSIが30未満、15分で2%上昇、24時間高値になったら通知して」",
   "markets": "Binance 現物・先物 · USDT と USDC · 4つの市場すべてを全プランで利用可能",
   "f": [
    {
