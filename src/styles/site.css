@@ -255,3 +255,79 @@ img { max-width: 100%; }
 .hd .hx { margin-inline-start: auto; }
 .doc .steps, .doc .what { margin: 0; padding-inline-start: 22px; display: grid; gap: 8px; }
 .doc .steps li::marker { color: var(--pri); font-weight: 700; }
+
+/* İlk ekran v2: başlık + mağaza butonları, iki telefonlu görsel, altında açıklama */
+.hero { grid-template-columns: 1.05fr .95fr; grid-template-areas: "a v" "b v"; align-items: start; row-gap: 0; padding-top: 64px; }
+.h-a { grid-area: a; align-self: end; }
+.h-b { grid-area: b; }
+.h-v { grid-area: v; position: relative; height: 600px; align-self: center; }
+.h-v .pf { position: absolute; top: 0; }
+.h-v .front { --pw: 270px; inset-inline-end: 6%; top: 10px; z-index: 2; box-shadow: 0 0 0 1px var(--pri), 0 30px 80px -20px color-mix(in srgb, var(--pri) 55%, transparent); }
+.h-v .back { --pw: 236px; inset-inline-start: 4%; top: 56px; transform: rotate(-6deg); opacity: .96; }
+:root[dir=rtl] .h-v .back { transform: rotate(6deg); }
+.fl { position: absolute; z-index: 3; display: inline-flex; align-items: center; gap: 6px; font: 600 12.5px var(--mono); padding: 7px 11px; border-radius: 999px; background: var(--sf); color: var(--tx); border: 1px solid var(--bd); box-shadow: var(--shadow); white-space: nowrap; }
+.fl .ic { width: 15px; height: 15px; color: var(--pro); }
+.f1 { top: 28px; inset-inline-start: 0; }
+.f2 { top: 46%; inset-inline-end: 0; color: var(--cat3); }
+.f3 { bottom: 40px; inset-inline-start: 6%; color: var(--pri); }
+.sb.soon { opacity: 1; }
+.sb.soon small { color: var(--pri); text-transform: uppercase; font-size: 10px; letter-spacing: .06em; }
+
+/* Öne çıkanlar */
+.hl { padding: 40px var(--gut) 72px; }
+.hlg { display: grid; grid-template-columns: 1.15fr 1.15fr .9fr; gap: 16px; margin-top: 18px; }
+.hc { display: flex; flex-direction: column; gap: 12px; padding: 22px; border: 1px solid var(--bd); border-radius: 18px; background: var(--sf); position: relative; overflow: hidden; }
+.hc::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; background: var(--c); }
+.hi { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; color: var(--c); background: color-mix(in srgb, var(--c) 14%, transparent); }
+.hi .ic { width: 24px; height: 24px; }
+.hc h3 { font: 700 21px/1.25 var(--disp); margin: 0; }
+.hc p { margin: 0; color: var(--mut); font-size: 15.5px; }
+.bub { align-self: flex-end; max-width: 90%; background: var(--pri) !important; color: var(--priText) !important; padding: 10px 14px; border-radius: 16px 16px 4px 16px; font-weight: 500; }
+:root[dir=rtl] .bub { align-self: flex-start; border-radius: 16px 16px 16px 4px; }
+.acts { list-style: none; padding: 0; margin: auto 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.acts li { display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px; border-radius: 999px; font: 600 13px var(--mono); color: var(--c); background: color-mix(in srgb, var(--c) 12%, transparent); border: 1px solid color-mix(in srgb, var(--c) 35%, transparent); }
+:root[lang=ar] .acts li, :root[lang=hi] .acts li, :root[lang=zh] .acts li, :root[lang=ja] .acts li { font-family: var(--f); }
+.acts .ic { width: 15px; height: 15px; }
+.dots { display: grid; grid-template-columns: repeat(10, 1fr); gap: 7px; padding: 14px; border-radius: 12px; background: color-mix(in srgb, var(--c) 6%, var(--bg)); }
+.dots i { aspect-ratio: 1; border-radius: 50%; background: var(--bd); }
+.dots i.up { background: var(--up); box-shadow: 0 0 0 3px color-mix(in srgb, var(--up) 25%, transparent); animation: pulse 2.4s ease-in-out infinite; }
+.dots i.dn { background: #E5484D; box-shadow: 0 0 0 3px rgba(229, 72, 77, .22); }
+@keyframes pulse { 50% { box-shadow: 0 0 0 6px transparent; } }
+
+/* Telefonda alt mağaza barı */
+.dlbar { display: none; }
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; grid-template-areas: "a" "v" "b"; padding: 22px var(--gut) 24px; }
+  .hero h1 { font-size: 31px; line-height: 1.12; margin-top: 0; }
+  .hero .prompt { display: none; }
+  .hero .stores { margin-top: 18px; flex-wrap: nowrap; gap: 10px; }
+  .hero .sb { flex: 1; padding: 8px 10px; gap: 8px; justify-content: center; }
+  .hero .sb b { font-size: 16px; }
+  .h-v { height: 470px; margin-top: 22px; }
+  .h-v .front { --pw: 212px; inset-inline-end: 2%; top: 0; }
+  .h-v .back { --pw: 186px; inset-inline-start: 0; top: 44px; }
+  .f1 { top: 8px; inset-inline-start: 0; }
+  .f2 { top: auto; bottom: 120px; inset-inline-end: -4px; }
+  .f3 { bottom: 18px; inset-inline-start: 2%; }
+  .h-b .sub { font-size: 16.5px; margin-top: 10px; }
+  .hl { padding: 28px var(--gut) 48px; }
+  .hlg { grid-template-columns: 1fr; }
+  .dlbar { display: flex; align-items: center; gap: 10px; position: fixed; z-index: 40; inset-inline: 0; bottom: 0; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-top: 1px solid var(--bd); transform: translateY(110%); transition: transform .25s ease; }
+  .dlbar.on { transform: none; }
+  .dlbar > b { font: 700 14px var(--disp); white-space: nowrap; }
+  .dlbar .stores { margin: 0; flex: 1; flex-wrap: nowrap; gap: 8px; }
+  .dlbar .sb { flex: 1; padding: 5px 8px; gap: 6px; justify-content: center; border-radius: 10px; }
+  .dlbar .sbi { width: 20px; height: 20px; }
+  .dlbar .sb b { font-size: 13.5px; }
+  .dlbar .sb small { font-size: 8.5px; }
+  body:has(.consent:not([hidden])) .dlbar { display: none; }
+}
+@media (max-width: 1100px) and (min-width: 861px) { .hlg { grid-template-columns: 1fr 1fr; } }
+.dots { grid-template-columns: repeat(10, 14px); justify-content: space-between; gap: 10px 6px; }
+.push { display: flex; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 16px; background: var(--bg); border: 1px solid var(--bd); box-shadow: var(--shadow); }
+.push img { width: 36px; height: 36px; border-radius: 9px; }
+.push span { display: grid; gap: 2px; }
+.push small { font: 500 11.5px var(--mono); color: var(--mut); }
+.push b { font-size: 14.5px; font-weight: 600; }
+@media (min-width: 861px) { .hero h1 { font-size: clamp(34px, 4.3vw, 56px); } }
