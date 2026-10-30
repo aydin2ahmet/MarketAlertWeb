@@ -2,6 +2,8 @@
 import Base from '../../../layouts/Base.astro';
 import content from '../../../i18n/content.json';
 import guides from '../../../i18n/rsi-alerts.json';
+import walkthroughs from '../../../i18n/rsi-walkthrough.json';
+import screenSizes from '../../../i18n/rsi-screens.json';
 import { GA_ID, LOCALES, SITE, legalUrl } from '../../../config';
 
 export function getStaticPaths() {
@@ -11,6 +13,8 @@ const { locale } = Astro.props;
 const code = locale.code;
 const t = (content as any)[code];
 const g = (guides as any)[code];
+const w = (walkthroughs as any)[code];
+const sizes = (screenSizes as any)[code];
 const path = `/${code}/features/rsi-alerts/`;
 const alternates = LOCALES.map(l => ({ hreflang: l.hreflang, href: `/${l.code}/features/rsi-alerts/` }));
 const jsonLd = [
@@ -43,10 +47,48 @@ const jsonLd = [
       <figure><div class="pf guide-phone"><img class="sh-l" src={`/shots/${code}/light/hero-list.webp`} alt={t.heroListAlt} width="360" height="940" fetchpriority="high" decoding="async" /><img class="sh-d" src={`/shots/${code}/dark/hero-list.webp`} alt="" width="360" height="940" loading="lazy" decoding="async" /></div><figcaption>{g.caption}</figcaption></figure>
     </section>
     <section class="voice-example" aria-labelledby="example-title">
-      <div><p class="guide-kicker">RSI(14) &lt; 30 · 1h · TOP 100</p><h2 id="example-title">{g.exampleTitle}</h2><blockquote><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3" /><path d="M5 10v2a7 7 0 0014 0v-2M12 19v3M8 22h8" /></svg><p>{g.example}</p></blockquote><p class="example-note">{g.exampleNote}</p></div>
-      <dl>{g.specs.map((row: string[]) => <div><dt>{row[0]}</dt><dd>{row[1]}</dd></div>)}</dl>
+      <div><p class="guide-kicker">RSI(14) &lt; 30 · 1h · TOP 100</p><h2 id="example-title">{g.exampleTitle}</h2><blockquote><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3" /><path d="M5 10v2a7 7 0 0014 0v-2M12 19v3M8 22h8" /></svg><p>{w.message}</p></blockquote><p class="example-note">{g.exampleNote}</p></div>
+      <dl>{g.specs.map((row: string[], i: number) => <div><dt>{row[0]}</dt><dd>{i === 2 ? `${w.rsi} ∧ ${w.ema}` : row[1]}</dd></div>)}</dl>
     </section>
-    <section id="setup" class="guide-section"><h2>{g.stepsTitle}</h2><ol class="setup-steps">{g.steps.map((s: string[], i: number) => <li><span class="step-number" aria-hidden="true">{i + 1}</span><div><h3>{s[0]}</h3><p>{s[1]}</p></div></li>)}</ol></section>
+    <section id="setup" class="rsi-walkthrough">
+      <div class="walk-heading"><p class="walk-kicker">{w.kicker}</p><h2>{g.stepsTitle}</h2><p>{w.intro}</p></div>
+      <div class="walk-tabs" role="tablist" aria-label={g.stepsTitle}>
+        {['voice', 'chat'].map((flow, i) => <button id={`${flow}-tab`} type="button" role="tab" aria-selected={i === 0 ? 'true' : 'false'} aria-controls={`${flow}-panel`} data-flow={flow} tabindex={i === 0 ? 0 : -1}>{w.tabs[i]}</button>)}
+      </div>
+      {['voice', 'chat'].map((flow, index) => {
+        const steps = w[flow];
+        const desktopShots = [flow === 'voice' ? 'voice-say' : 'chat-write', flow === 'voice' ? 'desktop-voice-result' : 'desktop-chat-draft', 'list'];
+        const desktopTitles = [w.desktop[index], w.desktop[index + 2], w.desktop[4]];
+        const mobileShots = flow === 'voice' ? ['voice-open', 'voice-say', 'voice-result', 'list'] : ['chat-open', 'chat-write', 'chat-draft', 'list'];
+        return <div id={`${flow}-panel`} role="tabpanel" aria-labelledby={`${flow}-tab`} hidden={index !== 0}>
+          <p class="walk-note">{w.notes[index]}</p>
+          <div class="desktop-scene">
+            <div class="scene-context"><span>RSI + EMA</span><span>{g.specs[1][1]}</span><span>Telegram</span></div>
+            <div class="scene-three">
+              {desktopShots.map((kind, i) => <article class="scene-part">
+                <div class="scene-label"><span class="scene-number">{['01–02', '03', '04'][i]}</span><h3>{desktopTitles[i]}</h3><p>{w.short[i]}</p></div>
+                <figure>
+                  <img class="sh-l" src={`/shots/${code}/light/rsi/${kind}.webp`} alt={`${desktopTitles[i]} · ${w.alertTitle}`} width="390" height={sizes.light[kind]} loading="lazy" decoding="async" />
+                  <img class="sh-d" src={`/shots/${code}/dark/rsi/${kind}.webp`} alt={`${desktopTitles[i]} · ${w.alertTitle}`} width="390" height={sizes.dark[kind]} loading="lazy" decoding="async" />
+                </figure>
+              </article>)}
+              <svg class="scene-thread" viewBox="0 0 1100 650" fill="none" preserveAspectRatio="none" aria-hidden="true"><path class="thread-glow" d="M40 450 C160 650 330 640 400 340 S690 50 755 320 S940 650 1080 470" /><path d="M40 450 C160 650 330 640 400 340 S690 50 755 320 S940 650 1080 470" /><path class="thread-tip" d="M365 415 L390 387 L402 423 M718 239 L744 264 L752 230" /></svg>
+            </div>
+          </div>
+          <ol class="walk-grid">
+            {mobileShots.map((kind, i) => <li class="walk-card">
+              <div class="walk-copy"><span class="walk-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><div><h3>{steps[i][0]}</h3><p>{steps[i][1]}</p></div></div>
+              <figure class="walk-screen">
+                <img class="sh-l" src={`/shots/${code}/light/rsi/${kind}.webp`} alt={`${steps[i][0]} · ${w.alertTitle}`} width="390" height={sizes.light[kind]} loading="lazy" decoding="async" />
+                <img class="sh-d" src={`/shots/${code}/dark/rsi/${kind}.webp`} alt={`${steps[i][0]} · ${w.alertTitle}`} width="390" height={sizes.dark[kind]} loading="lazy" decoding="async" />
+              </figure>
+              <svg class="walk-arrow" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M8 16 C88 10 94 80 24 88" /><path d="M38 75 L23 88 L40 97" /></svg>
+            </li>)}
+          </ol>
+        </div>;
+      })}
+      <p class="walk-caption">{w.caption}</p>
+    </section>
     <section class="guide-section text-section"><h2>{g.scopeTitle}</h2>{g.scope.map((p: string) => <p>{p}</p>)}</section>
     <section class="guide-section text-section"><h2>{g.combineTitle}</h2><p>{g.combine}</p><div class="condition-example" dir="ltr"><span>RSI(14) &lt; 30</span><b>AND</b><span>VOL &gt; 3 × SMA(20)</span></div></section>
     <section id="plans" class="guide-section"><h2>{g.plansTitle}</h2><div class="guide-plans">{g.plans.map((p: string[]) => <article><h3>{p[0]}</h3><p>{p[1]}</p></article>)}</div><a class="text-link" href={`/${code}/#plans`}>{g.plansLink} <span aria-hidden="true">↗</span></a></section>
@@ -55,6 +97,26 @@ const jsonLd = [
   </main>
   <footer class="ft"><div class="ftop"><a class="logo" href={`/${code}/`}><img src="/icons/logo-96.png" alt="" width="32" height="32" /><b>MarketAlert</b></a><nav class="legal"><a href={legalUrl('privacy', code)}>{t.legal[0]}</a><a href={legalUrl('terms', code)}>{t.legal[1]}</a>{GA_ID && <button type="button" class="lnk" data-consent-open>{t.consent.prefs}</button>}</nav></div><nav class="langs" aria-label={t.ui.lang}>{LOCALES.map(l => <a href={`/${l.code}/features/rsi-alerts/`} hreflang={l.hreflang} lang={l.hreflang} aria-current={l.code === code ? 'page' : undefined} data-ev="language_switch" data-to={l.code}>{l.name}</a>)}</nav><p class="disc">{t.disclaimer}</p><p class="copy">© 2026 MarketAlert · marketalertapp.com</p></footer>
   <script>
+    const flowTabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-flow]'));
+    function selectFlow(tab: HTMLButtonElement) {
+      flowTabs.forEach(button => {
+        const active = button === tab;
+        button.setAttribute('aria-selected', String(active));
+        button.tabIndex = active ? 0 : -1;
+        const panel = document.getElementById(`${button.dataset.flow}-panel`);
+        if (panel) panel.hidden = !active;
+      });
+      (window as any).maTrack?.('walkthrough_method_change', { method: tab.dataset.flow });
+    }
+    flowTabs.forEach(tab => {
+      tab.addEventListener('click', () => selectFlow(tab));
+      tab.addEventListener('keydown', event => {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        const next = event.key === 'Home' ? flowTabs[0] : event.key === 'End' ? flowTabs[flowTabs.length - 1] : flowTabs.find(button => button !== tab);
+        if (next) { selectFlow(next); next.focus(); }
+      });
+    });
     const root = document.documentElement;
     document.getElementById('theme')?.addEventListener('click', () => {
       const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
@@ -115,5 +177,60 @@ const jsonLd = [
     .setup-steps, .guide-plans { grid-template-columns: 1fr; gap: 16px; }
     .setup-steps li { padding: 20px; }
     dd { overflow-wrap: anywhere; }
+  }
+
+.rsi-walkthrough{padding:64px 0;border-bottom:1px solid var(--bd);scroll-margin-top:88px}.walk-heading{max-width:760px}.walk-kicker{font:600 12px/1.6 var(--mono);letter-spacing:.08em;color:var(--cat3);margin-bottom:12px}.walk-heading h2{font-size:clamp(28px,3vw,38px);margin-bottom:12px}.walk-heading p:not(.walk-kicker){color:var(--mut);font-size:17px}.walk-tabs{display:inline-flex;gap:6px;padding:5px;background:var(--sf);border:1px solid var(--bd);border-radius:14px;margin:26px 0 0}.walk-tabs button{padding:12px 24px;border:0;background:transparent;color:var(--mut);border-radius:10px;font-family:inherit;font-size:15px;font-weight:600;line-height:1.4;cursor:pointer}.walk-tabs button[aria-selected=true]{background:var(--pri);color:var(--priText);box-shadow:0 3px 10px #0001}.walk-tabs button:focus-visible{outline:3px solid var(--cat3);outline-offset:2px}.walk-note{font-size:14px;color:var(--mut);margin:16px 0 28px}.walk-grid{display:grid;grid-template-columns:1fr 1fr;list-style:none;margin:0;padding:0;gap:24px}.walk-card{border:1px solid var(--bd);background:var(--sf);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}.walk-copy{display:flex;gap:16px;padding:24px;min-height:170px;align-items:start}.walk-num{flex:none;font:600 15px/1 var(--mono);color:var(--cat3);background:var(--priSoft);border:1px solid var(--bd);padding:12px 9px;border-radius:11px}.walk-copy h3{font-size:21px;line-height:1.3;margin:0 0 10px}.walk-copy p{font-size:15px;line-height:1.65;color:var(--mut);margin:0;max-width:390px}.walk-screen{margin:0;padding:20px 24px 0;background:var(--bg);border-top:1px solid var(--bd);flex:1;display:flex;align-items:flex-start;justify-content:center}.walk-screen img{width:100%;max-width:390px;height:auto;border:1px solid var(--bd);border-radius:15px 15px 0 0;box-shadow:0 12px 32px #172c4110}.walk-caption{font-size:12px;color:var(--mut);margin:18px 0 0}.rsi-walkthrough [hidden]{display:none!important}@media(max-width:700px){.rsi-walkthrough{padding:40px 0}.walk-grid{grid-template-columns:1fr;gap:20px}.walk-tabs{display:flex}.walk-tabs button{flex:1;padding:12px 14px}.walk-copy{padding:20px;min-height:0;gap:12px}.walk-copy h3{font-size:19px}.walk-copy p{font-size:14px}.walk-screen{padding:16px 12px 0}.walk-note{line-height:1.6}.walk-heading p:not(.walk-kicker){font-size:16px}.walk-kicker{font-size:10px}}
+
+#setup .walk-grid{display:grid;position:relative;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:104px 150px;padding:28px 70px 38px;border:1px solid var(--bd);border-radius:40px;background:var(--sf)}
+#setup .walk-card{position:relative;border:0;border-radius:0;background:transparent;overflow:visible;display:flex;flex-direction:column;align-items:center}
+#setup .walk-card:nth-child(1){grid-area:1/1}#setup .walk-card:nth-child(2){grid-area:1/2}#setup .walk-card:nth-child(3){grid-area:2/2}#setup .walk-card:nth-child(4){grid-area:2/1}
+#setup .walk-copy{display:flex;padding:0 0 22px;min-height:148px;gap:12px;width:100%;align-items:start}
+#setup .walk-num{flex:none;width:36px;height:36px;padding:0;display:grid;place-items:center;border-radius:50%;background:var(--pri);color:var(--priText);border:0;font-size:13px}
+#setup .walk-copy h3{font-size:21px;margin:4px 0 10px}
+#setup .walk-copy p{font-size:14px;line-height:1.6}
+#setup .walk-screen{padding:0;border:0;background:transparent;display:block;flex:none;width:100%;max-width:320px}
+#setup .walk-screen img{width:100%;max-width:320px;border-radius:16px;box-shadow:0 8px 28px #172c4110}
+#setup .walk-arrow{position:absolute;width:106px;height:106px;overflow:visible;z-index:1;color:var(--pri)}
+#setup .walk-arrow path{stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+#setup .walk-card:nth-child(1) .walk-arrow{left:calc(100% + 20px);top:60px;transform:rotate(-100deg)}
+#setup .walk-card:nth-child(2) .walk-arrow{right:-80px;top:calc(100% - 12px);transform:rotate(-8deg)}
+#setup .walk-card:nth-child(3) .walk-arrow{right:calc(100% + 20px);top:60px;transform:rotate(80deg)}
+#setup .walk-card:nth-child(4) .walk-arrow{left:-80px;bottom:calc(100% + 8px);transform:rotate(172deg);opacity:.45}
+@media(max-width:1000px) and (min-width:701px){#setup .walk-grid{gap:90px 100px;padding:28px 40px}#setup .walk-arrow{width:80px;height:80px}#setup .walk-card:nth-child(1) .walk-arrow{left:calc(100% + 10px)}#setup .walk-card:nth-child(3) .walk-arrow{right:calc(100% + 10px)}#setup .walk-copy{min-height:180px}#setup .walk-copy h3{font-size:19px}}
+@media(max-width:700px){#setup .walk-grid{display:flex;flex-direction:column;gap:84px;padding:4px 0 30px;border:0;border-radius:0;background:transparent}#setup .walk-card{width:calc(100% - 44px);align-items:stretch}#setup .walk-card:nth-child(odd){align-self:flex-start}#setup .walk-card:nth-child(even){align-self:flex-end}#setup .walk-copy{padding:0 0 16px;min-height:0;gap:9px}#setup .walk-num{width:28px;height:28px;font-size:11px;margin-top:2px}#setup .walk-copy h3{font-size:18px;margin-top:3px;margin-bottom:9px}#setup .walk-copy p{font-size:14px}#setup .walk-screen{max-width:none}#setup .walk-screen img{max-width:none;border-radius:14px}#setup .walk-arrow{width:78px;height:78px}#setup .walk-card:nth-child(odd) .walk-arrow{left:auto;right:-35px;top:calc(100% + 6px);bottom:auto;transform:rotate(-12deg)}#setup .walk-card:nth-child(even) .walk-arrow{right:auto;left:-35px;top:calc(100% + 6px);bottom:auto;transform:scaleX(-1) rotate(-12deg)}#setup .walk-card:last-child .walk-arrow{display:none}}
+
+.desktop-scene{display:none}
+@media(min-width:701px){
+#setup .walk-grid{display:none}
+.desktop-scene{display:block;position:relative;padding:24px 26px 40px;border-radius:36px;background:radial-gradient(ellipse at 50% 60%,#ffe8b6b8 0%,#fff7e9aa 50%,var(--sf) 90%);border:1px solid var(--bd);overflow:hidden}
+.scene-context{display:flex;gap:10px;justify-content:center;align-items:center;padding:0 0 26px;color:var(--mut);font:500 12px/1.4 var(--mono)}
+.scene-context span+span::before{content:'·';color:var(--pri);margin-right:10px}
+.scene-three{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:30px}
+.scene-part{position:relative;z-index:2;min-width:0}
+.scene-part:nth-child(1){margin-top:70px}.scene-part:nth-child(2){margin-top:0}.scene-part:nth-child(3){margin-top:70px}
+.scene-label{padding:0 12px 20px;position:relative;min-height:154px}
+.scene-number{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:28px;border-radius:99px;padding:0 9px;background:var(--pri);color:var(--priText);font:600 11px/1 var(--mono);margin-bottom:9px;box-shadow:0 4px 12px #f0a42018}
+.scene-label h3{font-size:22px;line-height:1.3;margin:0 0 8px}
+.scene-label p{font-size:14px;line-height:1.6;color:var(--mut);margin:0;max-width:300px}
+.scene-part figure{margin:0;padding:5px;border-radius:22px;background:var(--sf);border:1px solid #eadcc5;box-shadow:0 18px 40px #79521b14}
+.scene-part img{width:100%;height:auto;border-radius:17px}
+.scene-thread{position:absolute;inset:100px -5px 0;width:calc(100% + 10px);height:calc(100% - 100px);z-index:1;overflow:visible;pointer-events:none}
+.scene-thread path{stroke:var(--pri);stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;opacity:.8}
+.scene-thread .thread-glow{stroke-width:18;opacity:.11}.scene-thread .thread-tip{stroke-width:2.8;opacity:1}
+}
+@media(min-width:701px) and (max-width:1000px){.desktop-scene{padding:22px 14px 30px}.scene-three{gap:18px}.scene-label{padding-inline:6px;min-height:175px}.scene-label h3{font-size:19px}.scene-label p{font-size:13px}.scene-part figure{padding:3px;border-radius:18px}.scene-part img{border-radius:15px}}
+
+.walk-screen img,.scene-part img{vertical-align:middle}
+.voice-example dd{max-width:100%;overflow-wrap:anywhere}
+:global([data-theme=dark]) .desktop-scene{background:radial-gradient(ellipse at 50% 60%,var(--priSoft),var(--sf) 85%)}
+@media(prefers-color-scheme:dark){:global(:root:not([data-theme=light])) .desktop-scene{background:radial-gradient(ellipse at 50% 60%,var(--priSoft),var(--sf) 85%)}}
+:global([dir=rtl]) .scene-thread{transform:scaleX(-1)}
+:global([dir=rtl]) .scene-label,:global([dir=rtl]) .walk-copy{text-align:right}
+
+
+  .skip:not(:focus){inset-inline-start:auto;left:0;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  @media(max-width:700px){
+    :global([dir=rtl]) #setup .walk-card:nth-child(odd) .walk-arrow{right:auto;left:-35px;transform:scaleX(-1) rotate(-12deg)}
+    :global([dir=rtl]) #setup .walk-card:nth-child(even) .walk-arrow{left:auto;right:-35px;transform:rotate(-12deg)}
   }
 </style>

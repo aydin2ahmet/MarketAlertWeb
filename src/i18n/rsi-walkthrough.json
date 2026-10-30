@@ -1,0 +1,717 @@
+{
+  "tr": {
+    "kicker": "FORM DOLDURMADAN · İKİ KOŞUL, TEK İSTEK",
+    "intro": "Aynı alarmı konuşarak ya da yazarak kur. Adım adım uygulamada gör.",
+    "tabs": [
+      "Sesle kur",
+      "Yazarak kur"
+    ],
+    "notes": [
+      "Sesli asistan alarmı doğrudan kurar; ayrıca taslak onayı gerekmez.",
+      "Yazılı sohbette kontrol sende: “Alarmı kur”a dokunmadan alarm kurulmaz."
+    ],
+    "voice": [
+      [
+        "Sesli asistanı aç",
+        "Alarmlar ekranından sesli asistanı aç. Mikrofona dokun ve konuşmaya başla."
+      ],
+      [
+        "İki koşulu tek cümlede söyle",
+        "Hangi piyasayı tarayacağını, iki koşulu ve bildirim kanalını söyle. Konuşman sohbette metin olarak da görünür."
+      ],
+      [
+        "Alarmın hazır",
+        "Asistan alarmı doğrudan kurar. İlk 100 coin, RSI + EMA koşulları, Telegram ve bir kez tetikleme aynı kartta görünür."
+      ],
+      [
+        "Alarmlarında gör",
+        "Yeni alarm listene eklenir. İki koşul aynı coin için birlikte sağlandığında Telegram’dan bildirim alırsın."
+      ]
+    ],
+    "chat": [
+      [
+        "AI sekmesini aç",
+        "Alt menüde AI sekmesine dokun. İsteğini kendi cümlelerinle yazabileceğin sohbet açılır."
+      ],
+      [
+        "Aynı isteği yaz ve gönder",
+        "Piyasayı, tarama kapsamını, RSI ve EMA koşullarını, bildirim kanalını tek mesajda belirt."
+      ],
+      [
+        "Taslağı kontrol et, alarmı kur",
+        "Asistan önce bir taslak hazırlar. Koşulları ve Telegram kanalını kontrol edip “Alarmı kur”a dokun."
+      ],
+      [
+        "Alarmlarında gör",
+        "Onayladığın alarm listene eklenir. Kapsam ve koşullar sesle kurduğun alarm ile aynıdır."
+      ]
+    ],
+    "desktop": [
+      "Söyle",
+      "Yaz",
+      "Alarmın hazır",
+      "Taslağı onayla",
+      "Listende gör"
+    ],
+    "short": [
+      "Asistanı aç; iki koşulu ve Telegram bildirimini tek istekte belirt.",
+      "Aynı isteğin RSI + EMA koşullarına ve Telegram bildirimine dönüşür.",
+      "Kurulan aynı alarm artık senin yerine piyasayı izler."
+    ],
+    "caption": "Uygulamanın ekran kataloğundan hazırlanmış örnek akış. Telegram bildirimi için kanal bağlantının hazır olması gerekir.",
+    "message": "Binance Spot USDT’de hacmi en yüksek 100 coini tara. Saatlik RSI 30’un altında ve fiyat EMA 20’nin üzerindeyken Telegram’dan bir kez bildir.",
+    "alertTitle": "Piyasa RSI + EMA taraması",
+    "rsi": "RSI(14) 30’un altında · 1h",
+    "ema": "Fiyat EMA(20)’nin üzerinde · 1h"
+  },
+  "en": {
+    "kicker": "NO FORMS · TWO CONDITIONS, ONE REQUEST",
+    "intro": "Create the same alert by speaking or typing. See each step in the app.",
+    "tabs": [
+      "By voice",
+      "By text"
+    ],
+    "notes": [
+      "The voice assistant creates the alert directly; no draft approval is needed.",
+      "In text chat, you stay in control: no alert is created until you tap “Create alert”."
+    ],
+    "voice": [
+      [
+        "Open the voice assistant",
+        "Open the voice assistant from Alerts. Tap the microphone and start speaking."
+      ],
+      [
+        "Say both conditions in one request",
+        "Say which market to scan, both conditions and the notification channel. Your spoken request also appears as text in the chat."
+      ],
+      [
+        "Your alert is ready",
+        "The assistant creates the alert directly. The top 100 coins, RSI + EMA conditions, Telegram and one-time triggering appear on the same card."
+      ],
+      [
+        "Find it in your alerts",
+        "The new alert appears in your list. You receive a Telegram notification when both conditions are met for the same coin."
+      ]
+    ],
+    "chat": [
+      [
+        "Open the AI tab",
+        "Tap AI in the bottom menu to open the chat and describe your alert in your own words."
+      ],
+      [
+        "Type and send the same request",
+        "Specify the market, scan scope, RSI and EMA conditions, and notification channel in one message."
+      ],
+      [
+        "Review the draft and create the alert",
+        "The assistant prepares a draft first. Check the conditions and Telegram channel, then tap “Create alert”."
+      ],
+      [
+        "Find it in your alerts",
+        "Your approved alert appears in the list, with the same scope and conditions as the voice-created alert."
+      ]
+    ],
+    "desktop": [
+      "Say it",
+      "Type it",
+      "Your alert is ready",
+      "Approve the draft",
+      "See it in your list"
+    ],
+    "short": [
+      "Open the assistant; specify both conditions and Telegram notifications in one request.",
+      "Your request becomes RSI + EMA conditions and a Telegram notification.",
+      "The same alert now watches the market for you."
+    ],
+    "caption": "Example flow prepared from the app’s screen catalog. Connect your Telegram channel before receiving notifications.",
+    "message": "Scan the top 100 coins by volume on Binance Spot USDT. Notify me once on Telegram when hourly RSI is below 30 and price is above EMA 20.",
+    "alertTitle": "Market RSI + EMA scan",
+    "rsi": "RSI(14) below 30 · 1h",
+    "ema": "Price above EMA(20) · 1h"
+  },
+  "de": {
+    "kicker": "OHNE FORMULARE · ZWEI BEDINGUNGEN, EINE ANFRAGE",
+    "intro": "Erstelle denselben Alarm per Sprache oder Text. Sieh jeden Schritt in der App.",
+    "tabs": [
+      "Per Sprache",
+      "Per Text"
+    ],
+    "notes": [
+      "Der Sprachassistent erstellt den Alarm direkt; eine Entwurfsfreigabe ist nicht nötig.",
+      "Im Textchat entscheidest du: Erst mit „Alarm erstellen“ wird der Alarm angelegt."
+    ],
+    "voice": [
+      [
+        "Sprachassistent öffnen",
+        "Öffne den Sprachassistenten unter Alarme. Tippe auf das Mikrofon und sprich los."
+      ],
+      [
+        "Beide Bedingungen in einem Satz nennen",
+        "Nenne den Markt, beide Bedingungen und den Benachrichtigungskanal. Deine Sprachanfrage erscheint auch als Text im Chat."
+      ],
+      [
+        "Dein Alarm ist bereit",
+        "Der Assistent erstellt den Alarm direkt. Die Top 100, RSI + EMA, Telegram und die einmalige Auslösung stehen auf derselben Karte."
+      ],
+      [
+        "In deinen Alarmen ansehen",
+        "Der neue Alarm erscheint in der Liste. Sind beide Bedingungen für dieselbe Coin erfüllt, erhältst du eine Telegram-Nachricht."
+      ]
+    ],
+    "chat": [
+      [
+        "AI-Tab öffnen",
+        "Tippe im unteren Menü auf AI und beschreibe deinen Alarm im Chat mit eigenen Worten."
+      ],
+      [
+        "Dieselbe Anfrage schreiben und senden",
+        "Gib Markt, Scan-Umfang, RSI- und EMA-Bedingungen sowie den Benachrichtigungskanal in einer Nachricht an."
+      ],
+      [
+        "Entwurf prüfen und Alarm erstellen",
+        "Der Assistent erstellt zunächst einen Entwurf. Prüfe Bedingungen und Telegram-Kanal und tippe auf „Alarm erstellen“."
+      ],
+      [
+        "In deinen Alarmen ansehen",
+        "Der bestätigte Alarm erscheint in der Liste, mit demselben Umfang und denselben Bedingungen wie per Sprache."
+      ]
+    ],
+    "desktop": [
+      "Sprechen",
+      "Schreiben",
+      "Dein Alarm ist bereit",
+      "Entwurf bestätigen",
+      "In der Liste ansehen"
+    ],
+    "short": [
+      "Öffne den Assistenten und nenne beide Bedingungen sowie Telegram in einer Anfrage.",
+      "Deine Anfrage wird zu RSI- und EMA-Bedingungen mit Telegram-Benachrichtigung.",
+      "Derselbe Alarm überwacht nun den Markt für dich."
+    ],
+    "caption": "Beispielablauf aus dem Bildschirmkatalog der App. Für Nachrichten muss dein Telegram-Kanal verbunden sein.",
+    "message": "Scanne die 100 Coins mit dem höchsten Volumen auf Binance Spot USDT. Benachrichtige mich einmal per Telegram, wenn der stündliche RSI unter 30 und der Preis über EMA 20 liegt.",
+    "alertTitle": "Marktscan RSI + EMA",
+    "rsi": "RSI(14) unter 30 · 1h",
+    "ema": "Preis über EMA(20) · 1h"
+  },
+  "es": {
+    "kicker": "SIN FORMULARIOS · DOS CONDICIONES, UNA PETICIÓN",
+    "intro": "Crea la misma alerta hablando o escribiendo. Mira cada paso en la app.",
+    "tabs": [
+      "Por voz",
+      "Por texto"
+    ],
+    "notes": [
+      "El asistente de voz crea la alerta directamente; no hace falta aprobar un borrador.",
+      "En el chat escrito tú decides: la alerta solo se crea al tocar «Crear alerta»."
+    ],
+    "voice": [
+      [
+        "Abre el asistente de voz",
+        "Abre el asistente desde Alertas. Toca el micrófono y empieza a hablar."
+      ],
+      [
+        "Di las dos condiciones en una petición",
+        "Indica el mercado, ambas condiciones y el canal de notificación. Lo que dices también aparece como texto en el chat."
+      ],
+      [
+        "Tu alerta está lista",
+        "El asistente crea la alerta directamente. Las 100 primeras monedas, RSI + EMA, Telegram y la activación única aparecen en la misma tarjeta."
+      ],
+      [
+        "Encuéntrala en tus alertas",
+        "La nueva alerta aparece en tu lista. Recibirás un aviso por Telegram cuando ambas condiciones se cumplan para la misma moneda."
+      ]
+    ],
+    "chat": [
+      [
+        "Abre la pestaña AI",
+        "Toca AI en el menú inferior y describe tu alerta con tus propias palabras en el chat."
+      ],
+      [
+        "Escribe y envía la misma petición",
+        "Indica el mercado, el alcance, las condiciones de RSI y EMA y el canal en un solo mensaje."
+      ],
+      [
+        "Revisa el borrador y crea la alerta",
+        "El asistente prepara primero un borrador. Revisa las condiciones y Telegram y toca «Crear alerta»."
+      ],
+      [
+        "Encuéntrala en tus alertas",
+        "La alerta aprobada aparece en la lista con el mismo alcance y condiciones que la creada por voz."
+      ]
+    ],
+    "desktop": [
+      "Dilo",
+      "Escríbelo",
+      "Tu alerta está lista",
+      "Aprueba el borrador",
+      "Mírala en tu lista"
+    ],
+    "short": [
+      "Abre el asistente e indica ambas condiciones y Telegram en una petición.",
+      "Tu petición se convierte en condiciones RSI + EMA y un aviso por Telegram.",
+      "La misma alerta ya vigila el mercado por ti."
+    ],
+    "caption": "Flujo de ejemplo del catálogo de pantallas de la app. Conecta tu canal de Telegram para recibir avisos.",
+    "message": "Escanea las 100 monedas con mayor volumen en Binance Spot USDT. Avísame una vez por Telegram cuando el RSI horario esté por debajo de 30 y el precio por encima de la EMA 20.",
+    "alertTitle": "Escaneo de mercado RSI + EMA",
+    "rsi": "RSI(14) por debajo de 30 · 1h",
+    "ema": "Precio por encima de EMA(20) · 1h"
+  },
+  "fr": {
+    "kicker": "SANS FORMULAIRE · DEUX CONDITIONS, UNE DEMANDE",
+    "intro": "Créez la même alerte à la voix ou par écrit. Découvrez chaque étape dans l’app.",
+    "tabs": [
+      "À la voix",
+      "Par écrit"
+    ],
+    "notes": [
+      "L’assistant vocal crée directement l’alerte, sans validation de brouillon.",
+      "Dans le chat écrit, vous gardez la main : l’alerte est créée après « Créer l’alerte »."
+    ],
+    "voice": [
+      [
+        "Ouvrez l’assistant vocal",
+        "Depuis Alertes, ouvrez l’assistant vocal. Touchez le microphone et parlez."
+      ],
+      [
+        "Énoncez les deux conditions en une demande",
+        "Précisez le marché, les deux conditions et le canal de notification. Votre demande apparaît aussi sous forme de texte dans le chat."
+      ],
+      [
+        "Votre alerte est prête",
+        "L’assistant crée directement l’alerte. Les 100 premières cryptos, RSI + EMA, Telegram et le déclenchement unique figurent sur la même carte."
+      ],
+      [
+        "Retrouvez-la dans vos alertes",
+        "La nouvelle alerte apparaît dans la liste. Vous recevez une notification Telegram si les deux conditions sont réunies pour la même crypto."
+      ]
+    ],
+    "chat": [
+      [
+        "Ouvrez l’onglet AI",
+        "Touchez AI dans le menu du bas et décrivez votre alerte avec vos propres mots dans le chat."
+      ],
+      [
+        "Écrivez et envoyez la même demande",
+        "Indiquez le marché, le périmètre, les conditions RSI et EMA et le canal dans un seul message."
+      ],
+      [
+        "Vérifiez le brouillon et créez l’alerte",
+        "L’assistant prépare un brouillon. Vérifiez les conditions et le canal Telegram, puis touchez « Créer l’alerte »."
+      ],
+      [
+        "Retrouvez-la dans vos alertes",
+        "L’alerte validée apparaît dans la liste avec le même périmètre et les mêmes conditions que par la voix."
+      ]
+    ],
+    "desktop": [
+      "Dites-le",
+      "Écrivez-le",
+      "Votre alerte est prête",
+      "Validez le brouillon",
+      "Voyez-la dans la liste"
+    ],
+    "short": [
+      "Ouvrez l’assistant et précisez les deux conditions et Telegram dans une demande.",
+      "Votre demande devient des conditions RSI + EMA avec une notification Telegram.",
+      "La même alerte surveille désormais le marché pour vous."
+    ],
+    "caption": "Exemple tiré du catalogue d’écrans de l’app. Connectez votre canal Telegram pour recevoir les notifications.",
+    "message": "Analyse les 100 cryptos avec le plus de volume sur Binance Spot USDT. Préviens-moi une seule fois sur Telegram si le RSI horaire est inférieur à 30 et le cours supérieur à l’EMA 20.",
+    "alertTitle": "Analyse du marché RSI + EMA",
+    "rsi": "RSI(14) inférieur à 30 · 1h",
+    "ema": "Cours au-dessus de EMA(20) · 1h"
+  },
+  "pt-br": {
+    "kicker": "SEM FORMULÁRIOS · DUAS CONDIÇÕES, UM PEDIDO",
+    "intro": "Crie o mesmo alerta falando ou digitando. Veja cada etapa no app.",
+    "tabs": [
+      "Por voz",
+      "Por texto"
+    ],
+    "notes": [
+      "O assistente de voz cria o alerta diretamente, sem aprovação de rascunho.",
+      "No chat de texto, você decide: o alerta só é criado ao tocar em “Criar alerta”."
+    ],
+    "voice": [
+      [
+        "Abra o assistente de voz",
+        "Abra o assistente na tela de Alertas. Toque no microfone e comece a falar."
+      ],
+      [
+        "Diga as duas condições em um pedido",
+        "Informe o mercado, as duas condições e o canal de notificação. Sua fala também aparece como texto no chat."
+      ],
+      [
+        "Seu alerta está pronto",
+        "O assistente cria o alerta diretamente. As 100 primeiras moedas, RSI + EMA, Telegram e o disparo único aparecem no mesmo cartão."
+      ],
+      [
+        "Veja na sua lista de alertas",
+        "O novo alerta aparece na lista. Você recebe uma notificação no Telegram quando as duas condições são atendidas para a mesma moeda."
+      ]
+    ],
+    "chat": [
+      [
+        "Abra a aba AI",
+        "Toque em AI no menu inferior e descreva seu alerta com suas próprias palavras no chat."
+      ],
+      [
+        "Digite e envie o mesmo pedido",
+        "Informe o mercado, o alcance, as condições de RSI e EMA e o canal em uma mensagem."
+      ],
+      [
+        "Confira o rascunho e crie o alerta",
+        "O assistente prepara um rascunho. Confira as condições e o canal Telegram e toque em “Criar alerta”."
+      ],
+      [
+        "Veja na sua lista de alertas",
+        "O alerta aprovado aparece na lista com o mesmo alcance e condições do alerta criado por voz."
+      ]
+    ],
+    "desktop": [
+      "Fale",
+      "Digite",
+      "Seu alerta está pronto",
+      "Aprove o rascunho",
+      "Veja na lista"
+    ],
+    "short": [
+      "Abra o assistente e informe as duas condições e o Telegram em um pedido.",
+      "Seu pedido vira condições de RSI + EMA e uma notificação no Telegram.",
+      "O mesmo alerta agora acompanha o mercado por você."
+    ],
+    "caption": "Fluxo de exemplo do catálogo de telas do app. Conecte seu canal Telegram para receber notificações.",
+    "message": "Analise as 100 moedas com maior volume no Binance Spot USDT. Avise uma vez pelo Telegram quando o RSI de uma hora estiver abaixo de 30 e o preço acima da EMA 20.",
+    "alertTitle": "Varredura do mercado RSI + EMA",
+    "rsi": "RSI(14) abaixo de 30 · 1h",
+    "ema": "Preço acima da EMA(20) · 1h"
+  },
+  "ru": {
+    "kicker": "БЕЗ ФОРМ · ДВА УСЛОВИЯ, ОДИН ЗАПРОС",
+    "intro": "Создайте одно и то же оповещение голосом или текстом. Посмотрите каждый шаг в приложении.",
+    "tabs": [
+      "Голосом",
+      "Текстом"
+    ],
+    "notes": [
+      "Голосовой помощник создаёт оповещение сразу, без подтверждения черновика.",
+      "В текстовом чате всё под вашим контролем: оповещение создаётся после нажатия «Создать оповещение»."
+    ],
+    "voice": [
+      [
+        "Откройте голосового помощника",
+        "Откройте помощника на экране оповещений. Нажмите на микрофон и говорите."
+      ],
+      [
+        "Назовите оба условия в одном запросе",
+        "Укажите рынок, два условия и канал уведомлений. Ваша речь также появится в чате как текст."
+      ],
+      [
+        "Оповещение готово",
+        "Помощник создаёт оповещение сразу. Топ-100 монет, RSI + EMA, Telegram и однократное срабатывание видны в одной карточке."
+      ],
+      [
+        "Найдите его в списке",
+        "Новое оповещение появится в списке. Когда оба условия выполнятся для одной монеты, вы получите уведомление в Telegram."
+      ]
+    ],
+    "chat": [
+      [
+        "Откройте вкладку AI",
+        "Нажмите AI в нижнем меню и опишите оповещение своими словами в чате."
+      ],
+      [
+        "Напишите и отправьте тот же запрос",
+        "Укажите рынок, охват, условия RSI и EMA и канал уведомлений в одном сообщении."
+      ],
+      [
+        "Проверьте черновик и создайте оповещение",
+        "Помощник сначала подготовит черновик. Проверьте условия и канал Telegram, затем нажмите «Создать оповещение»."
+      ],
+      [
+        "Найдите его в списке",
+        "Подтверждённое оповещение появится в списке с теми же условиями и охватом, что и при голосовом создании."
+      ]
+    ],
+    "desktop": [
+      "Скажите",
+      "Напишите",
+      "Оповещение готово",
+      "Подтвердите черновик",
+      "Посмотрите в списке"
+    ],
+    "short": [
+      "Откройте помощника и укажите оба условия и Telegram в одном запросе.",
+      "Ваш запрос превращается в условия RSI + EMA и уведомление в Telegram.",
+      "Теперь это оповещение следит за рынком вместо вас."
+    ],
+    "caption": "Пример из каталога экранов приложения. Для уведомлений подключите канал Telegram.",
+    "message": "Сканируй 100 монет с наибольшим объёмом на Binance Spot USDT. Уведоми меня один раз в Telegram, когда часовой RSI ниже 30, а цена выше EMA 20.",
+    "alertTitle": "Сканирование рынка RSI + EMA",
+    "rsi": "RSI(14) ниже 30 · 1h",
+    "ema": "Цена выше EMA(20) · 1h"
+  },
+  "zh": {
+    "kicker": "无需表单 · 两个条件，一次请求",
+    "intro": "通过语音或文字设置同一个提醒。逐步查看应用中的操作。",
+    "tabs": [
+      "语音设置",
+      "文字设置"
+    ],
+    "notes": [
+      "语音助手会直接创建提醒，无需确认草稿。",
+      "文字聊天由你确认：点击“创建提醒”后才会创建。"
+    ],
+    "voice": [
+      [
+        "打开语音助手",
+        "在提醒页面打开语音助手，点击麦克风开始说话。"
+      ],
+      [
+        "一次说清两个条件",
+        "说出要扫描的市场、两个条件和通知渠道。你说的话也会以文字显示在聊天中。"
+      ],
+      [
+        "提醒已就绪",
+        "助手直接创建提醒。成交量前100名、RSI + EMA条件、Telegram和仅触发一次都显示在同一卡片中。"
+      ],
+      [
+        "在提醒列表中查看",
+        "新提醒会出现在列表中。同一币种同时满足两个条件时，你会收到Telegram通知。"
+      ]
+    ],
+    "chat": [
+      [
+        "打开AI标签",
+        "点击底部菜单的AI，在聊天中用自己的话描述提醒。"
+      ],
+      [
+        "输入并发送同一请求",
+        "在一条消息中说明市场、扫描范围、RSI与EMA条件和通知渠道。"
+      ],
+      [
+        "检查草稿并创建提醒",
+        "助手先生成草稿。检查条件与Telegram渠道后，点击“创建提醒”。"
+      ],
+      [
+        "在提醒列表中查看",
+        "确认后的提醒会出现在列表中，其范围和条件与语音创建的提醒相同。"
+      ]
+    ],
+    "desktop": [
+      "说出来",
+      "打出来",
+      "提醒已就绪",
+      "确认草稿",
+      "在列表中查看"
+    ],
+    "short": [
+      "打开助手，一次说明两个条件及Telegram通知。",
+      "你的请求会转为RSI + EMA条件及Telegram通知。",
+      "同一个提醒现在替你监控市场。"
+    ],
+    "caption": "基于应用界面目录制作的示例流程。接收通知前需连接Telegram渠道。",
+    "message": "扫描Binance现货USDT市场中成交量最高的100个币种。当1小时RSI低于30且价格高于EMA 20时，通过Telegram通知我一次。",
+    "alertTitle": "市场RSI + EMA扫描",
+    "rsi": "RSI(14)低于30 · 1h",
+    "ema": "价格高于EMA(20) · 1h"
+  },
+  "ja": {
+    "kicker": "フォーム不要 · 2つの条件を1回のリクエストで",
+    "intro": "音声でも文字でも同じアラートを作成。アプリ内の操作を順に確認できます。",
+    "tabs": [
+      "音声で作成",
+      "文字で作成"
+    ],
+    "notes": [
+      "音声アシスタントはアラートを直接作成します。下書きの承認は不要です。",
+      "文字チャットでは「アラートを作成」をタップするまで作成されません。"
+    ],
+    "voice": [
+      [
+        "音声アシスタントを開く",
+        "アラート画面から音声アシスタントを開き、マイクをタップして話しかけます。"
+      ],
+      [
+        "2つの条件をまとめて話す",
+        "対象市場、2つの条件、通知先を伝えます。話した内容はチャットに文字でも表示されます。"
+      ],
+      [
+        "アラートの準備完了",
+        "アシスタントが直接作成します。出来高上位100銘柄、RSI + EMA条件、Telegram、1回のみの通知が同じカードに表示されます。"
+      ],
+      [
+        "アラート一覧で確認",
+        "新しいアラートが一覧に追加されます。同じ銘柄で2つの条件が同時に満たされるとTelegramに通知されます。"
+      ]
+    ],
+    "chat": [
+      [
+        "AIタブを開く",
+        "下部メニューのAIをタップし、チャットでアラートを自分の言葉で説明します。"
+      ],
+      [
+        "同じ依頼を入力して送信",
+        "市場、監視範囲、RSIとEMAの条件、通知先を1つのメッセージにまとめます。"
+      ],
+      [
+        "下書きを確認して作成",
+        "まず下書きが作られます。条件とTelegramの通知先を確認し、「アラートを作成」をタップします。"
+      ],
+      [
+        "アラート一覧で確認",
+        "承認したアラートが一覧に追加されます。範囲と条件は音声で作成したものと同じです。"
+      ]
+    ],
+    "desktop": [
+      "話す",
+      "入力する",
+      "アラートの準備完了",
+      "下書きを承認",
+      "一覧で確認"
+    ],
+    "short": [
+      "アシスタントを開き、2つの条件とTelegram通知をまとめて伝えます。",
+      "依頼がRSI + EMA条件とTelegram通知に変わります。",
+      "同じアラートが代わりに市場を監視します。"
+    ],
+    "caption": "アプリの画面カタログを使った操作例です。通知を受け取るにはTelegramの接続が必要です。",
+    "message": "Binance現物USDT市場で出来高上位100銘柄をスキャンして。1時間足のRSIが30未満で、価格がEMA 20より上のとき、Telegramで1回だけ通知して。",
+    "alertTitle": "市場RSI + EMAスキャン",
+    "rsi": "RSI(14)が30未満 · 1h",
+    "ema": "価格がEMA(20)より上 · 1h"
+  },
+  "hi": {
+    "kicker": "फ़ॉर्म के बिना · दो शर्तें, एक अनुरोध",
+    "intro": "बोलकर या लिखकर एक ही अलर्ट बनाएँ। ऐप में हर चरण देखें।",
+    "tabs": [
+      "बोलकर बनाएँ",
+      "लिखकर बनाएँ"
+    ],
+    "notes": [
+      "वॉइस असिस्टेंट सीधे अलर्ट बनाता है; ड्राफ़्ट की मंज़ूरी की ज़रूरत नहीं होती।",
+      "टेक्स्ट चैट में नियंत्रण आपके पास है: “अलर्ट बनाएँ” पर टैप करने के बाद ही अलर्ट बनता है।"
+    ],
+    "voice": [
+      [
+        "वॉइस असिस्टेंट खोलें",
+        "अलर्ट स्क्रीन से वॉइस असिस्टेंट खोलें। माइक्रोफ़ोन पर टैप करके बोलना शुरू करें।"
+      ],
+      [
+        "एक अनुरोध में दोनों शर्तें बताएँ",
+        "बाज़ार, दोनों शर्तें और सूचना का चैनल बताएँ। आपकी कही बात चैट में टेक्स्ट के रूप में भी दिखती है।"
+      ],
+      [
+        "आपका अलर्ट तैयार है",
+        "असिस्टेंट सीधे अलर्ट बनाता है। शीर्ष 100 कॉइन, RSI + EMA शर्तें, Telegram और एक बार ट्रिगर होना एक ही कार्ड में दिखते हैं।"
+      ],
+      [
+        "अलर्ट सूची में देखें",
+        "नया अलर्ट सूची में जुड़ जाता है। एक ही कॉइन पर दोनों शर्तें पूरी होने पर Telegram सूचना मिलती है।"
+      ]
+    ],
+    "chat": [
+      [
+        "AI टैब खोलें",
+        "नीचे के मेन्यू में AI पर टैप करें और चैट में अपने शब्दों में अलर्ट बताएँ।"
+      ],
+      [
+        "वही अनुरोध लिखकर भेजें",
+        "एक संदेश में बाज़ार, स्कैन का दायरा, RSI और EMA शर्तें तथा सूचना का चैनल बताएँ।"
+      ],
+      [
+        "ड्राफ़्ट जाँचें और अलर्ट बनाएँ",
+        "असिस्टेंट पहले ड्राफ़्ट बनाता है। शर्तें और Telegram चैनल जाँचकर “अलर्ट बनाएँ” पर टैप करें।"
+      ],
+      [
+        "अलर्ट सूची में देखें",
+        "मंज़ूर किया गया अलर्ट उसी दायरे और शर्तों के साथ सूची में जुड़ता है जो बोलकर बनाए गए अलर्ट में हैं।"
+      ]
+    ],
+    "desktop": [
+      "बोलें",
+      "लिखें",
+      "आपका अलर्ट तैयार है",
+      "ड्राफ़्ट मंज़ूर करें",
+      "सूची में देखें"
+    ],
+    "short": [
+      "असिस्टेंट खोलें और एक अनुरोध में दोनों शर्तें तथा Telegram सूचना बताएँ।",
+      "आपका अनुरोध RSI + EMA शर्तों और Telegram सूचना में बदल जाता है।",
+      "अब वही अलर्ट आपके लिए बाज़ार पर नज़र रखता है।"
+    ],
+    "caption": "ऐप की स्क्रीन सूची से तैयार किया गया उदाहरण। सूचनाओं के लिए अपना Telegram चैनल कनेक्ट करें।",
+    "message": "Binance Spot USDT में वॉल्यूम के आधार पर शीर्ष 100 कॉइन स्कैन करो। जब एक घंटे का RSI 30 से नीचे और कीमत EMA 20 से ऊपर हो, तो Telegram पर एक बार सूचित करो।",
+    "alertTitle": "बाज़ार RSI + EMA स्कैन",
+    "rsi": "RSI(14) 30 से नीचे · 1h",
+    "ema": "कीमत EMA(20) से ऊपर · 1h"
+  },
+  "ar": {
+    "kicker": "بلا نماذج · شرطان في طلب واحد",
+    "intro": "أنشئ التنبيه نفسه بالصوت أو بالكتابة. شاهد الخطوات داخل التطبيق.",
+    "tabs": [
+      "بالصوت",
+      "بالكتابة"
+    ],
+    "notes": [
+      "ينشئ المساعد الصوتي التنبيه مباشرة، دون الحاجة إلى تأكيد مسودة.",
+      "في المحادثة النصية أنت المتحكم: لا يُنشأ التنبيه حتى تضغط «إنشاء تنبيه»."
+    ],
+    "voice": [
+      [
+        "افتح المساعد الصوتي",
+        "افتح المساعد الصوتي من شاشة التنبيهات. اضغط الميكروفون وابدأ الكلام."
+      ],
+      [
+        "اذكر الشرطين في طلب واحد",
+        "حدد السوق والشرطين وقناة الإشعار. يظهر كلامك أيضًا كنص في المحادثة."
+      ],
+      [
+        "تنبيهك جاهز",
+        "ينشئ المساعد التنبيه مباشرة. تظهر أعلى 100 عملة وشرطا RSI + EMA وقناة Telegram والتفعيل لمرة واحدة في البطاقة نفسها."
+      ],
+      [
+        "شاهده في قائمة التنبيهات",
+        "يُضاف التنبيه إلى قائمتك. يصلك إشعار عبر Telegram عند تحقق الشرطين للعملة نفسها."
+      ]
+    ],
+    "chat": [
+      [
+        "افتح تبويب AI",
+        "اضغط AI في القائمة السفلية، ثم صف التنبيه بكلماتك في المحادثة."
+      ],
+      [
+        "اكتب الطلب نفسه وأرسله",
+        "حدد السوق ونطاق الفحص وشرطي RSI وEMA وقناة الإشعار في رسالة واحدة."
+      ],
+      [
+        "راجع المسودة وأنشئ التنبيه",
+        "يجهز المساعد مسودة أولًا. راجع الشروط وقناة Telegram، ثم اضغط «إنشاء تنبيه»."
+      ],
+      [
+        "شاهده في قائمة التنبيهات",
+        "يظهر التنبيه المؤكد في القائمة بالنطاق والشروط نفسيهما كما في إنشائه بالصوت."
+      ]
+    ],
+    "desktop": [
+      "تحدث",
+      "اكتب",
+      "تنبيهك جاهز",
+      "أكد المسودة",
+      "شاهده في القائمة"
+    ],
+    "short": [
+      "افتح المساعد وحدد الشرطين وإشعار Telegram في طلب واحد.",
+      "يتحول طلبك إلى شرطي RSI + EMA وإشعار عبر Telegram.",
+      "يراقب التنبيه نفسه السوق نيابة عنك الآن."
+    ],
+    "caption": "مسار توضيحي من كتالوج شاشات التطبيق. يجب ربط قناة Telegram لتلقي الإشعارات.",
+    "message": "افحص أعلى 100 عملة من حيث الحجم في Binance Spot USDT. أبلغني مرة واحدة عبر Telegram عندما يكون RSI للإطار ساعة أقل من 30 والسعر أعلى من EMA 20.",
+    "alertTitle": "فحص السوق RSI + EMA",
+    "rsi": "RSI(14) أقل من 30 · 1h",
+    "ema": "السعر أعلى من EMA(20) · 1h"
+  }
+}
