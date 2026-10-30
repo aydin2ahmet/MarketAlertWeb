@@ -1,4 +1,8 @@
 /* MarketAlert tanıtım sitesi · tasarım I (Terminal tur). Renkler uygulamanın temasından. */
+/* Same glyphs and variable weights, without downloading all extended Latin characters. */
+@font-face { font-family: 'Inter Variable'; font-style: normal; font-display: swap; font-weight: 100 900; src: url('/fonts/inter-tr.woff2') format('woff2-variations'); unicode-range: U+011E-011F,U+0130,U+015E-015F; }
+@font-face { font-family: 'Space Grotesk Variable'; font-style: normal; font-display: swap; font-weight: 300 700; src: url('/fonts/space-grotesk-tr.woff2') format('woff2-variations'); unicode-range: U+011E-011F,U+0130,U+015E-015F; }
+@font-face { font-family: 'JetBrains Mono Variable'; font-style: normal; font-display: swap; font-weight: 100 800; src: url('/fonts/jetbrains-mono-tr.woff2') format('woff2-variations'); unicode-range: U+011E-011F,U+0130,U+015E-015F; }
 :root {
   --bg: #FAFAF6; --sf: #FFFFFF; --tx: #14171D; --mut: #5B6270; --bd: #E3E6EB;
   --pri: #F5A524; --priText: #231703; --priSoft: #FFF4DE; --ink: #14171D;
@@ -193,6 +197,7 @@ img { max-width: 100%; }
 .legal a, .langs a { color: var(--mut); font-size: 14px; }
 .langs { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 18px 0; }
 .langs a { font-size: 13.5px; }
+.langs a, .lsel option { font-family: system-ui, sans-serif; }
 .langs a[aria-current] { color: var(--tx); font-weight: 650; text-decoration: underline; text-decoration-color: var(--pri); text-underline-offset: 4px; }
 .disc, .copy { color: var(--mut); font-size: 12.5px; }
 .copy { margin-top: 6px; font-size: 12px; }

@@ -33,15 +33,17 @@ const ogLocale = lang.replace('-', '_');
 const cs = ((content as any)[lang.toLowerCase()] ?? (content as any).en).consent;
 const code = lang.toLowerCase();
 const fonts = code === 'ar' ? [arabicFont] : code === 'hi' ? [hindiFont, interLatin] : code === 'ru' ? [interCyrillic, interLatin] : [interLatin, headingLatin];
+if (code === 'tr') fonts.push('/fonts/inter-tr.woff2', '/fonts/space-grotesk-tr.woff2');
 const isLanding = path === '/' || LOCALES.some(l => path === `/${l.code}/`);
 const heroImages = isLanding ? Object.fromEntries(['light', 'dark'].map(theme => [theme, shotSources(`/shots/${code}/${theme}/hero-voice.webp?v=${code === 'ar' ? '3x-ar2' : '3x'}`)])) : null;
+const heroBackImages = isLanding ? Object.fromEntries(['light', 'dark'].map(theme => [theme, shotSources(`/shots/${code}/${theme}/hero-list.webp?v=${code === 'ar' ? '3x-ar2' : '3x'}`)])) : null;
 ---
 <!doctype html>
 <html lang={lang} dir={dir}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script is:inline define:vars={{ autoLocale, codes: LOCALES.map(l => l.code), fonts, heroImages }}>
+    <script is:inline define:vars={{ autoLocale, codes: LOCALES.map(l => l.code), fonts, heroImages, heroBackImages }}>
       (function () {
         var savedTheme = null;
         try { savedTheme = localStorage.getItem('theme'); } catch (e) {}
@@ -80,6 +82,13 @@ const heroImages = isLanding ? Object.fromEntries(['light', 'dark'].map(theme =>
           link.imageSizes = '(max-width:860px) 196px, 238px';
           link.fetchPriority = 'high';
           document.head.appendChild(link);
+          var back = heroBackImages[dark ? 'dark' : 'light'];
+          var backLink = document.createElement('link');
+          backLink.rel = 'preload'; backLink.as = 'image'; backLink.href = back.src;
+          backLink.imageSrcset = back.srcset;
+          backLink.imageSizes = '(max-width:860px) 170px, 220px';
+          backLink.fetchPriority = 'high';
+          document.head.appendChild(backLink);
         }
       })();
     </script>
@@ -97,9 +106,11 @@ const heroImages = isLanding ? Object.fromEntries(['light', 'dark'].map(theme =>
         // Sayfa içinden olay göndermek için.
         window.maTrack = function (name, params) { window.gtag('event', name, Object.assign({ page_language: PAGE_LANG }, params || {})); };
         var analyticsStarted = false;
+        var analyticsFallback;
         function loadAnalytics() {
           if (analyticsStarted) return;
           analyticsStarted = true;
+          clearTimeout(analyticsFallback);
           var tag = document.createElement('script');
           tag.async = true;
           tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
@@ -108,8 +119,19 @@ const heroImages = isLanding ? Object.fromEntries(['light', 'dark'].map(theme =>
         }
         // Keep queued events and consent; load the tag after the page's first resources.
         function scheduleAnalytics() {
-          if ('requestIdleCallback' in window) requestIdleCallback(loadAnalytics, { timeout: 1500 });
-          else loadAnalytics();
+          function afterPaint() {
+            requestAnimationFrame(function () { requestAnimationFrame(function () {
+              if ('requestIdleCallback' in window) requestIdleCallback(loadAnalytics, { timeout: 1500 });
+              else loadAnalytics();
+            }); });
+          }
+          var hero = Array.from(document.querySelectorAll('.h-v .front img')).find(function (image) {
+            return getComputedStyle(image).display !== 'none' && image.getBoundingClientRect().top < innerHeight + 160;
+          });
+          if (hero && hero.dataset.sharpState !== 'ready' && hero.dataset.sharpState !== 'error') {
+            window.addEventListener('ma:hero-ready', afterPaint, { once: true });
+            analyticsFallback = setTimeout(loadAnalytics, 3000);
+          } else afterPaint();
         }
         if (document.readyState === 'complete') scheduleAnalytics();
         else window.addEventListener('load', scheduleAnalytics, { once: true });
@@ -146,12 +168,15 @@ const heroImages = isLanding ? Object.fromEntries(['light', 'dark'].map(theme =>
     <noscript><style is:inline>img[data-sharp] { display: none !important; }</style></noscript>
     <script>
       const screenshots = document.querySelectorAll<HTMLImageElement>('img[data-sharp]');
-      if (screenshots.length) {
+      if (screenshots.length && !(window as any).maRedirecting) {
         const nearby = new Set<HTMLImageElement>();
         const resize = new ResizeObserver(entries => entries.forEach(entry => {
           const image = entry.target as HTMLImageElement;
           if (image.dataset.sharpState === 'ready' && image.clientWidth) image.sizes = `${image.clientWidth}px`;
         }));
+        const heroReady = (image: HTMLImageElement) => {
+          if (image.closest('.h-v .front')) requestAnimationFrame(() => requestAnimationFrame(() => window.dispatchEvent(new Event('ma:hero-ready'))));
+        };
         const upgrade = (image: HTMLImageElement) => {
           const src = image.dataset.sharp;
           if (!src || image.dataset.sharpState || !image.complete || !image.naturalWidth) return;
@@ -163,7 +188,7 @@ const heroImages = isLanding ? Object.fromEntries(['light', 'dark'].map(theme =>
           requestAnimationFrame(() => requestAnimationFrame(async () => {
             const sharp = new Image();
             sharp.decoding = 'async';
-            sharp.fetchPriority = image.fetchPriority === 'high' || image.closest('.h-v .front') ? 'high' : 'low';
+            sharp.fetchPriority = image.fetchPriority === 'high' || image.closest('.h-v') ? 'high' : 'low';
             sharp.sizes = `${image.clientWidth}px`;
             sharp.srcset = image.dataset.sharpSrcset || '';
             sharp.src = src;
@@ -175,10 +200,12 @@ const heroImages = isLanding ? Object.fromEntries(['light', 'dark'].map(theme =>
               delete image.dataset.sharp;
               image.dataset.sharpState = 'ready';
               resize.observe(image);
+              heroReady(image);
             } catch (error) {
               // Keep the preview visible if the full image cannot be fetched.
               image.dataset.sharpState = 'error';
               console.warn('Screenshot could not be loaded:', src, error);
+              heroReady(image);
             }
           }));
         };
