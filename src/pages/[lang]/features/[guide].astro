@@ -1,5 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import ProgressiveShot from '../../../components/ProgressiveShot.astro';
 import content from '../../../i18n/content.json';
 import guides from '../../../i18n/alert-guides.json';
 import rsiGuides from '../../../i18n/rsi-alerts.json';
@@ -61,8 +62,8 @@ const jsonLd = [
           <div class="bars" aria-hidden="true">{[21, 30, 24, 27, 20, 32, 23, 28, 26, 90].map((height, i) => <span style={`height:${height}%`} class:list={{ spike: i === 9 }} />)}</div>
           <div class="volume-math" dir="ltr"><span>SMA(20) = 100</span><b>340 &gt; 3 × 100 ✓</b></div>
         </div> : <div class="result-screen">
-          <img class="sh-l" src={`/shots/${code}/light/rsi/desktop-voice-result.webp?v=${code === 'ar' ? '3x-ar2' : '3x'}`} alt={g.caption} width="390" height={(screenSizes as any)[code].light['desktop-voice-result']} loading="lazy" decoding="async" />
-          <img class="sh-d" src={`/shots/${code}/dark/rsi/desktop-voice-result.webp?v=${code === 'ar' ? '3x-ar2' : '3x'}`} alt="" width="390" height={(screenSizes as any)[code].dark['desktop-voice-result']} loading="lazy" decoding="async" />
+          <ProgressiveShot class="sh-l" src={`/shots/${code}/light/rsi/desktop-voice-result.webp?v=${code === 'ar' ? '3x-ar2' : '3x'}`} alt={g.caption} width="390" height={(screenSizes as any)[code].light['desktop-voice-result']} loading="lazy" decoding="async" />
+          <ProgressiveShot class="sh-d" src={`/shots/${code}/dark/rsi/desktop-voice-result.webp?v=${code === 'ar' ? '3x-ar2' : '3x'}`} alt="" width="390" height={(screenSizes as any)[code].dark['desktop-voice-result']} loading="lazy" decoding="async" />
         </div>}
         <figcaption>{g.caption}</figcaption>
       </figure>

@@ -1,0 +1,10 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'img'> { src: string; alt: string }
+const { src, ...props } = Astro.props;
+const preview = src.replace('.webp', '.preview.webp');
+const style = `aspect-ratio:${props.width}/${props.height};${props.style || ''}`;
+---
+<img {...props} style={style} src={preview} data-sharp={src} />
+<noscript><img {...props} style={style} src={src} /></noscript>

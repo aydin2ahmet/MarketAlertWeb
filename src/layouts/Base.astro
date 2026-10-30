@@ -78,6 +78,57 @@ const cs = ((content as any)[lang.toLowerCase()] ?? (content as any).en).consent
   </head>
   <body>
     <slot />
+    <noscript><style is:inline>img[data-sharp] { display: none !important; }</style></noscript>
+    <script>
+      const screenshots = document.querySelectorAll<HTMLImageElement>('img[data-sharp]');
+      if (screenshots.length) {
+        const nearby = new Set<HTMLImageElement>();
+        const upgrade = (image: HTMLImageElement) => {
+          const src = image.dataset.sharp;
+          if (!src || image.dataset.sharpState || !image.complete || !image.naturalWidth) return;
+          const style = getComputedStyle(image);
+          if (!image.getClientRects().length || style.display === 'none' || style.visibility === 'hidden') return;
+          if (image.closest('.screen') && !image.classList.contains('on')) return;
+          image.dataset.sharpState = 'loading';
+          // Give the lightweight preview a paint before starting the full image.
+          requestAnimationFrame(() => requestAnimationFrame(async () => {
+            const sharp = new Image();
+            sharp.decoding = 'async';
+            sharp.fetchPriority = image.fetchPriority === 'high' ? 'high' : 'low';
+            sharp.src = src;
+            try {
+              await sharp.decode();
+              image.src = src;
+              delete image.dataset.sharp;
+              image.dataset.sharpState = 'ready';
+            } catch (error) {
+              // Keep the preview visible if the full image cannot be fetched.
+              image.dataset.sharpState = 'error';
+              console.warn('Screenshot could not be loaded:', src, error);
+            }
+          }));
+        };
+        const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+          const image = entry.target as HTMLImageElement;
+          if (entry.isIntersecting) { nearby.add(image); upgrade(image); }
+          else nearby.delete(image);
+        }), { rootMargin: '160px' });
+        screenshots.forEach(image => {
+          observer.observe(image);
+          image.addEventListener('load', () => { if (nearby.has(image)) upgrade(image); });
+        });
+        // Theme changes, walkthrough tabs and the tour reveal different images.
+        let scheduled = false;
+        new MutationObserver(() => {
+          if (scheduled) return;
+          scheduled = true;
+          requestAnimationFrame(() => {
+            scheduled = false;
+            nearby.forEach(upgrade);
+          });
+        }).observe(document.documentElement, { subtree: true, attributes: true, attributeFilter: ['class', 'hidden', 'data-theme'] });
+      }
+    </script>
     {GA_ID && (
       <div class="consent" id="consent" role="dialog" aria-live="polite" hidden>
         <p>{cs.msg}</p>
