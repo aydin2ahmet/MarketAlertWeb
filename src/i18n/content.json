@@ -17,7 +17,7 @@
   "chips": [
    "7 gün ücretsiz deneme",
    "Kayıt olmadan misafir başla",
-   "11 dil · açık/koyu tema"
+   "Uygulama kapalıyken de takipte"
   ],
   "sayExample": "“BTC 70 bin üstü ve saatlik RSI 30 altıysa haber ver.”",
   "markets": "Binance Spot ve Vadeli · USDT ve USDC · Dört piyasa da her planda açık",
@@ -290,7 +290,7 @@
   "chips": [
    "7-day free trial",
    "Start as a guest, no sign-up",
-   "11 languages · light/dark"
+   "Monitoring even when the app is closed"
   ],
   "sayExample": "“Notify me when BTC is above 70,000 and hourly RSI is below 30.”",
   "markets": "Binance Spot and Futures · USDT and USDC · All four markets on every plan",
@@ -563,7 +563,7 @@
   "chips": [
    "7 天免费试用",
    "无需注册，访客即可开始",
-   "11 种语言 · 浅色/深色"
+   "关闭应用也能持续监控"
   ],
   "sayExample": "“BTC 高于 70000 且小时线 RSI 低于 30 时通知我。”",
   "markets": "Binance 现货和合约 · USDT 和 USDC · 四个市场所有套餐均可用",
@@ -836,7 +836,7 @@
   "chips": [
    "Prueba gratis de 7 días",
    "Empieza como invitado, sin registro",
-   "11 idiomas · claro/oscuro"
+   "Sigue vigilando con la app cerrada"
   ],
   "sayExample": "“Avísame si BTC supera los 70.000 y el RSI de una hora está por debajo de 30.”",
   "markets": "Binance Spot y Futuros · USDT y USDC · Los cuatro mercados en todos los planes",
@@ -1109,7 +1109,7 @@
   "chips": [
    "7 दिन का मुफ़्त ट्रायल",
    "बिना साइन-अप, गेस्ट के रूप में शुरू करें",
-   "11 भाषाएं · लाइट/डार्क"
+   "ऐप बंद होने पर भी निगरानी जारी"
   ],
   "sayExample": "“BTC 70,000 से ऊपर हो और एक घंटे का RSI 30 से नीचे हो तो बताएँ।”",
   "markets": "Binance Spot और Futures · USDT और USDC · चारों मार्केट हर प्लान में",
@@ -1382,7 +1382,7 @@
   "chips": [
    "تجربة مجانية 7 أيام",
    "ابدأ كضيف دون تسجيل",
-   "11 لغة · فاتح/داكن"
+   "تستمر المراقبة حتى مع إغلاق التطبيق"
   ],
   "sayExample": "“أخبرني عندما يتجاوز BTC مستوى 70000 ويكون RSI للساعة أقل من 30.”",
   "markets": "Binance الفوري والعقود الآجلة · USDT وUSDC · الأسواق الأربعة متاحة في كل الخطط",
@@ -1655,7 +1655,7 @@
   "chips": [
    "7 dias de teste grátis",
    "Comece como convidado, sem cadastro",
-   "11 idiomas · claro/escuro"
+   "Monitora mesmo com o app fechado"
   ],
   "sayExample": "“Avise quando o BTC estiver acima de 70.000 e o RSI de uma hora abaixo de 30.”",
   "markets": "Binance Spot e Futuros · USDT e USDC · Os quatro mercados em todos os planos",
@@ -1928,7 +1928,7 @@
   "chips": [
    "Essai gratuit de 7 jours",
    "Commencez en invité, sans inscription",
-   "11 langues · clair/sombre"
+   "Surveille même lorsque l’app est fermée"
   ],
   "sayExample": "“Préviens-moi si le BTC dépasse 70 000 et si le RSI horaire passe sous 30.”",
   "markets": "Binance Spot et Futures · USDT et USDC · Les quatre marchés dans toutes les offres",
@@ -2201,7 +2201,7 @@
   "chips": [
    "7 дней бесплатно",
    "Начните как гость, без регистрации",
-   "11 языков · светлая/тёмная тема"
+   "Следит за рынком даже при закрытом приложении"
   ],
   "sayExample": "“Сообщи, когда BTC выше 70 000, а часовой RSI ниже 30.”",
   "markets": "Binance Спот и Фьючерсы · USDT и USDC · Все четыре рынка в каждом тарифе",
@@ -2474,7 +2474,7 @@
   "chips": [
    "7 Tage kostenlos testen",
    "Als Gast starten, ohne Registrierung",
-   "11 Sprachen · hell/dunkel"
+   "Überwacht auch bei geschlossener App"
   ],
   "sayExample": "“Benachrichtige mich, wenn BTC über 70.000 und der Stunden-RSI unter 30 liegt.”",
   "markets": "Binance Spot und Futures · USDT und USDC · Alle vier Märkte in jedem Tarif",
@@ -2747,7 +2747,7 @@
   "chips": [
    "7日間無料トライアル",
    "登録不要、ゲストで開始",
-   "11言語 · ライト/ダーク"
+   "アプリを閉じても監視を継続"
   ],
   "sayExample": "“BTCが70000を超え、1時間足のRSIが30を下回ったら知らせて。”",
   "markets": "Binance 現物・先物 · USDT と USDC · 4つの市場すべてを全プランで利用可能",
