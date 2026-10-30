@@ -264,6 +264,7 @@ img { max-width: 100%; }
 .hero .hero-category + h1 { margin-top: 0; }
 .hero-title-second { color: var(--cat3); }
 .feature-label { font: 600 13px/1.5 var(--mono); color: var(--c); margin: 14px 0 8px; }
+.rsi-guide-link { align-self: start; margin-top: 16px; color: var(--cat3); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
 .h-v { grid-area: v; position: relative; height: 740px; align-self: center; }
 .h-v .pf { position: absolute; top: 0; }
 .h-v .pf img { aspect-ratio: 360/940; object-fit: contain; }

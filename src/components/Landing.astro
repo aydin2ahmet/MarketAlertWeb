@@ -119,6 +119,7 @@ const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : 
           <p class="feature-label">{f.s}</p>
           <h2>{f.t}</h2>
           <p>{f.d}</p>
+          {f.k === 'all' && <a class="rsi-guide-link" href={`/${code}/features/rsi-alerts/`}>{t.rsiGuideLink} <span aria-hidden="true">↗</span></a>}
           <figure class="pf"><Fragment set:html={shot(f.k, f.t)} /></figure>
         </article>
       ))}

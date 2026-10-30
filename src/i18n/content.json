@@ -269,7 +269,8 @@
   "voiceBadge": "Konuşarak alarm kur",
   "allCoinsBadge": "TÜM COİNLER · 7/24",
   "heroListAlt": "Çok koşullu alarmlar ve canlı değerleri",
-  "heroVoiceAlt": "Sesli komutla kurulan iki koşullu alarm"
+  "heroVoiceAlt": "Sesli komutla kurulan iki koşullu alarm",
+  "rsiGuideLink": "Tüm coinlerde RSI alarmı"
  },
  "en": {
   "nav": [
@@ -541,7 +542,8 @@
   "voiceBadge": "Create alerts by voice",
   "allCoinsBadge": "ALL COINS · 24/7",
   "heroListAlt": "Multi-condition alerts with live values",
-  "heroVoiceAlt": "A two-condition alert created by voice"
+  "heroVoiceAlt": "A two-condition alert created by voice",
+  "rsiGuideLink": "RSI alerts across all coins"
  },
  "zh": {
   "nav": [
@@ -813,7 +815,8 @@
   "voiceBadge": "语音创建提醒",
   "allCoinsBadge": "所有币种 · 全天候",
   "heroListAlt": "多条件提醒及实时数值",
-  "heroVoiceAlt": "通过语音创建的双条件提醒"
+  "heroVoiceAlt": "通过语音创建的双条件提醒",
+  "rsiGuideLink": "全币种 RSI 提醒"
  },
  "es": {
   "nav": [
@@ -1085,7 +1088,8 @@
   "voiceBadge": "Crea alertas con tu voz",
   "allCoinsBadge": "TODAS LAS MONEDAS · 24/7",
   "heroListAlt": "Alertas con varias condiciones y valores en vivo",
-  "heroVoiceAlt": "Alerta de dos condiciones creada por voz"
+  "heroVoiceAlt": "Alerta de dos condiciones creada por voz",
+  "rsiGuideLink": "Alertas RSI en todas las monedas"
  },
  "hi": {
   "nav": [
@@ -1357,7 +1361,8 @@
   "voiceBadge": "बोलकर अलर्ट बनाएँ",
   "allCoinsBadge": "सभी कॉइन · 24/7",
   "heroListAlt": "कई शर्तों वाले अलर्ट और लाइव मान",
-  "heroVoiceAlt": "बोलकर बनाया गया दो शर्तों वाला अलर्ट"
+  "heroVoiceAlt": "बोलकर बनाया गया दो शर्तों वाला अलर्ट",
+  "rsiGuideLink": "सभी कॉइन के लिए RSI अलर्ट"
  },
  "ar": {
   "nav": [
@@ -1629,7 +1634,8 @@
   "voiceBadge": "أنشئ تنبيهًا بصوتك",
   "allCoinsBadge": "جميع العملات · 24/7",
   "heroListAlt": "تنبيهات متعددة الشروط بقيم مباشرة",
-  "heroVoiceAlt": "تنبيه بشرطين تم إنشاؤه بالصوت"
+  "heroVoiceAlt": "تنبيه بشرطين تم إنشاؤه بالصوت",
+  "rsiGuideLink": "تنبيهات RSI لجميع العملات"
  },
  "pt-br": {
   "nav": [
@@ -1901,7 +1907,8 @@
   "voiceBadge": "Crie alertas por voz",
   "allCoinsBadge": "TODAS AS MOEDAS · 24/7",
   "heroListAlt": "Alertas com várias condições e valores ao vivo",
-  "heroVoiceAlt": "Alerta com duas condições criado por voz"
+  "heroVoiceAlt": "Alerta com duas condições criado por voz",
+  "rsiGuideLink": "Alertas RSI em todas as moedas"
  },
  "fr": {
   "nav": [
@@ -2173,7 +2180,8 @@
   "voiceBadge": "Créez une alerte à la voix",
   "allCoinsBadge": "TOUTES LES CRYPTOS · 24/7",
   "heroListAlt": "Alertes à plusieurs conditions et valeurs en direct",
-  "heroVoiceAlt": "Alerte à deux conditions créée à la voix"
+  "heroVoiceAlt": "Alerte à deux conditions créée à la voix",
+  "rsiGuideLink": "Alertes RSI sur toutes les cryptos"
  },
  "ru": {
   "nav": [
@@ -2445,7 +2453,8 @@
   "voiceBadge": "Создавайте оповещения голосом",
   "allCoinsBadge": "ВСЕ МОНЕТЫ · 24/7",
   "heroListAlt": "Оповещения с несколькими условиями и текущими значениями",
-  "heroVoiceAlt": "Оповещение с двумя условиями, созданное голосом"
+  "heroVoiceAlt": "Оповещение с двумя условиями, созданное голосом",
+  "rsiGuideLink": "RSI-оповещения по всем монетам"
  },
  "de": {
   "nav": [
@@ -2717,7 +2726,8 @@
   "voiceBadge": "Alarme per Sprache erstellen",
   "allCoinsBadge": "ALLE COINS · 24/7",
   "heroListAlt": "Alarme mit mehreren Bedingungen und Live-Werten",
-  "heroVoiceAlt": "Per Sprache erstellter Alarm mit zwei Bedingungen"
+  "heroVoiceAlt": "Per Sprache erstellter Alarm mit zwei Bedingungen",
+  "rsiGuideLink": "RSI-Alarme für alle Coins"
  },
  "ja": {
   "nav": [
@@ -2989,6 +2999,7 @@
   "voiceBadge": "音声でアラートを作成",
   "allCoinsBadge": "全コイン · 24時間",
   "heroListAlt": "複数条件のアラートとリアルタイム値",
-  "heroVoiceAlt": "音声で作成した2条件のアラート"
+  "heroVoiceAlt": "音声で作成した2条件のアラート",
+  "rsiGuideLink": "全コインのRSIアラート"
  }
 }
