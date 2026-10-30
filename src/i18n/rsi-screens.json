@@ -3,264 +3,264 @@
     "light": {
       "voice-open": 255,
       "voice-say": 371,
-      "voice-result": 572,
+      "voice-result": 576,
       "chat-open": 492,
       "chat-write": 285,
-      "chat-draft": 496,
-      "list": 616,
-      "desktop-voice-result": 732,
-      "desktop-chat-draft": 656
+      "chat-draft": 499,
+      "list": 617,
+      "desktop-voice-result": 736,
+      "desktop-chat-draft": 659
     },
     "dark": {
       "voice-open": 255,
       "voice-say": 371,
-      "voice-result": 572,
+      "voice-result": 576,
       "chat-open": 492,
       "chat-write": 285,
-      "chat-draft": 496,
-      "list": 616,
-      "desktop-voice-result": 732,
-      "desktop-chat-draft": 656
+      "chat-draft": 499,
+      "list": 617,
+      "desktop-voice-result": 736,
+      "desktop-chat-draft": 659
     }
   },
   "en": {
     "light": {
       "voice-open": 255,
       "voice-say": 347,
-      "voice-result": 572,
+      "voice-result": 576,
       "chat-open": 492,
       "chat-write": 261,
-      "chat-draft": 496,
-      "list": 616,
-      "desktop-voice-result": 708,
-      "desktop-chat-draft": 632
+      "chat-draft": 499,
+      "list": 617,
+      "desktop-voice-result": 712,
+      "desktop-chat-draft": 635
     },
     "dark": {
       "voice-open": 255,
       "voice-say": 347,
-      "voice-result": 572,
+      "voice-result": 576,
       "chat-open": 492,
       "chat-write": 261,
-      "chat-draft": 496,
-      "list": 616,
-      "desktop-voice-result": 708,
-      "desktop-chat-draft": 632
+      "chat-draft": 499,
+      "list": 617,
+      "desktop-voice-result": 712,
+      "desktop-chat-draft": 635
     }
   },
   "de": {
     "light": {
       "voice-open": 255,
       "voice-say": 395,
-      "voice-result": 596,
+      "voice-result": 600,
       "chat-open": 516,
       "chat-write": 309,
-      "chat-draft": 503,
-      "list": 616,
-      "desktop-voice-result": 780,
-      "desktop-chat-draft": 687
+      "chat-draft": 506,
+      "list": 617,
+      "desktop-voice-result": 784,
+      "desktop-chat-draft": 690
     },
     "dark": {
       "voice-open": 255,
       "voice-say": 395,
-      "voice-result": 596,
+      "voice-result": 600,
       "chat-open": 516,
       "chat-write": 309,
-      "chat-draft": 503,
-      "list": 616,
-      "desktop-voice-result": 780,
-      "desktop-chat-draft": 687
+      "chat-draft": 506,
+      "list": 617,
+      "desktop-voice-result": 784,
+      "desktop-chat-draft": 690
     }
   },
   "es": {
     "light": {
       "voice-open": 255,
       "voice-say": 371,
-      "voice-result": 592,
+      "voice-result": 596,
       "chat-open": 492,
       "chat-write": 285,
-      "chat-draft": 523,
-      "list": 616,
-      "desktop-voice-result": 752,
-      "desktop-chat-draft": 683
+      "chat-draft": 526,
+      "list": 617,
+      "desktop-voice-result": 756,
+      "desktop-chat-draft": 686
     },
     "dark": {
       "voice-open": 255,
       "voice-say": 371,
-      "voice-result": 592,
+      "voice-result": 596,
       "chat-open": 492,
       "chat-write": 285,
-      "chat-draft": 523,
-      "list": 616,
-      "desktop-voice-result": 752,
-      "desktop-chat-draft": 683
+      "chat-draft": 526,
+      "list": 617,
+      "desktop-voice-result": 756,
+      "desktop-chat-draft": 686
     }
   },
   "fr": {
     "light": {
       "voice-open": 255,
       "voice-say": 371,
-      "voice-result": 572,
+      "voice-result": 596,
       "chat-open": 516,
       "chat-write": 285,
-      "chat-draft": 503,
-      "list": 616,
-      "desktop-voice-result": 732,
-      "desktop-chat-draft": 663
+      "chat-draft": 526,
+      "list": 617,
+      "desktop-voice-result": 756,
+      "desktop-chat-draft": 686
     },
     "dark": {
       "voice-open": 255,
       "voice-say": 371,
-      "voice-result": 572,
+      "voice-result": 596,
       "chat-open": 516,
       "chat-write": 285,
-      "chat-draft": 503,
-      "list": 616,
-      "desktop-voice-result": 732,
-      "desktop-chat-draft": 663
+      "chat-draft": 526,
+      "list": 617,
+      "desktop-voice-result": 756,
+      "desktop-chat-draft": 686
     }
   },
   "pt-br": {
     "light": {
       "voice-open": 263,
       "voice-say": 379,
-      "voice-result": 600,
+      "voice-result": 604,
       "chat-open": 492,
       "chat-write": 285,
-      "chat-draft": 523,
-      "list": 616,
-      "desktop-voice-result": 760,
-      "desktop-chat-draft": 683
+      "chat-draft": 526,
+      "list": 617,
+      "desktop-voice-result": 764,
+      "desktop-chat-draft": 686
     },
     "dark": {
       "voice-open": 263,
       "voice-say": 379,
-      "voice-result": 600,
+      "voice-result": 604,
       "chat-open": 492,
       "chat-write": 285,
-      "chat-draft": 523,
-      "list": 616,
-      "desktop-voice-result": 760,
-      "desktop-chat-draft": 683
+      "chat-draft": 526,
+      "list": 617,
+      "desktop-voice-result": 764,
+      "desktop-chat-draft": 686
     }
   },
   "ru": {
     "light": {
       "voice-open": 263,
       "voice-say": 379,
-      "voice-result": 604,
+      "voice-result": 608,
       "chat-open": 534,
       "chat-write": 285,
-      "chat-draft": 503,
-      "list": 616,
-      "desktop-voice-result": 764,
-      "desktop-chat-draft": 663
+      "chat-draft": 506,
+      "list": 617,
+      "desktop-voice-result": 768,
+      "desktop-chat-draft": 666
     },
     "dark": {
       "voice-open": 263,
       "voice-say": 379,
-      "voice-result": 604,
+      "voice-result": 608,
       "chat-open": 534,
       "chat-write": 285,
-      "chat-draft": 503,
-      "list": 616,
-      "desktop-voice-result": 764,
-      "desktop-chat-draft": 663
+      "chat-draft": 506,
+      "list": 617,
+      "desktop-voice-result": 768,
+      "desktop-chat-draft": 666
     }
   },
   "zh": {
     "light": {
       "voice-open": 255,
       "voice-say": 347,
-      "voice-result": 572,
+      "voice-result": 576,
       "chat-open": 492,
       "chat-write": 261,
-      "chat-draft": 496,
-      "list": 616,
-      "desktop-voice-result": 708,
-      "desktop-chat-draft": 632
+      "chat-draft": 499,
+      "list": 617,
+      "desktop-voice-result": 712,
+      "desktop-chat-draft": 635
     },
     "dark": {
       "voice-open": 255,
       "voice-say": 347,
-      "voice-result": 572,
+      "voice-result": 576,
       "chat-open": 492,
       "chat-write": 261,
-      "chat-draft": 496,
-      "list": 616,
-      "desktop-voice-result": 708,
-      "desktop-chat-draft": 632
+      "chat-draft": 499,
+      "list": 617,
+      "desktop-voice-result": 712,
+      "desktop-chat-draft": 635
     }
   },
   "ja": {
     "light": {
       "voice-open": 255,
       "voice-say": 371,
-      "voice-result": 572,
+      "voice-result": 576,
       "chat-open": 492,
       "chat-write": 285,
-      "chat-draft": 496,
-      "list": 616,
-      "desktop-voice-result": 732,
-      "desktop-chat-draft": 656
+      "chat-draft": 499,
+      "list": 617,
+      "desktop-voice-result": 736,
+      "desktop-chat-draft": 659
     },
     "dark": {
       "voice-open": 255,
       "voice-say": 371,
-      "voice-result": 572,
+      "voice-result": 576,
       "chat-open": 492,
       "chat-write": 285,
-      "chat-draft": 496,
-      "list": 616,
-      "desktop-voice-result": 732,
-      "desktop-chat-draft": 656
+      "chat-draft": 499,
+      "list": 617,
+      "desktop-voice-result": 736,
+      "desktop-chat-draft": 659
     }
   },
   "hi": {
     "light": {
       "voice-open": 255,
       "voice-say": 371,
-      "voice-result": 572,
+      "voice-result": 576,
       "chat-open": 492,
       "chat-write": 285,
-      "chat-draft": 496,
-      "list": 616,
-      "desktop-voice-result": 732,
-      "desktop-chat-draft": 656
+      "chat-draft": 499,
+      "list": 617,
+      "desktop-voice-result": 736,
+      "desktop-chat-draft": 659
     },
     "dark": {
       "voice-open": 255,
       "voice-say": 371,
-      "voice-result": 572,
+      "voice-result": 576,
       "chat-open": 492,
       "chat-write": 285,
-      "chat-draft": 496,
-      "list": 616,
-      "desktop-voice-result": 732,
-      "desktop-chat-draft": 656
+      "chat-draft": 499,
+      "list": 617,
+      "desktop-voice-result": 736,
+      "desktop-chat-draft": 659
     }
   },
   "ar": {
     "light": {
       "voice-open": 255,
       "voice-say": 347,
-      "voice-result": 572,
+      "voice-result": 576,
       "chat-open": 468,
       "chat-write": 261,
-      "chat-draft": 496,
-      "list": 616,
-      "desktop-voice-result": 708,
-      "desktop-chat-draft": 632
+      "chat-draft": 499,
+      "list": 617,
+      "desktop-voice-result": 712,
+      "desktop-chat-draft": 635
     },
     "dark": {
       "voice-open": 255,
       "voice-say": 347,
-      "voice-result": 572,
+      "voice-result": 576,
       "chat-open": 468,
       "chat-write": 261,
-      "chat-draft": 496,
-      "list": 616,
-      "desktop-voice-result": 708,
-      "desktop-chat-draft": 632
+      "chat-draft": 499,
+      "list": 617,
+      "desktop-voice-result": 712,
+      "desktop-chat-draft": 635
     }
   }
 }
