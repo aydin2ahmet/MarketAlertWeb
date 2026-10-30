@@ -1,5 +1,6 @@
 ---
 import { GA_ID, LOCALES, STORE, legalUrl } from '../config';
+import alertGuides from '../i18n/alert-guides.json';
 
 interface Props { t: any; code: string; appLocale: string }
 const { t, code, appLocale } = Astro.props;
@@ -120,6 +121,8 @@ const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : 
           <h2>{f.t}</h2>
           <p>{f.d}</p>
           {f.k === 'all' && <a class="rsi-guide-link" href={`/${code}/features/rsi-alerts/`}>{t.rsiGuideLink} <span aria-hidden="true">↗</span></a>}
+          {f.k === 'multi' && <a class="rsi-guide-link" href={`/${code}/features/multi-condition-alerts/`}>{(alertGuides as any)[code]['multi-condition-alerts'].link} <span aria-hidden="true">↗</span></a>}
+          {f.k === 'tpl' && <a class="rsi-guide-link" href={`/${code}/features/volume-spike-alerts/`}>{(alertGuides as any)[code]['volume-spike-alerts'].link} <span aria-hidden="true">↗</span></a>}
           <figure class="pf"><Fragment set:html={shot(f.k, f.t)} /></figure>
         </article>
       ))}

@@ -1,0 +1,252 @@
+{
+  "tr": {
+    "volume-spike-alerts": {
+      "link": "Binance hacim artışı alarmı",
+      "title": "Binance hacim artışı alarmı nasıl kurulur? | MarketAlert",
+      "h1": "Binance’te hacmi artan coinlerden nasıl haberdar olurum?",
+      "description": "Binance coinlerinde hacim artışı alarmı kur: zaman dilimini, hacim ortalamasını ve çarpanı seç. Konuşarak veya yazarak oluştur, Telegram’dan bildirim al.",
+      "intro": "Hacim listelerini sürekli yenilemek yerine kendi eşiğini belirle. MarketAlert, seçtiğin Binance piyasasındaki coinleri tarar; mum hacmi belirlediğin ortalama çarpanını aştığında bildirim gönderir.",
+      "prompt": "Binance Spot USDT’de hacmi en yüksek 100 coini tara. 15 dakikalık mum hacmi 20 dönemlik hacim ortalamasının 3 katını aşınca Telegram’dan bir kez bildir.",
+      "caption": "Örnek koşul · Canlı piyasa verisi değildir.",
+      "steps": [["Piyasayı ve kapsamı söyle", "Spot veya Futures, USDT veya USDC; tek coin ya da tüm coinler kapsamını belirt."], ["Hacim koşulunu tanımla", "Örnekte zaman dilimi 15m, SMA dönemi 20 ve çarpan 3. Bunları ihtiyacına göre değiştir."], ["Sesli kur veya sohbetten onayla", "Komutu konuşarak ver veya AI sohbete yaz. Yazılı sohbette oluşan taslağı kontrol edip onayla."], ["Kanalı ve tekrar biçimini kontrol et", "Telegram hesabını uygulamadan bağla. Alarmın kapsamını, kanalını ve bir kez/tekrar tercihini kontrol et."]],
+      "details": [["3 kat hacim ne demek?", "Koşul, mum hacmini seçilen SMA hacim ortalamasıyla karşılaştırır. Ortalama 100 birimse 300’ü aşan hacim örnekteki eşiği sağlar. Bu, fiyatın %3 arttığı anlamına gelmez."], ["Hacim artışı ve fiyat yükselişi aynı şey değil", "Hacim yükselirken fiyat düşebilir. İstersen fiyatın EMA üzerinde olması gibi ikinci bir koşul ekle; VE seçildiğinde iki koşul da aynı coin için sağlanmalıdır."], ["Tarama hangi coinleri kapsar?", "Seçilen Binance piyasasındaki uygun USDT/USDC coinleri taranır; stablecoinler hariçtir. İlk 50/100/200 veya tümü seçenekleri plan sınırlarına bağlıdır."]],
+      "faq": [["Hacim alarmı mum kapanışında mı değerlendirilir?", "Evet. Hacim indikatörü seçtiğin zaman diliminin kapanmış mum verileriyle değerlendirilir. Açık mumda anlık hacim artışı bildirimi değildir."], ["Bütün coinlere tek alarm kurabilir miyim?", "Tüm coinler kapsamını seçerek tek tanımı uygun coinlere uygularsın. Plus en fazla ilk 100 coini, Pro tüm uygun coinleri destekler."], ["Bu bir alım satım sinyali mi?", "Kendi belirlediğin hacim koşulunun gerçekleştiğini bildirir. Emir açmaz; fiyat yönü veya kazanç garantisi vermez."]]
+    },
+    "multi-condition-alerts": {
+      "link": "RSI + EMA koşullu alarm",
+      "title": "RSI ve EMA birlikte alarm: kod yazmadan kur | MarketAlert",
+      "h1": "RSI ve EMA koşulları aynı anda sağlanınca nasıl alarm alırım?",
+      "description": "RSI ve fiyat/EMA koşullarını tek kripto alarmında birleştir. Kod veya form doldurmadan konuşarak kur; Binance coinlerini tara, Telegram’dan bildirim al.",
+      "intro": "Bir RSI alarmı ve bir fiyat alarmını ayrı ayrı takip etmek zorunda değilsin. İstediğin koşulları aynı alarmda VE veya VEYA ile birleştir; kurulumu konuşarak ya da AI sohbete yazarak yap.",
+      "prompt": "Binance Spot USDT’de hacmi en yüksek 100 coini tara. Saatlik RSI 30’un altında ve fiyat EMA20’nin üzerindeyken Telegram’dan bir kez bildir.",
+      "caption": "Uygulama içi örnek · Kullanıcının mesajı, iki koşul ve bildirim kanalı birlikte.",
+      "steps": [["İki koşulu tek cümlede anlat", "Piyasayı, coin kapsamını, zaman dilimini, RSI eşiğini ve EMA dönemini belirt."], ["Birleştirme biçimini seç", "İkisi birden gerektiğinde VE, koşullardan biri yeterliyse VEYA kullan."], ["Konuşarak kur veya taslağı onayla", "Sesli asistana söyle ya da AI sohbete yaz. Yazılı sohbette taslağı inceleyip alarmı kur."], ["Sonucu ve Telegram kanalını kontrol et", "RSI(14) < 30, fiyat > EMA(20), 1h, ilk 100 coin ve Telegram seçimini doğrula."]],
+      "details": [["VE ile VEYA arasındaki fark", "VE seçildiğinde RSI 28 olsa bile fiyat EMA20’nin altındaysa birleşik koşul sağlanmaz. RSI 28 ve fiyat EMA20’nin üstündeyse sağlanır. VEYA için bir koşul yeterlidir."], ["Tüm coinlerde koşullar nasıl birleşir?", "Koşullar her coin için birlikte değerlendirilir. BTC’nin RSI koşuluyla ETH’nin EMA koşulu birleştirilmez. Bir coin iki koşulu da sağladığında birleşik koşul sağlanır."], ["EMA üzerinde olmak, EMA kesişimi değildir", "Bu örnek fiyatın EMA20 üzerinde olmasını ister; yeni bir kesişim beklemez. RSI ve EMA kapanmış mumlarla değerlendirilir. Art arda gerçekleşen olaylar zinciri tanımlamaz."]],
+      "faq": [["Kod yazmam veya Pine Script kullanmam gerekir mi?", "Hayır. Desteklenen koşulları MarketAlert’te konuşarak, AI sohbete yazarak veya alarm formundan birleştirebilirsin."], ["İkiden fazla koşul ekleyebilir miyim?", "Plus alarm başına 3, Pro 5 koşula kadar destekler. RSI, hacim, fiyat/ortalama ve desteklenen diğer koşul tipleri kullanılabilir."], ["Telegram’a neden bildirim gelmeyebilir?", "Önce hesabın bağlı ve alarmın aktif olduğunu kontrol et. VE için tüm koşullar aynı coin üzerinde sağlanmalı; tekrar tercihi ve plan bildirim sınırları da geçerlidir."]]
+    }
+  },
+  "de": {
+    "volume-spike-alerts": {
+      "link": "Binance-Volumenalarme", "title": "Binance-Volumenalarme einrichten | MarketAlert", "h1": "Wie erhalte ich Alarme bei Volumenspitzen auf Binance?",
+      "description": "Binance-Volumenalarme mit eigenem Zeitrahmen, Durchschnitt und Multiplikator. Per Sprache oder KI-Chat erstellen und über Telegram benachrichtigen lassen.",
+      "intro": "Lege einen Schwellenwert fest, statt ständig Volumenlisten zu prüfen. MarketAlert durchsucht Coins im gewählten Binance-Markt und meldet, wenn das Kerzenvolumen das gewählte Vielfache seines Durchschnitts überschreitet.",
+      "prompt": "Überwache die 100 volumenstärksten Coins auf Binance Spot USDT. Benachrichtige mich einmal über Telegram, wenn das 15-Minuten-Kerzenvolumen das Dreifache seines 20-Perioden-Durchschnitts überschreitet.",
+      "caption": "Beispielbedingung · Keine Live-Marktdaten.",
+      "steps": [["Markt und Umfang festlegen", "Spot oder Futures, USDT oder USDC sowie einen Coin oder den Umfang für alle Coins wählen."], ["Volumenbedingung definieren", "Das Beispiel verwendet 15m, SMA(20) und den Faktor 3. Passe die Werte an."], ["Sprechen oder Chat-Entwurf bestätigen", "Befehl sprechen oder im KI-Chat schreiben. Im Textchat den Entwurf prüfen und bestätigen."], ["Kanal und Wiederholung prüfen", "Telegram in der App verbinden. Umfang, Kanal und einmalige oder wiederholte Auslösung prüfen."]],
+      "details": [["Was bedeutet dreifaches Volumen?", "Das Kerzenvolumen wird mit dem gewählten SMA-Volumendurchschnitt verglichen. Bei einem Durchschnitt von 100 Einheiten erfüllt ein Volumen über 300 die Beispielbedingung. Das bedeutet keinen Kursanstieg um 3 %."], ["Mehr Volumen bedeutet keinen höheren Kurs", "Das Volumen kann bei fallendem Kurs steigen. Ergänze etwa Kurs über EMA. Bei UND müssen beide Bedingungen für denselben Coin gelten."], ["Welche Coins werden überwacht?", "Geeignete USDT/USDC-Coins im gewählten Binance-Markt, ohne Stablecoins. Top 50/100/200 oder alle Coins hängen vom Tarif ab."]],
+      "faq": [["Wird bei Kerzenschluss ausgewertet?", "Ja. Der Volumenindikator verwendet abgeschlossene Kerzen des gewählten Zeitrahmens, keine Volumenspitzen innerhalb einer offenen Kerze."], ["Kann ein Alarm alle Coins abdecken?", "Ein Alarm kann dieselbe Regel auf geeignete Coins anwenden. Plus unterstützt bis zu Top 100, Pro alle geeigneten Coins."], ["Ist das ein Handelssignal?", "Gemeldet wird deine eigene Volumenbedingung. Es werden keine Orders ausgeführt und weder Kursrichtung noch Gewinn garantiert."]]
+    },
+    "multi-condition-alerts": {
+      "link": "RSI + EMA kombinieren", "title": "RSI und EMA gemeinsam als Alarm, ohne Code | MarketAlert", "h1": "Wie erhalte ich einen Alarm, wenn RSI und EMA gleichzeitig passen?",
+      "description": "RSI und Kurs/EMA in einem Kryptoalarm kombinieren. Per Sprache ohne Code einrichten, Binance-Coins überwachen und Telegram-Meldungen erhalten.",
+      "intro": "Verfolge RSI- und Kursalarme nicht einzeln. Verknüpfe Bedingungen in einem Alarm mit UND oder ODER und erstelle ihn per Sprache oder KI-Textchat.",
+      "prompt": "Überwache die 100 volumenstärksten Coins auf Binance Spot USDT. Benachrichtige mich einmal über Telegram, wenn der stündliche RSI unter 30 und der Kurs über EMA20 liegt.",
+      "caption": "App-Beispiel · Nachricht, beide Bedingungen und Benachrichtigungskanal zusammen.",
+      "steps": [["Beide Bedingungen beschreiben", "Markt, Coin-Umfang, Zeitrahmen, RSI-Schwelle und EMA-Periode nennen."], ["Verknüpfung wählen", "UND verlangt beide Bedingungen; bei ODER genügt eine."], ["Sprechen oder Entwurf bestätigen", "Sprachassistenten nutzen oder im KI-Chat schreiben. Im Textchat den Entwurf vor Erstellung prüfen."], ["Ergebnis und Telegram prüfen", "RSI(14) < 30, Kurs > EMA(20), 1h, Top 100 und Telegram kontrollieren."]],
+      "details": [["UND oder ODER", "Bei UND reicht RSI 28 nicht, solange der Kurs unter EMA20 liegt. RSI 28 und Kurs über EMA20 erfüllen die Kombination. Bei ODER genügt eine Bedingung."], ["Bedingungen gelten pro Coin", "Der RSI von BTC wird nicht mit dem EMA-Zustand von ETH verknüpft. Bei UND muss derselbe Coin beide Bedingungen erfüllen."], ["Über EMA ist keine Kreuzung", "Das Beispiel verlangt Kurs über EMA20, keine neue Kreuzung. RSI und EMA verwenden abgeschlossene Kerzen. Eine zeitliche Ereigniskette wird nicht definiert."]],
+      "faq": [["Brauche ich Code oder Pine Script?", "Nein. Unterstützte Bedingungen lassen sich per Sprache, KI-Textchat oder Alarmformular kombinieren."], ["Sind mehr als zwei Bedingungen möglich?", "Plus erlaubt bis zu 3, Pro bis zu 5 Bedingungen pro Alarm, etwa RSI, Volumen und Kurs/Durchschnitt."], ["Warum kommt keine Telegram-Meldung?", "Verbindung und aktiven Alarm prüfen. UND verlangt alle Bedingungen beim selben Coin. Wiederholungseinstellung und Tariflimits gelten ebenfalls."]]
+    }
+  },
+  "fr": {
+    "volume-spike-alerts": {
+      "link": "Alertes de volume Binance", "title": "Créer une alerte de pic de volume Binance | MarketAlert", "h1": "Comment être averti des pics de volume sur Binance ?",
+      "description": "Créez une alerte de volume Binance : unité de temps, moyenne et multiplicateur au choix. Configuration vocale ou par chat IA et notification Telegram.",
+      "intro": "Définissez votre seuil au lieu de consulter les classements de volume. MarketAlert surveille les cryptos du marché Binance choisi et vous avertit quand le volume d’une bougie dépasse le multiple choisi de sa moyenne.",
+      "prompt": "Surveille les 100 cryptos au plus fort volume sur Binance Spot USDT. Préviens-moi une fois sur Telegram quand le volume d’une bougie de 15 minutes dépasse 3 fois sa moyenne sur 20 périodes.",
+      "caption": "Condition illustrative · Données non actualisées du marché.",
+      "steps": [["Précisez le marché et le périmètre", "Choisissez Spot ou Futures, USDT ou USDC, une crypto ou le périmètre toutes cryptos."], ["Définissez la condition de volume", "L’exemple utilise 15m, SMA(20) et un multiplicateur de 3. Adaptez ces valeurs."], ["Parlez ou validez le brouillon", "Dictez la commande ou écrivez au chat IA. Dans le chat écrit, vérifiez puis validez le brouillon."], ["Vérifiez le canal et la répétition", "Associez Telegram dans l’app. Contrôlez le périmètre, le canal et le déclenchement unique ou répété."]],
+      "details": [["Que signifie un volume multiplié par 3 ?", "Le volume de la bougie est comparé à la moyenne SMA choisie. Pour une moyenne de 100 unités, un volume supérieur à 300 satisfait cet exemple. Cela ne signifie pas une hausse de prix de 3 %."], ["Hausse de volume et hausse de prix diffèrent", "Le volume peut augmenter pendant une baisse. Ajoutez par exemple un prix au-dessus d’une EMA. Avec ET, les deux conditions doivent concerner la même crypto."], ["Quelles cryptos sont surveillées ?", "Les cryptos USDT/USDC éligibles du marché Binance choisi, hors stablecoins. Top 50/100/200 ou toutes selon les limites de l’offre."]],
+      "faq": [["L’évaluation se fait-elle à la clôture ?", "Oui. L’indicateur de volume utilise les bougies clôturées de l’unité choisie, pas les pics pendant une bougie ouverte."], ["Une seule alerte pour toutes les cryptos ?", "Le périmètre toutes cryptos applique une même règle aux cryptos éligibles. Plus couvre jusqu’au top 100, Pro toutes les cryptos éligibles."], ["Est-ce un signal de trading ?", "L’alerte signale votre condition de volume. Elle ne passe aucun ordre et ne garantit ni direction du prix ni gain."]]
+    },
+    "multi-condition-alerts": {
+      "link": "Alertes combinées RSI + EMA", "title": "Combiner RSI et EMA dans une alerte sans coder | MarketAlert", "h1": "Comment recevoir une alerte quand RSI et EMA sont réunis ?",
+      "description": "Combinez RSI et prix/EMA dans une seule alerte crypto. Configurez-la à la voix sans code, surveillez Binance et recevez les notifications sur Telegram.",
+      "intro": "Évitez de suivre séparément une alerte RSI et une alerte de prix. Réunissez vos conditions avec ET ou OU, puis créez l’alerte à la voix ou par chat IA.",
+      "prompt": "Surveille les 100 cryptos au plus fort volume sur Binance Spot USDT. Préviens-moi une fois sur Telegram quand le RSI horaire est inférieur à 30 et le prix supérieur à l’EMA20.",
+      "caption": "Exemple dans l’app · Message, deux conditions et canal de notification réunis.",
+      "steps": [["Décrivez les deux conditions", "Précisez marché, périmètre, unité de temps, seuil RSI et période EMA."], ["Choisissez la combinaison", "ET exige les deux conditions ; OU en exige une seule."], ["Parlez ou validez le brouillon", "Utilisez l’assistant vocal ou le chat IA. À l’écrit, vérifiez le brouillon avant de créer l’alerte."], ["Vérifiez le résultat et Telegram", "Contrôlez RSI(14) < 30, prix > EMA(20), 1h, top 100 et Telegram."]],
+      "details": [["ET ou OU", "Avec ET, un RSI à 28 ne suffit pas si le prix est sous l’EMA20. RSI à 28 et prix au-dessus satisfont la combinaison. OU ne nécessite qu’une condition."], ["Chaque crypto est évaluée séparément", "Le RSI du BTC ne se combine pas à l’EMA de l’ETH. Une même crypto doit remplir les deux conditions pour satisfaire ET."], ["Au-dessus de l’EMA ne signifie pas croisement", "Cet exemple demande un prix au-dessus de l’EMA20, sans attendre un nouveau croisement. RSI et EMA utilisent les bougies clôturées. Il ne définit pas une succession d’événements."]],
+      "faq": [["Faut-il coder ou utiliser Pine Script ?", "Non. Combinez les conditions compatibles par voix, chat IA écrit ou formulaire d’alerte."], ["Peut-on ajouter plus de deux conditions ?", "Plus permet jusqu’à 3 conditions par alerte, Pro jusqu’à 5, dont RSI, volume et prix/moyenne."], ["Pourquoi aucune notification Telegram ?", "Vérifiez la liaison Telegram et l’activation. ET exige toutes les conditions pour la même crypto. Les réglages de répétition et limites de l’offre s’appliquent aussi."]]
+    }
+  },
+  "es": {
+    "volume-spike-alerts": {
+      "link": "Alertas de volumen en Binance", "title": "Cómo crear alertas de aumento de volumen en Binance | MarketAlert", "h1": "¿Cómo recibir alertas cuando aumenta el volumen en Binance?",
+      "description": "Configura alertas de volumen de Binance con tu intervalo, media y multiplicador. Créala por voz o chat con IA y recibe notificaciones en Telegram.",
+      "intro": "Define un umbral en lugar de actualizar listas de volumen. MarketAlert analiza las monedas del mercado Binance elegido y avisa cuando el volumen de una vela supera el múltiplo elegido de su media.",
+      "prompt": "Analiza las 100 monedas con mayor volumen de Binance Spot USDT. Avísame una vez por Telegram cuando el volumen de una vela de 15 minutos supere 3 veces su media de 20 períodos.",
+      "caption": "Condición de ejemplo · No son datos de mercado en directo.",
+      "steps": [["Indica el mercado y el alcance", "Elige Spot o Futures, USDT o USDC, una moneda o el alcance de todas las monedas."], ["Define la condición de volumen", "El ejemplo utiliza 15m, SMA(20) y un multiplicador de 3. Ajusta los valores."], ["Habla o confirma el borrador", "Dicta el comando o escríbelo en el chat con IA. En el chat escrito, revisa y confirma el borrador."], ["Comprueba canal y repetición", "Vincula Telegram desde la app. Revisa alcance, canal y aviso único o repetido."]],
+      "details": [["¿Qué significa un volumen de 3×?", "Se compara el volumen de la vela con la media SMA elegida. Si la media es 100 unidades, un volumen superior a 300 cumple el ejemplo. No significa que el precio suba un 3 %."], ["Más volumen no significa una subida", "El volumen puede subir mientras baja el precio. Añade otra condición, como precio sobre EMA. Con Y, ambas deben cumplirse en la misma moneda."], ["¿Qué monedas se analizan?", "Las monedas USDT/USDC elegibles del mercado Binance seleccionado, excluyendo stablecoins. Top 50/100/200 o todas depende del plan."]],
+      "faq": [["¿Se evalúa al cierre de la vela?", "Sí. El indicador de volumen utiliza velas cerradas del intervalo seleccionado, no picos dentro de una vela abierta."], ["¿Una alerta puede cubrir todas las monedas?", "Ese alcance aplica una regla a las monedas elegibles. Plus admite hasta las 100 primeras y Pro todas las elegibles."], ["¿Es una señal de trading?", "Notifica que se cumple tu condición de volumen. No ejecuta órdenes ni garantiza dirección del precio o beneficios."]]
+    },
+    "multi-condition-alerts": {
+      "link": "Alertas combinadas RSI + EMA", "title": "Combinar RSI y EMA en una alerta sin programar | MarketAlert", "h1": "¿Cómo recibir una alerta cuando coinciden RSI y EMA?",
+      "description": "Combina RSI y precio/EMA en una alerta cripto. Configúrala por voz sin código, analiza monedas de Binance y recibe avisos en Telegram.",
+      "intro": "No necesitas seguir por separado una alerta RSI y otra de precio. Combina condiciones con Y u O y crea la alerta hablando o escribiendo al chat con IA.",
+      "prompt": "Analiza las 100 monedas con mayor volumen de Binance Spot USDT. Avísame una vez por Telegram cuando el RSI horario esté por debajo de 30 y el precio por encima de EMA20.",
+      "caption": "Ejemplo en la app · Mensaje, dos condiciones y canal juntos.",
+      "steps": [["Describe las dos condiciones", "Indica mercado, alcance, intervalo, umbral RSI y período EMA."], ["Elige la combinación", "Y exige ambas condiciones; O permite que baste una."], ["Habla o confirma el borrador", "Usa el asistente de voz o el chat con IA. En texto, revisa el borrador antes de crear la alerta."], ["Comprueba el resultado y Telegram", "Verifica RSI(14) < 30, precio > EMA(20), 1h, top 100 y Telegram."]],
+      "details": [["Diferencia entre Y y O", "Con Y, un RSI de 28 no basta si el precio está bajo EMA20. RSI de 28 y precio sobre EMA20 cumplen la combinación. Con O basta una condición."], ["Las condiciones se unen por moneda", "No se combina el RSI de BTC con la EMA de ETH. La misma moneda debe cumplir ambas condiciones para satisfacer Y."], ["Sobre EMA no es un cruce", "El ejemplo exige precio sobre EMA20, sin esperar un nuevo cruce. RSI y EMA usan velas cerradas. No define una secuencia de eventos."]],
+      "faq": [["¿Necesito código o Pine Script?", "No. Combina condiciones compatibles mediante voz, chat con IA o el formulario de alertas."], ["¿Puedo añadir más de dos condiciones?", "Plus admite hasta 3 por alerta y Pro hasta 5, como RSI, volumen y precio/media."], ["¿Por qué no llega el aviso a Telegram?", "Revisa la vinculación y que la alerta esté activa. Y requiere todas las condiciones en la misma moneda. También se aplican repetición y límites del plan."]]
+    }
+  },
+  "pt-br": {
+    "volume-spike-alerts": {
+      "link": "Alertas de volume na Binance", "title": "Como criar alertas de aumento de volume na Binance | MarketAlert", "h1": "Como receber avisos de aumento de volume na Binance?",
+      "description": "Configure alertas de volume na Binance com período, média e multiplicador próprios. Crie por voz ou chat com IA e receba notificações no Telegram.",
+      "intro": "Defina seu limite em vez de atualizar listas de volume. O MarketAlert monitora moedas do mercado Binance escolhido e avisa quando o volume da vela supera o múltiplo escolhido da sua média.",
+      "prompt": "Monitore as 100 moedas com maior volume na Binance Spot USDT. Avise uma vez pelo Telegram quando o volume da vela de 15 minutos superar 3 vezes a média de 20 períodos.",
+      "caption": "Condição ilustrativa · Não são dados de mercado ao vivo.",
+      "steps": [["Informe mercado e abrangência", "Escolha Spot ou Futures, USDT ou USDC, uma moeda ou a abrangência de todas as moedas."], ["Defina a condição de volume", "O exemplo usa 15m, SMA(20) e multiplicador 3. Ajuste esses valores."], ["Fale ou aprove o rascunho", "Dite o comando ou escreva no chat com IA. No texto, revise e aprove o rascunho."], ["Confira canal e repetição", "Vincule o Telegram no app. Confira abrangência, canal e aviso único ou repetido."]],
+      "details": [["O que significa volume de 3×?", "O volume da vela é comparado à média SMA escolhida. Com média de 100 unidades, volume acima de 300 atende ao exemplo. Isso não significa alta de 3% no preço."], ["Mais volume não significa preço maior", "O volume pode subir com o preço em queda. Adicione outra condição, como preço acima da EMA. Com E, ambas precisam valer para a mesma moeda."], ["Quais moedas são monitoradas?", "Moedas USDT/USDC elegíveis no mercado Binance escolhido, sem stablecoins. Top 50/100/200 ou todas depende dos limites do plano."]],
+      "faq": [["A avaliação ocorre no fechamento da vela?", "Sim. O indicador de volume usa velas fechadas do período escolhido, não picos durante uma vela aberta."], ["Um alerta pode cobrir todas as moedas?", "Essa abrangência aplica uma regra às moedas elegíveis. Plus permite até as 100 primeiras; Pro permite todas as elegíveis."], ["É um sinal de negociação?", "Avisa que sua condição de volume ocorreu. Não envia ordens nem garante direção do preço ou lucro."]]
+    },
+    "multi-condition-alerts": {
+      "link": "Alertas combinados RSI + EMA", "title": "Combinar RSI e EMA em um alerta sem programar | MarketAlert", "h1": "Como receber um alerta quando RSI e EMA coincidem?",
+      "description": "Combine RSI e preço/EMA em um alerta cripto. Configure por voz sem código, monitore moedas da Binance e receba avisos no Telegram.",
+      "intro": "Não é preciso acompanhar separadamente um alerta de RSI e outro de preço. Combine condições com E ou OU e crie o alerta falando ou escrevendo no chat com IA.",
+      "prompt": "Monitore as 100 moedas com maior volume na Binance Spot USDT. Avise uma vez pelo Telegram quando o RSI de uma hora estiver abaixo de 30 e o preço acima da EMA20.",
+      "caption": "Exemplo no app · Mensagem, duas condições e canal juntos.",
+      "steps": [["Descreva as duas condições", "Informe mercado, abrangência, período, limite RSI e período EMA."], ["Escolha a combinação", "E exige ambas; com OU, basta uma condição."], ["Fale ou aprove o rascunho", "Use o assistente de voz ou o chat com IA. No texto, confira o rascunho antes de criar."], ["Confira resultado e Telegram", "Verifique RSI(14) < 30, preço > EMA(20), 1h, top 100 e Telegram."]],
+      "details": [["Diferença entre E e OU", "Com E, RSI em 28 não basta se o preço estiver abaixo da EMA20. RSI em 28 e preço acima atendem à combinação. Com OU, basta uma condição."], ["Condições são combinadas por moeda", "O RSI do BTC não é combinado à EMA do ETH. A mesma moeda precisa atender às duas condições em E."], ["Acima da EMA não é cruzamento", "O exemplo exige preço acima da EMA20, sem esperar novo cruzamento. RSI e EMA usam velas fechadas. Não define uma sequência de eventos."]],
+      "faq": [["Preciso de código ou Pine Script?", "Não. Combine condições compatíveis por voz, chat com IA ou formulário de alerta."], ["Posso adicionar mais de duas condições?", "Plus permite até 3 por alerta; Pro até 5, como RSI, volume e preço/média."], ["Por que o Telegram não recebeu o aviso?", "Confira a vinculação e se o alerta está ativo. E exige todas as condições na mesma moeda. Repetição e limites do plano também se aplicam."]]
+    }
+  },
+  "ru": {
+    "volume-spike-alerts": {
+      "link": "Алерты объёма Binance", "title": "Как настроить алерт на всплеск объёма Binance | MarketAlert", "h1": "Как получать уведомления о всплесках объёма на Binance?",
+      "description": "Настройте алерт объёма Binance: таймфрейм, среднее и множитель. Создайте голосом или в ИИ-чате и получайте уведомления в Telegram.",
+      "intro": "Задайте порог вместо постоянного обновления списков объёма. MarketAlert отслеживает монеты выбранного рынка Binance и уведомляет, когда объём свечи превышает заданный множитель среднего.",
+      "prompt": "Отслеживай 100 монет с наибольшим объёмом на Binance Spot USDT. Уведоми один раз в Telegram, когда объём 15-минутной свечи превысит средний объём за 20 периодов в 3 раза.",
+      "caption": "Пример условия · Это не текущие рыночные данные.",
+      "steps": [["Укажите рынок и охват", "Выберите Spot или Futures, USDT или USDC, одну монету или охват всех монет."], ["Задайте условие объёма", "В примере: 15m, SMA(20), множитель 3. Значения можно изменить."], ["Скажите или подтвердите черновик", "Произнесите команду или напишите в ИИ-чат. В текстовом чате проверьте и подтвердите черновик."], ["Проверьте канал и повтор", "Подключите Telegram в приложении. Проверьте охват, канал и однократное либо повторное срабатывание."]],
+      "details": [["Что означает объём 3×?", "Объём свечи сравнивается с выбранным средним SMA. При среднем 100 единиц объём выше 300 удовлетворяет примеру. Это не означает рост цены на 3 %."], ["Рост объёма не равен росту цены", "Объём может расти при падении цены. Добавьте, например, цену выше EMA. При И оба условия должны выполняться для одной монеты."], ["Какие монеты отслеживаются?", "Подходящие монеты USDT/USDC выбранного рынка Binance, кроме стейблкоинов. Топ-50/100/200 или все зависят от тарифа."]],
+      "faq": [["Условие проверяется после закрытия свечи?", "Да. Индикатор объёма использует закрытые свечи выбранного таймфрейма, а не всплески внутри открытой свечи."], ["Один алерт может охватить все монеты?", "Одна настройка применяется к подходящим монетам. Plus поддерживает до топ-100, Pro — все подходящие монеты."], ["Это торговый сигнал?", "Уведомление сообщает о вашем условии объёма. Оно не размещает ордера и не гарантирует направление цены или прибыль."]]
+    },
+    "multi-condition-alerts": {
+      "link": "Общий алерт RSI + EMA", "title": "RSI и EMA в одном алерте без кода | MarketAlert", "h1": "Как получить алерт при одновременном выполнении RSI и EMA?",
+      "description": "Объедините RSI и цену/EMA в одном криптоалерте. Настройте голосом без кода, отслеживайте Binance и получайте уведомления Telegram.",
+      "intro": "Не нужно отдельно следить за алертами RSI и цены. Объедините условия через И или ИЛИ и создайте алерт голосом или текстом в ИИ-чате.",
+      "prompt": "Отслеживай 100 монет с наибольшим объёмом на Binance Spot USDT. Уведоми один раз в Telegram, когда часовой RSI ниже 30, а цена выше EMA20.",
+      "caption": "Пример из приложения · Сообщение, два условия и канал уведомления вместе.",
+      "steps": [["Опишите оба условия", "Укажите рынок, охват, таймфрейм, порог RSI и период EMA."], ["Выберите логику", "И требует оба условия, ИЛИ — хотя бы одно."], ["Скажите или подтвердите черновик", "Используйте голосовой помощник или ИИ-чат. В текстовом чате сначала проверьте черновик."], ["Проверьте результат и Telegram", "Проверьте RSI(14) < 30, цену > EMA(20), 1h, топ-100 и Telegram."]],
+      "details": [["Разница между И и ИЛИ", "При И значения RSI 28 недостаточно, если цена ниже EMA20. RSI 28 и цена выше EMA20 выполняют комбинацию. При ИЛИ достаточно одного условия."], ["Условия объединяются для каждой монеты", "RSI BTC не объединяется с EMA ETH. При И одна монета должна выполнить оба условия."], ["Выше EMA — не пересечение EMA", "Пример требует цену выше EMA20, не ожидая нового пересечения. RSI и EMA используют закрытые свечи. Последовательность событий не задаётся."]],
+      "faq": [["Нужен код или Pine Script?", "Нет. Объединяйте поддерживаемые условия голосом, в ИИ-чате или форме алерта."], ["Можно добавить больше двух условий?", "Plus поддерживает до 3 условий на алерт, Pro — до 5, включая RSI, объём и цену/среднее."], ["Почему нет уведомления Telegram?", "Проверьте подключение и активность алерта. И требует все условия для одной монеты. Также действуют настройки повтора и лимиты тарифа."]]
+    }
+  },
+  "ja": {
+    "volume-spike-alerts": {
+      "link": "Binance出来高急増アラート", "title": "Binanceの出来高急増アラートを設定する方法 | MarketAlert", "h1": "Binanceの出来高が急増したら通知を受け取るには？",
+      "description": "時間足・出来高平均・倍率を指定してBinanceの出来高アラートを設定。音声やAIチャットで作成し、Telegramで通知を受信できます。",
+      "intro": "出来高ランキングを更新し続ける代わりに、自分の基準を設定。MarketAlertは選択したBinance市場の銘柄を監視し、ローソク足の出来高が平均の指定倍率を超えると通知します。",
+      "prompt": "Binance Spot USDTの出来高上位100銘柄を監視して。15分足の出来高が20期間平均の3倍を超えたら、Telegramで1回通知して。",
+      "caption": "条件の例 · リアルタイムの市場データではありません。",
+      "steps": [["市場と対象を指定", "SpotかFutures、USDTかUSDC、単一銘柄か全銘柄の対象範囲を選びます。"], ["出来高の条件を設定", "例は15m、SMA(20)、倍率3です。必要に応じて変更できます。"], ["話すかチャットの下書きを承認", "音声で伝えるかAIチャットに入力。文字チャットでは下書きを確認して承認します。"], ["通知先と繰り返しを確認", "アプリからTelegramを連携。対象範囲、通知先、1回か繰り返しかを確認します。"]],
+      "details": [["出来高3倍とは？", "足の出来高を指定したSMA出来高平均と比較します。平均100単位なら300を超えると例の条件成立です。価格が3%上がるという意味ではありません。"], ["出来高増加と価格上昇は別", "価格下落中にも出来高は増えます。価格がEMAより上などの条件を追加できます。ANDでは同じ銘柄で両方の条件が必要です。"], ["監視する銘柄の範囲", "選択したBinance市場の対象USDT/USDC銘柄を監視し、ステーブルコインは除外。上位50/100/200または全銘柄はプランの制限に従います。"]],
+      "faq": [["足の確定時に評価しますか？", "はい。出来高指標は選んだ時間足の確定足を使います。未確定足の途中での出来高急増通知ではありません。"], ["1つのアラートで全銘柄を監視できますか？", "全銘柄の対象範囲では同じルールを各対象銘柄に適用します。Plusは最大上位100、Proは対象全銘柄に対応します。"], ["売買シグナルですか？", "自分で指定した出来高条件の成立を知らせます。注文は行わず、価格の方向や利益を保証しません。"]]
+    },
+    "multi-condition-alerts": {
+      "link": "RSI＋EMAの複合アラート", "title": "RSIとEMAを組み合わせたアラートをコードなしで設定 | MarketAlert", "h1": "RSIとEMAの条件が両方成立したら通知を受け取るには？",
+      "description": "RSIと価格/EMAを1つの暗号資産アラートに統合。コードなしで音声設定し、Binance銘柄を監視してTelegramに通知します。",
+      "intro": "RSIと価格のアラートを別々に追う必要はありません。ANDまたはORで条件をまとめ、音声やAIチャットで作成できます。",
+      "prompt": "Binance Spot USDTの出来高上位100銘柄を監視して。1時間足のRSIが30未満で、価格がEMA20より上ならTelegramで1回通知して。",
+      "caption": "アプリ内の例 · 入力メッセージ、2つの条件、通知先をまとめて表示。",
+      "steps": [["2つの条件を伝える", "市場、対象銘柄、時間足、RSIのしきい値、EMAの期間を指定。"], ["組み合わせ方を選ぶ", "両方必要ならAND、どちらかでよければORを選びます。"], ["音声で伝えるか下書きを承認", "音声アシスタントかAIチャットを利用。文字チャットでは下書きを確認して作成します。"], ["結果とTelegramを確認", "RSI(14) < 30、価格 > EMA(20)、1h、上位100銘柄、Telegramを確認します。"]],
+      "details": [["ANDとORの違い", "ANDではRSIが28でも価格がEMA20未満なら不成立。RSIが28かつ価格がEMA20より上なら成立します。ORなら一方で十分です。"], ["条件は銘柄ごとに評価", "BTCのRSIとETHのEMAを組み合わせることはありません。ANDでは同じ銘柄が両方を満たす必要があります。"], ["EMAより上とEMAクロスは別", "例は価格がEMA20より上であることを求め、新たな交差は待ちません。RSIとEMAは確定足を使用し、出来事の順序は定義しません。"]],
+      "faq": [["コードやPine Scriptは必要ですか？", "不要です。対応する条件を音声、AIチャット、アラートフォームで組み合わせられます。"], ["3つ以上の条件も使えますか？", "Plusは1アラート最大3条件、Proは5条件。RSI、出来高、価格/移動平均などに対応します。"], ["Telegramに届かないのはなぜ？", "Telegram連携とアラートの有効状態を確認。ANDは同じ銘柄ですべての条件が必要です。繰り返し設定とプランの通知上限も適用されます。"]]
+    }
+  },
+  "zh": {
+    "volume-spike-alerts": {
+      "link": "币安成交量激增提醒", "title": "如何设置币安成交量激增提醒 | MarketAlert", "h1": "币安币种成交量激增时，如何收到提醒？",
+      "description": "自选时间周期、成交量均值和倍数，设置币安成交量提醒。通过语音或AI聊天创建，并在Telegram接收通知。",
+      "intro": "无需不断刷新成交量排行榜，直接设定自己的阈值。MarketAlert扫描所选币安市场的币种，当K线成交量超过均值的指定倍数时通知你。",
+      "prompt": "扫描币安Spot USDT成交量前100的币种。15分钟K线成交量超过20周期成交量均值的3倍时，通过Telegram通知我一次。",
+      "caption": "条件示例 · 非实时市场数据。",
+      "steps": [["指定市场和范围", "选择Spot或Futures、USDT或USDC，以及单币或全部币种范围。"], ["定义成交量条件", "示例采用15m、SMA(20)和3倍。可根据需要调整。"], ["说出指令或确认聊天草稿", "用语音说出指令，或输入AI聊天。文字聊天中先检查并确认草稿。"], ["检查通知渠道和重复设置", "在应用内绑定Telegram，确认范围、通知渠道和仅一次或重复提醒。"]],
+      "details": [["3倍成交量是什么意思？", "将K线成交量与选定的SMA成交量均值比较。若均值为100单位，成交量超过300就满足示例条件。这不代表价格上涨3%。"], ["放量不等于涨价", "价格下跌时成交量也可能增加。可以添加价格高于EMA等条件。使用AND时，同一币种必须同时满足两个条件。"], ["扫描哪些币种？", "扫描所选币安市场符合条件的USDT/USDC币种，排除稳定币。前50/100/200或全部币种的可用范围受套餐限制。"]],
+      "faq": [["是在K线收盘后判断吗？", "是。成交量指标使用所选周期已收盘的K线，不是在未收盘K线内触发的成交量激增通知。"], ["一个提醒能覆盖全部币种吗？", "全部币种范围将同一规则应用到符合条件的币种。Plus最多支持前100，Pro支持全部符合条件的币种。"], ["这是交易信号吗？", "它报告你设定的成交量条件已满足，不下单，也不保证价格方向或收益。"]]
+    },
+    "multi-condition-alerts": {
+      "link": "RSI + EMA组合提醒", "title": "无需编程，将RSI和EMA组合成一个提醒 | MarketAlert", "h1": "RSI和EMA条件同时满足时，如何收到提醒？",
+      "description": "将RSI和价格/EMA条件组合成一个加密货币提醒。无需编程，语音设置，扫描币安币种并通过Telegram接收通知。",
+      "intro": "无需分别盯着RSI提醒和价格提醒。在同一个提醒中用AND或OR组合条件，再通过语音或AI文字聊天创建。",
+      "prompt": "扫描币安Spot USDT成交量前100的币种。1小时RSI低于30且价格高于EMA20时，通过Telegram通知我一次。",
+      "caption": "应用内示例 · 同时显示用户消息、两个条件及通知渠道。",
+      "steps": [["描述两个条件", "说明市场、币种范围、时间周期、RSI阈值和EMA周期。"], ["选择组合逻辑", "两个都需要时用AND，满足一个即可时用OR。"], ["说出指令或确认草稿", "使用语音助手或AI聊天。文字聊天中先检查草稿，再创建提醒。"], ["检查结果和Telegram渠道", "确认RSI(14) < 30、价格 > EMA(20)、1h、前100币种和Telegram。"]],
+      "details": [["AND与OR有何区别？", "使用AND时，即使RSI为28，价格低于EMA20仍不满足组合。RSI为28且价格高于EMA20才满足。OR只需一个条件。"], ["按每个币种组合条件", "不会把BTC的RSI与ETH的EMA条件组合。同一个币种必须满足两个条件，AND组合才成立。"], ["高于EMA不等于穿越EMA", "示例要求价格高于EMA20，不等待新的穿越。RSI和EMA采用已收盘K线，也不定义先后发生的事件链。"]],
+      "faq": [["需要代码或Pine Script吗？", "不需要。可通过语音、AI文字聊天或提醒表单组合支持的条件。"], ["能添加两个以上的条件吗？", "Plus每个提醒最多3个条件，Pro最多5个，可使用RSI、成交量、价格/均线等支持的类型。"], ["为什么没收到Telegram通知？", "检查Telegram绑定和提醒启用状态。AND要求同一币种满足全部条件；重复设置及套餐通知上限也适用。"]]
+    }
+  },
+  "hi": {
+    "volume-spike-alerts": {
+      "link": "Binance वॉल्यूम स्पाइक अलर्ट", "title": "Binance वॉल्यूम स्पाइक अलर्ट कैसे लगाएँ | MarketAlert", "h1": "Binance पर किसी कॉइन का वॉल्यूम बढ़ने की सूचना कैसे पाएँ?",
+      "description": "अपनी समयावधि, औसत और गुणक के साथ Binance वॉल्यूम अलर्ट लगाएँ। बोलकर या AI चैट से बनाएँ और Telegram पर सूचना पाएँ।",
+      "intro": "वॉल्यूम की सूची बार-बार देखने के बजाय अपनी सीमा तय करें। MarketAlert चुने गए Binance बाज़ार के कॉइन स्कैन करता है और कैंडल वॉल्यूम औसत के तय गुणक से अधिक होने पर सूचना देता है।",
+      "prompt": "Binance Spot USDT पर वॉल्यूम के हिसाब से शीर्ष 100 कॉइन स्कैन करो। 15 मिनट की कैंडल का वॉल्यूम 20 अवधि के औसत से 3 गुना अधिक होने पर Telegram पर एक बार बताओ।",
+      "caption": "शर्त का उदाहरण · यह लाइव बाज़ार डेटा नहीं है।",
+      "steps": [["बाज़ार और दायरा बताएँ", "Spot या Futures, USDT या USDC और एक कॉइन या सभी कॉइन का दायरा चुनें।"], ["वॉल्यूम की शर्त तय करें", "उदाहरण में 15m, SMA(20) और गुणक 3 है। इन्हें बदल सकते हैं।"], ["बोलें या चैट ड्राफ़्ट स्वीकारें", "आदेश बोलें या AI चैट में लिखें। लिखित चैट में ड्राफ़्ट जाँचकर स्वीकार करें।"], ["चैनल और दोहराव जाँचें", "ऐप से Telegram जोड़ें। दायरा, चैनल और एक बार या बार-बार सूचना का विकल्प जाँचें।"]],
+      "details": [["3 गुना वॉल्यूम का मतलब क्या है?", "कैंडल वॉल्यूम की तुलना चुने हुए SMA वॉल्यूम औसत से होती है। औसत 100 इकाई हो तो 300 से अधिक वॉल्यूम उदाहरण की शर्त पूरी करता है। इसका मतलब कीमत में 3% वृद्धि नहीं है।"], ["वॉल्यूम बढ़ना कीमत बढ़ना नहीं है", "कीमत गिरते समय भी वॉल्यूम बढ़ सकता है। कीमत EMA से ऊपर जैसी दूसरी शर्त जोड़ें। AND में दोनों शर्तें उसी कॉइन पर पूरी होनी चाहिए।"], ["किन कॉइन को स्कैन किया जाता है?", "चुने गए Binance बाज़ार के पात्र USDT/USDC कॉइन, स्टेबलकॉइन छोड़कर। शीर्ष 50/100/200 या सभी का विकल्प प्लान पर निर्भर है।"]],
+      "faq": [["क्या जाँच कैंडल बंद होने पर होती है?", "हाँ। वॉल्यूम इंडिकेटर चुनी अवधि की बंद कैंडल का उपयोग करता है, खुली कैंडल के बीच के स्पाइक की सूचना नहीं देता।"], ["क्या एक अलर्ट सभी कॉइन देख सकता है?", "सभी कॉइन के दायरे में एक नियम पात्र कॉइन पर लागू होता है। Plus अधिकतम शीर्ष 100 और Pro सभी पात्र कॉइन का समर्थन करता है।"], ["क्या यह ट्रेडिंग सिग्नल है?", "यह आपकी वॉल्यूम शर्त पूरी होने की सूचना है। यह ऑर्डर नहीं लगाता और कीमत की दिशा या लाभ की गारंटी नहीं देता।"]]
+    },
+    "multi-condition-alerts": {
+      "link": "RSI + EMA संयुक्त अलर्ट", "title": "बिना कोड RSI और EMA का संयुक्त अलर्ट | MarketAlert", "h1": "RSI और EMA की दोनों शर्तें मिलने पर अलर्ट कैसे पाएँ?",
+      "description": "RSI और कीमत/EMA को एक क्रिप्टो अलर्ट में जोड़ें। बिना कोड बोलकर बनाएँ, Binance कॉइन स्कैन करें और Telegram पर सूचना पाएँ।",
+      "intro": "RSI और कीमत के अलग-अलग अलर्ट देखने की ज़रूरत नहीं। AND या OR से शर्तें जोड़ें और बोलकर या AI चैट में लिखकर अलर्ट बनाएँ।",
+      "prompt": "Binance Spot USDT पर वॉल्यूम के हिसाब से शीर्ष 100 कॉइन स्कैन करो। घंटे का RSI 30 से नीचे और कीमत EMA20 से ऊपर हो तो Telegram पर एक बार बताओ।",
+      "caption": "ऐप का उदाहरण · उपयोगकर्ता का संदेश, दोनों शर्तें और सूचना चैनल साथ।",
+      "steps": [["दोनों शर्तें बताएँ", "बाज़ार, कॉइन का दायरा, समयावधि, RSI सीमा और EMA अवधि बताएँ।"], ["जोड़ने का तरीका चुनें", "दोनों ज़रूरी हों तो AND, कोई एक काफ़ी हो तो OR चुनें।"], ["बोलें या ड्राफ़्ट स्वीकारें", "वॉइस असिस्टेंट या AI चैट इस्तेमाल करें। लिखित चैट में ड्राफ़्ट जाँचकर अलर्ट बनाएँ।"], ["नतीजा और Telegram जाँचें", "RSI(14) < 30, कीमत > EMA(20), 1h, शीर्ष 100 और Telegram की पुष्टि करें।"]],
+      "details": [["AND और OR का अंतर", "AND में RSI 28 होना काफ़ी नहीं यदि कीमत EMA20 से नीचे है। RSI 28 और कीमत EMA20 से ऊपर हो तो दोनों शर्तें पूरी हैं। OR में एक शर्त काफ़ी है।"], ["शर्तें हर कॉइन के लिए जुड़ती हैं", "BTC का RSI और ETH की EMA शर्त नहीं जोड़ी जाती। AND के लिए उसी कॉइन को दोनों शर्तें पूरी करनी होती हैं।"], ["EMA से ऊपर होना क्रॉसओवर नहीं है", "उदाहरण कीमत को EMA20 से ऊपर माँगता है, नए क्रॉसओवर का इंतज़ार नहीं करता। RSI और EMA बंद कैंडल लेते हैं। यह घटनाओं का क्रम नहीं बनाता।"]],
+      "faq": [["क्या कोड या Pine Script चाहिए?", "नहीं। समर्थित शर्तें बोलकर, AI चैट या अलर्ट फ़ॉर्म में जोड़ सकते हैं।"], ["दो से अधिक शर्तें जोड़ सकते हैं?", "Plus प्रति अलर्ट 3 और Pro 5 शर्तों तक देता है, जिनमें RSI, वॉल्यूम और कीमत/औसत शामिल हैं।"], ["Telegram पर सूचना क्यों नहीं आई?", "Telegram जुड़ा हो और अलर्ट चालू हो। AND में सभी शर्तें उसी कॉइन पर चाहिए। दोहराव सेटिंग और प्लान की सूचना सीमा भी लागू हैं।"]]
+    }
+  },
+  "ar": {
+    "volume-spike-alerts": {
+      "link": "تنبيهات حجم التداول في Binance", "title": "كيفية إعداد تنبيه ارتفاع حجم التداول في Binance | MarketAlert", "h1": "كيف أتلقى تنبيهًا عند ارتفاع حجم تداول العملات في Binance؟",
+      "description": "اضبط تنبيه حجم تداول Binance بالفاصل الزمني والمتوسط والمضاعف الذي تختاره. أنشئه بالصوت أو محادثة الذكاء الاصطناعي وتلقَّ إشعار Telegram.",
+      "intro": "حدّد عتبتك بدل تحديث قوائم أحجام التداول باستمرار. يفحص MarketAlert عملات سوق Binance الذي تختاره ويُشعرك عندما يتجاوز حجم الشمعة المضاعف المحدد لمتوسطه.",
+      "prompt": "راقب أعلى 100 عملة من حيث الحجم في Binance Spot USDT. أبلغني مرة واحدة عبر Telegram عندما يتجاوز حجم شمعة 15 دقيقة ثلاثة أضعاف متوسط الحجم لـ20 فترة.",
+      "caption": "مثال توضيحي للشرط · ليست بيانات سوق مباشرة.",
+      "steps": [["حدّد السوق والنطاق", "اختر Spot أو Futures وUSDT أو USDC، وعملة واحدة أو نطاق جميع العملات."], ["حدّد شرط حجم التداول", "يستخدم المثال 15m وSMA(20) ومضاعفًا قدره 3. عدّلها حسب حاجتك."], ["تحدث أو وافق على مسودة المحادثة", "قل الأمر أو اكتبه في محادثة الذكاء الاصطناعي. في المحادثة النصية راجع المسودة ووافق عليها."], ["تحقق من القناة والتكرار", "اربط Telegram من التطبيق وتحقق من النطاق والقناة والتنبيه لمرة واحدة أو المتكرر."]],
+      "details": [["ما معنى ثلاثة أضعاف الحجم؟", "يُقارن حجم الشمعة بمتوسط حجم SMA المحدد. إذا كان المتوسط 100 وحدة، فحجم يتجاوز 300 يحقق شرط المثال. هذا لا يعني ارتفاع السعر بنسبة 3٪."], ["ارتفاع الحجم لا يعني ارتفاع السعر", "قد يزداد الحجم أثناء هبوط السعر. أضف مثلًا شرط السعر فوق EMA. عند اختيار AND يجب تحقق الشرطين للعملة نفسها."], ["ما العملات التي يشملها الفحص؟", "عملات USDT/USDC المؤهلة في سوق Binance المختار، باستثناء العملات المستقرة. خيارات أعلى 50/100/200 أو الجميع تخضع للخطة."]],
+      "faq": [["هل يُقيَّم الشرط عند إغلاق الشمعة؟", "نعم. يستخدم مؤشر الحجم الشموع المغلقة للفاصل المختار، ولا يُرسل تنبيه قفزة حجم أثناء شمعة مفتوحة."], ["هل يكفي تنبيه واحد لجميع العملات؟", "يطبّق نطاق جميع العملات التعريف نفسه على العملات المؤهلة. تدعم Plus حتى أعلى 100، وتدعم Pro جميع العملات المؤهلة."], ["هل هذه إشارة تداول؟", "إنه إشعار بتحقق شرط الحجم الذي وضعته. لا يفتح أوامر ولا يضمن اتجاه السعر أو الأرباح."]]
+    },
+    "multi-condition-alerts": {
+      "link": "تنبيه RSI + EMA مركّب", "title": "دمج RSI وEMA في تنبيه دون برمجة | MarketAlert", "h1": "كيف أتلقى تنبيهًا عند تحقق شرطي RSI وEMA معًا؟",
+      "description": "اجمع RSI والسعر/EMA في تنبيه عملات مشفرة واحد. أنشئه صوتيًا دون برمجة، وافحص عملات Binance وتلقَّ الإشعارات عبر Telegram.",
+      "intro": "لا تحتاج إلى متابعة تنبيه RSI وتنبيه سعر منفصلين. اجمع الشروط في تنبيه واحد باستخدام AND أو OR وأنشئه بالكلام أو بالكتابة في محادثة الذكاء الاصطناعي.",
+      "prompt": "راقب أعلى 100 عملة من حيث الحجم في Binance Spot USDT. أبلغني مرة واحدة عبر Telegram عندما يكون RSI للساعة أقل من 30 والسعر فوق EMA20.",
+      "caption": "مثال من التطبيق · رسالة المستخدم والشرطان وقناة الإشعار معًا.",
+      "steps": [["اشرح الشرطين", "حدّد السوق ونطاق العملات والفاصل الزمني وعتبة RSI وفترة EMA."], ["اختر طريقة الدمج", "استخدم AND إذا كان الشرطان مطلوبين، وOR إذا كان أحدهما يكفي."], ["تحدث أو وافق على المسودة", "استخدم المساعد الصوتي أو محادثة الذكاء الاصطناعي. نصيًا، راجع المسودة ثم أنشئ التنبيه."], ["راجع النتيجة وTelegram", "تحقق من RSI(14) < 30 والسعر > EMA(20) و1h وأعلى 100 وقناة Telegram."]],
+      "details": [["الفرق بين AND وOR", "مع AND لا يكفي RSI عند 28 إذا كان السعر تحت EMA20. RSI عند 28 والسعر فوق EMA20 يحققان الدمج. أما OR فيكفيه شرط واحد."], ["يُقيَّم الدمج لكل عملة", "لا يُدمج RSI الخاص بـBTC مع EMA الخاص بـETH. يجب على العملة نفسها تحقيق الشرطين في AND."], ["فوق EMA لا يعني تقاطع EMA", "يتطلب المثال سعرًا فوق EMA20 دون انتظار تقاطع جديد. يستخدم RSI وEMA شموعًا مغلقة. ولا يعرّف تسلسلًا للأحداث."]],
+      "faq": [["هل أحتاج إلى البرمجة أو Pine Script؟", "لا. ادمج الشروط المدعومة بالصوت أو محادثة الذكاء الاصطناعي أو نموذج التنبيه."], ["هل يمكن إضافة أكثر من شرطين؟", "تدعم Plus حتى 3 شروط للتنبيه وPro حتى 5، مثل RSI والحجم والسعر/المتوسط."], ["لماذا لم يصل إشعار Telegram؟", "تحقق من الربط وتفعيل التنبيه. يتطلب AND جميع الشروط للعملة نفسها. تُطبَّق أيضًا إعدادات التكرار وحدود إشعارات الخطة."]]
+    }
+  },
+  "en": {
+    "volume-spike-alerts": {
+      "link": "Binance volume spike alerts",
+      "title": "How to set Binance volume spike alerts | MarketAlert",
+      "h1": "How do I get alerts when Binance coin volume spikes?",
+      "description": "Set Binance volume spike alerts with your timeframe, volume average and multiplier. Create by voice or AI chat and receive Telegram notifications.",
+      "intro": "Set your own threshold instead of refreshing volume rankings. MarketAlert scans coins on your selected Binance market and notifies you when candle volume exceeds your chosen multiple of its volume average.",
+      "prompt": "Scan the top 100 coins by volume on Binance Spot USDT. Notify me once on Telegram when 15-minute candle volume exceeds 3 times its 20-period volume average.",
+      "caption": "Example condition · Not live market data.",
+      "steps": [["Specify the market and scope", "Choose Spot or Futures, USDT or USDC, and a single coin or the all-coins scope."], ["Define the volume condition", "This example uses 15m candles, a 20-period SMA and a 3× multiplier. Adjust these to your needs."], ["Speak or approve a chat draft", "Say the command or type it in AI chat. In text chat, review and approve the generated draft."], ["Check delivery and repeat settings", "Link Telegram from the app. Check the scope, notification channel and once/repeating preference."]],
+      "details": [["What does 3× volume mean?", "The condition compares candle volume with the selected SMA volume average. If the average is 100 units, volume above 300 meets this example’s threshold. It does not mean a 3% price increase."], ["More volume does not mean a higher price", "Volume can increase while price falls. Add another condition, such as price above an EMA. With AND, both conditions must hold for the same coin."], ["Which coins are scanned?", "Eligible USDT/USDC coins on the selected Binance market are scanned, excluding stablecoins. Top 50/100/200 or all-coins availability depends on the plan."]],
+      "faq": [["Are volume alerts evaluated at candle close?", "Yes. The volume indicator uses closed candles on your selected timeframe. This is not an intrabar volume spike notification."], ["Can one alert cover every coin?", "All-coins scope applies one definition across eligible coins. Plus supports up to the top 100; Pro supports all eligible coins."], ["Is this a trading signal?", "It reports that your own volume condition was met. It does not place orders or guarantee price direction or profit."]]
+    },
+    "multi-condition-alerts": {
+      "link": "Combined RSI + EMA alerts",
+      "title": "RSI and EMA alerts together, without coding | MarketAlert",
+      "h1": "How do I get an alert when RSI and EMA conditions both match?",
+      "description": "Combine RSI and price/EMA conditions in one crypto alert. Set it by voice without code or forms, scan Binance coins and receive Telegram notifications.",
+      "intro": "You do not have to monitor a separate RSI alert and price alert. Combine your conditions in one alert with AND or OR, then create it by speaking or typing in AI chat.",
+      "prompt": "Scan the top 100 coins by volume on Binance Spot USDT. Notify me once on Telegram when hourly RSI is below 30 and price is above EMA20.",
+      "caption": "In-app example · User message, both conditions and delivery channel together.",
+      "steps": [["Describe both conditions in one sentence", "Specify the market, coin scope, timeframe, RSI threshold and EMA period."], ["Choose how conditions combine", "Use AND when both are required, or OR when either condition is enough."], ["Speak or approve the draft", "Tell the voice assistant or type in AI chat. In text chat, review the draft and create the alert."], ["Check the result and Telegram channel", "Verify RSI(14) < 30, price > EMA(20), 1h, top 100 coins and Telegram delivery."]],
+      "details": [["AND versus OR", "With AND, RSI at 28 is not enough if price is below EMA20. RSI at 28 with price above EMA20 satisfies the combination. OR needs only one condition."], ["How do conditions combine across coins?", "Conditions are evaluated together for each coin. BTC’s RSI is not combined with ETH’s EMA condition. One coin must satisfy both for the AND combination to match."], ["Above an EMA is not an EMA crossover", "This example requires price above EMA20, without waiting for a new crossing. RSI and EMA use closed candles. This does not define a sequence of events."]],
+      "faq": [["Do I need code or Pine Script?", "No. Combine supported conditions in MarketAlert by voice, AI text chat or the alert form."], ["Can I add more than two conditions?", "Plus supports up to 3 conditions per alert and Pro up to 5. Use RSI, volume, price/moving-average and other supported condition types."], ["Why might I receive no Telegram notification?", "Check that Telegram is linked and the alert is active. AND requires every condition on the same coin; repeat preferences and plan notification limits also apply."]]
+    }
+  }
+}

@@ -4,6 +4,7 @@ import content from '../../../i18n/content.json';
 import guides from '../../../i18n/rsi-alerts.json';
 import walkthroughs from '../../../i18n/rsi-walkthrough.json';
 import screenSizes from '../../../i18n/rsi-screens.json';
+import alertGuides from '../../../i18n/alert-guides.json';
 import { GA_ID, LOCALES, SITE, legalUrl } from '../../../config';
 
 export function getStaticPaths() {
@@ -93,6 +94,7 @@ const jsonLd = [
     <section class="guide-section text-section"><h2>{g.combineTitle}</h2><p>{g.combine}</p><div class="condition-example" dir="ltr"><span>RSI(14) &lt; 30</span><b>AND</b><span>VOL &gt; 3 × SMA(20)</span></div></section>
     <section id="plans" class="guide-section"><h2>{g.plansTitle}</h2><div class="guide-plans">{g.plans.map((p: string[]) => <article><h3>{p[0]}</h3><p>{p[1]}</p></article>)}</div><a class="text-link" href={`/${code}/#plans`}>{g.plansLink} <span aria-hidden="true">↗</span></a></section>
     <section id="faq" class="guide-section"><h2>{g.faqTitle}</h2><div class="faq">{g.faq.map((q: string[], i: number) => <details open={i === 0}><summary>{q[0]}</summary><p>{q[1]}</p></details>)}</div></section>
+    <nav class="related-guides" aria-label={t.nav[0]}>{Object.entries((alertGuides as any)[code]).map(([slug, page]: [string, any]) => <a class="text-link" href={`/${code}/features/${slug}/`}>{page.link} <span aria-hidden="true">↗</span></a>)}</nav>
     <section class="guide-cta"><h2>{g.ctaTitle}</h2><p>{g.cta}</p><a class="btn" href={`/${code}/#download`} data-ev="cta_click">{g.home} <span aria-hidden="true">↗</span></a></section>
   </main>
   <footer class="ft"><div class="ftop"><a class="logo" href={`/${code}/`}><img src="/icons/logo-96.png" alt="" width="32" height="32" /><b>MarketAlert</b></a><nav class="legal"><a href={legalUrl('privacy', code)}>{t.legal[0]}</a><a href={legalUrl('terms', code)}>{t.legal[1]}</a>{GA_ID && <button type="button" class="lnk" data-consent-open>{t.consent.prefs}</button>}</nav></div><nav class="langs" aria-label={t.ui.lang}>{LOCALES.map(l => <a href={`/${l.code}/features/rsi-alerts/`} hreflang={l.hreflang} lang={l.hreflang} aria-current={l.code === code ? 'page' : undefined} data-ev="language_switch" data-to={l.code}>{l.name}</a>)}</nav><p class="disc">{t.disclaimer}</p><p class="copy">© 2026 MarketAlert · marketalertapp.com</p></footer>
@@ -133,6 +135,7 @@ const jsonLd = [
 </Base>
 
 <style>
+  .related-guides { display: flex; flex-wrap: wrap; gap: 12px 32px; padding-top: 16px; }
   .rsi-guide { max-width: 1200px; padding: 28px 20px 0; margin-inline: auto; }
   .breadcrumbs { font-size: 13px; color: var(--mut); display: flex; flex-wrap: wrap; gap: 8px; }
   .breadcrumbs a:hover, .text-link:hover { text-decoration: underline; }
