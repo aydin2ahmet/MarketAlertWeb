@@ -4,8 +4,13 @@ import '@fontsource-variable/space-grotesk';
 import '@fontsource-variable/jetbrains-mono';
 import '@fontsource-variable/noto-sans-arabic';
 import '@fontsource-variable/noto-sans-devanagari';
+import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import interCyrillic from '@fontsource-variable/inter/files/inter-cyrillic-wght-normal.woff2?url';
+import headingLatin from '@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2?url';
+import arabicFont from '@fontsource-variable/noto-sans-arabic/files/noto-sans-arabic-arabic-wght-normal.woff2?url';
+import hindiFont from '@fontsource-variable/noto-sans-devanagari/files/noto-sans-devanagari-devanagari-wght-normal.woff2?url';
 import '../styles/site.css';
-import { GA_ID, LOCALES, SITE } from '../config';
+import { GA_ID, LOCALES, SITE, shotSources } from '../config';
 import content from '../i18n/content.json';
 
 interface Props {
@@ -18,20 +23,69 @@ interface Props {
   jsonLd: object[];
   /** Dil alternatifleri; verilmezse ana sayfanın 11 dili. */
   alternates?: { hreflang: string; href: string }[];
+  autoLocale?: boolean;
+  canonicalPath?: string;
 }
-const { lang, dir, title, description, path, ogImage, jsonLd, alternates } = Astro.props;
+const { lang, dir, title, description, path, ogImage, jsonLd, alternates, autoLocale = false, canonicalPath } = Astro.props;
 const alts = alternates ?? LOCALES.map(l => ({ hreflang: l.hreflang, href: `/${l.code}/` }));
-const canonical = SITE + path;
+const canonical = SITE + (canonicalPath || path);
 const ogLocale = lang.replace('-', '_');
 const cs = ((content as any)[lang.toLowerCase()] ?? (content as any).en).consent;
+const code = lang.toLowerCase();
+const fonts = code === 'ar' ? [arabicFont] : code === 'hi' ? [hindiFont, interLatin] : code === 'ru' ? [interCyrillic, interLatin] : [interLatin, headingLatin];
+const isLanding = path === '/' || LOCALES.some(l => path === `/${l.code}/`);
+const heroImages = isLanding ? Object.fromEntries(['light', 'dark'].map(theme => [theme, shotSources(`/shots/${code}/${theme}/hero-voice.webp?v=${code === 'ar' ? '3x-ar2' : '3x'}`)])) : null;
 ---
 <!doctype html>
 <html lang={lang} dir={dir}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline define:vars={{ autoLocale, codes: LOCALES.map(l => l.code), fonts, heroImages }}>
+      (function () {
+        var savedTheme = null;
+        try { savedTheme = localStorage.getItem('theme'); } catch (e) {}
+        if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
+        if (autoLocale) {
+          var pick = null;
+          try { pick = localStorage.getItem('lang'); } catch (e) {}
+          if (codes.indexOf(pick) < 0) {
+            pick = null;
+            var languages = navigator.languages || [navigator.language];
+            for (var i = 0; i < languages.length && !pick; i++) {
+              var base = String(languages[i]).toLowerCase().split('-')[0];
+              var candidate = base === 'pt' ? 'pt-br' : base;
+              if (codes.indexOf(candidate) >= 0) pick = candidate;
+            }
+          }
+          // The root already contains English; other languages redirect before loading assets.
+          if (pick && pick !== 'en') {
+            window.maRedirecting = true;
+            location.replace('/' + pick + '/' + location.search + location.hash);
+            return;
+          }
+        }
+        fonts.forEach(function (href) {
+          var link = document.createElement('link');
+          link.rel = 'preload'; link.as = 'font'; link.type = 'font/woff2';
+          link.crossOrigin = 'anonymous'; link.href = href;
+          document.head.appendChild(link);
+        });
+        if (heroImages) {
+          var dark = savedTheme ? savedTheme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+          var image = heroImages[dark ? 'dark' : 'light'];
+          var link = document.createElement('link');
+          link.rel = 'preload'; link.as = 'image'; link.href = image.src;
+          link.imageSrcset = image.srcset;
+          link.imageSizes = '(max-width:860px) 196px, 238px';
+          link.fetchPriority = 'high';
+          document.head.appendChild(link);
+        }
+      })();
+    </script>
     {GA_ID && (
       <script is:inline define:vars={{ GA_ID, PAGE_LANG: lang }}>
+        if (!window.maRedirecting) {
         // Google etiketi (gtag.js) izin moduyla: ziyaretçi kabul edene kadar çerez yazılmaz, reklam izinleri hep kapalı.
         window.dataLayer = window.dataLayer || [];
         window.gtag = function () { window.dataLayer.push(arguments); };
@@ -42,9 +96,28 @@ const cs = ((content as any)[lang.toLowerCase()] ?? (content as any).en).consent
         window.gtag('config', GA_ID, { page_language: PAGE_LANG });
         // Sayfa içinden olay göndermek için.
         window.maTrack = function (name, params) { window.gtag('event', name, Object.assign({ page_language: PAGE_LANG }, params || {})); };
+        var analyticsStarted = false;
+        function loadAnalytics() {
+          if (analyticsStarted) return;
+          analyticsStarted = true;
+          var tag = document.createElement('script');
+          tag.async = true;
+          tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+          tag.fetchPriority = 'low';
+          document.head.appendChild(tag);
+        }
+        // Keep queued events and consent; load the tag after the page's first resources.
+        function scheduleAnalytics() {
+          if ('requestIdleCallback' in window) requestIdleCallback(loadAnalytics, { timeout: 1500 });
+          else loadAnalytics();
+        }
+        if (document.readyState === 'complete') scheduleAnalytics();
+        else window.addEventListener('load', scheduleAnalytics, { once: true });
+        window.addEventListener('pointerdown', loadAnalytics, { once: true, passive: true });
+        window.addEventListener('keydown', loadAnalytics, { once: true });
+        }
       </script>
     )}
-    {GA_ID && <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>}
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -67,14 +140,6 @@ const cs = ((content as any)[lang.toLowerCase()] ?? (content as any).en).consent
     <meta property="og:locale" content={ogLocale} />
     <meta name="twitter:card" content="summary_large_image" />
     {jsonLd.map(j => <script type="application/ld+json" set:html={JSON.stringify(j)} />)}
-    <script is:inline>
-      (function () {
-        try {
-          var t = localStorage.getItem('theme');
-          if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
-        } catch (e) {}
-      })();
-    </script>
   </head>
   <body>
     <slot />
@@ -83,6 +148,10 @@ const cs = ((content as any)[lang.toLowerCase()] ?? (content as any).en).consent
       const screenshots = document.querySelectorAll<HTMLImageElement>('img[data-sharp]');
       if (screenshots.length) {
         const nearby = new Set<HTMLImageElement>();
+        const resize = new ResizeObserver(entries => entries.forEach(entry => {
+          const image = entry.target as HTMLImageElement;
+          if (image.dataset.sharpState === 'ready' && image.clientWidth) image.sizes = `${image.clientWidth}px`;
+        }));
         const upgrade = (image: HTMLImageElement) => {
           const src = image.dataset.sharp;
           if (!src || image.dataset.sharpState || !image.complete || !image.naturalWidth) return;
@@ -94,13 +163,18 @@ const cs = ((content as any)[lang.toLowerCase()] ?? (content as any).en).consent
           requestAnimationFrame(() => requestAnimationFrame(async () => {
             const sharp = new Image();
             sharp.decoding = 'async';
-            sharp.fetchPriority = image.fetchPriority === 'high' ? 'high' : 'low';
+            sharp.fetchPriority = image.fetchPriority === 'high' || image.closest('.h-v .front') ? 'high' : 'low';
+            sharp.sizes = `${image.clientWidth}px`;
+            sharp.srcset = image.dataset.sharpSrcset || '';
             sharp.src = src;
             try {
               await sharp.decode();
+              image.sizes = sharp.sizes;
+              image.srcset = sharp.srcset;
               image.src = src;
               delete image.dataset.sharp;
               image.dataset.sharpState = 'ready';
+              resize.observe(image);
             } catch (error) {
               // Keep the preview visible if the full image cannot be fetched.
               image.dataset.sharpState = 'error';
@@ -130,7 +204,7 @@ const cs = ((content as any)[lang.toLowerCase()] ?? (content as any).en).consent
       }
     </script>
     {GA_ID && (
-      <div class="consent" id="consent" role="dialog" aria-live="polite" hidden>
+      <div class="consent" id="consent" role="dialog" aria-label={cs.prefs} aria-live="polite" hidden>
         <p>{cs.msg}</p>
         <div><button type="button" class="ghost" data-consent="denied">{cs.no}</button><button type="button" class="dl" data-consent="granted">{cs.yes}</button></div>
       </div>

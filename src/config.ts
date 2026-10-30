@@ -30,6 +30,13 @@ export const STORE = {
 /** Google Analytics 4 ölçüm kimliği (G-XXXXXXXXXX). Boşken Analytics ve çerez bandı yüklenmez. */
 export const GA_ID = 'G-8QXDNRJWRG';
 
+/** Önizleme ve ekranın piksel yoğunluğuna göre seçilecek net görsel adresleri. */
+export const shotSources = (src: string) => ({
+  preview: src.replace('.webp', '.preview.webp'),
+  src: src.replace('.webp', '.sharp-full.webp'),
+  srcset: ['360', '720', 'full'].map(size => `${src.replace('.webp', `.sharp-${size}.webp`)} ${size === 'full' ? (src.includes('/rsi/') ? 1170 : 1080) : size}w`).join(', '),
+});
+
 /** Yasal belgeler bu sitede: /xx/legal/privacy/ ve /xx/legal/terms/. */
 export const legalUrl = (doc: 'privacy' | 'terms', code: string) => `/${code}/legal/${doc}/`;
 

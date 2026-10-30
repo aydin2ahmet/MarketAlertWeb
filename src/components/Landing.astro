@@ -1,5 +1,5 @@
 ---
-import { GA_ID, LOCALES, STORE, legalUrl } from '../config';
+import { GA_ID, LOCALES, STORE, legalUrl, shotSources } from '../config';
 import alertGuides from '../i18n/alert-guides.json';
 
 interface Props { t: any; code: string; appLocale: string }
@@ -31,8 +31,10 @@ const shot = (k: string, alt: string, eager = false, tall = false) => {
   const version = code === 'ar' ? '3x-ar2' : k === 'ch' || k === 'log' ? '3x-text2' : '3x';
   return ['light', 'dark'].map((theme, i) => {
     const src = `/shots/${code}/${theme}/${k}.webp?v=${version}`;
+    const sources = shotSources(src);
+    const sizes = tall ? (k === 'hero-voice' ? '(max-width:860px) 196px, 238px' : '(max-width:860px) 170px, 220px') : '(max-width:860px) 224px, 282px';
     const attrs = `class="sh-${i === 0 ? 'l' : 'd'}" alt="${i === 0 ? alt : ''}" width="${tall ? 360 : 600}" height="${tall ? 940 : 1268}" ${eager && i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"`;
-    return `<img ${attrs} src="${src.replace('.webp', '.preview.webp')}" data-sharp="${src}"><noscript><img ${attrs} src="${src}"></noscript>`;
+    return `<img ${attrs} src="${sources.preview}" data-sharp="${sources.src}" data-sharp-srcset="${sources.srcset}"><noscript><img ${attrs} src="${sources.src}" srcset="${sources.srcset}" sizes="${sizes}"></noscript>`;
   }).join('');
 };
 const APPLE = '<svg viewBox="0 0 24 24" class="sbi" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7-1.3-.1-2.5.8-3.2.8-.7 0-1.7-.7-2.7-.7-1.4 0-2.7.8-3.5 2.1-1.5 2.6-.4 6.3 1.1 8.4.7 1 1.5 2.2 2.6 2.1 1-.1 1.5-.7 2.7-.7 1.3 0 1.6.7 2.7.7 1.1 0 1.9-1 2.5-2 .8-1.2 1.1-2.3 1.2-2.4-.1 0-2.2-.8-2.2-3.4zM14.3 6.4c.6-.7 1-1.7.9-2.6-.8 0-1.8.6-2.4 1.3-.5.6-1 1.6-.9 2.6.9 0 1.9-.6 2.4-1.3z"/></svg>';
@@ -201,7 +203,7 @@ const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : 
   const track = (name: string, params?: Record<string, string>) => (window as any).maTrack?.(name, params);
   const root = document.documentElement;
   // Ana adres bir sonraki ziyarette bu dili açsın.
-  try { localStorage.setItem('lang', location.pathname.split('/')[1]); } catch (e) { /* depolama kapalı olabilir */ }
+  try { localStorage.setItem('lang', location.pathname.split('/')[1] || 'en'); } catch (e) { /* depolama kapalı olabilir */ }
   document.getElementById('theme')?.addEventListener('click', () => {
     const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
     root.dataset.theme = dark ? 'light' : 'dark';

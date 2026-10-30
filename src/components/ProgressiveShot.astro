@@ -1,10 +1,11 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
+import { shotSources } from '../config';
 
 interface Props extends HTMLAttributes<'img'> { src: string; alt: string }
 const { src, ...props } = Astro.props;
-const preview = src.replace('.webp', '.preview.webp');
+const sources = shotSources(src);
 const style = `aspect-ratio:${props.width}/${props.height};${props.style || ''}`;
 ---
-<img {...props} style={style} src={preview} data-sharp={src} />
-<noscript><img {...props} style={style} src={src} /></noscript>
+<img {...props} style={style} src={sources.preview} data-sharp={sources.src} data-sharp-srcset={sources.srcset} />
+<noscript><img {...props} style={style} src={sources.src} srcset={sources.srcset} sizes="(max-width:700px) 90vw, 390px" /></noscript>

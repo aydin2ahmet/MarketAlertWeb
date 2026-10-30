@@ -6,7 +6,7 @@ import { LOCALES } from './src/config.ts';
 export default defineConfig({
   site: 'https://www.marketalertapp.com',
   trailingSlash: 'always',
-  build: { format: 'directory' },
+  build: { format: 'directory', inlineStylesheets: 'always' },
   integrations: [
     sitemap({
       filter: page => new URL(page).pathname !== '/legal/',

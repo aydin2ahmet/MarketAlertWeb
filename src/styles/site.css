@@ -276,7 +276,7 @@ img { max-width: 100%; }
 .f1 { top: 28px; inset-inline-start: 0; }
 .f2 { top: auto; bottom: 94px; inset-inline-end: 0; color: var(--cat3); }
 .voice-badge .ic { width: 18px; height: 18px; color: var(--pri); }
-.f3 { bottom: 40px; inset-inline-start: 6%; color: var(--pri); }
+.f3 { bottom: 40px; inset-inline-start: 6%; color: var(--tx); }
 .sb.soon { opacity: 1; }
 .sb.soon small { color: var(--pri); text-transform: uppercase; font-size: 10px; letter-spacing: .06em; }
 
@@ -299,7 +299,7 @@ img { max-width: 100%; }
 .dots i { aspect-ratio: 1; border-radius: 50%; background: var(--bd); }
 .dots i.up { background: var(--up); box-shadow: 0 0 0 3px color-mix(in srgb, var(--up) 25%, transparent); animation: pulse 2.4s ease-in-out infinite; }
 .dots i.dn { background: #E5484D; box-shadow: 0 0 0 3px rgba(229, 72, 77, .22); }
-@keyframes pulse { 50% { box-shadow: 0 0 0 6px transparent; } }
+@keyframes pulse { 50% { opacity: .45; transform: scale(.75); } }
 
 /* Telefonda alt mağaza barı */
 .dlbar { display: none; }
