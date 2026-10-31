@@ -70,8 +70,8 @@ const jsonLd = [
               {desktopShots.map((kind, i) => <article class="scene-part">
                 <div class="scene-label"><span class="scene-number">{['01–02', '03', '04'][i]}</span><h3>{desktopTitles[i]}</h3><p>{w.short[i]}</p></div>
                 <figure>
-                  <ProgressiveShot class="sh-l" src={`/shots/${code}/light/rsi/${kind}.webp?v=${code === 'ar' ? '3x-ar2' : '3x'}`} alt={`${desktopTitles[i]} · ${w.alertTitle}`} width="390" height={sizes.light[kind]} loading="lazy" decoding="async" />
-                  <ProgressiveShot class="sh-d" src={`/shots/${code}/dark/rsi/${kind}.webp?v=${code === 'ar' ? '3x-ar2' : '3x'}`} alt={`${desktopTitles[i]} · ${w.alertTitle}`} width="390" height={sizes.dark[kind]} loading="lazy" decoding="async" />
+                  <ProgressiveShot class="sh-l" src={`/shots/${code}/light/rsi/${kind}.webp?v=${['voice-result', 'desktop-voice-result', 'chat-draft', 'desktop-chat-draft'].includes(kind) ? '3x-conditions2' : code === 'ar' ? '3x-ar2' : '3x'}`} alt={`${desktopTitles[i]} · ${w.alertTitle}`} width="390" height={sizes.light[kind]} loading="lazy" decoding="async" />
+                  <ProgressiveShot class="sh-d" src={`/shots/${code}/dark/rsi/${kind}.webp?v=${['voice-result', 'desktop-voice-result', 'chat-draft', 'desktop-chat-draft'].includes(kind) ? '3x-conditions2' : code === 'ar' ? '3x-ar2' : '3x'}`} alt={`${desktopTitles[i]} · ${w.alertTitle}`} width="390" height={sizes.dark[kind]} loading="lazy" decoding="async" />
                 </figure>
               </article>)}
               <svg class="scene-thread" viewBox="0 0 1100 650" fill="none" preserveAspectRatio="none" aria-hidden="true"><path class="thread-glow" d="M40 450 C160 650 330 640 400 340 S690 50 755 320 S940 650 1080 470" /><path d="M40 450 C160 650 330 640 400 340 S690 50 755 320 S940 650 1080 470" /><path class="thread-tip" d="M365 415 L390 387 L402 423 M718 239 L744 264 L752 230" /></svg>
@@ -81,8 +81,8 @@ const jsonLd = [
             {mobileShots.map((kind, i) => <li class="walk-card">
               <div class="walk-copy"><span class="walk-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><div><h3>{steps[i][0]}</h3><p>{steps[i][1]}</p></div></div>
               <figure class="walk-screen">
-                <ProgressiveShot class="sh-l" src={`/shots/${code}/light/rsi/${kind}.webp?v=${code === 'ar' ? '3x-ar2' : '3x'}`} alt={`${steps[i][0]} · ${w.alertTitle}`} width="390" height={sizes.light[kind]} loading="lazy" decoding="async" />
-                <ProgressiveShot class="sh-d" src={`/shots/${code}/dark/rsi/${kind}.webp?v=${code === 'ar' ? '3x-ar2' : '3x'}`} alt={`${steps[i][0]} · ${w.alertTitle}`} width="390" height={sizes.dark[kind]} loading="lazy" decoding="async" />
+                <ProgressiveShot class="sh-l" src={`/shots/${code}/light/rsi/${kind}.webp?v=${['voice-result', 'desktop-voice-result', 'chat-draft', 'desktop-chat-draft'].includes(kind) ? '3x-conditions2' : code === 'ar' ? '3x-ar2' : '3x'}`} alt={`${steps[i][0]} · ${w.alertTitle}`} width="390" height={sizes.light[kind]} loading="lazy" decoding="async" />
+                <ProgressiveShot class="sh-d" src={`/shots/${code}/dark/rsi/${kind}.webp?v=${['voice-result', 'desktop-voice-result', 'chat-draft', 'desktop-chat-draft'].includes(kind) ? '3x-conditions2' : code === 'ar' ? '3x-ar2' : '3x'}`} alt={`${steps[i][0]} · ${w.alertTitle}`} width="390" height={sizes.dark[kind]} loading="lazy" decoding="async" />
               </figure>
               <svg class="walk-arrow" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M8 16 C88 10 94 80 24 88" /><path d="M38 75 L23 88 L40 97" /></svg>
             </li>)}

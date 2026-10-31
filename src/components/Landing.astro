@@ -28,7 +28,7 @@ const TAPE = ['PRICE ≥ 70,000 USDT', 'RSI(14) < 30 · 1h', 'Δ +5% / 5m', 'EMA
 const n = t.f.length;
 const pad = (i: number) => String(i).padStart(2, '0');
 const shot = (k: string, alt: string, eager = false, tall = false) => {
-  const version = k === 'hero-voice' ? '3x-conditions2' : code === 'ar' ? '3x-ar2' : k === 'ch' || k === 'log' ? '3x-text2' : '3x';
+  const version = k === 'hero-voice' || k === 'ai' ? '3x-conditions2' : code === 'ar' ? '3x-ar2' : k === 'ch' || k === 'log' ? '3x-text2' : '3x';
   return ['light', 'dark'].map((theme, i) => {
     const src = `/shots/${code}/${theme}/${k}.webp?v=${version}`;
     const sources = shotSources(src);
