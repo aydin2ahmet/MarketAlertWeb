@@ -9,7 +9,7 @@ export default defineConfig({
   build: { format: 'directory', inlineStylesheets: 'always' },
   integrations: [
     sitemap({
-      filter: page => new URL(page).pathname !== '/legal/',
+      filter: page => !new URL(page).pathname.startsWith('/legal/'),
       i18n: {
         defaultLocale: 'x-default',
         locales: {
