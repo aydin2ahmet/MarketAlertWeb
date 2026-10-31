@@ -35,7 +35,7 @@ const code = lang.toLowerCase();
 const fonts = code === 'ar' ? [arabicFont] : code === 'hi' ? [hindiFont, interLatin] : code === 'ru' ? [interCyrillic, interLatin] : [interLatin, headingLatin];
 if (code === 'tr') fonts.push('/fonts/inter-tr.woff2', '/fonts/space-grotesk-tr.woff2');
 const isLanding = path === '/' || LOCALES.some(l => path === `/${l.code}/`);
-const heroImages = isLanding ? Object.fromEntries(['light', 'dark'].map(theme => [theme, shotSources(`/shots/${code}/${theme}/hero-voice.webp?v=${code === 'ar' ? '3x-ar2' : '3x'}`)])) : null;
+const heroImages = isLanding ? Object.fromEntries(['light', 'dark'].map(theme => [theme, shotSources(`/shots/${code}/${theme}/hero-voice.webp?v=3x-conditions2`)])) : null;
 const heroBackImages = isLanding ? Object.fromEntries(['light', 'dark'].map(theme => [theme, shotSources(`/shots/${code}/${theme}/hero-list.webp?v=${code === 'ar' ? '3x-ar2' : '3x'}`)])) : null;
 ---
 <!doctype html>
