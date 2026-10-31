@@ -16,6 +16,8 @@ const t = (content as any)[code];
 const g = (guides as any)[code][guide];
 const r = (rsiGuides as any)[code];
 const volume = guide === 'volume-spike-alerts';
+const resultKind = volume ? 'volume-result' : 'desktop-voice-result';
+const resultVersion = volume ? 'volume1' : '3x-conditions2';
 const setupTitle = ({ tr: 'Adım adım kurulum', en: 'Step-by-step setup', de: 'Schrittweise Einrichtung', fr: 'Configuration pas à pas', es: 'Configuración paso a paso', 'pt-br': 'Configuração passo a passo', ru: 'Пошаговая настройка', ja: '設定の手順', zh: '分步设置', hi: 'चरण-दर-चरण सेटअप', ar: 'الإعداد خطوة بخطوة' } as Record<string, string>)[code];
 const path = `/${code}/features/${guide}/`;
 const alternates = LOCALES.map(l => ({ hreflang: l.hreflang, href: `/${l.code}/features/${guide}/` }));
@@ -57,14 +59,10 @@ const jsonLd = [
         <p class="example-foot" dir="ltr">BINANCE SPOT · USDT · TOP 100 → TELEGRAM</p>
       </div>
       <figure>
-        {volume ? <div class="volume-example" role="img" aria-label={`${g.details[0][0]} · SMA(20): 100 · VOLUME: 340 > 300`}>
-          <div class="volume-value" dir="ltr">3.4× <span>VOLUME / SMA(20)</span></div>
-          <div class="bars" aria-hidden="true">{[21, 30, 24, 27, 20, 32, 23, 28, 26, 90].map((height, i) => <span style={`height:${height}%`} class:list={{ spike: i === 9 }} />)}</div>
-          <div class="volume-math" dir="ltr"><span>SMA(20) = 100</span><b>340 &gt; 3 × 100 ✓</b></div>
-        </div> : <div class="result-screen">
-          <ProgressiveShot class="sh-l" src={`/shots/${code}/light/rsi/desktop-voice-result.webp?v=${code === 'ar' ? '3x-ar2' : '3x'}`} alt={g.caption} width="390" height={(screenSizes as any)[code].light['desktop-voice-result']} loading="lazy" decoding="async" />
-          <ProgressiveShot class="sh-d" src={`/shots/${code}/dark/rsi/desktop-voice-result.webp?v=${code === 'ar' ? '3x-ar2' : '3x'}`} alt="" width="390" height={(screenSizes as any)[code].dark['desktop-voice-result']} loading="lazy" decoding="async" />
-        </div>}
+        <div class="result-screen">
+          <ProgressiveShot class="sh-l" src={`/shots/${code}/light/rsi/${resultKind}.webp?v=${resultVersion}`} alt={g.caption} width="390" height={(screenSizes as any)[code].light[resultKind]} loading="lazy" decoding="async" />
+          <ProgressiveShot class="sh-d" src={`/shots/${code}/dark/rsi/${resultKind}.webp?v=${resultVersion}`} alt="" width="390" height={(screenSizes as any)[code].dark[resultKind]} loading="lazy" decoding="async" />
+        </div>
         <figcaption>{g.caption}</figcaption>
       </figure>
     </section>
@@ -115,14 +113,6 @@ const jsonLd = [
   figcaption { color: var(--mut); font-size: 12px; margin-top: 16px; text-align: center; }
   .result-screen { width: min(100%, 320px); margin-inline: auto; border: 1px solid var(--bd); border-radius: 22px; overflow: hidden; box-shadow: 0 16px 50px #0002; }
   .result-screen img { width: 100%; height: auto; }
-  .volume-example { border: 1px solid var(--bd); border-radius: 18px; background: var(--bg); padding: 24px; }
-  .volume-value { font: 600 44px/1.2 var(--mono); color: var(--pri); }
-  .volume-value span { display: block; font-size: 11px; color: var(--mut); margin-top: 8px; }
-  .bars { display: flex; align-items: end; gap: 8px; height: 155px; margin: 24px 0; border-bottom: 1px solid var(--bd); direction: ltr; }
-  .bars span { flex: 1; background: var(--bd); border-radius: 4px 4px 0 0; }
-  .bars .spike { background: var(--pri); }
-  .volume-math { display: grid; gap: 10px; font: 500 13px/1.5 var(--mono); color: var(--mut); }
-  .volume-math b { color: var(--tx); }
   .guide-section { padding: 56px 0; border-bottom: 1px solid var(--bd); scroll-margin-top: 90px; }
   .steps { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
   .steps li { display: flex; align-items: start; gap: 16px; padding: 24px; border: 1px solid var(--bd); border-radius: 16px; background: var(--sf); }

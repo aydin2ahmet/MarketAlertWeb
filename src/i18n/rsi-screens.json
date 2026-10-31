@@ -9,7 +9,8 @@
       "chat-draft": 499,
       "list": 617,
       "desktop-voice-result": 736,
-      "desktop-chat-draft": 659
+      "desktop-chat-draft": 659,
+      "volume-result": 722
     },
     "dark": {
       "voice-open": 255,
@@ -20,7 +21,8 @@
       "chat-draft": 499,
       "list": 617,
       "desktop-voice-result": 736,
-      "desktop-chat-draft": 659
+      "desktop-chat-draft": 659,
+      "volume-result": 722
     }
   },
   "en": {
@@ -33,7 +35,8 @@
       "chat-draft": 499,
       "list": 617,
       "desktop-voice-result": 712,
-      "desktop-chat-draft": 635
+      "desktop-chat-draft": 635,
+      "volume-result": 722
     },
     "dark": {
       "voice-open": 255,
@@ -44,7 +47,8 @@
       "chat-draft": 499,
       "list": 617,
       "desktop-voice-result": 712,
-      "desktop-chat-draft": 635
+      "desktop-chat-draft": 635,
+      "volume-result": 722
     }
   },
   "de": {
@@ -57,7 +61,8 @@
       "chat-draft": 506,
       "list": 617,
       "desktop-voice-result": 784,
-      "desktop-chat-draft": 690
+      "desktop-chat-draft": 690,
+      "volume-result": 770
     },
     "dark": {
       "voice-open": 255,
@@ -68,7 +73,8 @@
       "chat-draft": 506,
       "list": 617,
       "desktop-voice-result": 784,
-      "desktop-chat-draft": 690
+      "desktop-chat-draft": 690,
+      "volume-result": 770
     }
   },
   "es": {
@@ -81,7 +87,8 @@
       "chat-draft": 526,
       "list": 617,
       "desktop-voice-result": 756,
-      "desktop-chat-draft": 686
+      "desktop-chat-draft": 686,
+      "volume-result": 766
     },
     "dark": {
       "voice-open": 255,
@@ -92,7 +99,8 @@
       "chat-draft": 526,
       "list": 617,
       "desktop-voice-result": 756,
-      "desktop-chat-draft": 686
+      "desktop-chat-draft": 686,
+      "volume-result": 766
     }
   },
   "fr": {
@@ -105,7 +113,8 @@
       "chat-draft": 526,
       "list": 617,
       "desktop-voice-result": 756,
-      "desktop-chat-draft": 686
+      "desktop-chat-draft": 686,
+      "volume-result": 766
     },
     "dark": {
       "voice-open": 255,
@@ -116,7 +125,8 @@
       "chat-draft": 526,
       "list": 617,
       "desktop-voice-result": 756,
-      "desktop-chat-draft": 686
+      "desktop-chat-draft": 686,
+      "volume-result": 766
     }
   },
   "pt-br": {
@@ -129,7 +139,8 @@
       "chat-draft": 526,
       "list": 617,
       "desktop-voice-result": 764,
-      "desktop-chat-draft": 686
+      "desktop-chat-draft": 686,
+      "volume-result": 750
     },
     "dark": {
       "voice-open": 263,
@@ -140,7 +151,8 @@
       "chat-draft": 526,
       "list": 617,
       "desktop-voice-result": 764,
-      "desktop-chat-draft": 686
+      "desktop-chat-draft": 686,
+      "volume-result": 750
     }
   },
   "ru": {
@@ -153,7 +165,8 @@
       "chat-draft": 506,
       "list": 617,
       "desktop-voice-result": 768,
-      "desktop-chat-draft": 666
+      "desktop-chat-draft": 666,
+      "volume-result": 754
     },
     "dark": {
       "voice-open": 263,
@@ -164,7 +177,8 @@
       "chat-draft": 506,
       "list": 617,
       "desktop-voice-result": 768,
-      "desktop-chat-draft": 666
+      "desktop-chat-draft": 666,
+      "volume-result": 754
     }
   },
   "zh": {
@@ -177,7 +191,8 @@
       "chat-draft": 499,
       "list": 617,
       "desktop-voice-result": 712,
-      "desktop-chat-draft": 635
+      "desktop-chat-draft": 635,
+      "volume-result": 698
     },
     "dark": {
       "voice-open": 255,
@@ -188,7 +203,8 @@
       "chat-draft": 499,
       "list": 617,
       "desktop-voice-result": 712,
-      "desktop-chat-draft": 635
+      "desktop-chat-draft": 635,
+      "volume-result": 698
     }
   },
   "ja": {
@@ -201,7 +217,8 @@
       "chat-draft": 499,
       "list": 617,
       "desktop-voice-result": 736,
-      "desktop-chat-draft": 659
+      "desktop-chat-draft": 659,
+      "volume-result": 698
     },
     "dark": {
       "voice-open": 255,
@@ -212,7 +229,8 @@
       "chat-draft": 499,
       "list": 617,
       "desktop-voice-result": 736,
-      "desktop-chat-draft": 659
+      "desktop-chat-draft": 659,
+      "volume-result": 698
     }
   },
   "hi": {
@@ -225,7 +243,8 @@
       "chat-draft": 499,
       "list": 617,
       "desktop-voice-result": 736,
-      "desktop-chat-draft": 659
+      "desktop-chat-draft": 659,
+      "volume-result": 722
     },
     "dark": {
       "voice-open": 255,
@@ -236,7 +255,8 @@
       "chat-draft": 499,
       "list": 617,
       "desktop-voice-result": 736,
-      "desktop-chat-draft": 659
+      "desktop-chat-draft": 659,
+      "volume-result": 722
     }
   },
   "ar": {
@@ -249,7 +269,8 @@
       "chat-draft": 499,
       "list": 617,
       "desktop-voice-result": 712,
-      "desktop-chat-draft": 635
+      "desktop-chat-draft": 635,
+      "volume-result": 698
     },
     "dark": {
       "voice-open": 255,
@@ -260,7 +281,8 @@
       "chat-draft": 499,
       "list": 617,
       "desktop-voice-result": 712,
-      "desktop-chat-draft": 635
+      "desktop-chat-draft": 635,
+      "volume-result": 698
     }
   }
 }
