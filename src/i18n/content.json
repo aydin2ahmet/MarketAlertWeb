@@ -234,7 +234,16 @@
   "ui": {
    "theme": "Temayı değiştir",
    "lang": "Dil",
-   "suggest": "Bu sayfa Türkçe olarak da var"
+   "suggest": "Bu sayfa Türkçe olarak da var",
+   "search": "Ara",
+   "searchPh": "Ara: RSI, Telegram, fiyat alarmı…",
+   "searchNone": "Sonuç bulunamadı. Başka bir kelime dene.",
+   "searchTags": [
+    "Rehber",
+    "Özellik",
+    "SSS",
+    "Yasal"
+   ]
   },
   "soon": "Yakında",
   "consent": {
@@ -507,7 +516,16 @@
   "ui": {
    "theme": "Toggle theme",
    "lang": "Language",
-   "suggest": "This page is also available in English"
+   "suggest": "This page is also available in English",
+   "search": "Search",
+   "searchPh": "Search: RSI, Telegram, price alert…",
+   "searchNone": "No results. Try another word.",
+   "searchTags": [
+    "Guide",
+    "Feature",
+    "FAQ",
+    "Legal"
+   ]
   },
   "soon": "Coming soon",
   "consent": {
@@ -780,7 +798,16 @@
   "ui": {
    "theme": "切换主题",
    "lang": "语言",
-   "suggest": "此页面也有中文版本"
+   "suggest": "此页面也有中文版本",
+   "search": "搜索",
+   "searchPh": "搜索：RSI、Telegram、价格提醒…",
+   "searchNone": "没有结果，换个词试试。",
+   "searchTags": [
+    "指南",
+    "功能",
+    "常见问题",
+    "法律"
+   ]
   },
   "soon": "即将上线",
   "consent": {
@@ -1053,7 +1080,16 @@
   "ui": {
    "theme": "Cambiar tema",
    "lang": "Idioma",
-   "suggest": "Esta página también está en español"
+   "suggest": "Esta página también está en español",
+   "search": "Buscar",
+   "searchPh": "Buscar: RSI, Telegram, alerta de precio…",
+   "searchNone": "Sin resultados. Prueba con otra palabra.",
+   "searchTags": [
+    "Guía",
+    "Función",
+    "FAQ",
+    "Legal"
+   ]
   },
   "soon": "Próximamente",
   "consent": {
@@ -1326,7 +1362,16 @@
   "ui": {
    "theme": "थीम बदलें",
    "lang": "भाषा",
-   "suggest": "यह पेज हिन्दी में भी है"
+   "suggest": "यह पेज हिन्दी में भी है",
+   "search": "खोजें",
+   "searchPh": "खोजें: RSI, Telegram, प्राइस अलर्ट…",
+   "searchNone": "कोई नतीजा नहीं मिला। दूसरा शब्द आज़माएँ।",
+   "searchTags": [
+    "गाइड",
+    "फ़ीचर",
+    "FAQ",
+    "कानूनी"
+   ]
   },
   "soon": "जल्द आ रहा है",
   "consent": {
@@ -1599,7 +1644,16 @@
   "ui": {
    "theme": "تبديل المظهر",
    "lang": "اللغة",
-   "suggest": "هذه الصفحة متاحة أيضًا بالعربية"
+   "suggest": "هذه الصفحة متاحة أيضًا بالعربية",
+   "search": "بحث",
+   "searchPh": "ابحث: RSI، Telegram، تنبيه السعر…",
+   "searchNone": "لا توجد نتائج. جرّب كلمة أخرى.",
+   "searchTags": [
+    "دليل",
+    "ميزة",
+    "الأسئلة الشائعة",
+    "قانوني"
+   ]
   },
   "soon": "قريبًا",
   "consent": {
@@ -1872,7 +1926,16 @@
   "ui": {
    "theme": "Mudar tema",
    "lang": "Idioma",
-   "suggest": "Esta página também está em português"
+   "suggest": "Esta página também está em português",
+   "search": "Buscar",
+   "searchPh": "Buscar: RSI, Telegram, alerta de preço…",
+   "searchNone": "Nenhum resultado. Tente outra palavra.",
+   "searchTags": [
+    "Guia",
+    "Recurso",
+    "FAQ",
+    "Legal"
+   ]
   },
   "soon": "Em breve",
   "consent": {
@@ -2145,7 +2208,16 @@
   "ui": {
    "theme": "Changer de thème",
    "lang": "Langue",
-   "suggest": "Cette page existe aussi en français"
+   "suggest": "Cette page existe aussi en français",
+   "search": "Rechercher",
+   "searchPh": "Rechercher : RSI, Telegram, alerte de prix…",
+   "searchNone": "Aucun résultat. Essayez un autre mot.",
+   "searchTags": [
+    "Guide",
+    "Fonction",
+    "FAQ",
+    "Juridique"
+   ]
   },
   "soon": "Bientôt",
   "consent": {
@@ -2418,7 +2490,16 @@
   "ui": {
    "theme": "Сменить тему",
    "lang": "Язык",
-   "suggest": "Эта страница есть и на русском"
+   "suggest": "Эта страница есть и на русском",
+   "search": "Поиск",
+   "searchPh": "Поиск: RSI, Telegram, ценовой алерт…",
+   "searchNone": "Ничего не найдено. Попробуйте другое слово.",
+   "searchTags": [
+    "Гайд",
+    "Функция",
+    "FAQ",
+    "Документы"
+   ]
   },
   "soon": "Скоро",
   "consent": {
@@ -2691,7 +2772,16 @@
   "ui": {
    "theme": "Design wechseln",
    "lang": "Sprache",
-   "suggest": "Diese Seite gibt es auch auf Deutsch"
+   "suggest": "Diese Seite gibt es auch auf Deutsch",
+   "search": "Suchen",
+   "searchPh": "Suchen: RSI, Telegram, Preisalarm…",
+   "searchNone": "Keine Ergebnisse. Versuche ein anderes Wort.",
+   "searchTags": [
+    "Anleitung",
+    "Funktion",
+    "FAQ",
+    "Rechtliches"
+   ]
   },
   "soon": "Demnächst",
   "consent": {
@@ -2964,7 +3054,16 @@
   "ui": {
    "theme": "テーマを切り替え",
    "lang": "言語",
-   "suggest": "このページは日本語でもご覧いただけます"
+   "suggest": "このページは日本語でもご覧いただけます",
+   "search": "検索",
+   "searchPh": "検索：RSI、Telegram、価格アラート…",
+   "searchNone": "見つかりませんでした。別の言葉でお試しください。",
+   "searchTags": [
+    "ガイド",
+    "機能",
+    "FAQ",
+    "規約"
+   ]
   },
   "soon": "近日公開",
   "consent": {

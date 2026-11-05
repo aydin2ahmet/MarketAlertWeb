@@ -1,4 +1,6 @@
 ---
+import StoreBadges from './StoreBadges.astro';
+import SearchBox from './SearchBox.astro';
 import SocialLinks from './SocialLinks.astro';
 // Yasal belge sayfaları (/xx/legal/, /xx/legal/privacy/, /xx/legal/terms/). Metinler src/legal/documents.json.
 import Base from '../layouts/Base.astro';
@@ -28,6 +30,7 @@ const alt = (c: string) => (doc ? `/${c}/legal/${doc}/` : `/${c}/legal/`);
   <header class="hd">
     <a class="logo" href={`/${code}/`}><img src="/icons/logo-96.png" alt="" width="32" height="32" /><b>MarketAlert</b></a>
     <div class="hx">
+      <SearchBox code={code} />
       <label class="lsel"><span class="skip">{t.ui.lang}</span>
         <select id="lang" aria-label={t.ui.lang} data-base={doc ? `legal/${doc}/` : 'legal/'}>
           {LOCALES.map(l => <option value={l.code} selected={l.code === code} lang={l.code}>{l.name}</option>)}
@@ -67,6 +70,7 @@ const alt = (c: string) => (doc ? `/${c}/legal/${doc}/` : `/${c}/legal/`);
       <a href={`/${code}/legal/delete-account/`}>{(deletion as any)[code].title}</a>
       {GA_ID && <button type="button" class="lnk" data-consent-open>{t.consent.prefs}</button>}
     </nav>
+    <div class="ft-stores"><b>{t.download}</b><StoreBadges code={code} size="sm" /></div>
     <SocialLinks code={code} />
     <p class="disc">{t.disclaimer}</p>
     <p class="copy">© 2026 MarketAlert · marketalertapp.com</p>
