@@ -1,4 +1,5 @@
 ---
+import SocialLinks from './SocialLinks.astro';
 import { GA_ID, LOCALES, STORE, legalUrl, shotSources } from '../config';
 import alertGuides from '../i18n/alert-guides.json';
 
@@ -191,6 +192,7 @@ const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : 
       {GA_ID && <button type="button" class="lnk" data-consent-open>{t.consent.prefs}</button>}
     </nav>
   </div>
+  <SocialLinks code={code} />
   <nav class="langs" aria-label={t.ui.lang}>
     {LOCALES.map(l => <a href={`/${l.code}/`} hreflang={l.hreflang} lang={l.code} aria-current={l.code === code ? 'page' : undefined} data-ev="language_switch" data-to={l.code}>{l.name}</a>)}
   </nav>

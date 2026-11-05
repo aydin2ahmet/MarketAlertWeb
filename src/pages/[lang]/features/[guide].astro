@@ -1,4 +1,5 @@
 ---
+import SocialLinks from '../../../components/SocialLinks.astro';
 import Base from '../../../layouts/Base.astro';
 import ProgressiveShot from '../../../components/ProgressiveShot.astro';
 import content from '../../../i18n/content.json';
@@ -74,7 +75,7 @@ const jsonLd = [
     <nav class="related" aria-label={t.nav[0]}>{related.map(page => <a href={`/${code}/features/${page.slug}/`}>{page.link}<span aria-hidden="true">↗</span></a>)}</nav>
     <section class="guide-cta"><h2>{r.ctaTitle}</h2><p>{r.cta}</p><a class="btn" href={`/${code}/#download`} data-ev="cta_click">{r.home} ↗</a></section>
   </main>
-  <footer class="ft"><div class="ftop"><a class="logo" href={`/${code}/`}><img src="/icons/logo-96.png" alt="" width="32" height="32" /><b>MarketAlert</b></a><nav class="legal"><a href={legalUrl('privacy', code)}>{t.legal[0]}</a><a href={legalUrl('terms', code)}>{t.legal[1]}</a>{GA_ID && <button type="button" class="lnk" data-consent-open>{t.consent.prefs}</button>}</nav></div><nav class="langs" aria-label={t.ui.lang}>{LOCALES.map(l => <a href={`/${l.code}/features/${guide}/`} hreflang={l.hreflang} lang={l.hreflang} aria-current={l.code === code ? 'page' : undefined} data-ev="language_switch" data-to={l.code}>{l.name}</a>)}</nav><p class="disc">{t.disclaimer}</p><p class="copy">© 2026 MarketAlert · marketalertapp.com</p></footer>
+  <footer class="ft"><div class="ftop"><a class="logo" href={`/${code}/`}><img src="/icons/logo-96.png" alt="" width="32" height="32" /><b>MarketAlert</b></a><nav class="legal"><a href={legalUrl('privacy', code)}>{t.legal[0]}</a><a href={legalUrl('terms', code)}>{t.legal[1]}</a>{GA_ID && <button type="button" class="lnk" data-consent-open>{t.consent.prefs}</button>}</nav></div><SocialLinks code={code} /><nav class="langs" aria-label={t.ui.lang}>{LOCALES.map(l => <a href={`/${l.code}/features/${guide}/`} hreflang={l.hreflang} lang={l.hreflang} aria-current={l.code === code ? 'page' : undefined} data-ev="language_switch" data-to={l.code}>{l.name}</a>)}</nav><p class="disc">{t.disclaimer}</p><p class="copy">© 2026 MarketAlert · marketalertapp.com</p></footer>
   <script>
     const root = document.documentElement;
     document.getElementById('theme')?.addEventListener('click', () => {

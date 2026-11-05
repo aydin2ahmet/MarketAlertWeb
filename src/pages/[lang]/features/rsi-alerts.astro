@@ -1,4 +1,5 @@
 ---
+import SocialLinks from '../../../components/SocialLinks.astro';
 import Base from '../../../layouts/Base.astro';
 import ProgressiveShot from '../../../components/ProgressiveShot.astro';
 import content from '../../../i18n/content.json';
@@ -98,7 +99,7 @@ const jsonLd = [
     <nav class="related-guides" aria-label={t.nav[0]}>{Object.entries((alertGuides as any)[code]).map(([slug, page]: [string, any]) => <a class="text-link" href={`/${code}/features/${slug}/`}>{page.link} <span aria-hidden="true">↗</span></a>)}</nav>
     <section class="guide-cta"><h2>{g.ctaTitle}</h2><p>{g.cta}</p><a class="btn" href={`/${code}/#download`} data-ev="cta_click">{g.home} <span aria-hidden="true">↗</span></a></section>
   </main>
-  <footer class="ft"><div class="ftop"><a class="logo" href={`/${code}/`}><img src="/icons/logo-96.png" alt="" width="32" height="32" /><b>MarketAlert</b></a><nav class="legal"><a href={legalUrl('privacy', code)}>{t.legal[0]}</a><a href={legalUrl('terms', code)}>{t.legal[1]}</a>{GA_ID && <button type="button" class="lnk" data-consent-open>{t.consent.prefs}</button>}</nav></div><nav class="langs" aria-label={t.ui.lang}>{LOCALES.map(l => <a href={`/${l.code}/features/rsi-alerts/`} hreflang={l.hreflang} lang={l.hreflang} aria-current={l.code === code ? 'page' : undefined} data-ev="language_switch" data-to={l.code}>{l.name}</a>)}</nav><p class="disc">{t.disclaimer}</p><p class="copy">© 2026 MarketAlert · marketalertapp.com</p></footer>
+  <footer class="ft"><div class="ftop"><a class="logo" href={`/${code}/`}><img src="/icons/logo-96.png" alt="" width="32" height="32" /><b>MarketAlert</b></a><nav class="legal"><a href={legalUrl('privacy', code)}>{t.legal[0]}</a><a href={legalUrl('terms', code)}>{t.legal[1]}</a>{GA_ID && <button type="button" class="lnk" data-consent-open>{t.consent.prefs}</button>}</nav></div><SocialLinks code={code} /><nav class="langs" aria-label={t.ui.lang}>{LOCALES.map(l => <a href={`/${l.code}/features/rsi-alerts/`} hreflang={l.hreflang} lang={l.hreflang} aria-current={l.code === code ? 'page' : undefined} data-ev="language_switch" data-to={l.code}>{l.name}</a>)}</nav><p class="disc">{t.disclaimer}</p><p class="copy">© 2026 MarketAlert · marketalertapp.com</p></footer>
   <script>
     const flowTabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-flow]'));
     function selectFlow(tab: HTMLButtonElement) {

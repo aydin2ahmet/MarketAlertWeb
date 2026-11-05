@@ -1,4 +1,5 @@
 ---
+import SocialLinks from './SocialLinks.astro';
 // Yasal belge sayfaları (/xx/legal/, /xx/legal/privacy/, /xx/legal/terms/). Metinler src/legal/documents.json.
 import Base from '../layouts/Base.astro';
 import content from '../i18n/content.json';
@@ -66,6 +67,7 @@ const alt = (c: string) => (doc ? `/${c}/legal/${doc}/` : `/${c}/legal/`);
       <a href={`/${code}/legal/delete-account/`}>{(deletion as any)[code].title}</a>
       {GA_ID && <button type="button" class="lnk" data-consent-open>{t.consent.prefs}</button>}
     </nav>
+    <SocialLinks code={code} />
     <p class="disc">{t.disclaimer}</p>
     <p class="copy">© 2026 MarketAlert · marketalertapp.com</p>
   </footer>

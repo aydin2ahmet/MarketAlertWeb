@@ -1,0 +1,46 @@
+{
+  "tr": {
+    "title": "Bizi takip et",
+    "note": "İçerikler şu an İngilizce."
+  },
+  "en": {
+    "title": "Follow us",
+    "note": "Content is currently in English."
+  },
+  "zh": {
+    "title": "关注我们",
+    "note": "内容目前以英语发布。"
+  },
+  "es": {
+    "title": "Síguenos",
+    "note": "Por ahora, el contenido está en inglés."
+  },
+  "hi": {
+    "title": "हमसे जुड़ें",
+    "note": "फ़िलहाल सामग्री अंग्रेज़ी में है।"
+  },
+  "ar": {
+    "title": "تابعنا",
+    "note": "المحتوى متاح حاليًا باللغة الإنجليزية."
+  },
+  "pt-br": {
+    "title": "Siga-nos",
+    "note": "Por enquanto, o conteúdo está em inglês."
+  },
+  "fr": {
+    "title": "Suivez-nous",
+    "note": "Les contenus sont actuellement en anglais."
+  },
+  "ru": {
+    "title": "Подписывайтесь",
+    "note": "Пока публикуем на английском."
+  },
+  "de": {
+    "title": "Folge uns",
+    "note": "Die Inhalte sind derzeit auf Englisch."
+  },
+  "ja": {
+    "title": "フォローする",
+    "note": "現在、英語で発信しています。"
+  }
+}
