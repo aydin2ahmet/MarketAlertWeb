@@ -1,6 +1,8 @@
 ---
+import StoreBadges from './StoreBadges.astro';
+import SearchBox from './SearchBox.astro';
 import SocialLinks from './SocialLinks.astro';
-import { GA_ID, LOCALES, STORE, legalUrl, shotSources } from '../config';
+import { GA_ID, LOCALES, legalUrl, shotSources } from '../config';
 import alertGuides from '../i18n/alert-guides.json';
 
 interface Props { t: any; code: string; appLocale: string }
@@ -38,14 +40,7 @@ const shot = (k: string, alt: string, eager = false, tall = false) => {
     return `<img ${attrs} src="${sources.preview}" data-sharp="${sources.src}" data-sharp-srcset="${sources.srcset}"><noscript><img ${attrs} src="${sources.src}" srcset="${sources.srcset}" sizes="${sizes}"></noscript>`;
   }).join('');
 };
-const APPLE = '<svg viewBox="0 0 24 24" class="sbi" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7-1.3-.1-2.5.8-3.2.8-.7 0-1.7-.7-2.7-.7-1.4 0-2.7.8-3.5 2.1-1.5 2.6-.4 6.3 1.1 8.4.7 1 1.5 2.2 2.6 2.1 1-.1 1.5-.7 2.7-.7 1.3 0 1.6.7 2.7.7 1.1 0 1.9-1 2.5-2 .8-1.2 1.1-2.3 1.2-2.4-.1 0-2.2-.8-2.2-3.4zM14.3 6.4c.6-.7 1-1.7.9-2.6-.8 0-1.8.6-2.4 1.3-.5.6-1 1.6-.9 2.6.9 0 1.9-.6 2.4-1.3z"/></svg>';
-const PLAY = '<svg viewBox="0 0 24 24" class="sbi" aria-hidden="true"><path fill="#00D7FE" d="M4 3.2l9.6 8.8L4 20.8c-.3-.2-.5-.6-.5-1V4.2c0-.4.2-.8.5-1z"/><path fill="#00F076" d="M16.7 9.2L13.6 12 4 3.2c.2-.1.5-.1.8 0z"/><path fill="#FF3A44" d="M16.7 14.8L4.8 20.8c-.3.1-.6.1-.8 0l9.6-8.8z"/><path fill="#FFD500" d="M20 11.1c.7.4.7 1.4 0 1.8l-3.3 1.9-3.1-2.8 3.1-2.8z"/></svg>';
-// Mağaza adresi boşsa tıklanmayan "Yakında" rozeti çıkar.
-const badge = (store: 'app' | 'play', url: string, small: string, big: string) => url
-  ? `<a class="sb" href="${url}" rel="noopener" data-ev="store_click" data-store="${store}">${store === 'app' ? APPLE : PLAY}<span><small>${small}</small><b>${big}</b></span></a>`
-  : `<span class="sb soon" aria-disabled="true">${store === 'app' ? APPLE : PLAY}<span><small>${t.soon}</small><b>${store === 'app' ? 'App Store' : 'Google Play'}</b></span></span>`;
-const playUrl = STORE.play && `${STORE.play}&hl=${appLocale}`;
-const stores = `<div class="stores">${badge('app', STORE.appStore, t.store1s, t.store1)}${badge('play', playUrl, t.store2s, t.store2)}</div>`;
+// Mağaza rozetleri StoreBadges bileşeninde (src/components/StoreBadges.astro).
 const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : v === 0 ? `<span class="no">${svg('x')}</span>` : `<span class="part">${v}</span>`;
 ---
 <a class="skip" href="#features">{t.nav[0]}</a>
@@ -55,6 +50,7 @@ const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : 
     <a href="#how">{t.nav[1]}</a><a href="#features">{t.nav[0]}</a><a href="#plans">{t.nav[2]}</a><a href="#faq">{t.nav[3]}</a>
   </nav>
   <div class="hx">
+    <SearchBox code={code} />
     <label class="lsel"><Fragment set:html={svg('globe')} /><span class="skip">{t.ui.lang}</span>
       <select id="lang" aria-label={t.ui.lang}>
         {LOCALES.map(l => <option value={l.code} selected={l.code === code} lang={l.code}>{l.name}</option>)}
@@ -71,7 +67,7 @@ const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : 
       <p class="prompt" aria-hidden="true"><span>&gt;</span> <span class="type">{t.sayExample}</span><i class="caret"></i></p>
       <p class="hero-category">{t.heroKicker}</p>
       <h1>{t.heroTitle}<br /><span class="hero-title-second">{t.heroTitleSecond}</span></h1>
-      <Fragment set:html={stores} />
+      <StoreBadges code={code} />
     </div>
     <div class="h-v">
       <figure class="pf back"><Fragment set:html={shot('hero-list', t.heroListAlt, false, true)} /></figure>
@@ -177,11 +173,11 @@ const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : 
     <img src="/icons/icon-192.png" alt="" width="64" height="64" loading="lazy" />
     <h2>{t.ctaTitle}</h2>
     <p>{t.ctaSub}</p>
-    <Fragment set:html={stores} />
+    <StoreBadges code={code} />
   </section>
 </main>
 
-<div class="dlbar" id="dlbar" aria-label={t.download}><b>{t.download}</b><Fragment set:html={stores} /></div>
+<div class="dlbar" id="dlbar" aria-label={t.download}><b>{t.download}</b><StoreBadges code={code} /></div>
 
 <footer class="ft">
   <div class="ftop">
@@ -192,6 +188,7 @@ const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : 
       {GA_ID && <button type="button" class="lnk" data-consent-open>{t.consent.prefs}</button>}
     </nav>
   </div>
+  <div class="ft-stores"><b>{t.download}</b><StoreBadges code={code} size="sm" /></div>
   <SocialLinks code={code} />
   <nav class="langs" aria-label={t.ui.lang}>
     {LOCALES.map(l => <a href={`/${l.code}/`} hreflang={l.hreflang} lang={l.code} aria-current={l.code === code ? 'page' : undefined} data-ev="language_switch" data-to={l.code}>{l.name}</a>)}

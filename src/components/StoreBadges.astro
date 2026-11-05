@@ -1,0 +1,25 @@
+---
+/**
+ * App Store ve Google Play rozetleri. Tüm sayfalar bu bileşeni kullanır.
+ * Adres src/config.ts STORE içinde boşsa tıklanmayan "Yakında" rozeti çıkar; adres girilince her sayfada kendiliğinden bağlantı olur.
+ */
+import content from '../i18n/content.json';
+import { LOCALES, STORE } from '../config';
+
+interface Props { code: string; size?: 'md' | 'sm'; class?: string }
+const { code, size = 'md', class: extra = '' } = Astro.props;
+const t = (content as any)[code];
+const appLocale = LOCALES.find(l => l.code === code)?.app ?? 'en';
+const playUrl = STORE.play && `${STORE.play}${STORE.play.includes('?') ? '&' : '?'}hl=${appLocale}`;
+const items = [
+  { store: 'app', url: STORE.appStore, small: t.store1s, big: t.store1, name: 'App Store' },
+  { store: 'play', url: playUrl, small: t.store2s, big: t.store2, name: 'Google Play' },
+];
+const APPLE = '<svg viewBox="0 0 24 24" class="sbi" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7-1.3-.1-2.5.8-3.2.8-.7 0-1.7-.7-2.7-.7-1.4 0-2.7.8-3.5 2.1-1.5 2.6-.4 6.3 1.1 8.4.7 1 1.5 2.2 2.6 2.1 1-.1 1.5-.7 2.7-.7 1.3 0 1.6.7 2.7.7 1.1 0 1.9-1 2.5-2 .8-1.2 1.1-2.3 1.2-2.4-.1 0-2.2-.8-2.2-3.4zM14.3 6.4c.6-.7 1-1.7.9-2.6-.8 0-1.8.6-2.4 1.3-.5.6-1 1.6-.9 2.6.9 0 1.9-.6 2.4-1.3z"/></svg>';
+const PLAY = '<svg viewBox="0 0 24 24" class="sbi" aria-hidden="true"><path fill="#00D7FE" d="M4 3.2l9.6 8.8L4 20.8c-.3-.2-.5-.6-.5-1V4.2c0-.4.2-.8.5-1z"/><path fill="#00F076" d="M16.7 9.2L13.6 12 4 3.2c.2-.1.5-.1.8 0z"/><path fill="#FF3A44" d="M16.7 14.8L4.8 20.8c-.3.1-.6.1-.8 0l9.6-8.8z"/><path fill="#FFD500" d="M20 11.1c.7.4.7 1.4 0 1.8l-3.3 1.9-3.1-2.8 3.1-2.8z"/></svg>';
+---
+<div class={`stores${size === 'sm' ? ' sm' : ''}${extra ? ' ' + extra : ''}`}>
+  {items.map(i => i.url
+    ? <a class="sb" href={i.url} rel="noopener" data-ev="store_click" data-store={i.store}><Fragment set:html={i.store === 'app' ? APPLE : PLAY} /><span><small>{i.small}</small><b>{i.big}</b></span></a>
+    : <span class="sb soon" aria-disabled="true"><Fragment set:html={i.store === 'app' ? APPLE : PLAY} /><span><small>{t.soon}</small><b>{i.name}</b></span></span>)}
+</div>

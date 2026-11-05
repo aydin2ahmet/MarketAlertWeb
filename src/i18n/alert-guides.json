@@ -1,5 +1,19 @@
 {
   "tr": {
+    "price-alerts": {
+      "link": "Kripto fiyat alarmı",
+      "title": "Kripto fiyat alarmı nasıl kurulur? Ücretsiz | MarketAlert",
+      "h1": "Kripto para için fiyat alarmı nasıl kurulur?",
+      "description": "Binance coinleri için ücretsiz fiyat alarmı kur: hedef fiyatı yaz, push bildirimi seç. Fiyat hedefe bir an değse bile haber al; uygulama kapalıyken de çalışır.",
+      "intro": "Grafiği sürekli açık tutmana gerek yok. Coin’i ve hedef fiyatı seç; MarketAlert fiyatı sunucularında izler ve hedefe ulaşıldığında telefonuna bildirim gönderir. Fiyat hedefe yalnızca bir an değip geri dönse bile bu dokunuş kaçmaz.",
+      "prompt": "BTC 70.000 USDT üzerine çıkınca bana bir kez haber ver.",
+      "exampleTitle": "Bir hedef fiyat, sürekli takip",
+      "caption": "Uygulama içi örnek · Hızlı alarmda hedef fiyat, hedefe uzaklık ve bildirim seçimi.",
+      "steps": [["Coin’i ve piyasayı seç", "Hızlı alarmda BTC, ETH, SOL, BNB gibi bir coin seç ya da ara. Spot veya Vadeli, USDT veya USDC piyasasını üstten değiştir."], ["Hedef fiyatı yaz", "Fiyatı yaz, kaydırarak ayarla ya da −%5…+%5 düğmelerini kullan. Kartın altındaki cümle alarmın ne yapacağını ve hedefe ne kadar uzak olduğunu gösterir."], ["Bildirimi seç", "Sessiz ya da sesli push her planda var. Telegram Plus ve Pro’da, imzalı webhook Pro’da kullanılabilir."], ["Alarmı kur", "“Alarmı kur”a dokun. Tekrar biçimi gibi ayarlar için “Gelişmiş ayarlar”ı aç. İstersen aynı alarmı konuşarak ya da AI sohbete yazarak da kurabilirsin."]],
+      "details": [["Fiyat hedefe bir an değip dönerse ne olur?", "MarketAlert işlemlerin en yüksek ve en düşük değerine bakar. Fiyat 70.000’e bir an dokunup 69.880’e geri dönse de alarm çalar. Bildirimde dokunuş fiyatı ve son fiyat birlikte yazar."], ["Hangi fiyat izlenir?", "Seçtiğin Binance piyasasındaki işlem fiyatı izlenir. Spot ile Vadeli fiyatı aynı anda farklı olabilir; alarmı işlem yaptığın piyasaya kur."], ["Bir kez mi, her seferinde mi?", "Ücretsiz planda alarm hedefe ulaşınca bir kez bildirir. Plus ve Pro’da tekrarlı alarm seçebilir, fiyat her koşulu sağladığında yeniden haber alabilirsin."]],
+      "faq": [["Fiyat alarmı ücretsiz mi?", "Evet. Ücretsiz planla 3 alarm kurabilir; fiyat, yüzde hareket ve 24 saatlik tepe/dip koşullarını push bildirimle kullanabilirsin."], ["Uygulama kapalıyken fiyat alarmı çalışır mı?", "Evet. Alarmlar MarketAlert sunucularında izlenir; uygulama kapalı ya da arka planda olsa da bildirim gelir."], ["Aynı coine birden fazla hedef kurabilir miyim?", "Evet. Her hedef için ayrı alarm kurabilirsin. Plus ve Pro’da iki fiyat seviyesini VEYA ile tek alarmda da birleştirebilirsin."], ["MarketAlert benim yerime alım satım yapar mı?", "Hayır. Yalnızca bildirim gönderir; borsa hesabına bağlanmaz, emir açmaz ve yatırım tavsiyesi vermez."]],
+      "plans": [["Free", "3 alarm; fiyat, yüzde hareket ve 24 saatlik tepe/dip. Sessiz veya sesli push. Alarm hedefe ulaşınca bir kez bildirir."], ["Plus", "20 alarm; tekrarlı alarm ve alarm başına 3 koşul. Push ve Telegram, tüm alarm sesleri."], ["Pro", "100 alarm; alarm başına 5 koşul. Push, Telegram ve imzalı webhook."]]
+    },
     "volume-spike-alerts": {
       "link": "Binance hacim artışı alarmı",
       "title": "Binance hacim artışı alarmı nasıl kurulur? | MarketAlert",
@@ -26,6 +40,20 @@
     }
   },
   "de": {
+    "price-alerts": {
+      "link": "Krypto-Preisalarm",
+      "title": "Krypto-Preisalarm einrichten (kostenlos) | MarketAlert",
+      "h1": "Wie richte ich einen Preisalarm für eine Kryptowährung ein?",
+      "description": "Kostenloser Preisalarm für Binance-Coins: Zielpreis eingeben, Push-Benachrichtigung wählen. Auch eine kurze Berührung des Ziels wird gemeldet. Funktioniert bei geschlossener App.",
+      "intro": "Du musst den Chart nicht den ganzen Tag offen halten. Wähle einen Coin und einen Zielpreis; MarketAlert überwacht den Preis auf seinen Servern und benachrichtigt dein Handy, sobald das Ziel erreicht ist. Auch wenn der Preis das Ziel nur kurz berührt und zurückfällt, entgeht dir diese Berührung nicht.",
+      "prompt": "Benachrichtige mich einmal, wenn BTC über 70.000 USDT steigt.",
+      "exampleTitle": "Ein Zielpreis, ständig überwacht",
+      "caption": "App-Beispiel · Schnellalarm mit Zielpreis, Abstand zum Ziel und Benachrichtigungswahl.",
+      "steps": [["Coin und Markt wählen", "Wähle im Schnellalarm einen Coin wie BTC, ETH, SOL oder BNB oder suche danach. Oben wechselst du zwischen Spot oder Futures und USDT oder USDC."], ["Zielpreis eingeben", "Preis eintippen, per Schieberegler anpassen oder die Tasten −5 %…+5 % nutzen. Der Satz unter der Karte zeigt, was der Alarm tut und wie weit das Ziel entfernt ist."], ["Benachrichtigung wählen", "Stummer Push oder Push mit Ton gibt es in jedem Tarif. Telegram ist in Plus und Pro verfügbar, signierter Webhook in Pro."], ["Alarm setzen", "Tippe auf „Alarm setzen“. Unter „Erweiterte Einstellungen“ findest du Optionen wie die Wiederholung. Denselben Alarm kannst du auch per Sprache oder im KI-Chat erstellen."]],
+      "details": [["Was passiert, wenn der Preis das Ziel nur kurz berührt?", "MarketAlert prüft die höchsten und niedrigsten gehandelten Preise. Berührt der Preis kurz 70.000 und fällt auf 69.880 zurück, wird der Alarm trotzdem ausgelöst. Die Benachrichtigung zeigt Berührungspreis und letzten Preis."], ["Welcher Preis wird überwacht?", "Der Handelspreis auf dem gewählten Binance-Markt. Spot- und Futures-Preise können gleichzeitig abweichen; richte den Alarm auf dem Markt ein, auf dem du handelst."], ["Einmal oder jedes Mal?", "Im kostenlosen Tarif meldet ein Alarm einmal, wenn das Ziel erreicht ist. In Plus und Pro kannst du wiederholende Alarme wählen und wirst bei jeder Erfüllung erneut benachrichtigt."]],
+      "faq": [["Sind Preisalarme kostenlos?", "Ja. Im kostenlosen Tarif erstellst du 3 Alarme mit Preis, prozentualer Bewegung und 24h-Hoch/Tief, zugestellt per Push."], ["Funktionieren Preisalarme bei geschlossener App?", "Ja. Alarme werden auf MarketAlert-Servern überwacht; Benachrichtigungen kommen auch an, wenn die App geschlossen oder im Hintergrund ist."], ["Kann ich mehrere Ziele für denselben Coin setzen?", "Ja. Erstelle für jedes Ziel einen eigenen Alarm. In Plus und Pro kannst du zwei Preisniveaus auch mit ODER in einem Alarm verbinden."], ["Handelt MarketAlert für mich?", "Nein. Es sendet nur Benachrichtigungen, verbindet sich nicht mit deinem Börsenkonto, platziert keine Orders und gibt keine Anlageberatung."]],
+      "plans": [["Free", "3 Alarme; Preis, prozentuale Bewegung und 24h-Hoch/Tief. Stummer Push oder Push mit Ton. Ein Alarm meldet einmal, wenn das Ziel erreicht ist."], ["Plus", "20 Alarme; wiederholende Alarme und bis zu 3 Bedingungen pro Alarm. Push und Telegram, alle Alarmtöne."], ["Pro", "100 Alarme; bis zu 5 Bedingungen pro Alarm. Push, Telegram und signierter Webhook."]]
+    },
     "volume-spike-alerts": {
       "link": "Binance-Volumenalarme", "title": "Binance-Volumenalarme einrichten | MarketAlert", "h1": "Wie erhalte ich Alarme bei Volumenspitzen auf Binance?",
       "description": "Binance-Volumenalarme mit eigenem Zeitrahmen, Durchschnitt und Multiplikator. Per Sprache oder KI-Chat erstellen und über Telegram benachrichtigen lassen.",
@@ -48,6 +76,20 @@
     }
   },
   "fr": {
+    "price-alerts": {
+      "link": "Alerte de prix crypto",
+      "title": "Créer une alerte de prix crypto (gratuit) | MarketAlert",
+      "h1": "Comment créer une alerte de prix pour une crypto ?",
+      "description": "Créez une alerte de prix gratuite pour les cryptos Binance : saisissez un prix cible et choisissez une notification push. Alerté même si le prix ne fait que toucher la cible, application fermée.",
+      "intro": "Inutile de garder un graphique ouvert toute la journée. Choisissez une crypto et un prix cible ; MarketAlert surveille le prix sur ses serveurs et notifie votre téléphone quand la cible est atteinte. Même si le prix ne fait que toucher la cible un instant avant de repartir, ce contact n’est pas manqué.",
+      "prompt": "Préviens-moi une fois quand le BTC dépasse 70 000 USDT.",
+      "exampleTitle": "Un prix cible, surveillé en continu",
+      "caption": "Exemple dans l’app · Alerte rapide avec prix cible, distance à la cible et choix de notification.",
+      "steps": [["Choisissez la crypto et le marché", "Dans Alerte rapide, choisissez une crypto comme BTC, ETH, SOL ou BNB, ou recherchez-la. En haut, passez du Spot aux Futures et de l’USDT à l’USDC."], ["Saisissez le prix cible", "Tapez le prix, ajustez-le en faisant glisser ou utilisez les boutons −5 %…+5 %. La phrase sous la carte indique ce que fera l’alerte et la distance à la cible."], ["Choisissez la notification", "Le push silencieux ou sonore est disponible dans toutes les offres. Telegram est inclus dans Plus et Pro, le webhook signé dans Pro."], ["Créez l’alerte", "Touchez « Créer l’alerte ». Ouvrez « Réglages avancés » pour des options comme la répétition. Vous pouvez aussi créer la même alerte à la voix ou dans le chat IA."]],
+      "details": [["Et si le prix touche la cible puis repart ?", "MarketAlert vérifie les prix les plus hauts et les plus bas échangés. Si le prix touche 70 000 un instant puis retombe à 69 880, l’alerte se déclenche quand même. La notification affiche le prix de contact et le dernier prix."], ["Quel prix est surveillé ?", "Le prix échangé sur le marché Binance choisi. Les prix Spot et Futures peuvent différer au même moment : créez l’alerte sur le marché où vous tradez."], ["Une fois ou à chaque fois ?", "Avec l’offre gratuite, une alerte prévient une fois lorsque la cible est atteinte. Avec Plus et Pro, vous pouvez choisir une alerte répétée et être prévenu à chaque fois que la condition est remplie."]],
+      "faq": [["Les alertes de prix sont-elles gratuites ?", "Oui. L’offre gratuite permet 3 alertes avec les conditions prix, variation en pourcentage et plus haut/plus bas sur 24 h, envoyées par push."], ["Les alertes fonctionnent-elles application fermée ?", "Oui. Les alertes sont surveillées sur les serveurs de MarketAlert ; les notifications arrivent même si l’app est fermée ou en arrière-plan."], ["Puis-je définir plusieurs cibles pour la même crypto ?", "Oui. Créez une alerte par cible. Avec Plus et Pro, vous pouvez aussi combiner deux niveaux de prix avec OU dans une seule alerte."], ["MarketAlert passe-t-il des ordres pour moi ?", "Non. Il envoie seulement des notifications, ne se connecte pas à votre compte d’échange, ne passe aucun ordre et ne donne aucun conseil en investissement."]],
+      "plans": [["Free", "3 alertes ; prix, variation en pourcentage et plus haut/plus bas 24 h. Push silencieux ou sonore. Une alerte prévient une fois lorsque la cible est atteinte."], ["Plus", "20 alertes ; alertes répétées et jusqu’à 3 conditions par alerte. Push et Telegram, tous les sons d’alerte."], ["Pro", "100 alertes ; jusqu’à 5 conditions par alerte. Push, Telegram et webhook signé."]]
+    },
     "volume-spike-alerts": {
       "link": "Alertes de volume Binance", "title": "Créer une alerte de pic de volume Binance | MarketAlert", "h1": "Comment être averti des pics de volume sur Binance ?",
       "description": "Créez une alerte de volume Binance : unité de temps, moyenne et multiplicateur au choix. Configuration vocale ou par chat IA et notification Telegram.",
@@ -70,6 +112,20 @@
     }
   },
   "es": {
+    "price-alerts": {
+      "link": "Alerta de precio cripto",
+      "title": "Cómo crear una alerta de precio cripto (gratis) | MarketAlert",
+      "h1": "¿Cómo creo una alerta de precio para una criptomoneda?",
+      "description": "Crea una alerta de precio gratis para monedas de Binance: escribe un precio objetivo y elige notificación push. Te avisa aunque el precio solo toque el objetivo, incluso con la app cerrada.",
+      "intro": "No necesitas tener un gráfico abierto todo el día. Elige una moneda y un precio objetivo; MarketAlert vigila el precio en sus servidores y avisa a tu teléfono cuando se alcanza. Aunque el precio solo toque el objetivo un instante y retroceda, ese toque no se pierde.",
+      "prompt": "Avísame una vez cuando BTC suba por encima de 70.000 USDT.",
+      "exampleTitle": "Un precio objetivo, vigilado sin pausa",
+      "caption": "Ejemplo en la app · Alerta rápida con precio objetivo, distancia al objetivo y elección de notificación.",
+      "steps": [["Elige la moneda y el mercado", "En Alerta rápida, elige una moneda como BTC, ETH, SOL o BNB, o búscala. Arriba cambias entre Spot o Futuros y USDT o USDC."], ["Escribe el precio objetivo", "Escribe el precio, ajústalo deslizando o usa los botones −5 %…+5 %. La frase bajo la tarjeta muestra qué hará la alerta y a qué distancia está el objetivo."], ["Elige la notificación", "El push silencioso o con sonido está en todos los planes. Telegram está en Plus y Pro, y el webhook firmado en Pro."], ["Crea la alerta", "Toca «Crear alerta». Abre «Ajustes avanzados» para opciones como la repetición. También puedes crear la misma alerta hablando o escribiendo en el chat de IA."]],
+      "details": [["¿Qué pasa si el precio toca el objetivo y retrocede?", "MarketAlert revisa los precios negociados más altos y más bajos. Si el precio toca 70.000 un instante y vuelve a 69.880, la alerta salta igualmente. La notificación muestra el precio de toque y el último precio."], ["¿Qué precio se vigila?", "El precio negociado en el mercado de Binance que elegiste. Los precios de Spot y Futuros pueden diferir en el mismo momento; crea la alerta en el mercado donde operas."], ["¿Una vez o cada vez?", "En el plan gratis, la alerta avisa una vez al alcanzar el objetivo. En Plus y Pro puedes elegir una alerta repetida y recibir aviso cada vez que se cumpla la condición."]],
+      "faq": [["¿Las alertas de precio son gratis?", "Sí. El plan gratis permite 3 alertas con condiciones de precio, variación porcentual y máximo/mínimo de 24 h, enviadas por push."], ["¿Funcionan las alertas con la app cerrada?", "Sí. Las alertas se vigilan en los servidores de MarketAlert; las notificaciones llegan aunque la app esté cerrada o en segundo plano."], ["¿Puedo poner varios objetivos para la misma moneda?", "Sí. Crea una alerta para cada objetivo. En Plus y Pro también puedes combinar dos niveles de precio con O en una sola alerta."], ["¿MarketAlert opera por mí?", "No. Solo envía notificaciones; no se conecta a tu cuenta del exchange, no crea órdenes ni da asesoramiento de inversión."]],
+      "plans": [["Free", "3 alertas; precio, variación porcentual y máximo/mínimo de 24 h. Push silencioso o con sonido. La alerta avisa una vez al alcanzar el objetivo."], ["Plus", "20 alertas; alertas repetidas y hasta 3 condiciones por alerta. Push y Telegram, todos los sonidos de alerta."], ["Pro", "100 alertas; hasta 5 condiciones por alerta. Push, Telegram y webhook firmado."]]
+    },
     "volume-spike-alerts": {
       "link": "Alertas de volumen en Binance", "title": "Cómo crear alertas de aumento de volumen en Binance | MarketAlert", "h1": "¿Cómo recibir alertas cuando aumenta el volumen en Binance?",
       "description": "Configura alertas de volumen de Binance con tu intervalo, media y multiplicador. Créala por voz o chat con IA y recibe notificaciones en Telegram.",
@@ -92,6 +148,20 @@
     }
   },
   "pt-br": {
+    "price-alerts": {
+      "link": "Alerta de preço cripto",
+      "title": "Como criar alerta de preço cripto (grátis) | MarketAlert",
+      "h1": "Como criar um alerta de preço para uma criptomoeda?",
+      "description": "Crie um alerta de preço grátis para moedas da Binance: digite o preço-alvo e escolha notificação push. Avisa mesmo se o preço só tocar o alvo, inclusive com o app fechado.",
+      "intro": "Você não precisa deixar um gráfico aberto o dia todo. Escolha uma moeda e um preço-alvo; o MarketAlert acompanha o preço nos servidores e avisa seu celular quando o alvo é atingido. Mesmo que o preço só toque o alvo por um instante e volte, esse toque não passa despercebido.",
+      "prompt": "Me avise uma vez quando o BTC passar de 70.000 USDT.",
+      "exampleTitle": "Um preço-alvo, acompanhado sem parar",
+      "caption": "Exemplo no app · Alerta rápido com preço-alvo, distância até o alvo e escolha de notificação.",
+      "steps": [["Escolha a moeda e o mercado", "No Alerta rápido, escolha uma moeda como BTC, ETH, SOL ou BNB, ou pesquise. No topo, alterne entre Spot ou Futuros e USDT ou USDC."], ["Digite o preço-alvo", "Digite o preço, ajuste deslizando ou use os botões −5%…+5%. A frase abaixo do cartão mostra o que o alerta vai fazer e a distância até o alvo."], ["Escolha a notificação", "Push silencioso ou com som está em todos os planos. Telegram está no Plus e no Pro, e webhook assinado no Pro."], ["Crie o alerta", "Toque em “Criar alerta”. Abra “Configurações avançadas” para opções como repetição. Você também pode criar o mesmo alerta falando ou escrevendo no chat de IA."]],
+      "details": [["E se o preço tocar o alvo e voltar?", "O MarketAlert verifica os maiores e menores preços negociados. Se o preço tocar 70.000 por um instante e voltar a 69.880, o alerta dispara mesmo assim. A notificação mostra o preço do toque e o último preço."], ["Qual preço é acompanhado?", "O preço negociado no mercado da Binance que você escolheu. Os preços de Spot e Futuros podem ser diferentes no mesmo momento; crie o alerta no mercado em que você opera."], ["Uma vez ou toda vez?", "No plano grátis, o alerta avisa uma vez ao atingir o alvo. No Plus e no Pro você pode escolher alerta repetido e ser avisado sempre que a condição for atendida."]],
+      "faq": [["Os alertas de preço são grátis?", "Sim. O plano grátis permite 3 alertas com condições de preço, variação percentual e máxima/mínima de 24 h, enviados por push."], ["Os alertas funcionam com o app fechado?", "Sim. Os alertas são acompanhados nos servidores do MarketAlert; as notificações chegam mesmo com o app fechado ou em segundo plano."], ["Posso definir vários alvos para a mesma moeda?", "Sim. Crie um alerta para cada alvo. No Plus e no Pro você também pode combinar dois níveis de preço com OU em um só alerta."], ["O MarketAlert opera por mim?", "Não. Ele só envia notificações; não se conecta à sua conta na corretora, não cria ordens e não dá recomendação de investimento."]],
+      "plans": [["Free", "3 alertas; preço, variação percentual e máxima/mínima de 24 h. Push silencioso ou com som. O alerta avisa uma vez ao atingir o alvo."], ["Plus", "20 alertas; alertas repetidos e até 3 condições por alerta. Push e Telegram, todos os sons de alerta."], ["Pro", "100 alertas; até 5 condições por alerta. Push, Telegram e webhook assinado."]]
+    },
     "volume-spike-alerts": {
       "link": "Alertas de volume na Binance", "title": "Como criar alertas de aumento de volume na Binance | MarketAlert", "h1": "Como receber avisos de aumento de volume na Binance?",
       "description": "Configure alertas de volume na Binance com período, média e multiplicador próprios. Crie por voz ou chat com IA e receba notificações no Telegram.",
@@ -114,6 +184,20 @@
     }
   },
   "ru": {
+    "price-alerts": {
+      "link": "Ценовой алерт для крипты",
+      "title": "Как настроить ценовой алерт для криптовалюты (бесплатно) | MarketAlert",
+      "h1": "Как настроить оповещение о цене криптовалюты?",
+      "description": "Бесплатный ценовой алерт для монет Binance: укажите целевую цену и выберите push-уведомление. Сработает, даже если цена лишь коснётся цели, и при закрытом приложении.",
+      "intro": "Не нужно весь день держать график открытым. Выберите монету и целевую цену: MarketAlert следит за ценой на своих серверах и присылает уведомление на телефон, когда цель достигнута. Даже если цена лишь на мгновение коснётся цели и откатится, это касание не будет пропущено.",
+      "prompt": "Сообщи мне один раз, когда BTC поднимется выше 70 000 USDT.",
+      "exampleTitle": "Одна целевая цена — постоянное наблюдение",
+      "caption": "Пример в приложении · Быстрый алерт: целевая цена, расстояние до цели и выбор уведомления.",
+      "steps": [["Выберите монету и рынок", "В быстром алерте выберите монету, например BTC, ETH, SOL или BNB, или найдите её. Вверху переключайте Спот или Фьючерсы и USDT или USDC."], ["Укажите целевую цену", "Введите цену, настройте её ползунком или кнопками −5%…+5%. Фраза под карточкой показывает, что сделает алерт и как далеко цель."], ["Выберите уведомление", "Беззвучный push или push со звуком доступен на любом тарифе. Telegram — в Plus и Pro, подписанный вебхук — в Pro."], ["Создайте алерт", "Нажмите «Создать алерт». В «Расширенных настройках» есть, например, режим повтора. Тот же алерт можно создать голосом или в AI-чате."]],
+      "details": [["Что если цена коснётся цели и откатится?", "MarketAlert проверяет максимальные и минимальные цены сделок. Если цена на мгновение коснётся 70 000 и вернётся к 69 880, алерт всё равно сработает. В уведомлении указаны цена касания и последняя цена."], ["Какая цена отслеживается?", "Цена сделок на выбранном рынке Binance. Цены спота и фьючерсов в один момент могут отличаться, поэтому ставьте алерт на рынке, где вы торгуете."], ["Один раз или каждый раз?", "На бесплатном тарифе алерт сообщает один раз при достижении цели. В Plus и Pro можно выбрать повторяющийся алерт и получать уведомление каждый раз, когда условие выполняется."]],
+      "faq": [["Ценовые алерты бесплатны?", "Да. Бесплатный тариф позволяет создать 3 алерта с условиями по цене, процентному изменению и 24-часовому максимуму/минимуму с доставкой push."], ["Работают ли алерты при закрытом приложении?", "Да. Алерты отслеживаются на серверах MarketAlert, поэтому уведомления приходят, даже если приложение закрыто или в фоне."], ["Можно ли задать несколько целей для одной монеты?", "Да. Создайте отдельный алерт для каждой цели. В Plus и Pro можно также объединить два ценовых уровня через ИЛИ в одном алерте."], ["MarketAlert торгует за меня?", "Нет. Он только отправляет уведомления: не подключается к вашему аккаунту на бирже, не выставляет ордера и не даёт инвестиционных советов."]],
+      "plans": [["Free", "3 алерта; цена, процентное изменение и 24-часовой максимум/минимум. Беззвучный push или push со звуком. Алерт сообщает один раз при достижении цели."], ["Plus", "20 алертов; повторяющиеся алерты и до 3 условий в алерте. Push и Telegram, все звуки алертов."], ["Pro", "100 алертов; до 5 условий в алерте. Push, Telegram и подписанный вебхук."]]
+    },
     "volume-spike-alerts": {
       "link": "Алерты объёма Binance", "title": "Как настроить алерт на всплеск объёма Binance | MarketAlert", "h1": "Как получать уведомления о всплесках объёма на Binance?",
       "description": "Настройте алерт объёма Binance: таймфрейм, среднее и множитель. Создайте голосом или в ИИ-чате и получайте уведомления в Telegram.",
@@ -136,6 +220,20 @@
     }
   },
   "ja": {
+    "price-alerts": {
+      "link": "暗号資産の価格アラート",
+      "title": "暗号資産の価格アラートの設定方法（無料）| MarketAlert",
+      "h1": "暗号資産の価格アラートはどう設定する？",
+      "description": "Binanceのコインに無料で価格アラートを設定。目標価格を入力してプッシュ通知を選ぶだけ。価格が目標に一瞬触れただけでも通知し、アプリを閉じていても動作します。",
+      "intro": "一日中チャートを開いておく必要はありません。コインと目標価格を選ぶと、MarketAlertがサーバーで価格を監視し、目標に達したらスマホに通知します。価格が目標に一瞬だけ触れてすぐ戻っても、そのタッチを見逃しません。",
+      "prompt": "BTCが70,000 USDTを上回ったら一度だけ知らせて。",
+      "exampleTitle": "目標価格をひとつ、監視は常時",
+      "caption": "アプリ内の例 · クイックアラートの目標価格、目標までの距離、通知の選択。",
+      "steps": [["コインと市場を選ぶ", "クイックアラートでBTC、ETH、SOL、BNBなどのコインを選ぶか検索します。上部で現物／先物、USDT／USDCを切り替えます。"], ["目標価格を入力", "価格を入力するか、スライドや−5%〜+5%ボタンで調整します。カード下の文章に、アラートの動作と目標までの距離が表示されます。"], ["通知を選ぶ", "サイレントまたはサウンド付きのプッシュはすべてのプランで使えます。TelegramはPlusとPro、署名付きWebhookはProで利用できます。"], ["アラートを設定", "「アラートを設定」をタップします。繰り返し方法などは「詳細設定」で変更できます。同じアラートを音声やAIチャットで作ることもできます。"]],
+      "details": [["価格が目標に触れてすぐ戻ったら？", "MarketAlertは約定価格の高値と安値を確認します。価格が一瞬70,000に触れて69,880に戻っても、アラートは作動します。通知にはタッチ価格と最新価格が表示されます。"], ["どの価格を監視する？", "選んだBinance市場の約定価格です。現物と先物の価格は同じ時点でも異なることがあるため、取引している市場にアラートを設定してください。"], ["1回だけ？毎回？", "無料プランでは目標に達したときに1回通知します。PlusとProでは繰り返しアラートを選び、条件を満たすたびに通知を受け取れます。"]],
+      "faq": [["価格アラートは無料？", "はい。無料プランでは価格、変動率、24時間高値／安値の条件で3つのアラートを作成でき、プッシュで通知されます。"], ["アプリを閉じていても動作する？", "はい。アラートはMarketAlertのサーバーで監視されるため、アプリを閉じていてもバックグラウンドでも通知が届きます。"], ["同じコインに複数の目標を設定できる？", "はい。目標ごとに別のアラートを作成します。PlusとProでは2つの価格水準をORで1つのアラートにまとめることもできます。"], ["MarketAlertは代わりに取引する？", "いいえ。通知を送るだけで、取引所アカウントには接続せず、注文も出さず、投資助言も行いません。"]],
+      "plans": [["Free", "アラート3件。価格、変動率、24時間高値／安値。サイレントまたはサウンド付きプッシュ。目標に達すると1回通知。"], ["Plus", "アラート20件。繰り返しアラート、1アラートあたり最大3条件。プッシュとTelegram、すべてのアラート音。"], ["Pro", "アラート100件。1アラートあたり最大5条件。プッシュ、Telegram、署名付きWebhook。"]]
+    },
     "volume-spike-alerts": {
       "link": "Binance出来高急増アラート", "title": "Binanceの出来高急増アラートを設定する方法 | MarketAlert", "h1": "Binanceの出来高が急増したら通知を受け取るには？",
       "description": "時間足・出来高平均・倍率を指定してBinanceの出来高アラートを設定。音声やAIチャットで作成し、Telegramで通知を受信できます。",
@@ -158,6 +256,20 @@
     }
   },
   "zh": {
+    "price-alerts": {
+      "link": "加密货币价格提醒",
+      "title": "如何设置加密货币价格提醒（免费）| MarketAlert",
+      "h1": "如何为加密货币设置价格提醒？",
+      "description": "为币安币种免费设置价格提醒：输入目标价并选择推送通知。即使价格只是触及目标也会提醒，关闭应用也能工作。",
+      "intro": "不必整天开着图表。选择币种和目标价，MarketAlert 会在服务器上监控价格，到达目标时通知你的手机。即使价格只是瞬间触及目标又回落，这次触及也不会被错过。",
+      "prompt": "BTC 涨破 70,000 USDT 时提醒我一次。",
+      "exampleTitle": "一个目标价，持续监控",
+      "caption": "应用内示例 · 快速提醒中的目标价、距目标的距离和通知选择。",
+      "steps": [["选择币种和市场", "在快速提醒中选择 BTC、ETH、SOL、BNB 等币种，或直接搜索。在顶部切换现货或合约、USDT 或 USDC。"], ["输入目标价", "输入价格，拖动调整，或使用 −5%…+5% 按钮。卡片下方的句子会显示提醒将做什么以及距目标还有多远。"], ["选择通知方式", "所有方案都支持静音或有声推送。Plus 和 Pro 支持 Telegram，Pro 支持签名 Webhook。"], ["设置提醒", "点按“设置提醒”。在“高级设置”中可以设置重复方式等选项。也可以用语音或在 AI 对话中创建同样的提醒。"]],
+      "details": [["价格触及目标后回落会怎样？", "MarketAlert 会检查成交价格的最高值和最低值。即使价格瞬间触及 70,000 后回落到 69,880，提醒仍会触发。通知中会同时显示触及价和最新价。"], ["监控的是哪个价格？", "你所选币安市场的成交价格。同一时刻现货和合约价格可能不同，请在你交易的市场上设置提醒。"], ["提醒一次还是每次？", "免费方案中，提醒在到达目标时通知一次。Plus 和 Pro 可以选择重复提醒，每次满足条件都会再次通知。"]],
+      "faq": [["价格提醒免费吗？", "是的。免费方案可创建 3 个提醒，支持价格、涨跌幅和 24 小时最高/最低条件，通过推送通知。"], ["关闭应用后价格提醒还有效吗？", "有效。提醒在 MarketAlert 服务器上监控，即使应用关闭或在后台也会收到通知。"], ["同一个币种可以设置多个目标吗？", "可以。为每个目标单独创建提醒。在 Plus 和 Pro 中，也可以用“或”把两个价格水平合并到一个提醒里。"], ["MarketAlert 会替我交易吗？", "不会。它只发送通知，不连接你的交易所账户，不下单，也不提供投资建议。"]],
+      "plans": [["Free", "3 个提醒；价格、涨跌幅和 24 小时最高/最低。静音或有声推送。到达目标时通知一次。"], ["Plus", "20 个提醒；重复提醒，每个提醒最多 3 个条件。推送和 Telegram，全部提醒音。"], ["Pro", "100 个提醒；每个提醒最多 5 个条件。推送、Telegram 和签名 Webhook。"]]
+    },
     "volume-spike-alerts": {
       "link": "币安成交量激增提醒", "title": "如何设置币安成交量激增提醒 | MarketAlert", "h1": "币安币种成交量激增时，如何收到提醒？",
       "description": "自选时间周期、成交量均值和倍数，设置币安成交量提醒。通过语音或AI聊天创建，并在Telegram接收通知。",
@@ -180,6 +292,20 @@
     }
   },
   "hi": {
+    "price-alerts": {
+      "link": "क्रिप्टो प्राइस अलर्ट",
+      "title": "क्रिप्टो प्राइस अलर्ट कैसे सेट करें (मुफ़्त) | MarketAlert",
+      "h1": "किसी क्रिप्टो कॉइन के लिए प्राइस अलर्ट कैसे सेट करें?",
+      "description": "Binance कॉइन के लिए मुफ़्त प्राइस अलर्ट सेट करें: लक्ष्य कीमत लिखें और पुश नोटिफ़िकेशन चुनें। कीमत लक्ष्य को बस छू ले तब भी सूचना मिलती है, ऐप बंद होने पर भी।",
+      "intro": "पूरे दिन चार्ट खुला रखने की ज़रूरत नहीं। कॉइन और लक्ष्य कीमत चुनें; MarketAlert अपने सर्वर पर कीमत पर नज़र रखता है और लक्ष्य पूरा होते ही आपके फ़ोन पर सूचना भेजता है। अगर कीमत एक पल के लिए लक्ष्य को छूकर लौट भी जाए, तो भी वह छूना नहीं छूटता।",
+      "prompt": "जब BTC 70,000 USDT से ऊपर जाए, मुझे एक बार बताना।",
+      "exampleTitle": "एक लक्ष्य कीमत, लगातार निगरानी",
+      "caption": "ऐप का उदाहरण · क्विक अलर्ट में लक्ष्य कीमत, लक्ष्य से दूरी और सूचना का चुनाव।",
+      "steps": [["कॉइन और मार्केट चुनें", "क्विक अलर्ट में BTC, ETH, SOL या BNB जैसा कॉइन चुनें या खोजें। ऊपर से Spot या Futures और USDT या USDC बदलें।"], ["लक्ष्य कीमत लिखें", "कीमत लिखें, खिसकाकर बदलें या −5%…+5% बटन इस्तेमाल करें। कार्ड के नीचे का वाक्य बताता है कि अलर्ट क्या करेगा और लक्ष्य कितनी दूर है।"], ["सूचना चुनें", "साइलेंट या आवाज़ वाला पुश हर प्लान में है। Telegram Plus और Pro में, साइन किया हुआ वेबहुक Pro में मिलता है।"], ["अलर्ट सेट करें", "“अलर्ट सेट करें” पर टैप करें। दोहराव जैसे विकल्पों के लिए “उन्नत सेटिंग्स” खोलें। यही अलर्ट आप बोलकर या AI चैट में लिखकर भी बना सकते हैं।"]],
+      "details": [["अगर कीमत लक्ष्य छूकर लौट जाए तो?", "MarketAlert ट्रेड हुई सबसे ऊँची और सबसे नीची कीमत देखता है। अगर कीमत एक पल के लिए 70,000 छूकर 69,880 पर लौट आए, तब भी अलर्ट बजता है। सूचना में छूने वाली कीमत और आख़िरी कीमत दोनों होती हैं।"], ["कौन-सी कीमत देखी जाती है?", "आपके चुने हुए Binance मार्केट की ट्रेड कीमत। एक ही समय पर Spot और Futures की कीमत अलग हो सकती है, इसलिए अलर्ट उसी मार्केट पर लगाएँ जहाँ आप ट्रेड करते हैं।"], ["एक बार या हर बार?", "मुफ़्त प्लान में अलर्ट लक्ष्य पूरा होने पर एक बार बताता है। Plus और Pro में आप दोहराने वाला अलर्ट चुन सकते हैं और हर बार शर्त पूरी होने पर सूचना पा सकते हैं।"]],
+      "faq": [["क्या प्राइस अलर्ट मुफ़्त हैं?", "हाँ। मुफ़्त प्लान में आप कीमत, प्रतिशत बदलाव और 24 घंटे के हाई/लो शर्तों के साथ 3 अलर्ट बना सकते हैं, जो पुश से आते हैं।"], ["क्या ऐप बंद होने पर भी अलर्ट काम करते हैं?", "हाँ। अलर्ट MarketAlert के सर्वर पर देखे जाते हैं, इसलिए ऐप बंद या बैकग्राउंड में होने पर भी सूचना आती है।"], ["क्या एक ही कॉइन के लिए कई लक्ष्य रख सकता हूँ?", "हाँ। हर लक्ष्य के लिए अलग अलर्ट बनाएँ। Plus और Pro में आप दो कीमत स्तरों को OR से एक ही अलर्ट में भी जोड़ सकते हैं।"], ["क्या MarketAlert मेरी तरफ़ से ट्रेड करता है?", "नहीं। यह सिर्फ़ सूचना भेजता है; आपके एक्सचेंज खाते से नहीं जुड़ता, ऑर्डर नहीं लगाता और निवेश सलाह नहीं देता।"]],
+      "plans": [["Free", "3 अलर्ट; कीमत, प्रतिशत बदलाव और 24 घंटे का हाई/लो। साइलेंट या आवाज़ वाला पुश। लक्ष्य पूरा होने पर एक बार सूचना।"], ["Plus", "20 अलर्ट; दोहराने वाले अलर्ट और हर अलर्ट में 3 शर्तें तक। पुश और Telegram, सभी अलर्ट आवाज़ें।"], ["Pro", "100 अलर्ट; हर अलर्ट में 5 शर्तें तक। पुश, Telegram और साइन किया हुआ वेबहुक।"]]
+    },
     "volume-spike-alerts": {
       "link": "Binance वॉल्यूम स्पाइक अलर्ट", "title": "Binance वॉल्यूम स्पाइक अलर्ट कैसे लगाएँ | MarketAlert", "h1": "Binance पर किसी कॉइन का वॉल्यूम बढ़ने की सूचना कैसे पाएँ?",
       "description": "अपनी समयावधि, औसत और गुणक के साथ Binance वॉल्यूम अलर्ट लगाएँ। बोलकर या AI चैट से बनाएँ और Telegram पर सूचना पाएँ।",
@@ -202,6 +328,20 @@
     }
   },
   "ar": {
+    "price-alerts": {
+      "link": "تنبيه سعر العملات الرقمية",
+      "title": "كيف تضبط تنبيه سعر للعملات الرقمية (مجانًا) | MarketAlert",
+      "h1": "كيف أضبط تنبيه سعر لعملة رقمية؟",
+      "description": "اضبط تنبيه سعر مجانيًا لعملات Binance: اكتب السعر المستهدف واختر إشعارًا فوريًا. يصلك التنبيه حتى لو لمس السعر الهدف لحظة واحدة، ويعمل والتطبيق مغلق.",
+      "intro": "لا حاجة لإبقاء الرسم البياني مفتوحًا طوال اليوم. اختر العملة والسعر المستهدف؛ يراقب MarketAlert السعر على خوادمه ويرسل إشعارًا إلى هاتفك عند بلوغ الهدف. حتى لو لمس السعر الهدف لحظة ثم تراجع، لن تفوتك هذه اللمسة.",
+      "prompt": "أخبرني مرة واحدة عندما يرتفع BTC فوق 70,000 USDT.",
+      "exampleTitle": "سعر مستهدف واحد ومراقبة مستمرة",
+      "caption": "مثال من التطبيق · التنبيه السريع مع السعر المستهدف والمسافة إليه واختيار الإشعار.",
+      "steps": [["اختر العملة والسوق", "في التنبيه السريع اختر عملة مثل BTC أو ETH أو SOL أو BNB أو ابحث عنها. بدّل من الأعلى بين الفوري والعقود الآجلة وبين USDT وUSDC."], ["اكتب السعر المستهدف", "اكتب السعر أو عدّله بالسحب أو استخدم أزرار −5%…+5%. توضح الجملة أسفل البطاقة ما سيفعله التنبيه وكم يبعد الهدف."], ["اختر الإشعار", "الإشعار الصامت أو بالصوت متاح في كل الخطط. Telegram متاح في Plus وPro، والويب هوك الموقّع في Pro."], ["أنشئ التنبيه", "اضغط «إنشاء التنبيه». افتح «إعدادات متقدمة» لخيارات مثل التكرار. يمكنك أيضًا إنشاء التنبيه نفسه بالصوت أو بالكتابة في محادثة الذكاء الاصطناعي."]],
+      "details": [["ماذا لو لمس السعر الهدف ثم تراجع؟", "يفحص MarketAlert أعلى وأدنى أسعار التداول. إذا لمس السعر 70,000 لحظة ثم عاد إلى 69,880 فسيعمل التنبيه مع ذلك. يعرض الإشعار سعر اللمس وآخر سعر معًا."], ["أي سعر تتم مراقبته؟", "سعر التداول في سوق Binance الذي اخترته. قد يختلف سعر الفوري عن العقود الآجلة في اللحظة نفسها، لذا اضبط التنبيه على السوق الذي تتداول فيه."], ["مرة واحدة أم كل مرة؟", "في الخطة المجانية ينبّهك التنبيه مرة واحدة عند بلوغ الهدف. في Plus وPro يمكنك اختيار تنبيه متكرر وتلقي إشعار كلما تحقق الشرط."]],
+      "faq": [["هل تنبيهات السعر مجانية؟", "نعم. تتيح الخطة المجانية 3 تنبيهات بشروط السعر ونسبة التغير وأعلى/أدنى سعر خلال 24 ساعة، وتصل بإشعار فوري."], ["هل تعمل التنبيهات والتطبيق مغلق؟", "نعم. تُراقب التنبيهات على خوادم MarketAlert، فتصلك الإشعارات حتى لو كان التطبيق مغلقًا أو في الخلفية."], ["هل يمكنني ضبط عدة أهداف للعملة نفسها؟", "نعم. أنشئ تنبيهًا منفصلًا لكل هدف. في Plus وPro يمكنك أيضًا دمج مستويين سعريين بـ«أو» في تنبيه واحد."], ["هل يتداول MarketAlert نيابةً عني؟", "لا. يرسل الإشعارات فقط؛ لا يتصل بحسابك في المنصة ولا ينفذ أوامر ولا يقدم نصائح استثمارية."]],
+      "plans": [["Free", "3 تنبيهات؛ السعر ونسبة التغير وأعلى/أدنى سعر خلال 24 ساعة. إشعار صامت أو بالصوت. ينبّه التنبيه مرة واحدة عند بلوغ الهدف."], ["Plus", "20 تنبيهًا؛ تنبيهات متكررة وحتى 3 شروط لكل تنبيه. إشعارات فورية وTelegram وكل أصوات التنبيه."], ["Pro", "100 تنبيه؛ حتى 5 شروط لكل تنبيه. إشعارات فورية وTelegram وويب هوك موقّع."]]
+    },
     "volume-spike-alerts": {
       "link": "تنبيهات حجم التداول في Binance", "title": "كيفية إعداد تنبيه ارتفاع حجم التداول في Binance | MarketAlert", "h1": "كيف أتلقى تنبيهًا عند ارتفاع حجم تداول العملات في Binance؟",
       "description": "اضبط تنبيه حجم تداول Binance بالفاصل الزمني والمتوسط والمضاعف الذي تختاره. أنشئه بالصوت أو محادثة الذكاء الاصطناعي وتلقَّ إشعار Telegram.",
@@ -224,6 +364,20 @@
     }
   },
   "en": {
+    "price-alerts": {
+      "link": "Crypto price alerts",
+      "title": "How to set a crypto price alert (free) | MarketAlert",
+      "h1": "How do I set a price alert for a crypto coin?",
+      "description": "Set a free price alert for Binance coins: enter a target price and choose a push notification. Get notified even if the price only touches the target. Works with the app closed.",
+      "intro": "You don’t need to keep a chart open all day. Pick a coin and a target price; MarketAlert watches the price on its servers and notifies your phone when the target is reached. Even if the price only touches the target for a moment and pulls back, that touch is not missed.",
+      "prompt": "Notify me once when BTC rises above 70,000 USDT.",
+      "exampleTitle": "One target price, watched nonstop",
+      "caption": "In-app example · Quick alert with target price, distance to target and notification choice.",
+      "steps": [["Pick the coin and market", "In Quick alert, choose a coin such as BTC, ETH, SOL or BNB, or search. Switch between Spot or Futures and USDT or USDC at the top."], ["Enter the target price", "Type the price, drag to adjust or use the −5%…+5% buttons. The sentence under the card shows what the alert will do and how far the target is."], ["Choose the notification", "Silent or Sound push is available on every plan. Telegram is available on Plus and Pro, signed webhook on Pro."], ["Set the alert", "Tap “Set alert”. Open “Advanced settings” for options such as repeat mode. You can also create the same alert by speaking or typing in AI chat."]],
+      "details": [["What if the price touches the target and pulls back?", "MarketAlert checks the highest and lowest traded prices. If the price touches 70,000 for a moment and falls back to 69,880, the alert still fires. The notification shows both the touch price and the last price."], ["Which price is watched?", "The traded price on the Binance market you selected. Spot and Futures prices can differ at the same moment, so set the alert on the market you trade."], ["Once or every time?", "On the free plan an alert notifies once when it reaches the target. On Plus and Pro you can choose a repeating alert and be notified again each time the condition is met."]],
+      "faq": [["Are price alerts free?", "Yes. The free plan lets you create 3 alerts with price, percentage move and 24h high/low conditions, delivered by push notification."], ["Do price alerts work when the app is closed?", "Yes. Alerts are monitored on MarketAlert servers, so notifications arrive even when the app is closed or in the background."], ["Can I set several targets for the same coin?", "Yes. Create a separate alert for each target. On Plus and Pro you can also combine two price levels with OR in one alert."], ["Does MarketAlert trade for me?", "No. It only sends notifications. It doesn’t connect to your exchange account, place orders or give investment advice."]],
+      "plans": [["Free", "3 alerts; price, percentage move and 24h high/low. Silent or Sound push. An alert notifies once when it reaches the target."], ["Plus", "20 alerts; repeating alerts and up to 3 conditions per alert. Push and Telegram, all alert sounds."], ["Pro", "100 alerts; up to 5 conditions per alert. Push, Telegram and signed webhook."]]
+    },
     "volume-spike-alerts": {
       "link": "Binance volume spike alerts",
       "title": "How to set Binance volume spike alerts | MarketAlert",
