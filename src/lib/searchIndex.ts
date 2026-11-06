@@ -4,13 +4,15 @@
  */
 import content from '../i18n/content.json';
 import guides from '../i18n/alert-guides.json';
+import coinGuides from '../i18n/coin-guides.json';
+import { plain } from './pages';
 import rsiGuides from '../i18n/rsi-alerts.json';
 import documents from '../legal/documents.json';
 import deletion from '../legal/account-deletion.json';
 
 export interface SearchEntry { t: string; d: string; u: string; k: string; g: string }
 
-const flat = (v: unknown): string => Array.isArray(v) ? v.map(flat).join(' ') : typeof v === 'string' ? v : '';
+const flat = (v: unknown): string => Array.isArray(v) ? v.map(flat).join(' ') : typeof v === 'string' ? plain(v) : '';
 
 export function buildSearchIndex(code: string): SearchEntry[] {
   const t = (content as any)[code];
@@ -20,8 +22,10 @@ export function buildSearchIndex(code: string): SearchEntry[] {
   out.push({ t: 'MarketAlert', d: t.meta.desc, u: home, k: flat([t.heroTitle, t.heroTitleSecond, t.heroSub, t.markets]), g: 'feature' });
   const r = (rsiGuides as any)[code];
   out.push({ t: r.link, d: r.description, u: `${home}features/rsi-alerts/`, k: flat([r.title, r.h1, r.intro, r.faq?.map((q: string[]) => q[0]), r.steps]), g: 'page' });
-  for (const [slug, g] of Object.entries((guides as any)[code]) as [string, any][]) {
-    out.push({ t: g.link, d: g.description, u: `${home}features/${slug}/`, k: flat([g.title, g.h1, g.intro, g.prompt, g.steps?.map((s: string[]) => s[0]), g.details?.map((s: string[]) => s[0]), g.faq?.map((q: string[]) => q[0])]), g: 'page' });
+  for (const [section, src] of [['features', guides], ['coins', coinGuides]] as [string, any][]) {
+    for (const [slug, g] of Object.entries(src[code]) as [string, any][]) {
+      out.push({ t: g.link, d: g.description, u: `${home}${section}/${slug}/`, k: flat([g.title, g.h1, g.intro, g.prompt, g.steps?.map((s: string[]) => s[0]), g.details?.map((s: string[]) => s[0]), g.faq?.map((q: string[]) => q[0])]), g: 'page' });
+    }
   }
   for (const f of t.f) out.push({ t: f.t, d: f.d, u: `${home}#features`, k: flat([f.s, f.k]), g: 'feature' });
   out.push({ t: t.plansTitle, d: t.plansNote, u: `${home}#plans`, k: flat([t.nav[2], t.planRows]), g: 'feature' });
