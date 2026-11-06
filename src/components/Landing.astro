@@ -4,6 +4,7 @@ import SearchBox from './SearchBox.astro';
 import SocialLinks from './SocialLinks.astro';
 import { GA_ID, LOCALES, legalUrl, shotSources } from '../config';
 import alertGuides from '../i18n/alert-guides.json';
+import coinGuides from '../i18n/coin-guides.json';
 
 interface Props { t: any; code: string; appLocale: string }
 const { t, code, appLocale } = Astro.props;
@@ -42,6 +43,9 @@ const shot = (k: string, alt: string, eager = false, tall = false) => {
 };
 // Mağaza rozetleri StoreBadges bileşeninde (src/components/StoreBadges.astro).
 const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : v === 0 ? `<span class="no">${svg('x')}</span>` : `<span class="part">${v}</span>`;
+// Ana sayfadaki "Coin rehberleri" satırı: coins/ bölümündeki her sayfa kendiliğinden eklenir.
+const COIN_LABEL: Record<string, string> = { tr: 'Coin rehberleri', en: 'Coin guides', de: 'Coin-Ratgeber', fr: 'Guides par crypto', es: 'Guías por moneda', 'pt-br': 'Guias por moeda', ru: 'Гайды по монетам', ja: 'コイン別ガイド', zh: '币种指南', hi: 'कॉइन गाइड', ar: 'أدلة العملات' };
+const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]: [string, any]) => ({ href: `/${code}/coins/${slug}/`, link: g.link }));
 ---
 <a class="skip" href="#features">{t.nav[0]}</a>
 <header class="hd">
@@ -125,6 +129,8 @@ const cell = (v: any) => v === 1 ? `<span class="yes">${svg('check')}</span>` : 
           <p class="feature-label">{f.s}</p>
           <h2>{f.t}</h2>
           <p>{f.d}</p>
+          {f.k === 'price' && <a class="rsi-guide-link" href={`/${code}/features/price-alerts/`}>{(alertGuides as any)[code]['price-alerts'].link} <span aria-hidden="true">↗</span></a>}
+          {f.k === 'price' && coinLinks.length > 0 && <p class="coin-guides"><b>{COIN_LABEL[code]}</b>{coinLinks.map(c => <a href={c.href}>{c.link}</a>)}</p>}
           {f.k === 'all' && <a class="rsi-guide-link" href={`/${code}/features/rsi-alerts/`}>{t.rsiGuideLink} <span aria-hidden="true">↗</span></a>}
           {f.k === 'multi' && <a class="rsi-guide-link" href={`/${code}/features/multi-condition-alerts/`}>{(alertGuides as any)[code]['multi-condition-alerts'].link} <span aria-hidden="true">↗</span></a>}
           {f.k === 'tpl' && <a class="rsi-guide-link" href={`/${code}/features/volume-spike-alerts/`}>{(alertGuides as any)[code]['volume-spike-alerts'].link} <span aria-hidden="true">↗</span></a>}
