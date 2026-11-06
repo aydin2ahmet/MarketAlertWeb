@@ -434,3 +434,8 @@ img { max-width: 100%; }
   .zh-bub small { font-size: 10.5px; }
 }
 @media (prefers-reduced-motion: reduce) { .zh-bub, .zh-m i, .zh-px { transition: none; } }
+.coin-guides { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 12px; font-size: 13px; }
+.coin-guides b { font: 600 11px/1.4 var(--mono); color: var(--mut); text-transform: uppercase; letter-spacing: .04em; margin-inline-end: 2px; }
+.coin-guides a { border: 1px solid var(--bd); border-radius: 999px; padding: 4px 11px; background: var(--sf); color: var(--tx); font-weight: 600; }
+.coin-guides a:hover { border-color: var(--cat3); color: var(--cat3); }
+:root[lang=ar] .coin-guides b, :root[lang=hi] .coin-guides b, :root[lang=zh] .coin-guides b, :root[lang=ja] .coin-guides b, :root[lang=ru] .coin-guides b { font-family: var(--f); letter-spacing: 0; font-size: 12px; }
