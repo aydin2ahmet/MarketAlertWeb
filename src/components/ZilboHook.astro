@@ -1,0 +1,97 @@
+---
+/**
+ * Sayfa açılış kancası (seçenek A, 2026-11-06): fiyat sayacı hedefe iner, dokunduğu an Zilbo zili çalar ve balon çıkar.
+ * Çizim kareleri /zilbo/zilbo.json içinde; yalnızca bölüm ekranda görünürken indirilir ve oynar.
+ * Süsleme amaçlıdır (aria-hidden); sayfanın anlamı metinde kalır.
+ */
+interface Props {
+  code: string;
+  hook: { pair: string; market: string; from: number; target: number; touch: number; last: number; op: '<' | '>' };
+  text: string[];
+}
+const { code, hook, text } = Astro.props;
+const NF: Record<string, string> = { tr: 'tr-TR', en: 'en-US', zh: 'zh-CN', es: 'es-ES', hi: 'en-IN', ar: 'ar-u-nu-latn', 'pt-br': 'pt-BR', fr: 'fr-FR', ru: 'ru-RU', de: 'de-DE', ja: 'ja-JP' };
+const LBL: Record<string, string[]> = {
+  tr: ['HEDEF', 'uzaklık'], en: ['TARGET', 'away'], zh: ['目标', '距离'], es: ['OBJETIVO', 'distancia'], hi: ['लक्ष्य', 'दूरी'], ar: ['الهدف', 'المسافة'],
+  'pt-br': ['ALVO', 'distância'], fr: ['CIBLE', 'écart'], ru: ['ЦЕЛЬ', 'до цели'], de: ['ZIEL', 'Abstand'], ja: ['目標', '差'],
+};
+const nf = NF[code] || 'en-US';
+const fmt = (n: number) => new Intl.NumberFormat(nf).format(n);
+const lbl = LBL[code] || LBL.en;
+const fill = (s: string) => s.replace('{t}', fmt(hook.target)).replace('{x}', fmt(hook.touch)).replace('{l}', fmt(hook.last));
+---
+<div class="zh" aria-hidden="true" data-zilbo data-nf={nf} data-from={hook.from} data-target={hook.target} data-touch={hook.touch} data-op={hook.op} data-dist={lbl[1]}>
+  <div class="zh-tick">
+    <div class="zh-pair"><span>{hook.pair}</span><span>{hook.market}</span></div>
+    <div class="zh-px" dir="ltr">{fmt(hook.from)}</div>
+    <div class="zh-tgt"><span>{lbl[0]} <b dir="ltr">{hook.op} {fmt(hook.target)}</b></span><span class="zh-ds">{lbl[1]} {fmt(Math.abs(hook.from - hook.target))}</span></div>
+    <div class="zh-m"><i></i></div>
+  </div>
+  <div class="zh-card">
+    <img class="zh-poster" src="/zilbo/zilbo.webp" width="250" height="265" alt="" decoding="async" />
+    <svg class="zh-svg" viewBox="-150 -290 300 318"></svg>
+  </div>
+  <div class="zh-bub"><b>{fill(text[0])}</b><small>{fill(text[1])}</small></div>
+</div>
+
+<script>
+  type Frames = { defs: string; zil: string[]; sevin: string[] };
+  let framesP: Promise<Frames> | null = null;
+  const loadFrames = () => framesP ??= fetch('/zilbo/zilbo.json').then(r => r.json()).then((f: Frames) => {
+    const holder = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    holder.setAttribute('width', '0'); holder.setAttribute('height', '0'); holder.style.position = 'absolute';
+    holder.innerHTML = `<defs>${f.defs}</defs>`;
+    document.body.append(holder);
+    return f;
+  });
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll<HTMLElement>('[data-zilbo]').forEach(root => {
+    const d = root.dataset;
+    const from = +d.from!, target = +d.target!, touch = +d.touch!, down = d.op === '<';
+    const nf = new Intl.NumberFormat(d.nf);
+    const px = root.querySelector<HTMLElement>('.zh-px')!, ds = root.querySelector<HTMLElement>('.zh-ds')!;
+    const meter = root.querySelector<HTMLElement>('.zh-m i')!, svg = root.querySelector<SVGElement>('.zh-svg')!;
+    const set = (p: number) => {
+      px.textContent = nf.format(p);
+      const hit = down ? p <= target : p >= target;
+      ds.textContent = hit ? '✓' : `${d.dist} ${nf.format(Math.abs(p - target))}`;
+      meter.style.width = `${Math.min(100, Math.abs(from - p) / Math.abs(from - touch) * 100)}%`;
+      return hit;
+    };
+    const finalState = () => { set(touch); root.classList.add('hit', 'on'); };
+    if (reduce) { finalState(); return; }
+    // Hedefe doğru, araya küçük bir geri dönüş katan fiyat yolu.
+    const steps = 12;
+    const path = Array.from({ length: steps + 1 }, (_, i) => {
+      const t = i / steps, wob = i === 4 ? 0.06 : i === 8 ? 0.03 : 0;
+      return Math.round(from + (touch - from) * (t * t * (3 - 2 * t) - wob));
+    });
+    let timers: number[] = [], anim = 0, loop = 0;
+    const later = (f: () => void, ms: number) => timers.push(window.setTimeout(f, ms));
+    const play = (fr: string[], once = false) => {
+      clearInterval(anim); let i = 0; svg.innerHTML = fr[0];
+      anim = window.setInterval(() => { if (++i >= fr.length) { if (once) { clearInterval(anim); return; } i = 0; } svg.innerHTML = fr[i]; }, 40);
+    };
+    const run = (f: Frames) => {
+      timers.forEach(clearTimeout); timers = [];
+      clearInterval(anim); svg.innerHTML = f.zil[0];
+      root.classList.remove('hit', 'on');
+      path.forEach((p, i) => later(() => {
+        if (set(p) && !root.classList.contains('hit')) {
+          root.classList.add('hit', 'on');
+          play(f.zil);
+          later(() => play(f.sevin, true), 2600);
+        }
+      }, 300 + i * 130));
+    };
+    const stop = () => { timers.forEach(clearTimeout); timers = []; clearInterval(anim); clearInterval(loop); finalState(); };
+    new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) { stop(); return; }
+      loadFrames().then(f => {
+        root.classList.add('live');
+        run(f); clearInterval(loop);
+        loop = window.setInterval(() => run(f), 8000);
+      }).catch(finalState);
+    }, { threshold: 0.35 }).observe(root);
+  });
+</script>

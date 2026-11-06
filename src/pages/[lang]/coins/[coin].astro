@@ -1,0 +1,11 @@
+---
+import GuidePage from '../../../components/GuidePage.astro';
+import coins from '../../../i18n/coin-guides.json';
+import { LOCALES } from '../../../config';
+
+export function getStaticPaths() {
+  return LOCALES.flatMap(locale => Object.keys(coins.en).map(coin => ({ params: { lang: locale.code, coin }, props: { locale, coin } })));
+}
+const { locale, coin } = Astro.props;
+---
+<GuidePage locale={locale} section="coins" slug={coin} />

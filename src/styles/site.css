@@ -395,3 +395,42 @@ img { max-width: 100%; }
 .guide-cta .text-link { display: inline-block; color: var(--cat3); font-weight: 600; }
 @media (max-width: 430px) { .hx { gap: 6px; } .lsel .ic { display: none; } }
 :root[lang=ar] .srch-list small, :root[lang=hi] .srch-list small, :root[lang=zh] .srch-list small, :root[lang=ja] .srch-list small { font-family: var(--f); letter-spacing: 0; font-size: 11.5px; }
+.inline-link { color: var(--cat3); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.inline-link:hover { text-decoration-thickness: 2px; }
+
+/* Sayfa açılış kancası: Zilbo + fiyat sayacı (ZilboHook.astro) */
+.guide-hero.has-hook { max-width: none; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); grid-template-areas: "head hook" "body hook"; column-gap: 48px; align-items: center; padding: 40px 0 40px; }
+.guide-hero.has-hook .gh-head { grid-area: head; align-self: end; }
+.guide-hero.has-hook .gh-body { grid-area: body; align-self: start; }
+.guide-hero.has-hook .intro { margin-top: 18px; }
+.zh { grid-area: hook; position: relative; height: 420px; width: 100%; max-width: 540px; justify-self: end; }
+.zh-tick { position: absolute; inset-inline-end: 0; top: 10px; width: 300px; background: var(--sf); border: 1px solid var(--bd); border-radius: 18px; padding: 16px 18px; box-shadow: var(--shadow); }
+.zh-pair, .zh-tgt { display: flex; justify-content: space-between; gap: 8px; font: 600 12px/1.4 var(--mono); color: var(--mut); }
+.zh-tgt b { color: var(--tx); }
+.zh-px { font: 700 40px/1.15 var(--mono); margin: 6px 0 4px; text-align: start; transition: color .2s; }
+.zh.hit .zh-px { color: var(--cat6); }
+.zh-m { height: 8px; border-radius: 9px; background: var(--bd); margin-top: 10px; overflow: hidden; }
+.zh-m i { display: block; height: 100%; width: 0; background: var(--pri); transition: width .15s linear; }
+.zh-card { position: absolute; inset-inline-start: 0; bottom: 0; width: 250px; height: 268px; overflow: hidden; border: 2.5px solid #2B1A0E; border-radius: 22px; background: #F1ECE4 radial-gradient(#D9D1C5 .9px, transparent 1px) 0 0 / 10px 10px; }
+.zh-card img, .zh-card svg { position: absolute; left: 0; top: 4px; width: 100%; height: auto; aspect-ratio: 300 / 318; }
+.zh-svg { display: none; }
+.zh.live .zh-svg { display: block; }
+.zh.live .zh-poster { display: none; }
+.zh-bub { position: absolute; inset-inline-start: 200px; bottom: 206px; max-width: 290px; background: var(--sf); border: 2px solid var(--tx); border-radius: 18px; padding: 10px 14px; box-shadow: var(--shadow); opacity: 0; transform: translateY(10px) scale(.94); transition: .35s cubic-bezier(.2, 1.4, .4, 1); }
+.zh-bub b { display: block; font: 700 15px/1.3 var(--f); }
+.zh-bub small { display: block; font: 600 11.5px/1.4 var(--mono); color: var(--mut); margin-top: 3px; }
+.zh.on .zh-bub { opacity: 1; transform: none; }
+.zh-bub::after { content: ""; position: absolute; inset-inline-start: -10px; bottom: 16px; width: 16px; height: 16px; background: var(--sf); border-inline-start: 2px solid var(--tx); border-bottom: 2px solid var(--tx); transform: skewY(-30deg) rotate(45deg); }
+[dir=rtl] .zh-bub::after { transform: skewY(30deg) rotate(-45deg); }
+@media (max-width: 860px) {
+  .guide-hero.has-hook { grid-template-columns: 1fr; grid-template-areas: "head" "hook" "body"; padding: 24px 0 28px; }
+  .zh { height: 262px; max-width: none; margin-top: 18px; }
+  .zh-tick { width: min(220px, 60%); padding: 11px 13px; top: 0; border-radius: 14px; }
+  .zh-px { font-size: 28px; }
+  .zh-pair, .zh-tgt { font-size: 10.5px; }
+  .zh-card { width: 150px; height: 160px; border-radius: 16px; border-width: 2px; }
+  .zh-bub { inset-inline-start: 118px; bottom: 84px; max-width: calc(100% - 124px); padding: 8px 11px; }
+  .zh-bub b { font-size: 13px; }
+  .zh-bub small { font-size: 10.5px; }
+}
+@media (prefers-reduced-motion: reduce) { .zh-bub, .zh-m i, .zh-px { transition: none; } }
