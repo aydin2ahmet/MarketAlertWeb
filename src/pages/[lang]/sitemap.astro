@@ -1,0 +1,121 @@
+---
+import Base from '../../layouts/Base.astro';
+import SocialLinks from '../../components/SocialLinks.astro';
+import { LOCALES, SITE } from '../../config';
+import { SECTIONS } from '../../lib/pages';
+import content from '../../i18n/content.json';
+import rsi from '../../i18n/rsi-alerts.json';
+import labels from '../../i18n/sitemap.json';
+import documents from '../../legal/documents.json';
+import deletion from '../../legal/account-deletion.json';
+
+export function getStaticPaths() {
+  return LOCALES.map(locale => ({ params: { lang: locale.code }, props: { locale } }));
+}
+const { locale } = Astro.props;
+const code = locale.code as keyof typeof labels;
+const t = labels[code];
+const groups = ['home', 'coins', 'features', 'legal'] as const;
+const catalog = LOCALES.map(l => {
+  const c = l.code;
+  const home = `/${c}/`;
+  const d = (documents as any)[c];
+  const entries = [
+    { title: 'MarketAlert', url: home, group: 'home' },
+    { title: labels[c].title, url: `${home}sitemap/`, group: 'home' },
+    { title: (rsi as any)[c].link, url: `${home}features/rsi-alerts/`, group: 'features' },
+    ...Object.entries(SECTIONS).flatMap(([section, source]) => Object.entries(source[c]).map(([slug, page]: [string, any]) => ({ title: page.link, url: `${home}${section}/${slug}/`, group: section }))),
+    { title: labels[c].legal, url: `${home}legal/`, group: 'legal' },
+    { title: d.privacy.title, url: `${home}legal/privacy/`, group: 'legal' },
+    { title: d.terms.title, url: `${home}legal/terms/`, group: 'legal' },
+    { title: (deletion as any)[c].title, url: `${home}legal/delete-account/`, group: 'legal' },
+  ];
+  return { locale: l, entries };
+});
+const path = `/${code}/sitemap/`;
+---
+<Base lang={locale.hreflang} dir={locale.dir} title={`${t.title} · MarketAlert`} description={t.intro} path={path} ogImage={`/og/${code}.png`} alternates={LOCALES.map(l => ({ hreflang:l.hreflang, href:`/${l.code}/sitemap/` }))} jsonLd={[{ '@context':'https://schema.org', '@type':'CollectionPage', name:t.title, url:SITE + path, inLanguage:locale.hreflang }]}>
+  <header class="hd">
+    <a class="logo" href={`/${code}/`}><img src="/icons/logo-96.png" width="32" height="32" alt="" /><b>MarketAlert</b></a>
+    <div class="hx"><a class="xml" href="/sitemap-index.xml">{t.xml} ↗</a><button class="thm" id="theme" type="button" aria-label={t.theme}>◐</button></div>
+  </header>
+  <main class="directory" data-directory>
+    <p class="eyebrow">MARKETALERT / SITEMAP</p>
+    <h1>{t.title}</h1><p class="intro">{t.intro}</p>
+    <form class="filters" role="search" onsubmit="return false">
+      <label>{t.language}<select id="directory-language"><option value="">{t.allLanguages}</option>{LOCALES.map(l => <option value={l.code} selected={l.code === code}>{l.name}</option>)}</select></label>
+      <label>{t.type}<select id="directory-type"><option value="">{t.allTypes}</option>{groups.map(g => <option value={g}>{t[g]}</option>)}</select></label>
+      <label class="search-field">{t.search}<input id="directory-query" type="search" placeholder={t.placeholder} autocomplete="off" /></label>
+    </form>
+    <p class="count" role="status" aria-live="polite"><span id="directory-count">{catalog.reduce((n, l) => n + l.entries.length, 0)}</span> {t.pages}</p>
+    {catalog.map(({ locale:l, entries }) => <section class="language-section" data-language={l.code}>
+      <h2 lang={l.hreflang} dir={l.dir}>{l.name}<span>{l.code.toUpperCase()}</span></h2>
+      <div class="groups">{groups.map(group => <section class="page-group" data-group={group}>
+        <h3>{t[group]}</h3><ul>{entries.filter(e => e.group === group).map(entry => <li data-page><a href={entry.url}><span lang={l.hreflang} dir={l.dir}>{entry.title}</span><small dir="ltr">{entry.url}</small></a></li>)}</ul>
+      </section>)}</div>
+    </section>)}
+    <p id="directory-empty" hidden>{t.empty}</p>
+  </main>
+  <footer class="ft"><a class="logo" href={`/${code}/`}>MarketAlert</a><SocialLinks code={code} /><nav class="langs" aria-label={(content as any)[code].ui.lang}>{LOCALES.map(l => <a href={`/${l.code}/sitemap/`} lang={l.hreflang} hreflang={l.hreflang} aria-current={l.code === code ? 'page' : undefined}>{l.name}</a>)}</nav><p class="copy">© 2026 MarketAlert · marketalertapp.com</p></footer>
+  <script>
+    const language = document.getElementById('directory-language') as HTMLSelectElement;
+    const type = document.getElementById('directory-type') as HTMLSelectElement;
+    const query = document.getElementById('directory-query') as HTMLInputElement;
+    const norm = (s: string) => s.toLocaleLowerCase('tr').replace(/ı/g, 'i').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const filter = () => {
+      let count = 0;
+      const q = norm(query.value.trim());
+      document.querySelectorAll<HTMLElement>('[data-language]').forEach(section => {
+        let sectionCount = 0;
+        section.querySelectorAll<HTMLElement>('[data-group]').forEach(group => {
+          let groupCount = 0;
+          group.querySelectorAll<HTMLElement>('[data-page]').forEach(row => {
+            row.hidden = !!((language.value && language.value !== section.dataset.language) || (type.value && type.value !== group.dataset.group) || !norm(row.textContent || '').includes(q));
+            if (!row.hidden) groupCount++;
+          });
+          group.hidden = groupCount === 0;
+          sectionCount += groupCount;
+        });
+        section.hidden = sectionCount === 0;
+        count += sectionCount;
+      });
+      document.getElementById('directory-count')!.textContent = String(count);
+      document.getElementById('directory-empty')!.hidden = count !== 0;
+    };
+    language.addEventListener('change', filter);
+    type.addEventListener('change', filter);
+    query.addEventListener('input', filter);
+    filter();
+    document.getElementById('theme')?.addEventListener('click', () => {
+      const root = document.documentElement;
+      const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+      root.dataset.theme = dark ? 'light' : 'dark';
+      try { localStorage.setItem('theme', root.dataset.theme); } catch (e) { /* depolama kapalı olabilir */ }
+    });
+  </script>
+</Base>
+<style>
+  .directory { max-width:1160px; margin:auto; padding:56px 20px 64px; }
+  .eyebrow { color:var(--cat3); font:600 12px var(--mono); margin-bottom:16px; }
+  h1 { font-size:clamp(34px,5vw,54px); }
+  .intro { color:var(--mut); margin:16px 0 32px; font-size:18px; }
+  .filters { display:grid; grid-template-columns:1fr 1fr 1.6fr; gap:16px; padding:24px; background:var(--sf); border:1px solid var(--bd); border-radius:18px; }
+  label { display:grid; gap:8px; min-width:0; font-size:13px; font-weight:600; }
+  input,select { width:100%; min-width:0; box-sizing:border-box; padding:12px; border:1px solid var(--bd); border-radius:10px; background:var(--bg); color:var(--tx); font:inherit; }
+  input:focus-visible,select:focus-visible { outline:2px solid var(--pri); outline-offset:2px; }
+  .count { color:var(--mut); font:13px var(--mono); margin:20px 0 32px; }
+  .language-section { margin-bottom:40px; }
+  h2 { display:flex; align-items:center; gap:12px; font-size:24px; margin-bottom:20px; }
+  h2 span { font:12px var(--mono); color:var(--mut); border:1px solid var(--bd); border-radius:6px; padding:5px 8px; }
+  .groups { display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; }
+  .page-group { background:var(--sf); border:1px solid var(--bd); border-radius:16px; padding:24px; min-width:0; }
+  h3 { font-size:16px; margin-bottom:12px; color:var(--cat3); }
+  ul { list-style:none; padding:0; margin:0; }
+  li + li { border-top:1px solid var(--bd); }
+  li a { display:grid; gap:6px; padding:14px 0; }
+  li a:hover span { color:var(--cat3); text-decoration:underline; }
+  small { color:var(--mut); font:12px/1.5 var(--mono); overflow-wrap:anywhere; text-align:start; }
+  [hidden] { display:none !important; }
+  .xml { font-size:13px; color:var(--mut); }
+  @media(max-width:700px) { .directory { padding-top:32px; } .filters,.groups { grid-template-columns:1fr; } .filters,.page-group { padding:20px; } .xml { max-width:130px; } }
+</style>

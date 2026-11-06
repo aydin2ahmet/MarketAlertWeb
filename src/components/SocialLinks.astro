@@ -1,5 +1,6 @@
 ---
 import translations from '../i18n/social.json';
+import sitemap from '../i18n/sitemap.json';
 interface Props { code: string }
 const { code } = Astro.props;
 const t = translations[code as keyof typeof translations];
@@ -11,7 +12,7 @@ const channels = [
 ];
 ---
 <div class="social">
-  <div class="social-copy"><h2>{t.title}</h2><p>{t.note}</p></div>
+  <div class="social-copy"><h2>{t.title}</h2><p>{t.note}</p><a class="all-pages" href={`/${code}/sitemap/`}>{sitemap[code as keyof typeof sitemap].title} ↗</a></div>
   <nav class="social-links" aria-label={t.title}>
     {channels.map(channel => <a href={channel.url} target="_blank" rel="noopener noreferrer">
       <span class={`brand-logo brand-${channel.id}`} aria-hidden="true"><svg viewBox="0 0 24 24"><use href={`/icons/social.svg#${channel.id}`} /></svg></span>
@@ -22,6 +23,8 @@ const channels = [
 <style>
   .social { display:flex; align-items:center; justify-content:space-between; gap:26px; margin:26px 0 25px; }
   .social-copy { flex:1; min-width:0; }
+  .all-pages { display:inline-block; margin-top:10px; color:var(--mut); font-size:13px; text-decoration:underline; text-underline-offset:3px; }
+  .all-pages:hover { color:var(--tx); }
   .social-copy h2 { margin:0; font-size:16px; line-height:1.4; font-weight:700; }
   .social-copy p { margin:5px 0 0; color:var(--mut); font-size:12px; line-height:1.6; }
   .social-links { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; width:69%; max-width:720px; }
