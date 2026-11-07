@@ -409,6 +409,7 @@ img { max-width: 100%; }
 .zh-tgt b { color: var(--tx); }
 .zh-px { font: 700 40px/1.15 var(--mono); margin: 6px 0 4px; text-align: start; transition: color .2s; }
 .zh.hit .zh-px { color: var(--cat6); }
+.zh.zh-up.hit .zh-px { color: var(--up); }
 .zh-m { height: 8px; border-radius: 9px; background: var(--bd); margin-top: 10px; overflow: hidden; }
 .zh-m i { display: block; height: 100%; width: 0; background: var(--pri); transition: width .15s linear; }
 .zh-card { position: absolute; inset-inline-start: 0; bottom: 0; width: 250px; height: 268px; overflow: hidden; border: 2.5px solid #2B1A0E; border-radius: 22px; background: #F1ECE4 radial-gradient(#D9D1C5 .9px, transparent 1px) 0 0 / 10px 10px; }

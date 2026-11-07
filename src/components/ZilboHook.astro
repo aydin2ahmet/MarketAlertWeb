@@ -6,7 +6,7 @@
  */
 interface Props {
   code: string;
-  hook: { pair: string; market: string; from: number; target: number; touch: number; last: number; op: '<' | '>' };
+  hook: { pair: string; market: string; from: number; target: number; touch: number; last: number; op: '<' | '>'; unit?: 'pct' };
   text: string[];
 }
 const { code, hook, text } = Astro.props;
@@ -16,15 +16,19 @@ const LBL: Record<string, string[]> = {
   'pt-br': ['ALVO', 'distância'], fr: ['CIBLE', 'écart'], ru: ['ЦЕЛЬ', 'до цели'], de: ['ZIEL', 'Abstand'], ja: ['目標', '差'],
 };
 const nf = NF[code] || 'en-US';
-const fmt = (n: number) => new Intl.NumberFormat(nf).format(n);
+// unit 'pct': değerler yüzde puanıdır (3 = %3); dile uygun yazılır (tr "+%3,0", en "+3.0%").
+const pct = hook.unit === 'pct';
+const fmt = (n: number, signed = true) => pct
+  ? new Intl.NumberFormat(nf, { style: 'percent', minimumFractionDigits: 1, maximumFractionDigits: 1, signDisplay: signed ? 'exceptZero' : 'never' }).format(n / 100)
+  : new Intl.NumberFormat(nf).format(n);
 const lbl = LBL[code] || LBL.en;
 const fill = (s: string) => s.replace('{t}', fmt(hook.target)).replace('{x}', fmt(hook.touch)).replace('{l}', fmt(hook.last));
 ---
-<div class="zh" aria-hidden="true" data-zilbo data-nf={nf} data-from={hook.from} data-target={hook.target} data-touch={hook.touch} data-op={hook.op} data-dist={lbl[1]}>
+<div class={hook.op === '>' ? 'zh zh-up' : 'zh'} aria-hidden="true" data-zilbo data-nf={nf} data-from={hook.from} data-target={hook.target} data-touch={hook.touch} data-op={hook.op} data-dist={lbl[1]} data-unit={hook.unit || ''}>
   <div class="zh-tick">
     <div class="zh-pair"><span>{hook.pair}</span><span>{hook.market}</span></div>
     <div class="zh-px" dir="ltr">{fmt(hook.from)}</div>
-    <div class="zh-tgt"><span>{lbl[0]} <b dir="ltr">{hook.op} {fmt(hook.target)}</b></span><span class="zh-ds">{lbl[1]} {fmt(Math.abs(hook.from - hook.target))}</span></div>
+    <div class="zh-tgt"><span>{lbl[0]} <b dir="ltr">{pct ? '≥' : hook.op} {fmt(hook.target)}</b></span><span class="zh-ds">{lbl[1]} {fmt(Math.abs(hook.from - hook.target), false)}</span></div>
     <div class="zh-m"><i></i></div>
   </div>
   <div class="zh-card">
@@ -48,13 +52,16 @@ const fill = (s: string) => s.replace('{t}', fmt(hook.target)).replace('{x}', fm
   document.querySelectorAll<HTMLElement>('[data-zilbo]').forEach(root => {
     const d = root.dataset;
     const from = +d.from!, target = +d.target!, touch = +d.touch!, down = d.op === '<';
-    const nf = new Intl.NumberFormat(d.nf);
+    const pct = d.unit === 'pct';
+    const nfs = pct ? new Intl.NumberFormat(d.nf, { style: 'percent', minimumFractionDigits: 1, maximumFractionDigits: 1, signDisplay: 'exceptZero' }) : new Intl.NumberFormat(d.nf);
+    const nfa = pct ? new Intl.NumberFormat(d.nf, { style: 'percent', minimumFractionDigits: 1, maximumFractionDigits: 1, signDisplay: 'never' }) : nfs;
+    const f = (n: number, signed = true) => (signed ? nfs : nfa).format(pct ? n / 100 : n);
     const px = root.querySelector<HTMLElement>('.zh-px')!, ds = root.querySelector<HTMLElement>('.zh-ds')!;
     const meter = root.querySelector<HTMLElement>('.zh-m i')!, svg = root.querySelector<SVGElement>('.zh-svg')!;
     const set = (p: number) => {
-      px.textContent = nf.format(p);
+      px.textContent = f(p);
       const hit = down ? p <= target : p >= target;
-      ds.textContent = hit ? '✓' : `${d.dist} ${nf.format(Math.abs(p - target))}`;
+      ds.textContent = hit ? '✓' : `${d.dist} ${f(Math.abs(p - target), false)}`;
       meter.style.width = `${Math.min(100, Math.abs(from - p) / Math.abs(from - touch) * 100)}%`;
       return hit;
     };
@@ -64,7 +71,8 @@ const fill = (s: string) => s.replace('{t}', fmt(hook.target)).replace('{x}', fm
     const steps = 12;
     const path = Array.from({ length: steps + 1 }, (_, i) => {
       const t = i / steps, wob = i === 4 ? 0.06 : i === 8 ? 0.03 : 0;
-      return Math.round(from + (touch - from) * (t * t * (3 - 2 * t) - wob));
+      const v = from + (touch - from) * (t * t * (3 - 2 * t) - wob);
+      return pct ? Math.round(v * 10) / 10 : Math.round(v);
     });
     let timers: number[] = [], anim = 0, loop = 0;
     const later = (f: () => void, ms: number) => timers.push(window.setTimeout(f, ms));
