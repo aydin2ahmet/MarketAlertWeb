@@ -20,10 +20,13 @@ const g = SECTIONS[section][code][slug];
 const L = (text: string) => linkify(text, code);
 const r = (rsiGuides as any)[code];
 // Rehber başına görsel ve kod satırları. Yeni rehber eklerken buraya da bir kayıt ekle.
-const VISUAL: Record<string, { kicker: string; exampleKicker: string; condition: string[]; foot: string; shot: string; version: string; width: number; height: number | null; logic?: string[][]; hook?: { pair: string; market: string; from: number; target: number; touch: number; last: number; op: '<' | '>' } }> = {
+const VISUAL: Record<string, { kicker: string; exampleKicker: string; condition: string[]; foot: string; shot: string; version: string; width: number; height: number | null; logic?: string[][]; hook?: { pair: string; market: string; from: number; target: number; touch: number; last: number; op: '<' | '>'; unit?: 'pct' } }> = {
   'features/price-alerts': { kicker: 'BINANCE · PRICE · PUSH', exampleKicker: 'BTC/USDT · 70,000 · ONCE', condition: ['BTC/USDT', '≥', '70,000 USDT'], foot: 'BINANCE SPOT · USDT · ONCE → PUSH', shot: 'price', version: 'price1', width: 1080, height: 2280,
     logic: [['HIGH 69,990 · LAST 69,880', '→ ✕'], ['HIGH 70,012 · LAST 69,880', 'TOUCH → ✓']] },
   'features/volume-spike-alerts': { kicker: 'BINANCE · VOLUME / SMA · TELEGRAM', exampleKicker: '15m · SMA(20) · 3×', condition: ['VOLUME', '>', '3 × SMA(20)'], foot: 'BINANCE SPOT · USDT · TOP 100 → TELEGRAM', shot: 'rsi/volume-result', version: 'volume1', width: 390, height: null },
+  'features/percent-change-alerts': { kicker: 'BINANCE · % MOVE · PUSH', exampleKicker: 'SOL/USDT · 15m · +3% · ONCE', condition: ['Δ% (15m)', '≥', '+3%'], foot: 'BINANCE SPOT · USDT · ONCE → PUSH', shot: 'tpl', version: 'pct1', width: 1080, height: 2280,
+    logic: [['15m Δ +1.8%', '→ ✕'], ['15m Δ +3.2%', '≥ +3% → ✓']],
+    hook: { pair: 'SOL/USDT · 15m', market: 'BINANCE SPOT', from: 0.4, target: 3, touch: 3.2, last: 3.2, op: '>', unit: 'pct' } },
   'features/multi-condition-alerts': { kicker: 'BINANCE · RSI + EMA · TELEGRAM', exampleKicker: '1h · RSI(14) · EMA(20)', condition: ['RSI(14) < 30', 'AND', 'PRICE > EMA(20)'], foot: 'BINANCE SPOT · USDT · TOP 100 → TELEGRAM', shot: 'rsi/desktop-voice-result', version: '3x-conditions2', width: 390, height: null,
     logic: [['RSI = 28 · PRICE < EMA20', 'AND → ✕'], ['RSI = 28 · PRICE > EMA20', 'AND → ✓']] },
   'coins/bitcoin-price-alert': { kicker: 'BTC/USDT · SPOT · PUSH', exampleKicker: 'BTC/USDT · 85,000 · ONCE', condition: ['BTC/USDT', '<', '85,000 USDT'], foot: 'BINANCE SPOT · USDT · ONCE → PUSH', shot: 'log', version: 'btc1', width: 1080, height: 2280,
