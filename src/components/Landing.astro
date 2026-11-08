@@ -2,6 +2,7 @@
 import StoreBadges from './StoreBadges.astro';
 import SearchBox from './SearchBox.astro';
 import SocialLinks from './SocialLinks.astro';
+import WhatIs from './WhatIs.astro';
 import { GA_ID, LOCALES, legalUrl, shotSources } from '../config';
 import alertGuides from '../i18n/alert-guides.json';
 import coinGuides from '../i18n/coin-guides.json';
@@ -82,6 +83,7 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
       <span class="fl f3" aria-hidden="true">{t.allCoinsBadge}</span>
     </div>
     <div class="h-b">
+      {t.heroDef && <p class="def">{t.heroDef}</p>}
       <p class="sub">{t.heroSub}</p>
       <ul class="chips">{t.chips.map((c: string) => <li><Fragment set:html={svg('check')} />{c}</li>)}</ul>
     </div>
@@ -91,6 +93,8 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
     <h2 class="st"><span class="hash">#</span> {t.howTitle}</h2>
     <ol class="how">{t.how.map((h: string[], i: number) => <li><span class="n">{i + 1}</span><div><h3>{h[0]}</h3><p>{h[1]}</p></div></li>)}</ol>
   </section>
+
+  {t.what && <WhatIs d={t.what} />}
 
   <section class="hl" aria-labelledby="hl-t">
     <h2 class="st" id="hl-t">{t.hl.title}</h2>

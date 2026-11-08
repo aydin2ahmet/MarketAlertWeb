@@ -1,0 +1,42 @@
+---
+/**
+ * "MarketAlert nedir, ne değildir?" kutusu (tasarım N2 · Terminal, 2026-11-08): ürünün tanımı,
+ * 3 "yapar" ve 3 "yapmaz" maddesi. Arama motorları ve yapay zekâ özetleri için düz metin.
+ * Metinler content.json içinde `what`.
+ */
+interface Props { d: { title: string; def: string; yesT: string; noT: string; yes: string[]; no: string[] } }
+const { d } = Astro.props;
+---
+<section class="wi" aria-labelledby="wi-t">
+  <h2 class="st" id="wi-t"><span class="hash">#</span> {d.title}</h2>
+  <div class="wi-term">
+    <p class="wi-cmd" aria-hidden="true" dir="ltr"><span>$</span> marketalert --help</p>
+    <p class="wi-def">{d.def}</p>
+    <h3 class="wi-lab y">{d.yesT}</h3>
+    <ul>{d.yes.map(s => <li class="y"><span aria-hidden="true">+</span>{s}</li>)}</ul>
+    <h3 class="wi-lab n">{d.noT}</h3>
+    <ul>{d.no.map(s => <li class="n"><span aria-hidden="true">−</span>{s}</li>)}</ul>
+  </div>
+</section>
+
+<style>
+  .wi { --ok: var(--up); --no: #C2410C; padding: 40px var(--gut) 24px; }
+  :global(:root[data-theme=dark]) .wi { --no: #FF9F66; }
+  @media (prefers-color-scheme: dark) { :global(:root:not([data-theme=light])) .wi { --no: #FF9F66; } }
+  .y { color: var(--ok); } .n { color: var(--no); }
+  .wi-term { margin-top: 18px; max-width: 820px; background: var(--sf); border: 1px solid var(--bd); border-radius: 18px; padding: 22px 24px; box-shadow: var(--shadow); }
+  .wi-cmd { font: 600 13px var(--mono); color: var(--mut); margin-bottom: 10px; } .wi-cmd span { color: var(--pri); }
+  .wi-def { font-size: 17px; line-height: 1.55; color: var(--tx); }
+  .wi-lab { font: 700 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; margin: 20px 0 10px; }
+  :global(:root:is([lang=ar], [lang=hi], [lang=zh], [lang=ja])) .wi-lab { font-family: var(--f); font-size: 13px; letter-spacing: 0; }
+  .wi-term ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .wi-term li { display: flex; gap: 12px; color: var(--tx); font-size: 15.5px; }
+  .wi-term li > span { font: 700 16px/1.45 var(--mono); width: 14px; flex: none; }
+  .wi-term li.y > span { color: var(--ok); } .wi-term li.n > span { color: var(--no); }
+  @media (max-width: 860px) {
+    .wi { padding: 24px var(--gut) 12px; }
+    .wi-term { padding: 18px; }
+    .wi-def { font-size: 16px; }
+    .wi-term li { font-size: 14.5px; }
+  }
+</style>
