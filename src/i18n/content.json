@@ -194,8 +194,8 @@
   "faqTitle": "Sık sorulan sorular",
   "faq": [
    [
-    "MarketAlert ücretsiz mi?",
-    "Evet. Ücretsiz planla 3 alarm kurabilir; fiyat, yüzde değişim ve 24 saatlik tepe/dip koşullarını kullanabilirsin. Plus ve Pro 7 gün ücretsiz denenebilir."
+    "MarketAlert ne yapar?",
+    "MarketAlert bir kripto piyasa tarayıcısıdır. Sesle ya da yazarak bir koşul söylersin, örneğin “Spot USDT'de RSI 30'un altına inen ve hacmi ortalamanın 2 katını geçen coinleri haber ver”. MarketAlert bu koşulu sunucularında tüm coinlerde sürekli izler, gerçekleşince push, Telegram ya da webhook ile bildirir. Alım satım yapmaz, borsa hesabına bağlanmaz."
    ],
    [
     "Uygulama kapalıyken alarm çalışır mı?",
@@ -204,6 +204,10 @@
    [
     "Hangi borsa ve piyasaları destekliyor?",
     "Binance Spot ve Vadeli (perpetual) piyasalarındaki USDT ve USDC çiftleri. Dört piyasa da her planda açıktır."
+   ],
+   [
+    "MarketAlert ücretsiz mi?",
+    "Evet. Ücretsiz planla 3 alarm kurabilir; fiyat, yüzde değişim ve 24 saatlik tepe/dip koşullarını kullanabilirsin. Plus ve Pro daha çok alarm, tüm koşul tipleri ve tüm coinler alarmı açar; ikisi de 7 gün ücretsiz denenebilir."
    ],
    [
     "Sesli ve yazılı asistan nasıl alarm kurar?",
@@ -228,8 +232,8 @@
   ],
   "disclaimer": "MarketAlert, Binance ile bağlantılı değildir. Bildirimler bilgilendirme amaçlıdır, yatırım tavsiyesi değildir.",
   "meta": {
-   "title": "MarketAlert – Kripto Fiyat ve RSI Alarmı, Tüm Coinleri Tara",
-   "desc": "Fiyat, RSI, MACD, hacim ve ortalama kesişimi için kripto alarmı kur; tek alarmla tüm coinleri tara. Sesle ya da AI ile alarm kur. iOS ve Android'de ücretsiz."
+   "title": "MarketAlert – Tüm Coinleri Tarayan Kripto Alarmı: RSI, Hacim, Fiyat",
+   "desc": "MarketAlert tek alarmla tüm coinlerde RSI, MACD, hacim ve fiyat koşullarını birlikte izler, gerçekleşince bildirir. Sesle ya da yazarak kur, ücretsiz başla."
   },
   "ui": {
    "theme": "Temayı değiştir",
@@ -279,7 +283,24 @@
   "allCoinsBadge": "TÜM COİNLER · 7/24",
   "heroListAlt": "Çok koşullu alarmlar ve canlı değerleri",
   "heroVoiceAlt": "Sesli komutla kurulan iki koşullu alarm",
-  "rsiGuideLink": "Tüm coinlerde RSI alarmı"
+  "rsiGuideLink": "Tüm coinlerde RSI alarmı",
+  "heroDef": "MarketAlert, sesle kurulan bir kripto piyasa tarayıcısıdır: Binance'teki tüm coinlerde RSI, hacim ve fiyat koşullarını birlikte izler, koşul gerçekleşince bildirim gönderir.",
+  "what": {
+   "title": "MarketAlert nedir, ne değildir?",
+   "def": "MarketAlert, sesle kurulan bir kripto piyasa tarayıcısıdır: Binance'teki tüm coinlerde RSI, hacim ve fiyat koşullarını birlikte izler, koşul gerçekleşince bildirim gönderir.",
+   "yesT": "Yapar",
+   "noT": "Yapmaz",
+   "yes": [
+    "Tek alarmla bir piyasadaki tüm coinleri tarar",
+    "RSI, hacim ve fiyat gibi birden çok koşulu birlikte izler",
+    "Sesle ya da yazarak kurulur, koşul gerçekleşince bildirim gönderir"
+   ],
+   "no": [
+    "Senin yerine alım satım yapmaz",
+    "Borsa hesabına ya da cüzdana bağlanmaz",
+    "Yatırım tavsiyesi vermez"
+   ]
+  }
  },
  "en": {
   "nav": [
@@ -476,8 +497,8 @@
   "faqTitle": "Frequently asked questions",
   "faq": [
    [
-    "Is MarketAlert free?",
-    "Yes. The free plan gives you 3 alerts with price, percent-change and 24-hour high/low conditions. Plus and Pro come with a 7-day free trial."
+    "What does MarketAlert do?",
+    "MarketAlert is a crypto market scanner. You say or type a condition, for example “Tell me about Spot USDT coins whose RSI drops below 30 while volume is over 2× the average.” MarketAlert watches that condition across every coin on its servers and notifies you by push, Telegram or webhook when it's met. It doesn't trade and never connects to your exchange account."
    ],
    [
     "Do alerts work when the app is closed?",
@@ -486,6 +507,10 @@
    [
     "Which exchanges and markets are supported?",
     "USDT and USDC pairs on Binance Spot and Futures (perpetual). All four markets are open on every plan."
+   ],
+   [
+    "Is MarketAlert free?",
+    "Yes. The free plan gives you 3 alerts with price, percent-change and 24-hour high/low conditions. Plus and Pro come with a 7-day free trial. Plus and Pro add more alerts, all condition types and all-coins alerts."
    ],
    [
     "How do voice and text alerts work?",
@@ -510,8 +535,8 @@
   ],
   "disclaimer": "MarketAlert is not affiliated with Binance. Notifications are for information only and are not investment advice.",
   "meta": {
-   "title": "MarketAlert – Crypto Price & RSI Alerts for Every Coin",
-   "desc": "Crypto alerts for price, RSI, MACD, volume and moving-average crosses; scan every coin with one alert. Create alerts by voice or AI. Free on iOS and Android."
+   "title": "MarketAlert – Crypto Alerts That Scan Every Coin: RSI, Volume, Price",
+   "desc": "One MarketAlert alert watches RSI, MACD, volume and price together across every coin and notifies you when they're met. Set it by voice or text, start free."
   },
   "ui": {
    "theme": "Toggle theme",
@@ -561,7 +586,24 @@
   "allCoinsBadge": "ALL COINS · 24/7",
   "heroListAlt": "Multi-condition alerts with live values",
   "heroVoiceAlt": "A two-condition alert created by voice",
-  "rsiGuideLink": "RSI alerts across all coins"
+  "rsiGuideLink": "RSI alerts across all coins",
+  "heroDef": "MarketAlert is a voice-driven crypto market scanner: it watches RSI, volume and price conditions together across every coin on Binance and notifies you when they're met.",
+  "what": {
+   "title": "What MarketAlert is, and what it isn't",
+   "def": "MarketAlert is a voice-driven crypto market scanner: it watches RSI, volume and price conditions together across every coin on Binance and notifies you when they're met.",
+   "yesT": "Does",
+   "noT": "Doesn't",
+   "yes": [
+    "Scans every coin in a market with a single alert",
+    "Watches several conditions together, such as RSI, volume and price",
+    "Is set up by voice or text, and notifies you when the condition is met"
+   ],
+   "no": [
+    "Doesn't trade for you",
+    "Doesn't connect to your exchange account or wallet",
+    "Doesn't give investment advice"
+   ]
+  }
  },
  "zh": {
   "nav": [
@@ -758,8 +800,8 @@
   "faqTitle": "常见问题",
   "faq": [
    [
-    "MarketAlert 免费吗？",
-    "是的。免费套餐提供 3 个提醒，可使用价格、涨跌幅和 24 小时最高/最低条件。Plus 和 Pro 可免费试用 7 天。"
+    "MarketAlert 能做什么？",
+    "MarketAlert 是一款加密货币市场扫描工具。你用语音或文字说出一个条件，例如“现货 USDT 中 RSI 跌破 30 且成交量超过平均 2 倍的币种提醒我”。MarketAlert 会在服务器上对所有币种持续监控这个条件，满足时通过推送、Telegram 或 webhook 通知你。它不会交易，也不会连接你的交易所账户。"
    ],
    [
     "应用关闭时提醒还有效吗？",
@@ -768,6 +810,10 @@
    [
     "支持哪些交易所和市场？",
     "Binance 现货和合约（永续）的 USDT 与 USDC 交易对。四个市场在所有套餐中均可用。"
+   ],
+   [
+    "MarketAlert 免费吗？",
+    "是的。免费套餐提供 3 个提醒，可使用价格、涨跌幅和 24 小时最高/最低条件。Plus 和 Pro 可免费试用 7 天。Plus 和 Pro 提供更多提醒、全部条件类型和全币种提醒。"
    ],
    [
     "语音和文字助手如何创建提醒？",
@@ -792,8 +838,8 @@
   ],
   "disclaimer": "MarketAlert 与 Binance 无关联。通知仅供参考，不构成投资建议。",
   "meta": {
-   "title": "MarketAlert – 加密货币价格与 RSI 提醒，扫描所有币种",
-   "desc": "为价格、RSI、MACD、成交量和均线交叉设置加密货币提醒，一个提醒扫描所有币种。iOS 和 Android 免费下载。"
+   "title": "MarketAlert – 扫描所有币种的加密货币提醒：RSI、成交量、价格",
+   "desc": "MarketAlert 用一个提醒在所有币种上同时监控 RSI、MACD、成交量和价格条件，满足时立即通知你。用语音或文字设置，免费开始。"
   },
   "ui": {
    "theme": "切换主题",
@@ -843,7 +889,24 @@
   "allCoinsBadge": "所有币种 · 全天候",
   "heroListAlt": "多条件提醒及实时数值",
   "heroVoiceAlt": "通过语音创建的双条件提醒",
-  "rsiGuideLink": "全币种 RSI 提醒"
+  "rsiGuideLink": "全币种 RSI 提醒",
+  "heroDef": "MarketAlert 是一款用语音设置的加密货币市场扫描工具：在币安的所有币种上同时监控 RSI、成交量和价格条件，条件满足时通知你。",
+  "what": {
+   "title": "MarketAlert 是什么，不是什么",
+   "def": "MarketAlert 是一款用语音设置的加密货币市场扫描工具：在币安的所有币种上同时监控 RSI、成交量和价格条件，条件满足时通知你。",
+   "yesT": "会做",
+   "noT": "不会做",
+   "yes": [
+    "用一个提醒扫描某个市场的所有币种",
+    "同时监控多个条件，例如 RSI、成交量和价格",
+    "用语音或文字设置，条件满足时发送通知"
+   ],
+   "no": [
+    "不会替你买卖",
+    "不会连接你的交易所账户或钱包",
+    "不提供投资建议"
+   ]
+  }
  },
  "es": {
   "nav": [
@@ -1040,8 +1103,8 @@
   "faqTitle": "Preguntas frecuentes",
   "faq": [
    [
-    "¿MarketAlert es gratis?",
-    "Sí. El plan gratuito incluye 3 alertas con condiciones de precio, variación porcentual y máximo/mínimo de 24 horas. Plus y Pro tienen 7 días de prueba gratis."
+    "¿Qué hace MarketAlert?",
+    "MarketAlert es un escáner del mercado cripto. Dices o escribes una condición, por ejemplo “Avísame de las monedas de Spot USDT con RSI por debajo de 30 y volumen más de 2 veces la media”. MarketAlert vigila esa condición en todas las monedas desde sus servidores y te avisa por push, Telegram o webhook cuando se cumple. No opera ni se conecta a tu cuenta del exchange."
    ],
    [
     "¿Las alertas funcionan con la app cerrada?",
@@ -1050,6 +1113,10 @@
    [
     "¿Qué exchanges y mercados admite?",
     "Pares USDT y USDC de Binance Spot y Futuros (perpetuos). Los cuatro mercados están abiertos en todos los planes."
+   ],
+   [
+    "¿MarketAlert es gratis?",
+    "Sí. El plan gratuito incluye 3 alertas con condiciones de precio, variación porcentual y máximo/mínimo de 24 horas. Plus y Pro tienen 7 días de prueba gratis. Plus y Pro añaden más alertas, todos los tipos de condición y alertas de todas las monedas."
    ],
    [
     "¿Cómo funcionan las alertas por voz y por texto?",
@@ -1074,8 +1141,8 @@
   ],
   "disclaimer": "MarketAlert no está afiliado a Binance. Los avisos son solo informativos y no constituyen asesoramiento de inversión.",
   "meta": {
-   "title": "MarketAlert – Alertas cripto de precio y RSI para cada moneda",
-   "desc": "Alertas cripto de precio, RSI, MACD, volumen y cruces de medias; escanea todas las monedas con una alerta. Crea alertas por voz o con IA. Gratis en iOS y Android."
+   "title": "MarketAlert – Alertas cripto que escanean todas las monedas: RSI, volumen, precio",
+   "desc": "Una sola alerta de MarketAlert vigila a la vez RSI, MACD, volumen y precio en todas las monedas y te avisa cuando se cumplen. Por voz o texto, empieza gratis."
   },
   "ui": {
    "theme": "Cambiar tema",
@@ -1125,7 +1192,24 @@
   "allCoinsBadge": "TODAS LAS MONEDAS · 24/7",
   "heroListAlt": "Alertas con varias condiciones y valores en vivo",
   "heroVoiceAlt": "Alerta de dos condiciones creada por voz",
-  "rsiGuideLink": "Alertas RSI en todas las monedas"
+  "rsiGuideLink": "Alertas RSI en todas las monedas",
+  "heroDef": "MarketAlert es un escáner del mercado cripto que se configura con la voz: vigila a la vez condiciones de RSI, volumen y precio en todas las monedas de Binance y te avisa cuando se cumplen.",
+  "what": {
+   "title": "Qué es MarketAlert y qué no es",
+   "def": "MarketAlert es un escáner del mercado cripto que se configura con la voz: vigila a la vez condiciones de RSI, volumen y precio en todas las monedas de Binance y te avisa cuando se cumplen.",
+   "yesT": "Hace",
+   "noT": "No hace",
+   "yes": [
+    "Escanea todas las monedas de un mercado con una sola alerta",
+    "Vigila varias condiciones a la vez, como RSI, volumen y precio",
+    "Se configura por voz o texto y te avisa cuando se cumple la condición"
+   ],
+   "no": [
+    "No compra ni vende por ti",
+    "No se conecta a tu cuenta del exchange ni a tu billetera",
+    "No da consejos de inversión"
+   ]
+  }
  },
  "hi": {
   "nav": [
@@ -1322,8 +1406,8 @@
   "faqTitle": "अक्सर पूछे जाने वाले सवाल",
   "faq": [
    [
-    "क्या MarketAlert मुफ़्त है?",
-    "हां। मुफ़्त प्लान में कीमत, प्रतिशत बदलाव और 24 घंटे उच्च/निम्न शर्तों के साथ 3 अलर्ट मिलते हैं। Plus और Pro के साथ 7 दिन का मुफ़्त ट्रायल है।"
+    "MarketAlert क्या करता है?",
+    "MarketAlert एक क्रिप्टो मार्केट स्कैनर है। आप बोलकर या लिखकर एक शर्त बताते हैं, जैसे “Spot USDT में जिन कॉइन का RSI 30 से नीचे जाए और वॉल्यूम औसत के 2 गुना से ज़्यादा हो, मुझे बताओ”। MarketAlert अपने सर्वर पर सभी कॉइन में यह शर्त लगातार देखता है और पूरी होने पर push, Telegram या webhook से सूचना देता है। यह ट्रेड नहीं करता और आपके एक्सचेंज खाते से नहीं जुड़ता।"
    ],
    [
     "क्या ऐप बंद होने पर भी अलर्ट काम करते हैं?",
@@ -1332,6 +1416,10 @@
    [
     "कौन से एक्सचेंज और मार्केट समर्थित हैं?",
     "Binance Spot और Futures (परपेचुअल) के USDT और USDC पेयर। चारों मार्केट हर प्लान में खुले हैं।"
+   ],
+   [
+    "क्या MarketAlert मुफ़्त है?",
+    "हां। मुफ़्त प्लान में कीमत, प्रतिशत बदलाव और 24 घंटे उच्च/निम्न शर्तों के साथ 3 अलर्ट मिलते हैं। Plus और Pro के साथ 7 दिन का मुफ़्त ट्रायल है। Plus और Pro ज़्यादा अलर्ट, सभी शर्त प्रकार और सभी कॉइन अलर्ट देते हैं।"
    ],
    [
     "वॉइस और टेक्स्ट असिस्टेंट अलर्ट कैसे बनाते हैं?",
@@ -1356,8 +1444,8 @@
   ],
   "disclaimer": "MarketAlert का Binance से कोई संबंध नहीं है। सूचनाएं केवल जानकारी के लिए हैं, निवेश सलाह नहीं।",
   "meta": {
-   "title": "MarketAlert – हर कॉइन के लिए क्रिप्टो प्राइस और RSI अलर्ट",
-   "desc": "कीमत, RSI, MACD, वॉल्यूम और एवरेज क्रॉस के लिए क्रिप्टो अलर्ट; एक अलर्ट से सभी कॉइन स्कैन करें। आवाज़ या AI से अलर्ट बनाएं। iOS और Android पर मुफ़्त।"
+   "title": "MarketAlert – सभी कॉइन स्कैन करने वाले क्रिप्टो अलर्ट: RSI, वॉल्यूम, कीमत",
+   "desc": "MarketAlert एक ही अलर्ट से सभी कॉइन पर RSI, MACD, वॉल्यूम और कीमत की शर्तें एक साथ देखता है और पूरी होने पर सूचना देता है। आवाज़ या टेक्स्ट से बनाएं, मुफ़्त शुरू करें।"
   },
   "ui": {
    "theme": "थीम बदलें",
@@ -1407,7 +1495,24 @@
   "allCoinsBadge": "सभी कॉइन · 24/7",
   "heroListAlt": "कई शर्तों वाले अलर्ट और लाइव मान",
   "heroVoiceAlt": "बोलकर बनाया गया दो शर्तों वाला अलर्ट",
-  "rsiGuideLink": "सभी कॉइन के लिए RSI अलर्ट"
+  "rsiGuideLink": "सभी कॉइन के लिए RSI अलर्ट",
+  "heroDef": "MarketAlert आवाज़ से सेट होने वाला क्रिप्टो मार्केट स्कैनर है: यह Binance के सभी कॉइन पर RSI, वॉल्यूम और कीमत की शर्तें एक साथ देखता है और शर्त पूरी होने पर सूचना भेजता है।",
+  "what": {
+   "title": "MarketAlert क्या है, क्या नहीं",
+   "def": "MarketAlert आवाज़ से सेट होने वाला क्रिप्टो मार्केट स्कैनर है: यह Binance के सभी कॉइन पर RSI, वॉल्यूम और कीमत की शर्तें एक साथ देखता है और शर्त पूरी होने पर सूचना भेजता है।",
+   "yesT": "करता है",
+   "noT": "नहीं करता",
+   "yes": [
+    "एक ही अलर्ट से किसी मार्केट के सभी कॉइन स्कैन करता है",
+    "RSI, वॉल्यूम और कीमत जैसी कई शर्तें एक साथ देखता है",
+    "आवाज़ या टेक्स्ट से सेट होता है, शर्त पूरी होने पर सूचना भेजता है"
+   ],
+   "no": [
+    "आपकी जगह खरीद-बिक्री नहीं करता",
+    "आपके एक्सचेंज खाते या वॉलेट से नहीं जुड़ता",
+    "निवेश सलाह नहीं देता"
+   ]
+  }
  },
  "ar": {
   "nav": [
@@ -1604,8 +1709,8 @@
   "faqTitle": "الأسئلة الشائعة",
   "faq": [
    [
-    "هل MarketAlert مجاني؟",
-    "نعم. تمنحك الخطة المجانية 3 تنبيهات بشروط السعر ونسبة التغير وأعلى/أدنى 24 ساعة. يمكن تجربة Plus وPro مجانًا لمدة 7 أيام."
+    "ماذا يفعل MarketAlert؟",
+    "MarketAlert ماسح لسوق العملات الرقمية. تقول أو تكتب شرطًا، مثل «أخبرني بعملات Spot USDT التي ينخفض فيها RSI تحت 30 ويتجاوز حجمها ضعفي المتوسط». يراقب MarketAlert هذا الشرط على كل العملات من خوادمه ويخبرك عبر الإشعارات أو Telegram أو webhook عند تحققه. لا يتداول ولا يتصل بحسابك في المنصة."
    ],
    [
     "هل تعمل التنبيهات والتطبيق مغلق؟",
@@ -1614,6 +1719,10 @@
    [
     "ما المنصات والأسواق المدعومة؟",
     "أزواج USDT وUSDC في سوقي Binance الفوري والعقود الآجلة الدائمة. الأسواق الأربعة متاحة في كل الخطط."
+   ],
+   [
+    "هل MarketAlert مجاني؟",
+    "نعم. تمنحك الخطة المجانية 3 تنبيهات بشروط السعر ونسبة التغير وأعلى/أدنى 24 ساعة. يمكن تجربة Plus وPro مجانًا لمدة 7 أيام. تضيف Plus وPro تنبيهات أكثر وكل أنواع الشروط وتنبيهات كل العملات."
    ],
    [
     "كيف ينشئ المساعد تنبيهات بالصوت والنص؟",
@@ -1638,8 +1747,8 @@
   ],
   "disclaimer": "MarketAlert غير تابع لـ Binance. التنبيهات للمعلومات فقط وليست نصيحة استثمارية.",
   "meta": {
-   "title": "MarketAlert – تنبيهات السعر وRSI لكل العملات الرقمية",
-   "desc": "تنبيهات للعملات الرقمية حسب السعر وRSI وMACD والحجم وتقاطع المتوسطات؛ افحص كل العملات بتنبيه واحد. أنشئ التنبيهات بالصوت أو بالذكاء الاصطناعي. مجاني على iOS وAndroid."
+   "title": "MarketAlert – تنبيهات كريبتو تفحص كل العملات: RSI والحجم والسعر",
+   "desc": "يراقب MarketAlert شروط RSI وMACD والحجم والسعر معًا على كل العملات بتنبيه واحد ويخبرك عند تحققها. أنشئه بالصوت أو الكتابة، وابدأ مجانًا."
   },
   "ui": {
    "theme": "تبديل المظهر",
@@ -1689,7 +1798,24 @@
   "allCoinsBadge": "جميع العملات · 24/7",
   "heroListAlt": "تنبيهات متعددة الشروط بقيم مباشرة",
   "heroVoiceAlt": "تنبيه بشرطين تم إنشاؤه بالصوت",
-  "rsiGuideLink": "تنبيهات RSI لجميع العملات"
+  "rsiGuideLink": "تنبيهات RSI لجميع العملات",
+  "heroDef": "MarketAlert ماسح لسوق العملات الرقمية يُضبط بالصوت: يراقب شروط RSI والحجم والسعر معًا على كل العملات في Binance ويرسل لك إشعارًا عند تحققها.",
+  "what": {
+   "title": "ما هو MarketAlert وما ليس هو",
+   "def": "MarketAlert ماسح لسوق العملات الرقمية يُضبط بالصوت: يراقب شروط RSI والحجم والسعر معًا على كل العملات في Binance ويرسل لك إشعارًا عند تحققها.",
+   "yesT": "يفعل",
+   "noT": "لا يفعل",
+   "yes": [
+    "يفحص كل العملات في السوق بتنبيه واحد",
+    "يراقب عدة شروط معًا مثل RSI والحجم والسعر",
+    "يُضبط بالصوت أو الكتابة ويرسل إشعارًا عند تحقق الشرط"
+   ],
+   "no": [
+    "لا يشتري أو يبيع نيابةً عنك",
+    "لا يتصل بحسابك في المنصة أو بمحفظتك",
+    "لا يقدّم نصائح استثمارية"
+   ]
+  }
  },
  "pt-br": {
   "nav": [
@@ -1886,8 +2012,8 @@
   "faqTitle": "Perguntas frequentes",
   "faq": [
    [
-    "O MarketAlert é grátis?",
-    "Sim. O plano gratuito tem 3 alertas com condições de preço, variação percentual e máxima/mínima de 24 horas. Plus e Pro têm 7 dias de teste grátis."
+    "O que o MarketAlert faz?",
+    "O MarketAlert é um scanner do mercado cripto. Você fala ou digita uma condição, por exemplo “Me avise das moedas do Spot USDT com RSI abaixo de 30 e volume acima de 2 vezes a média”. O MarketAlert monitora essa condição em todas as moedas nos servidores dele e avisa por push, Telegram ou webhook quando ela se cumpre. Ele não opera nem se conecta à sua conta na exchange."
    ],
    [
     "Os alertas funcionam com o app fechado?",
@@ -1896,6 +2022,10 @@
    [
     "Quais exchanges e mercados são suportados?",
     "Pares USDT e USDC da Binance Spot e Futuros (perpétuos). Os quatro mercados estão abertos em todos os planos."
+   ],
+   [
+    "O MarketAlert é grátis?",
+    "Sim. O plano gratuito tem 3 alertas com condições de preço, variação percentual e máxima/mínima de 24 horas. Plus e Pro têm 7 dias de teste grátis. Plus e Pro liberam mais alertas, todos os tipos de condição e alertas de todas as moedas."
    ],
    [
     "Como funcionam os alertas por voz e por texto?",
@@ -1920,8 +2050,8 @@
   ],
   "disclaimer": "O MarketAlert não tem vínculo com a Binance. Os avisos são apenas informativos e não são recomendação de investimento.",
   "meta": {
-   "title": "MarketAlert – Alertas cripto de preço e RSI para todas as moedas",
-   "desc": "Alertas cripto de preço, RSI, MACD, volume e cruzamento de médias; escaneie todas as moedas com um alerta. Crie alertas por voz ou IA. Grátis no iOS e Android."
+   "title": "MarketAlert – Alertas cripto que escaneiam todas as moedas: RSI, volume, preço",
+   "desc": "O MarketAlert monitora juntos RSI, MACD, volume e preço em todas as moedas com um só alerta e avisa quando se cumprem. Crie por voz ou texto, comece grátis."
   },
   "ui": {
    "theme": "Mudar tema",
@@ -1971,7 +2101,24 @@
   "allCoinsBadge": "TODAS AS MOEDAS · 24/7",
   "heroListAlt": "Alertas com várias condições e valores ao vivo",
   "heroVoiceAlt": "Alerta com duas condições criado por voz",
-  "rsiGuideLink": "Alertas RSI em todas as moedas"
+  "rsiGuideLink": "Alertas RSI em todas as moedas",
+  "heroDef": "O MarketAlert é um scanner do mercado cripto configurado por voz: monitora juntos condições de RSI, volume e preço em todas as moedas da Binance e avisa quando elas se cumprem.",
+  "what": {
+   "title": "O que o MarketAlert é, e o que não é",
+   "def": "O MarketAlert é um scanner do mercado cripto configurado por voz: monitora juntos condições de RSI, volume e preço em todas as moedas da Binance e avisa quando elas se cumprem.",
+   "yesT": "Faz",
+   "noT": "Não faz",
+   "yes": [
+    "Escaneia todas as moedas de um mercado com um só alerta",
+    "Monitora várias condições juntas, como RSI, volume e preço",
+    "É configurado por voz ou texto e avisa quando a condição se cumpre"
+   ],
+   "no": [
+    "Não compra nem vende por você",
+    "Não se conecta à sua conta na exchange nem à sua carteira",
+    "Não dá recomendação de investimento"
+   ]
+  }
  },
  "fr": {
   "nav": [
@@ -2168,8 +2315,8 @@
   "faqTitle": "Questions fréquentes",
   "faq": [
    [
-    "MarketAlert est-il gratuit ?",
-    "Oui. L’offre gratuite comprend 3 alertes avec les conditions de prix, de variation en % et de plus haut/plus bas sur 24 h. Plus et Pro incluent 7 jours d’essai gratuit."
+    "Que fait MarketAlert ?",
+    "MarketAlert est un scanner du marché crypto. Vous dites ou écrivez une condition, par exemple « Préviens-moi des cryptos Spot USDT dont le RSI passe sous 30 avec un volume supérieur à 2 fois la moyenne ». MarketAlert surveille cette condition sur toutes les cryptos depuis ses serveurs et vous prévient par push, Telegram ou webhook quand elle est remplie. Il ne passe aucun ordre et ne se connecte jamais à votre compte d’exchange."
    ],
    [
     "Les alertes fonctionnent-elles app fermée ?",
@@ -2178,6 +2325,10 @@
    [
     "Quels exchanges et marchés sont pris en charge ?",
     "Les paires USDT et USDC de Binance Spot et Futures (perpétuels). Les quatre marchés sont ouverts dans toutes les offres."
+   ],
+   [
+    "MarketAlert est-il gratuit ?",
+    "Oui. L’offre gratuite comprend 3 alertes avec les conditions de prix, de variation en % et de plus haut/plus bas sur 24 h. Plus et Pro incluent 7 jours d’essai gratuit. Plus et Pro ajoutent plus d’alertes, tous les types de conditions et les alertes toutes cryptos."
    ],
    [
     "Comment fonctionnent les alertes vocales et écrites ?",
@@ -2202,8 +2353,8 @@
   ],
   "disclaimer": "MarketAlert n’est pas affilié à Binance. Les notifications sont fournies à titre d’information et ne constituent pas un conseil en investissement.",
   "meta": {
-   "title": "MarketAlert – Alertes crypto de prix et RSI pour toutes les cryptos",
-   "desc": "Alertes crypto de prix, RSI, MACD, volume et croisements de moyennes ; scannez toutes les cryptos avec une alerte. Créez vos alertes à la voix ou par IA. Gratuit sur iOS et Android."
+   "title": "MarketAlert – Alertes crypto qui scannent toutes les cryptos : RSI, volume, prix",
+   "desc": "Une alerte MarketAlert surveille RSI, MACD, volume et prix ensemble sur toutes les cryptos et vous prévient quand ils sont réunis. À la voix ou par écrit, gratuit."
   },
   "ui": {
    "theme": "Changer de thème",
@@ -2253,7 +2404,24 @@
   "allCoinsBadge": "TOUTES LES CRYPTOS · 24/7",
   "heroListAlt": "Alertes à plusieurs conditions et valeurs en direct",
   "heroVoiceAlt": "Alerte à deux conditions créée à la voix",
-  "rsiGuideLink": "Alertes RSI sur toutes les cryptos"
+  "rsiGuideLink": "Alertes RSI sur toutes les cryptos",
+  "heroDef": "MarketAlert est un scanner du marché crypto qui se configure à la voix : il surveille ensemble des conditions de RSI, de volume et de prix sur toutes les cryptos de Binance et vous prévient quand elles sont réunies.",
+  "what": {
+   "title": "Ce que MarketAlert est, et ce qu’il n’est pas",
+   "def": "MarketAlert est un scanner du marché crypto qui se configure à la voix : il surveille ensemble des conditions de RSI, de volume et de prix sur toutes les cryptos de Binance et vous prévient quand elles sont réunies.",
+   "yesT": "Il fait",
+   "noT": "Il ne fait pas",
+   "yes": [
+    "Scanne toutes les cryptos d’un marché avec une seule alerte",
+    "Surveille plusieurs conditions ensemble, comme le RSI, le volume et le prix",
+    "Se configure à la voix ou par écrit et vous prévient quand la condition est remplie"
+   ],
+   "no": [
+    "N’achète ni ne vend à votre place",
+    "Ne se connecte ni à votre compte d’exchange ni à votre portefeuille",
+    "Ne donne pas de conseil en investissement"
+   ]
+  }
  },
  "ru": {
   "nav": [
@@ -2450,8 +2618,8 @@
   "faqTitle": "Частые вопросы",
   "faq": [
    [
-    "MarketAlert бесплатный?",
-    "Да. Бесплатный тариф даёт 3 оповещения с условиями по цене, процентному изменению и максимуму/минимуму за 24 часа. Plus и Pro можно попробовать бесплатно 7 дней."
+    "Что делает MarketAlert?",
+    "MarketAlert — сканер криптовалютного рынка. Вы говорите или пишете условие, например «Сообщи о монетах Spot USDT, у которых RSI ниже 30, а объём больше среднего в 2 раза». MarketAlert следит за этим условием на всех монетах на своих серверах и сообщает через push, Telegram или webhook, когда оно выполнено. Он не торгует и не подключается к вашему аккаунту на бирже."
    ],
    [
     "Работают ли оповещения, когда приложение закрыто?",
@@ -2460,6 +2628,10 @@
    [
     "Какие биржи и рынки поддерживаются?",
     "Пары USDT и USDC на Binance Спот и Фьючерсы (бессрочные). Все четыре рынка открыты в каждом тарифе."
+   ],
+   [
+    "MarketAlert бесплатный?",
+    "Да. Бесплатный тариф даёт 3 оповещения с условиями по цене, процентному изменению и максимуму/минимуму за 24 часа. Plus и Pro можно попробовать бесплатно 7 дней. Plus и Pro дают больше оповещений, все типы условий и оповещения по всем монетам."
    ],
    [
     "Как работают голосовые и текстовые оповещения?",
@@ -2484,8 +2656,8 @@
   ],
   "disclaimer": "MarketAlert не связан с Binance. Уведомления носят информационный характер и не являются инвестиционной рекомендацией.",
   "meta": {
-   "title": "MarketAlert – крипто-оповещения по цене и RSI для всех монет",
-   "desc": "Крипто-оповещения по цене, RSI, MACD, объёму и пересечению средних; сканируйте все монеты одним оповещением. Создавайте оповещения голосом или с ИИ. Бесплатно для iOS и Android."
+   "title": "MarketAlert – крипто-оповещения, которые сканируют все монеты: RSI, объём, цена",
+   "desc": "Одно оповещение MarketAlert следит за RSI, MACD, объёмом и ценой на всех монетах сразу и сообщает, когда условия выполнены. Голосом или текстом, бесплатно."
   },
   "ui": {
    "theme": "Сменить тему",
@@ -2535,7 +2707,24 @@
   "allCoinsBadge": "ВСЕ МОНЕТЫ · 24/7",
   "heroListAlt": "Оповещения с несколькими условиями и текущими значениями",
   "heroVoiceAlt": "Оповещение с двумя условиями, созданное голосом",
-  "rsiGuideLink": "RSI-оповещения по всем монетам"
+  "rsiGuideLink": "RSI-оповещения по всем монетам",
+  "heroDef": "MarketAlert — сканер криптовалютного рынка, который настраивается голосом: он следит сразу за условиями RSI, объёма и цены на всех монетах Binance и присылает уведомление, когда они выполнены.",
+  "what": {
+   "title": "Что такое MarketAlert и чем он не является",
+   "def": "MarketAlert — сканер криптовалютного рынка, который настраивается голосом: он следит сразу за условиями RSI, объёма и цены на всех монетах Binance и присылает уведомление, когда они выполнены.",
+   "yesT": "Делает",
+   "noT": "Не делает",
+   "yes": [
+    "Сканирует все монеты рынка одним оповещением",
+    "Следит сразу за несколькими условиями: RSI, объём, цена",
+    "Настраивается голосом или текстом и уведомляет, когда условие выполнено"
+   ],
+   "no": [
+    "Не торгует за вас",
+    "Не подключается к вашему аккаунту на бирже или кошельку",
+    "Не даёт инвестиционных советов"
+   ]
+  }
  },
  "de": {
   "nav": [
@@ -2732,8 +2921,8 @@
   "faqTitle": "Häufige Fragen",
   "faq": [
    [
-    "Ist MarketAlert kostenlos?",
-    "Ja. Der kostenlose Tarif bietet 3 Alarme mit Preis-, Prozent- und 24-Stunden-Hoch/Tief-Bedingungen. Plus und Pro kannst du 7 Tage kostenlos testen."
+    "Was macht MarketAlert?",
+    "MarketAlert ist ein Krypto-Marktscanner. Du sprichst oder tippst eine Bedingung, zum Beispiel „Melde mir Spot-USDT-Coins mit RSI unter 30 und Volumen über dem 2-Fachen des Durchschnitts“. MarketAlert überwacht diese Bedingung auf seinen Servern über alle Coins und benachrichtigt dich per Push, Telegram oder Webhook, sobald sie erfüllt ist. Die App handelt nicht und verbindet sich nie mit deinem Börsenkonto."
    ],
    [
     "Funktionieren Alarme bei geschlossener App?",
@@ -2742,6 +2931,10 @@
    [
     "Welche Börsen und Märkte werden unterstützt?",
     "USDT- und USDC-Paare auf Binance Spot und Futures (Perpetual). Alle vier Märkte sind in jedem Tarif offen."
+   ],
+   [
+    "Ist MarketAlert kostenlos?",
+    "Ja. Der kostenlose Tarif bietet 3 Alarme mit Preis-, Prozent- und 24-Stunden-Hoch/Tief-Bedingungen. Plus und Pro kannst du 7 Tage kostenlos testen. Plus und Pro bieten mehr Alarme, alle Bedingungstypen und Alle-Coins-Alarme."
    ],
    [
     "Wie funktionieren Alarme per Sprache und Text?",
@@ -2766,8 +2959,8 @@
   ],
   "disclaimer": "MarketAlert ist nicht mit Binance verbunden. Benachrichtigungen dienen nur der Information und sind keine Anlageberatung.",
   "meta": {
-   "title": "MarketAlert – Krypto-Preis- und RSI-Alarme für alle Coins",
-   "desc": "Krypto-Alarme für Preis, RSI, MACD, Volumen und Durchschnittskreuzungen; alle Coins mit einem Alarm durchsuchen. Alarme per Sprache oder KI. Kostenlos für iOS und Android."
+   "title": "MarketAlert – Krypto-Alarme, die alle Coins scannen: RSI, Volumen, Preis",
+   "desc": "Ein MarketAlert-Alarm überwacht RSI, MACD, Volumen und Preis zusammen über alle Coins und meldet sich, sobald sie erfüllt sind. Per Sprache oder Text, kostenlos."
   },
   "ui": {
    "theme": "Design wechseln",
@@ -2817,7 +3010,24 @@
   "allCoinsBadge": "ALLE COINS · 24/7",
   "heroListAlt": "Alarme mit mehreren Bedingungen und Live-Werten",
   "heroVoiceAlt": "Per Sprache erstellter Alarm mit zwei Bedingungen",
-  "rsiGuideLink": "RSI-Alarme für alle Coins"
+  "rsiGuideLink": "RSI-Alarme für alle Coins",
+  "heroDef": "MarketAlert ist ein per Sprache eingerichteter Krypto-Marktscanner: Er überwacht RSI-, Volumen- und Preisbedingungen zusammen über alle Coins auf Binance und benachrichtigt dich, sobald sie erfüllt sind.",
+  "what": {
+   "title": "Was MarketAlert ist – und was nicht",
+   "def": "MarketAlert ist ein per Sprache eingerichteter Krypto-Marktscanner: Er überwacht RSI-, Volumen- und Preisbedingungen zusammen über alle Coins auf Binance und benachrichtigt dich, sobald sie erfüllt sind.",
+   "yesT": "Macht",
+   "noT": "Macht nicht",
+   "yes": [
+    "Scannt alle Coins eines Markts mit einem einzigen Alarm",
+    "Überwacht mehrere Bedingungen zusammen, etwa RSI, Volumen und Preis",
+    "Wird per Sprache oder Text eingerichtet und benachrichtigt dich, sobald die Bedingung erfüllt ist"
+   ],
+   "no": [
+    "Handelt nicht für dich",
+    "Verbindet sich nicht mit deinem Börsenkonto oder Wallet",
+    "Gibt keine Anlageberatung"
+   ]
+  }
  },
  "ja": {
   "nav": [
@@ -3014,8 +3224,8 @@
   "faqTitle": "よくある質問",
   "faq": [
    [
-    "MarketAlert は無料ですか？",
-    "はい。無料プランでは、価格・変動率・24時間高値/安値の条件で3つのアラートを使えます。Plus と Pro は7日間無料でお試しいただけます。"
+    "MarketAlert は何をしますか？",
+    "MarketAlert は暗号資産マーケットスキャナーです。「現物 USDT で RSI が 30 を下回り、出来高が平均の2倍を超えた銘柄を知らせて」のように、条件を話すか入力します。MarketAlert はサーバー上で全銘柄についてその条件を監視し続け、条件がそろうとプッシュ、Telegram、Webhook で通知します。売買は行わず、取引所アカウントにも接続しません。"
    ],
    [
     "アプリを閉じていてもアラートは動きますか？",
@@ -3024,6 +3234,10 @@
    [
     "対応している取引所と市場は？",
     "Binance 現物と先物（無期限）の USDT・USDC ペアです。4つの市場はすべてのプランで利用できます。"
+   ],
+   [
+    "MarketAlert は無料ですか？",
+    "はい。無料プランでは、価格・変動率・24時間高値/安値の条件で3つのアラートを使えます。Plus と Pro は7日間無料でお試しいただけます。Plus と Pro では、アラート数が増え、すべての条件タイプと全銘柄アラートが使えます。"
    ],
    [
     "音声とテキストのアシスタントはどう動作しますか？",
@@ -3048,8 +3262,8 @@
   ],
   "disclaimer": "MarketAlert は Binance とは提携していません。通知は情報提供を目的としたもので、投資助言ではありません。",
   "meta": {
-   "title": "MarketAlert – 全銘柄対応の暗号資産 価格・RSI アラート",
-   "desc": "価格、RSI、MACD、出来高、移動平均クロスの暗号資産アラート。1つのアラートで全銘柄をスキャン。音声や AI でアラート作成。iOS・Android で無料。"
+   "title": "MarketAlert – 全銘柄をスキャンする暗号資産アラート：RSI・出来高・価格",
+   "desc": "MarketAlert は1つのアラートで全銘柄の RSI・MACD・出来高・価格の条件を同時に監視し、条件がそろうと通知します。音声でも文字でも設定でき、無料で始められます。"
   },
   "ui": {
    "theme": "テーマを切り替え",
@@ -3099,6 +3313,23 @@
   "allCoinsBadge": "全コイン · 24時間",
   "heroListAlt": "複数条件のアラートとリアルタイム値",
   "heroVoiceAlt": "音声で作成した2条件のアラート",
-  "rsiGuideLink": "全コインのRSIアラート"
+  "rsiGuideLink": "全コインのRSIアラート",
+  "heroDef": "MarketAlert は音声で設定できる暗号資産マーケットスキャナーです。Binance の全銘柄で RSI・出来高・価格の条件を同時に監視し、条件がそろうと通知します。",
+  "what": {
+   "title": "MarketAlert とは、そして何ではないか",
+   "def": "MarketAlert は音声で設定できる暗号資産マーケットスキャナーです。Binance の全銘柄で RSI・出来高・価格の条件を同時に監視し、条件がそろうと通知します。",
+   "yesT": "すること",
+   "noT": "しないこと",
+   "yes": [
+    "1つのアラートで市場の全銘柄をスキャン",
+    "RSI・出来高・価格など複数の条件を同時に監視",
+    "音声や文字で設定でき、条件がそろうと通知"
+   ],
+   "no": [
+    "あなたの代わりに売買はしません",
+    "取引所アカウントやウォレットには接続しません",
+    "投資助言は行いません"
+   ]
+  }
  }
 }

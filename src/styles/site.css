@@ -440,3 +440,8 @@ img { max-width: 100%; }
 .coin-guides a { border: 1px solid var(--bd); border-radius: 999px; padding: 4px 11px; background: var(--sf); color: var(--tx); font-weight: 600; }
 .coin-guides a:hover { border-color: var(--cat3); color: var(--cat3); }
 :root[lang=ar] .coin-guides b, :root[lang=hi] .coin-guides b, :root[lang=zh] .coin-guides b, :root[lang=ja] .coin-guides b, :root[lang=ru] .coin-guides b { font-family: var(--f); letter-spacing: 0; font-size: 12px; }
+
+/* İlk ekran: ürün tanımı (arama motorları ve yapay zekâ özetleri için düz metin) */
+.h-b .def { font-size: 18px; font-weight: 600; color: var(--tx); max-width: 640px; margin-top: 18px; }
+.h-b .def + .sub { margin-top: 10px; }
+@media (max-width: 860px) { .h-b .def { font-size: 16.5px; margin-top: 10px; } }
