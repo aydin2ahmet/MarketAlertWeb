@@ -25,8 +25,9 @@ interface Props {
   alternates?: { hreflang: string; href: string }[];
   autoLocale?: boolean;
   canonicalPath?: string;
+  noindex?: boolean;
 }
-const { lang, dir, title, description, path, ogImage, jsonLd, alternates, autoLocale = false, canonicalPath } = Astro.props;
+const { lang, dir, title, description, path, ogImage, jsonLd, alternates, autoLocale = false, canonicalPath, noindex = false } = Astro.props;
 const alts = alternates ?? LOCALES.map(l => ({ hreflang: l.hreflang, href: `/${l.code}/` }));
 const canonical = SITE + (canonicalPath || path);
 const ogLocale = lang.replace('-', '_');
@@ -143,6 +144,7 @@ const heroBackImages = isLanding ? Object.fromEntries(['light', 'dark'].map(them
     )}
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={canonical} />
     {alts.map(a => <link rel="alternate" hreflang={a.hreflang} href={SITE + a.href} />)}
     {!alternates && <link rel="alternate" hreflang="x-default" href={`${SITE}/`} />}
