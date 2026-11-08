@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Landing from '../../components/Landing.astro';
 import content from '../../i18n/content.json';
-import { LOCALES, SITE, STORE, UPDATED } from '../../config';
+import { LOCALES, SITE, SOCIAL, STORE, UPDATED } from '../../config';
 
 export function getStaticPaths() {
   return LOCALES.map(l => ({ params: { lang: l.code }, props: { locale: l } }));
@@ -24,9 +24,10 @@ const jsonLd = [
     image: SITE + '/icons/icon-512.png',
     dateModified: UPDATED,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-    featureList: t.f.map((f: any) => f.t),
-    sameAs: [STORE.play, STORE.appStore].filter(Boolean),
-    publisher: { '@type': 'Organization', name: 'MarketAlert', url: SITE + '/', logo: SITE + '/icons/icon-512.png' },
+    // Düz olgular (slogan değil). Yeni bir özellik sayfası eklenince buraya da 11 dilde bir olgu eklenir.
+    featureList: t.facts,
+    sameAs: [STORE.play, STORE.appStore, ...SOCIAL.map(s => s.url)].filter(Boolean),
+    publisher: { '@type': 'Organization', name: 'MarketAlert', url: SITE + '/', logo: SITE + '/icons/icon-512.png', sameAs: SOCIAL.map(s => s.url) },
   },
   {
     '@context': 'https://schema.org',

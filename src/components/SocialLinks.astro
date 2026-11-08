@@ -1,15 +1,11 @@
 ---
 import translations from '../i18n/social.json';
 import sitemap from '../i18n/sitemap.json';
+import { SOCIAL } from '../config';
 interface Props { code: string }
 const { code } = Astro.props;
 const t = translations[code as keyof typeof translations];
-const channels = [
-  { id: 'instagram', name: 'Instagram', url: 'https://www.instagram.com/marketalert.en/' },
-  { id: 'tiktok', name: 'TikTok', url: 'https://www.tiktok.com/@marketalertapp' },
-  { id: 'x', name: 'X', url: 'https://x.com/marketalert_en' },
-  { id: 'youtube', name: 'YouTube', url: 'https://www.youtube.com/@marketalertapp' },
-];
+const channels = SOCIAL;
 ---
 <div class="social">
   <div class="social-copy"><h2>{t.title}</h2><p>{t.note}</p><a class="all-pages" href={`/${code}/sitemap/`}>{sitemap[code as keyof typeof sitemap].title} ↗</a></div>
