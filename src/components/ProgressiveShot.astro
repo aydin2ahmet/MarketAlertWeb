@@ -1,11 +1,15 @@
 ---
+/**
+ * Uygulama ekran görüntüsü. Asıl adres (src/srcset) keskin dosyalardır; Google görsel arama bunları alır.
+ * Bulanık küçük ön izleme yalnızca arka plan olarak durur, keskin görüntü yüklenince üstünü kaplar.
+ * Yeni görsel eklerken src'ye asla .preview dosyası koyma (2026-11-08: görsel aramada bulanık çıkıyordu).
+ */
 import type { HTMLAttributes } from 'astro/types';
 import { shotSources } from '../config';
 
-interface Props extends HTMLAttributes<'img'> { src: string; alt: string }
-const { src, ...props } = Astro.props;
+interface Props extends HTMLAttributes<'img'> { src: string; alt: string; sizes?: string }
+const { src, sizes = '(max-width:700px) 90vw, 390px', ...props } = Astro.props;
 const sources = shotSources(src);
-const style = `aspect-ratio:${props.width}/${props.height};${props.style || ''}`;
+const style = `aspect-ratio:${props.width}/${props.height};background:url("${sources.preview}") center/cover no-repeat;${props.style || ''}`;
 ---
-<img {...props} style={style} src={sources.preview} data-sharp={sources.src} data-sharp-srcset={sources.srcset} />
-<noscript><img {...props} style={style} src={sources.src} srcset={sources.srcset} sizes="(max-width:700px) 90vw, 390px" /></noscript>
+<img {...props} style={style} src={sources.src} srcset={sources.srcset} sizes={sizes} />

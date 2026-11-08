@@ -38,7 +38,8 @@ const shot = (k: string, alt: string, eager = false, tall = false) => {
     const sources = shotSources(src);
     const sizes = tall ? (k === 'hero-voice' ? '(max-width:860px) 196px, 238px' : '(max-width:860px) 170px, 220px') : '(max-width:860px) 224px, 282px';
     const attrs = `class="sh-${i === 0 ? 'l' : 'd'}" alt="${i === 0 ? alt : ''}" width="${tall ? 360 : 600}" height="${tall ? 940 : 1268}" ${eager && i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"`;
-    return `<img ${attrs} src="${sources.preview}" data-sharp="${sources.src}" data-sharp-srcset="${sources.srcset}"><noscript><img ${attrs} src="${sources.src}" srcset="${sources.srcset}" sizes="${sizes}"></noscript>`;
+    // Asıl adres keskin dosya (Google görsel arama bunu alır); bulanık ön izleme yalnızca arka plan.
+    return `<img ${attrs} style="background:url('${sources.preview}') center/cover no-repeat" src="${sources.src}" srcset="${sources.srcset}" sizes="${sizes}">`;
   }).join('');
 };
 // Mağaza rozetleri StoreBadges bileşeninde (src/components/StoreBadges.astro).
