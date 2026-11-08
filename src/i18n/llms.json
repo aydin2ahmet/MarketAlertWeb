@@ -1,0 +1,123 @@
+{
+ "_rules": "Kurallar: docs/llms-kurallari.md. Bu dosyadan public olmayan iki dosya üretilir: /llms.txt ve /llms-full.txt. Her içerik sayfasının (features/*, coins/*) burada bir bloğu olmalı; yoksa derleme durur.",
+ "definition": "MarketAlert is a voice-driven crypto market scanner for iOS and Android: it watches RSI, volume and price conditions together across every coin on Binance and notifies you when they're met. It runs on MarketAlert's servers, so alerts keep working while the app is closed. It does not trade, never connects to an exchange account or wallet, and does not give investment advice.",
+ "facts": [
+  "8 condition types: price, percent move within a time window (5–1440 minutes), 24-hour high/low, RSI, MACD signal cross, volume spike, SMA/EMA cross, price crossing a moving average. Indicators use closed candles on 1m, 5m, 15m, 1h, 4h or 1d.",
+  "Markets: Binance Spot and Futures, USDT and USDC pairs. Each market is watched separately.",
+  "Conditions can be combined with AND / OR in one alert (up to 3 on Plus, 5 on Pro). With AND, every condition must hold on the same coin.",
+  "All-coins alerts apply one condition to the top 50, top 100, top 200 or every eligible coin in a market (ranked by 24-hour volume, stablecoins excluded) and report each matching coin separately. Delivery pace: Instant, Balanced, or a Digest at :00, :15, :30 and :45.",
+  "Alerts can be created with a form, ready-made templates (Pump, Dump, Pump + volume, Oversold, Overbought, Trend crossover, 24-hour high breakout, Market scan), by typing to the AI assistant, or by voice. In the text chat the assistant shows a draft for approval; with the voice assistant a clear request is applied directly. The assistant can also edit, list and turn off alerts (it never deletes them).",
+  "Channels: push notifications with a chosen alarm sound, Telegram (via the MarketAlert bot, no chat ID needed), and HMAC-SHA256 signed webhooks.",
+  "Every match is kept in the in-app notification log with timing details.",
+  "Plans: Free (3 alerts; price, percent move and 24-hour high/low conditions; push), Plus (20 alerts, all condition types, repeating alerts, Telegram, 2 all-coins alerts up to the top 100), Pro (100 alerts, webhook, 10 all-coins alerts on every coin). Plus and Pro have a 7-day free trial. Prices are shown in the app stores per country.",
+  "Availability: coming soon to the App Store (iOS) and Google Play (Android). Guests can start without an account.",
+  "Languages: Turkish, English, Chinese (Simplified), Spanish, Hindi, Arabic, Portuguese (Brazil), French, Russian, German, Japanese.",
+  "Not affiliated with Binance. Notifications are informational and not investment advice."
+ ],
+ "examples": [
+  ["Scan the top 100 coins on Binance Spot USDT and notify me on Telegram when hourly RSI(14) is below 30 and hourly volume is above 2 times its 20-candle average.", "all-coins, RSI + volume with AND · Plus / Pro"],
+  ["Notify me once when BTC rises above 70,000 USDT and hourly RSI is below 30.", "one coin, price + RSI with AND · Plus / Pro"],
+  ["Notify me once on Telegram when hourly RSI is below 30 and price is above EMA20 on any top-100 coin on Binance Spot USDT.", "all-coins, RSI + EMA with AND · Plus / Pro"],
+  ["Scan the top 100 coins on Binance Spot USDT. Notify me once on Telegram when 15-minute candle volume exceeds 3 times its 20-period volume average.", "all-coins volume spike · Plus / Pro"],
+  ["Tell me if any top-100 coin rises 5% within 5 minutes.", "all-coins percent move, Pump template · Plus / Pro"],
+  ["Tell me if SOL rises 3% within 15 minutes.", "one coin, percent move · Free"],
+  ["Notify me once if BTC drops below 85,000 USDT.", "one coin, price level · Free"]
+ ],
+ "pages": {
+  "features/price-alerts": {
+   "line": "Set a price alert for one coin; even a brief touch of the target is caught.",
+   "what": "A price alert watches the traded price of one coin on the Binance market you choose and notifies you when it reaches your target. It is the simplest alert and is included in the Free plan.",
+   "facts": [
+    "The highest and lowest traded prices are checked, so a wick that touches 70,000 and falls back to 69,880 still fires; the notification shows the touch price and the last price.",
+    "Spot and Futures prices can differ at the same moment, so the alert follows the market you select.",
+    "Free: the alert notifies once. Plus and Pro: repeating alerts, and two price levels can be combined with OR in one alert.",
+    "Silent or Sound push on every plan; Telegram on Plus and Pro; signed webhook on Pro."
+   ],
+   "example": "Notify me once when BTC rises above 70,000 USDT.",
+   "faq": [
+    ["Can I set several targets for the same coin?", "Yes. Create a separate alert for each target, or combine two levels with OR in one alert on Plus and Pro."]
+   ]
+  },
+  "features/percent-change-alerts": {
+   "line": "Get notified when a coin rises or falls by your chosen percentage within a time window.",
+   "what": "A percent-move alert ignores the price level and looks at how far the price moved within a window you choose, such as 3% in 15 minutes. It catches sudden rises and drops wherever the price is. Included in the Free plan.",
+   "facts": [
+    "Window from 5 to 1440 minutes; use a negative threshold (e.g. −3%) for drops.",
+    "To catch rises and drops together, combine two conditions with OR (Plus and Pro) or set two alerts on Free.",
+    "The Pump and Dump templates catch any coin moving 5% within 5 minutes across all coins (Plus and Pro)."
+   ],
+   "example": "Tell me if SOL rises 3% within 15 minutes.",
+   "faq": [
+    ["How is it different from a price alert?", "A price alert waits for a fixed level; a percent-move alert looks at the size of the move within the window, wherever the price is."]
+   ]
+  },
+  "features/all-coins-alerts": {
+   "line": "One alert scans the top 50, 100, 200 or every coin in a Binance market and reports each match.",
+   "what": "An all-coins alert applies one condition to every eligible coin in the Binance market you choose and reports each matching coin separately. It replaces opening hundreds of charts. Available on Plus (2 alerts, up to the top 100) and Pro (10 alerts, every coin).",
+   "facts": [
+    "Top-N scopes follow the 24-hour trading volume ranking; stablecoins are excluded; coins move in and out as the ranking changes.",
+    "Each market (Spot/Futures, USDT/USDC) is scanned separately.",
+    "Combined conditions are checked on each coin's own data; one coin's rise is never paired with another coin's volume.",
+    "Delivery pace is set in Settings: Instant, Balanced, or Digest (one notification per 15 minutes)."
+   ],
+   "example": "Tell me if any top-100 coin rises 5% within 5 minutes and its volume is up too.",
+   "faq": [
+    ["What if I get too many notifications?", "Switch to Balanced or Digest, raise the threshold, or add a second condition."]
+   ]
+  },
+  "features/rsi-alerts": {
+   "line": "Scan one coin or a whole Binance market with an RSI rule set by voice or text.",
+   "what": "An RSI alert notifies you when a coin's RSI is below or above your threshold, for one coin or across the top 50, 100, 200 or all eligible coins of a market. RSI alerts are available on Plus and Pro.",
+   "facts": [
+    "Candle timeframes 1m, 5m, 15m, 1h, 4h and 1d; RSI period 2–200; threshold 0–100; calculated from closed candles.",
+    "The condition checks whether RSI is below or above the threshold; it is not a crossing-only condition.",
+    "RSI can be combined with price, percent move or volume using AND / OR; in all-coins alerts every condition is checked on the same coin.",
+    "Repetition: once, once per candle, or repeat after a cooldown."
+   ],
+   "example": "Scan the top 100 coins in Binance Spot USDT. Notify me on Telegram when a coin's hourly RSI 14 is below 30.",
+   "faq": [
+    ["Why does the value differ from my chart?", "MarketAlert uses closed candles; a chart may show the still-forming candle."]
+   ]
+  },
+  "features/volume-spike-alerts": {
+   "line": "Get notified when candle volume exceeds a multiple of its volume average.",
+   "what": "A volume spike alert compares a coin's candle volume with its moving average of volume and notifies you when it exceeds your multiplier, for one coin or across a whole market. Available on Plus and Pro.",
+   "facts": [
+    "You choose the candle timeframe, the SMA period of the volume average and the multiplier (e.g. 15m, 20-period, 3×).",
+    "3× volume means volume above three times the average, not a 3% price move.",
+    "Volume uses closed candles; it is not an intrabar spike notification.",
+    "Higher volume does not mean a higher price; add a price or EMA condition with AND for direction."
+   ],
+   "example": "Scan the top 100 coins by volume on Binance Spot USDT. Notify me once on Telegram when 15-minute candle volume exceeds 3 times its 20-period volume average.",
+   "faq": [
+    ["Is this a trading signal?", "No. It reports that your own volume condition was met; it does not place orders or predict price direction."]
+   ]
+  },
+  "features/multi-condition-alerts": {
+   "line": "Combine RSI, EMA, price and volume conditions in one alert with AND / OR, without code.",
+   "what": "A multi-condition alert joins several conditions in one alert. With AND every condition must hold; with OR one is enough. It can be created by voice, AI text chat or the form, with no code or scripting. Plus supports up to 3 conditions per alert, Pro up to 5.",
+   "facts": [
+    "In all-coins alerts the conditions are evaluated together on each coin; BTC's RSI is never combined with ETH's EMA.",
+    "\"Price above EMA20\" is a state, not a crossover; a crossover is a separate condition type.",
+    "Conditions do not define a sequence of events; they are checked together on closed candles."
+   ],
+   "example": "Scan the top 100 coins by volume on Binance Spot USDT. Notify me once on Telegram when hourly RSI is below 30 and price is above EMA20.",
+   "faq": [
+    ["Do I need code or Pine Script?", "No. Supported conditions are combined by voice, AI text chat or the alert form."]
+   ]
+  },
+  "coins/bitcoin-price-alert": {
+   "line": "Get notified when BTC rises above or falls below your level, including short wicks.",
+   "what": "A Bitcoin price alert watches BTC/USDT or BTC/USDC on Binance Spot or Futures and notifies you when your level is reached. All four BTC markets and price, percent-move and 24-hour high/low conditions are on the Free plan.",
+   "facts": [
+    "Short wicks are caught: if BTC dips to 84,980 for a moment and the last price is 84,995, an alert below 85,000 still fires and shows both prices.",
+    "Futures (perpetual) BTC can differ slightly from Spot; set the alert on the market you trade.",
+    "To watch both above 100,000 and below 85,000, create two alerts, or combine both with OR on Plus and Pro."
+   ],
+   "example": "Notify me once if BTC drops below 85,000 USDT.",
+   "faq": [
+    ["Can I be notified every time BTC drops sharply?", "Yes, with a percent-move condition such as down 5% in 1 hour and a repeating alert (Plus and Pro)."]
+   ]
+  }
+ }
+}
