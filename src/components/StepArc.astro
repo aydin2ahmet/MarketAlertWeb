@@ -19,8 +19,8 @@ const pct = (n: number, d: number) => `${(n / d * 100).toFixed(2)}%`;
     return <div class={`arc-st arc-st${i + 1}`}>
       <div class="arc-lbl"><span class="arc-n" aria-hidden="true">{i + 1}</span><span><b>{titles[i]}</b><small>{actions[i]}</small></span></div>
       <div class="arc-scr">
-        <ProgressiveShot class="sh-l" src={`/shots/${code}/light/${img}.webp?v=${version}`} alt={`${titles[i]}: ${actions[i]}`} width="360" height={Math.round(h360)} loading="lazy" decoding="async" />
-        <ProgressiveShot class="sh-d" src={`/shots/${code}/dark/${img}.webp?v=${version}`} alt="" width="360" height={Math.round(h360)} loading="lazy" decoding="async" />
+        <ProgressiveShot class="sh-l" src={`/shots/${code}/light/${img}.webp?v=${version}`} alt={`${titles[i]}: ${actions[i]}`} sizes="(max-width:760px) 45vw, 240px" width="360" height={Math.round(h360)} loading="lazy" decoding="async" />
+        <ProgressiveShot class="sh-d" src={`/shots/${code}/dark/${img}.webp?v=${version}`} alt="" sizes="(max-width:760px) 45vw, 240px" width="360" height={Math.round(h360)} loading="lazy" decoding="async" />
         {(hot[img] || []).map(([x, y, w, hh]: number[]) => <span class="arc-ring" aria-hidden="true" style={`left:${pct(x, 360)};top:${pct(y, h360)};width:${pct(w, 360)};height:${pct(hh, h360)};border-radius:${hh > 60 ? '14px' : '999px'}`}></span>)}
       </div>
     </div>;

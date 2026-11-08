@@ -128,8 +128,9 @@ const heroBackImages = isLanding ? Object.fromEntries(['light', 'dark'].map(them
           var hero = Array.from(document.querySelectorAll('.h-v .front img')).find(function (image) {
             return getComputedStyle(image).display !== 'none' && image.getBoundingClientRect().top < innerHeight + 160;
           });
-          if (hero && hero.dataset.sharpState !== 'ready' && hero.dataset.sharpState !== 'error') {
-            window.addEventListener('ma:hero-ready', afterPaint, { once: true });
+          if (hero && !hero.complete) {
+            hero.addEventListener('load', afterPaint, { once: true });
+            hero.addEventListener('error', afterPaint, { once: true });
             analyticsFallback = setTimeout(loadAnalytics, 3000);
           } else afterPaint();
         }
@@ -165,71 +166,6 @@ const heroBackImages = isLanding ? Object.fromEntries(['light', 'dark'].map(them
   </head>
   <body>
     <slot />
-    <noscript><style is:inline>img[data-sharp] { display: none !important; }</style></noscript>
-    <script>
-      const screenshots = document.querySelectorAll<HTMLImageElement>('img[data-sharp]');
-      if (screenshots.length && !(window as any).maRedirecting) {
-        const nearby = new Set<HTMLImageElement>();
-        const resize = new ResizeObserver(entries => entries.forEach(entry => {
-          const image = entry.target as HTMLImageElement;
-          if (image.dataset.sharpState === 'ready' && image.clientWidth) image.sizes = `${image.clientWidth}px`;
-        }));
-        const heroReady = (image: HTMLImageElement) => {
-          if (image.closest('.h-v .front')) requestAnimationFrame(() => requestAnimationFrame(() => window.dispatchEvent(new Event('ma:hero-ready'))));
-        };
-        const upgrade = (image: HTMLImageElement) => {
-          const src = image.dataset.sharp;
-          if (!src || image.dataset.sharpState || !image.complete || !image.naturalWidth) return;
-          const style = getComputedStyle(image);
-          if (!image.getClientRects().length || style.display === 'none' || style.visibility === 'hidden') return;
-          if (image.closest('.screen') && !image.classList.contains('on')) return;
-          image.dataset.sharpState = 'loading';
-          // Give the lightweight preview a paint before starting the full image.
-          requestAnimationFrame(() => requestAnimationFrame(async () => {
-            const sharp = new Image();
-            sharp.decoding = 'async';
-            sharp.fetchPriority = image.fetchPriority === 'high' || image.closest('.h-v') ? 'high' : 'low';
-            sharp.sizes = `${image.clientWidth}px`;
-            sharp.srcset = image.dataset.sharpSrcset || '';
-            sharp.src = src;
-            try {
-              await sharp.decode();
-              image.sizes = sharp.sizes;
-              image.srcset = sharp.srcset;
-              image.src = src;
-              delete image.dataset.sharp;
-              image.dataset.sharpState = 'ready';
-              resize.observe(image);
-              heroReady(image);
-            } catch (error) {
-              // Keep the preview visible if the full image cannot be fetched.
-              image.dataset.sharpState = 'error';
-              console.warn('Screenshot could not be loaded:', src, error);
-              heroReady(image);
-            }
-          }));
-        };
-        const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-          const image = entry.target as HTMLImageElement;
-          if (entry.isIntersecting) { nearby.add(image); upgrade(image); }
-          else nearby.delete(image);
-        }), { rootMargin: '160px' });
-        screenshots.forEach(image => {
-          observer.observe(image);
-          image.addEventListener('load', () => { if (nearby.has(image)) upgrade(image); });
-        });
-        // Theme changes, walkthrough tabs and the tour reveal different images.
-        let scheduled = false;
-        new MutationObserver(() => {
-          if (scheduled) return;
-          scheduled = true;
-          requestAnimationFrame(() => {
-            scheduled = false;
-            nearby.forEach(upgrade);
-          });
-        }).observe(document.documentElement, { subtree: true, attributes: true, attributeFilter: ['class', 'hidden', 'data-theme'] });
-      }
-    </script>
     {GA_ID && (
       <div class="consent" id="consent" role="dialog" aria-label={cs.prefs} aria-live="polite" hidden>
         <p>{cs.msg}</p>
