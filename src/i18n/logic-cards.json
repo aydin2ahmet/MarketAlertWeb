@@ -1,0 +1,3038 @@
+{
+ "tr": {
+  "features/price-alerts": {
+   "kicker": "ÖRNEK · BTC/USDT",
+   "cond": [
+    "BTC 70.000 USDT veya üstü"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "Durum 1",
+     "tiles": [
+      [
+       "Mum tepesi",
+       "69.990",
+       "/ hedef 70.000",
+       false
+      ],
+      [
+       "Son fiyat",
+       "69.880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Gelmez · hedefe dokunmadı",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "Durum 2",
+     "tiles": [
+      [
+       "Mum tepesi",
+       "70.012",
+       "/ hedef 70.000",
+       true
+      ],
+      [
+       "Son fiyat",
+       "69.880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Bildirim gelir · hedefe dokundu",
+      true
+     ]
+    }
+   ]
+  },
+  "coins/bitcoin-price-alert": {
+   "kicker": "ÖRNEK · BTC/USDT",
+   "cond": [
+    "BTC 85.000 USDT veya altı"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "Durum 1",
+     "tiles": [
+      [
+       "Mum dibi",
+       "85.010",
+       "/ hedef 85.000",
+       false
+      ],
+      [
+       "Son fiyat",
+       "85.120",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Gelmez · hedefe dokunmadı",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "Durum 2",
+     "tiles": [
+      [
+       "Mum dibi",
+       "84.980",
+       "/ hedef 85.000",
+       true
+      ],
+      [
+       "Son fiyat",
+       "84.995",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Bildirim gelir · hedefe dokundu",
+      true
+     ]
+    }
+   ]
+  },
+  "features/percent-change-alerts": {
+   "kicker": "ÖRNEK · SOL/USDT",
+   "cond": [
+    "SOL 15 dk'da +%3 veya üstü"
+   ],
+   "cards": [
+    {
+     "coin": "SOL",
+     "tag": "Durum 1",
+     "tiles": [
+      [
+       "15 dk değişim",
+       "+%1,8",
+       "/ hedef +%3",
+       false
+      ]
+     ],
+     "res": [
+      "Gelmez · yükseliş az",
+      false
+     ]
+    },
+    {
+     "coin": "SOL",
+     "tag": "Durum 2",
+     "tiles": [
+      [
+       "15 dk değişim",
+       "+%3,2",
+       "/ hedef +%3",
+       true
+      ]
+     ],
+     "res": [
+      "Bildirim gelir",
+      true
+     ]
+    }
+   ]
+  },
+  "features/all-coins-alerts": {
+   "kicker": "ÖRNEK · İLK 100",
+   "cond": [
+    "5 dk'da +%5 veya üstü",
+    "hacim ortalamanın 3 katından fazla"
+   ],
+   "cards": [
+    {
+     "coin": "AVAX",
+     "tag": "5 dk",
+     "tiles": [
+      [
+       "Yükseliş",
+       "+%5,4",
+       "/ hedef +%5",
+       true
+      ],
+      [
+       "Hacim / ortalama",
+       "3,6 kat",
+       "/ hedef 3 kat",
+       true
+      ]
+     ],
+     "res": [
+      "Bildirim gelir · ikisi de tuttu",
+      true
+     ]
+    },
+    {
+     "coin": "DOT",
+     "tag": "5 dk",
+     "tiles": [
+      [
+       "Yükseliş",
+       "+%5,1",
+       "/ hedef +%5",
+       true
+      ],
+      [
+       "Hacim / ortalama",
+       "1,2 kat",
+       "/ hedef 3 kat",
+       false
+      ]
+     ],
+     "res": [
+      "Gelmez · hacim düşük",
+      false
+     ]
+    },
+    {
+     "coin": "LINK",
+     "tag": "5 dk",
+     "tiles": [
+      [
+       "Yükseliş",
+       "+%2,0",
+       "/ hedef +%5",
+       false
+      ],
+      [
+       "Hacim / ortalama",
+       "4,1 kat",
+       "/ hedef 3 kat",
+       true
+      ]
+     ],
+     "res": [
+      "Gelmez · yükseliş az",
+      false
+     ]
+    }
+   ]
+  },
+  "features/multi-condition-alerts": {
+   "kicker": "ÖRNEK · ETH/USDT",
+   "cond": [
+    "RSI(14) 30 altı",
+    "fiyat EMA20 üstünde"
+   ],
+   "cards": [
+    {
+     "coin": "ETH",
+     "tag": "Durum 1",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ hedef 30 altı",
+       true
+      ],
+      [
+       "Fiyat / EMA20",
+       "altında",
+       "/ hedef üstünde",
+       false
+      ]
+     ],
+     "res": [
+      "Gelmez · fiyat EMA20 altında",
+      false
+     ]
+    },
+    {
+     "coin": "ETH",
+     "tag": "Durum 2",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ hedef 30 altı",
+       true
+      ],
+      [
+       "Fiyat / EMA20",
+       "üstünde",
+       "/ hedef üstünde",
+       true
+      ]
+     ],
+     "res": [
+      "Bildirim gelir · ikisi de tuttu",
+      true
+     ]
+    }
+   ]
+  },
+  "_and": "VE",
+  "_cond": "Koşul:"
+ },
+ "en": {
+  "features/price-alerts": {
+   "kicker": "EXAMPLE · BTC/USDT",
+   "cond": [
+    "BTC at or above 70,000 USDT"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "Case 1",
+     "tiles": [
+      [
+       "Candle high",
+       "69,990",
+       "/ target 70,000",
+       false
+      ],
+      [
+       "Last price",
+       "69,880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "No notification · target not touched",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "Case 2",
+     "tiles": [
+      [
+       "Candle high",
+       "70,012",
+       "/ target 70,000",
+       true
+      ],
+      [
+       "Last price",
+       "69,880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Notification sent · target touched",
+      true
+     ]
+    }
+   ]
+  },
+  "coins/bitcoin-price-alert": {
+   "kicker": "EXAMPLE · BTC/USDT",
+   "cond": [
+    "BTC at or below 85,000 USDT"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "Case 1",
+     "tiles": [
+      [
+       "Candle low",
+       "85,010",
+       "/ target 85,000",
+       false
+      ],
+      [
+       "Last price",
+       "85,120",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "No notification · target not touched",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "Case 2",
+     "tiles": [
+      [
+       "Candle low",
+       "84,980",
+       "/ target 85,000",
+       true
+      ],
+      [
+       "Last price",
+       "84,995",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Notification sent · target touched",
+      true
+     ]
+    }
+   ]
+  },
+  "features/percent-change-alerts": {
+   "kicker": "EXAMPLE · SOL/USDT",
+   "cond": [
+    "SOL +3% or more in 15m"
+   ],
+   "cards": [
+    {
+     "coin": "SOL",
+     "tag": "Case 1",
+     "tiles": [
+      [
+       "15m change",
+       "+1.8%",
+       "/ target +3%",
+       false
+      ]
+     ],
+     "res": [
+      "No notification · rise too small",
+      false
+     ]
+    },
+    {
+     "coin": "SOL",
+     "tag": "Case 2",
+     "tiles": [
+      [
+       "15m change",
+       "+3.2%",
+       "/ target +3%",
+       true
+      ]
+     ],
+     "res": [
+      "Notification sent",
+      true
+     ]
+    }
+   ]
+  },
+  "features/all-coins-alerts": {
+   "kicker": "EXAMPLE · TOP 100",
+   "cond": [
+    "+5% or more in 5m",
+    "volume above 3× average"
+   ],
+   "cards": [
+    {
+     "coin": "AVAX",
+     "tag": "5m",
+     "tiles": [
+      [
+       "Rise",
+       "+5.4%",
+       "/ target +5%",
+       true
+      ],
+      [
+       "Volume / average",
+       "3.6×",
+       "/ target 3×",
+       true
+      ]
+     ],
+     "res": [
+      "Notification sent · both met",
+      true
+     ]
+    },
+    {
+     "coin": "DOT",
+     "tag": "5m",
+     "tiles": [
+      [
+       "Rise",
+       "+5.1%",
+       "/ target +5%",
+       true
+      ],
+      [
+       "Volume / average",
+       "1.2×",
+       "/ target 3×",
+       false
+      ]
+     ],
+     "res": [
+      "No notification · volume too low",
+      false
+     ]
+    },
+    {
+     "coin": "LINK",
+     "tag": "5m",
+     "tiles": [
+      [
+       "Rise",
+       "+2.0%",
+       "/ target +5%",
+       false
+      ],
+      [
+       "Volume / average",
+       "4.1×",
+       "/ target 3×",
+       true
+      ]
+     ],
+     "res": [
+      "No notification · rise too small",
+      false
+     ]
+    }
+   ]
+  },
+  "features/multi-condition-alerts": {
+   "kicker": "EXAMPLE · ETH/USDT",
+   "cond": [
+    "RSI(14) below 30",
+    "price above EMA20"
+   ],
+   "cards": [
+    {
+     "coin": "ETH",
+     "tag": "Case 1",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ target below 30",
+       true
+      ],
+      [
+       "Price / EMA20",
+       "below",
+       "/ target above",
+       false
+      ]
+     ],
+     "res": [
+      "No notification · price below EMA20",
+      false
+     ]
+    },
+    {
+     "coin": "ETH",
+     "tag": "Case 2",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ target below 30",
+       true
+      ],
+      [
+       "Price / EMA20",
+       "above",
+       "/ target above",
+       true
+      ]
+     ],
+     "res": [
+      "Notification sent · both met",
+      true
+     ]
+    }
+   ]
+  },
+  "_and": "AND",
+  "_cond": "Condition:"
+ },
+ "de": {
+  "features/price-alerts": {
+   "kicker": "BEISPIEL · BTC/USDT",
+   "cond": [
+    "BTC bei 70.000 USDT oder höher"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "Fall 1",
+     "tiles": [
+      [
+       "Kerzenhoch",
+       "69.990",
+       "/ Ziel 70.000",
+       false
+      ],
+      [
+       "Letzter Kurs",
+       "69.880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Keine Benachrichtigung · Ziel nicht berührt",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "Fall 2",
+     "tiles": [
+      [
+       "Kerzenhoch",
+       "70.012",
+       "/ Ziel 70.000",
+       true
+      ],
+      [
+       "Letzter Kurs",
+       "69.880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Benachrichtigung kommt · Ziel berührt",
+      true
+     ]
+    }
+   ]
+  },
+  "coins/bitcoin-price-alert": {
+   "kicker": "BEISPIEL · BTC/USDT",
+   "cond": [
+    "BTC bei 85.000 USDT oder tiefer"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "Fall 1",
+     "tiles": [
+      [
+       "Kerzentief",
+       "85.010",
+       "/ Ziel 85.000",
+       false
+      ],
+      [
+       "Letzter Kurs",
+       "85.120",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Keine Benachrichtigung · Ziel nicht berührt",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "Fall 2",
+     "tiles": [
+      [
+       "Kerzentief",
+       "84.980",
+       "/ Ziel 85.000",
+       true
+      ],
+      [
+       "Letzter Kurs",
+       "84.995",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Benachrichtigung kommt · Ziel berührt",
+      true
+     ]
+    }
+   ]
+  },
+  "features/percent-change-alerts": {
+   "kicker": "BEISPIEL · SOL/USDT",
+   "cond": [
+    "SOL in 15 Min. +3 % oder mehr"
+   ],
+   "cards": [
+    {
+     "coin": "SOL",
+     "tag": "Fall 1",
+     "tiles": [
+      [
+       "Änderung in 15 Min.",
+       "+1,8 %",
+       "/ Ziel +3 %",
+       false
+      ]
+     ],
+     "res": [
+      "Keine Benachrichtigung · Anstieg zu klein",
+      false
+     ]
+    },
+    {
+     "coin": "SOL",
+     "tag": "Fall 2",
+     "tiles": [
+      [
+       "Änderung in 15 Min.",
+       "+3,2 %",
+       "/ Ziel +3 %",
+       true
+      ]
+     ],
+     "res": [
+      "Benachrichtigung kommt",
+      true
+     ]
+    }
+   ]
+  },
+  "features/all-coins-alerts": {
+   "kicker": "BEISPIEL · TOP 100",
+   "cond": [
+    "+5 % oder mehr in 5 Min.",
+    "Volumen über 3× Durchschnitt"
+   ],
+   "cards": [
+    {
+     "coin": "AVAX",
+     "tag": "5 Min.",
+     "tiles": [
+      [
+       "Anstieg",
+       "+5,4 %",
+       "/ Ziel +5 %",
+       true
+      ],
+      [
+       "Volumen / Schnitt",
+       "3,6×",
+       "/ Ziel 3×",
+       true
+      ]
+     ],
+     "res": [
+      "Benachrichtigung kommt · beide erfüllt",
+      true
+     ]
+    },
+    {
+     "coin": "DOT",
+     "tag": "5 Min.",
+     "tiles": [
+      [
+       "Anstieg",
+       "+5,1 %",
+       "/ Ziel +5 %",
+       true
+      ],
+      [
+       "Volumen / Schnitt",
+       "1,2×",
+       "/ Ziel 3×",
+       false
+      ]
+     ],
+     "res": [
+      "Keine Benachrichtigung · Volumen zu niedrig",
+      false
+     ]
+    },
+    {
+     "coin": "LINK",
+     "tag": "5 Min.",
+     "tiles": [
+      [
+       "Anstieg",
+       "+2,0 %",
+       "/ Ziel +5 %",
+       false
+      ],
+      [
+       "Volumen / Schnitt",
+       "4,1×",
+       "/ Ziel 3×",
+       true
+      ]
+     ],
+     "res": [
+      "Keine Benachrichtigung · Anstieg zu klein",
+      false
+     ]
+    }
+   ]
+  },
+  "features/multi-condition-alerts": {
+   "kicker": "BEISPIEL · ETH/USDT",
+   "cond": [
+    "RSI(14) unter 30",
+    "Kurs über EMA20"
+   ],
+   "cards": [
+    {
+     "coin": "ETH",
+     "tag": "Fall 1",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ Ziel unter 30",
+       true
+      ],
+      [
+       "Kurs / EMA20",
+       "darunter",
+       "/ Ziel darüber",
+       false
+      ]
+     ],
+     "res": [
+      "Keine Benachrichtigung · Kurs unter EMA20",
+      false
+     ]
+    },
+    {
+     "coin": "ETH",
+     "tag": "Fall 2",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ Ziel unter 30",
+       true
+      ],
+      [
+       "Kurs / EMA20",
+       "darüber",
+       "/ Ziel darüber",
+       true
+      ]
+     ],
+     "res": [
+      "Benachrichtigung kommt · beide erfüllt",
+      true
+     ]
+    }
+   ]
+  },
+  "_and": "UND",
+  "_cond": "Bedingung:"
+ },
+ "fr": {
+  "features/price-alerts": {
+   "kicker": "EXEMPLE · BTC/USDT",
+   "cond": [
+    "BTC à 70 000 USDT ou plus"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "Cas 1",
+     "tiles": [
+      [
+       "Plus haut de la bougie",
+       "69 990",
+       "/ cible 70 000",
+       false
+      ],
+      [
+       "Dernier prix",
+       "69 880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Pas de notification · cible non touchée",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "Cas 2",
+     "tiles": [
+      [
+       "Plus haut de la bougie",
+       "70 012",
+       "/ cible 70 000",
+       true
+      ],
+      [
+       "Dernier prix",
+       "69 880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Notification envoyée · cible touchée",
+      true
+     ]
+    }
+   ]
+  },
+  "coins/bitcoin-price-alert": {
+   "kicker": "EXEMPLE · BTC/USDT",
+   "cond": [
+    "BTC à 85 000 USDT ou moins"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "Cas 1",
+     "tiles": [
+      [
+       "Plus bas de la bougie",
+       "85 010",
+       "/ cible 85 000",
+       false
+      ],
+      [
+       "Dernier prix",
+       "85 120",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Pas de notification · cible non touchée",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "Cas 2",
+     "tiles": [
+      [
+       "Plus bas de la bougie",
+       "84 980",
+       "/ cible 85 000",
+       true
+      ],
+      [
+       "Dernier prix",
+       "84 995",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Notification envoyée · cible touchée",
+      true
+     ]
+    }
+   ]
+  },
+  "features/percent-change-alerts": {
+   "kicker": "EXEMPLE · SOL/USDT",
+   "cond": [
+    "SOL +3 % ou plus en 15 min"
+   ],
+   "cards": [
+    {
+     "coin": "SOL",
+     "tag": "Cas 1",
+     "tiles": [
+      [
+       "Variation sur 15 min",
+       "+1,8 %",
+       "/ cible +3 %",
+       false
+      ]
+     ],
+     "res": [
+      "Pas de notification · hausse trop faible",
+      false
+     ]
+    },
+    {
+     "coin": "SOL",
+     "tag": "Cas 2",
+     "tiles": [
+      [
+       "Variation sur 15 min",
+       "+3,2 %",
+       "/ cible +3 %",
+       true
+      ]
+     ],
+     "res": [
+      "Notification envoyée",
+      true
+     ]
+    }
+   ]
+  },
+  "features/all-coins-alerts": {
+   "kicker": "EXEMPLE · TOP 100",
+   "cond": [
+    "+5 % ou plus en 5 min",
+    "volume supérieur à 3× la moyenne"
+   ],
+   "cards": [
+    {
+     "coin": "AVAX",
+     "tag": "5 min",
+     "tiles": [
+      [
+       "Hausse",
+       "+5,4 %",
+       "/ cible +5 %",
+       true
+      ],
+      [
+       "Volume / moyenne",
+       "3,6×",
+       "/ cible 3×",
+       true
+      ]
+     ],
+     "res": [
+      "Notification envoyée · les deux remplies",
+      true
+     ]
+    },
+    {
+     "coin": "DOT",
+     "tag": "5 min",
+     "tiles": [
+      [
+       "Hausse",
+       "+5,1 %",
+       "/ cible +5 %",
+       true
+      ],
+      [
+       "Volume / moyenne",
+       "1,2×",
+       "/ cible 3×",
+       false
+      ]
+     ],
+     "res": [
+      "Pas de notification · volume trop faible",
+      false
+     ]
+    },
+    {
+     "coin": "LINK",
+     "tag": "5 min",
+     "tiles": [
+      [
+       "Hausse",
+       "+2,0 %",
+       "/ cible +5 %",
+       false
+      ],
+      [
+       "Volume / moyenne",
+       "4,1×",
+       "/ cible 3×",
+       true
+      ]
+     ],
+     "res": [
+      "Pas de notification · hausse trop faible",
+      false
+     ]
+    }
+   ]
+  },
+  "features/multi-condition-alerts": {
+   "kicker": "EXEMPLE · ETH/USDT",
+   "cond": [
+    "RSI(14) sous 30",
+    "prix au-dessus de l'EMA20"
+   ],
+   "cards": [
+    {
+     "coin": "ETH",
+     "tag": "Cas 1",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ cible sous 30",
+       true
+      ],
+      [
+       "Prix / EMA20",
+       "en dessous",
+       "/ cible au-dessus",
+       false
+      ]
+     ],
+     "res": [
+      "Pas de notification · prix sous l'EMA20",
+      false
+     ]
+    },
+    {
+     "coin": "ETH",
+     "tag": "Cas 2",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ cible sous 30",
+       true
+      ],
+      [
+       "Prix / EMA20",
+       "au-dessus",
+       "/ cible au-dessus",
+       true
+      ]
+     ],
+     "res": [
+      "Notification envoyée · les deux remplies",
+      true
+     ]
+    }
+   ]
+  },
+  "_and": "ET",
+  "_cond": "Condition :"
+ },
+ "es": {
+  "features/price-alerts": {
+   "kicker": "EJEMPLO · BTC/USDT",
+   "cond": [
+    "BTC en 70.000 USDT o más"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "Caso 1",
+     "tiles": [
+      [
+       "Máximo de la vela",
+       "69.990",
+       "/ objetivo 70.000",
+       false
+      ],
+      [
+       "Último precio",
+       "69.880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "No llega · no tocó el objetivo",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "Caso 2",
+     "tiles": [
+      [
+       "Máximo de la vela",
+       "70.012",
+       "/ objetivo 70.000",
+       true
+      ],
+      [
+       "Último precio",
+       "69.880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Llega el aviso · tocó el objetivo",
+      true
+     ]
+    }
+   ]
+  },
+  "coins/bitcoin-price-alert": {
+   "kicker": "EJEMPLO · BTC/USDT",
+   "cond": [
+    "BTC en 85.000 USDT o menos"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "Caso 1",
+     "tiles": [
+      [
+       "Mínimo de la vela",
+       "85.010",
+       "/ objetivo 85.000",
+       false
+      ],
+      [
+       "Último precio",
+       "85.120",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "No llega · no tocó el objetivo",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "Caso 2",
+     "tiles": [
+      [
+       "Mínimo de la vela",
+       "84.980",
+       "/ objetivo 85.000",
+       true
+      ],
+      [
+       "Último precio",
+       "84.995",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Llega el aviso · tocó el objetivo",
+      true
+     ]
+    }
+   ]
+  },
+  "features/percent-change-alerts": {
+   "kicker": "EJEMPLO · SOL/USDT",
+   "cond": [
+    "SOL +3 % o más en 15 min"
+   ],
+   "cards": [
+    {
+     "coin": "SOL",
+     "tag": "Caso 1",
+     "tiles": [
+      [
+       "Cambio en 15 min",
+       "+1,8 %",
+       "/ objetivo +3 %",
+       false
+      ]
+     ],
+     "res": [
+      "No llega · subida insuficiente",
+      false
+     ]
+    },
+    {
+     "coin": "SOL",
+     "tag": "Caso 2",
+     "tiles": [
+      [
+       "Cambio en 15 min",
+       "+3,2 %",
+       "/ objetivo +3 %",
+       true
+      ]
+     ],
+     "res": [
+      "Llega el aviso",
+      true
+     ]
+    }
+   ]
+  },
+  "features/all-coins-alerts": {
+   "kicker": "EJEMPLO · TOP 100",
+   "cond": [
+    "+5 % o más en 5 min",
+    "volumen superior a 3× la media"
+   ],
+   "cards": [
+    {
+     "coin": "AVAX",
+     "tag": "5 min",
+     "tiles": [
+      [
+       "Subida",
+       "+5,4 %",
+       "/ objetivo +5 %",
+       true
+      ],
+      [
+       "Volumen / media",
+       "3,6×",
+       "/ objetivo 3×",
+       true
+      ]
+     ],
+     "res": [
+      "Llega el aviso · se cumplen ambas",
+      true
+     ]
+    },
+    {
+     "coin": "DOT",
+     "tag": "5 min",
+     "tiles": [
+      [
+       "Subida",
+       "+5,1 %",
+       "/ objetivo +5 %",
+       true
+      ],
+      [
+       "Volumen / media",
+       "1,2×",
+       "/ objetivo 3×",
+       false
+      ]
+     ],
+     "res": [
+      "No llega · volumen bajo",
+      false
+     ]
+    },
+    {
+     "coin": "LINK",
+     "tag": "5 min",
+     "tiles": [
+      [
+       "Subida",
+       "+2,0 %",
+       "/ objetivo +5 %",
+       false
+      ],
+      [
+       "Volumen / media",
+       "4,1×",
+       "/ objetivo 3×",
+       true
+      ]
+     ],
+     "res": [
+      "No llega · subida insuficiente",
+      false
+     ]
+    }
+   ]
+  },
+  "features/multi-condition-alerts": {
+   "kicker": "EJEMPLO · ETH/USDT",
+   "cond": [
+    "RSI(14) bajo 30",
+    "precio por encima de la EMA20"
+   ],
+   "cards": [
+    {
+     "coin": "ETH",
+     "tag": "Caso 1",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ objetivo bajo 30",
+       true
+      ],
+      [
+       "Precio / EMA20",
+       "por debajo",
+       "/ objetivo por encima",
+       false
+      ]
+     ],
+     "res": [
+      "No llega · precio bajo la EMA20",
+      false
+     ]
+    },
+    {
+     "coin": "ETH",
+     "tag": "Caso 2",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ objetivo bajo 30",
+       true
+      ],
+      [
+       "Precio / EMA20",
+       "por encima",
+       "/ objetivo por encima",
+       true
+      ]
+     ],
+     "res": [
+      "Llega el aviso · se cumplen ambas",
+      true
+     ]
+    }
+   ]
+  },
+  "_and": "Y",
+  "_cond": "Condición:"
+ },
+ "pt-br": {
+  "features/price-alerts": {
+   "kicker": "EXEMPLO · BTC/USDT",
+   "cond": [
+    "BTC em 70.000 USDT ou mais"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "Caso 1",
+     "tiles": [
+      [
+       "Máxima do candle",
+       "69.990",
+       "/ alvo 70.000",
+       false
+      ],
+      [
+       "Último preço",
+       "69.880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Sem aviso · não tocou o alvo",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "Caso 2",
+     "tiles": [
+      [
+       "Máxima do candle",
+       "70.012",
+       "/ alvo 70.000",
+       true
+      ],
+      [
+       "Último preço",
+       "69.880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Você recebe o aviso · tocou o alvo",
+      true
+     ]
+    }
+   ]
+  },
+  "coins/bitcoin-price-alert": {
+   "kicker": "EXEMPLO · BTC/USDT",
+   "cond": [
+    "BTC em 85.000 USDT ou menos"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "Caso 1",
+     "tiles": [
+      [
+       "Mínima do candle",
+       "85.010",
+       "/ alvo 85.000",
+       false
+      ],
+      [
+       "Último preço",
+       "85.120",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Sem aviso · não tocou o alvo",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "Caso 2",
+     "tiles": [
+      [
+       "Mínima do candle",
+       "84.980",
+       "/ alvo 85.000",
+       true
+      ],
+      [
+       "Último preço",
+       "84.995",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Você recebe o aviso · tocou o alvo",
+      true
+     ]
+    }
+   ]
+  },
+  "features/percent-change-alerts": {
+   "kicker": "EXEMPLO · SOL/USDT",
+   "cond": [
+    "SOL +3% ou mais em 15 min"
+   ],
+   "cards": [
+    {
+     "coin": "SOL",
+     "tag": "Caso 1",
+     "tiles": [
+      [
+       "Variação em 15 min",
+       "+1,8%",
+       "/ alvo +3%",
+       false
+      ]
+     ],
+     "res": [
+      "Sem aviso · alta insuficiente",
+      false
+     ]
+    },
+    {
+     "coin": "SOL",
+     "tag": "Caso 2",
+     "tiles": [
+      [
+       "Variação em 15 min",
+       "+3,2%",
+       "/ alvo +3%",
+       true
+      ]
+     ],
+     "res": [
+      "Você recebe o aviso",
+      true
+     ]
+    }
+   ]
+  },
+  "features/all-coins-alerts": {
+   "kicker": "EXEMPLO · TOP 100",
+   "cond": [
+    "+5% ou mais em 5 min",
+    "volume acima de 3× a média"
+   ],
+   "cards": [
+    {
+     "coin": "AVAX",
+     "tag": "5 min",
+     "tiles": [
+      [
+       "Alta",
+       "+5,4%",
+       "/ alvo +5%",
+       true
+      ],
+      [
+       "Volume / média",
+       "3,6×",
+       "/ alvo 3×",
+       true
+      ]
+     ],
+     "res": [
+      "Você recebe o aviso · as duas atendidas",
+      true
+     ]
+    },
+    {
+     "coin": "DOT",
+     "tag": "5 min",
+     "tiles": [
+      [
+       "Alta",
+       "+5,1%",
+       "/ alvo +5%",
+       true
+      ],
+      [
+       "Volume / média",
+       "1,2×",
+       "/ alvo 3×",
+       false
+      ]
+     ],
+     "res": [
+      "Sem aviso · volume baixo",
+      false
+     ]
+    },
+    {
+     "coin": "LINK",
+     "tag": "5 min",
+     "tiles": [
+      [
+       "Alta",
+       "+2,0%",
+       "/ alvo +5%",
+       false
+      ],
+      [
+       "Volume / média",
+       "4,1×",
+       "/ alvo 3×",
+       true
+      ]
+     ],
+     "res": [
+      "Sem aviso · alta insuficiente",
+      false
+     ]
+    }
+   ]
+  },
+  "features/multi-condition-alerts": {
+   "kicker": "EXEMPLO · ETH/USDT",
+   "cond": [
+    "RSI(14) abaixo de 30",
+    "preço acima da EMA20"
+   ],
+   "cards": [
+    {
+     "coin": "ETH",
+     "tag": "Caso 1",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ alvo abaixo de 30",
+       true
+      ],
+      [
+       "Preço / EMA20",
+       "abaixo",
+       "/ alvo acima",
+       false
+      ]
+     ],
+     "res": [
+      "Sem aviso · preço abaixo da EMA20",
+      false
+     ]
+    },
+    {
+     "coin": "ETH",
+     "tag": "Caso 2",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ alvo abaixo de 30",
+       true
+      ],
+      [
+       "Preço / EMA20",
+       "acima",
+       "/ alvo acima",
+       true
+      ]
+     ],
+     "res": [
+      "Você recebe o aviso · as duas atendidas",
+      true
+     ]
+    }
+   ]
+  },
+  "_and": "E",
+  "_cond": "Condição:"
+ },
+ "ru": {
+  "features/price-alerts": {
+   "kicker": "ПРИМЕР · BTC/USDT",
+   "cond": [
+    "BTC 70 000 USDT или выше"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "Случай 1",
+     "tiles": [
+      [
+       "Максимум свечи",
+       "69 990",
+       "/ цель 70 000",
+       false
+      ],
+      [
+       "Последняя цена",
+       "69 880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Нет уведомления · цель не задета",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "Случай 2",
+     "tiles": [
+      [
+       "Максимум свечи",
+       "70 012",
+       "/ цель 70 000",
+       true
+      ],
+      [
+       "Последняя цена",
+       "69 880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Уведомление придёт · цель задета",
+      true
+     ]
+    }
+   ]
+  },
+  "coins/bitcoin-price-alert": {
+   "kicker": "ПРИМЕР · BTC/USDT",
+   "cond": [
+    "BTC 85 000 USDT или ниже"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "Случай 1",
+     "tiles": [
+      [
+       "Минимум свечи",
+       "85 010",
+       "/ цель 85 000",
+       false
+      ],
+      [
+       "Последняя цена",
+       "85 120",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Нет уведомления · цель не задета",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "Случай 2",
+     "tiles": [
+      [
+       "Минимум свечи",
+       "84 980",
+       "/ цель 85 000",
+       true
+      ],
+      [
+       "Последняя цена",
+       "84 995",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "Уведомление придёт · цель задета",
+      true
+     ]
+    }
+   ]
+  },
+  "features/percent-change-alerts": {
+   "kicker": "ПРИМЕР · SOL/USDT",
+   "cond": [
+    "SOL +3% или больше за 15 мин"
+   ],
+   "cards": [
+    {
+     "coin": "SOL",
+     "tag": "Случай 1",
+     "tiles": [
+      [
+       "Изменение за 15 мин",
+       "+1,8%",
+       "/ цель +3%",
+       false
+      ]
+     ],
+     "res": [
+      "Нет уведомления · рост мал",
+      false
+     ]
+    },
+    {
+     "coin": "SOL",
+     "tag": "Случай 2",
+     "tiles": [
+      [
+       "Изменение за 15 мин",
+       "+3,2%",
+       "/ цель +3%",
+       true
+      ]
+     ],
+     "res": [
+      "Уведомление придёт",
+      true
+     ]
+    }
+   ]
+  },
+  "features/all-coins-alerts": {
+   "kicker": "ПРИМЕР · ТОП-100",
+   "cond": [
+    "+5% или больше за 5 мин",
+    "объём выше 3× среднего"
+   ],
+   "cards": [
+    {
+     "coin": "AVAX",
+     "tag": "5 мин",
+     "tiles": [
+      [
+       "Рост",
+       "+5,4%",
+       "/ цель +5%",
+       true
+      ],
+      [
+       "Объём / среднее",
+       "3,6×",
+       "/ цель 3×",
+       true
+      ]
+     ],
+     "res": [
+      "Уведомление придёт · оба выполнены",
+      true
+     ]
+    },
+    {
+     "coin": "DOT",
+     "tag": "5 мин",
+     "tiles": [
+      [
+       "Рост",
+       "+5,1%",
+       "/ цель +5%",
+       true
+      ],
+      [
+       "Объём / среднее",
+       "1,2×",
+       "/ цель 3×",
+       false
+      ]
+     ],
+     "res": [
+      "Нет уведомления · объём мал",
+      false
+     ]
+    },
+    {
+     "coin": "LINK",
+     "tag": "5 мин",
+     "tiles": [
+      [
+       "Рост",
+       "+2,0%",
+       "/ цель +5%",
+       false
+      ],
+      [
+       "Объём / среднее",
+       "4,1×",
+       "/ цель 3×",
+       true
+      ]
+     ],
+     "res": [
+      "Нет уведомления · рост мал",
+      false
+     ]
+    }
+   ]
+  },
+  "features/multi-condition-alerts": {
+   "kicker": "ПРИМЕР · ETH/USDT",
+   "cond": [
+    "RSI(14) ниже 30",
+    "цена выше EMA20"
+   ],
+   "cards": [
+    {
+     "coin": "ETH",
+     "tag": "Случай 1",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ цель ниже 30",
+       true
+      ],
+      [
+       "Цена / EMA20",
+       "ниже",
+       "/ цель выше",
+       false
+      ]
+     ],
+     "res": [
+      "Нет уведомления · цена ниже EMA20",
+      false
+     ]
+    },
+    {
+     "coin": "ETH",
+     "tag": "Случай 2",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ цель ниже 30",
+       true
+      ],
+      [
+       "Цена / EMA20",
+       "выше",
+       "/ цель выше",
+       true
+      ]
+     ],
+     "res": [
+      "Уведомление придёт · оба выполнены",
+      true
+     ]
+    }
+   ]
+  },
+  "_and": "И",
+  "_cond": "Условие:"
+ },
+ "ja": {
+  "features/price-alerts": {
+   "kicker": "例 · BTC/USDT",
+   "cond": [
+    "BTCが70,000 USDT以上"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "ケース1",
+     "tiles": [
+      [
+       "ローソク足の高値",
+       "69,990",
+       "/ 目標 70,000",
+       false
+      ],
+      [
+       "現在値",
+       "69,880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "通知なし · 目標に未到達",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "ケース2",
+     "tiles": [
+      [
+       "ローソク足の高値",
+       "70,012",
+       "/ 目標 70,000",
+       true
+      ],
+      [
+       "現在値",
+       "69,880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "通知が届く · 目標にタッチ",
+      true
+     ]
+    }
+   ]
+  },
+  "coins/bitcoin-price-alert": {
+   "kicker": "例 · BTC/USDT",
+   "cond": [
+    "BTCが85,000 USDT以下"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "ケース1",
+     "tiles": [
+      [
+       "ローソク足の安値",
+       "85,010",
+       "/ 目標 85,000",
+       false
+      ],
+      [
+       "現在値",
+       "85,120",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "通知なし · 目標に未到達",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "ケース2",
+     "tiles": [
+      [
+       "ローソク足の安値",
+       "84,980",
+       "/ 目標 85,000",
+       true
+      ],
+      [
+       "現在値",
+       "84,995",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "通知が届く · 目標にタッチ",
+      true
+     ]
+    }
+   ]
+  },
+  "features/percent-change-alerts": {
+   "kicker": "例 · SOL/USDT",
+   "cond": [
+    "SOLが15分で+3%以上"
+   ],
+   "cards": [
+    {
+     "coin": "SOL",
+     "tag": "ケース1",
+     "tiles": [
+      [
+       "15分の変化",
+       "+1.8%",
+       "/ 目標 +3%",
+       false
+      ]
+     ],
+     "res": [
+      "通知なし · 上昇不足",
+      false
+     ]
+    },
+    {
+     "coin": "SOL",
+     "tag": "ケース2",
+     "tiles": [
+      [
+       "15分の変化",
+       "+3.2%",
+       "/ 目標 +3%",
+       true
+      ]
+     ],
+     "res": [
+      "通知が届く",
+      true
+     ]
+    }
+   ]
+  },
+  "features/all-coins-alerts": {
+   "kicker": "例 · 上位100",
+   "cond": [
+    "5分で+5%以上",
+    "出来高が平均の3倍超"
+   ],
+   "cards": [
+    {
+     "coin": "AVAX",
+     "tag": "5分",
+     "tiles": [
+      [
+       "上昇",
+       "+5.4%",
+       "/ 目標 +5%",
+       true
+      ],
+      [
+       "出来高 / 平均",
+       "3.6×",
+       "/ 目標 3×",
+       true
+      ]
+     ],
+     "res": [
+      "通知が届く · 両方成立",
+      true
+     ]
+    },
+    {
+     "coin": "DOT",
+     "tag": "5分",
+     "tiles": [
+      [
+       "上昇",
+       "+5.1%",
+       "/ 目標 +5%",
+       true
+      ],
+      [
+       "出来高 / 平均",
+       "1.2×",
+       "/ 目標 3×",
+       false
+      ]
+     ],
+     "res": [
+      "通知なし · 出来高不足",
+      false
+     ]
+    },
+    {
+     "coin": "LINK",
+     "tag": "5分",
+     "tiles": [
+      [
+       "上昇",
+       "+2.0%",
+       "/ 目標 +5%",
+       false
+      ],
+      [
+       "出来高 / 平均",
+       "4.1×",
+       "/ 目標 3×",
+       true
+      ]
+     ],
+     "res": [
+      "通知なし · 上昇不足",
+      false
+     ]
+    }
+   ]
+  },
+  "features/multi-condition-alerts": {
+   "kicker": "例 · ETH/USDT",
+   "cond": [
+    "RSI(14)が30未満",
+    "価格がEMA20の上"
+   ],
+   "cards": [
+    {
+     "coin": "ETH",
+     "tag": "ケース1",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ 目標 30未満",
+       true
+      ],
+      [
+       "価格 / EMA20",
+       "下",
+       "/ 目標 上",
+       false
+      ]
+     ],
+     "res": [
+      "通知なし · 価格がEMA20の下",
+      false
+     ]
+    },
+    {
+     "coin": "ETH",
+     "tag": "ケース2",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ 目標 30未満",
+       true
+      ],
+      [
+       "価格 / EMA20",
+       "上",
+       "/ 目標 上",
+       true
+      ]
+     ],
+     "res": [
+      "通知が届く · 両方成立",
+      true
+     ]
+    }
+   ]
+  },
+  "_and": "かつ",
+  "_cond": "条件:"
+ },
+ "zh": {
+  "features/price-alerts": {
+   "kicker": "示例 · BTC/USDT",
+   "cond": [
+    "BTC 达到或高于 70,000 USDT"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "情况 1",
+     "tiles": [
+      [
+       "K线最高价",
+       "69,990",
+       "/ 目标 70,000",
+       false
+      ],
+      [
+       "最新价",
+       "69,880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "不通知 · 未触及目标",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "情况 2",
+     "tiles": [
+      [
+       "K线最高价",
+       "70,012",
+       "/ 目标 70,000",
+       true
+      ],
+      [
+       "最新价",
+       "69,880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "收到通知 · 触及目标",
+      true
+     ]
+    }
+   ]
+  },
+  "coins/bitcoin-price-alert": {
+   "kicker": "示例 · BTC/USDT",
+   "cond": [
+    "BTC 达到或低于 85,000 USDT"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "情况 1",
+     "tiles": [
+      [
+       "K线最低价",
+       "85,010",
+       "/ 目标 85,000",
+       false
+      ],
+      [
+       "最新价",
+       "85,120",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "不通知 · 未触及目标",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "情况 2",
+     "tiles": [
+      [
+       "K线最低价",
+       "84,980",
+       "/ 目标 85,000",
+       true
+      ],
+      [
+       "最新价",
+       "84,995",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "收到通知 · 触及目标",
+      true
+     ]
+    }
+   ]
+  },
+  "features/percent-change-alerts": {
+   "kicker": "示例 · SOL/USDT",
+   "cond": [
+    "SOL 15分钟内 +3% 或以上"
+   ],
+   "cards": [
+    {
+     "coin": "SOL",
+     "tag": "情况 1",
+     "tiles": [
+      [
+       "15分钟涨跌",
+       "+1.8%",
+       "/ 目标 +3%",
+       false
+      ]
+     ],
+     "res": [
+      "不通知 · 涨幅不足",
+      false
+     ]
+    },
+    {
+     "coin": "SOL",
+     "tag": "情况 2",
+     "tiles": [
+      [
+       "15分钟涨跌",
+       "+3.2%",
+       "/ 目标 +3%",
+       true
+      ]
+     ],
+     "res": [
+      "收到通知",
+      true
+     ]
+    }
+   ]
+  },
+  "features/all-coins-alerts": {
+   "kicker": "示例 · 前 100",
+   "cond": [
+    "5分钟内 +5% 或以上",
+    "成交量高于均值 3 倍"
+   ],
+   "cards": [
+    {
+     "coin": "AVAX",
+     "tag": "5分钟",
+     "tiles": [
+      [
+       "涨幅",
+       "+5.4%",
+       "/ 目标 +5%",
+       true
+      ],
+      [
+       "成交量 / 均值",
+       "3.6×",
+       "/ 目标 3×",
+       true
+      ]
+     ],
+     "res": [
+      "收到通知 · 两者均满足",
+      true
+     ]
+    },
+    {
+     "coin": "DOT",
+     "tag": "5分钟",
+     "tiles": [
+      [
+       "涨幅",
+       "+5.1%",
+       "/ 目标 +5%",
+       true
+      ],
+      [
+       "成交量 / 均值",
+       "1.2×",
+       "/ 目标 3×",
+       false
+      ]
+     ],
+     "res": [
+      "不通知 · 成交量不足",
+      false
+     ]
+    },
+    {
+     "coin": "LINK",
+     "tag": "5分钟",
+     "tiles": [
+      [
+       "涨幅",
+       "+2.0%",
+       "/ 目标 +5%",
+       false
+      ],
+      [
+       "成交量 / 均值",
+       "4.1×",
+       "/ 目标 3×",
+       true
+      ]
+     ],
+     "res": [
+      "不通知 · 涨幅不足",
+      false
+     ]
+    }
+   ]
+  },
+  "features/multi-condition-alerts": {
+   "kicker": "示例 · ETH/USDT",
+   "cond": [
+    "RSI(14) 低于 30",
+    "价格高于 EMA20"
+   ],
+   "cards": [
+    {
+     "coin": "ETH",
+     "tag": "情况 1",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ 目标 低于 30",
+       true
+      ],
+      [
+       "价格 / EMA20",
+       "低于",
+       "/ 目标 高于",
+       false
+      ]
+     ],
+     "res": [
+      "不通知 · 价格低于 EMA20",
+      false
+     ]
+    },
+    {
+     "coin": "ETH",
+     "tag": "情况 2",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ 目标 低于 30",
+       true
+      ],
+      [
+       "价格 / EMA20",
+       "高于",
+       "/ 目标 高于",
+       true
+      ]
+     ],
+     "res": [
+      "收到通知 · 两者均满足",
+      true
+     ]
+    }
+   ]
+  },
+  "_and": "且",
+  "_cond": "条件："
+ },
+ "hi": {
+  "features/price-alerts": {
+   "kicker": "उदाहरण · BTC/USDT",
+   "cond": [
+    "BTC 70,000 USDT या उससे ऊपर"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "स्थिति 1",
+     "tiles": [
+      [
+       "कैंडल हाई",
+       "69,990",
+       "/ लक्ष्य 70,000",
+       false
+      ],
+      [
+       "आखिरी कीमत",
+       "69,880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "सूचना नहीं · लक्ष्य नहीं छुआ",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "स्थिति 2",
+     "tiles": [
+      [
+       "कैंडल हाई",
+       "70,012",
+       "/ लक्ष्य 70,000",
+       true
+      ],
+      [
+       "आखिरी कीमत",
+       "69,880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "सूचना आएगी · लक्ष्य छुआ",
+      true
+     ]
+    }
+   ]
+  },
+  "coins/bitcoin-price-alert": {
+   "kicker": "उदाहरण · BTC/USDT",
+   "cond": [
+    "BTC 85,000 USDT या उससे नीचे"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "स्थिति 1",
+     "tiles": [
+      [
+       "कैंडल लो",
+       "85,010",
+       "/ लक्ष्य 85,000",
+       false
+      ],
+      [
+       "आखिरी कीमत",
+       "85,120",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "सूचना नहीं · लक्ष्य नहीं छुआ",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "स्थिति 2",
+     "tiles": [
+      [
+       "कैंडल लो",
+       "84,980",
+       "/ लक्ष्य 85,000",
+       true
+      ],
+      [
+       "आखिरी कीमत",
+       "84,995",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "सूचना आएगी · लक्ष्य छुआ",
+      true
+     ]
+    }
+   ]
+  },
+  "features/percent-change-alerts": {
+   "kicker": "उदाहरण · SOL/USDT",
+   "cond": [
+    "SOL 15 मिनट में +3% या अधिक"
+   ],
+   "cards": [
+    {
+     "coin": "SOL",
+     "tag": "स्थिति 1",
+     "tiles": [
+      [
+       "15 मिनट में बदलाव",
+       "+1.8%",
+       "/ लक्ष्य +3%",
+       false
+      ]
+     ],
+     "res": [
+      "सूचना नहीं · बढ़त कम",
+      false
+     ]
+    },
+    {
+     "coin": "SOL",
+     "tag": "स्थिति 2",
+     "tiles": [
+      [
+       "15 मिनट में बदलाव",
+       "+3.2%",
+       "/ लक्ष्य +3%",
+       true
+      ]
+     ],
+     "res": [
+      "सूचना आएगी",
+      true
+     ]
+    }
+   ]
+  },
+  "features/all-coins-alerts": {
+   "kicker": "उदाहरण · शीर्ष 100",
+   "cond": [
+    "5 मिनट में +5% या अधिक",
+    "वॉल्यूम औसत के 3 गुना से अधिक"
+   ],
+   "cards": [
+    {
+     "coin": "AVAX",
+     "tag": "5 मिनट",
+     "tiles": [
+      [
+       "बढ़त",
+       "+5.4%",
+       "/ लक्ष्य +5%",
+       true
+      ],
+      [
+       "वॉल्यूम / औसत",
+       "3.6×",
+       "/ लक्ष्य 3×",
+       true
+      ]
+     ],
+     "res": [
+      "सूचना आएगी · दोनों पूरी",
+      true
+     ]
+    },
+    {
+     "coin": "DOT",
+     "tag": "5 मिनट",
+     "tiles": [
+      [
+       "बढ़त",
+       "+5.1%",
+       "/ लक्ष्य +5%",
+       true
+      ],
+      [
+       "वॉल्यूम / औसत",
+       "1.2×",
+       "/ लक्ष्य 3×",
+       false
+      ]
+     ],
+     "res": [
+      "सूचना नहीं · वॉल्यूम कम",
+      false
+     ]
+    },
+    {
+     "coin": "LINK",
+     "tag": "5 मिनट",
+     "tiles": [
+      [
+       "बढ़त",
+       "+2.0%",
+       "/ लक्ष्य +5%",
+       false
+      ],
+      [
+       "वॉल्यूम / औसत",
+       "4.1×",
+       "/ लक्ष्य 3×",
+       true
+      ]
+     ],
+     "res": [
+      "सूचना नहीं · बढ़त कम",
+      false
+     ]
+    }
+   ]
+  },
+  "features/multi-condition-alerts": {
+   "kicker": "उदाहरण · ETH/USDT",
+   "cond": [
+    "RSI(14) 30 से नीचे",
+    "कीमत EMA20 से ऊपर"
+   ],
+   "cards": [
+    {
+     "coin": "ETH",
+     "tag": "स्थिति 1",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ लक्ष्य 30 से नीचे",
+       true
+      ],
+      [
+       "कीमत / EMA20",
+       "नीचे",
+       "/ लक्ष्य ऊपर",
+       false
+      ]
+     ],
+     "res": [
+      "सूचना नहीं · कीमत EMA20 से नीचे",
+      false
+     ]
+    },
+    {
+     "coin": "ETH",
+     "tag": "स्थिति 2",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ लक्ष्य 30 से नीचे",
+       true
+      ],
+      [
+       "कीमत / EMA20",
+       "ऊपर",
+       "/ लक्ष्य ऊपर",
+       true
+      ]
+     ],
+     "res": [
+      "सूचना आएगी · दोनों पूरी",
+      true
+     ]
+    }
+   ]
+  },
+  "_and": "और",
+  "_cond": "शर्त:"
+ },
+ "ar": {
+  "features/price-alerts": {
+   "kicker": "مثال · BTC/USDT",
+   "cond": [
+    "BTC عند 70,000 USDT أو أعلى"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "الحالة 1",
+     "tiles": [
+      [
+       "أعلى سعر للشمعة",
+       "69,990",
+       "/ الهدف 70,000",
+       false
+      ],
+      [
+       "آخر سعر",
+       "69,880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "لا إشعار · لم يلمس الهدف",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "الحالة 2",
+     "tiles": [
+      [
+       "أعلى سعر للشمعة",
+       "70,012",
+       "/ الهدف 70,000",
+       true
+      ],
+      [
+       "آخر سعر",
+       "69,880",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "يصلك إشعار · لامس الهدف",
+      true
+     ]
+    }
+   ]
+  },
+  "coins/bitcoin-price-alert": {
+   "kicker": "مثال · BTC/USDT",
+   "cond": [
+    "BTC عند 85,000 USDT أو أقل"
+   ],
+   "cards": [
+    {
+     "coin": "BTC",
+     "tag": "الحالة 1",
+     "tiles": [
+      [
+       "أدنى سعر للشمعة",
+       "85,010",
+       "/ الهدف 85,000",
+       false
+      ],
+      [
+       "آخر سعر",
+       "85,120",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "لا إشعار · لم يلمس الهدف",
+      false
+     ]
+    },
+    {
+     "coin": "BTC",
+     "tag": "الحالة 2",
+     "tiles": [
+      [
+       "أدنى سعر للشمعة",
+       "84,980",
+       "/ الهدف 85,000",
+       true
+      ],
+      [
+       "آخر سعر",
+       "84,995",
+       null,
+       null
+      ]
+     ],
+     "res": [
+      "يصلك إشعار · لامس الهدف",
+      true
+     ]
+    }
+   ]
+  },
+  "features/percent-change-alerts": {
+   "kicker": "مثال · SOL/USDT",
+   "cond": [
+    "SOL +3% أو أكثر خلال 15 دقيقة"
+   ],
+   "cards": [
+    {
+     "coin": "SOL",
+     "tag": "الحالة 1",
+     "tiles": [
+      [
+       "التغير خلال 15 دقيقة",
+       "+1.8%",
+       "/ الهدف +3%",
+       false
+      ]
+     ],
+     "res": [
+      "لا إشعار · الارتفاع غير كافٍ",
+      false
+     ]
+    },
+    {
+     "coin": "SOL",
+     "tag": "الحالة 2",
+     "tiles": [
+      [
+       "التغير خلال 15 دقيقة",
+       "+3.2%",
+       "/ الهدف +3%",
+       true
+      ]
+     ],
+     "res": [
+      "يصلك إشعار",
+      true
+     ]
+    }
+   ]
+  },
+  "features/all-coins-alerts": {
+   "kicker": "مثال · أعلى 100",
+   "cond": [
+    "+5% أو أكثر خلال 5 دقائق",
+    "الحجم أعلى من 3× المتوسط"
+   ],
+   "cards": [
+    {
+     "coin": "AVAX",
+     "tag": "5 دقائق",
+     "tiles": [
+      [
+       "الارتفاع",
+       "+5.4%",
+       "/ الهدف +5%",
+       true
+      ],
+      [
+       "الحجم / المتوسط",
+       "3.6×",
+       "/ الهدف 3×",
+       true
+      ]
+     ],
+     "res": [
+      "يصلك إشعار · تحقق الشرطان",
+      true
+     ]
+    },
+    {
+     "coin": "DOT",
+     "tag": "5 دقائق",
+     "tiles": [
+      [
+       "الارتفاع",
+       "+5.1%",
+       "/ الهدف +5%",
+       true
+      ],
+      [
+       "الحجم / المتوسط",
+       "1.2×",
+       "/ الهدف 3×",
+       false
+      ]
+     ],
+     "res": [
+      "لا إشعار · الحجم منخفض",
+      false
+     ]
+    },
+    {
+     "coin": "LINK",
+     "tag": "5 دقائق",
+     "tiles": [
+      [
+       "الارتفاع",
+       "+2.0%",
+       "/ الهدف +5%",
+       false
+      ],
+      [
+       "الحجم / المتوسط",
+       "4.1×",
+       "/ الهدف 3×",
+       true
+      ]
+     ],
+     "res": [
+      "لا إشعار · الارتفاع غير كافٍ",
+      false
+     ]
+    }
+   ]
+  },
+  "features/multi-condition-alerts": {
+   "kicker": "مثال · ETH/USDT",
+   "cond": [
+    "RSI(14) أقل من 30",
+    "السعر فوق EMA20"
+   ],
+   "cards": [
+    {
+     "coin": "ETH",
+     "tag": "الحالة 1",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ الهدف أقل من 30",
+       true
+      ],
+      [
+       "السعر / EMA20",
+       "تحت",
+       "/ الهدف فوق",
+       false
+      ]
+     ],
+     "res": [
+      "لا إشعار · السعر تحت EMA20",
+      false
+     ]
+    },
+    {
+     "coin": "ETH",
+     "tag": "الحالة 2",
+     "tiles": [
+      [
+       "RSI (14)",
+       "28",
+       "/ الهدف أقل من 30",
+       true
+      ],
+      [
+       "السعر / EMA20",
+       "فوق",
+       "/ الهدف فوق",
+       true
+      ]
+     ],
+     "res": [
+      "يصلك إشعار · تحقق الشرطان",
+      true
+     ]
+    }
+   ]
+  },
+  "_and": "و",
+  "_cond": "الشرط:"
+ }
+}

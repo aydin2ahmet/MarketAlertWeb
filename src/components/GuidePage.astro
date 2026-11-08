@@ -6,6 +6,8 @@ import SocialLinks from './SocialLinks.astro';
 import Base from '../layouts/Base.astro';
 import ProgressiveShot from './ProgressiveShot.astro';
 import StepArc from './StepArc.astro';
+import LogicCards from './LogicCards.astro';
+import logicCards from '../i18n/logic-cards.json';
 import content from '../i18n/content.json';
 import guides from '../i18n/alert-guides.json';
 import { SECTIONS, linkify, pageLink, plain } from '../lib/pages';
@@ -20,6 +22,8 @@ const t = (content as any)[code];
 const g = SECTIONS[section][code][slug];
 const L = (text: string) => linkify(text, code);
 const r = (rsiGuides as any)[code];
+const lcAll = (logicCards as any)[code];
+const lc = lcAll?.[`${section}/${slug}`];
 // Rehber başına görsel ve kod satırları. Yeni rehber eklerken buraya da bir kayıt ekle.
 const VISUAL: Record<string, { kicker: string; exampleKicker: string; condition: string[]; foot: string; shot: string; version: string; width: number; height: number | null; logic?: string[][]; hook?: { pair: string; market: string; from: number; target: number; touch: number; last: number; op: '<' | '>'; unit?: 'pct' }; stepShots?: [string, number][] }> = {
   'features/price-alerts': { kicker: 'BINANCE · PRICE · PUSH', exampleKicker: 'BTC/USDT · 70,000 · ONCE', condition: ['BTC/USDT', '≥', '70,000 USDT'], foot: 'BINANCE SPOT · USDT · ONCE → PUSH', shot: 'price', version: 'price1', width: 1080, height: 2280,
@@ -100,7 +104,7 @@ const jsonLd = [
       <ol class="step-notes">{g.steps.map((step: string[], i: number) => <li><span class="step-number" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><div><h3>{step[0]}</h3><p set:html={L(step[1])} /></div></li>)}</ol>
     </> : <ol class="steps">{g.steps.map((step: string[], i: number) => <li><span class="step-number" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><div><h3>{step[0]}</h3><p set:html={L(step[1])} /></div></li>)}</ol>}</section>
     <section class="guide-section explain">{g.details.map((section: string[]) => <article><h2>{section[0]}</h2><p set:html={L(section[1])} /></article>)}</section>
-    {v.logic && <div class="logic-example" aria-label={g.details[0][0]} dir="ltr">{v.logic.map(row => <><code>{row[0]}</code><strong>{row[1]}</strong></>)}</div>}
+    {lc ? <LogicCards data={lc} and={lcAll._and} condLabel={lcAll._cond} /> : v.logic && <div class="logic-example" aria-label={g.details[0][0]} dir="ltr">{v.logic.map(row => <><code>{row[0]}</code><strong>{row[1]}</strong></>)}</div>}
     <section id="plans" class="guide-section"><h2>{r.plansTitle}</h2><div class="guide-plans">{plans.map((p: string[]) => <article><h3>{p[0]}</h3><p>{p[1]}</p></article>)}</div><a class="text-link" href={`/${code}/#plans`}>{r.plansLink} ↗</a></section>
     <section id="faq" class="guide-section"><h2>{t.faqTitle}</h2><div class="faq">{g.faq.map((q: string[], i: number) => <details open={i === 0}><summary>{q[0]}</summary><p set:html={L(q[1])} /></details>)}</div></section>
     <nav class="related" aria-label={t.nav[0]}>{related.map(page => <a href={page.href}>{page.link}<span aria-hidden="true">↗</span></a>)}</nav>
