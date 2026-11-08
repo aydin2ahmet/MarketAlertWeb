@@ -300,7 +300,18 @@
     "Borsa hesabına ya da cüzdana bağlanmaz",
     "Yatırım tavsiyesi vermez"
    ]
-  }
+  },
+  "facts": [
+   "Tek alarmla bir piyasadaki tüm coinleri tarar: ilk 100, ilk 200 ya da tümü",
+   "8 koşul tipi: fiyat, yüzde değişim, 24 saatlik tepe/dip, RSI, MACD sinyal kesişimi, hacim artışı, SMA/EMA kesişimi, fiyatın ortalamayı kesmesi",
+   "Birden çok koşulu VE / VEYA ile tek alarmda birleştirir",
+   "Alarm sesle ya da yazarak kurulur; asistan alarmları günceller, listeler ve kapatır",
+   "1 dakikadan 1 güne mum aralıkları",
+   "Binance Spot ve Vadeli piyasaları, USDT ve USDC çiftleri",
+   "Uygulama kapalıyken de sunucuda izler",
+   "Push, Telegram ve webhook ile bildirim",
+   "Her eşleşme bildirim kaydında saklanır"
+  ]
  },
  "en": {
   "nav": [
@@ -603,7 +614,18 @@
     "Doesn't connect to your exchange account or wallet",
     "Doesn't give investment advice"
    ]
-  }
+  },
+  "facts": [
+   "Scans every coin in a market with one alert: top 100, top 200 or all",
+   "8 condition types: price, percent change, 24-hour high/low, RSI, MACD signal cross, volume spike, SMA/EMA cross, price crossing a moving average",
+   "Combines several conditions in one alert with AND / OR",
+   "Alerts are created by voice or text; the assistant also edits, lists and turns off alerts",
+   "Candle intervals from 1 minute to 1 day",
+   "Binance Spot and Futures markets, USDT and USDC pairs",
+   "Keeps watching on the server while the app is closed",
+   "Notifications by push, Telegram and webhook",
+   "Every match is kept in the notification log"
+  ]
  },
  "zh": {
   "nav": [
@@ -906,7 +928,18 @@
     "不会连接你的交易所账户或钱包",
     "不提供投资建议"
    ]
-  }
+  },
+  "facts": [
+   "一个提醒扫描某个市场的所有币种：前 100、前 200 或全部",
+   "8 种条件：价格、涨跌幅、24 小时最高/最低、RSI、MACD 信号交叉、成交量激增、SMA/EMA 交叉、价格穿越均线",
+   "在一个提醒中用 AND / OR 组合多个条件",
+   "用语音或文字创建提醒；助手还能修改、列出和关闭提醒",
+   "K 线周期从 1 分钟到 1 天",
+   "币安现货和合约市场，USDT 和 USDC 交易对",
+   "应用关闭时服务器仍持续监控",
+   "通过推送、Telegram 和 webhook 通知",
+   "每次触发都保存在通知记录中"
+  ]
  },
  "es": {
   "nav": [
@@ -1209,7 +1242,18 @@
     "No se conecta a tu cuenta del exchange ni a tu billetera",
     "No da consejos de inversión"
    ]
-  }
+  },
+  "facts": [
+   "Escanea todas las monedas de un mercado con una alerta: top 100, top 200 o todas",
+   "8 tipos de condición: precio, variación porcentual, máximo/mínimo de 24 horas, RSI, cruce de señal MACD, pico de volumen, cruce SMA/EMA, precio cruzando una media móvil",
+   "Combina varias condiciones en una alerta con AND / OR",
+   "Las alertas se crean por voz o texto; el asistente también las edita, lista y desactiva",
+   "Intervalos de velas de 1 minuto a 1 día",
+   "Mercados Spot y Futuros de Binance, pares USDT y USDC",
+   "Sigue vigilando en el servidor con la app cerrada",
+   "Notificaciones por push, Telegram y webhook",
+   "Cada coincidencia se guarda en el registro de notificaciones"
+  ]
  },
  "hi": {
   "nav": [
@@ -1512,7 +1556,18 @@
     "आपके एक्सचेंज खाते या वॉलेट से नहीं जुड़ता",
     "निवेश सलाह नहीं देता"
    ]
-  }
+  },
+  "facts": [
+   "एक अलर्ट से किसी मार्केट के सभी कॉइन स्कैन करता है: टॉप 100, टॉप 200 या सभी",
+   "8 शर्त प्रकार: कीमत, प्रतिशत बदलाव, 24 घंटे उच्च/निम्न, RSI, MACD सिग्नल क्रॉस, वॉल्यूम उछाल, SMA/EMA क्रॉस, कीमत का मूविंग एवरेज पार करना",
+   "एक अलर्ट में कई शर्तों को AND / OR से जोड़ता है",
+   "अलर्ट आवाज़ या टेक्स्ट से बनते हैं; असिस्टेंट अलर्ट बदलता, सूची दिखाता और बंद भी करता है",
+   "1 मिनट से 1 दिन तक के कैंडल अंतराल",
+   "Binance Spot और Futures मार्केट, USDT और USDC जोड़े",
+   "ऐप बंद होने पर भी सर्वर पर निगरानी जारी रहती है",
+   "push, Telegram और webhook से सूचना",
+   "हर मिलान सूचना लॉग में सहेजा जाता है"
+  ]
  },
  "ar": {
   "nav": [
@@ -1815,7 +1870,18 @@
     "لا يتصل بحسابك في المنصة أو بمحفظتك",
     "لا يقدّم نصائح استثمارية"
    ]
-  }
+  },
+  "facts": [
+   "يفحص كل العملات في السوق بتنبيه واحد: أعلى 100 أو أعلى 200 أو الكل",
+   "8 أنواع شروط: السعر، نسبة التغير، أعلى/أدنى 24 ساعة، RSI، تقاطع إشارة MACD، ارتفاع الحجم، تقاطع SMA/EMA، اختراق السعر للمتوسط المتحرك",
+   "يجمع عدة شروط في تنبيه واحد باستخدام AND / OR",
+   "تُنشأ التنبيهات بالصوت أو الكتابة؛ ويعدّل المساعد التنبيهات ويعرضها ويوقفها",
+   "فواصل الشموع من دقيقة واحدة إلى يوم واحد",
+   "أسواق Binance الفورية والعقود الآجلة، أزواج USDT وUSDC",
+   "تستمر المراقبة على الخادم حتى مع إغلاق التطبيق",
+   "إشعارات عبر push وTelegram وwebhook",
+   "يُحفظ كل تطابق في سجل الإشعارات"
+  ]
  },
  "pt-br": {
   "nav": [
@@ -2118,7 +2184,18 @@
     "Não se conecta à sua conta na exchange nem à sua carteira",
     "Não dá recomendação de investimento"
    ]
-  }
+  },
+  "facts": [
+   "Escaneia todas as moedas de um mercado com um alerta: top 100, top 200 ou todas",
+   "8 tipos de condição: preço, variação percentual, máxima/mínima de 24 horas, RSI, cruzamento de sinal MACD, pico de volume, cruzamento SMA/EMA, preço cruzando uma média móvel",
+   "Combina várias condições em um alerta com AND / OR",
+   "Os alertas são criados por voz ou texto; o assistente também edita, lista e desativa alertas",
+   "Intervalos de candle de 1 minuto a 1 dia",
+   "Mercados Spot e Futuros da Binance, pares USDT e USDC",
+   "Continua monitorando no servidor com o app fechado",
+   "Notificações por push, Telegram e webhook",
+   "Cada ocorrência fica salva no registro de notificações"
+  ]
  },
  "fr": {
   "nav": [
@@ -2421,7 +2498,18 @@
     "Ne se connecte ni à votre compte d’exchange ni à votre portefeuille",
     "Ne donne pas de conseil en investissement"
    ]
-  }
+  },
+  "facts": [
+   "Scanne toutes les cryptos d’un marché avec une alerte : top 100, top 200 ou toutes",
+   "8 types de conditions : prix, variation en %, plus haut/plus bas sur 24 h, RSI, croisement du signal MACD, pic de volume, croisement SMA/EMA, prix croisant une moyenne mobile",
+   "Combine plusieurs conditions dans une alerte avec AND / OR",
+   "Les alertes se créent à la voix ou par écrit ; l’assistant modifie, liste et désactive aussi les alertes",
+   "Bougies de 1 minute à 1 jour",
+   "Marchés Spot et Futures de Binance, paires USDT et USDC",
+   "Continue de surveiller sur le serveur quand l’app est fermée",
+   "Notifications par push, Telegram et webhook",
+   "Chaque déclenchement est conservé dans le journal des notifications"
+  ]
  },
  "ru": {
   "nav": [
@@ -2724,7 +2812,18 @@
     "Не подключается к вашему аккаунту на бирже или кошельку",
     "Не даёт инвестиционных советов"
    ]
-  }
+  },
+  "facts": [
+   "Сканирует все монеты рынка одним оповещением: топ-100, топ-200 или все",
+   "8 типов условий: цена, процентное изменение, максимум/минимум за 24 часа, RSI, пересечение сигнальной линии MACD, всплеск объёма, пересечение SMA/EMA, пересечение ценой скользящей средней",
+   "Объединяет несколько условий в одном оповещении через AND / OR",
+   "Оповещения создаются голосом или текстом; ассистент также изменяет, показывает и отключает их",
+   "Интервалы свечей от 1 минуты до 1 дня",
+   "Рынки Binance Spot и Futures, пары USDT и USDC",
+   "Продолжает следить на сервере, даже когда приложение закрыто",
+   "Уведомления через push, Telegram и webhook",
+   "Каждое срабатывание сохраняется в журнале уведомлений"
+  ]
  },
  "de": {
   "nav": [
@@ -3027,7 +3126,18 @@
     "Verbindet sich nicht mit deinem Börsenkonto oder Wallet",
     "Gibt keine Anlageberatung"
    ]
-  }
+  },
+  "facts": [
+   "Scannt alle Coins eines Markts mit einem Alarm: Top 100, Top 200 oder alle",
+   "8 Bedingungstypen: Preis, prozentuale Änderung, 24-Stunden-Hoch/Tief, RSI, MACD-Signalkreuzung, Volumenspitze, SMA/EMA-Kreuzung, Preis kreuzt gleitenden Durchschnitt",
+   "Kombiniert mehrere Bedingungen in einem Alarm mit AND / OR",
+   "Alarme werden per Sprache oder Text erstellt; der Assistent bearbeitet, listet und deaktiviert sie auch",
+   "Kerzenintervalle von 1 Minute bis 1 Tag",
+   "Binance Spot- und Futures-Märkte, USDT- und USDC-Paare",
+   "Überwacht auf dem Server weiter, auch wenn die App geschlossen ist",
+   "Benachrichtigungen per Push, Telegram und Webhook",
+   "Jeder Treffer wird im Benachrichtigungsprotokoll gespeichert"
+  ]
  },
  "ja": {
   "nav": [
@@ -3330,6 +3440,17 @@
     "取引所アカウントやウォレットには接続しません",
     "投資助言は行いません"
    ]
-  }
+  },
+  "facts": [
+   "1つのアラートで市場の全銘柄をスキャン：上位100、上位200、または全銘柄",
+   "8種類の条件：価格、変動率、24時間高値/安値、RSI、MACD シグナルクロス、出来高急増、SMA/EMA クロス、価格の移動平均クロス",
+   "複数の条件を AND / OR で1つのアラートにまとめる",
+   "アラートは音声や文字で作成；アシスタントはアラートの編集・一覧表示・オフもできる",
+   "1分足から日足までの時間足",
+   "Binance の現物・先物市場、USDT と USDC ペア",
+   "アプリを閉じてもサーバーで監視を継続",
+   "プッシュ、Telegram、Webhook で通知",
+   "すべての一致は通知履歴に保存"
+  ]
  }
 }

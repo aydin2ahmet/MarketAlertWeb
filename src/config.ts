@@ -1,6 +1,14 @@
 /** Sitenin sabitleri. Mağaza adresleri yayın öncesi doldurulmalı. */
 export const SITE = 'https://www.marketalertapp.com';
-export const UPDATED = '2026-10-29';
+export const UPDATED = '2026-11-08';
+
+/** Resmî sosyal hesaplar: sayfa altındaki bağlantılar ve yapılandırılmış verideki sameAs buradan. */
+export const SOCIAL = [
+  { id: 'instagram', name: 'Instagram', url: 'https://www.instagram.com/marketalert.en/' },
+  { id: 'tiktok', name: 'TikTok', url: 'https://www.tiktok.com/@marketalertapp' },
+  { id: 'x', name: 'X', url: 'https://x.com/marketalert_en' },
+  { id: 'youtube', name: 'YouTube', url: 'https://www.youtube.com/@marketalertapp' },
+];
 
 /** Uygulamanın 11 dili; sıra uygulamadaki dil listesiyle aynı. */
 export const LOCALES = [
