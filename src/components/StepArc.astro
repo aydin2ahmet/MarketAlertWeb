@@ -1,0 +1,95 @@
+---
+/**
+ * Adım adım kurulum: gerçek uygulama ekranları bir yay üstünde, kısa eylem satırı ve oklarla.
+ * Yol 1 → 2 → 3 → 4 ilerler ve ortadaki Zilbo'da ("Hazırsın!") biter. Telefonda 2×2 halka olur.
+ * Halka konumları her dilin ekranından ölçülür (src/i18n/step-hot.json, 360 px genişliğe göre).
+ */
+import ProgressiveShot from './ProgressiveShot.astro';
+import hotAll from '../i18n/step-hot.json';
+
+interface Props { code: string; titles: string[]; actions: string[]; ready: string[]; shots: [string, number][]; version: string }
+const { code, titles, actions, ready, shots, version } = Astro.props;
+const hot = (hotAll as any)[code] || {};
+const pct = (n: number, d: number) => `${(n / d * 100).toFixed(2)}%`;
+---
+<div class="arc" data-arc>
+  <svg class="arc-path" aria-hidden="true"><defs><marker id="arc-ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#f5a524" /></marker></defs><g></g></svg>
+  {shots.map(([img, h], i) => {
+    const h360 = h / 3;
+    return <div class={`arc-st arc-st${i + 1}`}>
+      <div class="arc-lbl"><span class="arc-n" aria-hidden="true">{i + 1}</span><span><b>{titles[i]}</b><small>{actions[i]}</small></span></div>
+      <div class="arc-scr">
+        <ProgressiveShot class="sh-l" src={`/shots/${code}/light/${img}.webp?v=${version}`} alt={`${titles[i]}: ${actions[i]}`} width="360" height={Math.round(h360)} loading="lazy" decoding="async" />
+        <ProgressiveShot class="sh-d" src={`/shots/${code}/dark/${img}.webp?v=${version}`} alt="" width="360" height={Math.round(h360)} loading="lazy" decoding="async" />
+        {(hot[img] || []).map(([x, y, w, hh]: number[]) => <span class="arc-ring" aria-hidden="true" style={`left:${pct(x, 360)};top:${pct(y, h360)};width:${pct(w, 360)};height:${pct(hh, h360)};border-radius:${hh > 60 ? '14px' : '999px'}`}></span>)}
+      </div>
+    </div>;
+  })}
+  <div class="arc-goal"><img src="/zilbo/zilbo.webp" width="250" height="265" alt="" loading="lazy" decoding="async" /><b>{ready[0]}</b><span>{ready[1]}</span></div>
+</div>
+
+<style>
+  .arc { position: relative; height: 760px; margin-top: 36px; }
+  .arc-path { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 0; }
+  .arc-st { position: absolute; z-index: 1; width: 240px; display: flex; flex-direction: column; gap: 12px; }
+  .arc-st1 { inset-inline-start: 0; top: 260px; flex-direction: column-reverse; }
+  .arc-st2 { inset-inline-start: 22%; top: 0; }
+  .arc-st3 { inset-inline-start: calc(78% - 240px); top: 0; }
+  .arc-st4 { inset-inline-start: calc(100% - 240px); top: 260px; flex-direction: column-reverse; }
+  .arc-scr { position: relative; }
+  .arc-scr img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--bd); box-shadow: 0 14px 34px #0000001f; background: var(--sf); }
+  .arc-ring { position: absolute; border: 2.5px solid var(--pri, #f5a524); box-shadow: 0 0 0 4px #f5a52430; pointer-events: none; animation: arc-pulse 1.6s ease-in-out infinite; }
+  @keyframes arc-pulse { 0%, 100% { transform: scale(.97); } 50% { transform: scale(1.04); } }
+  @media (prefers-reduced-motion: reduce) { .arc-ring { animation: none; } }
+  .arc-lbl { display: flex; gap: 10px; align-items: center; }
+  .arc-n { flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--pri, #f5a524); color: #1a1204; font: 800 14px/1 ui-monospace, monospace; }
+  .arc-lbl > span { min-width: 0; }
+  .arc-lbl b { display: block; font-size: 17px; line-height: 1.25; overflow-wrap: break-word; hyphens: auto; }
+  .arc-lbl small { display: block; color: var(--mut); font-weight: 600; font-size: 13px; line-height: 1.35; margin-top: 2px; }
+  .arc-goal { position: absolute; left: 50%; top: 450px; transform: translateX(-50%); width: 300px; text-align: center; z-index: 1; }
+  .arc-goal img { width: 150px; height: auto; display: block; margin: 0 auto 8px; }
+  .arc-goal b { display: block; font-size: 22px; }
+  .arc-goal span { color: var(--mut); font-weight: 600; }
+  @media (max-width: 760px) {
+    .arc { height: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 170px 22px; }
+    .arc-st { position: relative; inset: auto !important; width: auto; flex-direction: column !important; gap: 8px; }
+    .arc-st3 { order: 4; } .arc-st4 { order: 3; }
+    .arc-goal { top: 50%; transform: translate(-50%, -50%); width: 40%; }
+    .arc-goal img { width: 76px; margin-bottom: 4px; }
+    .arc-goal b { font-size: 15px; } .arc-goal span { font-size: 11.5px; display: block; line-height: 1.35; }
+    .arc-lbl { align-items: flex-start; gap: 8px; }
+    .arc-lbl b { font-size: 14px; } .arc-lbl small { font-size: 11.5px; }
+    .arc-n { width: 24px; height: 24px; font-size: 12px; }
+    .arc-scr img { border-radius: 12px; }
+  }
+</style>
+
+<script>
+  type B = { l: number; r: number; t: number; b: number; cx: number; cy: number };
+  const box = (e: Element, R: DOMRect): B => { const q = e.getBoundingClientRect(); const l = q.left - R.left, t = q.top - R.top; return { l, t, r: l + q.width, b: t + q.height, cx: l + q.width / 2, cy: t + q.height / 2 }; };
+  const link = (a: B, b: B, mode: 'h' | 'v' | 'hv' | 'vh', gap = 10) => {
+    const dx = b.cx - a.cx, dy = b.cy - a.cy; let p1: number[], p2: number[], c1: number[], c2: number[];
+    if (mode === 'vh') { p1 = [a.cx, a.t - gap]; p2 = [dx > 0 ? b.l - gap : b.r + gap, b.cy]; c1 = c2 = [p1[0], p2[1]]; }
+    else if (mode === 'hv') { p1 = [dx > 0 ? a.r + gap : a.l - gap, a.cy]; p2 = [b.cx, b.t - gap]; c1 = c2 = [p2[0], p1[1]]; }
+    else if (mode === 'h') { p1 = [dx > 0 ? a.r + gap : a.l - gap, a.cy]; p2 = [dx > 0 ? b.l - gap : b.r + gap, b.cy]; const k = Math.max(40, Math.abs(p2[0] - p1[0]) * .5) * Math.sign(dx); c1 = [p1[0] + k, p1[1]]; c2 = [p2[0] - k, p2[1]]; }
+    else { p1 = [a.cx, dy > 0 ? a.b + gap : a.t - gap]; p2 = [b.cx, dy > 0 ? b.t - gap : b.b + gap]; const k = Math.max(40, Math.abs(p2[1] - p1[1]) * .5) * Math.sign(dy); c1 = [p1[0], p1[1] + k]; c2 = [p2[0], p2[1] - k]; }
+    return `M${p1} C${c1} ${c2} ${p2}`;
+  };
+  const draw = () => document.querySelectorAll<HTMLElement>('[data-arc]').forEach(arc => {
+    const svg = arc.querySelector('svg')!, g = svg.querySelector('g')!, R = arc.getBoundingClientRect();
+    svg.setAttribute('viewBox', `0 0 ${R.width} ${R.height}`);
+    const phone = matchMedia('(max-width: 760px)').matches;
+    const st = [...arc.querySelectorAll('.arc-st')];
+    const ds: string[] = [];
+    if (phone) { const b = st.map(s => box(s, R)); ds.push(link(b[0], b[1], 'h'), link(b[1], b[2], 'v'), link(b[2], b[3], 'h')); }
+    else {
+      const b = st.map(s => box(s.querySelector('.arc-scr')!, R)); const z = box(arc.querySelector('.arc-goal img')!, R);
+      ds.push(link(b[0], b[1], 'vh', 12), link(b[1], b[2], 'h'), link(b[2], b[3], 'hv', 12), link(b[3], z, 'h', 14));
+    }
+    g.innerHTML = ds.map(d => `<path d="${d}" fill="none" stroke="#f5a524" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 9" marker-end="url(#arc-ah)" />`).join('');
+  });
+  draw();
+  addEventListener('resize', draw);
+  document.querySelectorAll('[data-arc] img').forEach(i => i.addEventListener('load', draw));
+  document.fonts?.ready.then(draw);
+</script>
