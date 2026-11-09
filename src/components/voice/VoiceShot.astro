@@ -1,0 +1,15 @@
+---
+/**
+ * Sesli asistan ekranı (UI kataloğu SCR-AI-02, 5. gün). Açık ve koyu tema iki ayrı görüntü;
+ * temaya göre biri gösterilir. Ekranlar 1080 genişlikte: sonuç ekranı 2823, diğerleri 2283 yükseklik.
+ */
+import ProgressiveShot from '../ProgressiveShot.astro';
+
+export const VOICE_SHOT_VERSION = 'voice1';
+interface Props { code: string; k: 'ready' | 'listen' | 'think' | 'result' | 'list'; alt?: string; sizes?: string; loading?: 'lazy' | 'eager' }
+const { code, k, alt = '', sizes = '(max-width:760px) 40vw, 300px', loading = 'lazy' } = Astro.props;
+const height = k === 'result' ? 941 : 761;
+const src = (theme: string) => `/shots/${code}/${theme}/voice-${k}.webp?v=${VOICE_SHOT_VERSION}`;
+---
+<ProgressiveShot class="sh-l" src={src('light')} alt={alt} width="360" height={height} sizes={sizes} loading={loading} decoding="async" />
+<ProgressiveShot class="sh-d" src={src('dark')} alt="" width="360" height={height} sizes={sizes} loading={loading} decoding="async" />

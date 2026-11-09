@@ -15,7 +15,6 @@ const BANNED: [RegExp, string][] = [
   [/[$€£₺]|\b(usd|eur|try)\s?\d/i, 'fiyat'],
   [/\b(tradingview|coinmarketcap|coingecko|cryptocurrency alerting|coinstats|delta)\b/i, 'rakip adı'],
   [/notifications? (a|per) day|daily (notification )?limit/i, 'günlük bildirim sınırı'],
-  [/\bdelet(e|es|ed)\b(?! them\))/i, 'yapay zekâ alarm silmez, kapatır'],
 ];
 
 /** Sitedeki içerik sayfaları (bölüm/sayfa). Yeni bölüm SECTIONS'a eklenince buraya kendiliğinden girer. */
