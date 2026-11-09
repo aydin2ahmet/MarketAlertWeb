@@ -1,5 +1,8 @@
 /** Sitenin sabitleri. Mağaza adresleri yayın öncesi doldurulmalı. */
 export const SITE = 'https://www.marketalertapp.com';
+/** Google'da görünecek site adı (Ahmet 2026-11-09): önce 'Market Alert', olmazsa 'MarketAlert App', o da olmazsa 'MarketAlert'. Alan adı görünmesin. */
+export const SITE_NAME = 'Market Alert';
+export const SITE_ALT_NAMES = ['MarketAlert App', 'MarketAlert'];
 export const UPDATED = '2026-11-09';
 
 /** Resmî sosyal hesaplar: sayfa altındaki bağlantılar ve yapılandırılmış verideki sameAs buradan. */
