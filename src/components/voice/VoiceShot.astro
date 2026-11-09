@@ -5,7 +5,7 @@
  */
 import ProgressiveShot from '../ProgressiveShot.astro';
 
-export const VOICE_SHOT_VERSION = 'voice1';
+export const VOICE_SHOT_VERSION = 'voice2';
 interface Props { code: string; k: 'ready' | 'listen' | 'think' | 'result' | 'list'; alt?: string; sizes?: string; loading?: 'lazy' | 'eager' }
 const { code, k, alt = '', sizes = '(max-width:760px) 40vw, 300px', loading = 'lazy' } = Astro.props;
 const height = k === 'result' ? 941 : 761;
