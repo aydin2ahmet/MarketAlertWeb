@@ -1,0 +1,41 @@
+---
+/**
+ * Cümle örnekleri, tasarım O3 (2026-11-09): basitten zora 5 seviyeli merdiven ve plan etiketi.
+ * items: [cümle, plan] — plan "free" ya da "plus".
+ */
+interface Props { title: string; level: string; items: string[][]; plans: Record<string, string> }
+const { title, level, items, plans } = Astro.props;
+---
+<section class="vl" aria-labelledby="vl-t">
+  <h2 id="vl-t">{title}</h2>
+  <ol class="vl-list">
+    {items.map((it, i) => (
+      <li>
+        <span class="vl-lv"><span>{level} {i + 1}</span><span class="vl-bars" aria-hidden="true">{[0, 1, 2, 3, 4].map(j => <i class={j <= i ? 'on' : undefined} />)}</span></span>
+        <q>{it[0]}</q>
+        <span class={`vl-plan ${it[1]}`}>{plans[it[1]]}</span>
+      </li>
+    ))}
+  </ol>
+</section>
+
+<style>
+  .vl { padding: 56px 0; border-bottom: 1px solid var(--bd); }
+  .vl h2 { font-size: clamp(24px, 3vw, 32px); margin-bottom: 18px; text-wrap: balance; }
+  @media (max-width: 760px) { .vl { padding: 40px 0; } }
+  .vl-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; max-width: 900px; }
+  .vl-list li { display: grid; grid-template-columns: 96px 1fr auto; gap: 18px; align-items: center; background: var(--sf); border: 1px solid var(--bd); border-radius: 14px; padding: 14px 18px; }
+  .vl-lv { display: grid; gap: 5px; font: 700 12px var(--mono); color: var(--mut); }
+  :global(:root:is([lang=ar], [lang=hi], [lang=zh], [lang=ja])) .vl-lv { font-family: var(--f); }
+  .vl-bars { display: flex; gap: 3px; }
+  .vl-bars i { width: 11px; height: 16px; border-radius: 3px; background: var(--bd); }
+  .vl-bars i.on { background: var(--pri); }
+  .vl-list q { font-weight: 600; font-size: 16px; }
+  .vl-plan { font: 700 12px/1 var(--mono); padding: 5px 8px; border-radius: 6px; white-space: nowrap; }
+  .vl-plan.free { color: var(--up); background: color-mix(in srgb, var(--up) 13%, transparent); }
+  .vl-plan.plus { color: var(--pro); background: color-mix(in srgb, var(--pro) 13%, transparent); }
+  @media (max-width: 760px) {
+    .vl-list li { grid-template-columns: 1fr auto; gap: 10px 12px; }
+    .vl-list q { grid-column: 1 / -1; grid-row: 2; }
+  }
+</style>

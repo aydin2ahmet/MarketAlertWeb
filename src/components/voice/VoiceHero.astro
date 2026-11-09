@@ -1,0 +1,51 @@
+---
+/**
+ * İlk ekran, tasarım K4 (2026-11-09, Ahmet): ortada söylenen cümle (parçaları renkli),
+ * altında gerçek sesli asistan ekranları: dinliyor → anlıyor → kuruldu.
+ */
+import VoiceShot from './VoiceShot.astro';
+import { markedHtml } from '../../lib/voice';
+
+interface Props { code: string; kicker: string; h1: string; said: string; introHtml: string; setupTitle: string; alts: string[] }
+const { code, kicker, h1, said, introHtml, setupTitle, alts } = Astro.props;
+---
+<section class="vh">
+  <p class="kicker">{kicker}</p>
+  <h1>{h1}</h1>
+  <p class="vh-say"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3" /><path d="M5 10v2a7 7 0 0014 0v-2M12 19v3M8 22h8" /></svg><q set:html={markedHtml(said)} /></p>
+  <p class="intro" set:html={introHtml} />
+  <a class="btn" href="#setup">{setupTitle} <span aria-hidden="true">↓</span></a>
+  <div class="vh-strip">
+    <div class="vh-ph"><VoiceShot code={code} k="listen" alt={alts[0]} loading="eager" /></div>
+    <div class="vh-ph"><VoiceShot code={code} k="think" alt={alts[1]} loading="eager" /></div>
+    <div class="vh-ph"><VoiceShot code={code} k="result" alt={alts[2]} loading="eager" /></div>
+  </div>
+</section>
+
+<style>
+  .vh { padding: 56px 0 48px; text-align: center; }
+  .vh h1 { font-size: clamp(32px, 4vw, 52px); text-wrap: balance; max-width: 900px; margin-inline: auto; }
+  .kicker { font: 600 12px/1.6 var(--mono); color: var(--cat3); margin-bottom: 16px; }
+  .vh-say { display: block; max-width: 860px; margin: 28px auto 0; font-size: clamp(21px, 2.6vw, 30px); font-weight: 650; line-height: 1.4; text-wrap: balance; }
+  .vh-say svg { display: inline-block; width: 1.15em; height: 1.15em; vertical-align: -.2em; margin-inline-end: .4em; color: var(--priText); background: var(--pri); border-radius: 50%; padding: .2em; }
+  .vh-say q { quotes: "“" "”" "‘" "’"; }
+  :global(:root[lang=de]) .vh-say q { quotes: "„" "“"; }
+  :global(:root[lang=fr]) .vh-say q { quotes: "« " " »"; }
+  :global(:root[lang=ru]) .vh-say q { quotes: "«" "»"; }
+  :global(:root[lang=ar]) .vh-say q { quotes: "«" "»"; }
+  :global(:root[lang=ja]) .vh-say q, :global(:root[lang=zh]) .vh-say q { quotes: "「" "」"; }
+  .intro { color: var(--mut); font-size: 18px; max-width: 760px; margin: 18px auto 24px; }
+  .vh-strip { display: flex; justify-content: center; align-items: flex-start; gap: 22px; margin-top: 44px; }
+  .vh-ph { width: 230px; padding: 7px; border-radius: 34px; background: var(--frame); box-shadow: var(--shadow), inset 0 0 0 1px rgba(255, 255, 255, .08); }
+  .vh-ph :global(img) { display: block; width: 100%; height: auto; border-radius: 27px; }
+  .vh-ph:nth-child(2) { transform: translateY(-16px); }
+  @media (max-width: 760px) {
+    .vh { padding: 32px 0; }
+    .vh-say { text-align: start; }
+    .intro { font-size: 17px; text-align: start; }
+    .vh-strip { gap: 8px; margin-top: 30px; }
+    .vh-ph { width: 32%; padding: 3px; border-radius: 16px; }
+    .vh-ph :global(img) { border-radius: 13px; }
+    .vh-ph:nth-child(2) { transform: translateY(-8px); }
+  }
+</style>

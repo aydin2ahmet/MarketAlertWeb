@@ -1,6 +1,6 @@
 /** Sitenin sabitleri. Mağaza adresleri yayın öncesi doldurulmalı. */
 export const SITE = 'https://www.marketalertapp.com';
-export const UPDATED = '2026-11-08';
+export const UPDATED = '2026-11-09';
 
 /** Resmî sosyal hesaplar: sayfa altındaki bağlantılar ve yapılandırılmış verideki sameAs buradan. */
 export const SOCIAL = [

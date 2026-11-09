@@ -1,0 +1,72 @@
+---
+/**
+ * Adımlar (2026-11-09, Ahmet): masaüstünde S2 (solda adım listesi, sağda yapışkan tek telefon;
+ * adıma dokununca ekran değişir), telefonda S4 (kesikli dikey ray, her adımın altında küçük ekran).
+ * Telefonda S2 istenmedi: seçim yukarıda, ekran aşağıda kalıyordu. Tek liste, iki düzen.
+ * Ekranlar: hazır → dinliyor → anlıyor → kuruldu (SCR-AI-02 S08, S07, S14, S34).
+ */
+import VoiceShot from './VoiceShot.astro';
+
+interface Props { code: string; steps: string[][]; html: string[] }
+const { code, steps, html } = Astro.props;
+const KEYS = ['ready', 'listen', 'think', 'result'] as const;
+---
+<div class="vs" data-vs>
+  <ol class="vs-list">
+    {steps.map((s, i) => (
+      <li class={i === 0 ? 'on' : undefined} data-i={i}>
+        <span class="vs-n" aria-hidden="true">{i + 1}</span>
+        <div class="vs-txt">
+          <h3><button type="button" aria-pressed={i === 0 ? 'true' : 'false'}>{s[0]}</button></h3>
+          <p set:html={html[i]} />
+        </div>
+        <div class="vs-sm"><VoiceShot code={code} k={KEYS[i]} alt={s[0]} sizes="150px" /></div>
+      </li>
+    ))}
+  </ol>
+  <figure class="vs-big" aria-hidden="true">
+    {KEYS.map((k, i) => <div class={i === 0 ? 'vs-scr on' : 'vs-scr'} data-i={i}><VoiceShot code={code} k={k} sizes="280px" /></div>)}
+  </figure>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-vs]').forEach(root => {
+    const items = root.querySelectorAll<HTMLElement>('.vs-list li');
+    const screens = root.querySelectorAll<HTMLElement>('.vs-scr');
+    items.forEach((li, i) => li.querySelector('button')?.addEventListener('click', () => {
+      items.forEach((x, j) => { x.classList.toggle('on', i === j); x.querySelector('button')?.setAttribute('aria-pressed', String(i === j)); });
+      screens.forEach((x, j) => x.classList.toggle('on', i === j));
+    }));
+  });
+</script>
+
+<style>
+  .vs { display: grid; grid-template-columns: 1fr 300px; gap: 56px; align-items: start; margin-top: 28px; }
+  .vs-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .vs-list li { display: flex; gap: 16px; padding: 18px 20px; border: 1px solid transparent; border-radius: 16px; transition: background .2s, border-color .2s; }
+  .vs-list li.on { background: var(--sf); border-color: var(--pri); box-shadow: var(--shadow); }
+  .vs-n { width: 28px; height: 28px; border-radius: 50%; background: var(--pri); color: var(--priText); display: grid; place-items: center; font: 700 13px var(--mono); flex: none; }
+  .vs-txt { flex: 1; min-width: 0; }
+  .vs-txt h3 { margin: 2px 0 6px; font-size: 18px; }
+  .vs-txt button { all: unset; cursor: pointer; }
+  .vs-txt button:focus-visible { outline: 2px solid var(--pri); outline-offset: 3px; border-radius: 4px; }
+  .vs-txt p { margin: 0; color: var(--mut); }
+  .vs-list li:not(.on) .vs-txt p { opacity: .8; }
+  .vs-sm { display: none; }
+  .vs-big { position: sticky; top: 96px; margin: 0; padding: 8px; border-radius: 40px; background: var(--frame); box-shadow: var(--shadow), inset 0 0 0 1px rgba(255, 255, 255, .08); }
+  .vs-scr { display: none; }
+  .vs-scr.on { display: block; }
+  .vs-big :global(img), .vs-sm :global(img) { display: block; width: 100%; height: auto; border-radius: 32px; }
+  @media (max-width: 760px) {
+    .vs { display: block; }
+    .vs-big { display: none; }
+    .vs-list { position: relative; gap: 30px; }
+    .vs-list::before { content: ""; position: absolute; inset-inline-start: 13px; top: 14px; bottom: 14px; width: 2px; background: repeating-linear-gradient(var(--pri) 0 6px, transparent 6px 12px); }
+    .vs-list li, .vs-list li.on { padding: 0; border: 0; background: none; box-shadow: none; display: grid; grid-template-columns: 28px 1fr; gap: 6px 14px; }
+    .vs-n { position: relative; }
+    .vs-txt button { cursor: text; }
+    .vs-list li:not(.on) .vs-txt p { opacity: 1; }
+    .vs-sm { display: block; grid-column: 2; width: 150px; margin-top: 10px; padding: 4px; border-radius: 22px; background: var(--frame); }
+    .vs-sm :global(img) { border-radius: 18px; }
+  }
+</style>

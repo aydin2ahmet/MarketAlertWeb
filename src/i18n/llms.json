@@ -6,7 +6,7 @@
   "Markets: Binance Spot and Futures, USDT and USDC pairs. Each market is watched separately.",
   "Conditions can be combined with AND / OR in one alert (up to 3 on Plus, 5 on Pro). With AND, every condition must hold on the same coin.",
   "All-coins alerts apply one condition to the top 50, top 100, top 200 or every eligible coin in a market (ranked by 24-hour volume, stablecoins excluded) and report each matching coin separately. Delivery pace: Instant, Balanced, or a Digest at :00, :15, :30 and :45.",
-  "Alerts can be created with a form, ready-made templates (Pump, Dump, Pump + volume, Oversold, Overbought, Trend crossover, 24-hour high breakout, Market scan), by typing to the AI assistant, or by voice. In the text chat the assistant shows a draft for approval; with the voice assistant a clear request is applied directly. The assistant can also edit, list and turn off alerts (it never deletes them).",
+  "Alerts can be created with a form, ready-made templates (Pump, Dump, Pump + volume, Oversold, Overbought, Trend crossover, 24-hour high breakout, Market scan), by typing to the AI assistant, or by voice. With the voice assistant a clear request is applied directly, and alerts can also be changed, listed and deleted by voice (it asks first when the target alert is unclear). In the text chat the assistant shows a draft for approval and turns alerts off with a confirmation card.",
   "Channels: push notifications with a chosen alarm sound, Telegram (via the MarketAlert bot, no chat ID needed), and HMAC-SHA256 signed webhooks.",
   "Every match is kept in the in-app notification log with timing details.",
   "Plans: Free (3 alerts; price, percent move and 24-hour high/low conditions; push), Plus (20 alerts, all condition types, repeating alerts, Telegram, 2 all-coins alerts up to the top 100), Pro (100 alerts, webhook, 10 all-coins alerts on every coin). Plus and Pro have a 7-day free trial. Prices are shown in the app stores per country.",
@@ -15,7 +15,7 @@
   "Not affiliated with Binance. Notifications are informational and not investment advice."
  ],
  "examples": [
-  ["Scan the top 100 coins on Binance Spot USDT and notify me on Telegram when hourly RSI(14) is below 30 and hourly volume is above 2 times its 20-candle average.", "all-coins, RSI + volume with AND · Plus / Pro"],
+  ["Tell me when RSI is under 30 and volume is 2 times on the top 100 coins.", "spoken to the voice assistant · all-coins, RSI + volume with AND · Plus / Pro"],
   ["Notify me once when BTC rises above 70,000 USDT and hourly RSI is below 30.", "one coin, price + RSI with AND · Plus / Pro"],
   ["Notify me once on Telegram when hourly RSI is below 30 and price is above EMA20 on any top-100 coin on Binance Spot USDT.", "all-coins, RSI + EMA with AND · Plus / Pro"],
   ["Scan the top 100 coins on Binance Spot USDT. Notify me once on Telegram when 15-minute candle volume exceeds 3 times its 20-period volume average.", "all-coins volume spike · Plus / Pro"],
@@ -117,6 +117,21 @@
    "example": "Notify me once if BTC drops below 85,000 USDT.",
    "faq": [
     ["Can I be notified every time BTC drops sharply?", "Yes, with a percent-move condition such as down 5% in 1 hour and a repeating alert (Plus and Pro)."]
+   ]
+  },
+  "features/voice-crypto-alerts": {
+   "line": "Say an alert out loud; the voice assistant turns the sentence into conditions and creates it.",
+   "what": "The voice assistant creates crypto alerts from a spoken sentence. Speech becomes text on the device in the app language; only the text is sent. A clear request is applied directly and shown as an alert card; if something is missing, the assistant asks. Every plan, signed in; each sentence uses one AI message.",
+   "facts": [
+    "Alerts can be created, changed, listed and deleted by voice; the assistant asks first when the target alert is unclear.",
+    "All condition types (price, percent move, 24-hour high/low, RSI, MACD, volume, moving averages), for one coin or a top-N / all-coins scope, joined with AND / OR, as the plan allows.",
+    "Modes: Automatic (stops when you stop talking, listens again after each reply) and Hold to talk.",
+    "The text AI chat shows a draft for approval instead; both create the same alerts."
+   ],
+   "example": "Tell me when RSI is under 30 and volume is 2 times on the top 100 coins.",
+   "faq": [
+    ["Can I delete an alert by voice?", "Yes. Say \"Delete my ETH alert\"; if several alerts match, the assistant asks which one."],
+    ["Does the voice assistant trade?", "No. It only manages alerts; it never connects to an exchange account and gives no investment advice."]
    ]
   }
  }

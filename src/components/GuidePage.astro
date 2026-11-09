@@ -7,6 +7,11 @@ import Base from '../layouts/Base.astro';
 import ProgressiveShot from './ProgressiveShot.astro';
 import StepArc from './StepArc.astro';
 import LogicCards from './LogicCards.astro';
+import VoiceHero from './voice/VoiceHero.astro';
+import VoiceMap from './voice/VoiceMap.astro';
+import VoiceSteps from './voice/VoiceSteps.astro';
+import VoiceActions from './voice/VoiceActions.astro';
+import VoiceLadder from './voice/VoiceLadder.astro';
 import logicCards from '../i18n/logic-cards.json';
 import content from '../i18n/content.json';
 import guides from '../i18n/alert-guides.json';
@@ -25,7 +30,7 @@ const r = (rsiGuides as any)[code];
 const lcAll = (logicCards as any)[code];
 const lc = lcAll?.[`${section}/${slug}`];
 // Rehber başına görsel ve kod satırları. Yeni rehber eklerken buraya da bir kayıt ekle.
-const VISUAL: Record<string, { kicker: string; exampleKicker: string; condition: string[]; foot: string; shot: string; version: string; width: number; height: number | null; logic?: string[][]; hook?: { pair: string; market: string; from: number; target: number; touch: number; last: number; op: '<' | '>'; unit?: 'pct' }; stepShots?: [string, number][] }> = {
+const VISUAL: Record<string, { kicker: string; exampleKicker: string; condition: string[]; foot: string; shot: string; version: string; width: number; height: number | null; logic?: string[][]; hook?: { pair: string; market: string; from: number; target: number; touch: number; last: number; op: '<' | '>'; unit?: 'pct' }; stepShots?: [string, number][]; voice?: true }> = {
   'features/price-alerts': { kicker: 'BINANCE · PRICE · PUSH', exampleKicker: 'BTC/USDT · 70,000 · ONCE', condition: ['BTC/USDT', '≥', '70,000 USDT'], foot: 'BINANCE SPOT · USDT · ONCE → PUSH', shot: 'price', version: 'price1', width: 1080, height: 2280,
     logic: [['HIGH 69,990 · LAST 69,880', '→ ✕'], ['HIGH 70,012 · LAST 69,880', 'TOUCH → ✓']] },
   'features/volume-spike-alerts': { kicker: 'BINANCE · VOLUME / SMA · TELEGRAM', exampleKicker: '15m · SMA(20) · 3×', condition: ['VOLUME', '>', '3 × SMA(20)'], foot: 'BINANCE SPOT · USDT · TOP 100 → TELEGRAM', shot: 'rsi/volume-result', version: 'volume1', width: 390, height: null },
@@ -42,8 +47,11 @@ const VISUAL: Record<string, { kicker: string; exampleKicker: string; condition:
   'coins/bitcoin-price-alert': { kicker: 'BTC/USDT · SPOT · PUSH', exampleKicker: 'BTC/USDT · 85,000 · ONCE', condition: ['BTC/USDT', '<', '85,000 USDT'], foot: 'BINANCE SPOT · USDT · ONCE → PUSH', shot: 'log', version: 'btc1', width: 1080, height: 2280,
     logic: [['LOW 85,010 · LAST 85,120', '→ ✕'], ['LOW 84,980 · LAST 84,995', 'TOUCH → ✓']],
     hook: { pair: 'BTC/USDT', market: 'BINANCE SPOT', from: 85420, target: 85000, touch: 84980, last: 84995, op: '<' } },
+  // 5. gün: sesli asistan sayfası kendi bloklarını kullanır (components/voice, metinler rehberin `voice` alanında).
+  'features/voice-crypto-alerts': { kicker: 'VOICE · RSI + VOLUME · TOP 100', exampleKicker: 'SPOT USDT · TOP 100 · 1h', condition: [], foot: '', shot: 'voice-result', version: 'voice1', width: 1080, height: 2823, voice: true },
 };
 const v = VISUAL[`${section}/${slug}`];
+const vo = v.voice ? g.voice : undefined;
 const shotKind = v.shot.split('/').pop() as string;
 const shotHeight = (theme: 'light' | 'dark') => v.height ? Math.round(390 * v.height / v.width) : (screenSizes as any)[code][theme][shotKind];
 const plans: string[][] = g.plans || r.plans;
@@ -79,6 +87,10 @@ const jsonLd = [
   </header>
   <main class="alert-guide">
     <nav class="breadcrumbs" aria-label="MarketAlert"><a href={`/${code}/`}>MarketAlert</a><span aria-hidden="true"> / </span><span>{g.link}</span></nav>
+    {vo ? <>
+    <VoiceHero code={code} kicker={v.kicker} h1={g.h1} said={vo.said} introHtml={L(g.intro)} setupTitle={setupTitle} alts={vo.alts} />
+    <VoiceMap code={code} kicker={v.exampleKicker} title={g.exampleTitle} said={vo.said} saidLabel={vo.saidLabel} rows={vo.map} and={vo.and} note={vo.note} caption={g.caption} />
+    </> : <>
     <section class={v.hook && g.hook ? 'guide-hero has-hook' : 'guide-hero'}>
       <div class="gh-head"><p class="kicker">{v.kicker}</p><h1>{g.h1}</h1></div>
       {v.hook && g.hook && <ZilboHook code={code} hook={v.hook} text={g.hook} />}
@@ -99,11 +111,14 @@ const jsonLd = [
         <figcaption>{g.caption}</figcaption>
       </figure>
     </section>
-    <section id="setup" class="guide-section"><p class="kicker">01 → 04</p><h2>{setupTitle}</h2>{v.stepShots && g.stepActions ? <>
+    </>}
+    <section id="setup" class="guide-section"><p class="kicker">01 → 04</p><h2>{setupTitle}</h2>{vo ? <VoiceSteps code={code} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : v.stepShots && g.stepActions ? <>
       <StepArc code={code} titles={g.steps.map((s: string[]) => s[0])} actions={g.stepActions} ready={g.ready} shots={v.stepShots} version={v.version} />
       <ol class="step-notes">{g.steps.map((step: string[], i: number) => <li><span class="step-number" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><div><h3>{step[0]}</h3><p set:html={L(step[1])} /></div></li>)}</ol>
     </> : <ol class="steps">{g.steps.map((step: string[], i: number) => <li><span class="step-number" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><div><h3>{step[0]}</h3><p set:html={L(step[1])} /></div></li>)}</ol>}</section>
     <section class="guide-section explain">{g.details.map((section: string[]) => <article><h2>{section[0]}</h2><p set:html={L(section[1])} /></article>)}</section>
+    {vo && <VoiceActions title={vo.actionsTitle} items={vo.actions} note={vo.actionsNote} />}
+    {vo && <VoiceLadder title={vo.ladderTitle} level={vo.level} items={vo.ladder} plans={vo.plans} />}
     {lc ? <LogicCards data={lc} and={lcAll._and} condLabel={lcAll._cond} /> : v.logic && <div class="logic-example" aria-label={g.details[0][0]} dir="ltr">{v.logic.map(row => <><code>{row[0]}</code><strong>{row[1]}</strong></>)}</div>}
     <section id="plans" class="guide-section"><h2>{r.plansTitle}</h2><div class="guide-plans">{plans.map((p: string[]) => <article><h3>{p[0]}</h3><p>{p[1]}</p></article>)}</div><a class="text-link" href={`/${code}/#plans`}>{r.plansLink} ↗</a></section>
     <section id="faq" class="guide-section"><h2>{t.faqTitle}</h2><div class="faq">{g.faq.map((q: string[], i: number) => <details open={i === 0}><summary>{q[0]}</summary><p set:html={L(q[1])} /></details>)}</div></section>

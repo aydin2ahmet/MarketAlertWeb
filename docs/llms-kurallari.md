@@ -23,7 +23,7 @@ https://www.marketalertapp.com/llms-full.txt (sayfa sayfa ayrıntı). İkisi de 
 
 ## Yazı ekleme kuralları
 - Yalnızca uygulamada şu an doğru olan olgular. Slogan, pazarlama cümlesi yok.
-- Hız rakamı (ms), fiyat, rakip adı, günlük bildirim sınırı yok. Yapay zekâ alarmları kapatır, silmez.
+- Hız rakamı (ms), fiyat, rakip adı, günlük bildirim sınırı yok. Sesli asistan alarmları kurar, değiştirir, listeler ve siler (hedef belli değilse önce sorar); yazılı AI sohbet alarmları onay kartıyla kapatır (2026-11-09 düzeltmesi).
 - Sayfanın tüm metni, adım adım ekran tarifi girmez.
 - Bir bilgi tek yerde: ürün geneli olgular `facts`'te, sayfaya özgü olanlar o sayfanın bloğunda.
 - Dil İngilizce. Sayfa adı İngilizce rehberin `link` alanından gelir.
@@ -38,4 +38,4 @@ https://www.marketalertapp.com/llms-full.txt (sayfa sayfa ayrıntı). İkisi de 
 ## Denetim (derleme hatası = site yayınlanmaz)
 - Sitede bloğu olmayan içerik sayfası, ya da sitede olmayan bir sayfanın bloğu
 - Kelime ve madde sınırları
-- Yasak içerik kalıpları (ms, para birimi, rakip adları, günlük sınır, "delete")
+- Yasak içerik kalıpları (ms, para birimi, rakip adları, günlük sınır)

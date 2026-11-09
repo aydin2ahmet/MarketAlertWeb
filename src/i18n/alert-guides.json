@@ -72,6 +72,36 @@
       "steps": [["İki koşulu tek cümlede anlat", "Piyasayı, coin kapsamını, zaman dilimini, RSI eşiğini ve EMA dönemini belirt."], ["Birleştirme biçimini seç", "İkisi birden gerektiğinde VE, koşullardan biri yeterliyse VEYA kullan."], ["Konuşarak kur veya taslağı onayla", "Sesli asistana söyle ya da AI sohbete yaz. Yazılı sohbette taslağı inceleyip alarmı kur."], ["Sonucu ve Telegram kanalını kontrol et", "RSI(14) < 30, fiyat > EMA(20), 1h, ilk 100 coin ve Telegram seçimini doğrula."]],
       "details": [["VE ile VEYA arasındaki fark", "VE seçildiğinde RSI 28 olsa bile fiyat EMA20’nin altındaysa birleşik koşul sağlanmaz. RSI 28 ve fiyat EMA20’nin üstündeyse sağlanır. VEYA için bir koşul yeterlidir."], ["Tüm coinlerde koşullar nasıl birleşir?", "Koşullar her coin için birlikte değerlendirilir. BTC’nin RSI koşuluyla ETH’nin EMA koşulu birleştirilmez. Bir coin iki koşulu da sağladığında birleşik koşul sağlanır."], ["EMA üzerinde olmak, EMA kesişimi değildir", "Bu örnek fiyatın EMA20 üzerinde olmasını ister; yeni bir kesişim beklemez. RSI ve EMA kapanmış mumlarla değerlendirilir. Art arda gerçekleşen olaylar zinciri tanımlamaz."]],
       "faq": [["Kod yazmam veya Pine Script kullanmam gerekir mi?", "Hayır. Desteklenen koşulları MarketAlert’te konuşarak, AI sohbete yazarak veya alarm formundan birleştirebilirsin."], ["İkiden fazla koşul ekleyebilir miyim?", "Plus alarm başına 3, Pro 5 koşula kadar destekler. RSI, hacim, fiyat/ortalama ve desteklenen diğer koşul tipleri kullanılabilir."], ["Telegram’a neden bildirim gelmeyebilir?", "Önce hesabın bağlı ve alarmın aktif olduğunu kontrol et. VE için tüm koşullar aynı coin üzerinde sağlanmalı; tekrar tercihi ve plan bildirim sınırları da geçerlidir."]]
+    },
+    "voice-crypto-alerts": {
+      "link": "Sesli kripto alarmı",
+      "title": "Konuşarak kripto alarmı kur: sesli asistanla RSI, hacim, fiyat | MarketAlert",
+      "h1": "Konuşarak kripto alarmı nasıl kurulur?",
+      "description": "Alarmını söyle, MarketAlert sesli asistanı kursun: tek coinde fiyat ya da ilk 100 coinde RSI ve hacim. Alarmlarını sesle değiştir, listele, sil.",
+      "intro": "Mikrofona dokun ve alarmını birine anlatır gibi söyle. Sesli asistan cümleni koşullara çevirir; istek netse alarmı hemen kurar, eksik bir şey varsa sorar. Aynı yoldan alarmlarını değiştirebilir, listeleyebilir ve silebilirsin. Formla kurmak istersen [kripto fiyat alarmı](features/price-alerts) sayfasına bak.",
+      "prompt": "İlk 100 coinde RSI 30 altı ve hacim 2 katı olunca haber ver",
+      "exampleTitle": "Söylediğin her parça alarmda bir ayara dönüşür",
+      "caption": "Sesli asistanın sonuç ekranı: söylenen cümle, kurulan alarm, kapsam ve iki koşul.",
+      "steps": [["Mikrofona dokun", "Alarmlarım ekranındaki mikrofonla sesli asistanı aç. Otomatik modda sen susunca dinleme biter ve asistan her cevaptan sonra seni yeniden dinler. Basılı tut modunda düğmeye bastığın sürece dinler."], ["Ne istediğini söyle", "Coini ya da kapsamı (ör. ilk 100 coin), koşulu ve istersen mum süresini ve bildirim kanalını söyle. Konuşman cihazında metne çevrilir; yalnızca metin gönderilir."], ["Asistan cümleni anlar", "Coin adlarını, göstergeleri ve sayıları alarm koşullarına çevirir. Hangi coini ya da hangi alarmı kastettiğin belli değilse kısa bir soru sorar; cevabını yine sesle verirsin."], ["Alarm kurulur", "İstek netse alarm hemen kurulur ve kartı ekranda görünür. \"Alarmı aç\" ile ayrıntısına gidebilir ya da bir ayarı değiştirmek için yeniden konuşabilirsin."]],
+      "details": [["Sesli asistan hangi alarmları kurabilir?", "Fiyat, yüzde değişim, 24 saatlik tepe/dip, RSI, MACD, hacim artışı ve hareketli ortalama koşullarını kurabilir. Alarmı tek coin için ya da ilk 50, 100, 200 veya tüm coinler için kurar ve koşulları [VE / VEYA ile birleştirebilir](features/multi-condition-alerts). Hangi koşulları kullanabileceğin planına bağlıdır."], ["Konuşman nasıl işlenir?", "Konuşman uygulamanın dilinde, cihazında metne çevrilir; ses kaydı gönderilmez. Asistan bu metni anlar ve alarmı MarketAlert sunucularında kurar. Kurulan alarm uygulama kapalıyken de çalışır."], ["Sesli asistan ile yazılı AI sohbet farkı", "Sesli asistanda net bir istek doğrudan uygulanır ve sonuç kartı gösterilir. Yazılı AI sohbette asistan önce bir taslak gösterir, alarm senin onayınla kurulur. İkisi de aynı alarmları kurar; hangisinin sana kolay geldiğine göre seç."]],
+      "faq": [["Sesli asistan ücretsiz mi?", "Evet, her planda var; hesabınla giriş yapman gerekir, misafir olarak kullanılamaz. Her cümle AI hakkından 1 düşer. Free'de hak günlük, Plus ve Pro'da haftalık yenilenir."], ["Hangi dilde konuşmalıyım?", "Uygulamayı hangi dilde kullanıyorsan o dilde konuş. Konuşman o dilde, cihazında metne çevrilir."], ["Alarmı sesle silebilir miyim?", "Evet. \"ETH alarmımı sil\" demen yeterli. Birden çok ETH alarmın varsa ya da hangi alarmı kastettiğin belli değilse asistan önce sorar."], ["Asistan yanlış anlarsa ne olur?", "Sonuç kartında kurulan alarmın bütün ayarları görünür. Yanlış bir ayarı söyleyerek değiştirebilir ya da alarmı silebilirsin. Duyduğu bir kelimeyi düzelttiyse bunu konuşma balonunda gösterir."], ["Sesli asistan al-sat yapar mı?", "Hayır. Yalnızca alarm kurar ve yönetir; borsa hesabına bağlanmaz, işlem açmaz ve yatırım tavsiyesi vermez."]],
+      "related": ["features/multi-condition-alerts", "features/all-coins-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/price-alerts"],
+      "plans": [["Free", "3 alarm; sesle tek coin için fiyat, yüzde değişim ve 24 saatlik tepe/dip alarmı kur. Alarmlarını sesle değiştir, listele, sil. AI hakkı günlük."], ["Plus", "20 alarm; tüm koşul tipleri, alarm başına 3 koşul ve ilk 100 coine kadar 2 tüm coinler alarmı. Push ve Telegram. AI hakkı haftalık."], ["Pro", "100 alarm; alarm başına 5 koşul ve tüm coinlerde 10 tüm coinler alarmı. Push, Telegram ve imzalı webhook. Daha geniş haftalık AI hakkı."]],
+      "voice": {
+        "said": "[1|İlk 100 coinde] [2|RSI 30 altı] ve [3|hacim 2 katı] olunca [4|haber ver]",
+        "alts": ["Sesli asistan dinliyor: söylenen cümle ekranda yazıya dönüşüyor", "Sesli asistan isteği anlıyor", "Sesli asistan alarmı kurdu: ilk 100 coin, RSI ve hacim koşulu"],
+        "saidLabel": "Söylediğin cümle",
+        "map": [["Kapsam", "İlk 100 coin · Spot USDT", "scope"], ["Koşul 1", "RSI(14) 30 altı · 1 sa", "rsi"], ["Koşul 2", "Hacim > 2 × SMA(20) · 1 sa", "vol"], ["Bildirim", "Push · bir kez", "notif"]],
+        "and": "VE: iki koşul aynı coinde birlikte sağlanmalı. Bu örnek Plus ve Pro'da kurulur.",
+        "note": "Kurulan alarmın bütün ayarları sonuç kartında görünür. Bir ayrıntıyı değiştirmek için söylemen yeter.",
+        "actionsTitle": "Sesle neler yapabilirsin?",
+        "actions": [["Kur", "BTC 85 bin altına inerse haber ver"], ["Değiştir", "BTC alarmını 82 bine çek"], ["Listele", "Alarmlarımı göster"], ["Sil", "ETH alarmımı sil"]],
+        "actionsNote": "Hangi alarmı kastettiğin belli değilse asistan değiştirmeden ya da silmeden önce sorar.",
+        "ladderTitle": "Basitten zora söyleyebileceğin cümleler",
+        "level": "Seviye",
+        "ladder": [["BTC 85 bin altına inerse bir kez haber ver.", "free"], ["SOL 15 dakikada yüzde 3 yükselirse haber ver.", "free"], ["BTC 70 bin üstüne çıkınca ve saatlik RSI 30 altındayken bir kez haber ver.", "plus"], ["İlk 100 coinde 15 dakikalık hacim ortalamanın 3 katını geçerse Telegram'dan haber ver.", "plus"], ["İlk 100 coinde RSI 30 altı ve hacim 2 katı olunca haber ver.", "plus"]],
+        "plans": {"free": "Free", "plus": "Plus · Pro"}
+      }
     }
   },
   "de": {
@@ -143,6 +173,36 @@
       "steps": [["Beide Bedingungen beschreiben", "Markt, Coin-Umfang, Zeitrahmen, RSI-Schwelle und EMA-Periode nennen."], ["Verknüpfung wählen", "UND verlangt beide Bedingungen; bei ODER genügt eine."], ["Sprechen oder Entwurf bestätigen", "Sprachassistenten nutzen oder im KI-Chat schreiben. Im Textchat den Entwurf vor Erstellung prüfen."], ["Ergebnis und Telegram prüfen", "RSI(14) < 30, Kurs > EMA(20), 1h, Top 100 und Telegram kontrollieren."]],
       "details": [["UND oder ODER", "Bei UND reicht RSI 28 nicht, solange der Kurs unter EMA20 liegt. RSI 28 und Kurs über EMA20 erfüllen die Kombination. Bei ODER genügt eine Bedingung."], ["Bedingungen gelten pro Coin", "Der RSI von BTC wird nicht mit dem EMA-Zustand von ETH verknüpft. Bei UND muss derselbe Coin beide Bedingungen erfüllen."], ["Über EMA ist keine Kreuzung", "Das Beispiel verlangt Kurs über EMA20, keine neue Kreuzung. RSI und EMA verwenden abgeschlossene Kerzen. Eine zeitliche Ereigniskette wird nicht definiert."]],
       "faq": [["Brauche ich Code oder Pine Script?", "Nein. Unterstützte Bedingungen lassen sich per Sprache, KI-Textchat oder Alarmformular kombinieren."], ["Sind mehr als zwei Bedingungen möglich?", "Plus erlaubt bis zu 3, Pro bis zu 5 Bedingungen pro Alarm, etwa RSI, Volumen und Kurs/Durchschnitt."], ["Warum kommt keine Telegram-Meldung?", "Verbindung und aktiven Alarm prüfen. UND verlangt alle Bedingungen beim selben Coin. Wiederholungseinstellung und Tariflimits gelten ebenfalls."]]
+    },
+    "voice-crypto-alerts": {
+      "link": "Krypto-Alarm per Sprache",
+      "title": "Krypto-Alarme per Sprache einrichten: RSI, Volumen und Preis mit dem Sprachassistenten | MarketAlert",
+      "h1": "Wie richtet man einen Krypto-Alarm per Sprache ein?",
+      "description": "Sag deinen Alarm, der MarketAlert-Sprachassistent richtet ihn ein: Preis für einen Coin oder RSI und Volumen bei den Top 100. Alarme per Sprache ändern und löschen.",
+      "intro": "Tippe auf das Mikrofon und sag deinen Alarm so, wie du es einem Menschen erklären würdest. Der Sprachassistent macht aus deinem Satz Bedingungen: Ist die Anfrage klar, erstellt er den Alarm sofort; fehlt etwas, fragt er nach. Genauso kannst du Alarme ändern, auflisten und löschen. Lieber mit dem Formular? Dann sieh dir den [Krypto-Preisalarm](features/price-alerts) an.",
+      "prompt": "Sag mir Bescheid, wenn bei den Top-100-Coins der RSI unter 30 und das Volumen doppelt so hoch ist",
+      "exampleTitle": "Jeder Teil deines Satzes wird zu einer Einstellung",
+      "caption": "Ergebnisbildschirm des Sprachassistenten: der gesprochene Satz, der erstellte Alarm, sein Umfang und zwei Bedingungen.",
+      "steps": [["Tippe auf das Mikrofon", "Öffne den Sprachassistenten über das Mikrofon auf dem Bildschirm Meine Alarme. Im Modus Automatisch endet das Zuhören, sobald du still bist, und der Assistent hört nach jeder Antwort wieder zu. Im Modus Gedrückt halten hört er zu, solange du die Taste drückst."], ["Sag, was du willst", "Nenne den Coin oder den Umfang (zum Beispiel die Top-100-Coins), die Bedingung und auf Wunsch den Kerzenzeitraum und den Benachrichtigungskanal. Deine Sprache wird auf deinem Gerät in Text umgewandelt; nur der Text wird gesendet."], ["Der Assistent versteht dich", "Er macht aus Coin-Namen, Indikatoren und Zahlen Alarmbedingungen. Ist unklar, welchen Coin oder welchen Alarm du meinst, stellt er eine kurze Frage, die du wieder per Sprache beantwortest."], ["Der Alarm wird erstellt", "Ist die Anfrage klar, wird der Alarm sofort erstellt und seine Karte erscheint. Mit \"Alarm öffnen\" siehst du die Details, oder du sprichst erneut, um eine Einstellung zu ändern."]],
+      "details": [["Welche Alarme kann der Sprachassistent erstellen?", "Bedingungen für Preis, Prozentbewegung, 24h-Hoch/-Tief, RSI, MACD, Volumenanstieg und gleitende Durchschnitte. Er richtet den Alarm für einen Coin oder für die Top 50, 100, 200 oder alle Coins ein und kann [Bedingungen mit UND / ODER verknüpfen](features/multi-condition-alerts). Welche Bedingungen du nutzen kannst, hängt von deinem Plan ab."], ["Was passiert mit deiner Sprache?", "Deine Sprache wird auf deinem Gerät in der App-Sprache in Text umgewandelt; es wird keine Audioaufnahme gesendet. Der Assistent liest diesen Text und erstellt den Alarm auf den Servern von MarketAlert. Der Alarm läuft auch weiter, wenn die App geschlossen ist."], ["Sprachassistent oder KI-Chat?", "Beim Sprachassistenten wird eine klare Anfrage direkt umgesetzt und eine Ergebniskarte angezeigt. Im schriftlichen KI-Chat zeigt der Assistent zuerst einen Entwurf, und der Alarm wird erst mit deiner Bestätigung erstellt. Beide erstellen dieselben Alarme; nimm, was dir leichter fällt."]],
+      "faq": [["Ist der Sprachassistent kostenlos?", "Ja, er ist in jedem Plan enthalten; du musst mit einem Konto angemeldet sein, als Gast geht es nicht. Jeder Satz verbraucht 1 KI-Nachricht. Bei Free erneuert sich das Kontingent täglich, bei Plus und Pro wöchentlich."], ["In welcher Sprache soll ich sprechen?", "In der Sprache, in der du die App nutzt. Deine Sprache wird in dieser Sprache auf deinem Gerät in Text umgewandelt."], ["Kann ich einen Alarm per Sprache löschen?", "Ja. Sag einfach \"Lösche meinen ETH-Alarm\". Hast du mehrere ETH-Alarme oder ist unklar, welchen du meinst, fragt der Assistent zuerst nach."], ["Was, wenn der Assistent etwas falsch versteht?", "Die Ergebniskarte zeigt alle Einstellungen des erstellten Alarms. Eine falsche Einstellung änderst du, indem du es sagst, oder du löschst den Alarm. Hat er ein gehörtes Wort korrigiert, zeigt er das in der Sprechblase."], ["Handelt der Sprachassistent für mich?", "Nein. Er erstellt und verwaltet nur Alarme; er verbindet sich nie mit einem Börsenkonto, platziert keine Orders und gibt keine Anlageberatung."]],
+      "related": ["features/multi-condition-alerts", "features/all-coins-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/price-alerts"],
+      "plans": [["Free", "3 Alarme; per Sprache Preis-, Prozent- und 24h-Hoch/-Tief-Alarme für einzelne Coins. Alarme per Sprache ändern, auflisten und löschen. Tägliches KI-Kontingent."], ["Plus", "20 Alarme; alle Bedingungstypen, bis zu 3 Bedingungen pro Alarm und 2 Alarme für alle Coins bis zu den Top 100. Push und Telegram. Wöchentliches KI-Kontingent."], ["Pro", "100 Alarme; bis zu 5 Bedingungen pro Alarm und 10 Alarme über alle Coins. Push, Telegram und signierter Webhook. Größeres wöchentliches KI-Kontingent."]],
+      "voice": {
+        "said": "[4|Sag mir Bescheid], wenn [1|bei den Top-100-Coins] [2|der RSI unter 30] und [3|das Volumen doppelt so hoch] ist",
+        "alts": ["Der Sprachassistent hört zu: der gesprochene Satz erscheint als Text", "Der Sprachassistent versteht die Anfrage", "Der Sprachassistent hat den Alarm erstellt: Top-100-Coins, RSI- und Volumenbedingung"],
+        "saidLabel": "Dein Satz",
+        "map": [["Umfang", "Top-100-Coins · Spot USDT", "scope"], ["Bedingung 1", "RSI(14) unter 30 · 1 Std.", "rsi"], ["Bedingung 2", "Volumen > 2 × SMA(20) · 1 Std.", "vol"], ["Mitteilung", "Push · einmal", "notif"]],
+        "and": "UND: Beide Bedingungen müssen beim selben Coin erfüllt sein. Dieses Beispiel braucht Plus oder Pro.",
+        "note": "Alle Einstellungen des erstellten Alarms stehen auf der Ergebniskarte. Um ein Detail zu ändern, sag es einfach.",
+        "actionsTitle": "Was kannst du per Sprache tun?",
+        "actions": [["Erstellen", "Melde dich, wenn BTC unter 85.000 fällt"], ["Ändern", "Setz meinen BTC-Alarm auf 82.000"], ["Auflisten", "Zeig meine Alarme"], ["Löschen", "Lösche meinen ETH-Alarm"]],
+        "actionsNote": "Ist unklar, welchen Alarm du meinst, fragt der Assistent vor dem Ändern oder Löschen nach.",
+        "ladderTitle": "Sätze, die du sagen kannst, von einfach bis fortgeschritten",
+        "level": "Stufe",
+        "ladder": [["Melde dich einmal, wenn BTC unter 85.000 fällt.", "free"], ["Melde dich, wenn SOL in 15 Minuten um 3 % steigt.", "free"], ["Melde dich einmal, wenn BTC über 70.000 steigt und der Stunden-RSI unter 30 liegt.", "plus"], ["Melde dich bei den Top-100-Coins per Telegram, wenn das 15-Minuten-Volumen über dem Dreifachen seines Durchschnitts liegt.", "plus"], ["Sag mir Bescheid, wenn bei den Top-100-Coins der RSI unter 30 und das Volumen doppelt so hoch ist.", "plus"]],
+        "plans": {"free": "Free", "plus": "Plus · Pro"}
+      }
     }
   },
   "fr": {
@@ -214,6 +274,36 @@
       "steps": [["Décrivez les deux conditions", "Précisez marché, périmètre, unité de temps, seuil RSI et période EMA."], ["Choisissez la combinaison", "ET exige les deux conditions ; OU en exige une seule."], ["Parlez ou validez le brouillon", "Utilisez l’assistant vocal ou le chat IA. À l’écrit, vérifiez le brouillon avant de créer l’alerte."], ["Vérifiez le résultat et Telegram", "Contrôlez RSI(14) < 30, prix > EMA(20), 1h, top 100 et Telegram."]],
       "details": [["ET ou OU", "Avec ET, un RSI à 28 ne suffit pas si le prix est sous l’EMA20. RSI à 28 et prix au-dessus satisfont la combinaison. OU ne nécessite qu’une condition."], ["Chaque crypto est évaluée séparément", "Le RSI du BTC ne se combine pas à l’EMA de l’ETH. Une même crypto doit remplir les deux conditions pour satisfaire ET."], ["Au-dessus de l’EMA ne signifie pas croisement", "Cet exemple demande un prix au-dessus de l’EMA20, sans attendre un nouveau croisement. RSI et EMA utilisent les bougies clôturées. Il ne définit pas une succession d’événements."]],
       "faq": [["Faut-il coder ou utiliser Pine Script ?", "Non. Combinez les conditions compatibles par voix, chat IA écrit ou formulaire d’alerte."], ["Peut-on ajouter plus de deux conditions ?", "Plus permet jusqu’à 3 conditions par alerte, Pro jusqu’à 5, dont RSI, volume et prix/moyenne."], ["Pourquoi aucune notification Telegram ?", "Vérifiez la liaison Telegram et l’activation. ET exige toutes les conditions pour la même crypto. Les réglages de répétition et limites de l’offre s’appliquent aussi."]]
+    },
+    "voice-crypto-alerts": {
+      "link": "Alerte crypto vocale",
+      "title": "Créer une alerte crypto à la voix : RSI, volume et prix avec l’assistant vocal | MarketAlert",
+      "h1": "Comment créer une alerte crypto à la voix ?",
+      "description": "Dis ton alerte, l’assistant vocal MarketAlert la crée : un prix sur une crypto ou RSI et volume sur le top 100. Modifie, liste ou supprime tes alertes à la voix.",
+      "intro": "Touche le micro et dis ton alerte comme tu l’expliquerais à quelqu’un. L’assistant vocal transforme ta phrase en conditions : si la demande est claire, il crée l’alerte tout de suite ; s’il manque quelque chose, il pose la question. De la même façon, tu peux modifier, lister et supprimer tes alertes. Tu préfères un formulaire ? Vois le guide [alerte de prix crypto](features/price-alerts).",
+      "prompt": "Préviens-moi quand, sur le top 100 des cryptos, le RSI passe sous 30 et le volume double",
+      "exampleTitle": "Chaque partie de ta phrase devient un réglage",
+      "caption": "Écran de résultat de l’assistant vocal : la phrase dite, l’alerte créée, sa portée et deux conditions.",
+      "steps": [["Touche le micro", "Ouvre l’assistant vocal avec le micro de l’écran Mes alertes. En mode Automatique, l’écoute s’arrête quand tu te tais et l’assistant t’écoute de nouveau après chaque réponse. En mode Maintenir, il écoute tant que tu appuies sur le bouton."], ["Dis ce que tu veux", "Indique la crypto ou la portée (par exemple le top 100), la condition et, si tu veux, l’unité de temps des bougies et le canal de notification. Ta voix est transformée en texte sur ton appareil ; seul le texte est envoyé."], ["L’assistant comprend", "Il transforme les noms de cryptos, les indicateurs et les nombres en conditions d’alerte. Si la crypto ou l’alerte visée n’est pas claire, il pose une courte question et tu réponds à la voix."], ["L’alerte est créée", "Si la demande est claire, l’alerte est créée aussitôt et sa carte s’affiche. « Ouvrir l’alerte » montre les détails, ou parle de nouveau pour changer un réglage."]],
+      "details": [["Quelles alertes l’assistant vocal peut-il créer ?", "Des conditions de prix, de variation en pourcentage, de plus haut/plus bas sur 24 h, de RSI, de MACD, de pic de volume et de moyennes mobiles. Il crée l’alerte pour une crypto ou pour le top 50, 100, 200 ou toutes les cryptos, et peut [combiner les conditions avec ET / OU](features/multi-condition-alerts). Les conditions disponibles dépendent de ton offre."], ["Que devient ta voix ?", "Ta voix est transformée en texte sur ton appareil, dans la langue de l’app ; aucun enregistrement audio n’est envoyé. L’assistant lit ce texte et crée l’alerte sur les serveurs de MarketAlert. L’alerte continue de fonctionner quand l’app est fermée."], ["Assistant vocal ou chat IA écrit ?", "Avec l’assistant vocal, une demande claire est appliquée directement et une carte de résultat s’affiche. Dans le chat IA écrit, l’assistant montre d’abord un brouillon et l’alerte est créée quand tu l’approuves. Les deux créent les mêmes alertes : choisis le plus simple pour toi."]],
+      "faq": [["L’assistant vocal est-il gratuit ?", "Oui, il est inclus dans toutes les offres ; il faut être connecté avec un compte, il ne fonctionne pas en invité. Chaque phrase utilise 1 message IA. En Free, le quota se renouvelle chaque jour ; en Plus et Pro, chaque semaine."], ["Dans quelle langue dois-je parler ?", "Dans la langue où tu utilises l’app. Ta voix est transformée en texte dans cette langue, sur ton appareil."], ["Puis-je supprimer une alerte à la voix ?", "Oui. Dis simplement « Supprime mon alerte ETH ». Si tu as plusieurs alertes ETH ou si l’alerte visée n’est pas claire, l’assistant demande d’abord."], ["Et si l’assistant se trompe ?", "La carte de résultat montre tous les réglages de l’alerte créée. Tu peux corriger un réglage en le disant, ou supprimer l’alerte. S’il a corrigé un mot entendu, il le montre dans la bulle."], ["L’assistant vocal passe-t-il des ordres ?", "Non. Il crée et gère seulement des alertes ; il ne se connecte jamais à un compte d’échange, ne passe aucun ordre et ne donne aucun conseil en investissement."]],
+      "related": ["features/multi-condition-alerts", "features/all-coins-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/price-alerts"],
+      "plans": [["Free", "3 alertes ; à la voix, alertes de prix, de variation en % et de plus haut/plus bas 24 h sur une crypto. Modifie, liste et supprime tes alertes à la voix. Quota IA quotidien."], ["Plus", "20 alertes ; tous les types de conditions, jusqu’à 3 conditions par alerte et 2 alertes toutes cryptos jusqu’au top 100. Push et Telegram. Quota IA hebdomadaire."], ["Pro", "100 alertes ; jusqu’à 5 conditions par alerte et 10 alertes sur toutes les cryptos. Push, Telegram et webhook signé. Quota IA hebdomadaire plus large."]],
+      "voice": {
+        "said": "[4|Préviens-moi] quand, [1|sur le top 100 des cryptos], [2|le RSI passe sous 30] et [3|le volume double]",
+        "alts": ["L’assistant vocal écoute : la phrase s’affiche en texte", "L’assistant vocal comprend la demande", "L’assistant vocal a créé l’alerte : top 100, conditions RSI et volume"],
+        "saidLabel": "Ta phrase",
+        "map": [["Portée", "Top 100 des cryptos · Spot USDT", "scope"], ["Condition 1", "RSI(14) sous 30 · 1 h", "rsi"], ["Condition 2", "Volume > 2 × SMA(20) · 1 h", "vol"], ["Notification", "Push · une fois", "notif"]],
+        "and": "ET : les deux conditions doivent être remplies sur la même crypto. Cet exemple nécessite Plus ou Pro.",
+        "note": "Tous les réglages de l’alerte créée figurent sur la carte de résultat. Pour changer un détail, il suffit de le dire.",
+        "actionsTitle": "Que peux-tu faire à la voix ?",
+        "actions": [["Créer", "Préviens-moi si le BTC passe sous 85 000"], ["Modifier", "Mets mon alerte BTC à 82 000"], ["Lister", "Montre mes alertes"], ["Supprimer", "Supprime mon alerte ETH"]],
+        "actionsNote": "Si l’alerte visée n’est pas claire, l’assistant demande avant de la modifier ou de la supprimer.",
+        "ladderTitle": "Des phrases à dire, de la plus simple à la plus avancée",
+        "level": "Niveau",
+        "ladder": [["Préviens-moi une fois si le BTC passe sous 85 000.", "free"], ["Préviens-moi si le SOL monte de 3 % en 15 minutes.", "free"], ["Préviens-moi une fois quand le BTC dépasse 70 000 avec un RSI horaire sous 30.", "plus"], ["Sur le top 100, préviens-moi sur Telegram quand le volume 15 minutes dépasse 3 fois sa moyenne.", "plus"], ["Préviens-moi quand, sur le top 100 des cryptos, le RSI passe sous 30 et le volume double.", "plus"]],
+        "plans": {"free": "Free", "plus": "Plus · Pro"}
+      }
     }
   },
   "es": {
@@ -285,6 +375,36 @@
       "steps": [["Describe las dos condiciones", "Indica mercado, alcance, intervalo, umbral RSI y período EMA."], ["Elige la combinación", "Y exige ambas condiciones; O permite que baste una."], ["Habla o confirma el borrador", "Usa el asistente de voz o el chat con IA. En texto, revisa el borrador antes de crear la alerta."], ["Comprueba el resultado y Telegram", "Verifica RSI(14) < 30, precio > EMA(20), 1h, top 100 y Telegram."]],
       "details": [["Diferencia entre Y y O", "Con Y, un RSI de 28 no basta si el precio está bajo EMA20. RSI de 28 y precio sobre EMA20 cumplen la combinación. Con O basta una condición."], ["Las condiciones se unen por moneda", "No se combina el RSI de BTC con la EMA de ETH. La misma moneda debe cumplir ambas condiciones para satisfacer Y."], ["Sobre EMA no es un cruce", "El ejemplo exige precio sobre EMA20, sin esperar un nuevo cruce. RSI y EMA usan velas cerradas. No define una secuencia de eventos."]],
       "faq": [["¿Necesito código o Pine Script?", "No. Combina condiciones compatibles mediante voz, chat con IA o el formulario de alertas."], ["¿Puedo añadir más de dos condiciones?", "Plus admite hasta 3 por alerta y Pro hasta 5, como RSI, volumen y precio/media."], ["¿Por qué no llega el aviso a Telegram?", "Revisa la vinculación y que la alerta esté activa. Y requiere todas las condiciones en la misma moneda. También se aplican repetición y límites del plan."]]
+    },
+    "voice-crypto-alerts": {
+      "link": "Alerta cripto por voz",
+      "title": "Crea alertas cripto por voz: RSI, volumen y precio con el asistente de voz | MarketAlert",
+      "h1": "¿Cómo se crea una alerta cripto por voz?",
+      "description": "Di tu alerta y el asistente de voz de MarketAlert la crea: un precio en una moneda o RSI y volumen en el top 100. Cambia, lista o borra alertas por voz.",
+      "intro": "Toca el micrófono y di tu alerta como se la contarías a una persona. El asistente de voz convierte tu frase en condiciones: si la petición es clara, crea la alerta al momento; si falta algo, te pregunta. De la misma forma puedes cambiar, listar y borrar tus alertas. ¿Prefieres un formulario? Mira la guía de [alerta de precio cripto](features/price-alerts).",
+      "prompt": "Avísame cuando en el top 100 de monedas el RSI esté por debajo de 30 y el volumen sea el doble",
+      "exampleTitle": "Cada parte de tu frase se convierte en un ajuste",
+      "caption": "Pantalla de resultado del asistente de voz: la frase dicha, la alerta creada, su alcance y dos condiciones.",
+      "steps": [["Toca el micrófono", "Abre el asistente de voz con el micrófono de la pantalla Mis alertas. En modo Automático, la escucha termina cuando dejas de hablar y el asistente vuelve a escucharte después de cada respuesta. En modo Mantener pulsado escucha mientras pulsas el botón."], ["Di lo que quieres", "Di la moneda o el alcance (por ejemplo, el top 100), la condición y, si quieres, el intervalo de velas y el canal de notificación. Tu voz se convierte en texto en tu dispositivo; solo se envía el texto."], ["El asistente te entiende", "Convierte nombres de monedas, indicadores y números en condiciones de alerta. Si no está claro qué moneda o qué alerta quieres decir, hace una pregunta corta y respondes otra vez por voz."], ["La alerta se crea", "Si la petición es clara, la alerta se crea al instante y su tarjeta aparece en pantalla. Con \"Abrir alerta\" ves los detalles, o vuelve a hablar para cambiar un ajuste."]],
+      "details": [["¿Qué alertas puede crear el asistente de voz?", "Condiciones de precio, variación porcentual, máximo/mínimo de 24 h, RSI, MACD, pico de volumen y medias móviles. Crea la alerta para una moneda o para el top 50, 100, 200 o todas las monedas, y puede [combinar condiciones con Y / O](features/multi-condition-alerts). Las condiciones disponibles dependen de tu plan."], ["¿Qué pasa con tu voz?", "Tu voz se convierte en texto en tu dispositivo, en el idioma de la app; no se envía ninguna grabación de audio. El asistente lee ese texto y crea la alerta en los servidores de MarketAlert. La alerta sigue funcionando con la app cerrada."], ["¿Asistente de voz o chat de IA escrito?", "Con el asistente de voz, una petición clara se aplica directamente y se muestra una tarjeta de resultado. En el chat de IA escrito, el asistente primero muestra un borrador y la alerta se crea cuando lo apruebas. Los dos crean las mismas alertas; usa el que te resulte más cómodo."]],
+      "faq": [["¿El asistente de voz es gratis?", "Sí, está en todos los planes; necesitas iniciar sesión con una cuenta, no se puede usar como invitado. Cada frase usa 1 mensaje de IA. En Free el cupo se renueva cada día; en Plus y Pro, cada semana."], ["¿En qué idioma debo hablar?", "En el idioma en que usas la app. Tu voz se convierte en texto en ese idioma, en tu dispositivo."], ["¿Puedo borrar una alerta por voz?", "Sí. Basta con decir \"Borra mi alerta de ETH\". Si tienes varias alertas de ETH o no está claro cuál quieres decir, el asistente pregunta primero."], ["¿Y si el asistente se equivoca?", "La tarjeta de resultado muestra todos los ajustes de la alerta creada. Puedes cambiar un ajuste diciéndolo, o borrar la alerta. Si corrigió una palabra que oyó, lo muestra en la burbuja."], ["¿El asistente de voz opera por mí?", "No. Solo crea y gestiona alertas; nunca se conecta a una cuenta de exchange, no abre operaciones y no da consejos de inversión."]],
+      "related": ["features/multi-condition-alerts", "features/all-coins-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/price-alerts"],
+      "plans": [["Free", "3 alertas; por voz, alertas de precio, variación % y máximo/mínimo de 24 h en una moneda. Cambia, lista y borra alertas por voz. Cupo de IA diario."], ["Plus", "20 alertas; todos los tipos de condición, hasta 3 condiciones por alerta y 2 alertas de todas las monedas hasta el top 100. Push y Telegram. Cupo de IA semanal."], ["Pro", "100 alertas; hasta 5 condiciones por alerta y 10 alertas sobre todas las monedas. Push, Telegram y webhook firmado. Cupo de IA semanal mayor."]],
+      "voice": {
+        "said": "[4|Avísame] cuando [1|en el top 100 de monedas] [2|el RSI esté por debajo de 30] y [3|el volumen sea el doble]",
+        "alts": ["El asistente de voz escucha: la frase aparece como texto", "El asistente de voz entiende la petición", "El asistente de voz creó la alerta: top 100, condiciones de RSI y volumen"],
+        "saidLabel": "Tu frase",
+        "map": [["Alcance", "Top 100 monedas · Spot USDT", "scope"], ["Condición 1", "RSI(14) bajo 30 · 1 h", "rsi"], ["Condición 2", "Volumen > 2 × SMA(20) · 1 h", "vol"], ["Notificación", "Push · una vez", "notif"]],
+        "and": "Y: las dos condiciones deben cumplirse en la misma moneda. Este ejemplo requiere Plus o Pro.",
+        "note": "Todos los ajustes de la alerta creada aparecen en la tarjeta de resultado. Para cambiar un detalle, basta con decirlo.",
+        "actionsTitle": "¿Qué puedes hacer por voz?",
+        "actions": [["Crear", "Avísame si BTC baja de 85.000"], ["Cambiar", "Pon mi alerta de BTC en 82.000"], ["Listar", "Muestra mis alertas"], ["Borrar", "Borra mi alerta de ETH"]],
+        "actionsNote": "Si no está claro qué alerta quieres decir, el asistente pregunta antes de cambiarla o borrarla.",
+        "ladderTitle": "Frases que puedes decir, de simples a avanzadas",
+        "level": "Nivel",
+        "ladder": [["Avísame una vez si BTC baja de 85.000.", "free"], ["Avísame si SOL sube un 3 % en 15 minutos.", "free"], ["Avísame una vez cuando BTC supere 70.000 con el RSI horario por debajo de 30.", "plus"], ["En el top 100, avísame por Telegram cuando el volumen de 15 minutos supere 3 veces su media.", "plus"], ["Avísame cuando en el top 100 de monedas el RSI esté por debajo de 30 y el volumen sea el doble.", "plus"]],
+        "plans": {"free": "Free", "plus": "Plus · Pro"}
+      }
     }
   },
   "pt-br": {
@@ -356,6 +476,36 @@
       "steps": [["Descreva as duas condições", "Informe mercado, abrangência, período, limite RSI e período EMA."], ["Escolha a combinação", "E exige ambas; com OU, basta uma condição."], ["Fale ou aprove o rascunho", "Use o assistente de voz ou o chat com IA. No texto, confira o rascunho antes de criar."], ["Confira resultado e Telegram", "Verifique RSI(14) < 30, preço > EMA(20), 1h, top 100 e Telegram."]],
       "details": [["Diferença entre E e OU", "Com E, RSI em 28 não basta se o preço estiver abaixo da EMA20. RSI em 28 e preço acima atendem à combinação. Com OU, basta uma condição."], ["Condições são combinadas por moeda", "O RSI do BTC não é combinado à EMA do ETH. A mesma moeda precisa atender às duas condições em E."], ["Acima da EMA não é cruzamento", "O exemplo exige preço acima da EMA20, sem esperar novo cruzamento. RSI e EMA usam velas fechadas. Não define uma sequência de eventos."]],
       "faq": [["Preciso de código ou Pine Script?", "Não. Combine condições compatíveis por voz, chat com IA ou formulário de alerta."], ["Posso adicionar mais de duas condições?", "Plus permite até 3 por alerta; Pro até 5, como RSI, volume e preço/média."], ["Por que o Telegram não recebeu o aviso?", "Confira a vinculação e se o alerta está ativo. E exige todas as condições na mesma moeda. Repetição e limites do plano também se aplicam."]]
+    },
+    "voice-crypto-alerts": {
+      "link": "Alerta cripto por voz",
+      "title": "Crie alertas cripto por voz: RSI, volume e preço com o assistente de voz | MarketAlert",
+      "h1": "Como criar um alerta cripto por voz?",
+      "description": "Fale seu alerta e o assistente de voz do MarketAlert cria: um preço em uma moeda ou RSI e volume nas 100 maiores. Altere, liste ou apague alertas por voz.",
+      "intro": "Toque no microfone e fale seu alerta como você contaria a uma pessoa. O assistente de voz transforma sua frase em condições: se o pedido estiver claro, ele cria o alerta na hora; se faltar algo, ele pergunta. Do mesmo jeito você pode alterar, listar e apagar seus alertas. Prefere um formulário? Veja o guia de [alerta de preço cripto](features/price-alerts).",
+      "prompt": "Me avise quando, nas 100 maiores moedas, o RSI estiver abaixo de 30 e o volume for 2 vezes maior",
+      "exampleTitle": "Cada parte da sua frase vira uma configuração",
+      "caption": "Tela de resultado do assistente de voz: a frase falada, o alerta criado, o escopo e duas condições.",
+      "steps": [["Toque no microfone", "Abra o assistente de voz pelo microfone da tela Meus alertas. No modo Automático, a escuta termina quando você para de falar e o assistente volta a ouvir depois de cada resposta. No modo Segurar para falar, ele ouve enquanto você pressiona o botão."], ["Diga o que você quer", "Diga a moeda ou o escopo (por exemplo, as 100 maiores), a condição e, se quiser, o tempo gráfico e o canal de notificação. Sua fala vira texto no seu aparelho; só o texto é enviado."], ["O assistente entende", "Ele transforma nomes de moedas, indicadores e números em condições de alerta. Se não estiver claro qual moeda ou qual alerta você quer dizer, faz uma pergunta curta e você responde por voz de novo."], ["O alerta é criado", "Se o pedido estiver claro, o alerta é criado na hora e o cartão aparece na tela. Com \"Abrir alerta\" você vê os detalhes, ou fale de novo para mudar uma configuração."]],
+      "details": [["Quais alertas o assistente de voz cria?", "Condições de preço, variação percentual, máxima/mínima de 24 h, RSI, MACD, pico de volume e médias móveis. Ele cria o alerta para uma moeda ou para as 50, 100, 200 maiores ou todas as moedas, e pode [combinar condições com E / OU](features/multi-condition-alerts). As condições disponíveis dependem do seu plano."], ["O que acontece com a sua fala?", "Sua fala vira texto no seu aparelho, no idioma do app; nenhuma gravação de áudio é enviada. O assistente lê esse texto e cria o alerta nos servidores do MarketAlert. O alerta continua funcionando com o app fechado."], ["Assistente de voz ou chat de IA escrito?", "No assistente de voz, um pedido claro é aplicado direto e um cartão de resultado aparece. No chat de IA escrito, o assistente mostra primeiro um rascunho e o alerta é criado quando você aprova. Os dois criam os mesmos alertas; use o que for mais fácil para você."]],
+      "faq": [["O assistente de voz é grátis?", "Sim, está em todos os planos; você precisa entrar com uma conta, não funciona como convidado. Cada frase usa 1 mensagem de IA. No Free a cota renova todo dia; no Plus e no Pro, toda semana."], ["Em que idioma devo falar?", "No idioma em que você usa o app. Sua fala vira texto nesse idioma, no seu aparelho."], ["Posso apagar um alerta por voz?", "Sim. Basta dizer \"Apague meu alerta de ETH\". Se você tiver vários alertas de ETH ou não estiver claro qual você quer dizer, o assistente pergunta antes."], ["E se o assistente entender errado?", "O cartão de resultado mostra todas as configurações do alerta criado. Você pode mudar uma configuração falando, ou apagar o alerta. Se ele corrigiu uma palavra que ouviu, mostra isso no balão."], ["O assistente de voz faz operações?", "Não. Ele só cria e gerencia alertas; nunca se conecta a uma conta de corretora, não abre ordens e não dá recomendação de investimento."]],
+      "related": ["features/multi-condition-alerts", "features/all-coins-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/price-alerts"],
+      "plans": [["Free", "3 alertas; por voz, alertas de preço, variação % e máxima/mínima de 24 h em uma moeda. Altere, liste e apague alertas por voz. Cota de IA diária."], ["Plus", "20 alertas; todos os tipos de condição, até 3 condições por alerta e 2 alertas de todas as moedas até as 100 maiores. Push e Telegram. Cota de IA semanal."], ["Pro", "100 alertas; até 5 condições por alerta e 10 alertas sobre todas as moedas. Push, Telegram e webhook assinado. Cota de IA semanal maior."]],
+      "voice": {
+        "said": "[4|Me avise] quando, [1|nas 100 maiores moedas], [2|o RSI estiver abaixo de 30] e [3|o volume for 2 vezes maior]",
+        "alts": ["O assistente de voz está ouvindo: a frase aparece como texto", "O assistente de voz está entendendo o pedido", "O assistente de voz criou o alerta: 100 maiores moedas, condições de RSI e volume"],
+        "saidLabel": "Sua frase",
+        "map": [["Escopo", "100 maiores moedas · Spot USDT", "scope"], ["Condição 1", "RSI(14) abaixo de 30 · 1h", "rsi"], ["Condição 2", "Volume > 2 × SMA(20) · 1h", "vol"], ["Notificação", "Push · uma vez", "notif"]],
+        "and": "E: as duas condições precisam valer na mesma moeda. Este exemplo precisa do Plus ou Pro.",
+        "note": "Todas as configurações do alerta criado aparecem no cartão de resultado. Para mudar um detalhe, é só falar.",
+        "actionsTitle": "O que dá para fazer por voz?",
+        "actions": [["Criar", "Me avise se o BTC cair abaixo de 85.000"], ["Alterar", "Mude meu alerta de BTC para 82.000"], ["Listar", "Mostre meus alertas"], ["Apagar", "Apague meu alerta de ETH"]],
+        "actionsNote": "Se não estiver claro qual alerta você quer dizer, o assistente pergunta antes de alterar ou apagar.",
+        "ladderTitle": "Frases que você pode falar, das simples às avançadas",
+        "level": "Nível",
+        "ladder": [["Me avise uma vez se o BTC cair abaixo de 85.000.", "free"], ["Me avise se o SOL subir 3% em 15 minutos.", "free"], ["Me avise uma vez quando o BTC passar de 70.000 com o RSI de 1 hora abaixo de 30.", "plus"], ["Nas 100 maiores moedas, me avise no Telegram quando o volume de 15 minutos passar de 3 vezes a média.", "plus"], ["Me avise quando, nas 100 maiores moedas, o RSI estiver abaixo de 30 e o volume for 2 vezes maior.", "plus"]],
+        "plans": {"free": "Free", "plus": "Plus · Pro"}
+      }
     }
   },
   "ru": {
@@ -427,6 +577,36 @@
       "steps": [["Опишите оба условия", "Укажите рынок, охват, таймфрейм, порог RSI и период EMA."], ["Выберите логику", "И требует оба условия, ИЛИ — хотя бы одно."], ["Скажите или подтвердите черновик", "Используйте голосовой помощник или ИИ-чат. В текстовом чате сначала проверьте черновик."], ["Проверьте результат и Telegram", "Проверьте RSI(14) < 30, цену > EMA(20), 1h, топ-100 и Telegram."]],
       "details": [["Разница между И и ИЛИ", "При И значения RSI 28 недостаточно, если цена ниже EMA20. RSI 28 и цена выше EMA20 выполняют комбинацию. При ИЛИ достаточно одного условия."], ["Условия объединяются для каждой монеты", "RSI BTC не объединяется с EMA ETH. При И одна монета должна выполнить оба условия."], ["Выше EMA — не пересечение EMA", "Пример требует цену выше EMA20, не ожидая нового пересечения. RSI и EMA используют закрытые свечи. Последовательность событий не задаётся."]],
       "faq": [["Нужен код или Pine Script?", "Нет. Объединяйте поддерживаемые условия голосом, в ИИ-чате или форме алерта."], ["Можно добавить больше двух условий?", "Plus поддерживает до 3 условий на алерт, Pro — до 5, включая RSI, объём и цену/среднее."], ["Почему нет уведомления Telegram?", "Проверьте подключение и активность алерта. И требует все условия для одной монеты. Также действуют настройки повтора и лимиты тарифа."]]
+    },
+    "voice-crypto-alerts": {
+      "link": "Голосовые крипто-оповещения",
+      "title": "Крипто-оповещения голосом: RSI, объём и цена через голосового ассистента | MarketAlert",
+      "h1": "Как создать крипто-оповещение голосом?",
+      "description": "Скажи оповещение, и голосовой ассистент MarketAlert его создаст: цена по одной монете или RSI и объём по топ-100. Меняй, смотри и удаляй оповещения голосом.",
+      "intro": "Нажми на микрофон и скажи оповещение так, как объяснил бы человеку. Голосовой ассистент превращает фразу в условия: если запрос понятен, он сразу создаёт оповещение, а если чего-то не хватает, уточняет. Так же можно изменять, просматривать и удалять оповещения. Удобнее форма? Смотри руководство [ценовое крипто-оповещение](features/price-alerts).",
+      "prompt": "Сообщи, когда в топ-100 монет RSI будет ниже 30, а объём вырастет в 2 раза",
+      "exampleTitle": "Каждая часть фразы становится настройкой",
+      "caption": "Экран результата голосового ассистента: сказанная фраза, созданное оповещение, охват и два условия.",
+      "steps": [["Нажми на микрофон", "Открой голосового ассистента микрофоном на экране «Мои оповещения». В режиме «Автоматически» запись заканчивается, когда ты замолкаешь, и после каждого ответа ассистент снова слушает. В режиме «Удерживать» он слушает, пока ты держишь кнопку."], ["Скажи, что нужно", "Назови монету или охват (например, топ-100), условие и, если хочешь, таймфрейм свечей и канал уведомлений. Речь превращается в текст на твоём устройстве; отправляется только текст."], ["Ассистент понимает", "Он превращает названия монет, индикаторы и числа в условия оповещения. Если непонятно, какую монету или какое оповещение ты имеешь в виду, он задаёт короткий вопрос, и ты снова отвечаешь голосом."], ["Оповещение создано", "Если запрос понятен, оповещение создаётся сразу и его карточка появляется на экране. Кнопка «Открыть оповещение» показывает детали, или скажи ещё раз, чтобы изменить настройку."]],
+      "details": [["Какие оповещения создаёт голосовой ассистент?", "Условия по цене, процентному изменению, максимуму/минимуму за 24 часа, RSI, MACD, всплеску объёма и скользящим средним. Он создаёт оповещение для одной монеты или для топ-50, 100, 200 или всех монет и может [объединять условия через И / ИЛИ](features/multi-condition-alerts). Доступные условия зависят от тарифа."], ["Что происходит с твоей речью?", "Речь превращается в текст на устройстве, на языке приложения; аудиозапись не отправляется. Ассистент читает этот текст и создаёт оповещение на серверах MarketAlert. Оповещение работает и при закрытом приложении."], ["Голосовой ассистент или текстовый ИИ-чат?", "В голосовом ассистенте понятный запрос выполняется сразу и показывается карточка результата. В текстовом ИИ-чате ассистент сначала показывает черновик, и оповещение создаётся после твоего подтверждения. Оба создают одинаковые оповещения; выбирай, как тебе удобнее."]],
+      "faq": [["Голосовой ассистент бесплатный?", "Да, он есть во всех тарифах; нужно войти в аккаунт, в гостевом режиме он недоступен. Каждая фраза расходует 1 ИИ-сообщение. В Free лимит обновляется каждый день, в Plus и Pro — каждую неделю."], ["На каком языке говорить?", "На языке, на котором ты пользуешься приложением. Речь превращается в текст на этом языке прямо на устройстве."], ["Можно удалить оповещение голосом?", "Да. Просто скажи «Удали оповещение по ETH». Если оповещений по ETH несколько или непонятно, какое ты имеешь в виду, ассистент сначала уточнит."], ["Что если ассистент ошибётся?", "Карточка результата показывает все настройки созданного оповещения. Неверную настройку можно изменить голосом или удалить оповещение. Если ассистент исправил услышанное слово, он показывает это в облачке."], ["Голосовой ассистент торгует?", "Нет. Он только создаёт и управляет оповещениями; не подключается к аккаунту биржи, не открывает сделок и не даёт инвестиционных советов."]],
+      "related": ["features/multi-condition-alerts", "features/all-coins-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/price-alerts"],
+      "plans": [["Free", "3 оповещения; голосом — цена, изменение в % и максимум/минимум за 24 ч по одной монете. Изменяй, смотри и удаляй оповещения голосом. Дневной лимит ИИ."], ["Plus", "20 оповещений; все типы условий, до 3 условий в оповещении и 2 оповещения по всем монетам до топ-100. Push и Telegram. Недельный лимит ИИ."], ["Pro", "100 оповещений; до 5 условий в оповещении и 10 оповещений по всем монетам. Push, Telegram и подписанный webhook. Больший недельный лимит ИИ."]],
+      "voice": {
+        "said": "[4|Сообщи], когда [1|в топ-100 монет] [2|RSI будет ниже 30], а [3|объём вырастет в 2 раза]",
+        "alts": ["Голосовой ассистент слушает: фраза появляется текстом", "Голосовой ассистент разбирает запрос", "Голосовой ассистент создал оповещение: топ-100 монет, условия RSI и объёма"],
+        "saidLabel": "Твоя фраза",
+        "map": [["Охват", "Топ-100 монет · Спот USDT", "scope"], ["Условие 1", "RSI(14) ниже 30 · 1 ч", "rsi"], ["Условие 2", "Объём > 2 × SMA(20) · 1 ч", "vol"], ["Уведомление", "Push · один раз", "notif"]],
+        "and": "И: оба условия должны выполняться для одной и той же монеты. Для этого примера нужен Plus или Pro.",
+        "note": "Все настройки созданного оповещения видны на карточке результата. Чтобы что-то изменить, просто скажи об этом.",
+        "actionsTitle": "Что можно делать голосом?",
+        "actions": [["Создать", "Сообщи, если BTC упадёт ниже 85 000"], ["Изменить", "Передвинь оповещение по BTC на 82 000"], ["Показать", "Покажи мои оповещения"], ["Удалить", "Удали оповещение по ETH"]],
+        "actionsNote": "Если непонятно, какое оповещение ты имеешь в виду, ассистент уточнит перед изменением или удалением.",
+        "ladderTitle": "Фразы, которые можно сказать, от простых к сложным",
+        "level": "Уровень",
+        "ladder": [["Сообщи один раз, если BTC упадёт ниже 85 000.", "free"], ["Сообщи, если SOL вырастет на 3 % за 15 минут.", "free"], ["Сообщи один раз, когда BTC поднимется выше 70 000, а часовой RSI будет ниже 30.", "plus"], ["По топ-100 монет сообщи в Telegram, когда 15-минутный объём превысит среднее в 3 раза.", "plus"], ["Сообщи, когда в топ-100 монет RSI будет ниже 30, а объём вырастет в 2 раза.", "plus"]],
+        "plans": {"free": "Free", "plus": "Plus · Pro"}
+      }
     }
   },
   "ja": {
@@ -498,6 +678,36 @@
       "steps": [["2つの条件を伝える", "市場、対象銘柄、時間足、RSIのしきい値、EMAの期間を指定。"], ["組み合わせ方を選ぶ", "両方必要ならAND、どちらかでよければORを選びます。"], ["音声で伝えるか下書きを承認", "音声アシスタントかAIチャットを利用。文字チャットでは下書きを確認して作成します。"], ["結果とTelegramを確認", "RSI(14) < 30、価格 > EMA(20)、1h、上位100銘柄、Telegramを確認します。"]],
       "details": [["ANDとORの違い", "ANDではRSIが28でも価格がEMA20未満なら不成立。RSIが28かつ価格がEMA20より上なら成立します。ORなら一方で十分です。"], ["条件は銘柄ごとに評価", "BTCのRSIとETHのEMAを組み合わせることはありません。ANDでは同じ銘柄が両方を満たす必要があります。"], ["EMAより上とEMAクロスは別", "例は価格がEMA20より上であることを求め、新たな交差は待ちません。RSIとEMAは確定足を使用し、出来事の順序は定義しません。"]],
       "faq": [["コードやPine Scriptは必要ですか？", "不要です。対応する条件を音声、AIチャット、アラートフォームで組み合わせられます。"], ["3つ以上の条件も使えますか？", "Plusは1アラート最大3条件、Proは5条件。RSI、出来高、価格/移動平均などに対応します。"], ["Telegramに届かないのはなぜ？", "Telegram連携とアラートの有効状態を確認。ANDは同じ銘柄ですべての条件が必要です。繰り返し設定とプランの通知上限も適用されます。"]]
+    },
+    "voice-crypto-alerts": {
+      "link": "音声で暗号資産アラート",
+      "title": "音声で暗号資産アラートを設定：音声アシスタントでRSI・出来高・価格 | MarketAlert",
+      "h1": "音声で暗号資産アラートを設定するには？",
+      "description": "アラートを話すだけで、MarketAlertの音声アシスタントが設定します。1コインの価格も、上位100コインのRSIと出来高も。アラートの変更・一覧・削除も音声で。",
+      "intro": "マイクをタップして、人に頼むようにアラートを話してください。音声アシスタントが文を条件に変換し、内容がはっきりしていればすぐにアラートを作成します。足りない情報があれば質問します。同じようにアラートの変更、一覧表示、削除もできます。フォームで設定したい場合は[暗号資産の価格アラート](features/price-alerts)をご覧ください。",
+      "prompt": "上位100コインでRSIが30未満かつ出来高が2倍になったら知らせて",
+      "exampleTitle": "話した言葉の一つひとつが設定になる",
+      "caption": "音声アシスタントの結果画面：話した文、作成されたアラート、対象範囲と2つの条件。",
+      "steps": [["マイクをタップ", "アラート一覧画面のマイクから音声アシスタントを開きます。自動モードでは話し終えると聞き取りが終わり、返答のたびにアシスタントが再び聞き取ります。長押しモードではボタンを押している間だけ聞き取ります。"], ["したいことを話す", "コインまたは範囲（例：上位100コイン）、条件、必要なら足の時間と通知チャネルを話します。音声は端末上で文字に変換され、送られるのは文字だけです。"], ["アシスタントが理解", "コイン名、指標、数字をアラート条件に変換します。どのコインやどのアラートのことかはっきりしない場合は短く質問するので、もう一度音声で答えます。"], ["アラートが作成される", "内容がはっきりしていれば、アラートはすぐに作成され、カードが画面に表示されます。「アラートを開く」で詳細を確認するか、もう一度話して設定を変更できます。"]],
+      "details": [["音声アシスタントで作れるアラートは？", "価格、変化率、24時間高値/安値、RSI、MACD、出来高急増、移動平均の条件です。1つのコイン、または上位50・100・200や全コインを対象に設定でき、[条件をAND / ORで組み合わせる](features/multi-condition-alerts)こともできます。使える条件はプランによって異なります。"], ["話した音声はどう扱われる？", "音声は端末上でアプリの言語の文字に変換され、録音データは送信されません。アシスタントはその文字を読み取り、MarketAlertのサーバーでアラートを作成します。アプリを閉じていてもアラートは動き続けます。"], ["音声アシスタントとテキストのAIチャットの違い", "音声アシスタントでは、はっきりした依頼はそのまま実行され、結果カードが表示されます。テキストのAIチャットでは、まず下書きが表示され、承認するとアラートが作成されます。どちらも同じアラートを作れるので、使いやすい方を選んでください。"]],
+      "faq": [["音声アシスタントは無料ですか？", "はい、すべてのプランで使えます。アカウントでのログインが必要で、ゲストでは使えません。1文ごとにAIメッセージを1回分使います。Freeは毎日、PlusとProは毎週回数がリセットされます。"], ["何語で話せばいいですか？", "アプリで使っている言語で話してください。音声はその言語で、端末上で文字に変換されます。"], ["音声でアラートを削除できますか？", "はい。「ETHのアラートを削除して」と言うだけです。ETHのアラートが複数ある場合や、どのアラートか分からない場合は、先に確認します。"], ["アシスタントが聞き間違えたら？", "結果カードには作成されたアラートの設定がすべて表示されます。間違った設定は話して変更するか、アラートを削除できます。聞き取った言葉を補正した場合は、吹き出しにその内容が表示されます。"], ["音声アシスタントは取引をしますか？", "いいえ。アラートの作成と管理だけを行い、取引所のアカウントには接続せず、注文も出さず、投資助言もしません。"]],
+      "related": ["features/multi-condition-alerts", "features/all-coins-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/price-alerts"],
+      "plans": [["Free", "3アラート。1つのコインの価格・変化率・24時間高値/安値アラートを音声で設定。アラートの変更・一覧・削除も音声で。AI回数は毎日。"], ["Plus", "20アラート。すべての条件タイプ、1アラートにつき最大3条件、上位100までの全コインアラート2件。プッシュとTelegram。AI回数は毎週。"], ["Pro", "100アラート。1アラートにつき最大5条件、全コインで全コインアラート10件。プッシュ、Telegram、署名付きWebhook。より多い毎週のAI回数。"]],
+      "voice": {
+        "said": "[1|上位100コイン]で[2|RSIが30未満]かつ[3|出来高が2倍]になったら[4|知らせて]",
+        "alts": ["音声アシスタントが聞き取り中：話した文が文字で表示される", "音声アシスタントが依頼を理解中", "音声アシスタントがアラートを作成：上位100コイン、RSIと出来高の条件"],
+        "saidLabel": "話した文",
+        "map": [["対象", "上位100コイン · 現物 USDT", "scope"], ["条件1", "RSI(14) 30未満 · 1時間", "rsi"], ["条件2", "出来高 > SMA(20) × 2 · 1時間", "vol"], ["通知", "プッシュ · 1回のみ", "notif"]],
+        "and": "AND：2つの条件が同じコインで同時に成り立つ必要があります。この例はPlusまたはProで設定できます。",
+        "note": "作成されたアラートの設定はすべて結果カードに表示されます。細かい点を変えたいときは、話すだけです。",
+        "actionsTitle": "音声でできること",
+        "actions": [["作成", "BTCが85,000を下回ったら通知して"], ["変更", "BTCのアラートを82,000にして"], ["一覧", "アラートを見せて"], ["削除", "ETHのアラートを削除して"]],
+        "actionsNote": "どのアラートのことか分からない場合、アシスタントは変更や削除の前に確認します。",
+        "ladderTitle": "話せる文の例（かんたんな順）",
+        "level": "レベル",
+        "ladder": [["BTCが85,000を下回ったら1回だけ通知して。", "free"], ["SOLが15分で3%上がったら知らせて。", "free"], ["BTCが70,000を超えて1時間足のRSIが30未満のとき、1回だけ知らせて。", "plus"], ["上位100コインで15分足の出来高が平均の3倍を超えたらTelegramで知らせて。", "plus"], ["上位100コインでRSIが30未満かつ出来高が2倍になったら知らせて。", "plus"]],
+        "plans": {"free": "Free", "plus": "Plus · Pro"}
+      }
     }
   },
   "zh": {
@@ -569,6 +779,36 @@
       "steps": [["描述两个条件", "说明市场、币种范围、时间周期、RSI阈值和EMA周期。"], ["选择组合逻辑", "两个都需要时用AND，满足一个即可时用OR。"], ["说出指令或确认草稿", "使用语音助手或AI聊天。文字聊天中先检查草稿，再创建提醒。"], ["检查结果和Telegram渠道", "确认RSI(14) < 30、价格 > EMA(20)、1h、前100币种和Telegram。"]],
       "details": [["AND与OR有何区别？", "使用AND时，即使RSI为28，价格低于EMA20仍不满足组合。RSI为28且价格高于EMA20才满足。OR只需一个条件。"], ["按每个币种组合条件", "不会把BTC的RSI与ETH的EMA条件组合。同一个币种必须满足两个条件，AND组合才成立。"], ["高于EMA不等于穿越EMA", "示例要求价格高于EMA20，不等待新的穿越。RSI和EMA采用已收盘K线，也不定义先后发生的事件链。"]],
       "faq": [["需要代码或Pine Script吗？", "不需要。可通过语音、AI文字聊天或提醒表单组合支持的条件。"], ["能添加两个以上的条件吗？", "Plus每个提醒最多3个条件，Pro最多5个，可使用RSI、成交量、价格/均线等支持的类型。"], ["为什么没收到Telegram通知？", "检查Telegram绑定和提醒启用状态。AND要求同一币种满足全部条件；重复设置及套餐通知上限也适用。"]]
+    },
+    "voice-crypto-alerts": {
+      "link": "语音加密货币提醒",
+      "title": "用语音设置加密货币提醒：语音助手设置 RSI、成交量和价格 | MarketAlert",
+      "h1": "如何用语音设置加密货币提醒？",
+      "description": "说出你的提醒，MarketAlert 语音助手帮你设置：单个币种的价格，或前 100 币种的 RSI 和成交量。也能用语音修改、列出和删除提醒。",
+      "intro": "点一下麦克风，像对人说话一样说出你的提醒。语音助手会把这句话变成条件：请求清楚时立即创建提醒，缺少信息时会先问你。同样也能用语音修改、列出和删除提醒。想用表单设置？请看[加密货币价格提醒](features/price-alerts)指南。",
+      "prompt": "前 100 币种中 RSI 低于 30 且成交量达到 2 倍时通知我",
+      "exampleTitle": "你说的每一部分都会变成一项设置",
+      "caption": "语音助手结果界面：说出的句子、创建的提醒、范围和两个条件。",
+      "steps": [["点一下麦克风", "在“我的提醒”界面点麦克风打开语音助手。自动模式下，你停止说话后聆听结束，每次回复后助手会再次聆听。按住说话模式下，按住按钮期间一直聆听。"], ["说出你想要的", "说出币种或范围（例如前 100 币种）、条件，以及需要时的 K 线周期和通知渠道。语音会在你的设备上转成文字，只发送文字。"], ["助手理解你的意思", "它把币种名称、指标和数字转成提醒条件。如果不清楚你指的是哪个币种或哪个提醒，它会问一个简短的问题，你再用语音回答。"], ["提醒已创建", "请求清楚时，提醒会立即创建，卡片显示在屏幕上。点“打开提醒”查看详情，或再说一句来修改某项设置。"]],
+      "details": [["语音助手能创建哪些提醒？", "价格、涨跌幅、24 小时高/低点、RSI、MACD、成交量放大和均线条件。可以针对单个币种，或前 50、100、200 或全部币种设置，还能[用“且 / 或”组合条件](features/multi-condition-alerts)。可用条件取决于你的方案。"], ["你的语音如何处理？", "语音在你的设备上按应用语言转成文字，不会发送录音。助手读取这段文字，在 MarketAlert 服务器上创建提醒。应用关闭时提醒也会继续运行。"], ["语音助手和文字 AI 对话有什么不同？", "语音助手会直接执行清楚的请求并显示结果卡片。文字 AI 对话会先显示草稿，你确认后才创建提醒。两者创建的是同样的提醒，用你觉得方便的那个即可。"]],
+      "faq": [["语音助手免费吗？", "是的，所有方案都有；需要登录账户，访客模式不能使用。每句话消耗 1 次 AI 消息。Free 每天恢复次数，Plus 和 Pro 每周恢复。"], ["应该用什么语言说？", "用你使用应用的语言说。语音会在设备上按该语言转成文字。"], ["可以用语音删除提醒吗？", "可以。说“删除我的 ETH 提醒”即可。如果你有多个 ETH 提醒，或不清楚你指的是哪一个，助手会先确认。"], ["助手理解错了怎么办？", "结果卡片会显示所创建提醒的全部设置。你可以说出来修改错误的设置，或删除提醒。如果助手纠正了听到的词，会在对话气泡里显示出来。"], ["语音助手会交易吗？", "不会。它只创建和管理提醒；不会连接交易所账户，不会下单，也不提供投资建议。"]],
+      "related": ["features/multi-condition-alerts", "features/all-coins-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/price-alerts"],
+      "plans": [["Free", "3 个提醒；用语音为单个币种设置价格、涨跌幅和 24 小时高/低点提醒。也能用语音修改、列出和删除提醒。AI 次数每日恢复。"], ["Plus", "20 个提醒；全部条件类型，每个提醒最多 3 个条件，以及 2 个最多覆盖前 100 的全部币种提醒。推送和 Telegram。AI 次数每周恢复。"], ["Pro", "100 个提醒；每个提醒最多 5 个条件，以及 10 个覆盖全部币种的全部币种提醒。推送、Telegram 和签名 webhook。更多的每周 AI 次数。"]],
+      "voice": {
+        "said": "[1|前 100 币种]中 [2|RSI 低于 30] 且[3|成交量达到 2 倍]时[4|通知我]",
+        "alts": ["语音助手正在聆听：说出的句子显示为文字", "语音助手正在理解请求", "语音助手已创建提醒：前 100 币种，RSI 和成交量条件"],
+        "saidLabel": "你说的话",
+        "map": [["范围", "前 100 币种 · 现货 USDT", "scope"], ["条件 1", "RSI(14) 低于 30 · 1 小时", "rsi"], ["条件 2", "成交量 > 2 × SMA(20) · 1 小时", "vol"], ["通知", "推送 · 一次", "notif"]],
+        "and": "且：两个条件必须在同一个币种上同时成立。这个例子需要 Plus 或 Pro。",
+        "note": "所创建提醒的全部设置都显示在结果卡片上。想改某个细节，直接说出来就行。",
+        "actionsTitle": "用语音能做什么？",
+        "actions": [["创建", "BTC 跌破 85,000 时通知我"], ["修改", "把我的 BTC 提醒改成 82,000"], ["列出", "显示我的提醒"], ["删除", "删除我的 ETH 提醒"]],
+        "actionsNote": "如果不清楚你指的是哪个提醒，助手会在修改或删除前先确认。",
+        "ladderTitle": "可以说的句子，由简到难",
+        "level": "等级",
+        "ladder": [["BTC 跌破 85,000 时通知我一次。", "free"], ["SOL 在 15 分钟内上涨 3% 时通知我。", "free"], ["BTC 突破 70,000 且 1 小时 RSI 低于 30 时通知我一次。", "plus"], ["前 100 币种中 15 分钟成交量超过均值 3 倍时，用 Telegram 通知我。", "plus"], ["前 100 币种中 RSI 低于 30 且成交量达到 2 倍时通知我。", "plus"]],
+        "plans": {"free": "Free", "plus": "Plus · Pro"}
+      }
     }
   },
   "hi": {
@@ -640,6 +880,36 @@
       "steps": [["दोनों शर्तें बताएँ", "बाज़ार, कॉइन का दायरा, समयावधि, RSI सीमा और EMA अवधि बताएँ।"], ["जोड़ने का तरीका चुनें", "दोनों ज़रूरी हों तो AND, कोई एक काफ़ी हो तो OR चुनें।"], ["बोलें या ड्राफ़्ट स्वीकारें", "वॉइस असिस्टेंट या AI चैट इस्तेमाल करें। लिखित चैट में ड्राफ़्ट जाँचकर अलर्ट बनाएँ।"], ["नतीजा और Telegram जाँचें", "RSI(14) < 30, कीमत > EMA(20), 1h, शीर्ष 100 और Telegram की पुष्टि करें।"]],
       "details": [["AND और OR का अंतर", "AND में RSI 28 होना काफ़ी नहीं यदि कीमत EMA20 से नीचे है। RSI 28 और कीमत EMA20 से ऊपर हो तो दोनों शर्तें पूरी हैं। OR में एक शर्त काफ़ी है।"], ["शर्तें हर कॉइन के लिए जुड़ती हैं", "BTC का RSI और ETH की EMA शर्त नहीं जोड़ी जाती। AND के लिए उसी कॉइन को दोनों शर्तें पूरी करनी होती हैं।"], ["EMA से ऊपर होना क्रॉसओवर नहीं है", "उदाहरण कीमत को EMA20 से ऊपर माँगता है, नए क्रॉसओवर का इंतज़ार नहीं करता। RSI और EMA बंद कैंडल लेते हैं। यह घटनाओं का क्रम नहीं बनाता।"]],
       "faq": [["क्या कोड या Pine Script चाहिए?", "नहीं। समर्थित शर्तें बोलकर, AI चैट या अलर्ट फ़ॉर्म में जोड़ सकते हैं।"], ["दो से अधिक शर्तें जोड़ सकते हैं?", "Plus प्रति अलर्ट 3 और Pro 5 शर्तों तक देता है, जिनमें RSI, वॉल्यूम और कीमत/औसत शामिल हैं।"], ["Telegram पर सूचना क्यों नहीं आई?", "Telegram जुड़ा हो और अलर्ट चालू हो। AND में सभी शर्तें उसी कॉइन पर चाहिए। दोहराव सेटिंग और प्लान की सूचना सीमा भी लागू हैं।"]]
+    },
+    "voice-crypto-alerts": {
+      "link": "आवाज़ से क्रिप्टो अलर्ट",
+      "title": "आवाज़ से क्रिप्टो अलर्ट सेट करें: वॉइस असिस्टेंट से RSI, वॉल्यूम और कीमत | MarketAlert",
+      "h1": "आवाज़ से क्रिप्टो अलर्ट कैसे सेट करें?",
+      "description": "अपना अलर्ट बोलें, MarketAlert वॉइस असिस्टेंट उसे सेट कर देगा: एक कॉइन की कीमत या टॉप 100 में RSI और वॉल्यूम। अलर्ट आवाज़ से बदलें, देखें और हटाएँ।",
+      "intro": "माइक्रोफ़ोन पर टैप करें और अलर्ट वैसे ही बोलें जैसे किसी इंसान को बताते। वॉइस असिस्टेंट आपके वाक्य को शर्तों में बदलता है: अनुरोध साफ़ हो तो तुरंत अलर्ट बना देता है, कुछ कमी हो तो पूछ लेता है। इसी तरह आप अलर्ट बदल, देख और हटा भी सकते हैं। फ़ॉर्म से सेट करना है? [क्रिप्टो प्राइस अलर्ट](features/price-alerts) गाइड देखें।",
+      "prompt": "टॉप 100 कॉइन में जब RSI 30 से नीचे हो और वॉल्यूम 2 गुना हो, तब बताना",
+      "exampleTitle": "आपके वाक्य का हर हिस्सा एक सेटिंग बनता है",
+      "caption": "वॉइस असिस्टेंट की नतीजा स्क्रीन: बोला गया वाक्य, बना अलर्ट, दायरा और दो शर्तें।",
+      "steps": [["माइक्रोफ़ोन पर टैप करें", "मेरे अलर्ट स्क्रीन के माइक्रोफ़ोन से वॉइस असिस्टेंट खोलें। स्वचालित मोड में आपके चुप होते ही सुनना रुक जाता है और हर जवाब के बाद असिस्टेंट फिर सुनता है। दबाकर रखें मोड में बटन दबाए रखने तक सुनता है।"], ["जो चाहिए वह बोलें", "कॉइन या दायरा (जैसे टॉप 100 कॉइन), शर्त और चाहें तो कैंडल टाइमफ़्रेम और सूचना चैनल बोलें। आपकी आवाज़ आपके डिवाइस पर टेक्स्ट में बदलती है; सिर्फ़ टेक्स्ट भेजा जाता है।"], ["असिस्टेंट समझता है", "वह कॉइन के नाम, इंडिकेटर और संख्याओं को अलर्ट की शर्तों में बदलता है। अगर साफ़ न हो कि आप किस कॉइन या किस अलर्ट की बात कर रहे हैं, तो वह छोटा सवाल पूछता है और आप फिर आवाज़ से जवाब देते हैं।"], ["अलर्ट बन जाता है", "अनुरोध साफ़ हो तो अलर्ट तुरंत बनता है और उसका कार्ड स्क्रीन पर दिखता है। \"अलर्ट खोलें\" से विवरण देखें, या कोई सेटिंग बदलने के लिए फिर बोलें।"]],
+      "details": [["वॉइस असिस्टेंट कौन-से अलर्ट बना सकता है?", "कीमत, प्रतिशत बदलाव, 24 घंटे का उच्च/निम्न, RSI, MACD, वॉल्यूम में उछाल और मूविंग एवरेज की शर्तें। वह एक कॉइन के लिए या टॉप 50, 100, 200 या सभी कॉइन के लिए अलर्ट बनाता है और [शर्तों को AND / OR से जोड़](features/multi-condition-alerts) सकता है। कौन-सी शर्तें मिलेंगी, यह आपके प्लान पर निर्भर है।"], ["आपकी आवाज़ का क्या होता है?", "आपकी आवाज़ आपके डिवाइस पर ऐप की भाषा में टेक्स्ट में बदलती है; कोई ऑडियो रिकॉर्डिंग नहीं भेजी जाती। असिस्टेंट उस टेक्स्ट को पढ़कर MarketAlert के सर्वर पर अलर्ट बनाता है। ऐप बंद होने पर भी अलर्ट चलता रहता है।"], ["वॉइस असिस्टेंट या लिखित AI चैट?", "वॉइस असिस्टेंट में साफ़ अनुरोध सीधे लागू होता है और नतीजे का कार्ड दिखता है। लिखित AI चैट में असिस्टेंट पहले ड्राफ़्ट दिखाता है और आपकी मंज़ूरी पर अलर्ट बनता है। दोनों एक जैसे अलर्ट बनाते हैं; जो आसान लगे वही चुनें।"]],
+      "faq": [["क्या वॉइस असिस्टेंट मुफ़्त है?", "हाँ, यह हर प्लान में है; इसके लिए अकाउंट से साइन इन करना ज़रूरी है, मेहमान के रूप में नहीं चलता। हर वाक्य 1 AI संदेश इस्तेमाल करता है। Free में सीमा रोज़, Plus और Pro में हर हफ़्ते नई होती है।"], ["मुझे किस भाषा में बोलना चाहिए?", "जिस भाषा में आप ऐप इस्तेमाल करते हैं। आपकी आवाज़ उसी भाषा में आपके डिवाइस पर टेक्स्ट बनती है।"], ["क्या मैं आवाज़ से अलर्ट हटा सकता हूँ?", "हाँ। बस \"मेरा ETH अलर्ट हटा दो\" बोलें। अगर आपके कई ETH अलर्ट हैं या साफ़ न हो कि कौन-सा अलर्ट, तो असिस्टेंट पहले पूछता है।"], ["अगर असिस्टेंट गलत समझे तो?", "नतीजे के कार्ड में बने अलर्ट की सारी सेटिंग दिखती हैं। गलत सेटिंग को बोलकर बदल सकते हैं या अलर्ट हटा सकते हैं। अगर उसने सुना हुआ कोई शब्द सुधारा, तो वह बबल में दिखाता है।"], ["क्या वॉइस असिस्टेंट ट्रेड करता है?", "नहीं। वह सिर्फ़ अलर्ट बनाता और संभालता है; किसी एक्सचेंज अकाउंट से नहीं जुड़ता, ऑर्डर नहीं लगाता और निवेश सलाह नहीं देता।"]],
+      "related": ["features/multi-condition-alerts", "features/all-coins-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/price-alerts"],
+      "plans": [["Free", "3 अलर्ट; आवाज़ से एक कॉइन के लिए कीमत, प्रतिशत बदलाव और 24 घंटे उच्च/निम्न अलर्ट। अलर्ट आवाज़ से बदलें, देखें और हटाएँ। रोज़ की AI सीमा।"], ["Plus", "20 अलर्ट; सभी शर्त प्रकार, हर अलर्ट में 3 तक शर्तें और टॉप 100 तक 2 सभी कॉइन अलर्ट। पुश और Telegram। हफ़्ते की AI सीमा।"], ["Pro", "100 अलर्ट; हर अलर्ट में 5 तक शर्तें और सभी कॉइन पर 10 सभी कॉइन अलर्ट। पुश, Telegram और साइन किया webhook। बड़ी हफ़्ते की AI सीमा।"]],
+      "voice": {
+        "said": "[1|टॉप 100 कॉइन में] जब [2|RSI 30 से नीचे हो] और [3|वॉल्यूम 2 गुना हो], तब [4|बताना]",
+        "alts": ["वॉइस असिस्टेंट सुन रहा है: बोला गया वाक्य टेक्स्ट में दिखता है", "वॉइस असिस्टेंट अनुरोध समझ रहा है", "वॉइस असिस्टेंट ने अलर्ट बना दिया: टॉप 100 कॉइन, RSI और वॉल्यूम शर्तें"],
+        "saidLabel": "आपका वाक्य",
+        "map": [["दायरा", "टॉप 100 कॉइन · स्पॉट USDT", "scope"], ["शर्त 1", "RSI(14) 30 से नीचे · 1 घं", "rsi"], ["शर्त 2", "वॉल्यूम > 2 × SMA(20) · 1 घं", "vol"], ["सूचना", "पुश · एक बार", "notif"]],
+        "and": "AND: दोनों शर्तें एक ही कॉइन पर साथ में पूरी होनी चाहिए। यह उदाहरण Plus या Pro में बनता है।",
+        "note": "बने अलर्ट की सारी सेटिंग नतीजे के कार्ड पर दिखती हैं। कोई बात बदलनी हो तो बस बोल दें।",
+        "actionsTitle": "आवाज़ से क्या-क्या कर सकते हैं?",
+        "actions": [["बनाएँ", "BTC 85,000 से नीचे जाए तो बताना"], ["बदलें", "मेरा BTC अलर्ट 82,000 कर दो"], ["देखें", "मेरे अलर्ट दिखाओ"], ["हटाएँ", "मेरा ETH अलर्ट हटा दो"]],
+        "actionsNote": "अगर साफ़ न हो कि कौन-सा अलर्ट, तो असिस्टेंट बदलने या हटाने से पहले पूछता है।",
+        "ladderTitle": "बोलने लायक वाक्य, आसान से उन्नत तक",
+        "level": "स्तर",
+        "ladder": [["BTC 85,000 से नीचे जाए तो एक बार बताना।", "free"], ["SOL 15 मिनट में 3% बढ़े तो बताना।", "free"], ["BTC 70,000 के ऊपर जाए और 1 घंटे का RSI 30 से नीचे हो, तब एक बार बताना।", "plus"], ["टॉप 100 कॉइन में 15 मिनट का वॉल्यूम औसत के 3 गुना से ऊपर जाए तो Telegram पर बताना।", "plus"], ["टॉप 100 कॉइन में जब RSI 30 से नीचे हो और वॉल्यूम 2 गुना हो, तब बताना।", "plus"]],
+        "plans": {"free": "Free", "plus": "Plus · Pro"}
+      }
     }
   },
   "ar": {
@@ -711,6 +981,36 @@
       "steps": [["اشرح الشرطين", "حدّد السوق ونطاق العملات والفاصل الزمني وعتبة RSI وفترة EMA."], ["اختر طريقة الدمج", "استخدم AND إذا كان الشرطان مطلوبين، وOR إذا كان أحدهما يكفي."], ["تحدث أو وافق على المسودة", "استخدم المساعد الصوتي أو محادثة الذكاء الاصطناعي. نصيًا، راجع المسودة ثم أنشئ التنبيه."], ["راجع النتيجة وTelegram", "تحقق من RSI(14) < 30 والسعر > EMA(20) و1h وأعلى 100 وقناة Telegram."]],
       "details": [["الفرق بين AND وOR", "مع AND لا يكفي RSI عند 28 إذا كان السعر تحت EMA20. RSI عند 28 والسعر فوق EMA20 يحققان الدمج. أما OR فيكفيه شرط واحد."], ["يُقيَّم الدمج لكل عملة", "لا يُدمج RSI الخاص بـBTC مع EMA الخاص بـETH. يجب على العملة نفسها تحقيق الشرطين في AND."], ["فوق EMA لا يعني تقاطع EMA", "يتطلب المثال سعرًا فوق EMA20 دون انتظار تقاطع جديد. يستخدم RSI وEMA شموعًا مغلقة. ولا يعرّف تسلسلًا للأحداث."]],
       "faq": [["هل أحتاج إلى البرمجة أو Pine Script؟", "لا. ادمج الشروط المدعومة بالصوت أو محادثة الذكاء الاصطناعي أو نموذج التنبيه."], ["هل يمكن إضافة أكثر من شرطين؟", "تدعم Plus حتى 3 شروط للتنبيه وPro حتى 5، مثل RSI والحجم والسعر/المتوسط."], ["لماذا لم يصل إشعار Telegram؟", "تحقق من الربط وتفعيل التنبيه. يتطلب AND جميع الشروط للعملة نفسها. تُطبَّق أيضًا إعدادات التكرار وحدود إشعارات الخطة."]]
+    },
+    "voice-crypto-alerts": {
+      "link": "تنبيه العملات الرقمية بالصوت",
+      "title": "أنشئ تنبيهات العملات الرقمية بالصوت: RSI والحجم والسعر عبر المساعد الصوتي | MarketAlert",
+      "h1": "كيف تنشئ تنبيهًا للعملات الرقمية بالصوت؟",
+      "description": "قل تنبيهك وسيُنشئه المساعد الصوتي في MarketAlert: سعر لعملة واحدة أو RSI والحجم في أفضل 100 عملة. عدّل تنبيهاتك واعرضها واحذفها بالصوت.",
+      "intro": "اضغط على الميكروفون وقل تنبيهك كما تشرحه لشخص آخر. يحوّل المساعد الصوتي جملتك إلى شروط: إذا كان الطلب واضحًا أنشأ التنبيه فورًا، وإذا نقص شيء سألك. وبالطريقة نفسها يمكنك تعديل تنبيهاتك وعرضها وحذفها. تفضّل النموذج؟ اطّلع على دليل [تنبيه سعر العملات الرقمية](features/price-alerts).",
+      "prompt": "أخبرني عندما يكون RSI تحت 30 والحجم ضعفين في أفضل 100 عملة",
+      "exampleTitle": "كل جزء من جملتك يصبح إعدادًا",
+      "caption": "شاشة نتيجة المساعد الصوتي: الجملة المنطوقة، والتنبيه المُنشأ، والنطاق، وشرطان.",
+      "steps": [["اضغط على الميكروفون", "افتح المساعد الصوتي من الميكروفون في شاشة تنبيهاتي. في الوضع التلقائي ينتهي الاستماع عندما تصمت، ويستمع المساعد من جديد بعد كل رد. في وضع الضغط المطوّل يستمع ما دمت تضغط على الزر."], ["قل ما تريد", "اذكر العملة أو النطاق (مثل أفضل 100 عملة)، والشرط، وإن أردت الإطار الزمني للشموع وقناة الإشعار. يتحوّل كلامك إلى نص على جهازك، ويُرسل النص فقط."], ["المساعد يفهم طلبك", "يحوّل أسماء العملات والمؤشرات والأرقام إلى شروط التنبيه. إذا لم يكن واضحًا أي عملة أو أي تنبيه تقصد، يطرح سؤالًا قصيرًا وتجيب عنه بالصوت."], ["يُنشأ التنبيه", "إذا كان الطلب واضحًا يُنشأ التنبيه فورًا وتظهر بطاقته على الشاشة. اضغط \"فتح التنبيه\" لترى التفاصيل، أو تحدّث من جديد لتغيير إعداد."]],
+      "details": [["ما التنبيهات التي يُنشئها المساعد الصوتي؟", "شروط السعر، ونسبة التغيّر، وأعلى/أدنى سعر خلال 24 ساعة، وRSI، وMACD، وارتفاع الحجم، والمتوسطات المتحركة. يُنشئ التنبيه لعملة واحدة أو لأفضل 50 أو 100 أو 200 عملة أو لكل العملات، ويمكنه [دمج الشروط بـ و / أو](features/multi-condition-alerts). الشروط المتاحة تعتمد على خطتك."], ["ماذا يحدث لكلامك؟", "يتحوّل كلامك إلى نص على جهازك بلغة التطبيق، ولا يُرسل أي تسجيل صوتي. يقرأ المساعد هذا النص ويُنشئ التنبيه على خوادم MarketAlert. ويستمر التنبيه في العمل والتطبيق مغلق."], ["المساعد الصوتي أم الدردشة الكتابية بالذكاء الاصطناعي؟", "في المساعد الصوتي يُنفَّذ الطلب الواضح مباشرة وتظهر بطاقة النتيجة. وفي الدردشة الكتابية يعرض المساعد مسودة أولًا ويُنشأ التنبيه بعد موافقتك. كلاهما يُنشئ التنبيهات نفسها؛ استخدم الأسهل لك."]],
+      "faq": [["هل المساعد الصوتي مجاني؟", "نعم، متاح في كل الخطط؛ يلزم تسجيل الدخول بحساب ولا يعمل للضيوف. كل جملة تستهلك رسالة ذكاء اصطناعي واحدة. في Free يتجدد الرصيد يوميًا، وفي Plus وPro أسبوعيًا."], ["بأي لغة أتحدث؟", "باللغة التي تستخدم بها التطبيق. يتحوّل كلامك إلى نص بهذه اللغة على جهازك."], ["هل يمكنني حذف تنبيه بالصوت؟", "نعم. قل فقط \"احذف تنبيه ETH\". إذا كان لديك أكثر من تنبيه لـ ETH أو لم يكن واضحًا أي تنبيه تقصد، يسألك المساعد أولًا."], ["ماذا لو أخطأ المساعد في الفهم؟", "تعرض بطاقة النتيجة كل إعدادات التنبيه المُنشأ. يمكنك تغيير الإعداد الخاطئ بقوله، أو حذف التنبيه. وإذا صحّح المساعد كلمة سمعها، يظهر ذلك في فقاعة الكلام."], ["هل يتداول المساعد الصوتي؟", "لا. هو ينشئ التنبيهات ويديرها فقط؛ لا يتصل بحساب منصة تداول ولا يفتح صفقات ولا يقدّم نصائح استثمارية."]],
+      "related": ["features/multi-condition-alerts", "features/all-coins-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/price-alerts"],
+      "plans": [["Free", "3 تنبيهات؛ بالصوت لعملة واحدة: السعر ونسبة التغيّر وأعلى/أدنى 24 ساعة. عدّل تنبيهاتك واعرضها واحذفها بالصوت. رصيد ذكاء اصطناعي يومي."], ["Plus", "20 تنبيهًا؛ كل أنواع الشروط، حتى 3 شروط لكل تنبيه، وتنبيها كل العملات حتى أفضل 100. إشعارات وTelegram. رصيد ذكاء اصطناعي أسبوعي."], ["Pro", "100 تنبيه؛ حتى 5 شروط لكل تنبيه و10 تنبيهات لكل العملات. إشعارات وTelegram وwebhook موقّع. رصيد أسبوعي أكبر للذكاء الاصطناعي."]],
+      "voice": {
+        "said": "[4|أخبرني] عندما [2|يكون RSI تحت 30] و[3|الحجم ضعفين] [1|في أفضل 100 عملة]",
+        "alts": ["المساعد الصوتي يستمع: الجملة المنطوقة تظهر كنص", "المساعد الصوتي يفهم الطلب", "أنشأ المساعد الصوتي التنبيه: أفضل 100 عملة، شرطا RSI والحجم"],
+        "saidLabel": "جملتك",
+        "map": [["النطاق", "أفضل 100 عملة · فوري USDT", "scope"], ["الشرط 1", "RSI(14) تحت 30 · ساعة", "rsi"], ["الشرط 2", "الحجم > 2 × SMA(20) · ساعة", "vol"], ["الإشعار", "إشعار · مرة واحدة", "notif"]],
+        "and": "و: يجب أن يتحقق الشرطان معًا على العملة نفسها. هذا المثال يتطلب Plus أو Pro.",
+        "note": "تظهر كل إعدادات التنبيه المُنشأ في بطاقة النتيجة. لتغيير أي تفصيل، يكفي أن تقوله.",
+        "actionsTitle": "ماذا يمكنك أن تفعل بالصوت؟",
+        "actions": [["إنشاء", "أخبرني إذا نزل BTC تحت 85,000"], ["تعديل", "اجعل تنبيه BTC عند 82,000"], ["عرض", "اعرض تنبيهاتي"], ["حذف", "احذف تنبيه ETH"]],
+        "actionsNote": "إذا لم يكن واضحًا أي تنبيه تقصد، يسألك المساعد قبل التعديل أو الحذف.",
+        "ladderTitle": "جمل يمكنك قولها، من البسيط إلى المتقدم",
+        "level": "المستوى",
+        "ladder": [["أخبرني مرة واحدة إذا نزل BTC تحت 85,000.", "free"], ["أخبرني إذا ارتفع SOL بنسبة 3% خلال 15 دقيقة.", "free"], ["أخبرني مرة واحدة عندما يتجاوز BTC مستوى 70,000 ويكون RSI الساعة تحت 30.", "plus"], ["في أفضل 100 عملة، أخبرني على Telegram عندما يتجاوز حجم 15 دقيقة ثلاثة أضعاف متوسطه.", "plus"], ["أخبرني عندما يكون RSI تحت 30 والحجم ضعفين في أفضل 100 عملة.", "plus"]],
+        "plans": {"free": "Free", "plus": "Plus · Pro"}
+      }
     }
   },
   "en": {
@@ -786,6 +1086,36 @@
       "steps": [["Describe both conditions in one sentence", "Specify the market, coin scope, timeframe, RSI threshold and EMA period."], ["Choose how conditions combine", "Use AND when both are required, or OR when either condition is enough."], ["Speak or approve the draft", "Tell the voice assistant or type in AI chat. In text chat, review the draft and create the alert."], ["Check the result and Telegram channel", "Verify RSI(14) < 30, price > EMA(20), 1h, top 100 coins and Telegram delivery."]],
       "details": [["AND versus OR", "With AND, RSI at 28 is not enough if price is below EMA20. RSI at 28 with price above EMA20 satisfies the combination. OR needs only one condition."], ["How do conditions combine across coins?", "Conditions are evaluated together for each coin. BTC’s RSI is not combined with ETH’s EMA condition. One coin must satisfy both for the AND combination to match."], ["Above an EMA is not an EMA crossover", "This example requires price above EMA20, without waiting for a new crossing. RSI and EMA use closed candles. This does not define a sequence of events."]],
       "faq": [["Do I need code or Pine Script?", "No. Combine supported conditions in MarketAlert by voice, AI text chat or the alert form."], ["Can I add more than two conditions?", "Plus supports up to 3 conditions per alert and Pro up to 5. Use RSI, volume, price/moving-average and other supported condition types."], ["Why might I receive no Telegram notification?", "Check that Telegram is linked and the alert is active. AND requires every condition on the same coin; repeat preferences and plan notification limits also apply."]]
+    },
+    "voice-crypto-alerts": {
+      "link": "Voice crypto alerts",
+      "title": "Set crypto alerts by voice: RSI, volume and price with a voice assistant | MarketAlert",
+      "h1": "How do you set a crypto alert by voice?",
+      "description": "Say your alert and the MarketAlert voice assistant sets it up: a price on one coin or RSI and volume on the top 100. Change, list or delete alerts by voice.",
+      "intro": "Tap the microphone and say your alert the way you would tell a person. The voice assistant turns your sentence into conditions; if the request is clear it creates the alert right away, and if something is missing it asks. The same way you can change, list and delete your alerts. Prefer a form? See the [crypto price alert](features/price-alerts) guide.",
+      "prompt": "Tell me when RSI is under 30 and volume is 2 times on the top 100 coins",
+      "exampleTitle": "Every part of your sentence becomes a setting",
+      "caption": "The voice assistant result screen: the spoken sentence, the created alert, its scope and two conditions.",
+      "steps": [["Tap the microphone", "Open the voice assistant with the microphone on the My alerts screen. In Automatic mode listening ends when you stop talking, and the assistant listens again after each reply. In Hold to talk mode it listens while you press the button."], ["Say what you want", "Say the coin or the scope (for example the top 100 coins), the condition and, if you like, the candle timeframe and the notification channel. Your speech is turned into text on your device; only the text is sent."], ["The assistant understands", "It turns coin names, indicators and numbers into alert conditions. If it is not clear which coin or which alert you mean, it asks a short question and you answer by voice again."], ["The alert is created", "If the request is clear, the alert is created at once and its card appears on screen. Use \"Open alert\" to see the details, or speak again to change a setting."]],
+      "details": [["Which alerts can the voice assistant create?", "Price, percent move, 24-hour high/low, RSI, MACD, volume spike and moving average conditions. It sets the alert for one coin or for the top 50, 100, 200 or all coins, and can [combine conditions with AND / OR](features/multi-condition-alerts). Which conditions you can use depends on your plan."], ["How is your speech handled?", "Your speech is turned into text on your device, in the app language; no audio recording is sent. The assistant reads that text and creates the alert on MarketAlert's servers. The alert keeps working while the app is closed."], ["Voice assistant or text AI chat?", "With the voice assistant a clear request is applied directly and a result card is shown. In the text AI chat the assistant first shows a draft and the alert is created when you approve it. Both create the same alerts, so use whichever feels easier."]],
+      "faq": [["Is the voice assistant free?", "Yes, it is on every plan; you need to sign in with an account, it cannot be used as a guest. Each sentence uses 1 AI message. On Free the allowance renews daily, on Plus and Pro weekly."], ["Which language should I speak?", "Speak in the language you use the app in. Your speech is turned into text in that language on your device."], ["Can I delete an alert by voice?", "Yes. Just say \"Delete my ETH alert\". If you have more than one ETH alert, or it is not clear which alert you mean, the assistant asks first."], ["What if the assistant gets it wrong?", "The result card shows every setting of the created alert. You can change a wrong setting by saying so, or delete the alert. If it corrected a word it heard, it shows that in the speech bubble."], ["Does the voice assistant trade?", "No. It only creates and manages alerts; it never connects to an exchange account, never places orders and gives no investment advice."]],
+      "related": ["features/multi-condition-alerts", "features/all-coins-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/price-alerts"],
+      "plans": [["Free", "3 alerts; set price, percent move and 24h high/low alerts for a single coin by voice. Change, list and delete alerts by voice. Daily AI allowance."], ["Plus", "20 alerts; every condition type, up to 3 conditions per alert and 2 all-coins alerts up to the top 100. Push and Telegram. Weekly AI allowance."], ["Pro", "100 alerts; up to 5 conditions per alert and 10 all-coins alerts across every coin. Push, Telegram and signed webhook. Larger weekly AI allowance."]],
+      "voice": {
+        "said": "[4|Tell me] when [2|RSI is under 30] and [3|volume is 2 times] [1|on the top 100 coins]",
+        "alts": ["The voice assistant is listening: the spoken sentence appears as text", "The voice assistant is understanding the request", "The voice assistant created the alert: top 100 coins, RSI and volume conditions"],
+        "saidLabel": "Your sentence",
+        "map": [["Scope", "Top 100 coins · Spot USDT", "scope"], ["Condition 1", "RSI(14) under 30 · 1h", "rsi"], ["Condition 2", "Volume > 2 × SMA(20) · 1h", "vol"], ["Notification", "Push · once", "notif"]],
+        "and": "AND: both conditions must hold on the same coin. This example needs Plus or Pro.",
+        "note": "Every setting of the created alert is shown on the result card. To change a detail, just say it.",
+        "actionsTitle": "What can you do by voice?",
+        "actions": [["Create", "Tell me if BTC drops below 85,000"], ["Change", "Move my BTC alert to 82,000"], ["List", "Show my alerts"], ["Delete", "Delete my ETH alert"]],
+        "actionsNote": "If it is not clear which alert you mean, the assistant asks before changing or deleting it.",
+        "ladderTitle": "Sentences you can say, from simple to advanced",
+        "level": "Level",
+        "ladder": [["Tell me once if BTC drops below 85,000.", "free"], ["Tell me if SOL rises 3% within 15 minutes.", "free"], ["Tell me once when BTC goes above 70,000 while hourly RSI is under 30.", "plus"], ["On the top 100 coins, tell me on Telegram when 15-minute volume is above 3 times its average.", "plus"], ["Tell me when RSI is under 30 and volume is 2 times on the top 100 coins.", "plus"]],
+        "plans": {"free": "Free", "plus": "Plus · Pro"}
+      }
     }
   }
 }

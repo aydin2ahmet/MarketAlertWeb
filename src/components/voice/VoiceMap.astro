@@ -1,0 +1,70 @@
+---
+/**
+ * Amiral örnek kutusu (2026-11-09, Ahmet): masaüstünde A2 (gerçek sonuç ekranı + numaralı
+ * çizgili açıklamalar), telefonda A3 (renkli cümle + dört anahtar kart). A2'de çizgiler
+ * telefonda sığmadığı için telefonda A3 gösterilir.
+ * Açıklama yükseklikleri her dil için katalog ekranından ölçülür: src/i18n/voice-hot.json.
+ */
+import VoiceShot from './VoiceShot.astro';
+import hotAll from '../../i18n/voice-hot.json';
+import { markedHtml } from '../../lib/voice';
+
+interface Props { code: string; kicker: string; title: string; said: string; saidLabel: string; rows: string[][]; and: string; note: string; caption: string }
+const { code, kicker, title, said, saidLabel, rows, and, note, caption } = Astro.props;
+const hot = (hotAll as any)[code];
+// Sırayla sol / sağ: cümle, kapsam, koşul 1, koşul 2, bildirim.
+const callouts = [[saidLabel, '', 'bubble'], ...rows].map((r, i) => ({ n: i + 1, label: r[0], value: r[1], y: hot[r[2]], side: i % 2 ? 'e' : 's' }));
+---
+<section class="vmap" aria-labelledby="vmap-t">
+  <p class="kicker">{kicker}</p>
+  <h2 id="vmap-t">{title}</h2>
+  <div class="vmap-d">
+    <div class="vmap-wrap">
+      <div class="vmap-ph"><VoiceShot code={code} k="result" alt={caption} sizes="320px" /></div>
+      {callouts.map(c => <div class={`co co-${c.side}`} style={`top:${(c.y * 100).toFixed(2)}%`}><span class="co-n">{c.n}</span><span class="co-l" aria-hidden="true"></span><span class="co-t"><b>{c.label}</b>{c.value && <span>{c.value}</span>}</span></div>)}
+    </div>
+  </div>
+  <div class="vmap-p">
+    <p class="vmap-say" set:html={'“' + markedHtml(said) + '”'} />
+    <div class="vmap-keys">{rows.map((r, i) => <div class={`vk vk${i + 1}`}><b>{r[0]}</b>{r[1]}</div>)}</div>
+  </div>
+  <p class="vmap-and"><b>{and.split(':')[0]}</b>{and.includes(':') ? ':' + and.split(':').slice(1).join(':') : ''}</p>
+  <p class="vmap-note">{note}</p>
+</section>
+
+<style>
+  .vmap { padding: 40px 36px; border: 1px solid var(--bd); border-radius: 24px; background: radial-gradient(ellipse at top right, var(--priSoft), transparent 70%), var(--sf); }
+  .kicker { font: 600 12px/1.6 var(--mono); color: var(--cat3); margin-bottom: 16px; }
+  .vmap h2 { font-size: clamp(24px, 3vw, 32px); margin-bottom: 8px; text-wrap: balance; }
+  .vmap-d { display: flex; justify-content: center; padding: 18px 0 8px; }
+  .vmap-wrap { position: relative; width: 300px; }
+  .vmap-ph { padding: 8px; border-radius: 40px; background: var(--frame); box-shadow: var(--shadow), inset 0 0 0 1px rgba(255, 255, 255, .08); }
+  .vmap-ph :global(img) { display: block; width: 100%; height: auto; border-radius: 32px; }
+  .co { position: absolute; display: flex; align-items: center; gap: 0; transform: translateY(-50%); width: 300px; }
+  .co-s { inset-inline-end: calc(100% - 26px); flex-direction: row-reverse; }
+  .co-e { inset-inline-start: calc(100% - 26px); }
+  .co-n { width: 26px; height: 26px; border-radius: 50%; background: var(--pri); color: var(--priText); display: grid; place-items: center; font: 700 12px var(--mono); flex: none; box-shadow: 0 0 0 3px var(--sf); }
+  .co-l { width: 40px; height: 2px; background: var(--pri); flex: none; }
+  .co-t { background: var(--sf); border: 1px solid var(--bd); border-radius: 12px; padding: 8px 12px; box-shadow: var(--shadow); font-size: 13.5px; line-height: 1.35; max-width: 230px; }
+  .co-t b { display: block; font: 700 11px/1.5 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--mut); }
+  .co-t span { font-weight: 600; color: var(--tx); }
+  .co-s .co-t { text-align: end; }
+  :global(:root:is([lang=ar], [lang=hi], [lang=zh], [lang=ja])) .co-t b { font-family: var(--f); letter-spacing: 0; font-size: 12px; }
+  .vmap-p { display: none; }
+  .vmap-and, .vmap-note { max-width: 760px; margin: 18px auto 0; text-align: center; color: var(--mut); font-size: 15px; }
+  .vmap-and { margin-top: 26px; }
+  .vmap-and b { color: var(--pri); font-family: var(--mono); }
+  .vmap-note { margin-top: 6px; font-size: 14px; }
+  @media (max-width: 1000px) {
+    .vmap { padding: 22px 18px; }
+    .vmap-d { display: none; }
+    .vmap-p { display: block; margin-top: 16px; }
+    .vmap-say { font-size: 20px; font-weight: 650; line-height: 1.65; margin: 0; }
+    .vmap-keys { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
+    .vk { border-top: 3px solid var(--c); background: var(--bg); border-radius: 10px; padding: 10px 12px; font-size: 14px; }
+    .vk b { display: block; font: 700 11px/1.6 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--c); }
+    :global(:root:is([lang=ar], [lang=hi], [lang=zh], [lang=ja])) .vk b { font-family: var(--f); letter-spacing: 0; font-size: 12px; }
+    .vk1 { --c: var(--cat1); } .vk2 { --c: var(--cat3); } .vk3 { --c: var(--cat4); } .vk4 { --c: var(--cat0); }
+    .vmap-and, .vmap-note { text-align: start; }
+  }
+</style>
