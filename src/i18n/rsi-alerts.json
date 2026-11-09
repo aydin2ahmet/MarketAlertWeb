@@ -1,6 +1,6 @@
 {
  "tr": {
-  "title":"Tüm Coinlerde RSI Alarmı ve Binance Taraması | MarketAlert",
+  "title":"Tüm Coinlerde RSI Alarmı ve Binance Taraması | Market Alert",
   "description":"Binance piyasalarında tek alarmla RSI koşullarını tara. Sesli kurulum örneği, zaman dilimleri, Telegram bildirimleri ve Plus/Pro kapsamını öğren.",
   "link":"Tüm coinlerde RSI alarmı",
   "kicker":"RSI alarmı · Tek coin veya tüm piyasa",
@@ -23,7 +23,7 @@
   "caption":"Örnek uygulama ekranı; değerler temsilidir.","ctaTitle":"Alarmını kendi cümlenle tarif et.","cta":"MarketAlert'i ve diğer alarm türlerini keşfet.","home":"Ana sayfaya dön","plansLink":"Planları karşılaştır"
  },
  "en": {
-  "title":"Crypto RSI Alerts Across Binance Coins | MarketAlert",
+  "title":"Crypto RSI Alerts Across Binance Coins | Market Alert",
   "description":"Scan Binance coins with one RSI alert. See a voice setup example, supported timeframes, Telegram delivery and Plus/Pro scanning limits.",
   "link":"RSI alerts across all coins","kicker":"RSI alerts · One coin or a whole market","h1":"Say your RSI rule. Let MarketAlert scan the coins.",
   "intro":"You do not need to open every coin's chart. Define an RSI condition for a supported Binance market; MarketAlert continuously watches eligible coins and notifies you when it is met. Create the alert by voice, text or the form.",
@@ -43,7 +43,7 @@
   "caption":"Example app screen; values are illustrative.","ctaTitle":"Describe your alert in your own words.","cta":"Explore MarketAlert and its other alert types.","home":"Back to homepage","plansLink":"Compare plans"
  },
  "zh": {
-  "title":"币安全币种 RSI 提醒与扫描 | MarketAlert","description":"用一条 RSI 提醒扫描币安市场。了解语音设置示例、时间周期、Telegram 通知及 Plus/Pro 的范围。","link":"全币种 RSI 提醒","kicker":"RSI 提醒 · 单币或全市场","h1":"说出 RSI 条件，让 MarketAlert 扫描币种。",
+  "title":"币安全币种 RSI 提醒与扫描 | Market Alert","description":"用一条 RSI 提醒扫描币安市场。了解语音设置示例、时间周期、Telegram 通知及 Plus/Pro 的范围。","link":"全币种 RSI 提醒","kicker":"RSI 提醒 · 单币或全市场","h1":"说出 RSI 条件，让 MarketAlert 扫描币种。",
   "intro":"不必逐个打开币种图表。在支持的币安市场中设置 RSI 条件，MarketAlert 持续监控符合范围的币种，并在条件满足时通知你。可通过语音、文字或表单创建提醒。",
   "exampleTitle":"一句话，创建市场扫描","example":"扫描币安现货 USDT 市场的前 100 个币种。当某个币种的小时线 RSI 14 低于 30 时，通过 Telegram 通知我。","exampleNote":"这是设置示例，不是交易建议。请先在应用中连接 Telegram。明确的语音请求会直接执行；文字聊天中可查看并确认草稿。",
   "specs":[["市场","币安现货 · USDT"],["范围","前 100 个币种"],["条件","RSI(14) < 30"],["周期","1 小时"],["通知","Telegram · Plus / Pro"]],
@@ -55,7 +55,7 @@
   "caption":"应用示例界面，数值仅供展示。","ctaTitle":"用自己的话描述提醒。","cta":"了解 MarketAlert 和其他提醒类型。","home":"返回首页","plansLink":"比较套餐"
  },
  "es": {
-  "title":"Alertas RSI en todas las monedas de Binance | MarketAlert","description":"Analiza Binance con una sola alerta RSI. Ejemplo por voz, temporalidades, Telegram y límites de los planes Plus y Pro.","link":"Alertas RSI en todas las monedas","kicker":"Alertas RSI · Una moneda o todo el mercado","h1":"Di tu condición RSI. MarketAlert analiza las monedas.",
+  "title":"Alertas RSI en todas las monedas de Binance | Market Alert","description":"Analiza Binance con una sola alerta RSI. Ejemplo por voz, temporalidades, Telegram y límites de los planes Plus y Pro.","link":"Alertas RSI en todas las monedas","kicker":"Alertas RSI · Una moneda o todo el mercado","h1":"Di tu condición RSI. MarketAlert analiza las monedas.",
   "intro":"No necesitas abrir cada gráfico. Define una condición RSI en un mercado compatible de Binance; MarketAlert vigila continuamente las monedas incluidas y te avisa cuando se cumple. Crea la alerta por voz, por texto o con el formulario.",
   "exampleTitle":"De una frase a un análisis del mercado","example":"Analiza las 100 primeras monedas de Binance Spot USDT. Avísame por Telegram cuando el RSI 14 de una hora de una moneda esté por debajo de 30.","exampleNote":"Es un ejemplo de configuración, no una recomendación de inversión. Vincula Telegram en la app. Las solicitudes de voz claras se aplican directamente; en el chat escrito revisas y apruebas un borrador.",
   "specs":[["Mercado","Binance Spot · USDT"],["Universo","Primeras 100 monedas"],["Condición","RSI(14) < 30"],["Temporalidad","1 hora"],["Canal","Telegram · Plus / Pro"]],
@@ -67,7 +67,7 @@
   "caption":"Pantalla de ejemplo; valores ilustrativos.","ctaTitle":"Describe tu alerta con tus palabras.","cta":"Descubre MarketAlert y otros tipos de alertas.","home":"Volver al inicio","plansLink":"Comparar planes"
  },
  "pt-br": {
-  "title":"Alertas RSI em todas as moedas da Binance | MarketAlert","description":"Analise moedas da Binance com um alerta RSI. Exemplo por voz, períodos, Telegram e limites dos planos Plus e Pro.","link":"Alertas RSI em todas as moedas","kicker":"Alertas RSI · Uma moeda ou todo o mercado","h1":"Diga sua condição de RSI. O MarketAlert analisa as moedas.",
+  "title":"Alertas RSI em todas as moedas da Binance | Market Alert","description":"Analise moedas da Binance com um alerta RSI. Exemplo por voz, períodos, Telegram e limites dos planos Plus e Pro.","link":"Alertas RSI em todas as moedas","kicker":"Alertas RSI · Uma moeda ou todo o mercado","h1":"Diga sua condição de RSI. O MarketAlert analisa as moedas.",
   "intro":"Você não precisa abrir cada gráfico. Defina uma condição de RSI em um mercado compatível da Binance. O MarketAlert monitora continuamente as moedas incluídas e avisa quando ela é atendida. Crie o alerta por voz, texto ou formulário.",
   "exampleTitle":"De uma frase a uma varredura do mercado","example":"Analise as 100 primeiras moedas da Binance Spot USDT. Avise pelo Telegram quando o RSI 14 de uma hora de uma moeda estiver abaixo de 30.","exampleNote":"Exemplo de configuração, não recomendação de investimento. Vincule o Telegram no app. Pedidos de voz claros são aplicados diretamente; no chat de texto você revisa e aprova um rascunho.",
   "specs":[["Mercado","Binance Spot · USDT"],["Universo","Primeiras 100 moedas"],["Condição","RSI(14) < 30"],["Período","1 hora"],["Canal","Telegram · Plus / Pro"]],
@@ -79,7 +79,7 @@
   "caption":"Tela de exemplo; valores ilustrativos.","ctaTitle":"Descreva seu alerta com suas palavras.","cta":"Conheça o MarketAlert e outros tipos de alerta.","home":"Voltar ao início","plansLink":"Comparar planos"
  },
  "fr": {
-  "title":"Alertes RSI sur toutes les cryptos Binance | MarketAlert","description":"Analysez les cryptos Binance avec une alerte RSI. Exemple vocal, unités de temps, Telegram et limites des offres Plus et Pro.","link":"Alertes RSI sur toutes les cryptos","kicker":"Alertes RSI · Une crypto ou tout un marché","h1":"Dictez votre condition RSI. MarketAlert analyse les cryptos.",
+  "title":"Alertes RSI sur toutes les cryptos Binance | Market Alert","description":"Analysez les cryptos Binance avec une alerte RSI. Exemple vocal, unités de temps, Telegram et limites des offres Plus et Pro.","link":"Alertes RSI sur toutes les cryptos","kicker":"Alertes RSI · Une crypto ou tout un marché","h1":"Dictez votre condition RSI. MarketAlert analyse les cryptos.",
   "intro":"Inutile d’ouvrir chaque graphique. Définissez une condition RSI sur un marché Binance pris en charge : MarketAlert surveille les cryptos éligibles en continu et vous avertit lorsqu’elle est remplie. Créez l’alerte à la voix, par écrit ou avec le formulaire.",
   "exampleTitle":"Une phrase pour analyser le marché","example":"Analyse les 100 premières cryptos de Binance Spot USDT. Préviens-moi sur Telegram si le RSI 14 horaire d’une crypto est inférieur à 30.","exampleNote":"Exemple de configuration, pas un conseil de trading. Liez Telegram dans l’app. Les demandes vocales claires sont appliquées directement ; dans le chat écrit, vous vérifiez et approuvez un brouillon.",
   "specs":[["Marché","Binance Spot · USDT"],["Univers","100 premières cryptos"],["Condition","RSI(14) < 30"],["Unité de temps","1 heure"],["Canal","Telegram · Plus / Pro"]],
@@ -91,7 +91,7 @@
   "caption":"Écran d’exemple ; valeurs illustratives.","ctaTitle":"Décrivez votre alerte avec vos mots.","cta":"Découvrez MarketAlert et les autres types d’alertes.","home":"Retour à l’accueil","plansLink":"Comparer les offres"
  },
  "de": {
-  "title":"RSI-Alarme für alle Binance-Coins | MarketAlert","description":"Scanne Binance-Coins mit einem RSI-Alarm. Sprachbeispiel, Zeitrahmen, Telegram und die Grenzen von Plus und Pro erklärt.","link":"RSI-Alarme für alle Coins","kicker":"RSI-Alarme · Ein Coin oder ein ganzer Markt","h1":"Sag deine RSI-Bedingung. MarketAlert prüft die Coins.",
+  "title":"RSI-Alarme für alle Binance-Coins | Market Alert","description":"Scanne Binance-Coins mit einem RSI-Alarm. Sprachbeispiel, Zeitrahmen, Telegram und die Grenzen von Plus und Pro erklärt.","link":"RSI-Alarme für alle Coins","kicker":"RSI-Alarme · Ein Coin oder ein ganzer Markt","h1":"Sag deine RSI-Bedingung. MarketAlert prüft die Coins.",
   "intro":"Du musst nicht jeden Chart öffnen. Lege eine RSI-Bedingung für einen unterstützten Binance-Markt fest. MarketAlert überwacht passende Coins kontinuierlich und meldet erfüllte Bedingungen. Erstelle den Alarm per Sprache, Text oder Formular.",
   "exampleTitle":"Mit einem Satz zum Marktscan","example":"Scanne die Top 100 Coins auf Binance Spot USDT. Benachrichtige mich per Telegram, wenn der Stunden-RSI 14 eines Coins unter 30 liegt.","exampleNote":"Ein Einrichtungsbeispiel, keine Handelsempfehlung. Verbinde Telegram in der App. Klare Sprachanfragen werden direkt ausgeführt; im Textchat prüfst und bestätigst du einen Entwurf.",
   "specs":[["Markt","Binance Spot · USDT"],["Universum","Top 100 Coins"],["Bedingung","RSI(14) < 30"],["Zeitrahmen","1 Stunde"],["Kanal","Telegram · Plus / Pro"]],
@@ -103,7 +103,7 @@
   "caption":"Beispielansicht; Werte sind illustrativ.","ctaTitle":"Beschreibe deinen Alarm mit eigenen Worten.","cta":"Entdecke MarketAlert und weitere Alarmtypen.","home":"Zur Startseite","plansLink":"Tarife vergleichen"
  },
  "ru": {
-  "title":"RSI-оповещения по всем монетам Binance | MarketAlert","description":"Проверяйте монеты Binance одним RSI-оповещением. Голосовой пример, интервалы, Telegram и ограничения Plus/Pro.","link":"RSI-оповещения по всем монетам","kicker":"RSI · Одна монета или весь рынок","h1":"Скажите условие RSI. MarketAlert проверит монеты.",
+  "title":"RSI-оповещения по всем монетам Binance | Market Alert","description":"Проверяйте монеты Binance одним RSI-оповещением. Голосовой пример, интервалы, Telegram и ограничения Plus/Pro.","link":"RSI-оповещения по всем монетам","kicker":"RSI · Одна монета или весь рынок","h1":"Скажите условие RSI. MarketAlert проверит монеты.",
   "intro":"Не нужно открывать каждый график. Задайте условие RSI для поддерживаемого рынка Binance: MarketAlert непрерывно следит за подходящими монетами и сообщает о выполнении. Создавайте оповещения голосом, текстом или через форму.",
   "exampleTitle":"От одной фразы к сканированию рынка","example":"Проверяй первые 100 монет Binance Spot USDT. Сообщай в Telegram, если часовой RSI 14 монеты ниже 30.","exampleNote":"Пример настройки, не торговая рекомендация. Сначала подключите Telegram в приложении. Понятные голосовые запросы выполняются напрямую; в текстовом чате вы проверяете и подтверждаете черновик.",
   "specs":[["Рынок","Binance Spot · USDT"],["Охват","Первые 100 монет"],["Условие","RSI(14) < 30"],["Интервал","1 час"],["Канал","Telegram · Plus / Pro"]],
@@ -115,7 +115,7 @@
   "caption":"Пример интерфейса; значения условные.","ctaTitle":"Опишите оповещение своими словами.","cta":"Узнайте больше о MarketAlert и других условиях.","home":"На главную","plansLink":"Сравнить тарифы"
  },
  "ja": {
-  "title":"Binance全コインのRSIアラート・スキャン | MarketAlert","description":"1つのRSIアラートでBinanceをスキャン。音声設定例、時間足、Telegram通知、Plus/Proの範囲を紹介。","link":"全コインのRSIアラート","kicker":"RSIアラート · 単一コインから市場全体まで","h1":"RSIの条件を話すだけ。コインの監視はMarketAlertに。",
+  "title":"Binance全コインのRSIアラート・スキャン | Market Alert","description":"1つのRSIアラートでBinanceをスキャン。音声設定例、時間足、Telegram通知、Plus/Proの範囲を紹介。","link":"全コインのRSIアラート","kicker":"RSIアラート · 単一コインから市場全体まで","h1":"RSIの条件を話すだけ。コインの監視はMarketAlertに。",
   "intro":"すべてのチャートを個別に開く必要はありません。対応するBinance市場にRSI条件を設定すると、MarketAlertが対象コインを継続的に監視し、条件を満たした際に通知します。音声、テキスト、フォームから作成できます。",
   "exampleTitle":"ひと言で市場をスキャン","example":"Binance現物USDTの上位100コインをスキャンして。1時間足のRSI 14が30未満のコインをTelegramで知らせて。","exampleNote":"設定例であり、売買の推奨ではありません。Telegramは先にアプリで連携してください。明確な音声リクエストは直接実行され、テキストチャットでは下書きを確認・承認します。",
   "specs":[["市場","Binance現物 · USDT"],["対象","上位100コイン"],["条件","RSI(14) < 30"],["時間足","1時間"],["通知","Telegram · Plus / Pro"]],
@@ -127,7 +127,7 @@
   "caption":"アプリ画面の例。数値は説明用です。","ctaTitle":"自分の言葉でアラートを伝えよう。","cta":"MarketAlertと他のアラート種類を確認。","home":"ホームに戻る","plansLink":"プランを比較"
  },
  "hi": {
-  "title":"Binance के सभी कॉइन के लिए RSI अलर्ट | MarketAlert","description":"एक RSI अलर्ट से Binance कॉइन स्कैन करें। वॉइस सेटअप, टाइमफ़्रेम, Telegram और Plus/Pro की सीमाएँ जानें।","link":"सभी कॉइन के लिए RSI अलर्ट","kicker":"RSI अलर्ट · एक कॉइन या पूरा बाज़ार","h1":"RSI की शर्त बोलें। कॉइन MarketAlert स्कैन करे।",
+  "title":"Binance के सभी कॉइन के लिए RSI अलर्ट | Market Alert","description":"एक RSI अलर्ट से Binance कॉइन स्कैन करें। वॉइस सेटअप, टाइमफ़्रेम, Telegram और Plus/Pro की सीमाएँ जानें।","link":"सभी कॉइन के लिए RSI अलर्ट","kicker":"RSI अलर्ट · एक कॉइन या पूरा बाज़ार","h1":"RSI की शर्त बोलें। कॉइन MarketAlert स्कैन करे।",
   "intro":"हर कॉइन का चार्ट अलग खोलना ज़रूरी नहीं। समर्थित Binance बाज़ार के लिए RSI की शर्त तय करें। MarketAlert योग्य कॉइन लगातार देखता है और शर्त पूरी होने पर सूचना देता है। वॉइस, टेक्स्ट या फ़ॉर्म से अलर्ट बनाएँ।",
   "exampleTitle":"एक वाक्य से बाज़ार स्कैन","example":"Binance Spot USDT के शीर्ष 100 कॉइन स्कैन करो। किसी कॉइन का एक घंटे का RSI 14, 30 से नीचे हो तो Telegram पर बताओ।","exampleNote":"यह सेटअप का उदाहरण है, ट्रेड की सलाह नहीं। पहले ऐप में Telegram जोड़ें। स्पष्ट वॉइस अनुरोध सीधे लागू होते हैं; टेक्स्ट चैट में ड्राफ़्ट देखकर पुष्टि करते हैं।",
   "specs":[["बाज़ार","Binance Spot · USDT"],["दायरा","शीर्ष 100 कॉइन"],["शर्त","RSI(14) < 30"],["टाइमफ़्रेम","1 घंटा"],["सूचना","Telegram · Plus / Pro"]],
@@ -139,7 +139,7 @@
   "caption":"उदाहरण स्क्रीन; मान केवल समझाने के लिए हैं।","ctaTitle":"अपना अलर्ट अपने शब्दों में बताएँ।","cta":"MarketAlert और दूसरे अलर्ट प्रकार देखें।","home":"होम पर लौटें","plansLink":"प्लान की तुलना"
  },
  "ar": {
-  "title":"تنبيهات RSI لجميع عملات Binance | MarketAlert","description":"افحص عملات Binance بتنبيه RSI واحد. مثال صوتي، أطر زمنية، إشعارات Telegram وحدود Plus وPro.","link":"تنبيهات RSI لجميع العملات","kicker":"تنبيهات RSI · عملة واحدة أو السوق كله","h1":"قل شرط RSI. ودع MarketAlert يفحص العملات.",
+  "title":"تنبيهات RSI لجميع عملات Binance | Market Alert","description":"افحص عملات Binance بتنبيه RSI واحد. مثال صوتي، أطر زمنية، إشعارات Telegram وحدود Plus وPro.","link":"تنبيهات RSI لجميع العملات","kicker":"تنبيهات RSI · عملة واحدة أو السوق كله","h1":"قل شرط RSI. ودع MarketAlert يفحص العملات.",
   "intro":"لا تحتاج إلى فتح مخطط كل عملة. حدد شرط RSI لسوق Binance مدعوم؛ يراقب MarketAlert العملات المؤهلة باستمرار ويبلغك عند تحققه. أنشئ التنبيه بالصوت أو النص أو النموذج.",
   "exampleTitle":"من جملة واحدة إلى فحص السوق","example":"افحص أول 100 عملة في Binance Spot USDT. أخبرني عبر Telegram عندما يكون RSI 14 للساعة لأي عملة أقل من 30.","exampleNote":"هذا مثال إعداد وليس توصية تداول. اربط Telegram في التطبيق أولًا. الطلبات الصوتية الواضحة تنفذ مباشرة؛ وفي المحادثة النصية تراجع المسودة وتوافق عليها.",
   "specs":[["السوق","Binance فوري · USDT"],["النطاق","أول 100 عملة"],["الشرط","RSI(14) < 30"],["الإطار الزمني","ساعة واحدة"],["الإشعار","Telegram · Plus / Pro"]],
