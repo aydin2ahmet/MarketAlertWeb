@@ -2,7 +2,7 @@
   "tr": {
     "price-alerts": {
       "link": "Kripto fiyat alarmı",
-      "title": "Kripto fiyat alarmı nasıl kurulur? Ücretsiz | Market Alert",
+      "title": "Kripto fiyat alarmı nasıl kurulur? Ücretsiz | MarketAlert",
       "h1": "Kripto para için fiyat alarmı nasıl kurulur?",
       "description": "Binance coinleri için ücretsiz fiyat alarmı kur: hedef fiyatı yaz, push bildirimi seç. Fiyat hedefe bir an değse bile haber al; uygulama kapalıyken de çalışır.",
       "intro": "Grafiği sürekli açık tutmana gerek yok. Coin’i ve hedef fiyatı seç; MarketAlert fiyatı sunucularında izler ve hedefe ulaşıldığında telefonuna bildirim gönderir. Fiyat hedefe yalnızca bir an değip geri dönse bile bu dokunuş kaçmaz.",
@@ -17,7 +17,7 @@
     },
     "percent-change-alerts": {
       "link": "Yüzde değişim alarmı",
-      "title": "Kripto yüzde değişim alarmı: coin kısa sürede %3 oynarsa haber al | Market Alert",
+      "title": "Kripto yüzde değişim alarmı: coin kısa sürede %3 oynarsa haber al | MarketAlert",
       "h1": "Coin kısa sürede %3 ya da %5 hareket edince nasıl haber alırım?",
       "description": "Bir coin 5 ya da 15 dakika gibi kısa bir sürede belirlediğin yüzde kadar yükselince ya da düşünce ücretsiz bildirim al. Binance Spot ve Vadeli, USDT ve USDC.",
       "intro": "Bazen önemli olan fiyatın seviyesi değil, hareketin hızıdır. Yüzde değişim alarmı, seçtiğin coin belirlediğin dakika içinde örneğin %3 yükselince ya da düşünce haber verir. Sabit bir seviyeyi beklemek istiyorsan [kripto fiyat alarmı](features/price-alerts) daha uygun.",
@@ -33,7 +33,7 @@
     },
     "all-coins-alerts": {
       "link": "Tüm coinler alarmı",
-      "title": "Tüm coinlere tek alarm: Binance'te ilk 100 ya da bütün coinleri tara | Market Alert",
+      "title": "Tüm coinlere tek alarm: Binance'te ilk 100 ya da bütün coinleri tara | MarketAlert",
       "h1": "Tek alarmla bütün coinleri nasıl takip ederim?",
       "description": "Tek bir alarm kur; MarketAlert Binance'teki ilk 50, 100, 200 ya da tüm coinleri senin koşuluna göre tarasın. Eşleşen her coin ayrı bildirilir. Plus ve Pro.",
       "intro": "Yüzlerce coinin grafiğini tek tek açmak yerine koşulu bir kez yaz. Tüm coinler alarmı seçtiğin Binance piyasasındaki coinleri sürekli izler ve koşulu sağlayan her coini ayrı ayrı bildirir. Tek bir coini izlemek istiyorsan [kripto fiyat alarmı](features/price-alerts) ya da [yüzde değişim alarmı](features/percent-change-alerts) yeterli.",
@@ -51,7 +51,7 @@
     },
     "volume-spike-alerts": {
       "link": "Binance hacim artışı alarmı",
-      "title": "Binance hacim artışı alarmı nasıl kurulur? | Market Alert",
+      "title": "Binance hacim artışı alarmı nasıl kurulur? | MarketAlert",
       "h1": "Binance’te hacmi artan coinlerden nasıl haberdar olurum?",
       "description": "Binance coinlerinde hacim artışı alarmı kur: zaman dilimini, hacim ortalamasını ve çarpanı seç. Konuşarak veya yazarak oluştur, Telegram’dan bildirim al.",
       "intro": "Hacim listelerini sürekli yenilemek yerine kendi eşiğini belirle. MarketAlert, seçtiğin Binance piyasasındaki coinleri tarar; mum hacmi belirlediğin ortalama çarpanını aştığında bildirim gönderir.",
@@ -63,7 +63,7 @@
     },
     "multi-condition-alerts": {
       "link": "RSI + EMA koşullu alarm",
-      "title": "RSI ve EMA birlikte alarm: kod yazmadan kur | Market Alert",
+      "title": "RSI ve EMA birlikte alarm: kod yazmadan kur | MarketAlert",
       "h1": "RSI ve EMA koşulları aynı anda sağlanınca nasıl alarm alırım?",
       "description": "RSI ve fiyat/EMA koşullarını tek kripto alarmında birleştir. Kod veya form doldurmadan konuşarak kur; Binance coinlerini tara, Telegram’dan bildirim al.",
       "intro": "Bir RSI alarmı ve bir fiyat alarmını ayrı ayrı takip etmek zorunda değilsin. İstediğin koşulları aynı alarmda VE veya VEYA ile birleştir; kurulumu konuşarak ya da AI sohbete yazarak yap.",
@@ -75,7 +75,7 @@
     },
     "voice-crypto-alerts": {
       "link": "Sesli kripto alarmı",
-      "title": "Konuşarak kripto alarmı kur: sesli asistanla RSI, hacim, fiyat | Market Alert",
+      "title": "Konuşarak kripto alarmı kur: sesli asistanla RSI, hacim, fiyat | MarketAlert",
       "h1": "Konuşarak kripto alarmı nasıl kurulur?",
       "description": "Alarmını söyle, MarketAlert sesli asistanı kursun: tek coinde fiyat ya da ilk 100 coinde RSI ve hacim. Alarmlarını sesle değiştir, listele, sil.",
       "intro": "Mikrofona dokun ve alarmını birine anlatır gibi söyle. Sesli asistan cümleni koşullara çevirir; istek netse alarmı hemen kurar, eksik bir şey varsa sorar. Aynı yoldan alarmlarını değiştirebilir, listeleyebilir ve silebilirsin. Formla kurmak istersen [kripto fiyat alarmı](features/price-alerts) sayfasına bak.",
@@ -107,7 +107,7 @@
   "de": {
     "price-alerts": {
       "link": "Krypto-Preisalarm",
-      "title": "Krypto-Preisalarm einrichten (kostenlos) | Market Alert",
+      "title": "Krypto-Preisalarm einrichten (kostenlos) | MarketAlert",
       "h1": "Wie richte ich einen Preisalarm für eine Kryptowährung ein?",
       "description": "Kostenloser Preisalarm für Binance-Coins: Zielpreis eingeben, Push-Benachrichtigung wählen. Auch eine kurze Berührung des Ziels wird gemeldet. Funktioniert bei geschlossener App.",
       "intro": "Du musst den Chart nicht den ganzen Tag offen halten. Wähle einen Coin und einen Zielpreis; MarketAlert überwacht den Preis auf seinen Servern und benachrichtigt dein Handy, sobald das Ziel erreicht ist. Auch wenn der Preis das Ziel nur kurz berührt und zurückfällt, entgeht dir diese Berührung nicht.",
@@ -122,7 +122,7 @@
     },
     "percent-change-alerts": {
       "link": "Prozent-Änderungsalarm",
-      "title": "Krypto-Prozentalarm: erfahre, wenn ein Coin schnell 3 % bewegt | Market Alert",
+      "title": "Krypto-Prozentalarm: erfahre, wenn ein Coin schnell 3 % bewegt | MarketAlert",
       "h1": "Wie werde ich benachrichtigt, wenn sich ein Coin in kurzer Zeit um 3 % oder 5 % bewegt?",
       "description": "Erhalte eine kostenlose Benachrichtigung, wenn ein Coin innerhalb kurzer Zeit, etwa 5 oder 15 Minuten, um deinen Prozentwert steigt oder fällt. Binance Spot und Futures, USDT und USDC.",
       "intro": "Manchmal zählt nicht das Preisniveau, sondern das Tempo der Bewegung. Ein Prozent-Änderungsalarm meldet sich, wenn dein Coin innerhalb der gewählten Minuten zum Beispiel um 3 % steigt oder fällt. Wenn du auf ein festes Niveau warten willst, passt ein [Krypto-Preisalarm](features/price-alerts) besser.",
@@ -138,7 +138,7 @@
     },
     "all-coins-alerts": {
       "link": "Alarm für alle Coins",
-      "title": "Ein Alarm für alle Coins: Top 100 oder alle Coins auf Binance scannen | Market Alert",
+      "title": "Ein Alarm für alle Coins: Top 100 oder alle Coins auf Binance scannen | MarketAlert",
       "h1": "Wie behalte ich mit einem einzigen Alarm alle Coins im Blick?",
       "description": "Richte einen Alarm ein und lass MarketAlert die Top 50, 100, 200 oder alle Coins auf Binance nach deiner Bedingung durchsuchen. Jeder Treffer wird einzeln gemeldet. Plus und Pro.",
       "intro": "Statt hunderte Charts einzeln zu öffnen, schreibst du deine Bedingung einmal. Ein Alarm für alle Coins beobachtet laufend die Coins im gewählten Binance-Markt und meldet jeden Coin, der die Bedingung erfüllt, einzeln. Willst du nur einen Coin verfolgen, reicht ein [Krypto-Preisalarm](features/price-alerts) oder ein [Prozent-Änderungsalarm](features/percent-change-alerts).",
@@ -155,7 +155,7 @@
       "hook": ["AVAX ist in 5 Minuten um {x} gestiegen!", "Top 100 im Scan · Schwelle {t}"]
     },
     "volume-spike-alerts": {
-      "link": "Binance-Volumenalarme", "title": "Binance-Volumenalarme einrichten | Market Alert", "h1": "Wie erhalte ich Alarme bei Volumenspitzen auf Binance?",
+      "link": "Binance-Volumenalarme", "title": "Binance-Volumenalarme einrichten | MarketAlert", "h1": "Wie erhalte ich Alarme bei Volumenspitzen auf Binance?",
       "description": "Binance-Volumenalarme mit eigenem Zeitrahmen, Durchschnitt und Multiplikator. Per Sprache oder KI-Chat erstellen und über Telegram benachrichtigen lassen.",
       "intro": "Lege einen Schwellenwert fest, statt ständig Volumenlisten zu prüfen. MarketAlert durchsucht Coins im gewählten Binance-Markt und meldet, wenn das Kerzenvolumen das gewählte Vielfache seines Durchschnitts überschreitet.",
       "prompt": "Überwache die 100 volumenstärksten Coins auf Binance Spot USDT. Benachrichtige mich einmal über Telegram, wenn das 15-Minuten-Kerzenvolumen das Dreifache seines 20-Perioden-Durchschnitts überschreitet.",
@@ -165,7 +165,7 @@
       "faq": [["Wird bei Kerzenschluss ausgewertet?", "Ja. Der Volumenindikator verwendet abgeschlossene Kerzen des gewählten Zeitrahmens, keine Volumenspitzen innerhalb einer offenen Kerze."], ["Kann ein Alarm alle Coins abdecken?", "Ein Alarm kann dieselbe Regel auf geeignete Coins anwenden. Plus unterstützt bis zu Top 100, Pro alle geeigneten Coins."], ["Ist das ein Handelssignal?", "Gemeldet wird deine eigene Volumenbedingung. Es werden keine Orders ausgeführt und weder Kursrichtung noch Gewinn garantiert."]]
     },
     "multi-condition-alerts": {
-      "link": "RSI + EMA kombinieren", "title": "RSI und EMA gemeinsam als Alarm, ohne Code | Market Alert", "h1": "Wie erhalte ich einen Alarm, wenn RSI und EMA gleichzeitig passen?",
+      "link": "RSI + EMA kombinieren", "title": "RSI und EMA gemeinsam als Alarm, ohne Code | MarketAlert", "h1": "Wie erhalte ich einen Alarm, wenn RSI und EMA gleichzeitig passen?",
       "description": "RSI und Kurs/EMA in einem Kryptoalarm kombinieren. Per Sprache ohne Code einrichten, Binance-Coins überwachen und Telegram-Meldungen erhalten.",
       "intro": "Verfolge RSI- und Kursalarme nicht einzeln. Verknüpfe Bedingungen in einem Alarm mit UND oder ODER und erstelle ihn per Sprache oder KI-Textchat.",
       "prompt": "Überwache die 100 volumenstärksten Coins auf Binance Spot USDT. Benachrichtige mich einmal über Telegram, wenn der stündliche RSI unter 30 und der Kurs über EMA20 liegt.",
@@ -176,7 +176,7 @@
     },
     "voice-crypto-alerts": {
       "link": "Krypto-Alarm per Sprache",
-      "title": "Krypto-Alarme per Sprache einrichten: RSI, Volumen und Preis mit dem Sprachassistenten | Market Alert",
+      "title": "Krypto-Alarme per Sprache einrichten: RSI, Volumen und Preis mit dem Sprachassistenten | MarketAlert",
       "h1": "Wie richtet man einen Krypto-Alarm per Sprache ein?",
       "description": "Sag deinen Alarm, der MarketAlert-Sprachassistent richtet ihn ein: Preis für einen Coin oder RSI und Volumen bei den Top 100. Alarme per Sprache ändern und löschen.",
       "intro": "Tippe auf das Mikrofon und sag deinen Alarm so, wie du es einem Menschen erklären würdest. Der Sprachassistent macht aus deinem Satz Bedingungen: Ist die Anfrage klar, erstellt er den Alarm sofort; fehlt etwas, fragt er nach. Genauso kannst du Alarme ändern, auflisten und löschen. Lieber mit dem Formular? Dann sieh dir den [Krypto-Preisalarm](features/price-alerts) an.",
@@ -208,7 +208,7 @@
   "fr": {
     "price-alerts": {
       "link": "Alerte de prix crypto",
-      "title": "Créer une alerte de prix crypto (gratuit) | Market Alert",
+      "title": "Créer une alerte de prix crypto (gratuit) | MarketAlert",
       "h1": "Comment créer une alerte de prix pour une crypto ?",
       "description": "Créez une alerte de prix gratuite pour les cryptos Binance : saisissez un prix cible et choisissez une notification push. Alerté même si le prix ne fait que toucher la cible, application fermée.",
       "intro": "Inutile de garder un graphique ouvert toute la journée. Choisissez une crypto et un prix cible ; MarketAlert surveille le prix sur ses serveurs et notifie votre téléphone quand la cible est atteinte. Même si le prix ne fait que toucher la cible un instant avant de repartir, ce contact n’est pas manqué.",
@@ -223,7 +223,7 @@
     },
     "percent-change-alerts": {
       "link": "Alerte de variation en %",
-      "title": "Alerte de variation crypto en % : sachez quand une crypto bouge de 3 % | Market Alert",
+      "title": "Alerte de variation crypto en % : sachez quand une crypto bouge de 3 % | MarketAlert",
       "h1": "Comment être alerté quand une crypto bouge de 3 % ou 5 % en peu de temps ?",
       "description": "Recevez une notification gratuite quand une crypto monte ou baisse du pourcentage choisi sur une courte durée, par exemple 5 ou 15 minutes. Binance Spot et Futures, USDT et USDC.",
       "intro": "Parfois, ce qui compte n’est pas le niveau du prix mais la vitesse du mouvement. Une alerte de variation en % vous prévient quand votre crypto monte ou baisse, par exemple de 3 %, dans le nombre de minutes choisi. Pour attendre un niveau fixe, une [alerte de prix crypto](features/price-alerts) convient mieux.",
@@ -239,7 +239,7 @@
     },
     "all-coins-alerts": {
       "link": "Alerte sur toutes les cryptos",
-      "title": "Une alerte pour toutes les cryptos : scannez le top 100 ou tout Binance | Market Alert",
+      "title": "Une alerte pour toutes les cryptos : scannez le top 100 ou tout Binance | MarketAlert",
       "h1": "Comment suivre toutes les cryptos avec une seule alerte ?",
       "description": "Créez une alerte et laissez MarketAlert scanner le top 50, 100, 200 ou toutes les cryptos de Binance selon votre condition. Chaque crypto concernée est signalée à part. Plus et Pro.",
       "intro": "Au lieu d’ouvrir des centaines de graphiques un par un, écrivez votre condition une seule fois. Une alerte sur toutes les cryptos surveille en continu les cryptos du marché Binance choisi et signale séparément chaque crypto qui remplit la condition. Pour suivre une seule crypto, une [alerte de prix crypto](features/price-alerts) ou une [alerte de variation en pourcentage](features/percent-change-alerts) suffit.",
@@ -256,7 +256,7 @@
       "hook": ["AVAX a pris {x} en 5 minutes !", "Top 100 scanné · seuil {t}"]
     },
     "volume-spike-alerts": {
-      "link": "Alertes de volume Binance", "title": "Créer une alerte de pic de volume Binance | Market Alert", "h1": "Comment être averti des pics de volume sur Binance ?",
+      "link": "Alertes de volume Binance", "title": "Créer une alerte de pic de volume Binance | MarketAlert", "h1": "Comment être averti des pics de volume sur Binance ?",
       "description": "Créez une alerte de volume Binance : unité de temps, moyenne et multiplicateur au choix. Configuration vocale ou par chat IA et notification Telegram.",
       "intro": "Définissez votre seuil au lieu de consulter les classements de volume. MarketAlert surveille les cryptos du marché Binance choisi et vous avertit quand le volume d’une bougie dépasse le multiple choisi de sa moyenne.",
       "prompt": "Surveille les 100 cryptos au plus fort volume sur Binance Spot USDT. Préviens-moi une fois sur Telegram quand le volume d’une bougie de 15 minutes dépasse 3 fois sa moyenne sur 20 périodes.",
@@ -266,7 +266,7 @@
       "faq": [["L’évaluation se fait-elle à la clôture ?", "Oui. L’indicateur de volume utilise les bougies clôturées de l’unité choisie, pas les pics pendant une bougie ouverte."], ["Une seule alerte pour toutes les cryptos ?", "Le périmètre toutes cryptos applique une même règle aux cryptos éligibles. Plus couvre jusqu’au top 100, Pro toutes les cryptos éligibles."], ["Est-ce un signal de trading ?", "L’alerte signale votre condition de volume. Elle ne passe aucun ordre et ne garantit ni direction du prix ni gain."]]
     },
     "multi-condition-alerts": {
-      "link": "Alertes combinées RSI + EMA", "title": "Combiner RSI et EMA dans une alerte sans coder | Market Alert", "h1": "Comment recevoir une alerte quand RSI et EMA sont réunis ?",
+      "link": "Alertes combinées RSI + EMA", "title": "Combiner RSI et EMA dans une alerte sans coder | MarketAlert", "h1": "Comment recevoir une alerte quand RSI et EMA sont réunis ?",
       "description": "Combinez RSI et prix/EMA dans une seule alerte crypto. Configurez-la à la voix sans code, surveillez Binance et recevez les notifications sur Telegram.",
       "intro": "Évitez de suivre séparément une alerte RSI et une alerte de prix. Réunissez vos conditions avec ET ou OU, puis créez l’alerte à la voix ou par chat IA.",
       "prompt": "Surveille les 100 cryptos au plus fort volume sur Binance Spot USDT. Préviens-moi une fois sur Telegram quand le RSI horaire est inférieur à 30 et le prix supérieur à l’EMA20.",
@@ -277,7 +277,7 @@
     },
     "voice-crypto-alerts": {
       "link": "Alerte crypto vocale",
-      "title": "Créer une alerte crypto à la voix : RSI, volume et prix avec l’assistant vocal | Market Alert",
+      "title": "Créer une alerte crypto à la voix : RSI, volume et prix avec l’assistant vocal | MarketAlert",
       "h1": "Comment créer une alerte crypto à la voix ?",
       "description": "Dis ton alerte, l’assistant vocal MarketAlert la crée : un prix sur une crypto ou RSI et volume sur le top 100. Modifie, liste ou supprime tes alertes à la voix.",
       "intro": "Touche le micro et dis ton alerte comme tu l’expliquerais à quelqu’un. L’assistant vocal transforme ta phrase en conditions : si la demande est claire, il crée l’alerte tout de suite ; s’il manque quelque chose, il pose la question. De la même façon, tu peux modifier, lister et supprimer tes alertes. Tu préfères un formulaire ? Vois le guide [alerte de prix crypto](features/price-alerts).",
@@ -309,7 +309,7 @@
   "es": {
     "price-alerts": {
       "link": "Alerta de precio cripto",
-      "title": "Cómo crear una alerta de precio cripto (gratis) | Market Alert",
+      "title": "Cómo crear una alerta de precio cripto (gratis) | MarketAlert",
       "h1": "¿Cómo creo una alerta de precio para una criptomoneda?",
       "description": "Crea una alerta de precio gratis para monedas de Binance: escribe un precio objetivo y elige notificación push. Te avisa aunque el precio solo toque el objetivo, incluso con la app cerrada.",
       "intro": "No necesitas tener un gráfico abierto todo el día. Elige una moneda y un precio objetivo; MarketAlert vigila el precio en sus servidores y avisa a tu teléfono cuando se alcanza. Aunque el precio solo toque el objetivo un instante y retroceda, ese toque no se pierde.",
@@ -324,7 +324,7 @@
     },
     "percent-change-alerts": {
       "link": "Alerta de variación porcentual",
-      "title": "Alerta de variación porcentual cripto: entérate si una moneda se mueve un 3 % | Market Alert",
+      "title": "Alerta de variación porcentual cripto: entérate si una moneda se mueve un 3 % | MarketAlert",
       "h1": "¿Cómo recibo un aviso cuando una moneda se mueve un 3 % o un 5 % en poco tiempo?",
       "description": "Recibe una notificación gratis cuando una moneda sube o baja el porcentaje que elijas en poco tiempo, por ejemplo 5 o 15 minutos. Binance Spot y Futuros, USDT y USDC.",
       "intro": "A veces lo importante no es el nivel del precio, sino la velocidad del movimiento. Una alerta de variación porcentual te avisa cuando tu moneda sube o baja, por ejemplo, un 3 % en los minutos que elijas. Si prefieres esperar un nivel fijo, te conviene una [alerta de precio cripto](features/price-alerts).",
@@ -340,7 +340,7 @@
     },
     "all-coins-alerts": {
       "link": "Alerta para todas las monedas",
-      "title": "Una alerta para todas las monedas: escanea el top 100 o todo Binance | Market Alert",
+      "title": "Una alerta para todas las monedas: escanea el top 100 o todo Binance | MarketAlert",
       "h1": "¿Cómo sigo todas las monedas con una sola alerta?",
       "description": "Crea una alerta y deja que MarketAlert escanee el top 50, 100, 200 o todas las monedas de Binance según tu condición. Cada moneda que coincida se avisa por separado. Plus y Pro.",
       "intro": "En lugar de abrir cientos de gráficos uno por uno, escribe tu condición una sola vez. Una alerta para todas las monedas vigila continuamente las monedas del mercado de Binance que elijas y avisa por separado de cada moneda que cumpla la condición. Si solo quieres seguir una moneda, basta con una [alerta de precio cripto](features/price-alerts) o una [alerta de cambio porcentual](features/percent-change-alerts).",
@@ -357,7 +357,7 @@
       "hook": ["¡AVAX subió {x} en 5 minutos!", "Escaneando el top 100 · umbral {t}"]
     },
     "volume-spike-alerts": {
-      "link": "Alertas de volumen en Binance", "title": "Cómo crear alertas de aumento de volumen en Binance | Market Alert", "h1": "¿Cómo recibir alertas cuando aumenta el volumen en Binance?",
+      "link": "Alertas de volumen en Binance", "title": "Cómo crear alertas de aumento de volumen en Binance | MarketAlert", "h1": "¿Cómo recibir alertas cuando aumenta el volumen en Binance?",
       "description": "Configura alertas de volumen de Binance con tu intervalo, media y multiplicador. Créala por voz o chat con IA y recibe notificaciones en Telegram.",
       "intro": "Define un umbral en lugar de actualizar listas de volumen. MarketAlert analiza las monedas del mercado Binance elegido y avisa cuando el volumen de una vela supera el múltiplo elegido de su media.",
       "prompt": "Analiza las 100 monedas con mayor volumen de Binance Spot USDT. Avísame una vez por Telegram cuando el volumen de una vela de 15 minutos supere 3 veces su media de 20 períodos.",
@@ -367,7 +367,7 @@
       "faq": [["¿Se evalúa al cierre de la vela?", "Sí. El indicador de volumen utiliza velas cerradas del intervalo seleccionado, no picos dentro de una vela abierta."], ["¿Una alerta puede cubrir todas las monedas?", "Ese alcance aplica una regla a las monedas elegibles. Plus admite hasta las 100 primeras y Pro todas las elegibles."], ["¿Es una señal de trading?", "Notifica que se cumple tu condición de volumen. No ejecuta órdenes ni garantiza dirección del precio o beneficios."]]
     },
     "multi-condition-alerts": {
-      "link": "Alertas combinadas RSI + EMA", "title": "Combinar RSI y EMA en una alerta sin programar | Market Alert", "h1": "¿Cómo recibir una alerta cuando coinciden RSI y EMA?",
+      "link": "Alertas combinadas RSI + EMA", "title": "Combinar RSI y EMA en una alerta sin programar | MarketAlert", "h1": "¿Cómo recibir una alerta cuando coinciden RSI y EMA?",
       "description": "Combina RSI y precio/EMA en una alerta cripto. Configúrala por voz sin código, analiza monedas de Binance y recibe avisos en Telegram.",
       "intro": "No necesitas seguir por separado una alerta RSI y otra de precio. Combina condiciones con Y u O y crea la alerta hablando o escribiendo al chat con IA.",
       "prompt": "Analiza las 100 monedas con mayor volumen de Binance Spot USDT. Avísame una vez por Telegram cuando el RSI horario esté por debajo de 30 y el precio por encima de EMA20.",
@@ -378,7 +378,7 @@
     },
     "voice-crypto-alerts": {
       "link": "Alerta cripto por voz",
-      "title": "Crea alertas cripto por voz: RSI, volumen y precio con el asistente de voz | Market Alert",
+      "title": "Crea alertas cripto por voz: RSI, volumen y precio con el asistente de voz | MarketAlert",
       "h1": "¿Cómo se crea una alerta cripto por voz?",
       "description": "Di tu alerta y el asistente de voz de MarketAlert la crea: un precio en una moneda o RSI y volumen en el top 100. Cambia, lista o borra alertas por voz.",
       "intro": "Toca el micrófono y di tu alerta como se la contarías a una persona. El asistente de voz convierte tu frase en condiciones: si la petición es clara, crea la alerta al momento; si falta algo, te pregunta. De la misma forma puedes cambiar, listar y borrar tus alertas. ¿Prefieres un formulario? Mira la guía de [alerta de precio cripto](features/price-alerts).",
@@ -410,7 +410,7 @@
   "pt-br": {
     "price-alerts": {
       "link": "Alerta de preço cripto",
-      "title": "Como criar alerta de preço cripto (grátis) | Market Alert",
+      "title": "Como criar alerta de preço cripto (grátis) | MarketAlert",
       "h1": "Como criar um alerta de preço para uma criptomoeda?",
       "description": "Crie um alerta de preço grátis para moedas da Binance: digite o preço-alvo e escolha notificação push. Avisa mesmo se o preço só tocar o alvo, inclusive com o app fechado.",
       "intro": "Você não precisa deixar um gráfico aberto o dia todo. Escolha uma moeda e um preço-alvo; o MarketAlert acompanha o preço nos servidores e avisa seu celular quando o alvo é atingido. Mesmo que o preço só toque o alvo por um instante e volte, esse toque não passa despercebido.",
@@ -425,7 +425,7 @@
     },
     "percent-change-alerts": {
       "link": "Alerta de variação percentual",
-      "title": "Alerta de variação percentual cripto: saiba quando uma moeda se move 3% | Market Alert",
+      "title": "Alerta de variação percentual cripto: saiba quando uma moeda se move 3% | MarketAlert",
       "h1": "Como recebo um aviso quando uma moeda se move 3% ou 5% em pouco tempo?",
       "description": "Receba uma notificação grátis quando uma moeda subir ou cair o percentual escolhido em pouco tempo, como 5 ou 15 minutos. Binance Spot e Futuros, USDT e USDC.",
       "intro": "Às vezes o que importa não é o nível do preço, e sim a velocidade do movimento. O alerta de variação percentual avisa quando sua moeda sobe ou cai, por exemplo, 3% nos minutos que você escolher. Se quiser esperar um nível fixo, um [alerta de preço cripto](features/price-alerts) é mais adequado.",
@@ -441,7 +441,7 @@
     },
     "all-coins-alerts": {
       "link": "Alerta para todas as moedas",
-      "title": "Um alerta para todas as moedas: escaneie o top 100 ou toda a Binance | Market Alert",
+      "title": "Um alerta para todas as moedas: escaneie o top 100 ou toda a Binance | MarketAlert",
       "h1": "Como acompanho todas as moedas com um único alerta?",
       "description": "Crie um alerta e deixe o MarketAlert escanear o top 50, 100, 200 ou todas as moedas da Binance pela sua condição. Cada moeda que atender é avisada separadamente. Plus e Pro.",
       "intro": "Em vez de abrir centenas de gráficos um por um, escreva sua condição uma vez só. Um alerta para todas as moedas acompanha continuamente as moedas do mercado da Binance que você escolher e avisa separadamente cada moeda que atender à condição. Se quiser seguir só uma moeda, um [alerta de preço cripto](features/price-alerts) ou um [alerta de variação percentual](features/percent-change-alerts) basta.",
@@ -458,7 +458,7 @@
       "hook": ["AVAX subiu {x} em 5 minutos!", "Escaneando o top 100 · limite {t}"]
     },
     "volume-spike-alerts": {
-      "link": "Alertas de volume na Binance", "title": "Como criar alertas de aumento de volume na Binance | Market Alert", "h1": "Como receber avisos de aumento de volume na Binance?",
+      "link": "Alertas de volume na Binance", "title": "Como criar alertas de aumento de volume na Binance | MarketAlert", "h1": "Como receber avisos de aumento de volume na Binance?",
       "description": "Configure alertas de volume na Binance com período, média e multiplicador próprios. Crie por voz ou chat com IA e receba notificações no Telegram.",
       "intro": "Defina seu limite em vez de atualizar listas de volume. O MarketAlert monitora moedas do mercado Binance escolhido e avisa quando o volume da vela supera o múltiplo escolhido da sua média.",
       "prompt": "Monitore as 100 moedas com maior volume na Binance Spot USDT. Avise uma vez pelo Telegram quando o volume da vela de 15 minutos superar 3 vezes a média de 20 períodos.",
@@ -468,7 +468,7 @@
       "faq": [["A avaliação ocorre no fechamento da vela?", "Sim. O indicador de volume usa velas fechadas do período escolhido, não picos durante uma vela aberta."], ["Um alerta pode cobrir todas as moedas?", "Essa abrangência aplica uma regra às moedas elegíveis. Plus permite até as 100 primeiras; Pro permite todas as elegíveis."], ["É um sinal de negociação?", "Avisa que sua condição de volume ocorreu. Não envia ordens nem garante direção do preço ou lucro."]]
     },
     "multi-condition-alerts": {
-      "link": "Alertas combinados RSI + EMA", "title": "Combinar RSI e EMA em um alerta sem programar | Market Alert", "h1": "Como receber um alerta quando RSI e EMA coincidem?",
+      "link": "Alertas combinados RSI + EMA", "title": "Combinar RSI e EMA em um alerta sem programar | MarketAlert", "h1": "Como receber um alerta quando RSI e EMA coincidem?",
       "description": "Combine RSI e preço/EMA em um alerta cripto. Configure por voz sem código, monitore moedas da Binance e receba avisos no Telegram.",
       "intro": "Não é preciso acompanhar separadamente um alerta de RSI e outro de preço. Combine condições com E ou OU e crie o alerta falando ou escrevendo no chat com IA.",
       "prompt": "Monitore as 100 moedas com maior volume na Binance Spot USDT. Avise uma vez pelo Telegram quando o RSI de uma hora estiver abaixo de 30 e o preço acima da EMA20.",
@@ -479,7 +479,7 @@
     },
     "voice-crypto-alerts": {
       "link": "Alerta cripto por voz",
-      "title": "Crie alertas cripto por voz: RSI, volume e preço com o assistente de voz | Market Alert",
+      "title": "Crie alertas cripto por voz: RSI, volume e preço com o assistente de voz | MarketAlert",
       "h1": "Como criar um alerta cripto por voz?",
       "description": "Fale seu alerta e o assistente de voz do MarketAlert cria: um preço em uma moeda ou RSI e volume nas 100 maiores. Altere, liste ou apague alertas por voz.",
       "intro": "Toque no microfone e fale seu alerta como você contaria a uma pessoa. O assistente de voz transforma sua frase em condições: se o pedido estiver claro, ele cria o alerta na hora; se faltar algo, ele pergunta. Do mesmo jeito você pode alterar, listar e apagar seus alertas. Prefere um formulário? Veja o guia de [alerta de preço cripto](features/price-alerts).",
@@ -511,7 +511,7 @@
   "ru": {
     "price-alerts": {
       "link": "Ценовой алерт для крипты",
-      "title": "Как настроить ценовой алерт для криптовалюты (бесплатно) | Market Alert",
+      "title": "Как настроить ценовой алерт для криптовалюты (бесплатно) | MarketAlert",
       "h1": "Как настроить оповещение о цене криптовалюты?",
       "description": "Бесплатный ценовой алерт для монет Binance: укажите целевую цену и выберите push-уведомление. Сработает, даже если цена лишь коснётся цели, и при закрытом приложении.",
       "intro": "Не нужно весь день держать график открытым. Выберите монету и целевую цену: MarketAlert следит за ценой на своих серверах и присылает уведомление на телефон, когда цель достигнута. Даже если цена лишь на мгновение коснётся цели и откатится, это касание не будет пропущено.",
@@ -526,7 +526,7 @@
     },
     "percent-change-alerts": {
       "link": "Алерт на изменение в %",
-      "title": "Алерт на процентное изменение крипты: узнайте, когда монета быстро сдвинулась на 3% | Market Alert",
+      "title": "Алерт на процентное изменение крипты: узнайте, когда монета быстро сдвинулась на 3% | MarketAlert",
       "h1": "Как получить уведомление, когда монета за короткое время двигается на 3% или 5%?",
       "description": "Получайте бесплатное уведомление, когда монета растёт или падает на выбранный процент за короткий период, например 5 или 15 минут. Binance Спот и Фьючерсы, USDT и USDC.",
       "intro": "Иногда важен не уровень цены, а скорость движения. Алерт на изменение в % сообщает, когда монета за выбранное число минут вырастет или упадёт, например, на 3%. Если нужно дождаться конкретного уровня, лучше подойдёт [ценовой алерт для крипты](features/price-alerts).",
@@ -542,7 +542,7 @@
     },
     "all-coins-alerts": {
       "link": "Оповещение по всем монетам",
-      "title": "Одно оповещение на все монеты: сканируйте топ-100 или весь Binance | Market Alert",
+      "title": "Одно оповещение на все монеты: сканируйте топ-100 или весь Binance | MarketAlert",
       "h1": "Как следить за всеми монетами одним оповещением?",
       "description": "Создайте одно оповещение, и MarketAlert будет сканировать топ-50, 100, 200 или все монеты Binance по вашему условию. О каждой подходящей монете приходит отдельное уведомление. Plus и Pro.",
       "intro": "Вместо того чтобы открывать сотни графиков по одному, задайте условие один раз. Оповещение по всем монетам постоянно следит за монетами выбранного рынка Binance и отдельно сообщает о каждой монете, которая выполнила условие. Если нужна одна монета, хватит [ценового алерта](features/price-alerts) или [алерта на изменение в процентах](features/percent-change-alerts).",
@@ -559,7 +559,7 @@
       "hook": ["AVAX вырос на {x} за 5 минут!", "Сканируется топ-100 · порог {t}"]
     },
     "volume-spike-alerts": {
-      "link": "Алерты объёма Binance", "title": "Как настроить алерт на всплеск объёма Binance | Market Alert", "h1": "Как получать уведомления о всплесках объёма на Binance?",
+      "link": "Алерты объёма Binance", "title": "Как настроить алерт на всплеск объёма Binance | MarketAlert", "h1": "Как получать уведомления о всплесках объёма на Binance?",
       "description": "Настройте алерт объёма Binance: таймфрейм, среднее и множитель. Создайте голосом или в ИИ-чате и получайте уведомления в Telegram.",
       "intro": "Задайте порог вместо постоянного обновления списков объёма. MarketAlert отслеживает монеты выбранного рынка Binance и уведомляет, когда объём свечи превышает заданный множитель среднего.",
       "prompt": "Отслеживай 100 монет с наибольшим объёмом на Binance Spot USDT. Уведоми один раз в Telegram, когда объём 15-минутной свечи превысит средний объём за 20 периодов в 3 раза.",
@@ -569,7 +569,7 @@
       "faq": [["Условие проверяется после закрытия свечи?", "Да. Индикатор объёма использует закрытые свечи выбранного таймфрейма, а не всплески внутри открытой свечи."], ["Один алерт может охватить все монеты?", "Одна настройка применяется к подходящим монетам. Plus поддерживает до топ-100, Pro — все подходящие монеты."], ["Это торговый сигнал?", "Уведомление сообщает о вашем условии объёма. Оно не размещает ордера и не гарантирует направление цены или прибыль."]]
     },
     "multi-condition-alerts": {
-      "link": "Общий алерт RSI + EMA", "title": "RSI и EMA в одном алерте без кода | Market Alert", "h1": "Как получить алерт при одновременном выполнении RSI и EMA?",
+      "link": "Общий алерт RSI + EMA", "title": "RSI и EMA в одном алерте без кода | MarketAlert", "h1": "Как получить алерт при одновременном выполнении RSI и EMA?",
       "description": "Объедините RSI и цену/EMA в одном криптоалерте. Настройте голосом без кода, отслеживайте Binance и получайте уведомления Telegram.",
       "intro": "Не нужно отдельно следить за алертами RSI и цены. Объедините условия через И или ИЛИ и создайте алерт голосом или текстом в ИИ-чате.",
       "prompt": "Отслеживай 100 монет с наибольшим объёмом на Binance Spot USDT. Уведоми один раз в Telegram, когда часовой RSI ниже 30, а цена выше EMA20.",
@@ -580,7 +580,7 @@
     },
     "voice-crypto-alerts": {
       "link": "Голосовые крипто-оповещения",
-      "title": "Крипто-оповещения голосом: RSI, объём и цена через голосового ассистента | Market Alert",
+      "title": "Крипто-оповещения голосом: RSI, объём и цена через голосового ассистента | MarketAlert",
       "h1": "Как создать крипто-оповещение голосом?",
       "description": "Скажи оповещение, и голосовой ассистент MarketAlert его создаст: цена по одной монете или RSI и объём по топ-100. Меняй, смотри и удаляй оповещения голосом.",
       "intro": "Нажми на микрофон и скажи оповещение так, как объяснил бы человеку. Голосовой ассистент превращает фразу в условия: если запрос понятен, он сразу создаёт оповещение, а если чего-то не хватает, уточняет. Так же можно изменять, просматривать и удалять оповещения. Удобнее форма? Смотри руководство [ценовое крипто-оповещение](features/price-alerts).",
@@ -612,7 +612,7 @@
   "ja": {
     "price-alerts": {
       "link": "暗号資産の価格アラート",
-      "title": "暗号資産の価格アラートの設定方法（無料）| Market Alert",
+      "title": "暗号資産の価格アラートの設定方法（無料）| MarketAlert",
       "h1": "暗号資産の価格アラートはどう設定する？",
       "description": "Binanceのコインに無料で価格アラートを設定。目標価格を入力してプッシュ通知を選ぶだけ。価格が目標に一瞬触れただけでも通知し、アプリを閉じていても動作します。",
       "intro": "一日中チャートを開いておく必要はありません。コインと目標価格を選ぶと、MarketAlertがサーバーで価格を監視し、目標に達したらスマホに通知します。価格が目標に一瞬だけ触れてすぐ戻っても、そのタッチを見逃しません。",
@@ -627,7 +627,7 @@
     },
     "percent-change-alerts": {
       "link": "変動率アラート",
-      "title": "暗号資産の変動率アラート：コインが短時間で3%動いたら通知 | Market Alert",
+      "title": "暗号資産の変動率アラート：コインが短時間で3%動いたら通知 | MarketAlert",
       "h1": "コインが短時間で3%や5%動いたときに通知を受けるには？",
       "description": "5分や15分などの短い時間で、選んだ割合だけコインが上昇・下落したら無料で通知。Binanceの現物と先物、USDTとUSDCに対応。",
       "intro": "大事なのは価格の水準ではなく、動きの速さということもあります。変動率アラートは、選んだ分数のうちにコインが例えば3%上昇・下落したときに知らせます。決まった価格を待ちたい場合は[暗号資産の価格アラート](features/price-alerts)が向いています。",
@@ -643,7 +643,7 @@
     },
     "all-coins-alerts": {
       "link": "全コインアラート",
-      "title": "1つのアラートで全コインを監視：Binanceの上位100や全銘柄をスキャン | Market Alert",
+      "title": "1つのアラートで全コインを監視：Binanceの上位100や全銘柄をスキャン | MarketAlert",
       "h1": "1つのアラートで全コインを追うには？",
       "description": "アラートを1つ設定すれば、MarketAlertがBinanceの上位50・100・200または全コインを条件どおりにスキャンします。一致したコインは個別に通知。PlusとPro。",
       "intro": "何百ものチャートを1つずつ開く代わりに、条件を一度書くだけ。全コインアラートは選んだBinance市場のコインを常に監視し、条件を満たしたコインを1つずつ個別に知らせます。1つのコインだけを追うなら[暗号資産の価格アラート](features/price-alerts)や[変動率アラート](features/percent-change-alerts)で十分です。",
@@ -660,7 +660,7 @@
       "hook": ["AVAXが5分で{x}上昇！", "上位100をスキャン中 · しきい値 {t}"]
     },
     "volume-spike-alerts": {
-      "link": "Binance出来高急増アラート", "title": "Binanceの出来高急増アラートを設定する方法 | Market Alert", "h1": "Binanceの出来高が急増したら通知を受け取るには？",
+      "link": "Binance出来高急増アラート", "title": "Binanceの出来高急増アラートを設定する方法 | MarketAlert", "h1": "Binanceの出来高が急増したら通知を受け取るには？",
       "description": "時間足・出来高平均・倍率を指定してBinanceの出来高アラートを設定。音声やAIチャットで作成し、Telegramで通知を受信できます。",
       "intro": "出来高ランキングを更新し続ける代わりに、自分の基準を設定。MarketAlertは選択したBinance市場の銘柄を監視し、ローソク足の出来高が平均の指定倍率を超えると通知します。",
       "prompt": "Binance Spot USDTの出来高上位100銘柄を監視して。15分足の出来高が20期間平均の3倍を超えたら、Telegramで1回通知して。",
@@ -670,7 +670,7 @@
       "faq": [["足の確定時に評価しますか？", "はい。出来高指標は選んだ時間足の確定足を使います。未確定足の途中での出来高急増通知ではありません。"], ["1つのアラートで全銘柄を監視できますか？", "全銘柄の対象範囲では同じルールを各対象銘柄に適用します。Plusは最大上位100、Proは対象全銘柄に対応します。"], ["売買シグナルですか？", "自分で指定した出来高条件の成立を知らせます。注文は行わず、価格の方向や利益を保証しません。"]]
     },
     "multi-condition-alerts": {
-      "link": "RSI＋EMAの複合アラート", "title": "RSIとEMAを組み合わせたアラートをコードなしで設定 | Market Alert", "h1": "RSIとEMAの条件が両方成立したら通知を受け取るには？",
+      "link": "RSI＋EMAの複合アラート", "title": "RSIとEMAを組み合わせたアラートをコードなしで設定 | MarketAlert", "h1": "RSIとEMAの条件が両方成立したら通知を受け取るには？",
       "description": "RSIと価格/EMAを1つの暗号資産アラートに統合。コードなしで音声設定し、Binance銘柄を監視してTelegramに通知します。",
       "intro": "RSIと価格のアラートを別々に追う必要はありません。ANDまたはORで条件をまとめ、音声やAIチャットで作成できます。",
       "prompt": "Binance Spot USDTの出来高上位100銘柄を監視して。1時間足のRSIが30未満で、価格がEMA20より上ならTelegramで1回通知して。",
@@ -681,7 +681,7 @@
     },
     "voice-crypto-alerts": {
       "link": "音声で暗号資産アラート",
-      "title": "音声で暗号資産アラートを設定：音声アシスタントでRSI・出来高・価格 | Market Alert",
+      "title": "音声で暗号資産アラートを設定：音声アシスタントでRSI・出来高・価格 | MarketAlert",
       "h1": "音声で暗号資産アラートを設定するには？",
       "description": "アラートを話すだけで、MarketAlertの音声アシスタントが設定します。1コインの価格も、上位100コインのRSIと出来高も。アラートの変更・一覧・削除も音声で。",
       "intro": "マイクをタップして、人に頼むようにアラートを話してください。音声アシスタントが文を条件に変換し、内容がはっきりしていればすぐにアラートを作成します。足りない情報があれば質問します。同じようにアラートの変更、一覧表示、削除もできます。フォームで設定したい場合は[暗号資産の価格アラート](features/price-alerts)をご覧ください。",
@@ -713,7 +713,7 @@
   "zh": {
     "price-alerts": {
       "link": "加密货币价格提醒",
-      "title": "如何设置加密货币价格提醒（免费）| Market Alert",
+      "title": "如何设置加密货币价格提醒（免费）| MarketAlert",
       "h1": "如何为加密货币设置价格提醒？",
       "description": "为币安币种免费设置价格提醒：输入目标价并选择推送通知。即使价格只是触及目标也会提醒，关闭应用也能工作。",
       "intro": "不必整天开着图表。选择币种和目标价，MarketAlert 会在服务器上监控价格，到达目标时通知你的手机。即使价格只是瞬间触及目标又回落，这次触及也不会被错过。",
@@ -728,7 +728,7 @@
     },
     "percent-change-alerts": {
       "link": "涨跌幅提醒",
-      "title": "加密货币涨跌幅提醒：币种短时间波动 3% 就通知你 | Market Alert",
+      "title": "加密货币涨跌幅提醒：币种短时间波动 3% 就通知你 | MarketAlert",
       "h1": "币种在短时间内涨跌 3% 或 5% 时，如何收到通知？",
       "description": "当币种在 5 分钟、15 分钟等短时间内涨跌达到你设定的百分比时，免费收到通知。支持 Binance 现货和合约、USDT 和 USDC。",
       "intro": "有时重要的不是价格的高低，而是波动的速度。涨跌幅提醒会在币种于你设定的分钟数内上涨或下跌例如 3% 时通知你。如果你想等待某个固定价位，[加密货币价格提醒](features/price-alerts)更合适。",
@@ -744,7 +744,7 @@
     },
     "all-coins-alerts": {
       "link": "全币种提醒",
-      "title": "一个提醒覆盖所有币种：扫描币安前 100 或全部币种 | Market Alert",
+      "title": "一个提醒覆盖所有币种：扫描币安前 100 或全部币种 | MarketAlert",
       "h1": "如何用一个提醒跟踪所有币种？",
       "description": "设置一个提醒，MarketAlert 就会按你的条件扫描币安前 50、100、200 或全部币种。每个符合条件的币种都会单独通知。Plus 和 Pro。",
       "intro": "不必一个个打开几百张图表，只需把条件写一次。全币种提醒会持续监控你所选币安市场中的币种，并对每个满足条件的币种分别发出通知。如果只想关注一个币种，[加密货币价格提醒](features/price-alerts)或[涨跌幅提醒](features/percent-change-alerts)就够了。",
@@ -761,7 +761,7 @@
       "hook": ["AVAX 5 分钟上涨 {x}！", "正在扫描前 100 · 阈值 {t}"]
     },
     "volume-spike-alerts": {
-      "link": "币安成交量激增提醒", "title": "如何设置币安成交量激增提醒 | Market Alert", "h1": "币安币种成交量激增时，如何收到提醒？",
+      "link": "币安成交量激增提醒", "title": "如何设置币安成交量激增提醒 | MarketAlert", "h1": "币安币种成交量激增时，如何收到提醒？",
       "description": "自选时间周期、成交量均值和倍数，设置币安成交量提醒。通过语音或AI聊天创建，并在Telegram接收通知。",
       "intro": "无需不断刷新成交量排行榜，直接设定自己的阈值。MarketAlert扫描所选币安市场的币种，当K线成交量超过均值的指定倍数时通知你。",
       "prompt": "扫描币安Spot USDT成交量前100的币种。15分钟K线成交量超过20周期成交量均值的3倍时，通过Telegram通知我一次。",
@@ -771,7 +771,7 @@
       "faq": [["是在K线收盘后判断吗？", "是。成交量指标使用所选周期已收盘的K线，不是在未收盘K线内触发的成交量激增通知。"], ["一个提醒能覆盖全部币种吗？", "全部币种范围将同一规则应用到符合条件的币种。Plus最多支持前100，Pro支持全部符合条件的币种。"], ["这是交易信号吗？", "它报告你设定的成交量条件已满足，不下单，也不保证价格方向或收益。"]]
     },
     "multi-condition-alerts": {
-      "link": "RSI + EMA组合提醒", "title": "无需编程，将RSI和EMA组合成一个提醒 | Market Alert", "h1": "RSI和EMA条件同时满足时，如何收到提醒？",
+      "link": "RSI + EMA组合提醒", "title": "无需编程，将RSI和EMA组合成一个提醒 | MarketAlert", "h1": "RSI和EMA条件同时满足时，如何收到提醒？",
       "description": "将RSI和价格/EMA条件组合成一个加密货币提醒。无需编程，语音设置，扫描币安币种并通过Telegram接收通知。",
       "intro": "无需分别盯着RSI提醒和价格提醒。在同一个提醒中用AND或OR组合条件，再通过语音或AI文字聊天创建。",
       "prompt": "扫描币安Spot USDT成交量前100的币种。1小时RSI低于30且价格高于EMA20时，通过Telegram通知我一次。",
@@ -782,7 +782,7 @@
     },
     "voice-crypto-alerts": {
       "link": "语音加密货币提醒",
-      "title": "用语音设置加密货币提醒：语音助手设置 RSI、成交量和价格 | Market Alert",
+      "title": "用语音设置加密货币提醒：语音助手设置 RSI、成交量和价格 | MarketAlert",
       "h1": "如何用语音设置加密货币提醒？",
       "description": "说出你的提醒，MarketAlert 语音助手帮你设置：单个币种的价格，或前 100 币种的 RSI 和成交量。也能用语音修改、列出和删除提醒。",
       "intro": "点一下麦克风，像对人说话一样说出你的提醒。语音助手会把这句话变成条件：请求清楚时立即创建提醒，缺少信息时会先问你。同样也能用语音修改、列出和删除提醒。想用表单设置？请看[加密货币价格提醒](features/price-alerts)指南。",
@@ -814,7 +814,7 @@
   "hi": {
     "price-alerts": {
       "link": "क्रिप्टो प्राइस अलर्ट",
-      "title": "क्रिप्टो प्राइस अलर्ट कैसे सेट करें (मुफ़्त) | Market Alert",
+      "title": "क्रिप्टो प्राइस अलर्ट कैसे सेट करें (मुफ़्त) | MarketAlert",
       "h1": "किसी क्रिप्टो कॉइन के लिए प्राइस अलर्ट कैसे सेट करें?",
       "description": "Binance कॉइन के लिए मुफ़्त प्राइस अलर्ट सेट करें: लक्ष्य कीमत लिखें और पुश नोटिफ़िकेशन चुनें। कीमत लक्ष्य को बस छू ले तब भी सूचना मिलती है, ऐप बंद होने पर भी।",
       "intro": "पूरे दिन चार्ट खुला रखने की ज़रूरत नहीं। कॉइन और लक्ष्य कीमत चुनें; MarketAlert अपने सर्वर पर कीमत पर नज़र रखता है और लक्ष्य पूरा होते ही आपके फ़ोन पर सूचना भेजता है। अगर कीमत एक पल के लिए लक्ष्य को छूकर लौट भी जाए, तो भी वह छूना नहीं छूटता।",
@@ -829,7 +829,7 @@
     },
     "percent-change-alerts": {
       "link": "प्रतिशत बदलाव अलर्ट",
-      "title": "क्रिप्टो प्रतिशत बदलाव अलर्ट: कॉइन तेज़ी से 3% हिले तो जानें | Market Alert",
+      "title": "क्रिप्टो प्रतिशत बदलाव अलर्ट: कॉइन तेज़ी से 3% हिले तो जानें | MarketAlert",
       "h1": "कोई कॉइन कम समय में 3% या 5% हिले तो सूचना कैसे पाएँ?",
       "description": "जब कोई कॉइन 5 या 15 मिनट जैसे कम समय में आपके चुने प्रतिशत जितना ऊपर या नीचे जाए, तो मुफ़्त सूचना पाएँ। Binance Spot और Futures, USDT और USDC।",
       "intro": "कभी-कभी कीमत का स्तर नहीं, बल्कि चाल की रफ़्तार मायने रखती है। प्रतिशत बदलाव अलर्ट बताता है जब आपका कॉइन आपके चुने मिनटों में, जैसे 3%, ऊपर या नीचे जाए। अगर आप किसी तय स्तर का इंतज़ार करना चाहते हैं, तो [क्रिप्टो प्राइस अलर्ट](features/price-alerts) बेहतर है।",
@@ -845,7 +845,7 @@
     },
     "all-coins-alerts": {
       "link": "सभी कॉइन अलर्ट",
-      "title": "सभी कॉइन के लिए एक अलर्ट: Binance पर टॉप 100 या हर कॉइन स्कैन करें | Market Alert",
+      "title": "सभी कॉइन के लिए एक अलर्ट: Binance पर टॉप 100 या हर कॉइन स्कैन करें | MarketAlert",
       "h1": "एक ही अलर्ट से सभी कॉइन पर नज़र कैसे रखूँ?",
       "description": "एक अलर्ट सेट करें और MarketAlert आपकी शर्त के हिसाब से Binance के टॉप 50, 100, 200 या सभी कॉइन स्कैन करेगा। हर मैच होने वाले कॉइन की अलग सूचना मिलती है। Plus और Pro।",
       "intro": "सैकड़ों चार्ट एक-एक करके खोलने के बजाय अपनी शर्त एक बार लिखें। सभी कॉइन अलर्ट आपके चुने हुए Binance मार्केट के कॉइन पर लगातार नज़र रखता है और शर्त पूरी करने वाले हर कॉइन की अलग से सूचना देता है। अगर आपको सिर्फ़ एक कॉइन देखना है, तो [क्रिप्टो प्राइस अलर्ट](features/price-alerts) या [प्रतिशत बदलाव अलर्ट](features/percent-change-alerts) काफ़ी है।",
@@ -862,7 +862,7 @@
       "hook": ["AVAX 5 मिनट में {x} बढ़ा!", "टॉप 100 स्कैन हो रहे हैं · सीमा {t}"]
     },
     "volume-spike-alerts": {
-      "link": "Binance वॉल्यूम स्पाइक अलर्ट", "title": "Binance वॉल्यूम स्पाइक अलर्ट कैसे लगाएँ | Market Alert", "h1": "Binance पर किसी कॉइन का वॉल्यूम बढ़ने की सूचना कैसे पाएँ?",
+      "link": "Binance वॉल्यूम स्पाइक अलर्ट", "title": "Binance वॉल्यूम स्पाइक अलर्ट कैसे लगाएँ | MarketAlert", "h1": "Binance पर किसी कॉइन का वॉल्यूम बढ़ने की सूचना कैसे पाएँ?",
       "description": "अपनी समयावधि, औसत और गुणक के साथ Binance वॉल्यूम अलर्ट लगाएँ। बोलकर या AI चैट से बनाएँ और Telegram पर सूचना पाएँ।",
       "intro": "वॉल्यूम की सूची बार-बार देखने के बजाय अपनी सीमा तय करें। MarketAlert चुने गए Binance बाज़ार के कॉइन स्कैन करता है और कैंडल वॉल्यूम औसत के तय गुणक से अधिक होने पर सूचना देता है।",
       "prompt": "Binance Spot USDT पर वॉल्यूम के हिसाब से शीर्ष 100 कॉइन स्कैन करो। 15 मिनट की कैंडल का वॉल्यूम 20 अवधि के औसत से 3 गुना अधिक होने पर Telegram पर एक बार बताओ।",
@@ -872,7 +872,7 @@
       "faq": [["क्या जाँच कैंडल बंद होने पर होती है?", "हाँ। वॉल्यूम इंडिकेटर चुनी अवधि की बंद कैंडल का उपयोग करता है, खुली कैंडल के बीच के स्पाइक की सूचना नहीं देता।"], ["क्या एक अलर्ट सभी कॉइन देख सकता है?", "सभी कॉइन के दायरे में एक नियम पात्र कॉइन पर लागू होता है। Plus अधिकतम शीर्ष 100 और Pro सभी पात्र कॉइन का समर्थन करता है।"], ["क्या यह ट्रेडिंग सिग्नल है?", "यह आपकी वॉल्यूम शर्त पूरी होने की सूचना है। यह ऑर्डर नहीं लगाता और कीमत की दिशा या लाभ की गारंटी नहीं देता।"]]
     },
     "multi-condition-alerts": {
-      "link": "RSI + EMA संयुक्त अलर्ट", "title": "बिना कोड RSI और EMA का संयुक्त अलर्ट | Market Alert", "h1": "RSI और EMA की दोनों शर्तें मिलने पर अलर्ट कैसे पाएँ?",
+      "link": "RSI + EMA संयुक्त अलर्ट", "title": "बिना कोड RSI और EMA का संयुक्त अलर्ट | MarketAlert", "h1": "RSI और EMA की दोनों शर्तें मिलने पर अलर्ट कैसे पाएँ?",
       "description": "RSI और कीमत/EMA को एक क्रिप्टो अलर्ट में जोड़ें। बिना कोड बोलकर बनाएँ, Binance कॉइन स्कैन करें और Telegram पर सूचना पाएँ।",
       "intro": "RSI और कीमत के अलग-अलग अलर्ट देखने की ज़रूरत नहीं। AND या OR से शर्तें जोड़ें और बोलकर या AI चैट में लिखकर अलर्ट बनाएँ।",
       "prompt": "Binance Spot USDT पर वॉल्यूम के हिसाब से शीर्ष 100 कॉइन स्कैन करो। घंटे का RSI 30 से नीचे और कीमत EMA20 से ऊपर हो तो Telegram पर एक बार बताओ।",
@@ -883,7 +883,7 @@
     },
     "voice-crypto-alerts": {
       "link": "आवाज़ से क्रिप्टो अलर्ट",
-      "title": "आवाज़ से क्रिप्टो अलर्ट सेट करें: वॉइस असिस्टेंट से RSI, वॉल्यूम और कीमत | Market Alert",
+      "title": "आवाज़ से क्रिप्टो अलर्ट सेट करें: वॉइस असिस्टेंट से RSI, वॉल्यूम और कीमत | MarketAlert",
       "h1": "आवाज़ से क्रिप्टो अलर्ट कैसे सेट करें?",
       "description": "अपना अलर्ट बोलें, MarketAlert वॉइस असिस्टेंट उसे सेट कर देगा: एक कॉइन की कीमत या टॉप 100 में RSI और वॉल्यूम। अलर्ट आवाज़ से बदलें, देखें और हटाएँ।",
       "intro": "माइक्रोफ़ोन पर टैप करें और अलर्ट वैसे ही बोलें जैसे किसी इंसान को बताते। वॉइस असिस्टेंट आपके वाक्य को शर्तों में बदलता है: अनुरोध साफ़ हो तो तुरंत अलर्ट बना देता है, कुछ कमी हो तो पूछ लेता है। इसी तरह आप अलर्ट बदल, देख और हटा भी सकते हैं। फ़ॉर्म से सेट करना है? [क्रिप्टो प्राइस अलर्ट](features/price-alerts) गाइड देखें।",
@@ -915,7 +915,7 @@
   "ar": {
     "price-alerts": {
       "link": "تنبيه سعر العملات الرقمية",
-      "title": "كيف تضبط تنبيه سعر للعملات الرقمية (مجانًا) | Market Alert",
+      "title": "كيف تضبط تنبيه سعر للعملات الرقمية (مجانًا) | MarketAlert",
       "h1": "كيف أضبط تنبيه سعر لعملة رقمية؟",
       "description": "اضبط تنبيه سعر مجانيًا لعملات Binance: اكتب السعر المستهدف واختر إشعارًا فوريًا. يصلك التنبيه حتى لو لمس السعر الهدف لحظة واحدة، ويعمل والتطبيق مغلق.",
       "intro": "لا حاجة لإبقاء الرسم البياني مفتوحًا طوال اليوم. اختر العملة والسعر المستهدف؛ يراقب MarketAlert السعر على خوادمه ويرسل إشعارًا إلى هاتفك عند بلوغ الهدف. حتى لو لمس السعر الهدف لحظة ثم تراجع، لن تفوتك هذه اللمسة.",
@@ -930,7 +930,7 @@
     },
     "percent-change-alerts": {
       "link": "تنبيه نسبة التغير",
-      "title": "تنبيه نسبة التغير للعملات الرقمية: اعرف متى تتحرك العملة 3% بسرعة | Market Alert",
+      "title": "تنبيه نسبة التغير للعملات الرقمية: اعرف متى تتحرك العملة 3% بسرعة | MarketAlert",
       "h1": "كيف أتلقى إشعارًا عندما تتحرك عملة 3% أو 5% في وقت قصير؟",
       "description": "احصل على إشعار مجاني عندما ترتفع عملة أو تنخفض بالنسبة التي تختارها خلال وقت قصير مثل 5 أو 15 دقيقة. Binance الفوري والعقود الآجلة، USDT وUSDC.",
       "intro": "أحيانًا لا يهم مستوى السعر بل سرعة الحركة. ينبّهك تنبيه نسبة التغير عندما ترتفع عملتك أو تنخفض، مثلًا بنسبة 3%، خلال عدد الدقائق الذي تختاره. إذا أردت انتظار مستوى ثابت فإن [تنبيه سعر العملات الرقمية](features/price-alerts) أنسب.",
@@ -946,7 +946,7 @@
     },
     "all-coins-alerts": {
       "link": "تنبيه كل العملات",
-      "title": "تنبيه واحد لكل العملات: افحص أعلى 100 أو كل عملات Binance | Market Alert",
+      "title": "تنبيه واحد لكل العملات: افحص أعلى 100 أو كل عملات Binance | MarketAlert",
       "h1": "كيف أتابع كل العملات بتنبيه واحد؟",
       "description": "أنشئ تنبيهًا واحدًا ودع MarketAlert يفحص أعلى 50 أو 100 أو 200 أو كل العملات في Binance وفق شرطك. تصلك كل عملة مطابقة في إشعار مستقل. Plus وPro.",
       "intro": "بدل فتح مئات الرسوم البيانية واحدًا تلو الآخر، اكتب شرطك مرة واحدة. يراقب تنبيه كل العملات باستمرار عملات سوق Binance الذي تختاره، ويُبلغك بكل عملة تحقق الشرط على حدة. إن أردت متابعة عملة واحدة فقط، فيكفيك [تنبيه سعر العملات المشفرة](features/price-alerts) أو [تنبيه نسبة التغير](features/percent-change-alerts).",
@@ -963,7 +963,7 @@
       "hook": ["ارتفع AVAX بنسبة {x} خلال 5 دقائق!", "جارٍ فحص أعلى 100 · الحد {t}"]
     },
     "volume-spike-alerts": {
-      "link": "تنبيهات حجم التداول في Binance", "title": "كيفية إعداد تنبيه ارتفاع حجم التداول في Binance | Market Alert", "h1": "كيف أتلقى تنبيهًا عند ارتفاع حجم تداول العملات في Binance؟",
+      "link": "تنبيهات حجم التداول في Binance", "title": "كيفية إعداد تنبيه ارتفاع حجم التداول في Binance | MarketAlert", "h1": "كيف أتلقى تنبيهًا عند ارتفاع حجم تداول العملات في Binance؟",
       "description": "اضبط تنبيه حجم تداول Binance بالفاصل الزمني والمتوسط والمضاعف الذي تختاره. أنشئه بالصوت أو محادثة الذكاء الاصطناعي وتلقَّ إشعار Telegram.",
       "intro": "حدّد عتبتك بدل تحديث قوائم أحجام التداول باستمرار. يفحص MarketAlert عملات سوق Binance الذي تختاره ويُشعرك عندما يتجاوز حجم الشمعة المضاعف المحدد لمتوسطه.",
       "prompt": "راقب أعلى 100 عملة من حيث الحجم في Binance Spot USDT. أبلغني مرة واحدة عبر Telegram عندما يتجاوز حجم شمعة 15 دقيقة ثلاثة أضعاف متوسط الحجم لـ20 فترة.",
@@ -973,7 +973,7 @@
       "faq": [["هل يُقيَّم الشرط عند إغلاق الشمعة؟", "نعم. يستخدم مؤشر الحجم الشموع المغلقة للفاصل المختار، ولا يُرسل تنبيه قفزة حجم أثناء شمعة مفتوحة."], ["هل يكفي تنبيه واحد لجميع العملات؟", "يطبّق نطاق جميع العملات التعريف نفسه على العملات المؤهلة. تدعم Plus حتى أعلى 100، وتدعم Pro جميع العملات المؤهلة."], ["هل هذه إشارة تداول؟", "إنه إشعار بتحقق شرط الحجم الذي وضعته. لا يفتح أوامر ولا يضمن اتجاه السعر أو الأرباح."]]
     },
     "multi-condition-alerts": {
-      "link": "تنبيه RSI + EMA مركّب", "title": "دمج RSI وEMA في تنبيه دون برمجة | Market Alert", "h1": "كيف أتلقى تنبيهًا عند تحقق شرطي RSI وEMA معًا؟",
+      "link": "تنبيه RSI + EMA مركّب", "title": "دمج RSI وEMA في تنبيه دون برمجة | MarketAlert", "h1": "كيف أتلقى تنبيهًا عند تحقق شرطي RSI وEMA معًا؟",
       "description": "اجمع RSI والسعر/EMA في تنبيه عملات مشفرة واحد. أنشئه صوتيًا دون برمجة، وافحص عملات Binance وتلقَّ الإشعارات عبر Telegram.",
       "intro": "لا تحتاج إلى متابعة تنبيه RSI وتنبيه سعر منفصلين. اجمع الشروط في تنبيه واحد باستخدام AND أو OR وأنشئه بالكلام أو بالكتابة في محادثة الذكاء الاصطناعي.",
       "prompt": "راقب أعلى 100 عملة من حيث الحجم في Binance Spot USDT. أبلغني مرة واحدة عبر Telegram عندما يكون RSI للساعة أقل من 30 والسعر فوق EMA20.",
@@ -984,7 +984,7 @@
     },
     "voice-crypto-alerts": {
       "link": "تنبيه العملات الرقمية بالصوت",
-      "title": "أنشئ تنبيهات العملات الرقمية بالصوت: RSI والحجم والسعر عبر المساعد الصوتي | Market Alert",
+      "title": "أنشئ تنبيهات العملات الرقمية بالصوت: RSI والحجم والسعر عبر المساعد الصوتي | MarketAlert",
       "h1": "كيف تنشئ تنبيهًا للعملات الرقمية بالصوت؟",
       "description": "قل تنبيهك وسيُنشئه المساعد الصوتي في MarketAlert: سعر لعملة واحدة أو RSI والحجم في أفضل 100 عملة. عدّل تنبيهاتك واعرضها واحذفها بالصوت.",
       "intro": "اضغط على الميكروفون وقل تنبيهك كما تشرحه لشخص آخر. يحوّل المساعد الصوتي جملتك إلى شروط: إذا كان الطلب واضحًا أنشأ التنبيه فورًا، وإذا نقص شيء سألك. وبالطريقة نفسها يمكنك تعديل تنبيهاتك وعرضها وحذفها. تفضّل النموذج؟ اطّلع على دليل [تنبيه سعر العملات الرقمية](features/price-alerts).",
@@ -1016,7 +1016,7 @@
   "en": {
     "price-alerts": {
       "link": "Crypto price alerts",
-      "title": "How to set a crypto price alert (free) | Market Alert",
+      "title": "How to set a crypto price alert (free) | MarketAlert",
       "h1": "How do I set a price alert for a crypto coin?",
       "description": "Set a free price alert for Binance coins: enter a target price and choose a push notification. Get notified even if the price only touches the target. Works with the app closed.",
       "intro": "You don’t need to keep a chart open all day. Pick a coin and a target price; MarketAlert watches the price on its servers and notifies your phone when the target is reached. Even if the price only touches the target for a moment and pulls back, that touch is not missed.",
@@ -1031,7 +1031,7 @@
     },
     "percent-change-alerts": {
       "link": "Percentage change alerts",
-      "title": "Crypto percentage change alert: know when a coin moves 3% fast | Market Alert",
+      "title": "Crypto percentage change alert: know when a coin moves 3% fast | MarketAlert",
       "h1": "How do I get notified when a coin moves 3% or 5% in a short time?",
       "description": "Get a free notification when a coin rises or falls by your chosen percentage within a short window such as 5 or 15 minutes. Binance Spot and Futures, USDT and USDC.",
       "intro": "Sometimes what matters isn’t the price level but how fast it moves. A percentage change alert tells you when your coin rises or falls by, say, 3% within the minutes you choose. If you want to wait for a fixed level instead, a [crypto price alert](features/price-alerts) is the better fit.",
@@ -1047,7 +1047,7 @@
     },
     "all-coins-alerts": {
       "link": "All-coins alerts",
-      "title": "One alert for every coin: scan the top 100 or all coins on Binance | Market Alert",
+      "title": "One alert for every coin: scan the top 100 or all coins on Binance | MarketAlert",
       "h1": "How do I track every coin with a single alert?",
       "description": "Set one alert and let MarketAlert scan the top 50, 100, 200 or all coins on Binance for your condition. Every matching coin is reported separately. Plus and Pro.",
       "intro": "Instead of opening hundreds of charts one by one, write your condition once. An all-coins alert keeps watching the coins in the Binance market you choose and reports every coin that meets the condition separately. If you only want to follow one coin, a [crypto price alert](features/price-alerts) or a [percentage change alert](features/percent-change-alerts) is enough.",
@@ -1065,7 +1065,7 @@
     },
     "volume-spike-alerts": {
       "link": "Binance volume spike alerts",
-      "title": "How to set Binance volume spike alerts | Market Alert",
+      "title": "How to set Binance volume spike alerts | MarketAlert",
       "h1": "How do I get alerts when Binance coin volume spikes?",
       "description": "Set Binance volume spike alerts with your timeframe, volume average and multiplier. Create by voice or AI chat and receive Telegram notifications.",
       "intro": "Set your own threshold instead of refreshing volume rankings. MarketAlert scans coins on your selected Binance market and notifies you when candle volume exceeds your chosen multiple of its volume average.",
@@ -1077,7 +1077,7 @@
     },
     "multi-condition-alerts": {
       "link": "Combined RSI + EMA alerts",
-      "title": "RSI and EMA alerts together, without coding | Market Alert",
+      "title": "RSI and EMA alerts together, without coding | MarketAlert",
       "h1": "How do I get an alert when RSI and EMA conditions both match?",
       "description": "Combine RSI and price/EMA conditions in one crypto alert. Set it by voice without code or forms, scan Binance coins and receive Telegram notifications.",
       "intro": "You do not have to monitor a separate RSI alert and price alert. Combine your conditions in one alert with AND or OR, then create it by speaking or typing in AI chat.",
@@ -1089,7 +1089,7 @@
     },
     "voice-crypto-alerts": {
       "link": "Voice crypto alerts",
-      "title": "Set crypto alerts by voice: RSI, volume and price with a voice assistant | Market Alert",
+      "title": "Set crypto alerts by voice: RSI, volume and price with a voice assistant | MarketAlert",
       "h1": "How do you set a crypto alert by voice?",
       "description": "Say your alert and the MarketAlert voice assistant sets it up: a price on one coin or RSI and volume on the top 100. Change, list or delete alerts by voice.",
       "intro": "Tap the microphone and say your alert the way you would tell a person. The voice assistant turns your sentence into conditions; if the request is clear it creates the alert right away, and if something is missing it asks. The same way you can change, list and delete your alerts. Prefer a form? See the [crypto price alert](features/price-alerts) guide.",

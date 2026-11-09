@@ -2,7 +2,7 @@
   "tr": {
     "bitcoin-price-alert": {
       "link": "Bitcoin fiyat alarmı",
-      "title": "Bitcoin fiyat alarmı: BTC hedefe gelince haber al | Market Alert",
+      "title": "Bitcoin fiyat alarmı: BTC hedefe gelince haber al | MarketAlert",
       "h1": "Bitcoin belli bir fiyata gelince nasıl haber alırım?",
       "description": "BTC belli bir fiyatın üstüne çıkınca ya da altına inince ücretsiz bildirim al. Binance Spot ve Vadeli BTC/USDT, BTC/USDC; kısa iğneler de yakalanır.",
       "intro": "Bitcoin 100.000’i geçtiğinde ya da 85.000’in altına indiğinde bunu grafiğe bakmadan öğren. MarketAlert BTC fiyatını Binance’teki işlemlerden sürekli izler ve seviyen geldiğinde telefonuna bildirim gönderir. Kurulum, genel [kripto fiyat alarmı](features/price-alerts) ile aynıdır; bu sayfa BTC’ye özgü ayrıntıları anlatır.",
@@ -20,7 +20,7 @@
   "en": {
     "bitcoin-price-alert": {
       "link": "Bitcoin price alerts",
-      "title": "Bitcoin price alert: get notified when BTC hits your level | Market Alert",
+      "title": "Bitcoin price alert: get notified when BTC hits your level | MarketAlert",
       "h1": "How do I get notified when Bitcoin reaches a certain price?",
       "description": "Get a free notification when BTC rises above or falls below a price. Binance Spot and Futures BTC/USDT and BTC/USDC; short wicks are caught too.",
       "intro": "Find out when Bitcoin passes 100,000 or drops below 85,000 without watching the chart. MarketAlert watches the BTC price from trades on Binance and notifies your phone when your level is reached. Setup is the same as a general [crypto price alert](features/price-alerts); this page covers the details specific to BTC.",
@@ -38,7 +38,7 @@
   "zh": {
     "bitcoin-price-alert": {
       "link": "比特币价格提醒",
-      "title": "比特币价格提醒：BTC 到达你的价位时通知 | Market Alert",
+      "title": "比特币价格提醒：BTC 到达你的价位时通知 | MarketAlert",
       "h1": "比特币到达某个价格时如何收到通知？",
       "description": "BTC 涨破或跌破某个价格时免费通知你。支持币安现货和合约 BTC/USDT、BTC/USDC，短暂插针也能捕捉。",
       "intro": "不用盯着图表，也能知道比特币何时突破 100,000 或跌破 85,000。MarketAlert 根据币安的成交监控 BTC 价格，到达你设定的价位时通知你的手机。设置方法与普通的[加密货币价格提醒](features/price-alerts)相同，本页介绍 BTC 特有的细节。",
@@ -56,7 +56,7 @@
   "es": {
     "bitcoin-price-alert": {
       "link": "Alerta de precio de Bitcoin",
-      "title": "Alerta de precio de Bitcoin: aviso cuando BTC llegue a tu nivel | Market Alert",
+      "title": "Alerta de precio de Bitcoin: aviso cuando BTC llegue a tu nivel | MarketAlert",
       "h1": "¿Cómo recibo un aviso cuando Bitcoin llega a cierto precio?",
       "description": "Recibe un aviso gratis cuando BTC suba por encima o baje por debajo de un precio. Binance Spot y Futuros BTC/USDT y BTC/USDC; también detecta mechas cortas.",
       "intro": "Entérate de cuándo Bitcoin supera 100.000 o cae por debajo de 85.000 sin mirar el gráfico. MarketAlert sigue el precio de BTC a partir de las operaciones en Binance y avisa a tu teléfono cuando se alcanza tu nivel. La configuración es la misma que una [alerta de precio cripto](features/price-alerts) normal; esta página explica los detalles propios de BTC.",
@@ -74,7 +74,7 @@
   "hi": {
     "bitcoin-price-alert": {
       "link": "बिटकॉइन प्राइस अलर्ट",
-      "title": "बिटकॉइन प्राइस अलर्ट: BTC आपके स्तर पर पहुँचे तो सूचना | Market Alert",
+      "title": "बिटकॉइन प्राइस अलर्ट: BTC आपके स्तर पर पहुँचे तो सूचना | MarketAlert",
       "h1": "बिटकॉइन किसी कीमत पर पहुँचे तो सूचना कैसे पाएँ?",
       "description": "BTC किसी कीमत से ऊपर जाए या नीचे आए तो मुफ़्त सूचना पाएँ। Binance Spot और Futures में BTC/USDT और BTC/USDC; छोटी विक भी पकड़ी जाती है।",
       "intro": "चार्ट देखे बिना जानें कि बिटकॉइन कब 1,00,000 के पार गया या 85,000 से नीचे आया। MarketAlert Binance के ट्रेड से BTC कीमत पर नज़र रखता है और आपका स्तर आते ही फ़ोन पर सूचना भेजता है। सेटअप सामान्य [क्रिप्टो प्राइस अलर्ट](features/price-alerts) जैसा ही है; यह पेज BTC से जुड़ी ख़ास बातें बताता है।",
@@ -92,7 +92,7 @@
   "ar": {
     "bitcoin-price-alert": {
       "link": "تنبيه سعر البيتكوين",
-      "title": "تنبيه سعر البيتكوين: إشعار عندما يبلغ BTC مستواك | Market Alert",
+      "title": "تنبيه سعر البيتكوين: إشعار عندما يبلغ BTC مستواك | MarketAlert",
       "h1": "كيف أتلقى إشعارًا عندما يصل البيتكوين إلى سعر معيّن؟",
       "description": "تلقَّ إشعارًا مجانيًا عندما يرتفع BTC فوق سعر أو ينخفض تحته. فوري وعقود آجلة على Binance لـ BTC/USDT وBTC/USDC، مع التقاط الذيول القصيرة أيضًا.",
       "intro": "اعرف متى يتجاوز البيتكوين 100,000 أو ينخفض تحت 85,000 دون مراقبة الرسم البياني. يتابع MarketAlert سعر BTC من صفقات Binance ويرسل إشعارًا إلى هاتفك عند بلوغ مستواك. الإعداد مثل [تنبيه سعر العملات الرقمية](features/price-alerts) العادي، وتشرح هذه الصفحة التفاصيل الخاصة بـ BTC.",
@@ -110,7 +110,7 @@
   "pt-br": {
     "bitcoin-price-alert": {
       "link": "Alerta de preço do Bitcoin",
-      "title": "Alerta de preço do Bitcoin: aviso quando o BTC chegar ao seu nível | Market Alert",
+      "title": "Alerta de preço do Bitcoin: aviso quando o BTC chegar ao seu nível | MarketAlert",
       "h1": "Como ser avisado quando o Bitcoin chegar a um certo preço?",
       "description": "Receba um aviso grátis quando o BTC subir acima ou cair abaixo de um preço. Binance Spot e Futuros BTC/USDT e BTC/USDC; pavios curtos também são detectados.",
       "intro": "Saiba quando o Bitcoin passar de 100.000 ou cair abaixo de 85.000 sem olhar o gráfico. O MarketAlert acompanha o preço do BTC a partir das negociações na Binance e avisa seu celular quando o seu nível é atingido. A configuração é igual à de um [alerta de preço cripto](features/price-alerts) comum; esta página explica os detalhes próprios do BTC.",
@@ -128,7 +128,7 @@
   "fr": {
     "bitcoin-price-alert": {
       "link": "Alerte de prix Bitcoin",
-      "title": "Alerte de prix Bitcoin : soyez prévenu quand le BTC atteint votre niveau | Market Alert",
+      "title": "Alerte de prix Bitcoin : soyez prévenu quand le BTC atteint votre niveau | MarketAlert",
       "h1": "Comment être prévenu quand le Bitcoin atteint un certain prix ?",
       "description": "Notification gratuite quand le BTC passe au-dessus ou en dessous d’un prix. Binance Spot et Futures BTC/USDT et BTC/USDC ; les mèches courtes sont aussi détectées.",
       "intro": "Sachez quand le Bitcoin dépasse 100 000 ou passe sous 85 000 sans surveiller le graphique. MarketAlert suit le prix du BTC à partir des transactions sur Binance et prévient votre téléphone quand votre niveau est atteint. La configuration est la même qu’une [alerte de prix crypto](features/price-alerts) classique ; cette page détaille ce qui est propre au BTC.",
@@ -146,7 +146,7 @@
   "ru": {
     "bitcoin-price-alert": {
       "link": "Ценовой алерт для Bitcoin",
-      "title": "Алерт на цену Bitcoin: уведомление, когда BTC достигнет вашего уровня | Market Alert",
+      "title": "Алерт на цену Bitcoin: уведомление, когда BTC достигнет вашего уровня | MarketAlert",
       "h1": "Как получить уведомление, когда Bitcoin достигнет определённой цены?",
       "description": "Бесплатное уведомление, когда BTC поднимется выше или опустится ниже цены. Binance Спот и Фьючерсы BTC/USDT и BTC/USDC; короткие шпильки тоже ловятся.",
       "intro": "Узнайте, когда Bitcoin пробьёт 100 000 или опустится ниже 85 000, не глядя на график. MarketAlert следит за ценой BTC по сделкам на Binance и присылает уведомление на телефон, когда ваш уровень достигнут. Настройка такая же, как у обычного [ценового алерта](features/price-alerts); здесь описаны особенности именно BTC.",
@@ -164,7 +164,7 @@
   "de": {
     "bitcoin-price-alert": {
       "link": "Bitcoin-Preisalarm",
-      "title": "Bitcoin-Preisalarm: Benachrichtigung, wenn BTC dein Niveau erreicht | Market Alert",
+      "title": "Bitcoin-Preisalarm: Benachrichtigung, wenn BTC dein Niveau erreicht | MarketAlert",
       "h1": "Wie werde ich benachrichtigt, wenn Bitcoin einen bestimmten Preis erreicht?",
       "description": "Kostenlose Benachrichtigung, wenn BTC über oder unter einen Preis geht. Binance Spot und Futures BTC/USDT und BTC/USDC; auch kurze Dochte werden erfasst.",
       "intro": "Erfahre ohne Chart, wann Bitcoin 100.000 überschreitet oder unter 85.000 fällt. MarketAlert verfolgt den BTC-Preis anhand der Trades auf Binance und benachrichtigt dein Handy, sobald dein Niveau erreicht ist. Die Einrichtung entspricht einem normalen [Krypto-Preisalarm](features/price-alerts); diese Seite erklärt die BTC-spezifischen Details.",
@@ -182,7 +182,7 @@
   "ja": {
     "bitcoin-price-alert": {
       "link": "ビットコインの価格アラート",
-      "title": "ビットコイン価格アラート：BTCが指定価格に達したら通知 | Market Alert",
+      "title": "ビットコイン価格アラート：BTCが指定価格に達したら通知 | MarketAlert",
       "h1": "ビットコインが特定の価格に達したら通知を受けるには？",
       "description": "BTCが指定価格を上回った・下回ったときに無料で通知。Binance現物と先物のBTC/USDT・BTC/USDCに対応し、短いヒゲも逃しません。",
       "intro": "チャートを見ていなくても、ビットコインが100,000を超えたときや85,000を下回ったときに分かります。MarketAlertはBinanceの約定からBTC価格を監視し、指定した水準に達するとスマホに通知します。設定方法は通常の[暗号資産の価格アラート](features/price-alerts)と同じで、このページではBTC特有のポイントを説明します。",

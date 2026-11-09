@@ -232,7 +232,7 @@
   ],
   "disclaimer": "MarketAlert, Binance ile bağlantılı değildir. Bildirimler bilgilendirme amaçlıdır, yatırım tavsiyesi değildir.",
   "meta": {
-   "title": "Market Alert | Tüm Coinleri Tarayan Kripto Alarmı: RSI, Hacim, Fiyat",
+   "title": "MarketAlert | Tüm Coinleri Tarayan Kripto Alarmı: RSI, Hacim, Fiyat",
    "desc": "MarketAlert tek alarmla tüm coinlerde RSI, MACD, hacim ve fiyat koşullarını birlikte izler, gerçekleşince bildirir. Sesle ya da yazarak kur, ücretsiz başla."
   },
   "ui": {
@@ -546,7 +546,7 @@
   ],
   "disclaimer": "MarketAlert is not affiliated with Binance. Notifications are for information only and are not investment advice.",
   "meta": {
-   "title": "Market Alert | Crypto Alerts That Scan Every Coin: RSI, Volume, Price",
+   "title": "MarketAlert | Crypto Alerts That Scan Every Coin: RSI, Volume, Price",
    "desc": "One MarketAlert alert watches RSI, MACD, volume and price together across every coin and notifies you when they're met. Set it by voice or text, start free."
   },
   "ui": {
@@ -860,7 +860,7 @@
   ],
   "disclaimer": "MarketAlert 与 Binance 无关联。通知仅供参考，不构成投资建议。",
   "meta": {
-   "title": "Market Alert | 扫描所有币种的加密货币提醒：RSI、成交量、价格",
+   "title": "MarketAlert | 扫描所有币种的加密货币提醒：RSI、成交量、价格",
    "desc": "MarketAlert 用一个提醒在所有币种上同时监控 RSI、MACD、成交量和价格条件，满足时立即通知你。用语音或文字设置，免费开始。"
   },
   "ui": {
@@ -1174,7 +1174,7 @@
   ],
   "disclaimer": "MarketAlert no está afiliado a Binance. Los avisos son solo informativos y no constituyen asesoramiento de inversión.",
   "meta": {
-   "title": "Market Alert | Alertas cripto que escanean todas las monedas: RSI, volumen, precio",
+   "title": "MarketAlert | Alertas cripto que escanean todas las monedas: RSI, volumen, precio",
    "desc": "Una sola alerta de MarketAlert vigila a la vez RSI, MACD, volumen y precio en todas las monedas y te avisa cuando se cumplen. Por voz o texto, empieza gratis."
   },
   "ui": {
@@ -1488,7 +1488,7 @@
   ],
   "disclaimer": "MarketAlert का Binance से कोई संबंध नहीं है। सूचनाएं केवल जानकारी के लिए हैं, निवेश सलाह नहीं।",
   "meta": {
-   "title": "Market Alert | सभी कॉइन स्कैन करने वाले क्रिप्टो अलर्ट: RSI, वॉल्यूम, कीमत",
+   "title": "MarketAlert | सभी कॉइन स्कैन करने वाले क्रिप्टो अलर्ट: RSI, वॉल्यूम, कीमत",
    "desc": "MarketAlert एक ही अलर्ट से सभी कॉइन पर RSI, MACD, वॉल्यूम और कीमत की शर्तें एक साथ देखता है और पूरी होने पर सूचना देता है। आवाज़ या टेक्स्ट से बनाएं, मुफ़्त शुरू करें।"
   },
   "ui": {
@@ -1802,7 +1802,7 @@
   ],
   "disclaimer": "MarketAlert غير تابع لـ Binance. التنبيهات للمعلومات فقط وليست نصيحة استثمارية.",
   "meta": {
-   "title": "Market Alert | تنبيهات كريبتو تفحص كل العملات: RSI والحجم والسعر",
+   "title": "MarketAlert | تنبيهات كريبتو تفحص كل العملات: RSI والحجم والسعر",
    "desc": "يراقب MarketAlert شروط RSI وMACD والحجم والسعر معًا على كل العملات بتنبيه واحد ويخبرك عند تحققها. أنشئه بالصوت أو الكتابة، وابدأ مجانًا."
   },
   "ui": {
@@ -2116,7 +2116,7 @@
   ],
   "disclaimer": "O MarketAlert não tem vínculo com a Binance. Os avisos são apenas informativos e não são recomendação de investimento.",
   "meta": {
-   "title": "Market Alert | Alertas cripto que escaneiam todas as moedas: RSI, volume, preço",
+   "title": "MarketAlert | Alertas cripto que escaneiam todas as moedas: RSI, volume, preço",
    "desc": "O MarketAlert monitora juntos RSI, MACD, volume e preço em todas as moedas com um só alerta e avisa quando se cumprem. Crie por voz ou texto, comece grátis."
   },
   "ui": {
@@ -2430,7 +2430,7 @@
   ],
   "disclaimer": "MarketAlert n’est pas affilié à Binance. Les notifications sont fournies à titre d’information et ne constituent pas un conseil en investissement.",
   "meta": {
-   "title": "Market Alert | Alertes crypto qui scannent toutes les cryptos : RSI, volume, prix",
+   "title": "MarketAlert | Alertes crypto qui scannent toutes les cryptos : RSI, volume, prix",
    "desc": "Une alerte MarketAlert surveille RSI, MACD, volume et prix ensemble sur toutes les cryptos et vous prévient quand ils sont réunis. À la voix ou par écrit, gratuit."
   },
   "ui": {
@@ -2744,7 +2744,7 @@
   ],
   "disclaimer": "MarketAlert не связан с Binance. Уведомления носят информационный характер и не являются инвестиционной рекомендацией.",
   "meta": {
-   "title": "Market Alert | крипто-оповещения, которые сканируют все монеты: RSI, объём, цена",
+   "title": "MarketAlert | крипто-оповещения, которые сканируют все монеты: RSI, объём, цена",
    "desc": "Одно оповещение MarketAlert следит за RSI, MACD, объёмом и ценой на всех монетах сразу и сообщает, когда условия выполнены. Голосом или текстом, бесплатно."
   },
   "ui": {
@@ -3058,7 +3058,7 @@
   ],
   "disclaimer": "MarketAlert ist nicht mit Binance verbunden. Benachrichtigungen dienen nur der Information und sind keine Anlageberatung.",
   "meta": {
-   "title": "Market Alert | Krypto-Alarme, die alle Coins scannen: RSI, Volumen, Preis",
+   "title": "MarketAlert | Krypto-Alarme, die alle Coins scannen: RSI, Volumen, Preis",
    "desc": "Ein MarketAlert-Alarm überwacht RSI, MACD, Volumen und Preis zusammen über alle Coins und meldet sich, sobald sie erfüllt sind. Per Sprache oder Text, kostenlos."
   },
   "ui": {
@@ -3372,7 +3372,7 @@
   ],
   "disclaimer": "MarketAlert は Binance とは提携していません。通知は情報提供を目的としたもので、投資助言ではありません。",
   "meta": {
-   "title": "Market Alert | 全銘柄をスキャンする暗号資産アラート：RSI・出来高・価格",
+   "title": "MarketAlert | 全銘柄をスキャンする暗号資産アラート：RSI・出来高・価格",
    "desc": "MarketAlert は1つのアラートで全銘柄の RSI・MACD・出来高・価格の条件を同時に監視し、条件がそろうと通知します。音声でも文字でも設定でき、無料で始められます。"
   },
   "ui": {
