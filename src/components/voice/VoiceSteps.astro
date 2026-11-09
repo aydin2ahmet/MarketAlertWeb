@@ -4,6 +4,8 @@
  * adıma dokununca ekran değişir), telefonda S4 (kesikli dikey ray, her adımın altında küçük ekran).
  * Telefonda S2 istenmedi: seçim yukarıda, ekran aşağıda kalıyordu. Tek liste, iki düzen.
  * Ekranlar: hazır → dinliyor → anlıyor → kuruldu (SCR-AI-02 S08, S07, S14, S34).
+ * Tıklanabilirlik (2026-11-09, Ahmet, seçenek A): masaüstünde adımın tamamı tıklanır; her adım
+ * çerçeveli kart, üstüne gelince kalkar, sağdaki ok seçili adımda turuncu olur.
  */
 import VoiceShot from './VoiceShot.astro';
 
@@ -20,6 +22,7 @@ const KEYS = ['ready', 'listen', 'think', 'result'] as const;
           <h3><button type="button" aria-pressed={i === 0 ? 'true' : 'false'}>{s[0]}</button></h3>
           <p set:html={html[i]} />
         </div>
+        <span class="vs-go" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6" /></svg></span>
         <div class="vs-sm"><VoiceShot code={code} k={KEYS[i]} alt={s[0]} sizes="150px" /></div>
       </li>
     ))}
@@ -43,15 +46,22 @@ const KEYS = ['ready', 'listen', 'think', 'result'] as const;
 <style>
   .vs { display: grid; grid-template-columns: 1fr 300px; gap: 56px; align-items: start; margin-top: 28px; }
   .vs-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-  .vs-list li { display: flex; gap: 16px; padding: 18px 20px; border: 1px solid transparent; border-radius: 16px; transition: background .2s, border-color .2s; }
+  .vs-list li { position: relative; display: flex; align-items: center; gap: 16px; padding: 18px 20px; border: 1px solid var(--bd); border-radius: 16px; background: color-mix(in srgb, var(--sf) 55%, transparent); transition: background .2s, border-color .2s, box-shadow .2s, transform .2s; }
+  .vs-list li:not(.on):hover { background: var(--sf); transform: translateY(-2px); box-shadow: 0 12px 28px -18px rgba(20, 23, 29, .4); }
   .vs-list li.on { background: var(--sf); border-color: var(--pri); box-shadow: var(--shadow); }
-  .vs-n { width: 28px; height: 28px; border-radius: 50%; background: var(--pri); color: var(--priText); display: grid; place-items: center; font: 700 13px var(--mono); flex: none; }
+  .vs-n { width: 28px; height: 28px; border-radius: 50%; background: var(--pri); color: var(--priText); display: grid; place-items: center; font: 700 13px var(--mono); flex: none; align-self: flex-start; margin-top: 2px; }
   .vs-txt { flex: 1; min-width: 0; }
   .vs-txt h3 { margin: 2px 0 6px; font-size: 18px; }
   .vs-txt button { all: unset; cursor: pointer; }
-  .vs-txt button:focus-visible { outline: 2px solid var(--pri); outline-offset: 3px; border-radius: 4px; }
+  /* Düğme adımın tamamını kaplar: kartın her yeri tıklanır. */
+  .vs-txt button::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: 16px; }
+  .vs-txt button:focus-visible::after { outline: 2px solid var(--pri); outline-offset: 3px; }
   .vs-txt p { margin: 0; color: var(--mut); }
-  .vs-list li:not(.on) .vs-txt p { opacity: .8; }
+  .vs-go { flex: none; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; color: var(--mut); border: 1px solid var(--bd); transition: color .2s, border-color .2s, background .2s; }
+  .vs-go svg { display: block; }
+  :global([dir=rtl]) .vs-go svg { transform: scaleX(-1); }
+  .vs-list li:not(.on):hover .vs-go { color: var(--tx); border-color: var(--tx); }
+  .vs-list li.on .vs-go { background: var(--pri); border-color: var(--pri); color: var(--priText); }
   .vs-sm { display: none; }
   .vs-big { position: sticky; top: 96px; margin: 0; padding: 8px; border-radius: 40px; background: var(--frame); box-shadow: var(--shadow), inset 0 0 0 1px rgba(255, 255, 255, .08); }
   .vs-scr { display: none; }
@@ -59,13 +69,13 @@ const KEYS = ['ready', 'listen', 'think', 'result'] as const;
   .vs-big :global(img), .vs-sm :global(img) { display: block; width: 100%; height: auto; border-radius: 32px; }
   @media (max-width: 760px) {
     .vs { display: block; }
-    .vs-big { display: none; }
+    .vs-big, .vs-go { display: none; }
     .vs-list { position: relative; gap: 30px; }
     .vs-list::before { content: ""; position: absolute; inset-inline-start: 13px; top: 14px; bottom: 14px; width: 2px; background: repeating-linear-gradient(var(--pri) 0 6px, transparent 6px 12px); }
-    .vs-list li, .vs-list li.on { padding: 0; border: 0; background: none; box-shadow: none; display: grid; grid-template-columns: 28px 1fr; gap: 6px 14px; }
-    .vs-n { position: relative; }
+    .vs-list li, .vs-list li.on, .vs-list li:not(.on):hover { padding: 0; border: 0; background: none; box-shadow: none; transform: none; display: grid; grid-template-columns: 28px 1fr; gap: 6px 14px; align-items: start; }
+    .vs-n { position: relative; margin-top: 0; }
     .vs-txt button { cursor: text; }
-    .vs-list li:not(.on) .vs-txt p { opacity: 1; }
+    .vs-txt button::after { content: none; }
     .vs-sm { display: block; grid-column: 2; width: 150px; margin-top: 10px; padding: 4px; border-radius: 22px; background: var(--frame); }
     .vs-sm :global(img) { border-radius: 18px; }
   }
