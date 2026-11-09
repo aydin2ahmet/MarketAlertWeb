@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 import SocialLinks from '../../components/SocialLinks.astro';
 import SearchBox from '../../components/SearchBox.astro';
 import StoreBadges from '../../components/StoreBadges.astro';
-import { GA_ID, LOCALES, SITE, legalUrl } from '../../config';
+import { GA_ID, LOCALES, SITE, SITE_NAME, legalUrl } from '../../config';
 import { SECTIONS } from '../../lib/pages';
 import content from '../../i18n/content.json';
 import rsi from '../../i18n/rsi-alerts.json';
@@ -36,7 +36,7 @@ const catalog = LOCALES.map(l => {
 });
 const path = `/${code}/sitemap/`;
 ---
-<Base lang={locale.hreflang} dir={locale.dir} title={`${t.title} · MarketAlert`} description={t.intro} path={path} ogImage={`/og/${code}.png`} alternates={LOCALES.map(l => ({ hreflang:l.hreflang, href:`/${l.code}/sitemap/` }))} jsonLd={[{ '@context':'https://schema.org', '@type':'CollectionPage', name:t.title, url:SITE + path, inLanguage:locale.hreflang }]}>
+<Base lang={locale.hreflang} dir={locale.dir} title={`${t.title} | MarketAlert`} description={t.intro} path={path} ogImage={`/og/${code}.png`} alternates={LOCALES.map(l => ({ hreflang:l.hreflang, href:`/${l.code}/sitemap/` }))} jsonLd={[{ '@context':'https://schema.org', '@type':'CollectionPage', name:t.title, url:SITE + path, inLanguage:locale.hreflang }]}>
   <header class="hd">
     <a class="logo" href={`/${code}/`}><img src="/icons/logo-96.png" width="32" height="32" alt="" /><b>MarketAlert</b></a>
     <nav aria-label="MarketAlert"><a href={`/${code}/#features`}>{c.nav[0]}</a><a href={`/${code}/#plans`}>{c.nav[2]}</a><a href={`/${code}/#faq`}>{c.nav[3]}</a></nav>

@@ -9,7 +9,7 @@ import guides from '../../../i18n/rsi-alerts.json';
 import walkthroughs from '../../../i18n/rsi-walkthrough.json';
 import screenSizes from '../../../i18n/rsi-screens.json';
 import alertGuides from '../../../i18n/alert-guides.json';
-import { GA_ID, LOCALES, SITE, legalUrl } from '../../../config';
+import { GA_ID, LOCALES, SITE, SITE_NAME, legalUrl } from '../../../config';
 
 export function getStaticPaths() {
   return LOCALES.map(locale => ({ params: { lang: locale.code }, props: { locale } }));
@@ -25,7 +25,7 @@ const alternates = LOCALES.map(l => ({ hreflang: l.hreflang, href: `/${l.code}/f
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'WebPage', name: g.title, description: g.description, url: SITE + path, inLanguage: locale.hreflang },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'MarketAlert', item: `${SITE}/${code}/` },
+    { '@type': 'ListItem', position: 1, name: SITE_NAME, item: `${SITE}/${code}/` },
     { '@type': 'ListItem', position: 2, name: g.link, item: SITE + path },
   ] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: locale.hreflang, mainEntity: g.faq.map((q: string[]) => ({ '@type': 'Question', name: q[0], acceptedAnswer: { '@type': 'Answer', text: q[1] } })) },

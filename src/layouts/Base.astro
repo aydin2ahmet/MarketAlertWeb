@@ -10,7 +10,7 @@ import headingLatin from '@fontsource-variable/space-grotesk/files/space-grotesk
 import arabicFont from '@fontsource-variable/noto-sans-arabic/files/noto-sans-arabic-arabic-wght-normal.woff2?url';
 import hindiFont from '@fontsource-variable/noto-sans-devanagari/files/noto-sans-devanagari-devanagari-wght-normal.woff2?url';
 import '../styles/site.css';
-import { GA_ID, LOCALES, SITE, shotSources } from '../config';
+import { GA_ID, LOCALES, SITE, SITE_NAME, shotSources } from '../config';
 import content from '../i18n/content.json';
 
 interface Props {
@@ -155,7 +155,7 @@ const heroBackImages = isLanding ? Object.fromEntries(['light', 'dark'].map(them
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="MarketAlert" />
+    <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />

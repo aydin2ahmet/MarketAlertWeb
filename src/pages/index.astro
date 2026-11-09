@@ -1,12 +1,13 @@
 ---
 // Kök adreste İngilizce içerik hazırdır; diğer diller head içinde erken seçilir.
+// Kök kendi asıl adresidir (canonical /): Google site adını yalnız asıl ana sayfadaki WebSite bilgisinden okur.
 import Base from '../layouts/Base.astro';
 import Landing from '../components/Landing.astro';
 import content from '../i18n/content.json';
-import { LOCALES, SITE } from '../config';
+import { LOCALES, SITE, SITE_NAME, SITE_ALT_NAMES } from '../config';
 const t = content.en;
-const jsonLd = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: 'MarketAlert', url: SITE + '/', inLanguage: LOCALES.map(l => l.hreflang) }];
+const jsonLd = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: SITE_NAME, alternateName: SITE_ALT_NAMES, url: SITE + '/', inLanguage: LOCALES.map(l => l.hreflang) }];
 ---
-<Base lang="en" dir="ltr" title={t.meta.title} description={t.meta.desc} path="/" canonicalPath="/en/" ogImage="/og/en.png" jsonLd={jsonLd} autoLocale>
+<Base lang="en" dir="ltr" title={t.meta.title} description={t.meta.desc} path="/" ogImage="/og/en.png" jsonLd={jsonLd} autoLocale>
   <Landing t={t} code="en" appLocale="en" />
 </Base>
