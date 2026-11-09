@@ -37,7 +37,7 @@ const VISUAL: Record<string, { kicker: string; exampleKicker: string; condition:
   'features/percent-change-alerts': { kicker: 'BINANCE · % MOVE · PUSH', exampleKicker: 'SOL/USDT · 15m · +3% · ONCE', condition: ['Δ% (15m)', '≥', '+3%'], foot: 'BINANCE SPOT · USDT · ONCE → PUSH', shot: 'tpl', version: 'pct1', width: 1080, height: 2280,
     logic: [['15m Δ +1.8%', '→ ✕'], ['15m Δ +3.2%', '≥ +3% → ✓']],
     hook: { pair: 'SOL/USDT · 15m', market: 'BINANCE SPOT', from: 0.4, target: 3, touch: 3.2, last: 3.2, op: '>', unit: 'pct' } },
-  'features/all-coins-alerts': { kicker: 'BINANCE · ALL COINS · TOP 100', exampleKicker: 'SPOT USDT · TOP 100 · 5m', condition: ['Δ% (5m) ≥ +5%', 'AND', 'VOL > 3 × SMA(20)'], foot: 'EACH COIN CHECKED ON ITS OWN → PUSH · TELEGRAM', shot: 'hero-list', version: 'all1', width: 1080, height: 2821,
+  'features/all-coins-alerts': { kicker: 'BINANCE · ALL COINS · TOP 100', exampleKicker: 'SPOT USDT · TOP 100 · 5m', condition: ['Δ% (5m) ≥ +5%', 'AND', 'VOL > 3 × SMA(20)'], foot: 'EACH COIN CHECKED ON ITS OWN → PUSH · TELEGRAM', shot: 'hero-list', version: 'all2', width: 1080, height: 2821,
     logic: [['AVAX  Δ +5.4% · VOL 3.6×', 'AND → ✓'], ['DOT   Δ +5.1% · VOL 1.2×', 'AND → ✕'], ['LINK  Δ +2.0% · VOL 4.1×', 'AND → ✕']],
     hook: { pair: 'TOP 100 · 5m', market: 'BINANCE SPOT', from: 0.8, target: 5, touch: 5.4, last: 5.4, op: '>', unit: 'pct' },
     // Adım kartlarındaki gerçek uygulama ekranları (UI kataloğu: AFRM-01-S35, AFRM-01-S22, AFRM-02-S11, PUSH-08-S01), 1080 genişlikte kırpılmış yükseklik.
