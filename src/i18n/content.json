@@ -309,7 +309,7 @@
    "1 dakikadan 1 güne mum aralıkları",
    "Binance Spot ve Vadeli piyasaları, USDT ve USDC çiftleri",
    "Uygulama kapalıyken de sunucuda izler",
-   "Push, Telegram ve webhook ile bildirim",
+   "Push, Telegram ve webhook ile bildirim; Telegram sohbet kimliği istemez, push ile birlikte seçilebilir",
    "Her eşleşme bildirim kaydında saklanır"
   ]
  },
@@ -623,7 +623,7 @@
    "Candle intervals from 1 minute to 1 day",
    "Binance Spot and Futures markets, USDT and USDC pairs",
    "Keeps watching on the server while the app is closed",
-   "Notifications by push, Telegram and webhook",
+   "Notifications by push, Telegram and webhook; Telegram needs no chat ID and can be paired with push",
    "Every match is kept in the notification log"
   ]
  },
@@ -937,7 +937,7 @@
    "K 线周期从 1 分钟到 1 天",
    "币安现货和合约市场，USDT 和 USDC 交易对",
    "应用关闭时服务器仍持续监控",
-   "通过推送、Telegram 和 webhook 通知",
+   "通过推送、Telegram 和 webhook 通知；Telegram 无需聊天 ID，可与推送同时选择",
    "每次触发都保存在通知记录中"
   ]
  },
@@ -1251,7 +1251,7 @@
    "Intervalos de velas de 1 minuto a 1 día",
    "Mercados Spot y Futuros de Binance, pares USDT y USDC",
    "Sigue vigilando en el servidor con la app cerrada",
-   "Notificaciones por push, Telegram y webhook",
+   "Notificaciones por push, Telegram y webhook; Telegram no pide chat ID y se puede combinar con push",
    "Cada coincidencia se guarda en el registro de notificaciones"
   ]
  },
@@ -1565,7 +1565,7 @@
    "1 मिनट से 1 दिन तक के कैंडल अंतराल",
    "Binance Spot और Futures मार्केट, USDT और USDC जोड़े",
    "ऐप बंद होने पर भी सर्वर पर निगरानी जारी रहती है",
-   "push, Telegram और webhook से सूचना",
+   "push, Telegram और webhook से सूचना; Telegram के लिए चैट ID नहीं चाहिए, push के साथ भी चुन सकते हैं",
    "हर मिलान सूचना लॉग में सहेजा जाता है"
   ]
  },
@@ -1879,7 +1879,7 @@
    "فواصل الشموع من دقيقة واحدة إلى يوم واحد",
    "أسواق Binance الفورية والعقود الآجلة، أزواج USDT وUSDC",
    "تستمر المراقبة على الخادم حتى مع إغلاق التطبيق",
-   "إشعارات عبر push وTelegram وwebhook",
+   "إشعارات عبر push وTelegram وwebhook؛ لا يحتاج Telegram إلى معرّف محادثة ويمكن اختياره مع push",
    "يُحفظ كل تطابق في سجل الإشعارات"
   ]
  },
@@ -2193,7 +2193,7 @@
    "Intervalos de candle de 1 minuto a 1 dia",
    "Mercados Spot e Futuros da Binance, pares USDT e USDC",
    "Continua monitorando no servidor com o app fechado",
-   "Notificações por push, Telegram e webhook",
+   "Notificações por push, Telegram e webhook; o Telegram não pede chat ID e pode ser usado junto com o push",
    "Cada ocorrência fica salva no registro de notificações"
   ]
  },
@@ -2507,7 +2507,7 @@
    "Bougies de 1 minute à 1 jour",
    "Marchés Spot et Futures de Binance, paires USDT et USDC",
    "Continue de surveiller sur le serveur quand l’app est fermée",
-   "Notifications par push, Telegram et webhook",
+   "Notifications par push, Telegram et webhook ; Telegram ne demande pas de chat ID et peut s’ajouter au push",
    "Chaque déclenchement est conservé dans le journal des notifications"
   ]
  },
@@ -2821,7 +2821,7 @@
    "Интервалы свечей от 1 минуты до 1 дня",
    "Рынки Binance Spot и Futures, пары USDT и USDC",
    "Продолжает следить на сервере, даже когда приложение закрыто",
-   "Уведомления через push, Telegram и webhook",
+   "Уведомления через push, Telegram и webhook; для Telegram не нужен chat ID, его можно выбрать вместе с push",
    "Каждое срабатывание сохраняется в журнале уведомлений"
   ]
  },
@@ -3135,7 +3135,7 @@
    "Kerzenintervalle von 1 Minute bis 1 Tag",
    "Binance Spot- und Futures-Märkte, USDT- und USDC-Paare",
    "Überwacht auf dem Server weiter, auch wenn die App geschlossen ist",
-   "Benachrichtigungen per Push, Telegram und Webhook",
+   "Benachrichtigungen per Push, Telegram und Webhook; Telegram braucht keine Chat-ID und lässt sich mit Push kombinieren",
    "Jeder Treffer wird im Benachrichtigungsprotokoll gespeichert"
   ]
  },
@@ -3449,7 +3449,7 @@
    "1分足から日足までの時間足",
    "Binance の現物・先物市場、USDT と USDC ペア",
    "アプリを閉じてもサーバーで監視を継続",
-   "プッシュ、Telegram、Webhook で通知",
+   "プッシュ、Telegram、Webhook で通知。TelegramはチャットID不要で、プッシュと同時に選べます",
    "すべての一致は通知履歴に保存"
   ]
  }
