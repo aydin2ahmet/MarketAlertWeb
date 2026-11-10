@@ -10,7 +10,7 @@ import headingLatin from '@fontsource-variable/space-grotesk/files/space-grotesk
 import arabicFont from '@fontsource-variable/noto-sans-arabic/files/noto-sans-arabic-arabic-wght-normal.woff2?url';
 import hindiFont from '@fontsource-variable/noto-sans-devanagari/files/noto-sans-devanagari-devanagari-wght-normal.woff2?url';
 import '../styles/site.css';
-import { GA_ID, LOCALES, SITE, SITE_NAME, shotSources } from '../config';
+import { GA_ID, LOCALES, SITE, SITE_NAME, shotSources, VERIFY } from '../config';
 import content from '../i18n/content.json';
 
 interface Props {
@@ -36,6 +36,7 @@ const cs = ((content as any)[lang.toLowerCase()] ?? (content as any).en).consent
 const code = lang.toLowerCase();
 const fonts = code === 'ar' ? [arabicFont] : code === 'hi' ? [hindiFont, interLatin] : code === 'ru' ? [interCyrillic, interLatin] : [interLatin, headingLatin];
 if (code === 'tr') fonts.push('/fonts/inter-tr.woff2', '/fonts/space-grotesk-tr.woff2');
+const isRootHome = path === '/';
 const isLanding = path === '/' || LOCALES.some(l => path === `/${l.code}/`);
 const heroImages = isLanding ? Object.fromEntries(['light', 'dark'].map(theme => [theme, shotSources(`/shots/${code}/${theme}/hero-voice.webp?v=3x-conditions2`)])) : null;
 const heroBackImages = isLanding ? Object.fromEntries(['light', 'dark'].map(theme => [theme, shotSources(`/shots/${code}/${theme}/hero-list.webp?v=${code === 'ar' ? '3x-ar2' : '3x'}`)])) : null;
@@ -147,6 +148,8 @@ const heroBackImages = isLanding ? Object.fromEntries(['light', 'dark'].map(them
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={canonical} />
+    {isRootHome && VERIFY.yandex && <meta name="yandex-verification" content={VERIFY.yandex} />}
+    {isRootHome && VERIFY.bing && <meta name="msvalidate.01" content={VERIFY.bing} />}
     {alts.map(a => <link rel="alternate" hreflang={a.hreflang} href={SITE + a.href} />)}
     {!alternates && <link rel="alternate" hreflang="x-default" href={`${SITE}/`} />}
     <meta name="color-scheme" content="light dark" />
