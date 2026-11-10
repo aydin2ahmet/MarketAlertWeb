@@ -102,6 +102,37 @@
         "ladder": [["BTC 85 bin altına inerse bir kez haber ver.", "free"], ["SOL 15 dakikada yüzde 3 yükselirse haber ver.", "free"], ["BTC 70 bin üstüne çıkınca ve saatlik RSI 30 altındayken bir kez haber ver.", "plus"], ["İlk 100 coinde 15 dakikalık hacim ortalamanın 3 katını geçerse Telegram'dan haber ver.", "plus"], ["İlk 100 coinde RSI 30 altı ve hacim 2 katı olunca haber ver.", "plus"]],
         "plans": {"free": "Free", "plus": "Plus · Pro"}
       }
+    },
+    "telegram-crypto-alerts": {
+      "link": "Telegram kripto bildirimi",
+      "title": "Binance fiyat bildirimlerini Telegram'dan al: kurulum | MarketAlert",
+      "h1": "Binance fiyat bildirimlerini Telegram'dan nasıl alırım?",
+      "description": "MarketAlert'i Telegram'a bir kez bağla, alarmında Telegram'ı seç: fiyat, RSI, hacim ve tüm coinler alarmları sohbetine gelsin. Sohbet kimliği ya da API anahtarı gerekmez.",
+      "intro": "Telegram'ı uygulamaya bir kez bağlarsın, sonra alarm kurarken bildirim kanalı olarak seçersin. Alarm çaldığında mesaj MarketAlert botundan kendi Telegram sohbetine gelir; istersen anlık bildirim de aynı anda gelir. Sohbet kimliği, bot jetonu ya da Binance API anahtarı girmen gerekmez. Telegram'a gelebilecek alarmları [kripto fiyat alarmı](features/price-alerts) ve [tüm coinler alarmı](features/all-coins-alerts) sayfalarında anlattık.",
+      "prompt": "BTC 105.000 üstüne çıkınca Telegram'dan haber ver",
+      "exampleTitle": "Her alarm Telegram'a kendi mesajıyla gelir",
+      "caption": "Solda uygulamadaki dört alarm, sağda her birinin Telegram'a gönderdiği mesaj. Çizginin rengi koşul türünü gösterir.",
+      "steps": [["Telegram'ı bağla", "Uygulamada Ayarlar › Telegram'a gir ve “Telegram'ı bağla”ya dokun. Uygulama Telegram'ı açar ve seni MarketAlert botunun sohbetine götürür. Telegram yüklü değilse önce Telegram'ı yükle."], ["Telegram'da BAŞLAT'a bas", "“MarketAlert: Crypto Alerts” botunun sohbeti açılır. Alttaki BAŞLAT düğmesine bas."], ["/start gider", "BAŞLAT'a basınca sohbete /start mesajı gider ve hesabın bununla eşleşir. Başka bir şey yazman gerekmez. Bağlantı kısa süre geçerlidir; süresi dolarsa uygulamada “Yeni bağlantı oluştur”a dokun."], ["Uygulamaya dön", "Durum kendiliğinden “Telegram bağlı” olur. Bağlı sohbetin numarasının yalnızca son dört hanesi görünür."], ["Alarmda Telegram'ı seç", "Alarm kurarken Bildirim › Kanal'da Telegram'ı işaretle. Anlık bildirimi de açık bırakabilirsin; birden çok kanal seçilebilir. [Sesli asistana](features/voice-crypto-alerts) “Telegram'dan haber ver” demen de yeterli."]],
+      "details": [["Telegram hangi planlarda var?", "Telegram bildirimleri Plus ve Pro'da var; ikisinde de 7 günlük ücretsiz deneme bulunur. Free planda bildirimler anlık bildirim (push) olarak gelir. Free'ye geçersen Telegram seçili alarmların bildirimleri push olarak gelir."], ["Telegram mesajında neler yazar?", "İlk satır ne olduğunu söyler, örneğin “BTC 105.000 üstüne çıktı”. İkinci satırda alarmına verdiğin ad yazar. Altında güncel değer, hedef, mum süresi ve piyasa yer alır. Tek coin mesajlarında Binance grafiğini açan bir düğme bulunur."], ["Tüm coinler alarmları Telegram'a nasıl gelir?", "Ayarlar › Telegram'daki “Tüm coinler sinyal modu” belirler. Varsayılan uygun gördüğünde tekli ya da özet gönderir, Anında her sinyali ayrı mesajla hemen gönderir, Özet sinyalleri toplayıp belirli aralıklarla tek mesajda gönderir. Tek coin alarmları her zaman hemen gelir. Tüm coinleri tarama Plus'ta ilk 100 coinde, Pro'da tüm coinlerde çalışır; ayrıntılar [tüm coinler alarmı](features/all-coins-alerts) sayfasında."], ["Güvenli mi?", "MarketAlert borsa hesabına bağlanmaz, API anahtarı istemez ve işlem yapmaz. Bot yalnızca bildirim gönderir; şifre, API anahtarı ya da ödeme istemez. Mesajlar yalnızca botla aranızdaki özel sohbete gelir."]],
+      "faq": [["Telegram bildirimi için chat ID ya da bot jetonu gerekir mi?", "Hayır. Uygulamadaki “Telegram'ı bağla” düğmesi botu açar; BAŞLAT'a basman yeterli."], ["Telegram bildirimi ücretsiz mi?", "Telegram Plus ve Pro'da var, ikisinde de 7 günlük ücretsiz deneme bulunur. Free planda bildirimler anlık bildirim (push) olarak gelir."], ["Hem anlık bildirim hem Telegram alabilir miyim?", "Evet. Alarmda Bildirim › Kanal'da ikisini birlikte seç; aynı sinyal ikisine de gelir."], ["Bildirimleri bir Telegram grubuna ya da kanalına gönderebilir miyim?", "Hayır. Bildirimler yalnızca MarketAlert botuyla kendi özel sohbetine gelir."], ["Telegram bağlantısını nasıl kaldırırım?", "Ayarlar › Telegram ekranının altındaki “Telegram bağlantısını kaldır”a dokun. Bağlantı kalkınca Telegram kanalını kullanan alarmlar Telegram'a mesaj gönderemez; dilediğin zaman yeniden bağlayabilirsin. Başka bir hesaba geçmek için “Başka hesap bağla”yı kullan."], ["BAŞLAT'a bastım ama bağlanmadı, ne yapmalıyım?", "Uygulama durumu kendisi kontrol eder, biraz bekle. Bağlantının süresi dolduysa “Yeni bağlantı oluştur”a dokun ve açılan sohbette yeniden BAŞLAT'a bas."]],
+      "related": ["features/all-coins-alerts", "features/price-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/voice-crypto-alerts"],
+      "plans": [["Free", "3 alarm; bildirimler anlık bildirim (push) olarak gelir. Telegram bu planda yok."], ["Plus", "20 alarm; push ve Telegram, istersen ikisi birlikte. İlk 100 coine kadar 2 tüm coinler alarmı."], ["Pro", "100 alarm; push, Telegram ve imzalı webhook. Tüm coinlerde 10 tüm coinler alarmı."]],
+      "tg": {
+        "kicker": "BINANCE · TELEGRAM · PLUS / PRO",
+        "chips": ["Sohbet kimliği (chat ID)", "Bot jetonu (token)", "Binance API anahtarı (API key)"],
+        "no": "gerekmez",
+        "hookAlt": "MarketAlert'te Ayarlar › Telegram: Telegram bağlı",
+        "kinds": ["Fiyat", "RSI", "Hacim", "Tüm coinler"],
+        "listAlt": "Alarmlarım ekranında dört alarm: BTC 105.000 fiyat, SOL RSI 70, AVAX hacim 3 katı, ilk 100 coinde 24 saatlik zirve/dip",
+        "chat": "Telegram sohbeti",
+        "pairNote": "Mesajın ilk satırı ne olduğunu, 🔔 satırı alarmına verdiğin adı gösterir.",
+        "lanes": ["MarketAlert", "Telegram"],
+        "cells": [["Telegram'ı bağla", "Ayarlar › Telegram"], ["BAŞLAT", "Bot kendiliğinden açılır"], ["/start", "Mesaj gider, iş biter"], ["Bağlandı", "Uygulamaya dön"], ["Alarmda seç", "Bildirim › Kanal"]],
+        "alts": ["Telegram bağlı değil ekranı ve Telegram'ı bağla düğmesi", "Telegram'da MarketAlert botu ve BAŞLAT düğmesi", "Telegram sohbetinde gönderilen /start mesajı", "Telegram bağlı ekranı", "Alarm formunda bildirim kanalı: anlık bildirim ve Telegram seçili"],
+        "setTitle": "Bağlandıktan sonra Ayarlar › Telegram",
+        "callouts": [["Bağlı sohbet", "Yalnızca son dört hane görünür."], ["Tüm coinler sinyal modu", "Varsayılan, Anında ya da Özet. Tek coin alarmları her zaman hemen gelir."], ["Başka hesap bağla", "Farklı bir Telegram hesabına geçmek için yeni bağlantı başlat. “Telegram bağlantısını kaldır” satırı bu ekranın altında."]],
+        "setAlt": "Telegram bağlı ekranı: bağlı sohbet, tüm coinler sinyal modu ve Başka hesap bağla düğmesi"
+      }
     }
   },
   "de": {
@@ -202,6 +233,37 @@
         "level": "Stufe",
         "ladder": [["Melde dich einmal, wenn BTC unter 85.000 fällt.", "free"], ["Melde dich, wenn SOL in 15 Minuten um 3 % steigt.", "free"], ["Melde dich einmal, wenn BTC über 70.000 steigt und der Stunden-RSI unter 30 liegt.", "plus"], ["Melde dich bei den Top-100-Coins per Telegram, wenn das 15-Minuten-Volumen über dem Dreifachen seines Durchschnitts liegt.", "plus"], ["Sag mir Bescheid, wenn bei den Top-100-Coins der RSI unter 30 und das Volumen doppelt so hoch ist.", "plus"]],
         "plans": {"free": "Free", "plus": "Plus · Pro"}
+      }
+    },
+    "telegram-crypto-alerts": {
+      "link": "Krypto-Alarme über Telegram",
+      "title": "Binance-Preisalarme über Telegram erhalten: Einrichtung | MarketAlert",
+      "h1": "Wie bekomme ich Binance-Preisalarme über Telegram?",
+      "description": "Verbinde MarketAlert einmal mit Telegram und wähle Telegram im Alarm: Preis-, RSI-, Volumen- und Alle-Coins-Alarme kommen in deinen Chat. Keine Chat-ID, kein API-Schlüssel.",
+      "intro": "Du verbindest Telegram einmal mit der App und wählst es dann beim Einrichten eines Alarms als Benachrichtigungskanal. Löst der Alarm aus, kommt die Nachricht vom MarketAlert-Bot in deinen eigenen Telegram-Chat; auf Wunsch kommt gleichzeitig eine Push-Benachrichtigung. Du gibst keine Chat-ID, kein Bot-Token und keinen Binance-API-Schlüssel ein. Welche Alarme du an Telegram senden kannst, erklären die Seiten [Krypto-Preisalarm](features/price-alerts) und [Alarm für alle Coins](features/all-coins-alerts).",
+      "prompt": "Melde dich über Telegram, wenn BTC über 105.000 steigt",
+      "exampleTitle": "Jeder Alarm kommt als eigene Nachricht in Telegram an",
+      "caption": "Links vier Alarme in der App, rechts die Nachricht, die jeder davon an Telegram sendet. Die Linienfarbe zeigt die Art der Bedingung.",
+      "steps": [["Telegram verbinden", "Öffne in der App Einstellungen › Telegram und tippe auf „Telegram verbinden“. Die App öffnet Telegram und bringt dich in den Chat mit dem MarketAlert-Bot. Ist Telegram nicht installiert, installiere es zuerst."], ["In Telegram auf STARTEN tippen", "Der Chat mit dem Bot „MarketAlert: Crypto Alerts“ öffnet sich. Tippe unten auf STARTEN."], ["/start wird gesendet", "Mit STARTEN geht /start in den Chat, und dein Konto wird damit verknüpft. Du musst nichts weiter schreiben. Der Link gilt nur kurz; ist er abgelaufen, tippe in der App auf „Neuen Link erstellen“."], ["Zurück in die App", "Der Status wechselt von selbst zu „Telegram ist verbunden“. Vom verbundenen Chat sind nur die letzten vier Ziffern zu sehen."], ["Telegram im Alarm wählen", "Hake beim Einrichten eines Alarms unter Mitteilung › Kanal Telegram an. Push kann eingeschaltet bleiben; mehrere Kanäle sind möglich. Du kannst dem [Sprachassistenten](features/voice-crypto-alerts) auch einfach „über Telegram melden“ sagen."]],
+      "details": [["In welchen Plänen gibt es Telegram?", "Telegram-Benachrichtigungen gibt es mit Plus und Pro, beide mit 7 Tagen kostenlosem Test. Im Free-Plan kommen Benachrichtigungen als Push. Wechselst du zu Free, senden Alarme mit Telegram stattdessen Push-Benachrichtigungen."], ["Was steht in einer Telegram-Nachricht?", "Die erste Zeile sagt, was passiert ist, zum Beispiel „BTC über 105.000 gestiegen“. Die zweite Zeile zeigt den Namen, den du dem Alarm gegeben hast. Darunter stehen aktueller Wert, Ziel, Kerzenintervall und Markt. Nachrichten zu einzelnen Coins haben eine Schaltfläche, die den Binance-Chart öffnet."], ["Wie kommen Alarme für alle Coins in Telegram an?", "Das entscheidet der „Signalmodus für alle Symbole“ unter Einstellungen › Telegram. Standard sendet je nach Lage einzelne Nachrichten oder eine Zusammenfassung, Sofort sendet jedes Signal direkt als eigene Nachricht, Zusammenfassung sammelt Signale und sendet sie in festen Abständen in einer Nachricht. Alarme für einzelne Coins kommen immer sofort. Der Scan aller Coins umfasst bei Plus die Top 100 und bei Pro alle Coins; mehr dazu auf der Seite [Alarm für alle Coins](features/all-coins-alerts)."], ["Ist das sicher?", "MarketAlert verbindet sich nie mit deinem Börsenkonto, fragt nie nach einem API-Schlüssel und handelt nicht. Der Bot sendet nur Benachrichtigungen; er fragt nie nach Passwörtern, API-Schlüsseln oder Zahlungen. Nachrichten gehen nur in deinen privaten Chat mit dem Bot."]],
+      "faq": [["Brauche ich für Telegram-Alarme eine Chat-ID oder ein Bot-Token?", "Nein. Die Schaltfläche „Telegram verbinden“ in der App öffnet den Bot; ein Tipp auf STARTEN genügt."], ["Sind Telegram-Benachrichtigungen kostenlos?", "Telegram gibt es mit Plus und Pro, beide mit 7 Tagen kostenlosem Test. Im Free-Plan kommen Benachrichtigungen als Push."], ["Kann ich Push und Telegram gleichzeitig bekommen?", "Ja. Wähle im Alarm unter Mitteilung › Kanal beide aus; dasselbe Signal kommt auf beiden Wegen an."], ["Kann ich Alarme an eine Telegram-Gruppe oder einen Kanal senden?", "Nein. Benachrichtigungen gehen nur in deinen eigenen privaten Chat mit dem MarketAlert-Bot."], ["Wie trenne ich Telegram?", "Tippe unten in Einstellungen › Telegram auf „Telegram-Verbindung entfernen“. Danach können Alarme mit dem Kanal Telegram keine Telegram-Nachrichten mehr senden; du kannst jederzeit neu verbinden. Für ein anderes Konto nutze „Anderes Konto verbinden“."], ["Ich habe auf STARTEN getippt, aber es ist nicht verbunden. Was tun?", "Die App prüft den Status selbst, warte einen Moment. Ist der Link abgelaufen, tippe auf „Neuen Link erstellen“ und im geöffneten Chat erneut auf STARTEN."]],
+      "related": ["features/all-coins-alerts", "features/price-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/voice-crypto-alerts"],
+      "plans": [["Free", "3 Alarme; Benachrichtigungen kommen als Push. Telegram ist in diesem Plan nicht enthalten."], ["Plus", "20 Alarme; Push und Telegram, auch beides zusammen. 2 Alarme für alle Coins bis zu den Top 100."], ["Pro", "100 Alarme; Push, Telegram und signierter Webhook. 10 Alarme über alle Coins."]],
+      "tg": {
+        "kicker": "BINANCE · TELEGRAM · PLUS / PRO",
+        "chips": ["Chat-ID", "Bot-Token", "Binance-API-Schlüssel"],
+        "no": "nicht nötig",
+        "hookAlt": "MarketAlert Einstellungen › Telegram: Telegram ist verbunden",
+        "kinds": ["Preis", "RSI", "Volumen", "Alle Coins"],
+        "listAlt": "Vier Alarme auf dem Bildschirm Meine Alarme: BTC-Preis 105.000, SOL RSI 70, AVAX-Volumen 3×, 24-Stunden-Hoch/-Tief bei den Top-100-Coins",
+        "chat": "Telegram-Chat",
+        "pairNote": "Die erste Zeile einer Nachricht sagt, was passiert ist; die 🔔-Zeile zeigt den Namen deines Alarms.",
+        "lanes": ["MarketAlert", "Telegram"],
+        "cells": [["Telegram verbinden", "Einstellungen › Telegram"], ["STARTEN", "Der Bot öffnet sich von selbst"], ["/start", "Eine Nachricht, fertig"], ["Verbunden", "Zurück in der App"], ["Im Alarm wählen", "Mitteilung › Kanal"]],
+        "alts": ["Bildschirm Telegram ist nicht verbunden mit der Schaltfläche Telegram verbinden", "MarketAlert-Bot in Telegram mit der Schaltfläche STARTEN", "Im Telegram-Chat gesendete Nachricht /start", "Bildschirm Telegram ist verbunden", "Benachrichtigungskanal im Alarmformular: Push und Telegram ausgewählt"],
+        "setTitle": "Einstellungen › Telegram nach dem Verbinden",
+        "callouts": [["Verbundener Chat", "Nur die letzten vier Ziffern sind sichtbar."], ["Signalmodus für alle Symbole", "Standard, Sofort oder Zusammenfassung. Alarme für einzelne Coins kommen immer sofort."], ["Anderes Konto verbinden", "Starte einen neuen Link, um zu einem anderen Telegram-Konto zu wechseln. Die Zeile „Telegram-Verbindung entfernen“ steht unten auf diesem Bildschirm."]],
+        "setAlt": "Bildschirm Telegram ist verbunden: verbundener Chat, Signalmodus für alle Symbole und die Schaltfläche Anderes Konto verbinden"
       }
     }
   },
@@ -304,6 +366,37 @@
         "ladder": [["Préviens-moi une fois si le BTC passe sous 85 000.", "free"], ["Préviens-moi si le SOL monte de 3 % en 15 minutes.", "free"], ["Préviens-moi une fois quand le BTC dépasse 70 000 avec un RSI horaire sous 30.", "plus"], ["Sur le top 100, préviens-moi sur Telegram quand le volume 15 minutes dépasse 3 fois sa moyenne.", "plus"], ["Préviens-moi quand, sur le top 100 des cryptos, le RSI passe sous 30 et le volume double.", "plus"]],
         "plans": {"free": "Free", "plus": "Plus · Pro"}
       }
+    },
+    "telegram-crypto-alerts": {
+      "link": "Alertes crypto sur Telegram",
+      "title": "Recevoir les alertes de prix Binance sur Telegram : configuration | MarketAlert",
+      "h1": "Comment recevoir les alertes de prix Binance sur Telegram ?",
+      "description": "Connecte MarketAlert à Telegram une fois, choisis Telegram dans l’alerte : prix, RSI, volume et alertes sur toutes les cryptos arrivent dans ta conversation. Sans chat ID ni clé API.",
+      "intro": "Tu connectes Telegram à l’application une seule fois, puis tu le choisis comme canal de notification en créant une alerte. Quand l’alerte se déclenche, le message arrive du bot MarketAlert dans ta propre conversation Telegram, et une notification push peut arriver en même temps si tu veux. Tu ne saisis ni chat ID, ni jeton de bot, ni clé API Binance. Les alertes que tu peux envoyer sur Telegram sont expliquées dans les pages [alerte de prix crypto](features/price-alerts) et [alerte sur toutes les cryptos](features/all-coins-alerts).",
+      "prompt": "Préviens-moi sur Telegram quand le BTC passe au-dessus de 105 000",
+      "exampleTitle": "Chaque alerte arrive sur Telegram avec son propre message",
+      "caption": "À gauche, quatre alertes dans l’application ; à droite, le message que chacune envoie sur Telegram. La couleur du trait indique le type de condition.",
+      "steps": [["Connecter Telegram", "Dans l’application, ouvre Réglages › Telegram et touche « Connecter Telegram ». L’application ouvre Telegram et t’amène dans la conversation du bot MarketAlert. Si Telegram n’est pas installé, installe-le d’abord."], ["Appuyer sur DÉMARRER dans Telegram", "La conversation du bot « MarketAlert: Crypto Alerts » s’ouvre. Appuie sur le bouton DÉMARRER en bas."], ["/start est envoyé", "En appuyant sur DÉMARRER, /start part dans la conversation et ton compte est associé grâce à lui. Tu n’as rien d’autre à écrire. Le lien n’est valable que peu de temps ; s’il expire, touche « Créer un nouveau lien » dans l’application."], ["Revenir dans l’application", "L’état passe tout seul à « Telegram est connecté ». Seuls les quatre derniers chiffres de la conversation connectée sont affichés."], ["Choisir Telegram dans l’alerte", "En créant une alerte, coche Telegram dans Notification › Canal. Tu peux garder le push ; plusieurs canaux peuvent être choisis. Tu peux aussi simplement dire à l’[assistant vocal](features/voice-crypto-alerts) « préviens-moi sur Telegram »."]],
+      "details": [["Quelles offres incluent Telegram ?", "Les notifications Telegram font partie de Plus et Pro, tous deux avec 7 jours d’essai gratuit. Avec l’offre Free, les notifications arrivent en push. Si tu passes à Free, les alertes réglées sur Telegram envoient des notifications push à la place."], ["Que contient un message Telegram ?", "La première ligne dit ce qui s’est passé, par exemple « BTC au-dessus de 105 000 ». La deuxième montre le nom que tu as donné à l’alerte. En dessous figurent la valeur actuelle, la cible, l’intervalle de bougie et le marché. Les messages pour une seule crypto ont un bouton qui ouvre le graphique Binance."], ["Comment les alertes sur toutes les cryptos arrivent-elles sur Telegram ?", "C’est le « Mode des signaux tous symboles » dans Réglages › Telegram qui décide. Par défaut envoie un message unique ou un récapitulatif selon la situation, Instantané envoie chaque signal tout de suite dans son propre message, Récapitulatif regroupe les signaux et les envoie en un message à intervalles réguliers. Les alertes sur une seule crypto arrivent toujours tout de suite. Le scan de toutes les cryptos couvre le top 100 en Plus et toutes les cryptos en Pro ; détails sur la page [alerte sur toutes les cryptos](features/all-coins-alerts)."], ["Est-ce sûr ?", "MarketAlert ne se connecte jamais à ton compte d’exchange, ne demande jamais de clé API et ne passe aucun ordre. Le bot envoie seulement des notifications ; il ne demande jamais de mot de passe, de clé API ni de paiement. Les messages arrivent uniquement dans ta conversation privée avec le bot."]],
+      "faq": [["Faut-il un chat ID ou un jeton de bot pour les alertes Telegram ?", "Non. Le bouton « Connecter Telegram » de l’application ouvre le bot ; il suffit d’appuyer sur DÉMARRER."], ["Les notifications Telegram sont-elles gratuites ?", "Telegram fait partie de Plus et Pro, tous deux avec 7 jours d’essai gratuit. Avec l’offre Free, les notifications arrivent en push."], ["Puis-je recevoir à la fois le push et Telegram ?", "Oui. Choisis les deux dans Notification › Canal de l’alerte ; le même signal arrive des deux côtés."], ["Puis-je envoyer les alertes dans un groupe ou une chaîne Telegram ?", "Non. Les notifications arrivent uniquement dans ta conversation privée avec le bot MarketAlert."], ["Comment déconnecter Telegram ?", "Touche « Supprimer la connexion Telegram » en bas de Réglages › Telegram. Ensuite, les alertes qui utilisent le canal Telegram ne peuvent plus envoyer de message Telegram ; tu peux reconnecter à tout moment. Pour passer à un autre compte, utilise « Connecter un autre compte »."], ["J’ai appuyé sur DÉMARRER mais rien n’est connecté. Que faire ?", "L’application vérifie l’état d’elle-même, patiente un instant. Si le lien a expiré, touche « Créer un nouveau lien » et appuie de nouveau sur DÉMARRER dans la conversation qui s’ouvre."]],
+      "related": ["features/all-coins-alerts", "features/price-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/voice-crypto-alerts"],
+      "plans": [["Free", "3 alertes ; les notifications arrivent en push. Telegram n’est pas inclus dans cette offre."], ["Plus", "20 alertes ; push et Telegram, ou les deux ensemble. 2 alertes sur toutes les cryptos jusqu’au top 100."], ["Pro", "100 alertes ; push, Telegram et webhook signé. 10 alertes sur toutes les cryptos."]],
+      "tg": {
+        "kicker": "BINANCE · TELEGRAM · PLUS / PRO",
+        "chips": ["Chat ID", "Jeton de bot (token)", "Clé API Binance"],
+        "no": "inutile",
+        "hookAlt": "MarketAlert Réglages › Telegram : Telegram est connecté",
+        "kinds": ["Prix", "RSI", "Volume", "Toutes les cryptos"],
+        "listAlt": "Quatre alertes sur l’écran Mes alertes : prix BTC 105 000, SOL RSI 70, volume AVAX ×3, plus haut/plus bas sur 24 h dans le top 100",
+        "chat": "Conversation Telegram",
+        "pairNote": "La première ligne d’un message dit ce qui s’est passé ; la ligne 🔔 montre le nom de ton alerte.",
+        "lanes": ["MarketAlert", "Telegram"],
+        "cells": [["Connecter Telegram", "Réglages › Telegram"], ["DÉMARRER", "Le bot s’ouvre tout seul"], ["/start", "Un message, c’est fait"], ["Connecté", "Retour dans l’app"], ["Choisir dans l’alerte", "Notification › Canal"]],
+        "alts": ["Écran Telegram n’est pas connecté avec le bouton Connecter Telegram", "Bot MarketAlert dans Telegram avec le bouton DÉMARRER", "Message /start envoyé dans la conversation Telegram", "Écran Telegram est connecté", "Canal de notification dans le formulaire d’alerte : push et Telegram cochés"],
+        "setTitle": "Réglages › Telegram après la connexion",
+        "callouts": [["Conversation connectée", "Seuls les quatre derniers chiffres sont visibles."], ["Mode des signaux tous symboles", "Par défaut, Instantané ou Récapitulatif. Les alertes sur une seule crypto arrivent toujours tout de suite."], ["Connecter un autre compte", "Lance un nouveau lien pour passer à un autre compte Telegram. La ligne « Supprimer la connexion Telegram » se trouve en bas de cet écran."]],
+        "setAlt": "Écran Telegram est connecté : conversation connectée, mode des signaux tous symboles et bouton Connecter un autre compte"
+      }
     }
   },
   "es": {
@@ -404,6 +497,37 @@
         "level": "Nivel",
         "ladder": [["Avísame una vez si BTC baja de 85.000.", "free"], ["Avísame si SOL sube un 3 % en 15 minutos.", "free"], ["Avísame una vez cuando BTC supere 70.000 con el RSI horario por debajo de 30.", "plus"], ["En el top 100, avísame por Telegram cuando el volumen de 15 minutos supere 3 veces su media.", "plus"], ["Avísame cuando en el top 100 de monedas el RSI esté por debajo de 30 y el volumen sea el doble.", "plus"]],
         "plans": {"free": "Free", "plus": "Plus · Pro"}
+      }
+    },
+    "telegram-crypto-alerts": {
+      "link": "Alertas cripto en Telegram",
+      "title": "Recibe alertas de precio de Binance en Telegram: configuración | MarketAlert",
+      "h1": "¿Cómo recibo alertas de precio de Binance en Telegram?",
+      "description": "Conecta MarketAlert a Telegram una vez y elige Telegram en tu alerta: precio, RSI, volumen y alertas para todas las monedas llegan a tu chat. Sin chat ID ni clave API.",
+      "intro": "Conectas Telegram a la app una sola vez y luego lo eliges como canal de notificación al crear una alerta. Cuando la alerta salta, el mensaje llega del bot de MarketAlert a tu propio chat de Telegram, y si quieres también llega una notificación push al mismo tiempo. No introduces chat ID, token de bot ni clave API de Binance. Las alertas que puedes enviar a Telegram se explican en las páginas [alerta de precio cripto](features/price-alerts) y [alerta para todas las monedas](features/all-coins-alerts).",
+      "prompt": "Avísame por Telegram cuando BTC suba de 105.000",
+      "exampleTitle": "Cada alerta llega a Telegram con su propio mensaje",
+      "caption": "A la izquierda, cuatro alertas en la app; a la derecha, el mensaje que cada una envía a Telegram. El color de la línea indica el tipo de condición.",
+      "steps": [["Conecta Telegram", "En la app, entra en Ajustes › Telegram y toca «Conectar Telegram». La app abre Telegram y te lleva al chat del bot de MarketAlert. Si no tienes Telegram instalado, instálalo primero."], ["Pulsa INICIAR en Telegram", "Se abre el chat del bot «MarketAlert: Crypto Alerts». Pulsa el botón INICIAR de abajo."], ["Se envía /start", "Al pulsar INICIAR se envía /start al chat y tu cuenta queda vinculada con él. No tienes que escribir nada más. El enlace vale poco tiempo; si caduca, toca «Crear enlace nuevo» en la app."], ["Vuelve a la app", "El estado cambia solo a «Telegram está conectado». Del chat conectado solo se ven los cuatro últimos dígitos."], ["Elige Telegram en la alerta", "Al crear una alerta, marca Telegram en Notificación › Canal. Puedes dejar el push activado; se pueden elegir varios canales. También basta con decirle al [asistente de voz](features/voice-crypto-alerts) «avísame por Telegram»."]],
+      "details": [["¿Qué planes incluyen Telegram?", "Las notificaciones de Telegram están en Plus y Pro, ambos con 7 días de prueba gratis. En el plan Free las notificaciones llegan como push. Si pasas a Free, las alertas con Telegram envían notificaciones push en su lugar."], ["¿Qué dice un mensaje de Telegram?", "La primera línea dice qué pasó, por ejemplo «BTC subió de 105.000». La segunda muestra el nombre que diste a la alerta. Debajo van el valor actual, el objetivo, el intervalo de vela y el mercado. Los mensajes de una sola moneda tienen un botón que abre el gráfico de Binance."], ["¿Cómo llegan a Telegram las alertas para todas las monedas?", "Lo decide el «Modo de señales para todos los símbolos» en Ajustes › Telegram. Predeterminado envía mensajes sueltos o un resumen según convenga, Al instante envía cada señal enseguida en su propio mensaje y Resumen junta las señales y las envía en un mensaje a intervalos fijos. Las alertas de una sola moneda llegan siempre enseguida. El escaneo de todas las monedas cubre el top 100 en Plus y todas las monedas en Pro; más detalles en la página [alerta para todas las monedas](features/all-coins-alerts)."], ["¿Es seguro?", "MarketAlert nunca se conecta a tu cuenta del exchange, nunca pide una clave API y no opera. El bot solo envía notificaciones; nunca pide contraseñas, claves API ni pagos. Los mensajes llegan solo a tu chat privado con el bot."]],
+      "faq": [["¿Necesito un chat ID o un token de bot para las alertas de Telegram?", "No. El botón «Conectar Telegram» de la app abre el bot; basta con pulsar INICIAR."], ["¿Las notificaciones de Telegram son gratis?", "Telegram está en Plus y Pro, ambos con 7 días de prueba gratis. En el plan Free las notificaciones llegan como push."], ["¿Puedo recibir push y Telegram a la vez?", "Sí. Elige los dos en Notificación › Canal de la alerta; la misma señal llega por ambos."], ["¿Puedo enviar las alertas a un grupo o canal de Telegram?", "No. Las notificaciones llegan solo a tu propio chat privado con el bot de MarketAlert."], ["¿Cómo desconecto Telegram?", "Toca «Quitar conexión de Telegram» al final de Ajustes › Telegram. Después, las alertas que usan el canal Telegram no pueden enviar mensajes de Telegram; puedes volver a conectar cuando quieras. Para cambiar de cuenta, usa «Conectar otra cuenta»."], ["Pulsé INICIAR pero no se conectó, ¿qué hago?", "La app comprueba el estado por sí sola, espera un momento. Si el enlace caducó, toca «Crear enlace nuevo» y vuelve a pulsar INICIAR en el chat que se abre."]],
+      "related": ["features/all-coins-alerts", "features/price-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/voice-crypto-alerts"],
+      "plans": [["Free", "3 alertas; las notificaciones llegan como push. Telegram no está en este plan."], ["Plus", "20 alertas; push y Telegram, o los dos juntos. 2 alertas para todas las monedas hasta el top 100."], ["Pro", "100 alertas; push, Telegram y webhook firmado. 10 alertas sobre todas las monedas."]],
+      "tg": {
+        "kicker": "BINANCE · TELEGRAM · PLUS / PRO",
+        "chips": ["Chat ID", "Token de bot", "Clave API de Binance"],
+        "no": "no hace falta",
+        "hookAlt": "MarketAlert Ajustes › Telegram: Telegram está conectado",
+        "kinds": ["Precio", "RSI", "Volumen", "Todas las monedas"],
+        "listAlt": "Cuatro alertas en la pantalla Mis alertas: precio de BTC 105.000, SOL RSI 70, volumen de AVAX 3×, máximo/mínimo de 24 h en el top 100",
+        "chat": "Chat de Telegram",
+        "pairNote": "La primera línea del mensaje dice qué pasó; la línea 🔔 muestra el nombre de tu alerta.",
+        "lanes": ["MarketAlert", "Telegram"],
+        "cells": [["Conecta Telegram", "Ajustes › Telegram"], ["INICIAR", "El bot se abre solo"], ["/start", "Un mensaje y listo"], ["Conectado", "Vuelve a la app"], ["Elige en la alerta", "Notificación › Canal"]],
+        "alts": ["Pantalla Telegram no está conectado con el botón Conectar Telegram", "Bot de MarketAlert en Telegram con el botón INICIAR", "Mensaje /start enviado en el chat de Telegram", "Pantalla Telegram está conectado", "Canal de notificación en el formulario de alerta: push y Telegram marcados"],
+        "setTitle": "Ajustes › Telegram tras conectar",
+        "callouts": [["Chat conectado", "Solo se ven los cuatro últimos dígitos."], ["Modo de señales para todos los símbolos", "Predeterminado, Al instante o Resumen. Las alertas de una sola moneda llegan siempre enseguida."], ["Conectar otra cuenta", "Inicia un enlace nuevo para cambiar a otra cuenta de Telegram. La fila «Quitar conexión de Telegram» está al final de esta pantalla."]],
+        "setAlt": "Pantalla Telegram está conectado: chat conectado, modo de señales para todos los símbolos y botón Conectar otra cuenta"
       }
     }
   },
@@ -506,6 +630,37 @@
         "ladder": [["Me avise uma vez se o BTC cair abaixo de 85.000.", "free"], ["Me avise se o SOL subir 3% em 15 minutos.", "free"], ["Me avise uma vez quando o BTC passar de 70.000 com o RSI de 1 hora abaixo de 30.", "plus"], ["Nas 100 maiores moedas, me avise no Telegram quando o volume de 15 minutos passar de 3 vezes a média.", "plus"], ["Me avise quando, nas 100 maiores moedas, o RSI estiver abaixo de 30 e o volume for 2 vezes maior.", "plus"]],
         "plans": {"free": "Free", "plus": "Plus · Pro"}
       }
+    },
+    "telegram-crypto-alerts": {
+      "link": "Alertas cripto no Telegram",
+      "title": "Receba alertas de preço da Binance no Telegram: configuração | MarketAlert",
+      "h1": "Como recebo alertas de preço da Binance no Telegram?",
+      "description": "Conecte o MarketAlert ao Telegram uma vez e escolha Telegram no alerta: preço, RSI, volume e alertas para todas as moedas chegam no seu chat. Sem chat ID nem chave de API.",
+      "intro": "Você conecta o Telegram ao app uma única vez e depois escolhe ele como canal de notificação ao criar um alerta. Quando o alerta dispara, a mensagem chega do bot do MarketAlert no seu próprio chat do Telegram, e se quiser uma notificação push chega ao mesmo tempo. Você não digita chat ID, token de bot nem chave de API da Binance. Os alertas que você pode mandar para o Telegram estão explicados nas páginas [alerta de preço cripto](features/price-alerts) e [alerta para todas as moedas](features/all-coins-alerts).",
+      "prompt": "Me avise no Telegram quando o BTC passar de 105.000",
+      "exampleTitle": "Cada alerta chega no Telegram com sua própria mensagem",
+      "caption": "À esquerda, quatro alertas no app; à direita, a mensagem que cada um envia ao Telegram. A cor da linha mostra o tipo de condição.",
+      "steps": [["Conecte o Telegram", "No app, abra Ajustes › Telegram e toque em “Conectar Telegram”. O app abre o Telegram e leva você ao chat do bot do MarketAlert. Se o Telegram não estiver instalado, instale primeiro."], ["Toque em INICIAR no Telegram", "O chat do bot “MarketAlert: Crypto Alerts” abre. Toque no botão INICIAR embaixo."], ["O /start é enviado", "Ao tocar em INICIAR, /start vai para o chat e sua conta é vinculada por ele. Você não precisa escrever mais nada. O link vale por pouco tempo; se expirar, toque em “Criar novo link” no app."], ["Volte ao app", "O status muda sozinho para “Telegram conectado”. Do chat conectado aparecem só os quatro últimos dígitos."], ["Escolha Telegram no alerta", "Ao criar um alerta, marque Telegram em Notificação › Canal. Você pode manter o push ligado; dá para escolher mais de um canal. Também basta dizer ao [assistente de voz](features/voice-crypto-alerts) “me avise no Telegram”."]],
+      "details": [["Quais planos têm Telegram?", "As notificações do Telegram fazem parte do Plus e do Pro, os dois com 7 dias de teste grátis. No plano Free as notificações chegam como push. Se você mudar para o Free, os alertas com Telegram passam a enviar push."], ["O que aparece numa mensagem do Telegram?", "A primeira linha diz o que aconteceu, por exemplo “BTC passou de 105.000”. A segunda mostra o nome que você deu ao alerta. Abaixo vêm o valor atual, o alvo, o intervalo do candle e o mercado. Mensagens de uma só moeda têm um botão que abre o gráfico da Binance."], ["Como os alertas para todas as moedas chegam no Telegram?", "Quem decide é o “Modo de sinais para todos os símbolos” em Ajustes › Telegram. Padrão envia mensagens avulsas ou um resumo conforme o caso, Instantâneo envia cada sinal na hora em mensagem própria e Resumo junta os sinais e envia numa mensagem em intervalos fixos. Alertas de uma só moeda chegam sempre na hora. A varredura de todas as moedas cobre o top 100 no Plus e todas as moedas no Pro; detalhes na página [alerta para todas as moedas](features/all-coins-alerts)."], ["É seguro?", "O MarketAlert nunca se conecta à sua conta na corretora, nunca pede chave de API e não opera. O bot só envia notificações; nunca pede senha, chave de API nem pagamento. As mensagens chegam só no seu chat privado com o bot."]],
+      "faq": [["Preciso de chat ID ou token de bot para alertas no Telegram?", "Não. O botão “Conectar Telegram” do app abre o bot; basta tocar em INICIAR."], ["As notificações do Telegram são grátis?", "O Telegram faz parte do Plus e do Pro, os dois com 7 dias de teste grátis. No plano Free as notificações chegam como push."], ["Posso receber push e Telegram ao mesmo tempo?", "Sim. Escolha os dois em Notificação › Canal do alerta; o mesmo sinal chega pelos dois."], ["Posso enviar os alertas para um grupo ou canal do Telegram?", "Não. As notificações chegam só no seu próprio chat privado com o bot do MarketAlert."], ["Como desconecto o Telegram?", "Toque em “Remover conexão com o Telegram” no fim de Ajustes › Telegram. Depois disso, alertas que usam o canal Telegram não conseguem enviar mensagens no Telegram; você pode reconectar quando quiser. Para trocar de conta, use “Conectar outra conta”."], ["Toquei em INICIAR mas não conectou. E agora?", "O app verifica o status sozinho, espere um pouco. Se o link expirou, toque em “Criar novo link” e toque de novo em INICIAR no chat que abrir."]],
+      "related": ["features/all-coins-alerts", "features/price-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/voice-crypto-alerts"],
+      "plans": [["Free", "3 alertas; as notificações chegam como push. O Telegram não faz parte deste plano."], ["Plus", "20 alertas; push e Telegram, ou os dois juntos. 2 alertas para todas as moedas até o top 100."], ["Pro", "100 alertas; push, Telegram e webhook assinado. 10 alertas sobre todas as moedas."]],
+      "tg": {
+        "kicker": "BINANCE · TELEGRAM · PLUS / PRO",
+        "chips": ["Chat ID", "Token de bot", "Chave de API da Binance"],
+        "no": "não precisa",
+        "hookAlt": "MarketAlert Ajustes › Telegram: Telegram conectado",
+        "kinds": ["Preço", "RSI", "Volume", "Todas as moedas"],
+        "listAlt": "Quatro alertas na tela Meus alertas: preço do BTC 105.000, SOL RSI 70, volume do AVAX 3×, máxima/mínima de 24 h no top 100",
+        "chat": "Chat do Telegram",
+        "pairNote": "A primeira linha da mensagem diz o que aconteceu; a linha 🔔 mostra o nome do seu alerta.",
+        "lanes": ["MarketAlert", "Telegram"],
+        "cells": [["Conecte o Telegram", "Ajustes › Telegram"], ["INICIAR", "O bot abre sozinho"], ["/start", "Uma mensagem e pronto"], ["Conectado", "De volta ao app"], ["Escolha no alerta", "Notificação › Canal"]],
+        "alts": ["Tela Telegram não conectado com o botão Conectar Telegram", "Bot do MarketAlert no Telegram com o botão INICIAR", "Mensagem /start enviada no chat do Telegram", "Tela Telegram conectado", "Canal de notificação no formulário do alerta: push e Telegram marcados"],
+        "setTitle": "Ajustes › Telegram depois de conectar",
+        "callouts": [["Chat conectado", "Só os quatro últimos dígitos aparecem."], ["Modo de sinais para todos os símbolos", "Padrão, Instantâneo ou Resumo. Alertas de uma só moeda chegam sempre na hora."], ["Conectar outra conta", "Inicie um novo link para trocar para outra conta do Telegram. A linha “Remover conexão com o Telegram” fica no fim desta tela."]],
+        "setAlt": "Tela Telegram conectado: chat conectado, modo de sinais para todos os símbolos e botão Conectar outra conta"
+      }
     }
   },
   "ru": {
@@ -606,6 +761,37 @@
         "level": "Уровень",
         "ladder": [["Сообщи один раз, если BTC упадёт ниже 85 000.", "free"], ["Сообщи, если SOL вырастет на 3 % за 15 минут.", "free"], ["Сообщи один раз, когда BTC поднимется выше 70 000, а часовой RSI будет ниже 30.", "plus"], ["По топ-100 монет сообщи в Telegram, когда 15-минутный объём превысит среднее в 3 раза.", "plus"], ["Сообщи, когда в топ-100 монет RSI будет ниже 30, а объём вырастет в 2 раза.", "plus"]],
         "plans": {"free": "Free", "plus": "Plus · Pro"}
+      }
+    },
+    "telegram-crypto-alerts": {
+      "link": "Крипто-оповещения в Telegram",
+      "title": "Ценовые оповещения Binance в Telegram: настройка | MarketAlert",
+      "h1": "Как получать ценовые оповещения Binance в Telegram?",
+      "description": "Подключи MarketAlert к Telegram один раз и выбери Telegram в оповещении: цена, RSI, объём и оповещения по всем монетам придут в твой чат. Без chat ID и API-ключа.",
+      "intro": "Ты один раз подключаешь Telegram к приложению, а потом выбираешь его как канал уведомлений, когда создаёшь оповещение. Когда оповещение срабатывает, сообщение приходит от бота MarketAlert в твой личный чат Telegram, а при желании одновременно приходит и push-уведомление. Не нужно вводить chat ID, токен бота или API-ключ Binance. Какие оповещения можно отправлять в Telegram, рассказано на страницах [ценовой алерт для крипты](features/price-alerts) и [оповещение по всем монетам](features/all-coins-alerts).",
+      "prompt": "Сообщи в Telegram, когда BTC поднимется выше 105 000",
+      "exampleTitle": "Каждое оповещение приходит в Telegram своим сообщением",
+      "caption": "Слева четыре оповещения в приложении, справа сообщение, которое каждое из них отправляет в Telegram. Цвет линии показывает тип условия.",
+      "steps": [["Подключи Telegram", "В приложении открой Настройки › Telegram и нажми «Подключить Telegram». Приложение откроет Telegram и приведёт тебя в чат с ботом MarketAlert. Если Telegram не установлен, сначала установи его."], ["Нажми ЗАПУСТИТЬ в Telegram", "Откроется чат с ботом «MarketAlert: Crypto Alerts». Нажми кнопку ЗАПУСТИТЬ внизу."], ["Уходит /start", "После нажатия ЗАПУСТИТЬ в чат уходит /start, и по нему твой аккаунт связывается с ботом. Больше ничего писать не нужно. Ссылка действует недолго; если срок истёк, нажми в приложении «Создать новую ссылку»."], ["Вернись в приложение", "Статус сам сменится на «Telegram подключён». У подключённого чата видны только последние четыре цифры."], ["Выбери Telegram в оповещении", "При создании оповещения отметь Telegram в разделе Уведомление › Канал. Push можно оставить включённым; можно выбрать несколько каналов. Можно и просто сказать [голосовому ассистенту](features/voice-crypto-alerts) «сообщи в Telegram»."]],
+      "details": [["В каких тарифах есть Telegram?", "Уведомления в Telegram есть в Plus и Pro, в обоих 7 дней бесплатного пробного периода. В тарифе Free уведомления приходят как push. Если перейти на Free, оповещения с Telegram будут присылать push-уведомления."], ["Что написано в сообщении Telegram?", "Первая строка говорит, что произошло, например «BTC выше 105 000». Во второй строке — название твоего оповещения. Ниже текущее значение, цель, интервал свечи и рынок. В сообщениях по одной монете есть кнопка, которая открывает график Binance."], ["Как оповещения по всем монетам приходят в Telegram?", "Это задаёт «Режим сигналов по всем символам» в Настройки › Telegram. «По умолчанию» присылает отдельные сообщения или сводку по ситуации, «Мгновенно» сразу присылает каждый сигнал отдельным сообщением, «Сводка» собирает сигналы и присылает их одним сообщением через заданные промежутки. Оповещения по одной монете всегда приходят сразу. Сканирование всех монет охватывает топ-100 в Plus и все монеты в Pro; подробнее на странице [оповещение по всем монетам](features/all-coins-alerts)."], ["Это безопасно?", "MarketAlert не подключается к аккаунту на бирже, не просит API-ключ и не торгует. Бот только отправляет уведомления и никогда не просит пароли, API-ключи или оплату. Сообщения приходят только в твой личный чат с ботом."]],
+      "faq": [["Нужны ли chat ID или токен бота для оповещений в Telegram?", "Нет. Кнопка «Подключить Telegram» в приложении открывает бота; достаточно нажать ЗАПУСТИТЬ."], ["Уведомления в Telegram бесплатные?", "Telegram есть в Plus и Pro, в обоих 7 дней бесплатного пробного периода. В тарифе Free уведомления приходят как push."], ["Можно получать и push, и Telegram одновременно?", "Да. Выбери оба в разделе Уведомление › Канал оповещения; один и тот же сигнал придёт в оба."], ["Можно отправлять оповещения в группу или канал Telegram?", "Нет. Уведомления приходят только в твой личный чат с ботом MarketAlert."], ["Как отключить Telegram?", "Нажми «Отключить Telegram» внизу экрана Настройки › Telegram. После этого оповещения с каналом Telegram не смогут отправлять сообщения в Telegram; подключить снова можно в любой момент. Чтобы перейти на другой аккаунт, используй «Подключить другой аккаунт»."], ["После нажатия ЗАПУСТИТЬ подключение не прошло. Что делать?", "Приложение само проверяет статус, подожди немного. Если ссылка истекла, нажми «Создать новую ссылку» и снова нажми ЗАПУСТИТЬ в открывшемся чате."]],
+      "related": ["features/all-coins-alerts", "features/price-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/voice-crypto-alerts"],
+      "plans": [["Free", "3 оповещения; уведомления приходят как push. Telegram в этот тариф не входит."], ["Plus", "20 оповещений; push и Telegram, можно оба сразу. 2 оповещения по всем монетам до топ-100."], ["Pro", "100 оповещений; push, Telegram и подписанный webhook. 10 оповещений по всем монетам."]],
+      "tg": {
+        "kicker": "BINANCE · TELEGRAM · PLUS / PRO",
+        "chips": ["Chat ID", "Токен бота", "API-ключ Binance"],
+        "no": "не нужно",
+        "hookAlt": "MarketAlert Настройки › Telegram: Telegram подключён",
+        "kinds": ["Цена", "RSI", "Объём", "Все монеты"],
+        "listAlt": "Четыре оповещения на экране Мои оповещения: цена BTC 105 000, SOL RSI 70, объём AVAX 3×, максимум/минимум за 24 часа в топ-100",
+        "chat": "Чат Telegram",
+        "pairNote": "Первая строка сообщения говорит, что произошло; строка 🔔 показывает название твоего оповещения.",
+        "lanes": ["MarketAlert", "Telegram"],
+        "cells": [["Подключи Telegram", "Настройки › Telegram"], ["ЗАПУСТИТЬ", "Бот открывается сам"], ["/start", "Одно сообщение, и готово"], ["Подключено", "Назад в приложение"], ["Выбери в оповещении", "Уведомление › Канал"]],
+        "alts": ["Экран Telegram не подключён с кнопкой Подключить Telegram", "Бот MarketAlert в Telegram с кнопкой ЗАПУСТИТЬ", "Сообщение /start, отправленное в чат Telegram", "Экран Telegram подключён", "Канал уведомлений в форме оповещения: выбраны push и Telegram"],
+        "setTitle": "Настройки › Telegram после подключения",
+        "callouts": [["Подключённый чат", "Видны только последние четыре цифры."], ["Режим сигналов по всем символам", "По умолчанию, Мгновенно или Сводка. Оповещения по одной монете всегда приходят сразу."], ["Подключить другой аккаунт", "Создай новую ссылку, чтобы перейти на другой аккаунт Telegram. Строка «Отключить Telegram» находится внизу этого экрана."]],
+        "setAlt": "Экран Telegram подключён: подключённый чат, режим сигналов по всем символам и кнопка Подключить другой аккаунт"
       }
     }
   },
@@ -708,6 +894,37 @@
         "ladder": [["BTCが85,000を下回ったら1回だけ通知して。", "free"], ["SOLが15分で3%上がったら知らせて。", "free"], ["BTCが70,000を超えて1時間足のRSIが30未満のとき、1回だけ知らせて。", "plus"], ["上位100コインで15分足の出来高が平均の3倍を超えたらTelegramで知らせて。", "plus"], ["上位100コインでRSIが30未満かつ出来高が2倍になったら知らせて。", "plus"]],
         "plans": {"free": "Free", "plus": "Plus · Pro"}
       }
+    },
+    "telegram-crypto-alerts": {
+      "link": "Telegramで暗号資産アラート",
+      "title": "Binanceの価格アラートをTelegramで受け取る：設定方法 | MarketAlert",
+      "h1": "Binanceの価格アラートをTelegramで受け取るには？",
+      "description": "MarketAlertをTelegramと一度連携し、アラートでTelegramを選ぶだけ。価格、RSI、出来高、全コインアラートがチャットに届きます。チャットIDもAPIキーも不要です。",
+      "intro": "Telegramはアプリと一度連携するだけです。あとはアラートを作るときに通知チャネルとして選びます。アラートが作動すると、MarketAlertのボットからあなた自身のTelegramチャットにメッセージが届きます。プッシュ通知を同時に受け取ることもできます。チャットID、ボットのトークン、BinanceのAPIキーを入力する必要はありません。Telegramに送れるアラートは[暗号資産の価格アラート](features/price-alerts)と[全コインアラート](features/all-coins-alerts)のページで紹介しています。",
+      "prompt": "BTCが105,000を超えたらTelegramで知らせて",
+      "exampleTitle": "アラートごとに、Telegramへ専用のメッセージが届く",
+      "caption": "左はアプリ内の4つのアラート、右はそれぞれがTelegramに送るメッセージです。線の色は条件の種類を表します。",
+      "steps": [["Telegramと連携する", "アプリで設定 › Telegramを開き、「Telegramと連携」をタップします。アプリがTelegramを開き、MarketAlertボットのチャットに移動します。Telegramが入っていない場合は、先にインストールしてください。"], ["Telegramで開始を押す", "「MarketAlert: Crypto Alerts」ボットのチャットが開きます。下にある開始ボタンを押します。"], ["/startが送られる", "開始を押すとチャットに/startが送られ、これでアカウントがひも付きます。ほかに何も入力する必要はありません。リンクの有効時間は短いので、期限が切れたらアプリで「新しいリンクを作成」をタップします。"], ["アプリに戻る", "状態は自動で「Telegramと連携済みです」に変わります。連携したチャットは末尾4桁だけが表示されます。"], ["アラートでTelegramを選ぶ", "アラートを作るときに、通知 › チャネルでTelegramにチェックを入れます。プッシュ通知もオンのままにでき、複数のチャネルを選べます。[音声アシスタント](features/voice-crypto-alerts)に「Telegramで知らせて」と言うだけでも設定できます。"]],
+      "details": [["Telegramはどのプランで使えますか？", "Telegram通知はPlusとProで使えます。どちらも7日間の無料トライアルがあります。Freeプランでは通知はプッシュで届きます。Freeに切り替えると、Telegramを選んでいたアラートの通知はプッシュで届きます。"], ["Telegramのメッセージには何が書かれていますか？", "1行目に何が起きたか（例：「BTCが105,000を超えました」）、2行目にアラートに付けた名前が表示されます。その下に現在の値、目標、ローソク足の間隔、マーケットが続きます。1コインのアラートのメッセージには、Binanceのチャートを開くボタンがあります。"], ["全コインアラートはTelegramにどう届きますか？", "設定 › Telegramの「全銘柄シグナルモード」で決まります。標準は状況に応じて個別またはまとめて送り、即時はシグナルごとにすぐ個別のメッセージで送り、まとめはシグナルを集めて一定間隔で1通にまとめて送ります。1コインのアラートは常にすぐ届きます。全コインのスキャンはPlusで上位100コイン、Proで全コインが対象です。詳しくは[全コインアラート](features/all-coins-alerts)のページをご覧ください。"], ["安全ですか？", "MarketAlertは取引所のアカウントに接続せず、APIキーを求めず、売買もしません。ボットは通知を送るだけで、パスワード、APIキー、支払いを求めることはありません。メッセージはボットとのあなた専用のチャットにだけ届きます。"]],
+      "faq": [["Telegram通知にチャットIDやボットのトークンは必要ですか？", "いいえ。アプリの「Telegramと連携」ボタンでボットが開くので、開始を押すだけです。"], ["Telegram通知は無料ですか？", "TelegramはPlusとProで使え、どちらも7日間の無料トライアルがあります。Freeプランでは通知はプッシュで届きます。"], ["プッシュ通知とTelegramの両方で受け取れますか？", "はい。アラートの通知 › チャネルで両方を選ぶと、同じシグナルが両方に届きます。"], ["Telegramのグループやチャンネルに送れますか？", "いいえ。通知はMarketAlertボットとのあなた専用のチャットにだけ届きます。"], ["Telegramの連携を解除するには？", "設定 › Telegramの下にある「Telegramとの連携を解除」をタップします。解除すると、Telegramチャネルを使うアラートはTelegramにメッセージを送れなくなります。いつでも再連携できます。別のアカウントに切り替えるときは「別のアカウントと連携」を使います。"], ["開始を押したのに連携されません。どうすれば？", "アプリが自動で状態を確認するので、少し待ってください。リンクの期限が切れていたら「新しいリンクを作成」をタップし、開いたチャットでもう一度開始を押します。"]],
+      "related": ["features/all-coins-alerts", "features/price-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/voice-crypto-alerts"],
+      "plans": [["Free", "3アラート。通知はプッシュで届きます。このプランにTelegramは含まれません。"], ["Plus", "20アラート。プッシュとTelegram、両方同時も可。上位100までの全コインアラート2件。"], ["Pro", "100アラート。プッシュ、Telegram、署名付きWebhook。全コインで全コインアラート10件。"]],
+      "tg": {
+        "kicker": "BINANCE · TELEGRAM · PLUS / PRO",
+        "chips": ["チャットID（chat ID）", "ボットのトークン", "BinanceのAPIキー"],
+        "no": "不要",
+        "hookAlt": "MarketAlertの設定 › Telegram：Telegramと連携済みです",
+        "kinds": ["価格", "RSI", "出来高", "全コイン"],
+        "listAlt": "アラート一覧画面の4つのアラート：BTC価格105,000、SOL RSI 70、AVAX出来高3倍、上位100コインの24時間高値・安値",
+        "chat": "Telegramのチャット",
+        "pairNote": "メッセージの1行目は何が起きたか、🔔の行はアラートに付けた名前を表します。",
+        "lanes": ["MarketAlert", "Telegram"],
+        "cells": [["Telegramと連携", "設定 › Telegram"], ["開始", "ボットが自動で開く"], ["/start", "1通送れば完了"], ["連携済み", "アプリに戻る"], ["アラートで選ぶ", "通知 › チャネル"]],
+        "alts": ["Telegramと連携していません画面と「Telegramと連携」ボタン", "TelegramのMarketAlertボットと開始ボタン", "Telegramのチャットに送られた/startメッセージ", "Telegramと連携済みです画面", "アラート作成画面の通知チャネル：プッシュとTelegramを選択"],
+        "setTitle": "連携後の設定 › Telegram",
+        "callouts": [["連携したチャット", "末尾4桁だけが表示されます。"], ["全銘柄シグナルモード", "標準、即時、まとめ。1コインのアラートは常にすぐ届きます。"], ["別のアカウントと連携", "別のTelegramアカウントに切り替えるときは新しいリンクを作ります。「Telegramとの連携を解除」はこの画面の下にあります。"]],
+        "setAlt": "Telegramと連携済みです画面：連携したチャット、全銘柄シグナルモード、別のアカウントと連携ボタン"
+      }
     }
   },
   "zh": {
@@ -808,6 +1025,37 @@
         "level": "等级",
         "ladder": [["BTC 跌破 85,000 时通知我一次。", "free"], ["SOL 在 15 分钟内上涨 3% 时通知我。", "free"], ["BTC 突破 70,000 且 1 小时 RSI 低于 30 时通知我一次。", "plus"], ["前 100 币种中 15 分钟成交量超过均值 3 倍时，用 Telegram 通知我。", "plus"], ["前 100 币种中 RSI 低于 30 且成交量达到 2 倍时通知我。", "plus"]],
         "plans": {"free": "Free", "plus": "Plus · Pro"}
+      }
+    },
+    "telegram-crypto-alerts": {
+      "link": "Telegram 加密货币提醒",
+      "title": "在 Telegram 接收 Binance 价格提醒：设置方法 | MarketAlert",
+      "h1": "如何在 Telegram 接收 Binance 价格提醒？",
+      "description": "只需将 MarketAlert 连接 Telegram 一次，并在提醒中选择 Telegram：价格、RSI、成交量和全币种提醒都会发到你的聊天。无需聊天 ID 或 API 密钥。",
+      "intro": "你只需把 Telegram 连接到应用一次，之后创建提醒时把它选为通知渠道。提醒触发时，消息会由 MarketAlert 机器人发送到你自己的 Telegram 聊天；如果需要，推送通知也会同时到达。你无需输入聊天 ID、机器人令牌或 Binance API 密钥。可以发送到 Telegram 的提醒，请看[加密货币价格提醒](features/price-alerts)和[全币种提醒](features/all-coins-alerts)页面。",
+      "prompt": "BTC 涨到 105,000 以上时在 Telegram 通知我",
+      "exampleTitle": "每个提醒都会以独立消息发到 Telegram",
+      "caption": "左边是应用中的四个提醒，右边是每个提醒发送到 Telegram 的消息。连线颜色表示条件类型。",
+      "steps": [["连接 Telegram", "在应用中打开 设置 › Telegram，点按“连接 Telegram”。应用会打开 Telegram 并带你进入 MarketAlert 机器人的聊天。如果没有安装 Telegram，请先安装。"], ["在 Telegram 中点开始", "“MarketAlert: Crypto Alerts”机器人的聊天会打开。点按底部的开始按钮。"], ["发送 /start", "点开始后，聊天中会发送 /start，你的账户随即完成关联。不需要再输入任何内容。链接只在短时间内有效；过期后请在应用中点按“创建新链接”。"], ["返回应用", "状态会自动变为“Telegram 已连接”。已连接的聊天只显示最后四位数字。"], ["在提醒中选择 Telegram", "创建提醒时，在 通知 › 渠道 中勾选 Telegram。推送可以同时保持开启，可选择多个渠道。也可以直接对[语音助手](features/voice-crypto-alerts)说“用 Telegram 通知我”。"]],
+      "details": [["哪些方案包含 Telegram？", "Telegram 通知包含在 Plus 和 Pro 中，两者都有 7 天免费试用。Free 方案的通知以推送方式到达。如果改为 Free，设置为 Telegram 的提醒会改为发送推送通知。"], ["Telegram 消息里写了什么？", "第一行说明发生了什么，例如“BTC 涨破 105,000”。第二行是你给提醒起的名字。下面是当前值、目标、K 线周期和市场。单个币种的消息带有一个按钮，可打开 Binance 图表。"], ["全币种提醒如何发到 Telegram？", "由 设置 › Telegram 中的“全部交易对信号模式”决定。默认会视情况发送单条消息或汇总，即时会把每个信号立即单独发送，汇总会收集信号并按固定间隔合成一条消息发送。单个币种的提醒总是立即到达。全币种扫描在 Plus 中覆盖前 100 个币种，在 Pro 中覆盖全部币种；详情见[全币种提醒](features/all-coins-alerts)页面。"], ["安全吗？", "MarketAlert 不会连接你的交易所账户，不会要求 API 密钥，也不会交易。机器人只发送通知，从不索要密码、API 密钥或付款。消息只会发到你与机器人的私聊中。"]],
+      "faq": [["Telegram 提醒需要聊天 ID 或机器人令牌吗？", "不需要。应用中的“连接 Telegram”按钮会打开机器人，只需点开始。"], ["Telegram 通知免费吗？", "Telegram 包含在 Plus 和 Pro 中，两者都有 7 天免费试用。Free 方案的通知以推送方式到达。"], ["可以同时收到推送和 Telegram 吗？", "可以。在提醒的 通知 › 渠道 中同时选择两者，同一个信号会同时发到两边。"], ["可以把提醒发到 Telegram 群组或频道吗？", "不可以。通知只会发到你与 MarketAlert 机器人的私聊中。"], ["如何断开 Telegram？", "点按 设置 › Telegram 底部的“解除 Telegram 连接”。解除后，使用 Telegram 渠道的提醒将无法发送 Telegram 消息；你可以随时重新连接。要切换到其他账户，请使用“连接其他账户”。"], ["点了开始但没有连接成功，怎么办？", "应用会自动检查状态，请稍等片刻。如果链接已过期，点按“创建新链接”，再在打开的聊天中点开始。"]],
+      "related": ["features/all-coins-alerts", "features/price-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/voice-crypto-alerts"],
+      "plans": [["Free", "3 个提醒；通知以推送方式到达。此方案不包含 Telegram。"], ["Plus", "20 个提醒；推送和 Telegram，也可两者同时。2 个最多覆盖前 100 的全币种提醒。"], ["Pro", "100 个提醒；推送、Telegram 和签名 webhook。10 个覆盖全部币种的全币种提醒。"]],
+      "tg": {
+        "kicker": "BINANCE · TELEGRAM · PLUS / PRO",
+        "chips": ["聊天 ID（chat ID）", "机器人令牌（token）", "Binance API 密钥"],
+        "no": "无需",
+        "hookAlt": "MarketAlert 设置 › Telegram：Telegram 已连接",
+        "kinds": ["价格", "RSI", "成交量", "全币种"],
+        "listAlt": "我的提醒页面中的四个提醒：BTC 价格 105,000、SOL RSI 70、AVAX 成交量 3 倍、前 100 币种的 24 小时新高/新低",
+        "chat": "Telegram 聊天",
+        "pairNote": "消息第一行说明发生了什么，🔔 那一行是你给提醒起的名字。",
+        "lanes": ["MarketAlert", "Telegram"],
+        "cells": [["连接 Telegram", "设置 › Telegram"], ["开始", "机器人自动打开"], ["/start", "发一条消息就完成"], ["已连接", "回到应用"], ["在提醒中选择", "通知 › 渠道"]],
+        "alts": ["Telegram 未连接页面和“连接 Telegram”按钮", "Telegram 中的 MarketAlert 机器人和开始按钮", "在 Telegram 聊天中发送的 /start 消息", "Telegram 已连接页面", "提醒表单中的通知渠道：已选推送和 Telegram"],
+        "setTitle": "连接后的 设置 › Telegram",
+        "callouts": [["已连接的聊天", "只显示最后四位数字。"], ["全部交易对信号模式", "默认、即时或汇总。单个币种的提醒总是立即到达。"], ["连接其他账户", "要切换到另一个 Telegram 账户，请发起新链接。“解除 Telegram 连接”一行在此页面底部。"]],
+        "setAlt": "Telegram 已连接页面：已连接的聊天、全部交易对信号模式和“连接其他账户”按钮"
       }
     }
   },
@@ -910,6 +1158,37 @@
         "ladder": [["BTC 85,000 से नीचे जाए तो एक बार बताना।", "free"], ["SOL 15 मिनट में 3% बढ़े तो बताना।", "free"], ["BTC 70,000 के ऊपर जाए और 1 घंटे का RSI 30 से नीचे हो, तब एक बार बताना।", "plus"], ["टॉप 100 कॉइन में 15 मिनट का वॉल्यूम औसत के 3 गुना से ऊपर जाए तो Telegram पर बताना।", "plus"], ["टॉप 100 कॉइन में जब RSI 30 से नीचे हो और वॉल्यूम 2 गुना हो, तब बताना।", "plus"]],
         "plans": {"free": "Free", "plus": "Plus · Pro"}
       }
+    },
+    "telegram-crypto-alerts": {
+      "link": "Telegram पर क्रिप्टो अलर्ट",
+      "title": "Binance प्राइस अलर्ट Telegram पर पाएँ: सेटअप | MarketAlert",
+      "h1": "Binance प्राइस अलर्ट Telegram पर कैसे पाएँ?",
+      "description": "MarketAlert को एक बार Telegram से जोड़ें और अलर्ट में Telegram चुनें: प्राइस, RSI, वॉल्यूम और सभी कॉइन अलर्ट आपकी चैट में आएँगे। चैट ID या API की ज़रूरत नहीं।",
+      "intro": "आप Telegram को ऐप से एक बार जोड़ते हैं, फिर अलर्ट बनाते समय उसे सूचना चैनल के रूप में चुनते हैं। अलर्ट ट्रिगर होने पर संदेश MarketAlert बॉट से आपकी अपनी Telegram चैट में आता है, और चाहें तो उसी समय पुश सूचना भी आती है। आपको चैट ID, बॉट टोकन या Binance API की डालने की ज़रूरत नहीं है। Telegram पर कौन से अलर्ट भेजे जा सकते हैं, यह [क्रिप्टो प्राइस अलर्ट](features/price-alerts) और [सभी कॉइन अलर्ट](features/all-coins-alerts) पेजों पर बताया गया है।",
+      "prompt": "BTC 105,000 के ऊपर जाए तो Telegram पर बताओ",
+      "exampleTitle": "हर अलर्ट Telegram पर अपने अलग संदेश के साथ आता है",
+      "caption": "बाईं ओर ऐप के चार अलर्ट, दाईं ओर वह संदेश जो हर अलर्ट Telegram पर भेजता है। रेखा का रंग शर्त का प्रकार बताता है।",
+      "steps": [["Telegram कनेक्ट करें", "ऐप में सेटिंग › Telegram खोलें और “Telegram कनेक्ट करें” पर टैप करें। ऐप Telegram खोलता है और आपको MarketAlert बॉट की चैट में ले जाता है। अगर Telegram इंस्टॉल नहीं है, तो पहले उसे इंस्टॉल करें।"], ["Telegram में START दबाएँ", "“MarketAlert: Crypto Alerts” बॉट की चैट खुलती है। नीचे दिया START बटन दबाएँ।"], ["/start भेजा जाता है", "START दबाते ही चैट में /start जाता है और आपका अकाउंट इसी से जुड़ जाता है। और कुछ लिखने की ज़रूरत नहीं। लिंक थोड़े समय के लिए ही मान्य रहता है; समय खत्म हो जाए तो ऐप में “नया लिंक बनाएँ” पर टैप करें।"], ["ऐप पर लौटें", "स्थिति अपने आप “Telegram कनेक्टेड है” हो जाती है। कनेक्ट की गई चैट के सिर्फ़ आखिरी चार अंक दिखते हैं।"], ["अलर्ट में Telegram चुनें", "अलर्ट बनाते समय सूचना › चैनल में Telegram चुनें। पुश भी चालू रख सकते हैं; एक से ज़्यादा चैनल चुने जा सकते हैं। आप [वॉइस असिस्टेंट](features/voice-crypto-alerts) से बस “Telegram पर बताओ” भी कह सकते हैं।"]],
+      "details": [["Telegram किन प्लान में है?", "Telegram सूचनाएँ Plus और Pro में हैं, दोनों में 7 दिन का मुफ़्त ट्रायल है। Free प्लान में सूचनाएँ पुश के रूप में आती हैं। Free पर जाने पर Telegram वाले अलर्ट की सूचनाएँ पुश के रूप में आती हैं।"], ["Telegram संदेश में क्या लिखा होता है?", "पहली पंक्ति बताती है कि क्या हुआ, जैसे “BTC 105,000 के ऊपर गया”। दूसरी पंक्ति में अलर्ट को दिया गया नाम होता है। उसके नीचे मौजूदा मान, लक्ष्य, कैंडल अंतराल और मार्केट होते हैं। एक कॉइन वाले संदेशों में Binance चार्ट खोलने का बटन होता है।"], ["सभी कॉइन अलर्ट Telegram पर कैसे आते हैं?", "यह सेटिंग › Telegram में “सभी सिंबल के लिए सिग्नल मोड” तय करता है। डिफ़ॉल्ट ज़रूरत के हिसाब से अलग संदेश या सारांश भेजता है, तुरंत हर सिग्नल को फ़ौरन अलग संदेश में भेजता है, और सारांश सिग्नल इकट्ठा करके तय अंतराल पर एक संदेश में भेजता है। एक कॉइन वाले अलर्ट हमेशा तुरंत आते हैं। सभी कॉइन स्कैन Plus में टॉप 100 और Pro में सभी कॉइन पर चलता है; ज़्यादा जानकारी [सभी कॉइन अलर्ट](features/all-coins-alerts) पेज पर है।"], ["क्या यह सुरक्षित है?", "MarketAlert आपके एक्सचेंज अकाउंट से कभी नहीं जुड़ता, API की नहीं माँगता और ट्रेड नहीं करता। बॉट सिर्फ़ सूचनाएँ भेजता है; वह कभी पासवर्ड, API की या भुगतान नहीं माँगता। संदेश सिर्फ़ बॉट के साथ आपकी निजी चैट में आते हैं।"]],
+      "faq": [["Telegram अलर्ट के लिए चैट ID या बॉट टोकन चाहिए?", "नहीं। ऐप का “Telegram कनेक्ट करें” बटन बॉट खोलता है; बस START दबाना होता है।"], ["क्या Telegram सूचनाएँ मुफ़्त हैं?", "Telegram Plus और Pro में है, दोनों में 7 दिन का मुफ़्त ट्रायल है। Free प्लान में सूचनाएँ पुश के रूप में आती हैं।"], ["क्या पुश और Telegram दोनों एक साथ मिल सकते हैं?", "हाँ। अलर्ट के सूचना › चैनल में दोनों चुनें; वही सिग्नल दोनों पर आएगा।"], ["क्या अलर्ट किसी Telegram ग्रुप या चैनल में भेज सकते हैं?", "नहीं। सूचनाएँ सिर्फ़ MarketAlert बॉट के साथ आपकी अपनी निजी चैट में आती हैं।"], ["Telegram कनेक्शन कैसे हटाएँ?", "सेटिंग › Telegram के नीचे “Telegram कनेक्शन हटाएँ” पर टैप करें। हटाने के बाद Telegram चैनल वाले अलर्ट Telegram पर संदेश नहीं भेज पाएँगे; आप कभी भी दोबारा कनेक्ट कर सकते हैं। दूसरे अकाउंट पर जाने के लिए “दूसरा अकाउंट कनेक्ट करें” इस्तेमाल करें।"], ["START दबाया पर कनेक्ट नहीं हुआ, अब क्या करें?", "ऐप स्थिति खुद जाँचता है, थोड़ा रुकें। अगर लिंक का समय खत्म हो गया है, तो “नया लिंक बनाएँ” पर टैप करें और खुली चैट में फिर से START दबाएँ।"]],
+      "related": ["features/all-coins-alerts", "features/price-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/voice-crypto-alerts"],
+      "plans": [["Free", "3 अलर्ट; सूचनाएँ पुश के रूप में आती हैं। इस प्लान में Telegram नहीं है।"], ["Plus", "20 अलर्ट; पुश और Telegram, चाहें तो दोनों साथ। टॉप 100 तक 2 सभी कॉइन अलर्ट।"], ["Pro", "100 अलर्ट; पुश, Telegram और साइन किया हुआ webhook। सभी कॉइन पर 10 सभी कॉइन अलर्ट।"]],
+      "tg": {
+        "kicker": "BINANCE · TELEGRAM · PLUS / PRO",
+        "chips": ["चैट ID (chat ID)", "बॉट टोकन (token)", "Binance API की"],
+        "no": "ज़रूरी नहीं",
+        "hookAlt": "MarketAlert सेटिंग › Telegram: Telegram कनेक्टेड है",
+        "kinds": ["प्राइस", "RSI", "वॉल्यूम", "सभी कॉइन"],
+        "listAlt": "मेरे अलर्ट स्क्रीन पर चार अलर्ट: BTC प्राइस 105,000, SOL RSI 70, AVAX वॉल्यूम 3×, टॉप 100 कॉइन में 24 घंटे का हाई/लो",
+        "chat": "Telegram चैट",
+        "pairNote": "संदेश की पहली पंक्ति बताती है कि क्या हुआ; 🔔 वाली पंक्ति आपके अलर्ट का नाम दिखाती है।",
+        "lanes": ["MarketAlert", "Telegram"],
+        "cells": [["Telegram कनेक्ट करें", "सेटिंग › Telegram"], ["START", "बॉट अपने आप खुलता है"], ["/start", "एक संदेश, काम पूरा"], ["कनेक्ट हो गया", "ऐप पर वापस"], ["अलर्ट में चुनें", "सूचना › चैनल"]],
+        "alts": ["Telegram कनेक्ट नहीं है स्क्रीन और Telegram कनेक्ट करें बटन", "Telegram में MarketAlert बॉट और START बटन", "Telegram चैट में भेजा गया /start संदेश", "Telegram कनेक्टेड है स्क्रीन", "अलर्ट फ़ॉर्म में सूचना चैनल: पुश और Telegram चुने हुए"],
+        "setTitle": "कनेक्ट होने के बाद सेटिंग › Telegram",
+        "callouts": [["कनेक्ट की गई चैट", "सिर्फ़ आखिरी चार अंक दिखते हैं।"], ["सभी सिंबल के लिए सिग्नल मोड", "डिफ़ॉल्ट, तुरंत या सारांश। एक कॉइन वाले अलर्ट हमेशा तुरंत आते हैं।"], ["दूसरा अकाउंट कनेक्ट करें", "किसी दूसरे Telegram अकाउंट पर जाने के लिए नया लिंक शुरू करें। “Telegram कनेक्शन हटाएँ” वाली पंक्ति इस स्क्रीन के नीचे है।"]],
+        "setAlt": "Telegram कनेक्टेड है स्क्रीन: कनेक्ट की गई चैट, सभी सिंबल के लिए सिग्नल मोड और दूसरा अकाउंट कनेक्ट करें बटन"
+      }
     }
   },
   "ar": {
@@ -1010,6 +1289,37 @@
         "level": "المستوى",
         "ladder": [["أخبرني مرة واحدة إذا نزل BTC تحت 85,000.", "free"], ["أخبرني إذا ارتفع SOL بنسبة 3% خلال 15 دقيقة.", "free"], ["أخبرني مرة واحدة عندما يتجاوز BTC مستوى 70,000 ويكون RSI الساعة تحت 30.", "plus"], ["في أفضل 100 عملة، أخبرني على Telegram عندما يتجاوز حجم 15 دقيقة ثلاثة أضعاف متوسطه.", "plus"], ["أخبرني عندما يكون RSI تحت 30 والحجم ضعفين في أفضل 100 عملة.", "plus"]],
         "plans": {"free": "Free", "plus": "Plus · Pro"}
+      }
+    },
+    "telegram-crypto-alerts": {
+      "link": "تنبيهات العملات الرقمية على Telegram",
+      "title": "استقبل تنبيهات أسعار Binance على Telegram: طريقة الإعداد | MarketAlert",
+      "h1": "كيف أستقبل تنبيهات أسعار Binance على Telegram؟",
+      "description": "اربط MarketAlert بـ Telegram مرة واحدة واختر Telegram في التنبيه: تصلك تنبيهات السعر وRSI والحجم وكل العملات في محادثتك. لا حاجة إلى معرّف محادثة أو مفتاح API.",
+      "intro": "تربط Telegram بالتطبيق مرة واحدة، ثم تختاره قناةً للإشعار عند إنشاء التنبيه. عندما يعمل التنبيه تصلك الرسالة من بوت MarketAlert في محادثتك الخاصة على Telegram، ويمكن أن يصلك إشعار فوري في الوقت نفسه إن أردت. لا تُدخل معرّف محادثة ولا رمز بوت ولا مفتاح API من Binance. شرحنا التنبيهات التي يمكن إرسالها إلى Telegram في صفحتي [تنبيه سعر العملات الرقمية](features/price-alerts) و[تنبيه كل العملات](features/all-coins-alerts).",
+      "prompt": "أخبرني على Telegram عندما يتجاوز BTC مستوى 105,000",
+      "exampleTitle": "كل تنبيه يصل إلى Telegram برسالته الخاصة",
+      "caption": "على اليمين أربعة تنبيهات في التطبيق، وعلى اليسار الرسالة التي يرسلها كل منها إلى Telegram. لون الخط يدل على نوع الشرط.",
+      "steps": [["اربط Telegram", "في التطبيق افتح الإعدادات › Telegram واضغط «ربط Telegram». يفتح التطبيق Telegram وينقلك إلى محادثة بوت MarketAlert. إذا لم يكن Telegram مثبتًا فثبّته أولًا."], ["اضغط ابدأ في Telegram", "تُفتح محادثة البوت «MarketAlert: Crypto Alerts». اضغط زر ابدأ في الأسفل."], ["تُرسل /start", "عند الضغط على ابدأ تُرسل /start إلى المحادثة ويُربط حسابك بها. لا تحتاج إلى كتابة شيء آخر. الرابط صالح لمدة قصيرة؛ إذا انتهت صلاحيته فاضغط «إنشاء رابط جديد» في التطبيق."], ["عُد إلى التطبيق", "تتغير الحالة تلقائيًا إلى «Telegram متصل». لا تظهر من المحادثة المرتبطة إلا آخر أربعة أرقام."], ["اختر Telegram في التنبيه", "عند إنشاء التنبيه حدّد Telegram في الإشعار › القناة. يمكنك إبقاء الإشعار الفوري مفعّلًا؛ ويمكن اختيار أكثر من قناة. ويكفي أيضًا أن تقول [للمساعد الصوتي](features/voice-crypto-alerts) «أخبرني على Telegram»."]],
+      "details": [["ما الخطط التي تتضمن Telegram؟", "إشعارات Telegram متاحة في Plus وPro، ولكل منهما تجربة مجانية لمدة 7 أيام. في خطة Free تصل الإشعارات إشعارًا فوريًا. إذا انتقلت إلى Free فإن التنبيهات المضبوطة على Telegram ترسل إشعارات فورية بدلًا منه."], ["ماذا تتضمن رسالة Telegram؟", "يقول السطر الأول ما حدث، مثل «BTC تجاوز 105,000». ويعرض السطر الثاني الاسم الذي أعطيته للتنبيه. وتحتهما القيمة الحالية والهدف ومدة الشمعة والسوق. وفي رسائل العملة الواحدة زر يفتح رسم Binance البياني."], ["كيف تصل تنبيهات كل العملات إلى Telegram؟", "يحدد ذلك «وضع إشارات جميع الرموز» في الإعدادات › Telegram. الوضع افتراضي يرسل رسائل منفردة أو ملخّصًا بحسب الحالة، وفوري يرسل كل إشارة فورًا في رسالة مستقلة، وملخّص يجمع الإشارات ويرسلها في رسالة واحدة على فترات محددة. أما تنبيهات العملة الواحدة فتصل دائمًا فورًا. يشمل فحص كل العملات أفضل 100 عملة في Plus وكل العملات في Pro؛ التفاصيل في صفحة [تنبيه كل العملات](features/all-coins-alerts)."], ["هل هو آمن؟", "لا يتصل MarketAlert بحسابك في المنصة أبدًا، ولا يطلب مفتاح API، ولا يتداول. البوت يرسل الإشعارات فقط، ولا يطلب أبدًا كلمات مرور أو مفاتيح API أو مدفوعات. تصل الرسائل فقط إلى محادثتك الخاصة مع البوت."]],
+      "faq": [["هل أحتاج إلى معرّف محادثة أو رمز بوت لتنبيهات Telegram؟", "لا. زر «ربط Telegram» في التطبيق يفتح البوت، ويكفي أن تضغط ابدأ."], ["هل إشعارات Telegram مجانية؟", "Telegram متاح في Plus وPro، ولكل منهما تجربة مجانية لمدة 7 أيام. في خطة Free تصل الإشعارات إشعارًا فوريًا."], ["هل يمكنني استقبال الإشعار الفوري وTelegram معًا؟", "نعم. اختر الاثنين في الإشعار › القناة داخل التنبيه، فتصل الإشارة نفسها إلى كليهما."], ["هل يمكن إرسال التنبيهات إلى مجموعة أو قناة على Telegram؟", "لا. تصل الإشعارات فقط إلى محادثتك الخاصة مع بوت MarketAlert."], ["كيف ألغي ربط Telegram؟", "اضغط «إزالة اتصال Telegram» أسفل شاشة الإعدادات › Telegram. بعد الإزالة لن تتمكن التنبيهات التي تستخدم قناة Telegram من إرسال رسائل على Telegram، ويمكنك إعادة الربط في أي وقت. وللانتقال إلى حساب آخر استخدم «ربط حساب آخر»."], ["ضغطت ابدأ لكن الربط لم يتم، ماذا أفعل؟", "يتحقق التطبيق من الحالة تلقائيًا، فانتظر قليلًا. إذا انتهت صلاحية الرابط فاضغط «إنشاء رابط جديد» ثم اضغط ابدأ مرة أخرى في المحادثة التي تُفتح."]],
+      "related": ["features/all-coins-alerts", "features/price-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/voice-crypto-alerts"],
+      "plans": [["Free", "3 تنبيهات؛ تصل الإشعارات إشعارًا فوريًا. لا تتضمن هذه الخطة Telegram."], ["Plus", "20 تنبيهًا؛ إشعار فوري وTelegram، أو الاثنان معًا. تنبيها كل العملات حتى أفضل 100."], ["Pro", "100 تنبيه؛ إشعار فوري وTelegram وwebhook موقّع. 10 تنبيهات لكل العملات."]],
+      "tg": {
+        "kicker": "BINANCE · TELEGRAM · PLUS / PRO",
+        "chips": ["معرّف المحادثة (chat ID)", "رمز البوت (token)", "مفتاح API من Binance"],
+        "no": "غير مطلوب",
+        "hookAlt": "MarketAlert الإعدادات › Telegram: Telegram متصل",
+        "kinds": ["السعر", "RSI", "الحجم", "كل العملات"],
+        "listAlt": "أربعة تنبيهات في شاشة تنبيهاتي: سعر BTC عند 105,000، وSOL RSI 70، وحجم AVAX ثلاثة أضعاف، وقمة/قاع 24 ساعة في أفضل 100 عملة",
+        "chat": "محادثة Telegram",
+        "pairNote": "يقول السطر الأول من الرسالة ما حدث، ويعرض سطر 🔔 اسم تنبيهك.",
+        "lanes": ["MarketAlert", "Telegram"],
+        "cells": [["اربط Telegram", "الإعدادات › Telegram"], ["ابدأ", "يُفتح البوت تلقائيًا"], ["/start", "رسالة واحدة وانتهى"], ["تم الربط", "عُد إلى التطبيق"], ["اختره في التنبيه", "الإشعار › القناة"]],
+        "alts": ["شاشة Telegram غير متصل مع زر ربط Telegram", "بوت MarketAlert في Telegram مع زر ابدأ", "رسالة /start المرسلة في محادثة Telegram", "شاشة Telegram متصل", "قناة الإشعار في نموذج التنبيه: الإشعار الفوري وTelegram محددان"],
+        "setTitle": "الإعدادات › Telegram بعد الربط",
+        "callouts": [["المحادثة المرتبطة", "لا تظهر إلا آخر أربعة أرقام."], ["وضع إشارات جميع الرموز", "افتراضي أو فوري أو ملخّص. تنبيهات العملة الواحدة تصل دائمًا فورًا."], ["ربط حساب آخر", "ابدأ رابطًا جديدًا للانتقال إلى حساب Telegram آخر. سطر «إزالة اتصال Telegram» في أسفل هذه الشاشة."]],
+        "setAlt": "شاشة Telegram متصل: المحادثة المرتبطة ووضع إشارات جميع الرموز وزر ربط حساب آخر"
       }
     }
   },
@@ -1115,6 +1425,37 @@
         "level": "Level",
         "ladder": [["Tell me once if BTC drops below 85,000.", "free"], ["Tell me if SOL rises 3% within 15 minutes.", "free"], ["Tell me once when BTC goes above 70,000 while hourly RSI is under 30.", "plus"], ["On the top 100 coins, tell me on Telegram when 15-minute volume is above 3 times its average.", "plus"], ["Tell me when RSI is under 30 and volume is 2 times on the top 100 coins.", "plus"]],
         "plans": {"free": "Free", "plus": "Plus · Pro"}
+      }
+    },
+    "telegram-crypto-alerts": {
+      "link": "Telegram crypto alerts",
+      "title": "Get Binance price alerts on Telegram: setup | MarketAlert",
+      "h1": "How do I get Binance price alerts on Telegram?",
+      "description": "Connect MarketAlert to Telegram once and pick Telegram on your alert: price, RSI, volume and all-coins alerts arrive in your chat. No chat ID or API key needed.",
+      "intro": "You connect Telegram to the app once, then pick it as the notification channel when you set an alert. When the alert fires, the message comes from the MarketAlert bot to your own Telegram chat, and a push notification can arrive at the same time if you want. You never enter a chat ID, a bot token or a Binance API key. The alerts you can send to Telegram are explained on the [crypto price alerts](features/price-alerts) and [all-coins alerts](features/all-coins-alerts) pages.",
+      "prompt": "Tell me on Telegram when BTC rises above 105,000",
+      "exampleTitle": "Every alert reaches Telegram as its own message",
+      "caption": "Left: four alerts in the app. Right: the message each one sends to Telegram. The line colour shows the condition type.",
+      "steps": [["Connect Telegram", "In the app, go to Settings › Telegram and tap “Connect Telegram”. The app opens Telegram and takes you to the MarketAlert bot chat. If Telegram isn't installed, install it first."], ["Press START in Telegram", "The “MarketAlert: Crypto Alerts” bot chat opens. Press the START button at the bottom."], ["/start is sent", "Pressing START sends /start to the chat, and your account is matched with it. You don't need to type anything else. The link is valid for a short time; if it expires, tap “Create new link” in the app."], ["Go back to the app", "The status changes to “Telegram is connected” on its own. Only the last four digits of the connected chat are shown."], ["Pick Telegram on an alert", "When you set an alert, tick Telegram under Notification › Channel. You can keep push on too; more than one channel can be selected. You can also just tell the [voice assistant](features/voice-crypto-alerts) “notify me on Telegram”."]],
+      "details": [["Which plans include Telegram?", "Telegram notifications are part of Plus and Pro, and both come with a 7-day free trial. On the Free plan notifications arrive as push. If you move to Free, alerts set to Telegram send push notifications instead."], ["What does a Telegram message show?", "The first line says what happened, for example “BTC rose above 105,000”. The second line shows the name you gave the alert. Below are the current value, the target, the candle interval and the market. Single-coin messages have a button that opens the Binance chart."], ["How do all-coins alerts arrive on Telegram?", "The “All-coins signal mode” in Settings › Telegram decides. Default sends single messages or a summary as the system sees fit, Instant sends each signal right away as its own message, and Summary collects signals and sends them in one message at set intervals. Single-coin alerts always arrive right away. Scanning all coins covers the top 100 on Plus and every coin on Pro; details are on the [all-coins alerts](features/all-coins-alerts) page."], ["Is it safe?", "MarketAlert never connects to your exchange account, never asks for an API key and never trades. The bot only sends notifications; it never asks for passwords, API keys or payments. Messages go only to your private chat with the bot."]],
+      "faq": [["Do I need a chat ID or a bot token for Telegram alerts?", "No. The “Connect Telegram” button in the app opens the bot; pressing START is all it takes."], ["Are Telegram notifications free?", "Telegram is part of Plus and Pro, and both have a 7-day free trial. On the Free plan notifications arrive as push."], ["Can I get both push and Telegram?", "Yes. Select both under Notification › Channel on the alert; the same signal reaches both."], ["Can I send alerts to a Telegram group or channel?", "No. Notifications go only to your own private chat with the MarketAlert bot."], ["How do I disconnect Telegram?", "Tap “Remove Telegram connection” at the bottom of Settings › Telegram. Once removed, alerts using the Telegram channel can't send Telegram messages; you can reconnect anytime. To switch to another account, use “Connect another account”."], ["I pressed START but it didn't connect. What now?", "The app checks the status by itself, so give it a moment. If the link has expired, tap “Create new link” and press START again in the chat that opens."]],
+      "related": ["features/all-coins-alerts", "features/price-alerts", "features/rsi-alerts", "features/volume-spike-alerts", "features/voice-crypto-alerts"],
+      "plans": [["Free", "3 alerts; notifications arrive as push. Telegram isn't included in this plan."], ["Plus", "20 alerts; push and Telegram, or both together. 2 all-coins alerts up to the top 100."], ["Pro", "100 alerts; push, Telegram and signed webhook. 10 all-coins alerts across every coin."]],
+      "tg": {
+        "kicker": "BINANCE · TELEGRAM · PLUS / PRO",
+        "chips": ["Chat ID", "Bot token", "Binance API key"],
+        "no": "not needed",
+        "hookAlt": "MarketAlert Settings › Telegram: Telegram is connected",
+        "kinds": ["Price", "RSI", "Volume", "All coins"],
+        "listAlt": "Four alerts on the My alerts screen: BTC price 105,000, SOL RSI 70, AVAX volume 3×, 24-hour high/low on the top 100 coins",
+        "chat": "Telegram chat",
+        "pairNote": "The first line of a message says what happened; the 🔔 line shows the name you gave the alert.",
+        "lanes": ["MarketAlert", "Telegram"],
+        "cells": [["Connect Telegram", "Settings › Telegram"], ["START", "The bot opens by itself"], ["/start", "One message, done"], ["Connected", "Back in the app"], ["Pick on an alert", "Notification › Channel"]],
+        "alts": ["Telegram isn't connected screen with the Connect Telegram button", "MarketAlert bot in Telegram with the START button", "/start message sent in the Telegram chat", "Telegram is connected screen", "Notification channel on the alert form: push and Telegram selected"],
+        "setTitle": "Settings › Telegram after connecting",
+        "callouts": [["Connected chat", "Only the last four digits are shown."], ["All-coins signal mode", "Default, Instant or Summary. Single-coin alerts always arrive right away."], ["Connect another account", "Start a new link to switch to a different Telegram account. The “Remove Telegram connection” row is at the bottom of this screen."]],
+        "setAlt": "Telegram is connected screen: connected chat, all-coins signal mode and the Connect another account button"
       }
     }
   }

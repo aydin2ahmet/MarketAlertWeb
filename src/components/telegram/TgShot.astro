@@ -1,0 +1,14 @@
+---
+/**
+ * Telegram sayfası ekranı (6. gün). Uygulama ekranları UI kataloğundan (SCR-SET-03, SCR-AFRM-01, SCR-ALRT-01),
+ * Telegram ekranları gerçek bot adı, resmi ve açıklamasıyla çizildi. Hepsi 1020 × 2139, açık ve koyu ayrı.
+ */
+import ProgressiveShot from '../ProgressiveShot.astro';
+import { TG_SHOT_VERSION } from '../../lib/telegram';
+
+interface Props { code: string; k: 'off' | 'on' | 'chan' | 'list' | 'start' | 'sent'; alt?: string; sizes?: string; loading?: 'lazy' | 'eager' }
+const { code, k, alt = '', sizes = '(max-width:760px) 45vw, 300px', loading = 'lazy' } = Astro.props;
+const src = (theme: string) => `/shots/${code}/${theme}/tg-${k}.webp?v=${TG_SHOT_VERSION}`;
+---
+<ProgressiveShot class="sh-l" src={src('light')} alt={alt} width="340" height="713" sizes={sizes} loading={loading} decoding="async" />
+<ProgressiveShot class="sh-d" src={src('dark')} alt="" width="340" height="713" sizes={sizes} loading={loading} decoding="async" />

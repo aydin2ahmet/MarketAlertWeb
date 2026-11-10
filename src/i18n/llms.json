@@ -133,6 +133,22 @@
     ["Can I delete an alert by voice?", "Yes. Say \"Delete my ETH alert\"; if several alerts match, the assistant asks which one."],
     ["Does the voice assistant trade?", "No. It only manages alerts; it never connects to an exchange account and gives no investment advice."]
    ]
+  },
+  "features/telegram-crypto-alerts": {
+   "line": "Get Binance price, RSI, volume and all-coins alerts as Telegram messages from the MarketAlert bot.",
+   "what": "Telegram is a notification channel on Plus and Pro. Connect it once in the app: Telegram opens the MarketAlert bot, you press START, and /start links the account. No chat ID, bot token or exchange API key. Then pick Telegram as a channel on any alert, alone or with push.",
+   "facts": [
+    "Messages go only to your private chat with the MarketAlert bot, not to groups or channels.",
+    "Each message shows what happened, the alert name, value, target, candle interval and market; single-coin messages have a Binance chart button.",
+    "All-coins signal mode for Telegram: Default, Instant or Summary (one message at set intervals). Single-coin alerts always arrive right away.",
+    "The link is valid for a short time; the app offers a new link when it expires. The account can be switched or disconnected later.",
+    "On the Free plan notifications arrive as push; moving to Free switches Telegram alerts to push."
+   ],
+   "example": "Tell me on Telegram when BTC rises above 105,000.",
+   "faq": [
+    ["Do I need a chat ID or bot token?", "No. The Connect Telegram button opens the bot; pressing START is all it takes."],
+    ["Can I get push and Telegram together?", "Yes. Select both under Notification › Channel; the same signal reaches both."]
+   ]
   }
  }
 }

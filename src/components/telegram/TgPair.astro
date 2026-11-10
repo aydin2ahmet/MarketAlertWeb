@@ -1,0 +1,129 @@
+---
+/**
+ * Alarm listesi ↔ Telegram mesajı, tasarım L2 (2026-11-10, Ahmet): her alarm kartından kendi mesajına
+ * kesikli, koşul rengiyle çizgi. Masaüstünde liste ekranı + sohbet yan yana; telefonda kartların kırpılmış
+ * hali + mesajların ilk iki satırı. Çizgiler sayfa açılınca ve boyut değişince ölçülerek çizilir.
+ */
+import TgShot from './TgShot.astro';
+import TgChat from './TgChat.astro';
+import { CARD_H, CARD_W, LIST_CARDS, SCREEN_H, SCREEN_W, msgHtml, tgData } from '../../lib/telegram';
+
+interface Props { code: string; kicker: string; title: string; kinds: string[]; listAlt: string; chat: string; note: string; caption: string }
+const { code, kicker, title, kinds, listAlt, chat, note, caption } = Astro.props;
+const d = tgData(code);
+const pc = (v: number, of: number) => `${(v / of * 100).toFixed(2)}%`;
+// Telefon kırpması: dört kartın alanı.
+const CX = 6, CY = 152, CW = 328, CH = 326;
+const phoneOrder = [2, 3, 0, 1];
+---
+<section class="tgp" aria-labelledby="tgp-t">
+  <p class="kicker">{kicker}</p>
+  <h2 id="tgp-t">{title}</h2>
+  <p class="tgp-note">{note}</p>
+  <div class="tgp-wired">
+    <div class="tgp-d">
+      <div class="tgp-ph"><div class="tgp-in">
+        <TgShot code={code} k="list" alt={listAlt} sizes="340px" />
+        {LIST_CARDS.map((c, i) => <span class="anc" data-anc={i + 1} style={`inset-inline-start:${pc(c.x + CARD_W - 8, SCREEN_W)};top:${pc(c.y + 8, SCREEN_H)}`} />)}
+      </div></div>
+      <TgChat code={code} label={chat} class="tgp-chat">
+        {LIST_CARDS.map((c, i) => <div class="tgm" data-w={i + 1} set:html={msgHtml(d.msgs[c.m], c.time)} />)}
+      </TgChat>
+    </div>
+    <div class="tgp-m">
+      <div class="tgp-crop" style={`aspect-ratio:${CW}/${CH}`}>
+        <div class="tgp-cimg" style={`width:${pc(SCREEN_W, CW)};inset-inline-start:${pc(-CX, CW)};top:${pc(-CY, CH)}`}><TgShot code={code} k="list" alt="" sizes="(max-width:760px) 100vw, 340px" /></div>
+        {LIST_CARDS.map((c, i) => <span class="anc" data-anc={i + 1} data-side={i < 2 ? 'side' : 'down'} style={i < 2
+          ? `inset-inline-start:${pc(c.x - CX + (i ? CARD_W - 4 : 4), CW)};top:${pc(c.y - CY + CARD_H / 2, CH)}`
+          : `inset-inline-start:${pc(c.x - CX + CARD_W / 2, CW)};top:${pc(c.y - CY + CARD_H - 8, CH)}`} />)}
+      </div>
+      <div class="tgp-mini">{phoneOrder.map(i => <div class="tgm" data-w={i + 1} set:html={msgHtml(d.msgs[LIST_CARDS[i].m], '', true)} />)}</div>
+    </div>
+    <svg class="tgp-wires" aria-hidden="true"></svg>
+  </div>
+  <ul class="tgp-key">{kinds.map((k, i) => <li class={`tn${i + 1}`}>{k}</li>)}</ul>
+  <p class="tgp-cap">{caption}</p>
+</section>
+
+<script>
+  // Her karttan kendi mesajına çizgi: masaüstünde kart köşesinden mesajın kenarına, telefonda karttan aşağıdaki balona.
+  const draw = () => {
+    for (const w of document.querySelectorAll<HTMLElement>('.tgp-wired')) {
+      const svg = w.querySelector('svg')!;
+      const W = w.getBoundingClientRect();
+      const shown = (sel: string) => [...w.querySelectorAll<HTMLElement>(sel)].find(e => e.offsetParent !== null);
+      const phone = getComputedStyle(w.querySelector('.tgp-m')!).display !== 'none';
+      let h = '';
+      for (let i = 1; i <= 4; i++) {
+        const a = shown(`.anc[data-anc="${i}"]`), m = shown(`.tgm[data-w="${i}"]`);
+        if (!a || !m) continue;
+        const A = a.getBoundingClientRect(), M = m.getBoundingClientRect();
+        const x1 = A.left - W.left, y1 = A.top - W.top;
+        const c = `var(--tn${i})`;
+        let x2: number, y2: number, p: string;
+        if (!phone) {
+          const right = M.left > A.left;
+          x2 = (right ? M.left : M.right) - W.left; y2 = M.top + 18 - W.top;
+          const k = right ? 110 : -110;
+          p = `M${x1} ${y1} C ${x1 + k} ${y1}, ${x2 - k} ${y2}, ${x2} ${y2}`;
+        } else if (a.dataset.side === 'side') {
+          const left = A.left - W.left < W.width / 2;
+          const o = left ? -14 : 14;
+          x2 = (left ? M.left : M.right) - W.left; y2 = M.top + M.height / 2 - W.top;
+          p = `M${x1} ${y1} C ${x1 + o} ${y1}, ${x2 + o} ${y1}, ${x2 + o} ${(y1 + y2) / 2} S ${x2 + o} ${y2}, ${x2} ${y2}`;
+        } else {
+          x2 = M.left + M.width / 2 - W.left; y2 = M.top - W.top;
+          p = `M${x1} ${y1} C ${x1} ${y1 + 30}, ${x2} ${y2 - 30}, ${x2} ${y2}`;
+        }
+        h += `<path d="${p}" style="stroke:${c}"/><circle cx="${x1}" cy="${y1}" r="6" style="fill:${c}"/><circle cx="${x2}" cy="${y2}" r="5" style="fill:${c}"/>`;
+      }
+      svg.innerHTML = h;
+    }
+  };
+  addEventListener('load', draw);
+  addEventListener('resize', draw);
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', draw);
+  document.getElementById('theme')?.addEventListener('click', () => setTimeout(draw, 30));
+  // Görseller yüklendikçe yerler değişebilir.
+  for (const img of document.querySelectorAll<HTMLImageElement>('.tgp-wired img')) if (!img.complete) img.addEventListener('load', draw, { once: true });
+  draw();
+</script>
+
+<style>
+  .tgp { padding: 40px 36px 36px; border: 1px solid var(--bd); border-radius: 24px; background: radial-gradient(ellipse at top right, var(--priSoft), transparent 70%), var(--sf); }
+  .kicker { font: 600 12px/1.6 var(--mono); color: var(--cat3); margin-bottom: 12px; }
+  h2 { font-size: clamp(24px, 3vw, 32px); margin-bottom: 8px; text-wrap: balance; }
+  .tgp-note { color: var(--mut); margin: 0 0 28px; max-width: 760px; }
+  .tgp-wired { position: relative; }
+  .tgp-d { display: flex; gap: 72px; align-items: flex-start; justify-content: center; }
+  .tgp-ph { position: relative; width: 350px; flex: none; padding: 7px; border-radius: 36px; background: var(--frame); box-shadow: var(--shadow), inset 0 0 0 1px rgba(255, 255, 255, .08); }
+  .tgp-ph :global(img) { display: block; width: 100%; height: auto; border-radius: 30px; }
+  .tgp-in { position: relative; }
+  .tgp-ph .anc { position: absolute; width: 1px; height: 1px; }
+  .tgp-d :global(.tgp-chat) { width: 400px; flex: none; font-size: 12px; line-height: 1.28; }
+  .tgp-d :global(.tgp-chat .tgc-bd) { gap: 5px; padding: 8px 8px 10px; }
+  .tgp-d :global(.tgp-chat blockquote) { margin: 2px 0; padding: 3px 7px; }
+  .tgp-d :global(.tgp-chat .tgb) { padding: 5px 9px 3px; }
+  .tgp-d :global(.tgp-chat .tgk) { margin-top: 3px; }
+  .tgp-d :global(.tgp-chat .tgk span) { padding: 3px; font-size: 12px; }
+  .tgp-m { display: none; }
+  .tgp-wires { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 2; }
+  .tgp-wires :global(path) { fill: none; stroke-width: 2; stroke-dasharray: 5 5; }
+  .tgp-wires :global(circle) { stroke: var(--sf); stroke-width: 2; }
+  .tgp-key { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; padding: 0; margin: 26px 0 0; font: 600 12.5px/1.4 var(--mono); color: var(--mut); }
+  .tgp-key li { display: flex; align-items: center; gap: 8px; }
+  .tgp-key li::before { content: ""; width: 22px; border-top: 2px dashed var(--k); }
+  .tgp-cap { color: var(--mut); font-size: 12px; margin: 12px 0 0; text-align: center; }
+  @media (max-width: 860px) {
+    .tgp { padding: 22px 16px; }
+    .tgp-d { display: none; }
+    .tgp-m { display: block; padding: 0 16px; }
+    .tgp-crop { position: relative; overflow: hidden; border-radius: 18px; border: 1px solid var(--bd); box-shadow: var(--shadow); }
+    .tgp-cimg { position: absolute; }
+    .tgp-cimg :global(img) { display: block; width: 100%; height: auto; }
+    .tgp-crop .anc { position: absolute; width: 1px; height: 1px; }
+    .tgp-mini { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 56px; background: var(--tgChat); border-radius: 16px; padding: 10px; color: var(--tgTx); font: 12.5px/1.35 -apple-system, 'Segoe UI', Roboto, var(--f); }
+    .tgp-mini .tgm { max-width: none; }
+    .tgp-mini :global(.tgb) { padding: 6px 8px 4px; }
+  }
+</style>

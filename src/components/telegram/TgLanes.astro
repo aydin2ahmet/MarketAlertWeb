@@ -1,0 +1,80 @@
+---
+/**
+ * Kurulum adımları, tasarım T3 (2026-11-10, Ahmet): üst kulvar MarketAlert, alt kulvar Telegram.
+ * Kesikli yol uygulamadan Telegram'a iner (BAŞLAT, /start gider), sonra uygulamaya döner.
+ * Telefonda iki sütun, adım sırasıyla. Altında adımların uzun metni (arama için de).
+ */
+import TgShot from './TgShot.astro';
+
+interface Props { code: string; lanes: string[]; cells: string[][]; alts: string[]; steps: string[][]; html: string[] }
+const { code, lanes, cells, alts, steps, html } = Astro.props;
+// Adım sırası: 1 bağla (uygulama), 2 BAŞLAT ve 3 /start (Telegram), 4 bağlandı ve 5 alarmda seç (uygulama).
+const K = ['off', 'start', 'sent', 'on', 'chan'] as const;
+const PLACE = [[1, 2], [2, 3], [2, 4], [1, 5], [1, 6]];
+---
+<div class="tgl">
+  <div class="tgl-grid">
+    <div class="ln ln-app" style="grid-row:1;grid-column:1">{lanes[0]}</div>
+    <div class="ln ln-tg" style="grid-row:2;grid-column:1">{lanes[1]}</div>
+    <div class="bg bg-app" style="grid-row:1;grid-column:2/7" aria-hidden="true"></div>
+    <div class="bg bg-tg" style="grid-row:2;grid-column:2/7" aria-hidden="true"></div>
+    {K.map((k, i) => <div class={`cell ${PLACE[i][0] === 2 ? 'c-tg' : 'c-app'}`} data-o={i + 1} style={`grid-row:${PLACE[i][0]};grid-column:${PLACE[i][1]};order:${i + 1}`}>
+      <div class="sh"><TgShot code={code} k={k} alt={alts[i]} sizes="(max-width:760px) 42vw, 150px" /></div>
+      <h3><span>{i + 1}</span> {cells[i][0]}</h3><p>{cells[i][1]}</p>
+    </div>)}
+    <svg class="flow" aria-hidden="true"><path /></svg>
+  </div>
+  <ol class="tgl-notes">{steps.map((s, i) => <li><span class="n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><div><h3>{s[0]}</h3><p set:html={html[i]} /></div></li>)}</ol>
+</div>
+
+<script>
+  // Görsellerin ortasından adım sırasıyla geçen kesikli yol.
+  const draw = () => {
+    for (const g of document.querySelectorAll<HTMLElement>('.tgl-grid')) {
+      const path = g.querySelector('svg path')!;
+      if (getComputedStyle(g.querySelector('svg')!).display === 'none') continue;
+      const T = g.getBoundingClientRect();
+      const pts = [...g.querySelectorAll<HTMLElement>('.cell[data-o]')].sort((a, b) => +a.dataset.o! - +b.dataset.o!)
+        .map(c => [...c.querySelectorAll('img')].find(i => i.offsetParent !== null)).filter(Boolean)
+        .map(i => { const q = i!.getBoundingClientRect(); return [q.left + q.width / 2 - T.left, q.top + q.height / 2 - T.top]; });
+      if (pts.length < 2) continue;
+      let d = `M${pts[0][0]} ${pts[0][1]}`;
+      for (let i = 1; i < pts.length; i++) { const [a, b] = pts[i - 1], [c, e] = pts[i]; d += ` C ${(a + c) / 2} ${b}, ${(a + c) / 2} ${e}, ${c} ${e}`; }
+      path.setAttribute('d', d);
+    }
+  };
+  addEventListener('load', draw);
+  addEventListener('resize', draw);
+  for (const img of document.querySelectorAll<HTMLImageElement>('.tgl-grid img')) if (!img.complete) img.addEventListener('load', draw, { once: true });
+  draw();
+</script>
+
+<style>
+  .tgl-grid { position: relative; display: grid; grid-template-columns: 110px repeat(5, minmax(0, 1fr)); grid-template-rows: auto auto; gap: 14px 12px; margin-top: 28px; }
+  .ln { font: 700 12px var(--mono); color: var(--mut); display: flex; align-items: center; border-inline-end: 2px solid var(--bd); padding-inline-end: 10px; }
+  .bg { border-radius: 18px; }
+  .bg-app { background: color-mix(in srgb, var(--pri) 8%, transparent); }
+  .bg-tg { background: color-mix(in srgb, #3390EC 8%, transparent); }
+  .cell { position: relative; z-index: 1; text-align: center; padding: 14px 6px; }
+  .sh { width: 100%; max-width: 150px; margin-inline: auto; padding: 4px; border-radius: 20px; background: var(--frame); box-shadow: 0 14px 24px -12px rgba(0, 0, 0, .45); }
+  .sh :global(img) { display: block; width: 100%; height: auto; border-radius: 16px; }
+  .cell h3 { font-size: 14px; margin: 10px 0 0; }
+  .cell h3 span { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--pri); color: var(--priText); font: 700 11px var(--mono); margin-inline-end: 4px; vertical-align: 1px; }
+  .c-tg h3 span { background: #3390EC; color: #fff; }
+  .cell p { margin: 2px 0 0; font-size: 12.5px; color: var(--mut); }
+  .flow { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 0; }
+  .flow path { fill: none; stroke: var(--pri); stroke-width: 2.5; stroke-dasharray: 7 6; }
+  .tgl-notes { list-style: none; padding: 0; margin: 48px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 28px 48px; }
+  .tgl-notes li { display: flex; align-items: start; gap: 14px; }
+  .tgl-notes .n { color: var(--pri); font: 800 14px/1.9 var(--mono); }
+  .tgl-notes h3 { margin: 0 0 4px; font-size: 18px; }
+  .tgl-notes p { margin: 0; color: var(--mut); }
+  @media (max-width: 860px) {
+    .tgl-grid { grid-template-columns: 1fr 1fr; grid-template-rows: none; gap: 12px 10px; }
+    .ln, .bg, .flow { display: none; }
+    .cell { grid-row: auto !important; grid-column: auto !important; border-radius: 16px; padding: 10px 4px; }
+    .c-app { background: color-mix(in srgb, var(--pri) 8%, transparent); }
+    .c-tg { background: color-mix(in srgb, #3390EC 8%, transparent); }
+    .tgl-notes { grid-template-columns: 1fr; margin-top: 36px; }
+  }
+</style>

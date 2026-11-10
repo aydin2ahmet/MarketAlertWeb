@@ -1,0 +1,65 @@
+---
+/**
+ * Bağlandıktan sonraki ayar ekranı, tasarım E2 (2026-11-10, Ahmet). Masaüstünde açıklamalar ekrandaki
+ * yerlerinin hizasında durur ve kesikli çizgiyle kendi noktasına bağlanır (1 solda, 2 sağda, 3 solda).
+ * Telefonda ekran ortada, numaralı noktalar üstünde, açıklamalar üstte ve altta.
+ * Satırların yüksekliği dile göre değişir: src/i18n/telegram-e2.json (katalog ekranından ölçüldü).
+ */
+import TgShot from './TgShot.astro';
+import { e2Pos } from '../../lib/telegram';
+
+interface Props { code: string; title: string; items: string[][]; alt: string }
+const { code, title, items, alt } = Astro.props;
+const p = e2Pos(code);
+// Nokta yeri: yükseklik (ekranın oranı), yatay (ekranın başından oran), açıklama tarafı.
+const DOTS = [{ y: p.chat, x: 0.06, side: 's' }, { y: p.mode, x: 0.88, side: 'e' }, { y: p.btn, x: 0.12, side: 's' }];
+const PW = 300, PH = PW * 713 / 340, X0 = 300, BW = 262;
+---
+<section class="tgs" aria-labelledby="tgs-t">
+  <h2 id="tgs-t">{title}</h2>
+  <div class="tgs-d" style={`height:${Math.ceil(PH) + 64}px`}>
+    <div class="ph"><TgShot code={code} k="on" alt={alt} sizes="300px" /></div>
+    {DOTS.map((d, i) => {
+      const y = PH * d.y + 7, dx = X0 + 7 + (PW - 14) * d.x;
+      const lead = d.side === 's' ? `inset-inline-start:${BW}px;width:${dx - BW}px;top:${y}px` : `inset-inline-start:${dx}px;width:${900 - BW - dx}px;top:${y}px`;
+      return <>
+        <div class="ld" style={lead} aria-hidden="true"></div>
+        <div class={`bl bl-${d.side}`} style={`top:${y}px`}><span class="n" aria-hidden="true">{i + 1}</span><b>{items[i][0]}</b>{items[i][1]}</div>
+        <span class="dt" style={`inset-inline-start:${dx}px;top:${y}px`} aria-hidden="true">{i + 1}</span>
+      </>;
+    })}
+  </div>
+  <div class="tgs-p">
+    <div class="bl" data-n="1"><b>{items[0][0]}</b>{items[0][1]}</div>
+    <div class="bl" data-n="2"><b>{items[1][0]}</b>{items[1][1]}</div>
+    <div class="phw"><TgShot code={code} k="on" alt="" sizes="70vw" />{DOTS.map((d, i) => <i style={`top:${(d.y * 100).toFixed(1)}%;inset-inline-start:${(d.x * 100).toFixed(0)}%`}>{i + 1}</i>)}</div>
+    <div class="bl" data-n="3"><b>{items[2][0]}</b>{items[2][1]}</div>
+  </div>
+</section>
+
+<style>
+  .tgs { padding: 56px 0; border-bottom: 1px solid var(--bd); }
+  h2 { font-size: clamp(24px, 3vw, 32px); margin-bottom: 28px; text-wrap: balance; }
+  .tgs-d { position: relative; width: 900px; margin-inline: auto; }
+  .ph { position: absolute; inset-inline-start: 300px; top: 0; width: 300px; padding: 7px; border-radius: 36px; background: var(--frame); box-shadow: var(--shadow), inset 0 0 0 1px rgba(255, 255, 255, .08); }
+  .ph :global(img) { display: block; width: 100%; height: auto; border-radius: 30px; }
+  .bl { position: absolute; width: 262px; background: var(--sf); border: 1px solid var(--bd); border-radius: 14px; padding: 12px 14px; font-size: 14px; color: var(--mut); transform: translateY(-50%); }
+  .bl b { color: var(--tx); display: block; font-size: 15px; margin-bottom: 2px; }
+  .bl .n { position: absolute; top: -10px; width: 22px; height: 22px; border-radius: 50%; background: var(--pri); color: var(--priText); font: 700 12px/22px var(--mono); text-align: center; }
+  .bl-s { inset-inline-start: 0; } .bl-s .n { inset-inline-start: -10px; }
+  .bl-e { inset-inline-end: 0; } .bl-e .n { inset-inline-end: -10px; }
+  .ld { position: absolute; height: 0; border-top: 2px dashed var(--pri); z-index: 1; }
+  .dt { position: absolute; z-index: 2; width: 22px; height: 22px; border-radius: 50%; background: var(--pri); color: var(--priText); font: 700 12px/22px var(--mono); text-align: center; transform: translate(-50%, -50%); box-shadow: 0 0 0 4px color-mix(in srgb, var(--pri) 30%, transparent); }
+  :global([dir=rtl]) .dt { transform: translate(50%, -50%); }
+  .tgs-p { display: none; }
+  @media (max-width: 960px) {
+    .tgs-d { display: none; }
+    .tgs-p { display: grid; justify-items: center; gap: 14px; }
+    .tgs-p .bl { position: relative; transform: none; width: auto; max-width: 420px; justify-self: stretch; }
+    .tgs-p .bl::before { content: attr(data-n); position: absolute; top: -9px; inset-inline-start: -9px; width: 22px; height: 22px; border-radius: 50%; background: var(--pri); color: var(--priText); font: 700 12px/22px var(--mono); text-align: center; }
+    .phw { position: relative; width: min(70vw, 280px); padding: 5px; border-radius: 30px; background: var(--frame); box-shadow: var(--shadow); margin: 8px 0; }
+    .phw :global(img) { display: block; width: 100%; height: auto; border-radius: 25px; }
+    .phw i { position: absolute; width: 22px; height: 22px; border-radius: 50%; background: var(--pri); color: var(--priText); font: 700 12px/22px var(--mono); text-align: center; font-style: normal; transform: translate(-50%, -50%); box-shadow: 0 0 0 4px color-mix(in srgb, var(--pri) 30%, transparent); }
+    :global([dir=rtl]) .phw i { transform: translate(50%, -50%); }
+  }
+</style>

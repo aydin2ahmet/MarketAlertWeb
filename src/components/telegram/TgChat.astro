@@ -1,0 +1,11 @@
+---
+/** Telegram sohbet kutusu: başlıkta MarketAlert botu, altında mesajlar (slot). */
+import { tgData } from '../../lib/telegram';
+interface Props { code: string; label: string; class?: string }
+const { code, label, class: cls = '' } = Astro.props;
+const d = tgData(code);
+---
+<div class={`tgc ${cls}`} role="img" aria-label={label}>
+  <div class="tgc-hd"><img src="/telegram/bot-96.webp" alt="" width="34" height="34" loading="lazy" /><div><b>MarketAlert: Crypto Alerts</b><small>{d.sub}</small></div></div>
+  <div class="tgc-bd"><slot /></div>
+</div>
