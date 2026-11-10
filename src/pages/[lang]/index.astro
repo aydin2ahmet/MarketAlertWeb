@@ -38,6 +38,6 @@ const jsonLd = [
   },
 ];
 ---
-<Base lang={locale.code === 'pt-br' ? 'pt-BR' : locale.hreflang === 'zh-Hans' ? 'zh' : locale.code} dir={locale.dir} title={t.meta.title} description={t.meta.desc} path={path} ogImage={`/og/${locale.code}.png`} jsonLd={jsonLd}>
+<Base lang={locale.code === 'pt-br' ? 'pt-BR' : locale.hreflang === 'zh-Hans' ? 'zh' : locale.code} dir={locale.dir} title={t.meta.title} description={t.meta.desc} path={path} canonicalPath={locale.code === 'en' ? '/' : undefined} ogImage={`/og/${locale.code}.png`} jsonLd={jsonLd}>
   <Landing t={t} code={locale.code} appLocale={locale.app} />
 </Base>

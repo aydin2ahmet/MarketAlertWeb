@@ -9,7 +9,8 @@ export default defineConfig({
   build: { format: 'directory', inlineStylesheets: 'always' },
   integrations: [
     sitemap({
-      filter: page => !/^\/(?:[^/]+\/)?legal\//.test(new URL(page).pathname),
+      // /en/ kökün kopyası (canonical /), haritada yalnız kök durur.
+      filter: page => { const p = new URL(page).pathname; return p !== '/en/' && !/^\/(?:[^/]+\/)?legal\//.test(p); },
       i18n: {
         defaultLocale: 'x-default',
         locales: {
