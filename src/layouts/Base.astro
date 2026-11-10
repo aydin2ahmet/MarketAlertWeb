@@ -28,7 +28,8 @@ interface Props {
   noindex?: boolean;
 }
 const { lang, dir, title, description, path, ogImage, jsonLd, alternates, autoLocale = false, canonicalPath, noindex = false } = Astro.props;
-const alts = alternates ?? LOCALES.map(l => ({ hreflang: l.hreflang, href: `/${l.code}/` }));
+// İngilizce ana sayfanın asıl adresi köktür (/en/ aynı içerik, canonical /).
+const alts = alternates ?? LOCALES.map(l => ({ hreflang: l.hreflang, href: l.code === 'en' ? '/' : `/${l.code}/` }));
 const canonical = SITE + (canonicalPath || path);
 const ogLocale = lang.replace('-', '_');
 const cs = ((content as any)[lang.toLowerCase()] ?? (content as any).en).consent;
