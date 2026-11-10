@@ -38,6 +38,9 @@ export const STORE = {
   play: '',
 };
 
+/** Arama motoru doğrulama kodları (Yandex Webmaster, Bing Webmaster Tools). Boşken etiket basılmaz. */
+export const VERIFY = { yandex: '', bing: '' };
+
 /** Google Analytics 4 ölçüm kimliği (G-XXXXXXXXXX). Boşken Analytics ve çerez bandı yüklenmez. */
 export const GA_ID = 'G-8QXDNRJWRG';
 
