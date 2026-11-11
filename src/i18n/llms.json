@@ -149,6 +149,22 @@
     ["Do I need a chat ID or bot token?", "No. The Connect Telegram button opens the bot; pressing START is all it takes."],
     ["Can I get push and Telegram together?", "Yes. Select both under Notification › Channel; the same signal reaches both."]
    ]
+  },
+  "features/macd-crossover-alerts": {
+   "line": "Get a push or Telegram alert when a Binance coin's MACD line crosses its signal line, checked at candle close.",
+   "what": "MACD is a condition type on Plus and Pro. Pick the coin (or all coins), Crosses above or Crosses below, and a timeframe from 1m to 1d. At the candle close MarketAlert notifies you by push, Telegram or signed webhook (Pro).",
+   "facts": [
+    "Default periods are 12, 26 and 9; fast and slow can be 2 to 200 (slow larger than fast), signal 1 to 200.",
+    "Crosses are evaluated on closed candles only; a cross that reverses before the close is not counted.",
+    "The push shows the periods, timeframe, MACD and signal values; the Telegram message adds price, market and a Binance chart button.",
+    "On all coins the same cross is watched on each coin: top 100 on Plus, every coin on Pro.",
+    "MACD can be combined with RSI or other conditions using AND / OR."
+   ],
+   "example": "Tell me when BNB's MACD crosses below its signal on the daily chart.",
+   "faq": [
+    ["Is there an alert for the MACD histogram or zero line?", "No. The MACD alert only watches the MACD line crossing its signal line."],
+    ["Is MACD available on the Free plan?", "No. MACD alerts are on Plus and Pro, both with a 7-day free trial."]
+   ]
   }
  }
 }

@@ -1,0 +1,109 @@
+---
+/**
+ * İlk ekran, tasarım K1-B (2026-11-11, Ahmet): BNB günlük mumları gün gün dolar, 10 Kasım kapanışında MACD sinyalin
+ * altına iner; sonra bildirimin geldiği yer Push ve Telegram sekmelerinde sırayla gösterilir (dokununca durur).
+ * MACD / Sinyal etiketleri kesişimin üstünde değil, çizgilerin en açık olduğu yerde durur.
+ * Sayfa ilk hâliyle (JS yokken de) son kareyi gösterir. Telefonda: başlık → grafik → giriş metni.
+ */
+import TgChat from '../telegram/TgChat.astro';
+import { msgHtml } from '../../lib/telegram';
+import { LAST, SERIES, chartSvg, day, example, fill, mcLang, notifyTime, pushHtml, tgMsg } from '../../lib/macd';
+import '../../styles/macd.css';
+
+interface Props { code: string; mc: any; h1: string; introHtml: string; setupTitle: string }
+const { code, mc, h1, introHtml, setupTitle } = Astro.props;
+const L = mcLang(code);
+const S = SERIES.down, ex = example('d'), date = day(L, LAST), time = notifyTime(L, '1d');
+const labels = { macd: 'MACD (12,26)', signal: `${L.tg.signal} (9)`, macdShort: 'MACD', signalShort: L.tg.signal };
+const svg = chartSvg(S, { H: 290, cross: S.cross, pulse: true, vline: true, labels, day: i => day(L, i), xtag: i => i === LAST ? fill(mc.xClose, { date }) : null });
+const tg = tgMsg(L, 'd', '1d', ex.m, ex.s, ex.p);
+const push = fill(L.push.d, { 0: 'BNB' });
+const data = { code, labels, xClose: mc.xClose, dayIdle: mc.dayIdle, dayDone: mc.dayDone, replay: mc.replay, push };
+---
+<section class="mch" data-mc={JSON.stringify(data)}>
+  <div class="mch-head"><p class="kicker">{mc.kicker}</p><h1>{h1}</h1></div>
+  <div class="mch-vis">
+    <div class="mc-cc">
+      <div class="mc-hd"><span class="mc-av" aria-hidden="true">B</span><div><b>BNB / USDT</b><small>{mc.tfLine}</small></div></div>
+      <svg class="mc-cv" viewBox="0 0 360 290" role="img" aria-label={fill(mc.chartAlt, { date })} set:html={svg} />
+      <div class="mc-lg" aria-hidden="true"><span><i class="kc"></i>{mc.candle}</span><span><i class="km"></i>MACD (12,26)</span><span><i class="ks"></i>{labels.signal}</span></div>
+      <div class="mc-cap" aria-live="polite"><span class="dt">{fill(mc.dayDone, { date })}</span><span class="tagd">↘ {push}</span><button type="button" class="mc-replay">↻ {mc.replay}</button></div>
+    </div>
+    <div class="mc-tabs" role="tablist">
+      <button type="button" role="tab" aria-selected="true" data-t="p"><svg class="mc-ico m" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.9 1.9 0 0 0 3.4 0" /></svg>Push</button>
+      <button type="button" role="tab" aria-selected="false" data-t="t"><svg class="mc-ico m" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" /></svg>Telegram</button>
+    </div>
+    <div class="mch-bar" aria-hidden="true"><i></i></div>
+    <div class="mch-pv">
+      <div class="mch-p" data-t="p"><div class="mcp" set:html={pushHtml(L, 'd', '1d', ex.m, ex.s, time)} /></div>
+      <div class="mch-p" data-t="t" hidden><TgChat code={code} label={`Telegram: ${push}`}><div class="tgm" set:html={msgHtml(tg, time)} /></TgChat></div>
+    </div>
+  </div>
+  <div class="mch-body"><p class="intro" set:html={introHtml} />
+    <a class="btn" href="#setup">{setupTitle} <span aria-hidden="true">↓</span></a></div>
+</section>
+
+<script>
+  import { LAST, SERIES, chartSvg, day, fill, mcLang } from '../../lib/macd';
+  const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  for (const w of document.querySelectorAll<HTMLElement>('.mch')) {
+    const D = JSON.parse(w.dataset.mc!), L = mcLang(D.code), S = SERIES.down;
+    const svg = w.querySelector('svg.mc-cv')!, cap = w.querySelector('.mc-cap')!, pv = w.querySelector<HTMLElement>('.mch-pv')!;
+    const tabs = [...w.querySelectorAll<HTMLButtonElement>('.mc-tabs button')], bar = w.querySelector<HTMLElement>('.mch-bar i')!;
+    const date = day(L, LAST);
+    let k = 6, tm = 0, auto = 0, locked = false;
+    const show = (t: string) => {
+      tabs.forEach(b => b.setAttribute('aria-selected', String(b.dataset.t === t)));
+      w.querySelectorAll<HTMLElement>('.mch-p').forEach(p => { p.hidden = p.dataset.t !== t; });
+    };
+    const tick = () => { bar.style.transition = 'none'; bar.style.width = '0'; void bar.offsetWidth; bar.style.transition = 'width 3.4s linear'; bar.style.width = '100%'; };
+    const cycle = () => { if (locked) return; let t = 'p'; show(t); clearInterval(auto); tick(); auto = window.setInterval(() => { t = t === 'p' ? 't' : 'p'; show(t); tick(); }, 3500); };
+    tabs.forEach(b => b.addEventListener('click', () => { locked = true; clearInterval(auto); bar.style.transition = 'none'; bar.style.width = '100%'; show(b.dataset.t!); }));
+    const draw = (u: number, done: boolean) => {
+      svg.innerHTML = chartSvg(S, { H: 290, upto: u, cross: S.cross, pulse: done, vline: true, labels: D.labels, day: i => day(L, i), xtag: i => done && i === LAST ? fill(D.xClose, { date }) : null });
+      cap.innerHTML = done
+        ? `<span class="dt">${fill(D.dayDone, { date })}</span><span class="tagd">↘ ${D.push}</span><button type="button" class="mc-replay">↻ ${D.replay}</button>`
+        : `<span class="dt">${fill(D.dayIdle, { date: day(L, u) })}</span>`;
+      cap.querySelector('.mc-replay')?.addEventListener('click', start);
+    };
+    const step = () => {
+      if (k < LAST) { draw(k, false); k++; tm = window.setTimeout(step, k === 9 ? 650 : 140); }
+      else { draw(LAST, true); pv.classList.remove('wait'); cycle(); tm = window.setTimeout(start, 9000); }
+    };
+    function start() {
+      clearTimeout(tm);
+      if (!locked) { clearInterval(auto); pv.classList.add('wait'); bar.style.transition = 'none'; bar.style.width = '0'; }
+      k = 6; step();
+    }
+    cap.querySelector('.mc-replay')?.addEventListener('click', start);
+    if (RM) cycle();
+    else { const io = new IntersectionObserver(es => { if (es[0].isIntersecting) { start(); io.disconnect(); } }); io.observe(svg); }
+  }
+</script>
+
+<style>
+  .mch { display: grid; grid-template-columns: minmax(0, 1fr) 440px; grid-template-areas: 'head vis' 'body vis'; column-gap: 48px; align-items: start; padding: 48px 0 40px; }
+  .mch-head { grid-area: head; align-self: end; padding-top: 24px; }
+  .mch-body { grid-area: body; }
+  .mch-vis { grid-area: vis; display: grid; gap: 10px; }
+  .kicker { font: 600 12px/1.6 var(--mono); color: var(--cat3); margin-bottom: 16px; }
+  h1 { font-size: clamp(32px, 4.2vw, 52px); text-wrap: balance; }
+  .intro { color: var(--mut); font-size: 18px; margin: 22px 0 24px; }
+  .mc-tabs { margin-top: 2px; }
+  .mch-bar { height: 3px; border-radius: 2px; background: var(--bd); overflow: hidden; margin-top: -4px; }
+  .mch-bar i { display: block; height: 100%; width: 0; background: var(--pri); }
+  .mch-pv { display: grid; min-height: 196px; }
+  .mch-pv.wait { opacity: .3; filter: grayscale(1); }
+  .mch-pv { transition: opacity .4s; }
+  .mch-p { grid-area: 1 / 1; animation: mchpop .35s both; }
+  .mch-p[hidden] { display: none; }
+  .mch-p :global(.tgc) { font-size: 13.5px; }
+  @keyframes mchpop { from { opacity: 0; transform: translateY(8px); } }
+  @media (prefers-reduced-motion: reduce) { .mch-p { animation: none; } }
+  @media (max-width: 900px) {
+    .mch { grid-template-columns: 1fr; grid-template-areas: 'head' 'vis' 'body'; padding: 24px 0 28px; }
+    .mch-head { padding-top: 0; }
+    .mch-vis { margin-top: 22px; max-width: 460px; width: 100%; justify-self: center; }
+    .intro { font-size: 17px; }
+  }
+</style>

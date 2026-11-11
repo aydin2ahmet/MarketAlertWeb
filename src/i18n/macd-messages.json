@@ -1,0 +1,398 @@
+{
+ "tr": {
+  "push": {
+   "u": "{0} MACD sinyali yukarı kesti",
+   "d": "{0} MACD sinyali aşağı kesti",
+   "signal": "sinyal"
+  },
+  "tg": {
+   "u": "{0}: MACD sinyal üstüne çıktı",
+   "d": "{0}: MACD sinyal altına indi",
+   "signal": "Sinyal",
+   "price": "Fiyat",
+   "button": "📈 Grafik",
+   "market": "Spot USDT",
+   "tf": {
+    "1m": "1dk",
+    "5m": "5dk",
+    "15m": "15dk",
+    "1h": "1s",
+    "4h": "4s",
+    "1d": "1g"
+   }
+  },
+  "cond": {
+   "u": "MACD({fast},{slow},{signal}) sinyali yukarı keserse · {timeframe}",
+   "d": "MACD({fast},{slow},{signal}) sinyali aşağı keserse · {timeframe}"
+  },
+  "num": {
+   "dec": ",",
+   "grp": ".",
+   "indian": false,
+   "neg": "-"
+  },
+  "dateLoc": "tr",
+  "close": "03:00 (TSİ)",
+  "closeH": 3
+ },
+ "de": {
+  "push": {
+   "u": "{0} MACD hat das Signal nach oben gekreuzt",
+   "d": "{0} MACD hat das Signal nach unten gekreuzt",
+   "signal": "Signal"
+  },
+  "tg": {
+   "u": "{0}: MACD kreuzt Signal nach oben",
+   "d": "{0}: MACD kreuzt Signal nach unten",
+   "signal": "Signal",
+   "price": "Kurs",
+   "button": "📈 Chart",
+   "market": "Spot USDT",
+   "tf": {
+    "1m": "1 Min",
+    "5m": "5 Min",
+    "15m": "15 Min",
+    "1h": "1 Std",
+    "4h": "4 Std",
+    "1d": "1 Tag"
+   }
+  },
+  "cond": {
+   "u": "MACD({fast},{slow},{signal}) kreuzt das Signal nach oben · {timeframe}",
+   "d": "MACD({fast},{slow},{signal}) kreuzt das Signal nach unten · {timeframe}"
+  },
+  "num": {
+   "dec": ",",
+   "grp": ".",
+   "indian": false,
+   "neg": "-"
+  },
+  "dateLoc": "de",
+  "close": "00:00 UTC",
+  "closeH": 0
+ },
+ "fr": {
+  "push": {
+   "u": "{0} MACD a croisé le signal à la hausse",
+   "d": "{0} MACD a croisé le signal à la baisse",
+   "signal": "signal"
+  },
+  "tg": {
+   "u": "{0} : MACD croise le signal à la hausse",
+   "d": "{0} : MACD croise le signal à la baisse",
+   "signal": "Signal",
+   "price": "Prix",
+   "button": "📈 Graphique",
+   "market": "Spot USDT",
+   "tf": {
+    "1m": "1 min",
+    "5m": "5 min",
+    "15m": "15 min",
+    "1h": "1 h",
+    "4h": "4 h",
+    "1d": "1 j"
+   }
+  },
+  "cond": {
+   "u": "MACD({fast},{slow},{signal}) croise le signal à la hausse · {timeframe}",
+   "d": "MACD({fast},{slow},{signal}) croise le signal à la baisse · {timeframe}"
+  },
+  "num": {
+   "dec": ",",
+   "grp": " ",
+   "indian": false,
+   "neg": "-"
+  },
+  "dateLoc": "fr",
+  "close": "00:00 UTC",
+  "closeH": 0
+ },
+ "es": {
+  "push": {
+   "u": "{0} MACD cruzó la señal al alza",
+   "d": "{0} MACD cruzó la señal a la baja",
+   "signal": "señal"
+  },
+  "tg": {
+   "u": "{0}: MACD cruzó al alza la señal",
+   "d": "{0}: MACD cruzó a la baja la señal",
+   "signal": "Señal",
+   "price": "Precio",
+   "button": "📈 Gráfico",
+   "market": "Spot USDT",
+   "tf": {
+    "1m": "1 min",
+    "5m": "5 min",
+    "15m": "15 min",
+    "1h": "1 h",
+    "4h": "4 h",
+    "1d": "1 d"
+   }
+  },
+  "cond": {
+   "u": "MACD({fast},{slow},{signal}) cruza la señal hacia arriba · {timeframe}",
+   "d": "MACD({fast},{slow},{signal}) cruza la señal hacia abajo · {timeframe}"
+  },
+  "num": {
+   "dec": ",",
+   "grp": ".",
+   "indian": false,
+   "neg": "-"
+  },
+  "dateLoc": "es",
+  "close": "00:00 UTC",
+  "closeH": 0
+ },
+ "pt-br": {
+  "push": {
+   "u": "{0} MACD cruzou o sinal para cima",
+   "d": "{0} MACD cruzou o sinal para baixo",
+   "signal": "sinal"
+  },
+  "tg": {
+   "u": "{0}: MACD cruzou o sinal para cima",
+   "d": "{0}: MACD cruzou o sinal para baixo",
+   "signal": "Sinal",
+   "price": "Preço",
+   "button": "📈 Gráfico",
+   "market": "Spot USDT",
+   "tf": {
+    "1m": "1 min",
+    "5m": "5 min",
+    "15m": "15 min",
+    "1h": "1 h",
+    "4h": "4 h",
+    "1d": "1 d"
+   }
+  },
+  "cond": {
+   "u": "MACD({fast},{slow},{signal}) cruza o sinal para cima · {timeframe}",
+   "d": "MACD({fast},{slow},{signal}) cruza o sinal para baixo · {timeframe}"
+  },
+  "num": {
+   "dec": ",",
+   "grp": ".",
+   "indian": false,
+   "neg": "-"
+  },
+  "dateLoc": "pt-BR",
+  "close": "00:00 UTC",
+  "closeH": 0
+ },
+ "ru": {
+  "push": {
+   "u": "{0} MACD пересёк сигнальную линию вверх",
+   "d": "{0} MACD пересёк сигнальную линию вниз",
+   "signal": "сигнал"
+  },
+  "tg": {
+   "u": "{0}: MACD пересекла сигнальную вверх",
+   "d": "{0}: MACD пересекла сигнальную вниз",
+   "signal": "Сигнал",
+   "price": "Цена",
+   "button": "📈 График",
+   "market": "Спот USDT",
+   "tf": {
+    "1m": "1м",
+    "5m": "5м",
+    "15m": "15м",
+    "1h": "1ч",
+    "4h": "4ч",
+    "1d": "1д"
+   }
+  },
+  "cond": {
+   "u": "MACD({fast},{slow},{signal}) пересекает сигнал вверх · {timeframe}",
+   "d": "MACD({fast},{slow},{signal}) пересекает сигнал вниз · {timeframe}"
+  },
+  "num": {
+   "dec": ",",
+   "grp": " ",
+   "indian": false,
+   "neg": "-"
+  },
+  "dateLoc": "ru",
+  "close": "00:00 UTC",
+  "closeH": 0
+ },
+ "ja": {
+  "push": {
+   "u": "{0} の MACD がシグナルを上抜けしました",
+   "d": "{0} の MACD がシグナルを下抜けしました",
+   "signal": "シグナル"
+  },
+  "tg": {
+   "u": "{0}：MACD がシグナルを上抜け",
+   "d": "{0}：MACD がシグナルを下抜け",
+   "signal": "シグナル",
+   "price": "価格",
+   "button": "📈 チャート",
+   "market": "現物 USDT",
+   "tf": {
+    "1m": "1分",
+    "5m": "5分",
+    "15m": "15分",
+    "1h": "1時間",
+    "4h": "4時間",
+    "1d": "1日"
+   }
+  },
+  "cond": {
+   "u": "MACD({fast},{slow},{signal}) がシグナルを上抜け · {timeframe}",
+   "d": "MACD({fast},{slow},{signal}) がシグナルを下抜け · {timeframe}"
+  },
+  "num": {
+   "dec": ".",
+   "grp": ",",
+   "indian": false,
+   "neg": "-"
+  },
+  "dateLoc": "ja",
+  "close": "00:00 UTC",
+  "closeH": 0
+ },
+ "zh": {
+  "push": {
+   "u": "{0} MACD 向上穿越信号线",
+   "d": "{0} MACD 向下穿越信号线",
+   "signal": "信号线"
+  },
+  "tg": {
+   "u": "{0}：MACD 上穿信号线",
+   "d": "{0}：MACD 下穿信号线",
+   "signal": "信号线",
+   "price": "价格",
+   "button": "📈 图表",
+   "market": "现货 USDT",
+   "tf": {
+    "1m": "1分",
+    "5m": "5分",
+    "15m": "15分",
+    "1h": "1小时",
+    "4h": "4小时",
+    "1d": "1日"
+   }
+  },
+  "cond": {
+   "u": "MACD({fast},{slow},{signal}) 上穿信号线 · {timeframe}",
+   "d": "MACD({fast},{slow},{signal}) 下穿信号线 · {timeframe}"
+  },
+  "num": {
+   "dec": ".",
+   "grp": ",",
+   "indian": false,
+   "neg": "-"
+  },
+  "dateLoc": "zh-CN",
+  "close": "00:00 UTC",
+  "closeH": 0
+ },
+ "hi": {
+  "push": {
+   "u": "{0} MACD ने सिग्नल को ऊपर की ओर पार किया",
+   "d": "{0} MACD ने सिग्नल को नीचे की ओर पार किया",
+   "signal": "सिग्नल"
+  },
+  "tg": {
+   "u": "{0}: MACD ने सिग्नल को ऊपर की ओर काटा",
+   "d": "{0}: MACD ने सिग्नल को नीचे की ओर काटा",
+   "signal": "सिग्नल",
+   "price": "कीमत",
+   "button": "📈 चार्ट",
+   "market": "स्पॉट USDT",
+   "tf": {
+    "1m": "1मि",
+    "5m": "5मि",
+    "15m": "15मि",
+    "1h": "1घं",
+    "4h": "4घं",
+    "1d": "1दि"
+   }
+  },
+  "cond": {
+   "u": "MACD({fast},{slow},{signal}) सिग्नल को ऊपर की ओर काटे · {timeframe}",
+   "d": "MACD({fast},{slow},{signal}) सिग्नल को नीचे की ओर काटे · {timeframe}"
+  },
+  "num": {
+   "dec": ".",
+   "grp": ",",
+   "indian": true,
+   "neg": "-"
+  },
+  "dateLoc": "hi-u-nu-latn",
+  "close": "00:00 UTC",
+  "closeH": 0
+ },
+ "ar": {
+  "push": {
+   "u": "{0} MACD تقاطع مع خط الإشارة صعودًا",
+   "d": "{0} MACD تقاطع مع خط الإشارة هبوطًا",
+   "signal": "الإشارة"
+  },
+  "tg": {
+   "u": "{0}: MACD تقاطع صعودًا مع خط الإشارة",
+   "d": "{0}: MACD تقاطع هبوطًا مع خط الإشارة",
+   "signal": "الإشارة",
+   "price": "السعر",
+   "button": "📈 الرسم البياني",
+   "market": "الفوري USDT",
+   "tf": {
+    "1m": "1د",
+    "5m": "5د",
+    "15m": "15د",
+    "1h": "1س",
+    "4h": "4س",
+    "1d": "1ي"
+   }
+  },
+  "cond": {
+   "u": "MACD({fast},{slow},{signal}) يتقاطع صعودًا مع الإشارة · {timeframe}",
+   "d": "MACD({fast},{slow},{signal}) يتقاطع هبوطًا مع الإشارة · {timeframe}"
+  },
+  "num": {
+   "dec": "٫",
+   "grp": "٬",
+   "indian": false,
+   "neg": "؜-"
+  },
+  "dateLoc": "ar-u-nu-latn",
+  "close": "00:00 UTC",
+  "closeH": 0
+ },
+ "en": {
+  "push": {
+   "u": "{0} MACD crossed above signal",
+   "d": "{0} MACD crossed below signal",
+   "signal": "signal"
+  },
+  "tg": {
+   "u": "{0}: MACD crossed above signal",
+   "d": "{0}: MACD crossed below signal",
+   "signal": "Signal",
+   "price": "Price",
+   "button": "📈 Chart",
+   "market": "Spot USDT",
+   "tf": {
+    "1m": "1m",
+    "5m": "5m",
+    "15m": "15m",
+    "1h": "1h",
+    "4h": "4h",
+    "1d": "1d"
+   }
+  },
+  "cond": {
+   "u": "MACD({fast},{slow},{signal}) crosses above signal · {timeframe}",
+   "d": "MACD({fast},{slow},{signal}) crosses below signal · {timeframe}"
+  },
+  "num": {
+   "dec": ".",
+   "grp": ",",
+   "indian": false,
+   "neg": "-"
+  },
+  "dateLoc": "en",
+  "close": "00:00 UTC",
+  "closeH": 0
+ }
+}

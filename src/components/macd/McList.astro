@@ -1,0 +1,107 @@
+---
+/**
+ * Alarm listesi, tasarım Ö5-A (2026-11-11, Ahmet): ortada gerçek alarm listesi (dört MACD alarmı), kartlardan dört
+ * açıklamaya kıvrılan oklar; altında "kartta gördüğün işaretler" tablosu. Telefonda açıklamalar ekranın üstünde ve
+ * altında ikişer, masaüstünde iki yanda. Oklar sayfa açılınca ve boyut değişince ölçülerek çizilir.
+ */
+import ProgressiveShot from '../ProgressiveShot.astro';
+import '../../styles/macd.css';
+
+interface Props { code: string; mc: any; title: string; caption: string }
+const { code, mc, title, caption } = Astro.props;
+const UP = '<svg class="mc-ico u" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 15 7-7 7 7M12 8v12"/></svg>';
+const DN = '<svg class="mc-ico d" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 9 7 7 7-7M12 16V4"/></svg>';
+const BELL = '<svg class="mc-ico m" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>';
+const SEND = '<svg class="mc-ico m" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>';
+const keys = [UP, DN, `<span class="mc-kchip" dir="ltr">${mc.tfChip}</span>`, '<span class="mc-kchip c6" dir="ltr">12·26·9</span>', `<span class="mc-kchip">${mc.top100}</span>`, BELL + SEND];
+---
+<section class="mcl" aria-labelledby="mcl-t">
+  <p class="kicker">{mc.o5Kicker}</p>
+  <h2 id="mcl-t">{title}</h2>
+  <figure class="mcl-fig">
+    <div class="mcl-row r1"><div class="mcl-bb" data-a="0"><b><span class="mc-num">1</span>{mc.bubbles[0][0]}</b>{mc.bubbles[0][1]}</div><div class="mcl-bb" data-a="1"><b><span class="mc-num">2</span>{mc.bubbles[1][0]}</b>{mc.bubbles[1][1]}</div></div>
+    <div class="mcl-img">
+      <ProgressiveShot class="sh-l" src={`/shots/${code}/light/mc-grid.webp?v=mc1`} alt={caption} width="340" height="325" loading="lazy" decoding="async" sizes="(max-width:760px) 300px, 340px" />
+      <ProgressiveShot class="sh-d" src={`/shots/${code}/dark/mc-grid.webp?v=mc1`} alt="" width="340" height="325" loading="lazy" decoding="async" sizes="(max-width:760px) 300px, 340px" />
+    </div>
+    <div class="mcl-row r2"><div class="mcl-bb" data-a="2"><b><span class="mc-num">3</span>{mc.bubbles[2][0]}</b>{mc.bubbles[2][1]}</div><div class="mcl-bb" data-a="3"><b><span class="mc-num">4</span>{mc.bubbles[3][0]}</b>{mc.bubbles[3][1]}</div></div>
+    <svg class="mcl-ar" aria-hidden="true"></svg>
+    <figcaption>{caption}</figcaption>
+  </figure>
+  <div class="mcl-tbl">
+    <h3>{mc.tableTitle}</h3>
+    <div class="mcl-rows">{mc.rows.map((r: string[], i: number) => <div class="mcl-r"><div class="mcl-k" set:html={keys[i]} /><div><b>{r[0]}</b><span>{r[1]}</span></div></div>)}</div>
+  </div>
+</section>
+
+<script>
+  // Kart merkezleri (görsel kutusuna göre oran); sağdan sola dillerde ekran aynalı olduğu için x ters çevrilir.
+  const ANC = [[.265, .25], [.735, .25], [.265, .75], [.735, .75]];
+  const arrows = () => {
+    for (const f of document.querySelectorAll<HTMLElement>('.mcl-fig')) {
+      const svg = f.querySelector('svg.mcl-ar')!, im = f.querySelector('.mcl-img')!;
+      const fr = f.getBoundingClientRect(), ir = im.getBoundingClientRect();
+      const rtl = getComputedStyle(f).direction === 'rtl';
+      const desk = getComputedStyle(f.querySelector('.mcl-row')!).display === 'contents';
+      f.querySelectorAll('.mcl-pin').forEach(x => x.remove());
+      let h = '';
+      const head = (x: number, y: number, px: number, py: number) => { const a = Math.atan2(y - py, x - px), l = 8; h += `<path d="M${x - l * Math.cos(a - .5)} ${y - l * Math.sin(a - .5)}L${x} ${y}L${x - l * Math.cos(a + .5)} ${y - l * Math.sin(a + .5)}"/>`; };
+      f.querySelectorAll<HTMLElement>('.mcl-bb').forEach(bb => {
+        const i = +bb.dataset.a!; let [ax, ay] = ANC[i]; if (rtl) ax = 1 - ax;
+        const left = ax < .5, sx = ir.left - fr.left + ir.width * ax, sy = ir.top - fr.top + ir.height * ay;
+        const pin = document.createElement('span'); pin.className = 'mcl-pin'; pin.textContent = String(i + 1); pin.setAttribute('aria-hidden', 'true');
+        pin.style.left = (ir.left - fr.left + ir.width * (ax + (left ? -.17 : .17))) + 'px'; pin.style.top = (ir.top - fr.top + ir.height * (ay - .19)) + 'px'; f.appendChild(pin);
+        const br = bb.getBoundingClientRect();
+        let x0, y0, ex, ey, c1x, c1y, c2x, c2y;
+        if (desk) {
+          ex = left ? br.right - fr.left + 4 : br.left - fr.left - 4; ey = br.top - fr.top + br.height / 2;
+          x0 = left ? ir.left - fr.left + ir.width * .08 : ir.left - fr.left + ir.width * .92; y0 = sy;
+          c1x = x0 + (left ? -40 : 40); c1y = y0 + (ay < .5 ? -40 : 40); c2x = ex + (left ? 40 : -40); c2y = ey;
+        } else {
+          const top = ay < .5;
+          y0 = top ? ir.top - fr.top + ir.height * .06 : ir.top - fr.top + ir.height * .94; x0 = sx + (left ? 16 : -16);
+          ex = br.left - fr.left + br.width * (left ? .62 : .38); ey = top ? br.bottom - fr.top + 4 : br.top - fr.top - 4;
+          c1x = x0 + (left ? 28 : -28); c1y = y0 + (top ? -18 : 18); c2x = ex + (left ? 30 : -30); c2y = ey + (top ? 14 : -14);
+        }
+        h += `<circle cx="${x0}" cy="${y0}" r="3.5"/><path d="M${x0} ${y0}C${c1x} ${c1y} ${c2x} ${c2y} ${ex} ${ey}"/>`;
+        head(ex, ey, c2x, c2y);
+      });
+      svg.innerHTML = h;
+    }
+  };
+  addEventListener('resize', arrows); addEventListener('load', arrows); setTimeout(arrows, 200);
+  document.querySelectorAll('.mcl-img img').forEach(i => i.addEventListener('load', arrows));
+</script>
+
+<style>
+  .mcl { padding: 48px 0; border-bottom: 1px solid var(--bd); }
+  .kicker { font: 600 12px/1.6 var(--mono); color: var(--cat3); margin-bottom: 16px; }
+  h2 { font-size: clamp(24px, 3vw, 32px); margin-bottom: 22px; text-wrap: balance; }
+  .mcl-fig { position: relative; display: grid; gap: 12px; margin: 0; }
+  .mcl-img { justify-self: center; width: 300px; max-width: 100%; }
+  .mcl-img :global(img) { width: 100%; height: auto; border-radius: 22px; box-shadow: var(--shadow); border: 1px solid var(--bd); }
+  .mcl-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .mcl-bb { background: var(--sf); border: 1px solid var(--bd); border-radius: 14px; padding: 10px 11px; font-size: 13.5px; color: var(--mut); position: relative; z-index: 1; }
+  .mcl-bb b { display: flex; gap: 6px; align-items: center; color: var(--tx); font-size: 13.5px; margin-bottom: 2px; }
+  .mcl-ar { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 2; }
+  .mcl-ar :global(path) { fill: none; stroke: var(--pri); stroke-width: 2; stroke-linecap: round; }
+  .mcl-ar :global(circle) { fill: var(--pri); }
+  .mcl-fig :global(.mcl-pin) { position: absolute; width: 22px; height: 22px; border-radius: 50%; background: var(--pri); color: var(--priText); display: grid; place-items: center; font: 700 11.5px var(--mono); transform: translate(-50%, -50%); box-shadow: 0 0 0 3px color-mix(in srgb, var(--pri) 30%, transparent); z-index: 3; }
+  figcaption { color: var(--mut); font-size: 12px; text-align: center; margin-top: 6px; }
+  .mcl-tbl { margin-top: 28px; background: var(--sf); border: 1px solid var(--bd); border-radius: 18px; overflow: hidden; }
+  .mcl-tbl h3 { font-size: 16px; padding: 14px 14px 4px; margin: 0; }
+  .mcl-r { display: grid; grid-template-columns: 92px 1fr; gap: 12px; align-items: center; padding: 12px 14px; border-top: 1px solid var(--bd); }
+  .mcl-r:first-child { border-top: 0; }
+  .mcl-k { display: flex; justify-content: center; gap: 2px; }
+  .mcl-r b { display: block; font-size: 14.5px; } .mcl-r span:not(.mc-kchip) { display: block; color: var(--mut); font-size: 13.5px; }
+  @media (min-width: 900px) {
+    .mcl-fig { grid-template-columns: 240px 340px 240px; justify-content: center; align-items: center; gap: 28px 40px; }
+    .mcl-img { grid-column: 2; grid-row: 1 / 3; width: 340px; }
+    .mcl-row { display: contents; }
+    .r1 .mcl-bb:first-child { grid-column: 1; grid-row: 1; } .r1 .mcl-bb:last-child { grid-column: 3; grid-row: 1; }
+    .r2 .mcl-bb:first-child { grid-column: 1; grid-row: 2; } .r2 .mcl-bb:last-child { grid-column: 3; grid-row: 2; }
+    figcaption { grid-column: 1 / -1; }
+    .mcl-rows { display: grid; grid-template-columns: 1fr 1fr; }
+    .mcl-r:nth-child(2) { border-top: 0; }
+  }
+</style>
