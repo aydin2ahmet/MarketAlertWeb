@@ -1,0 +1,110 @@
+---
+/**
+ * "Kesişim mum kapanınca sayılır", tasarım N4 (2026-11-11, Ahmet): arkada soluk BNB mumları, önde MACD ve sinyal.
+ * Son günlük mum açıkken saat kapanıştan bir saat önceden kapanışa ilerler; çizgiler birkaç kez kesişip geri döner ve
+ * her biri akışa "sayılmaz" diye düşer. Kapanışta kesişim kesinleşir, push gelir, sonra baştan oynar.
+ * İlk hâli (JS yokken de) kapanmış mumu ve gelen push'u gösterir.
+ */
+import { LAST, SERIES, chartSvg, day, example, fill, mcLang, pushHtml } from '../../lib/macd';
+import '../../styles/macd.css';
+
+interface Props { code: string; mc: any }
+const { code, mc } = Astro.props;
+const L = mcLang(code);
+const S = SERIES.down, ex = example('d'), date = day(L, LAST);
+const hh = `${String(L.closeH).padStart(2, '0')}:00`;
+const labels = { macd: 'MACD (12,26)', signal: `${L.tg.signal} (9)`, macdShort: 'MACD', signalShort: L.tg.signal };
+const xtag = `${hh} ↘ ${mc.downLong}`;
+const svg = chartSvg(S, { H: 210, ov: true, from: 20, to: 35, cross: [[LAST, 2]], pulse: true, short: true, labels, day: i => day(L, i), xtag: () => xtag });
+const data = { code, labels, xtag, mc: { pillOpen: mc.pillOpen, pillDone: mc.pillDone, left: mc.left, closed: mc.closed, logDown: mc.logDown, logUp: mc.logUp, logFin: mc.logFin, tagNo: mc.tagNo, tagYes: mc.tagYes, openCandle: mc.openCandle } };
+---
+<section class="mcn" aria-labelledby="mcn-t">
+  <div class="mcn-copy">
+    <p class="kicker">{mc.n4Kicker}</p>
+    <h2 id="mcn-t">{mc.n4Title}</h2>
+    <p>{mc.n4Text}</p>
+  </div>
+  <div class="mcn-w" data-mc={JSON.stringify(data)}>
+    <div class="mcn-top"><span class="mc-av" aria-hidden="true">B</span><div><b>{fill(mc.n4Head, { date })}</b><small>{fill(mc.n4Close, { time: L.close })}</small></div>
+      <span class="mcn-clk"><svg class="mc-ico m" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg><b dir="ltr">{hh}</b></span></div>
+    <div class="mcn-st"><span class="mcn-pill done">{mc.pillDone}</span><span class="mcn-left">{mc.closed}</span></div>
+    <div class="mcn-ch"><svg class="mc-cv" viewBox="0 0 360 210" role="img" aria-label={mc.n4Alt} set:html={svg} /></div>
+    <div class="mc-lg" aria-hidden="true"><span><i class="kc fd"></i>{mc.bgCandles}</span><span><i class="km"></i>MACD (12,26)</span><span><i class="ks"></i>{labels.signal}</span></div>
+    <ol class="mcn-log"><li class="fin"><b dir="ltr">{hh}</b><span>{mc.logFin}</span><span class="x">{mc.tagYes}</span></li></ol>
+    <div class="mcp mcn-p on" set:html={pushHtml(L, 'd', '1d', ex.m, ex.s, hh)} />
+  </div>
+</section>
+
+<script>
+  import { LAST, SERIES, chartSvg, day, fill, mcLang } from '../../lib/macd';
+  const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  for (const w of document.querySelectorAll<HTMLElement>('.mcn-w')) {
+    if (RM) continue;
+    const D = JSON.parse(w.dataset.mc!), L = mcLang(D.code), T = D.mc;
+    const svg = w.querySelector('svg.mc-cv')!, clk = w.querySelector('.mcn-clk b')!, pill = w.querySelector('.mcn-pill')!, left = w.querySelector('.mcn-left')!;
+    const log = w.querySelector('.mcn-log')!, pu = w.querySelector('.mcn-p')!;
+    const B = SERIES.down, M35 = B.m[LAST], S35 = B.s[LAST], C35 = B.ohlc[LAST], d = M35 - S35, O = C35[0];
+    const pad = (n: number) => String(n).padStart(2, '0');
+    const hm = (t: number) => t >= 60 ? `${pad(L.closeH)}:00` : `${pad((L.closeH + 23) % 24)}:${pad(t)}`;
+    // v > 0: MACD sinyalin altında (kapanıştaki hâl), v < 0: üstünde. Açık mumda birkaç kez yön değiştirir.
+    const V = (t: number) => { const base = -Math.cos(t / 60 * Math.PI * 3.2) * (1 - t / 90) * 1.2; return t < 48 ? base : base + (1 - base) * Math.min(1, (t - 48) / 10); };
+    const add = (t: number, txt: string, fin = false) => {
+      const li = document.createElement('li'); if (fin) li.className = 'fin';
+      li.innerHTML = `<b dir="ltr">${hm(t)}</b><span>${txt}</span><span class="x">${fin ? T.tagYes : T.tagNo}</span>`;
+      log.appendChild(li); while (log.children.length > 4) log.firstElementChild!.remove();
+    };
+    const draw = (t: number) => {
+      const open = t < 60, v = V(Math.min(t, 60));
+      const c = O + (C35[3] - O) * (0.5 + 0.5 * v) + Math.sin(t * 1.7) * 1.5;
+      const S = { ...B, m: B.m.slice(), ohlc: B.ohlc.slice() };
+      S.m[LAST] = S35 + d * v; S.ohlc[LAST] = [O, Math.max(C35[1], c, O), Math.min(C35[2], c, O), c];
+      svg.innerHTML = chartSvg(S, { H: 210, ov: true, from: 20, to: 35, cross: open ? [] : [[LAST, 2]], pulse: !open, short: true, vline: !open, labels: D.labels, day: i => day(L, i), xtag: open ? undefined : () => D.xtag, openLabel: open ? T.openCandle : undefined });
+      clk.textContent = hm(t); left.textContent = open ? fill(T.left, { n: 60 - t }) : T.closed;
+      pill.textContent = open ? T.pillOpen : T.pillDone; pill.classList.toggle('done', !open);
+    };
+    let t = 0, prev = false;
+    const run = () => {
+      if (t === 0) { log.innerHTML = ''; pu.classList.remove('on'); prev = V(0) > 0; }
+      draw(t);
+      const now = V(Math.min(t, 60)) > 0;
+      if (t > 0 && t < 60 && now !== prev) add(t, now ? T.logDown : T.logUp);
+      prev = now;
+      if (t >= 60) { add(60, T.logFin, true); pu.classList.add('on'); t = 0; setTimeout(run, 6500); return; }
+      t++; setTimeout(run, 110);
+    };
+    const io = new IntersectionObserver(es => { if (es[0].isIntersecting) { run(); io.disconnect(); } }); io.observe(svg);
+  }
+</script>
+
+<style>
+  .mcn { display: grid; grid-template-columns: minmax(0, 1fr) 460px; gap: 48px; align-items: center; padding: 56px 0; border-bottom: 1px solid var(--bd); }
+  .kicker { font: 600 12px/1.6 var(--mono); color: var(--cat3); margin-bottom: 16px; }
+  h2 { font-size: clamp(24px, 3vw, 32px); margin-bottom: 18px; text-wrap: balance; }
+  .mcn-copy p:not(.kicker) { color: var(--mut); font-size: 17px; max-width: 560px; }
+  .mcn-w { background: var(--sf); border: 1px solid var(--bd); border-radius: 20px; padding: 16px; }
+  .mcn-top { display: flex; align-items: center; gap: 10px; }
+  .mcn-top b { font-size: 14.5px; } .mcn-top small { display: block; color: var(--mut); font: 600 11.5px var(--mono); }
+  .mcn-clk { margin-inline-start: auto; display: flex; align-items: center; gap: 6px; border: 1px solid var(--bd); border-radius: 999px; padding: 5px 10px; background: var(--bg); color: var(--mut); flex: none; }
+  .mcn-clk b { font: 700 15px var(--mono); font-variant-numeric: tabular-nums; color: var(--tx); }
+  .mcn-st { display: flex; align-items: center; gap: 8px; margin: 12px 0 6px; flex-wrap: wrap; }
+  .mcn-pill { font: 700 12px var(--mono); border-radius: 999px; padding: 5px 10px; background: var(--priSoft); color: #9A5B00; border: 1px dashed var(--pri); }
+  :global(:root[data-theme=dark]) .mcn-pill { color: var(--pri); }
+  @media (prefers-color-scheme: dark) { :global(:root:not([data-theme=light])) .mcn-pill { color: var(--pri); } }
+  .mcn-pill.done { background: var(--mcDs); color: var(--mcDt); border: 1px solid var(--mcDt); }
+  .mcn-left { font: 600 12px var(--mono); color: var(--mut); margin-inline-start: auto; }
+  .mcn-ch { border-radius: 14px; background: linear-gradient(var(--bg), var(--sf)); border: 1px solid var(--bd); padding: 6px 4px 0; }
+  .mcn-log { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 6px; min-height: 118px; align-content: start; }
+  .mcn-log :global(li) { display: grid; grid-template-columns: 44px 1fr auto; gap: 8px; align-items: center; font-size: 13px; border: 1px solid var(--bd); border-radius: 10px; padding: 7px 10px; background: var(--sf); animation: mcnpop .4s both; }
+  .mcn-log :global(li b) { font: 700 12px var(--mono); color: var(--mut); }
+  .mcn-log :global(.x) { font: 700 11px var(--mono); color: var(--mut); border: 1px solid var(--bd); border-radius: 6px; padding: 2px 6px; text-decoration: line-through; }
+  .mcn-log :global(li.fin) { border-color: var(--mcDt); background: var(--mcDs); }
+  .mcn-log :global(li.fin .x) { text-decoration: none; color: var(--mcDt); border-color: var(--mcDt); }
+  @keyframes mcnpop { from { opacity: 0; transform: translateY(6px); } }
+  .mcn-p { margin-top: 10px; opacity: 0; transform: translateY(-14px) scale(.97); transition: opacity .45s, transform .55s cubic-bezier(.2, .9, .3, 1.25); }
+  .mcn-p:global(.on) { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .mcn-p { transition: none; } .mcn-log :global(li) { animation: none; } }
+  @media (max-width: 900px) {
+    .mcn { grid-template-columns: 1fr; gap: 20px; padding: 40px 0; }
+    .mcn-w { padding: 12px; }
+  }
+</style>

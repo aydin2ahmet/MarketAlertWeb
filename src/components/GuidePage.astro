@@ -16,6 +16,10 @@ import TgHero from './telegram/TgHero.astro';
 import TgPair from './telegram/TgPair.astro';
 import TgLanes from './telegram/TgLanes.astro';
 import TgSettings from './telegram/TgSettings.astro';
+import McHero from './macd/McHero.astro';
+import McList from './macd/McList.astro';
+import McSetup from './macd/McSetup.astro';
+import McCandle from './macd/McCandle.astro';
 import logicCards from '../i18n/logic-cards.json';
 import content from '../i18n/content.json';
 import guides from '../i18n/alert-guides.json';
@@ -34,7 +38,7 @@ const r = (rsiGuides as any)[code];
 const lcAll = (logicCards as any)[code];
 const lc = lcAll?.[`${section}/${slug}`];
 // Rehber başına görsel ve kod satırları. Yeni rehber eklerken buraya da bir kayıt ekle.
-const VISUAL: Record<string, { kicker: string; exampleKicker: string; condition: string[]; foot: string; shot: string; version: string; width: number; height: number | null; logic?: string[][]; hook?: { pair: string; market: string; from: number; target: number; touch: number; last: number; op: '<' | '>'; unit?: 'pct' }; stepShots?: [string, number][]; voice?: true; tg?: true }> = {
+const VISUAL: Record<string, { kicker: string; exampleKicker: string; condition: string[]; foot: string; shot: string; version: string; width: number; height: number | null; logic?: string[][]; hook?: { pair: string; market: string; from: number; target: number; touch: number; last: number; op: '<' | '>'; unit?: 'pct' }; stepShots?: [string, number][]; voice?: true; tg?: true; mc?: true }> = {
   'features/price-alerts': { kicker: 'BINANCE · PRICE · PUSH', exampleKicker: 'BTC/USDT · 70,000 · ONCE', condition: ['BTC/USDT', '≥', '70,000 USDT'], foot: 'BINANCE SPOT · USDT · ONCE → PUSH', shot: 'price', version: 'price1', width: 1080, height: 2280,
     logic: [['HIGH 69,990 · LAST 69,880', '→ ✕'], ['HIGH 70,012 · LAST 69,880', 'TOUCH → ✓']] },
   'features/volume-spike-alerts': { kicker: 'BINANCE · VOLUME / SMA · TELEGRAM', exampleKicker: '15m · SMA(20) · 3×', condition: ['VOLUME', '>', '3 × SMA(20)'], foot: 'BINANCE SPOT · USDT · TOP 100 → TELEGRAM', shot: 'rsi/volume-result', version: 'volume1', width: 390, height: null },
@@ -55,10 +59,13 @@ const VISUAL: Record<string, { kicker: string; exampleKicker: string; condition:
   'features/voice-crypto-alerts': { kicker: 'VOICE · RSI + VOLUME · TOP 100', exampleKicker: 'SPOT USDT · TOP 100 · 1h', condition: [], foot: '', shot: 'voice-result', version: 'voice1', width: 1080, height: 2823, voice: true },
   // 6. gün: Telegram sayfası kendi bloklarını kullanır (components/telegram, metinler rehberin `tg` alanında).
   'features/telegram-crypto-alerts': { kicker: 'BINANCE · TELEGRAM · PLUS / PRO', exampleKicker: 'MARKETALERT → TELEGRAM', condition: [], foot: '', shot: 'tg-on', version: 'tg1', width: 1020, height: 2139, tg: true },
+  // 7. gün: MACD kesişim sayfası kendi bloklarını kullanır (components/macd, metinler rehberin `mc` alanında).
+  'features/macd-crossover-alerts': { kicker: 'BINANCE · MACD · PUSH + TELEGRAM', exampleKicker: '', condition: [], foot: '', shot: 'mc-grid', version: 'mc1', width: 1020, height: 975, mc: true },
 };
 const v = VISUAL[`${section}/${slug}`];
 const vo = v.voice ? g.voice : undefined;
 const tg = v.tg ? g.tg : undefined;
+const mc = v.mc ? g.mc : undefined;
 const shotKind = v.shot.split('/').pop() as string;
 const shotHeight = (theme: 'light' | 'dark') => v.height ? Math.round(390 * v.height / v.width) : (screenSizes as any)[code][theme][shotKind];
 const plans: string[][] = g.plans || r.plans;
@@ -94,7 +101,10 @@ const jsonLd = [
   </header>
   <main class="alert-guide">
     <nav class="breadcrumbs" aria-label="MarketAlert"><a href={`/${code}/`}>MarketAlert</a><span aria-hidden="true"> / </span><span>{g.link}</span></nav>
-    {tg ? <>
+    {mc ? <>
+    <McHero code={code} mc={mc} h1={g.h1} introHtml={L(g.intro)} setupTitle={setupTitle} />
+    <McList code={code} mc={mc} title={g.exampleTitle} caption={g.caption} />
+    </> : tg ? <>
     <TgHero code={code} kicker={tg.kicker} h1={g.h1} introHtml={L(g.intro)} setupTitle={setupTitle} chips={tg.chips} no={tg.no} alt={tg.hookAlt} chat={tg.chat} />
     <TgPair code={code} kicker={v.exampleKicker} title={g.exampleTitle} kinds={tg.kinds} listAlt={tg.listAlt} chat={tg.chat} note={tg.pairNote} caption={g.caption} />
     </> : vo ? <>
@@ -122,11 +132,12 @@ const jsonLd = [
       </figure>
     </section>
     </>}
-    <section id="setup" class="guide-section"><p class="kicker">{tg ? '01 → 05' : '01 → 04'}</p><h2>{setupTitle}</h2>{tg ? <TgLanes code={code} lanes={tg.lanes} cells={tg.cells} alts={tg.alts} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : vo ? <VoiceSteps code={code} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : v.stepShots && g.stepActions ? <>
+    <section id="setup" class="guide-section"><p class="kicker">{`01 → ${String(g.steps.length).padStart(2, '0')}`}</p><h2>{setupTitle}</h2>{tg ? <TgLanes code={code} lanes={tg.lanes} cells={tg.cells} alts={tg.alts} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : vo ? <VoiceSteps code={code} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : v.stepShots && g.stepActions ? <>
       <StepArc code={code} titles={g.steps.map((s: string[]) => s[0])} actions={g.stepActions} ready={g.ready} shots={v.stepShots} version={v.version} />
       <ol class="step-notes">{g.steps.map((step: string[], i: number) => <li><span class="step-number" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><div><h3>{step[0]}</h3><p set:html={L(step[1])} /></div></li>)}</ol>
-    </> : <ol class="steps">{g.steps.map((step: string[], i: number) => <li><span class="step-number" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><div><h3>{step[0]}</h3><p set:html={L(step[1])} /></div></li>)}</ol>}</section>
+    </> : <ol class="steps">{g.steps.map((step: string[], i: number) => <li><span class="step-number" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><div><h3>{step[0]}</h3><p set:html={L(step[1])} /></div></li>)}</ol>}{mc && <McSetup code={code} mc={mc} />}</section>
     <section class="guide-section explain">{g.details.map((section: string[]) => <article><h2>{section[0]}</h2><p set:html={L(section[1])} /></article>)}</section>
+    {mc && <McCandle code={code} mc={mc} />}
     {tg && <TgSettings code={code} title={tg.setTitle} items={tg.callouts} alt={tg.setAlt} />}
     {vo && <VoiceActions title={vo.actionsTitle} items={vo.actions} note={vo.actionsNote} />}
     {vo && <VoiceLadder title={vo.ladderTitle} level={vo.level} items={vo.ladder} plans={vo.plans} />}
