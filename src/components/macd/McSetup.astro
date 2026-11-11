@@ -1,9 +1,9 @@
 ---
 /**
- * Kur ve sonucunu gör, tasarım S5 (2026-11-11, Ahmet): yön ve zaman dilimi seçilince uygulamanın gerçek
- * "Alarm oluştur" ekranı (MACD koşulu, 11 dil × açık/koyu × 2 yön × 6 zaman dilimi), push ve Telegram mesajı birlikte değişir.
- * Telefonda S5-B: seçimler alt alta, sonuç üç sekmede. Masaüstünde S5-A: solda yön düğmeleri alt alta, sağda
- * zaman dilimleri 3×2, iki başlık aynı satırda; altta ekran, yanında push ve Telegram.
+ * Kur ve sonucunu gör, tasarım B "tek satır kumanda" (2026-11-11, Ahmet): yön ve altı zaman dilimi küçük, tek satırlık
+ * bir kumandada; altında koşul cümlesi. Seçilince uygulamanın gerçek "Alarm oluştur" ekranı (11 dil × açık/koyu ×
+ * 2 yön × 6 zaman dilimi), push ve Telegram mesajı birlikte değişir. Masaüstünde ekran ve mesajlar ortada yan yana;
+ * telefonda kumanda iki satır, ekranın altında Push / Telegram sekmeleri.
  */
 import TgChat from '../telegram/TgChat.astro';
 import { msgHtml } from '../../lib/telegram';
@@ -21,29 +21,17 @@ const data = { code, shotAlt: mc.shotAlt };
 ---
 <div class="mcs" data-mc={JSON.stringify(data)}>
   <p class="mcs-lead">{mc.s5Lead}</p>
-  <div class="mcs-a">
-    <div class="mcs-ctl">
-      <div><div class="mc-lab">{mc.when}</div><div class="mc-seg d2" role="group" aria-label={mc.when}><button type="button" data-d="u" aria-pressed="false"><Fragment set:html={UP} />{mc.upLong}</button><button type="button" data-d="d" aria-pressed="true"><Fragment set:html={DN} />{mc.downLong}</button></div></div>
-      <div><div class="mc-lab">{mc.tfLabel}</div><div class="mc-seg t6" role="group" aria-label={mc.tfLabel} dir="ltr">{TFS.map(t => <button type="button" data-tf={t} aria-pressed={String(t === tf)}>{t}</button>)}</div></div>
-    </div>
-    <div class="mc-sent" dir="auto">{cond}</div>
-    <div class="mcs-three">
-      <div class="mcs-shot"><div class="mc-chn">{mc.chnApp}</div><img class="mc-shot sh-l" src={sheetSrc(code, 'light', dir, tf)} alt={fill(mc.shotAlt, { cond })} width="540" height="1132" loading="lazy" decoding="async" /><img class="mc-shot sh-d" src={sheetSrc(code, 'dark', dir, tf)} alt="" width="540" height="1132" loading="lazy" decoding="async" /></div>
-      <div class="mcs-side">
-        <div><div class="mc-chn">{mc.chnPush}</div><div class="mcp" set:html={pushHtml(L, dir, tf, ex.m, ex.s, time)} /></div>
-        <div><div class="mc-chn">{mc.chnTg}</div><TgChat code={code} label={`Telegram: ${fill(L.tg.d, { 0: 'BNB' })}`}><div class="tgm" set:html={msgHtml(tgMsg(L, dir, tf, ex.m, ex.s, ex.p), time)} /></TgChat></div>
-      </div>
-    </div>
+  <div class="mcs-bar">
+    <div class="mcs-pill" role="group" aria-label={mc.when}><button type="button" data-d="u" aria-pressed="false"><Fragment set:html={UP} />{mc.upLong}</button><button type="button" data-d="d" aria-pressed="true"><Fragment set:html={DN} />{mc.downLong}</button></div>
+    <div class="mcs-pill tf" role="group" aria-label={mc.tfLabel} dir="ltr">{TFS.map(t => <button type="button" data-tf={t} aria-pressed={String(t === tf)}>{t}</button>)}</div>
   </div>
-  <div class="mcs-b">
-    <div class="mc-lab">{mc.when}</div><div class="mc-seg d2" role="group" aria-label={mc.when}><button type="button" data-d="u" aria-pressed="false"><Fragment set:html={UP} />{mc.upShort}</button><button type="button" data-d="d" aria-pressed="true"><Fragment set:html={DN} />{mc.downShort}</button></div>
-    <div class="mc-lab">{mc.tfLabel}</div><div class="mc-seg t6" role="group" aria-label={mc.tfLabel} dir="ltr">{TFS.map(t => <button type="button" data-tf={t} aria-pressed={String(t === tf)}>{t}</button>)}</div>
-    <div class="mc-sent" dir="auto">{cond}</div>
-    <div class="mc-tabs" role="tablist">{mc.tabs.map((t: string, i: number) => <button type="button" role="tab" aria-selected={String(i === 0)} data-v={['app', 'push', 'tg'][i]}>{t}</button>)}</div>
-    <div class="mcs-pv">
-      <div data-v="app"><img class="mc-shot sh-l" src={sheetSrc(code, 'light', dir, tf)} alt={fill(mc.shotAlt, { cond })} width="540" height="1132" loading="lazy" decoding="async" /><img class="mc-shot sh-d" src={sheetSrc(code, 'dark', dir, tf)} alt="" width="540" height="1132" loading="lazy" decoding="async" /></div>
-      <div data-v="push" hidden><div class="mcp" set:html={pushHtml(L, dir, tf, ex.m, ex.s, time)} /><p class="mcs-note">{mc.pushNote}</p></div>
-      <div data-v="tg" hidden><TgChat code={code} label={`Telegram: ${fill(L.tg.d, { 0: 'BNB' })}`}><div class="tgm" set:html={msgHtml(tgMsg(L, dir, tf, ex.m, ex.s, ex.p), time)} /></TgChat></div>
+  <p class="mc-sent" dir="auto">{cond}</p>
+  <div class="mcs-res">
+    <div class="mcs-shot"><img class="mc-shot sh-l" src={sheetSrc(code, 'light', dir, tf)} alt={fill(mc.shotAlt, { cond })} width="540" height="1132" loading="lazy" decoding="async" /><img class="mc-shot sh-d" src={sheetSrc(code, 'dark', dir, tf)} alt="" width="540" height="1132" loading="lazy" decoding="async" /></div>
+    <div class="mc-tabs" role="tablist"><button type="button" role="tab" aria-selected="true" data-v="push">{mc.tabs[1]}</button><button type="button" role="tab" aria-selected="false" data-v="tg">{mc.tabs[2]}</button></div>
+    <div class="mcs-side">
+      <div data-v="push"><div class="mc-chn">{mc.chnPush}</div><div class="mcp" set:html={pushHtml(L, dir, tf, ex.m, ex.s, time)} /></div>
+      <div data-v="tg"><div class="mc-chn">{mc.chnTg}</div><TgChat code={code} label={`Telegram: ${fill(L.tg.d, { 0: 'BNB' })}`}><div class="tgm" set:html={msgHtml(tgMsg(L, dir, tf, ex.m, ex.s, ex.p), time)} /></TgChat></div>
     </div>
   </div>
 </div>
@@ -51,49 +39,52 @@ const data = { code, shotAlt: mc.shotAlt };
 <script>
   import { condText, example, fill, mcLang, notifyTime, pushHtml, sheetSrc, tgMsg, type Dir } from '../../lib/macd';
   import { msgHtml } from '../../lib/telegram';
-  for (const root of document.querySelectorAll<HTMLElement>('.mcs')) {
-    const D = JSON.parse(root.dataset.mc!), L = mcLang(D.code);
-    for (const w of root.querySelectorAll<HTMLElement>('.mcs-a, .mcs-b')) {
-      let dir: Dir = 'd', tf = '1d', view = 'app';
-      const upd = () => {
-        w.querySelectorAll<HTMLButtonElement>('[data-d]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.d === dir)));
-        w.querySelectorAll<HTMLButtonElement>('[data-tf]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.tf === tf)));
-        const cond = condText(L, dir, tf), ex = example(dir), time = notifyTime(L, tf);
-        w.querySelectorAll('.mc-sent').forEach(e => { e.textContent = cond; });
-        w.querySelectorAll<HTMLImageElement>('img.mc-shot').forEach(img => {
-          img.src = sheetSrc(D.code, img.classList.contains('sh-d') ? 'dark' : 'light', dir, tf);
-          if (img.classList.contains('sh-l')) img.alt = fill(D.shotAlt, { cond });
-        });
-        w.querySelectorAll('.mcp').forEach(e => { e.innerHTML = pushHtml(L, dir, tf, ex.m, ex.s, time); });
-        w.querySelectorAll('.tgm').forEach(e => { e.innerHTML = msgHtml(tgMsg(L, dir, tf, ex.m, ex.s, ex.p), time); });
-        w.querySelectorAll<HTMLButtonElement>('[role=tab]').forEach(b => b.setAttribute('aria-selected', String(b.dataset.v === view)));
-        w.querySelectorAll<HTMLElement>('.mcs-pv > [data-v]').forEach(x => { x.hidden = x.dataset.v !== view; });
-      };
-      w.querySelectorAll<HTMLButtonElement>('[data-d]').forEach(b => b.addEventListener('click', () => { dir = b.dataset.d as Dir; upd(); }));
-      w.querySelectorAll<HTMLButtonElement>('[data-tf]').forEach(b => b.addEventListener('click', () => { tf = b.dataset.tf!; upd(); }));
-      w.querySelectorAll<HTMLButtonElement>('[role=tab]').forEach(b => b.addEventListener('click', () => { view = b.dataset.v!; upd(); }));
-    }
+  for (const w of document.querySelectorAll<HTMLElement>('.mcs')) {
+    const D = JSON.parse(w.dataset.mc!), L = mcLang(D.code);
+    let dir: Dir = 'd', tf = '1d', view = 'push';
+    const upd = () => {
+      w.querySelectorAll<HTMLButtonElement>('[data-d]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.d === dir)));
+      w.querySelectorAll<HTMLButtonElement>('[data-tf]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.tf === tf)));
+      const cond = condText(L, dir, tf), ex = example(dir), time = notifyTime(L, tf);
+      w.querySelectorAll('.mc-sent').forEach(e => { e.textContent = cond; });
+      w.querySelectorAll<HTMLImageElement>('img.mc-shot').forEach(img => {
+        img.src = sheetSrc(D.code, img.classList.contains('sh-d') ? 'dark' : 'light', dir, tf);
+        if (img.classList.contains('sh-l')) img.alt = fill(D.shotAlt, { cond });
+      });
+      w.querySelectorAll('.mcp').forEach(e => { e.innerHTML = pushHtml(L, dir, tf, ex.m, ex.s, time); });
+      w.querySelectorAll('.tgm').forEach(e => { e.innerHTML = msgHtml(tgMsg(L, dir, tf, ex.m, ex.s, ex.p), time); });
+      w.querySelectorAll<HTMLButtonElement>('[role=tab]').forEach(b => b.setAttribute('aria-selected', String(b.dataset.v === view)));
+      w.querySelectorAll<HTMLElement>('.mcs-side > [data-v]').forEach(x => x.classList.toggle('off', x.dataset.v !== view));
+    };
+    w.querySelectorAll<HTMLButtonElement>('[data-d]').forEach(b => b.addEventListener('click', () => { dir = b.dataset.d as Dir; upd(); }));
+    w.querySelectorAll<HTMLButtonElement>('[data-tf]').forEach(b => b.addEventListener('click', () => { tf = b.dataset.tf!; upd(); }));
+    w.querySelectorAll<HTMLButtonElement>('[role=tab]').forEach(b => b.addEventListener('click', () => { view = b.dataset.v!; upd(); }));
+    upd();
   }
 </script>
 
 <style>
-  .mcs { margin-top: 40px; padding: 24px; border: 1px solid var(--bd); border-radius: 24px; background: radial-gradient(ellipse at top right, var(--priSoft), transparent 70%), var(--sf); }
-  .mcs-lead { margin: 0 0 6px; color: var(--mut); font-size: 16px; max-width: 760px; }
-  .mcs-ctl { display: grid; grid-template-columns: 300px 1fr; gap: 28px; align-items: start; }
-  .mcs-ctl .mc-seg.d2 { grid-template-columns: 1fr; }
-  .mcs-ctl .mc-seg.t6 { grid-template-columns: repeat(3, 1fr); }
-  .mcs-three { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 32px; margin-top: 18px; align-items: start; }
-  .mcs-side { display: grid; gap: 18px; align-content: start; max-width: 420px; }
-  .mcs-b { display: none; }
-  .mcs-b .mc-lab:first-child { margin-top: 0; }
-  .mcs-b .mc-tabs { margin-top: 16px; }
-  .mcs-pv { margin-top: 12px; display: grid; justify-items: center; }
-  .mcs-pv > div { width: 100%; max-width: 330px; }
-  .mcs-pv > div[hidden] { display: none; }
-  .mcs-note { font-size: 13px; color: var(--mut); text-align: center; margin: 8px 0 0; }
+  .mcs { margin-top: 40px; padding: 28px 24px; border: 1px solid var(--bd); border-radius: 24px; background: radial-gradient(ellipse at top right, var(--priSoft), transparent 70%), var(--sf); display: grid; gap: 14px; }
+  .mcs-lead { margin: 0; color: var(--mut); font-size: 16px; text-align: center; max-width: 680px; justify-self: center; }
+  .mcs-bar { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; align-items: center; }
+  .mcs-pill { display: inline-flex; gap: 2px; padding: 3px; background: var(--mcSf2); border: 1px solid var(--bd); border-radius: 999px; }
+  .mcs-pill button { cursor: pointer; border: 0; background: none; border-radius: 999px; padding: 8px 13px; font: 600 14px var(--f); color: var(--mut); display: inline-flex; align-items: center; justify-content: center; gap: 5px; white-space: nowrap; }
+  .mcs-pill.tf button { font-family: var(--mono); padding: 8px 12px; }
+  .mcs-pill button:hover { color: var(--tx); }
+  .mcs-pill button:focus-visible { outline: 2px solid var(--pri); outline-offset: 1px; }
+  .mcs-pill button[aria-pressed=true] { background: var(--sf); color: var(--tx); box-shadow: 0 1px 3px rgba(0, 0, 0, .16), inset 0 0 0 1.5px var(--pri); }
+  .mcs .mc-sent { margin: 0; padding: 0; background: none; border: 0; text-align: center; font: 600 14px var(--mono); color: var(--tx); }
+  .mcs-res { display: grid; grid-template-columns: 290px 400px; justify-content: center; column-gap: 56px; align-items: center; margin-top: 8px; }
+  .mcs-side { display: grid; gap: 18px; }
+  .mcs-res .mc-tabs { display: none; }
   @media (max-width: 860px) {
-    .mcs { padding: 16px; margin-top: 32px; }
-    .mcs-a { display: none; }
-    .mcs-b { display: block; }
+    .mcs { padding: 18px 14px; margin-top: 32px; }
+    .mcs-pill { width: 100%; box-sizing: border-box; }
+    .mcs-pill button { flex: 1; padding: 9px 4px; white-space: normal; text-align: center; }
+    .mcs-res { grid-template-columns: 1fr; row-gap: 12px; margin-top: 4px; }
+    .mcs-shot { justify-self: center; width: 100%; max-width: 320px; }
+    .mcs-res .mc-tabs { display: grid; }
+    .mcs-side > .off { display: none; }
+    .mcs-side .mc-chn { display: none; }
   }
 </style>
