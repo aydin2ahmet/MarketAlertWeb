@@ -1,0 +1,73 @@
+---
+/**
+ * İlk ekran, tasarım K4-2 (2026-11-12, Ahmet): SOL 30 dk soluk mumları üstünde turuncu "son 24 saat" penceresi kayar,
+ * basamak çizgisi çıtayı (24s zirve) gösterir. Beş aşama grafikte numaralı oklarla (dar ekranda numaralı rozetlerle)
+ * ve altta beş kısa yazıyla birlikte yanar; sonunda push ve Telegram mesajı belirir.
+ * Sayfa ilk hâliyle (JS yokken de) son kareyi gösterir.
+ */
+import TgChat from '../telegram/TgChat.astro';
+import { msgHtml } from '../../lib/telegram';
+import { K, KLAST, KWIN, heroSvg, hlLang, num, pushHtml, rollHi, tgMsg } from '../../lib/hl';
+import '../../styles/macd.css';
+import '../../styles/hl.css';
+
+interface Props { code: string; hl: any; h1: string; introHtml: string; setupTitle: string }
+const { code, hl, h1, introHtml, setupTitle } = Astro.props;
+const L = hlLang(code);
+const W = 1100, H = 330;
+const svg = heroSvg(W, H, KLAST, 5, hl);
+const price = K[KLAST].h;
+const tg = tgMsg(L, 'SOL', 'h', price, hl.alarm);
+const data = { code, winK: hl.winK, annK: hl.annK, st: hl.st };
+---
+<section class="hlh" data-hl={JSON.stringify(data)}>
+  <div class="hlh-head">
+    <p class="kicker">{hl.kicker}</p><h1>{h1}</h1>
+  </div>
+  <div class="hlh-body">
+    <p class="intro" set:html={introHtml} />
+    <div class="hl-chips"><span class="hl-ck h">{hl.chips[0]}</span><span class="hl-ck l">{hl.chips[1]}</span><span class="hl-ck">{hl.chips[2]}</span><span class="hl-ck x">{hl.chips[3]}</span></div>
+    <a class="btn" href="#setup">{setupTitle} <span aria-hidden="true">↓</span></a>
+  </div>
+  <div class="hl-card hlh-card">
+    <div class="hl-chd"><span class="hl-av" aria-hidden="true">S</span><div><b>SOL / USDT</b><small>{hl.coinK}</small></div><button type="button" class="hl-btn hlh-replay">↻ {hl.replay}</button></div>
+    <div class="hl-stats">
+      <div><small>{hl.stats[0]}</small><b class="hlh-hi">{num(L.num, price, 2)}</b></div>
+      <div><small>{hl.stats[1]}</small><b class="hlh-p">{num(L.num, K[KLAST].c, 2)}</b></div>
+      <div><small>{hl.stats[2]}</small><b class="hlh-s on">{hl.st.b}</b></div>
+    </div>
+    <div class="hl-cvw"><svg class="hl-cv hlh-cv" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={hl.chartK} set:html={svg} /></div>
+    <div class="hl-lg" aria-hidden="true"><span><i class="lc"></i>{hl.legK[0]}</span><span><i class="lw"></i>{hl.legK[1]}</span><span><i class="lh"></i>{hl.legK[2]}</span></div>
+    <ol class="hlh-steps">{hl.stepsK.map((t: string, i: number) => <li class="on" data-k={i + 1}><b>{i + 1}</b><span>{t}</span></li>)}</ol>
+  </div>
+  <div class="hlh-out">
+    <div><div class="mc-chn">{hl.chnPush}</div><div class="mcp" set:html={pushHtml(L, 'SOL', 'h', price, hl.now)} /></div>
+    <div><div class="mc-chn">{hl.chnTg}</div><TgChat code={code} label={`Telegram: ${tg.text.split('\n')[0].replace(/<[^>]+>/g, '')}`}><div class="tgm" set:html={msgHtml(tg, hl.now)} /></TgChat></div>
+  </div>
+</section>
+
+<script>
+  import { K, KLAST, KWIN, heroStage, heroSvg, hlLang, num, rollHi } from '../../lib/hl';
+  import { sized } from '../../lib/hl-ui';
+  const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  for (const w of document.querySelectorAll<HTMLElement>('.hlh')) {
+    const D = JSON.parse(w.dataset.hl!), L = hlLang(D.code);
+    const svg = w.querySelector<SVGSVGElement>('svg.hlh-cv')!, out = w.querySelector<HTMLElement>('.hlh-out')!;
+    const hiEl = w.querySelector('.hlh-hi')!, pEl = w.querySelector('.hlh-p')!, sEl = w.querySelector('.hlh-s')!;
+    let E = KLAST, tm = 0;
+    const draw = (W: number, H: number) => {
+      const stage = heroStage(E), br = E === KLAST;
+      svg.innerHTML = heroSvg(W, H, E, stage, D);
+      hiEl.textContent = num(L.num, br ? K[KLAST].h : rollHi(K, E, KWIN), 2);
+      pEl.textContent = num(L.num, K[E].c, 2);
+      sEl.textContent = br ? D.st.b : E >= 78 && E < 82 ? D.st.t : D.st.w;
+      sEl.classList.toggle('on', br);
+      w.querySelectorAll<HTMLElement>('.hlh-steps li').forEach(x => x.classList.toggle('on', +x.dataset.k! <= stage));
+      out.classList.toggle('wait', !br);
+    };
+    const go = sized(svg, W => W < 640 ? 270 : 330, draw);
+    const play = () => { clearInterval(tm); E = KWIN; go(); tm = window.setInterval(() => { E++; if (E >= KLAST) { E = KLAST; clearInterval(tm); } go(); }, 120); };
+    w.querySelector('.hlh-replay')!.addEventListener('click', play);
+    if (!RM) { const io = new IntersectionObserver(es => { if (es[0].isIntersecting) { play(); io.disconnect(); } }); io.observe(svg); }
+  }
+</script>

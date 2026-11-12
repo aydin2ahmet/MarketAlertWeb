@@ -1,0 +1,255 @@
+{
+ "tr": {
+  "push": {
+   "h": "{0} 24 saatin zirvesini kırdı",
+   "l": "{0} 24 saatin dibini kırdı",
+   "hl": "24s zirve",
+   "ll": "24s dip"
+  },
+  "tg": {
+   "h": "{0} 24 saatin zirvesinde",
+   "l": "{0} 24 saatin dibinde",
+   "hl": "24s zirve",
+   "ll": "24s dip",
+   "button": "📈 Grafik",
+   "market": "Spot USDT"
+  },
+  "ask": "Tekrarlı son 24 saat alarmında iki bildirim arasında ne kadar bekleyeyim? Örneğin 1 saat.",
+  "num": {
+   "dec": ",",
+   "grp": ".",
+   "indian": false,
+   "neg": "-"
+  }
+ },
+ "de": {
+  "push": {
+   "h": "{0} hat das 24h-Hoch gebrochen",
+   "l": "{0} hat das 24h-Tief gebrochen",
+   "hl": "24h-Hoch",
+   "ll": "24h-Tief"
+  },
+  "tg": {
+   "h": "{0} mit neuem 24h-Hoch",
+   "l": "{0} mit neuem 24h-Tief",
+   "hl": "24h-Hoch",
+   "ll": "24h-Tief",
+   "button": "📈 Chart",
+   "market": "Spot USDT"
+  },
+  "ask": "Wie lange soll ich bei diesem wiederholten 24-Stunden-Alarm zwischen zwei Meldungen warten? Zum Beispiel 1 Stunde.",
+  "num": {
+   "dec": ",",
+   "grp": ".",
+   "indian": false,
+   "neg": "-"
+  }
+ },
+ "fr": {
+  "push": {
+   "h": "{0} a franchi son plus haut 24 h",
+   "l": "{0} a franchi son plus bas 24 h",
+   "hl": "Plus haut 24 h",
+   "ll": "Plus bas 24 h"
+  },
+  "tg": {
+   "h": "{0} : nouveau plus haut sur 24 h",
+   "l": "{0} : nouveau plus bas sur 24 h",
+   "hl": "Plus haut 24 h",
+   "ll": "Plus bas 24 h",
+   "button": "📈 Graphique",
+   "market": "Spot USDT"
+  },
+  "ask": "Combien de temps dois-je attendre entre deux notifications de cette alerte répétée sur 24 heures ? Par exemple 1 heure.",
+  "num": {
+   "dec": ",",
+   "grp": " ",
+   "indian": false,
+   "neg": "-"
+  }
+ },
+ "es": {
+  "push": {
+   "h": "{0} rompió su máximo de 24 h",
+   "l": "{0} rompió su mínimo de 24 h",
+   "hl": "Máx. 24 h",
+   "ll": "Mín. 24 h"
+  },
+  "tg": {
+   "h": "{0} marcó un nuevo máximo de 24 h",
+   "l": "{0} marcó un nuevo mínimo de 24 h",
+   "hl": "Máx. 24 h",
+   "ll": "Mín. 24 h",
+   "button": "📈 Gráfico",
+   "market": "Spot USDT"
+  },
+  "ask": "¿Cuánto espero entre dos avisos de esta alerta repetida de 24 horas? Por ejemplo, 1 hora.",
+  "num": {
+   "dec": ",",
+   "grp": ".",
+   "indian": false,
+   "neg": "-"
+  }
+ },
+ "pt-br": {
+  "push": {
+   "h": "{0} rompeu a máxima de 24 h",
+   "l": "{0} rompeu a mínima de 24 h",
+   "hl": "Máx. 24 h",
+   "ll": "Mín. 24 h"
+  },
+  "tg": {
+   "h": "{0} atingiu nova máxima de 24 h",
+   "l": "{0} atingiu nova mínima de 24 h",
+   "hl": "Máx. 24 h",
+   "ll": "Mín. 24 h",
+   "button": "📈 Gráfico",
+   "market": "Spot USDT"
+  },
+  "ask": "Quanto tempo devo esperar entre dois avisos deste alerta repetido de 24 horas? Por exemplo, 1 hora.",
+  "num": {
+   "dec": ",",
+   "grp": ".",
+   "indian": false,
+   "neg": "-"
+  }
+ },
+ "ru": {
+  "push": {
+   "h": "{0} обновил максимум за 24 ч",
+   "l": "{0} обновил минимум за 24 ч",
+   "hl": "Макс. 24 ч",
+   "ll": "Мин. 24 ч"
+  },
+  "tg": {
+   "h": "{0}: новый максимум за 24 ч",
+   "l": "{0}: новый минимум за 24 ч",
+   "hl": "Макс. 24 ч",
+   "ll": "Мин. 24 ч",
+   "button": "📈 График",
+   "market": "Спот USDT"
+  },
+  "ask": "Какую паузу делать между двумя уведомлениями этого повторяющегося 24-часового оповещения? Например, 1 час.",
+  "num": {
+   "dec": ",",
+   "grp": " ",
+   "indian": false,
+   "neg": "-"
+  }
+ },
+ "ja": {
+  "push": {
+   "h": "{0} が 24 時間高値を更新しました",
+   "l": "{0} が 24 時間安値を更新しました",
+   "hl": "24h 高値",
+   "ll": "24h 安値"
+  },
+  "tg": {
+   "h": "{0} が24時間高値を更新",
+   "l": "{0} が24時間安値を更新",
+   "hl": "24h高値",
+   "ll": "24h安値",
+   "button": "📈 チャート",
+   "market": "現物 USDT"
+  },
+  "ask": "この繰り返しの24時間アラートでは、通知の間隔をどれくらい空けますか？たとえば1時間です。",
+  "num": {
+   "dec": ".",
+   "grp": ",",
+   "indian": false,
+   "neg": "-"
+  }
+ },
+ "zh": {
+  "push": {
+   "h": "{0} 突破 24 小时最高价",
+   "l": "{0} 跌破 24 小时最低价",
+   "hl": "24 小时最高",
+   "ll": "24 小时最低"
+  },
+  "tg": {
+   "h": "{0} 创 24 小时新高",
+   "l": "{0} 创 24 小时新低",
+   "hl": "24h 最高",
+   "ll": "24h 最低",
+   "button": "📈 图表",
+   "market": "现货 USDT"
+  },
+  "ask": "这个重复的 24 小时提醒两次通知之间要等多久？比如 1 小时。",
+  "num": {
+   "dec": ".",
+   "grp": ",",
+   "indian": false,
+   "neg": "-"
+  }
+ },
+ "hi": {
+  "push": {
+   "h": "{0} ने 24 घंटे का उच्च स्तर तोड़ा",
+   "l": "{0} ने 24 घंटे का निम्न स्तर तोड़ा",
+   "hl": "24 घं. उच्च",
+   "ll": "24 घं. निम्न"
+  },
+  "tg": {
+   "h": "{0} का नया 24 घंटे का उच्चतम",
+   "l": "{0} का नया 24 घंटे का निम्नतम",
+   "hl": "24घं उच्चतम",
+   "ll": "24घं निम्नतम",
+   "button": "📈 चार्ट",
+   "market": "स्पॉट USDT"
+  },
+  "ask": "इस दोहराए जाने वाले 24 घंटे के अलर्ट में दो सूचनाओं के बीच कितना इंतज़ार करूँ? जैसे 1 घंटा।",
+  "num": {
+   "dec": ".",
+   "grp": ",",
+   "indian": true,
+   "neg": "-"
+  }
+ },
+ "ar": {
+  "push": {
+   "h": "{0} كسر أعلى سعر في 24 ساعة",
+   "l": "{0} كسر أدنى سعر في 24 ساعة",
+   "hl": "أعلى 24 س",
+   "ll": "أدنى 24 س"
+  },
+  "tg": {
+   "h": "{0} سجّل أعلى سعر خلال 24 ساعة",
+   "l": "{0} سجّل أدنى سعر خلال 24 ساعة",
+   "hl": "أعلى 24 س",
+   "ll": "أدنى 24 س",
+   "button": "📈 الرسم البياني",
+   "market": "الفوري USDT"
+  },
+  "ask": "كم أنتظر بين إشعارين لهذا التنبيه المتكرر لمدة 24 ساعة؟ مثلًا ساعة واحدة.",
+  "num": {
+   "dec": "٫",
+   "grp": "٬",
+   "indian": false,
+   "neg": "؜-"
+  }
+ },
+ "en": {
+  "push": {
+   "h": "{0} broke its 24h high",
+   "l": "{0} broke its 24h low",
+   "hl": "24h high",
+   "ll": "24h low"
+  },
+  "tg": {
+   "h": "{0} hit a new 24h high",
+   "l": "{0} hit a new 24h low",
+   "hl": "24h high",
+   "ll": "24h low",
+   "button": "📈 Chart",
+   "market": "Spot USDT"
+  },
+  "ask": "How long should I wait between two notifications of this repeating 24-hour alert? For example 1 hour.",
+  "num": {
+   "dec": ".",
+   "grp": ",",
+   "indian": false,
+   "neg": "-"
+  }
+ }
+}

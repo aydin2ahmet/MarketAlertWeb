@@ -165,6 +165,21 @@
     ["Is there an alert for the MACD histogram or zero line?", "No. The MACD alert only watches the MACD line crossing its signal line."],
     ["Is MACD available on the Free plan?", "No. MACD alerts are on Plus and Pro, both with a 7-day free trial."]
    ]
+  },
+  "features/24h-high-low-alerts": {
+   "line": "Get a push or Telegram alert when a Binance coin breaks its highest or lowest price of the last 24 hours.",
+   "what": "The 24h high/low condition is on every plan, including Free. Pick a coin (or all coins on Plus and Pro) and New high, New low or Either. At the close of each minute MarketAlert compares the price with the 24 hours before it (not the calendar day) and notifies you when it breaks out.",
+   "facts": [
+        "A new high needs the minute's high to be greater than the previous 24-hour high; touching it is not enough.",
+    "On one coin it fires once, or on Plus and Pro repeats with a wait of at least 10 minutes; on all coins it always repeats.",
+    "It can be set by typing or talking to the AI, or with a template that uses no AI allowance.",
+    "A newly listed coin is checked once it has 24 hours of data."
+   ],
+   "example": "Tell me if any top 100 coin breaks its 24-hour high, once an hour is enough.",
+   "faq": [
+    ["How is it different from today's high?", "A calendar day resets at midnight; this alert always looks at the last 24 hours back from now."],
+    ["Is the 24-hour high/low alert free?", "Yes, for a single coin on Free. Telegram and all coins are on Plus and Pro."]
+   ]
   }
  }
 }

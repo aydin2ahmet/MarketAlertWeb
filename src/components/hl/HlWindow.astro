@@ -1,0 +1,70 @@
+---
+/**
+ * "Son 24 saat ne demek", tasarım P2-2 (2026-11-12, Ahmet): turuncu nokta o anki fiyat. Sürgü ya da grafikteki nokta
+ * kaydırılınca 24 saatlik pencere onunla kayar; noktanın üstünde fiyat, yanında zirveye ve dibe kalan mesafe yazar.
+ * Alttaki kutu "ne zirve ne dip / yeni tepe / yeni dip" der. Açılışta nokta kendi kendine biraz gidip gelir ve el
+ * işareti "kaydır" der; ziyaretçi dokununca durur.
+ */
+import { hlLang, num, pct, winState, winSvg, fill } from '../../lib/hl';
+import '../../styles/hl.css';
+
+interface Props { code: string; hl: any; title: string; caption: string }
+const { code, hl, title, caption } = Astro.props;
+const L = hlLang(code);
+const E0 = 70, W = 760, H = 270;
+const S = winState(E0);
+const d1 = pct(code, L.num, (S.hi / S.c.c - 1) * 100), d2 = pct(code, L.num, (1 - S.lo / S.c.c) * 100);
+const v0 = [hl.vNone[0], fill(hl.vNone[1], { p: num(L.num, S.p, 0), d1, d2 })];
+const data = { code, winP: hl.winP, tagHi: hl.tagHi, tagLo: hl.tagLo, vNone: hl.vNone, vUp: hl.vUp, vDn: hl.vDn };
+const IC = { n: '<path d="M5 12h14"/>', u: '<path d="m5 15 7-7 7 7M12 8v12"/>', d: '<path d="m5 9 7 7 7-7M12 16V4"/>' };
+---
+<section class="hlw guide-section" aria-labelledby="hlw-title" data-hl={JSON.stringify(data)}>
+  <div class="hlw-copy"><p class="kicker">BTC / USDT · 24H</p><h2 id="hlw-title">{title}</h2><p class="hlw-lead">{hl.lead}</p><p class="hlw-cap">{caption}</p></div>
+  <div class="hl-card hlw-card">
+    <div class="hl-chd"><span class="hl-av" aria-hidden="true">B</span><div><b>BTC / USDT</b><small>{hl.coinK}</small></div></div>
+    <div class="hl-lg top" aria-hidden="true"><span><i class="ld"></i>{hl.legP[0]}</span><span><i class="lw"></i>{hl.legP[1]}</span><span><i class="lh"></i>{hl.legP[2]}</span><span><i class="ll"></i>{hl.legP[3]}</span></div>
+    <div class="hl-cvw"><svg class="hl-cv hlw-cv" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={hl.chartP} set:html={winSvg(W, H, E0, hl, L.num)} /></div>
+    <div class="hlw-hint" aria-hidden="true"><svg class="hlw-hand" viewBox="0 0 24 24"><path d="M9 11V5a1.5 1.5 0 0 1 3 0v5m0-1.5a1.5 1.5 0 0 1 3 0V11m0-1a1.5 1.5 0 0 1 3 0v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-4.6-2.2L5 15.5a1.5 1.5 0 0 1 2.3-1.9L9 15.5" /></svg><span>{hl.hint}</span></div>
+    <input class="hlw-r" type="range" min="48" max="95" value={E0} aria-label={hl.slider} dir="ltr" />
+    <div class="hlw-ends" dir="ltr"><span>{hl.ends[0]}</span><span>{hl.ends[1]}</span></div>
+    <div class="hlw-v" aria-live="polite"><span class="hlw-vi"><svg class="hl-ic" viewBox="0 0 24 24" set:html={IC.n} /></span><div><b class="hlw-vt">{v0[0]}</b><span class="hlw-vs">{v0[1]}</span></div></div>
+  </div>
+</section>
+
+<script>
+  import { fill, hlLang, num, pct, winIndex, winState, winSvg } from '../../lib/hl';
+  import { sized } from '../../lib/hl-ui';
+  const IC = { n: '<path d="M5 12h14"/>', u: '<path d="m5 15 7-7 7 7M12 8v12"/>', d: '<path d="m5 9 7 7 7-7M12 16V4"/>' };
+  const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  for (const w of document.querySelectorAll<HTMLElement>('.hlw')) {
+    const D = JSON.parse(w.dataset.hl!), L = hlLang(D.code);
+    const svg = w.querySelector<SVGSVGElement>('svg.hlw-cv')!, r = w.querySelector<HTMLInputElement>('.hlw-r')!, v = w.querySelector<HTMLElement>('.hlw-v')!;
+    let E = +r.value, demo = !RM, tm = 0, W = 760;
+    const draw = (w2: number, H: number) => {
+      W = w2; svg.innerHTML = winSvg(W, H, E, D, L.num);
+      const S = winState(E), d1 = pct(D.code, L.num, (S.hi / S.c.c - 1) * 100), d2 = pct(D.code, L.num, (1 - S.lo / S.c.c) * 100);
+      const t = S.up ? D.vUp : S.dn ? D.vDn : D.vNone;
+      v.className = 'hlw-v' + (S.up ? ' h' : S.dn ? ' l' : '');
+      v.querySelector('.hlw-vi svg')!.innerHTML = S.up ? IC.u : S.dn ? IC.d : IC.n;
+      v.querySelector('.hlw-vt')!.textContent = t[0];
+      v.querySelector('.hlw-vs')!.textContent = fill(t[1], { p: num(L.num, S.p, 0), hi: num(L.num, S.hi, 0), lo: num(L.num, S.lo, 0), d1, d2 });
+    };
+    const go = sized(svg, 270, draw);
+    const stop = () => { if (demo) { demo = false; clearInterval(tm); w.classList.add('used'); } };
+    r.addEventListener('input', () => { stop(); E = +r.value; go(); });
+    const pick = (ev: PointerEvent) => { const b = svg.getBoundingClientRect(); E = winIndex(W, (ev.clientX - b.left) / b.width * W); r.value = String(E); go(); };
+    let drag = false;
+    svg.addEventListener('pointerdown', ev => { stop(); drag = true; svg.setPointerCapture(ev.pointerId); pick(ev); });
+    svg.addEventListener('pointermove', ev => { if (drag) pick(ev); });
+    svg.addEventListener('pointerup', () => { drag = false; });
+    svg.addEventListener('pointercancel', () => { drag = false; });
+    if (demo) {
+      let dir = 1;
+      const io = new IntersectionObserver(es => {
+        clearInterval(tm);
+        if (es[0].isIntersecting && demo) tm = window.setInterval(() => { E += dir; if (E >= 77 || E <= 62) dir = -dir; r.value = String(E); go(); }, 420);
+      });
+      io.observe(svg);
+    } else w.classList.add('used');
+  }
+</script>
