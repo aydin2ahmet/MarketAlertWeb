@@ -1,0 +1,55 @@
+---
+/**
+ * Kurulum, tasarım S8 "dört yol, aynı alarm" (2026-11-12, Ahmet): Yazarak (en kolay) / Konuşarak / Şablonla / Formla.
+ * Seçilen yolun gerçek uygulama ekranı (11 dil × açık/koyu), kısa açıklaması ve söylenecek cümle görünür.
+ * Ekranlar: AI sohbet (SCR-AI-01-S11), sesli asistan (SCR-AI-02-S15), şablon (SCR-AI-01-S44), form (SCR-AFRM-02-S10).
+ * Tüm ekranlar sayfada; seçili olmayanlar gizli ve geç yüklenir.
+ */
+import ProgressiveShot from '../ProgressiveShot.astro';
+import { shotSrc } from '../../lib/hl';
+import '../../styles/hl.css';
+
+interface Props { code: string; hl: any }
+const { code, hl } = Astro.props;
+const KEYS = [['chat', 'chat'], ['voice', 'voice'], ['tpl', 'tpl'], ['form', 'sheet']] as const;
+const ICON: Record<string, string> = {
+  chat: '<path d="M4 5h16v11H9l-5 4z"/>',
+  voice: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/>',
+  tpl: '<path d="M5 4h14v16H5zM9 8h6M9 12h6M9 16h3"/>',
+  form: '<path d="M4 7h10M4 12h16M4 17h7M17 5v4M14 7h6"/>',
+};
+---
+<div class="hls">
+  <p class="kicker">{hl.sKicker}</p>
+  <p class="hls-lead">{hl.sLead}</p>
+  <div class="hls-tabs" role="tablist">
+    {KEYS.map(([k], i) => <button type="button" role="tab" id={`hls-t-${k}`} aria-controls={`hls-p-${k}`} aria-selected={String(i === 0)} data-k={k}>
+      {i === 0 && <span class="hls-ez">{hl.easy}</span>}
+      <svg class="hl-ic" viewBox="0 0 24 24" aria-hidden="true" set:html={ICON[k]} />{hl.tabs[i][0]}<small>{hl.tabs[i][1]}</small></button>)}
+  </div>
+  {KEYS.map(([k, shot], i) => <div class="hls-p" role="tabpanel" id={`hls-p-${k}`} aria-labelledby={`hls-t-${k}`} hidden={i !== 0}>
+    <div class="hls-shot">
+      <ProgressiveShot class="sh-l" src={shotSrc(code, 'light', shot)} alt={hl.shotAlt[i]} width="340" height="713" loading="lazy" decoding="async" sizes="(max-width:760px) 280px, 290px" />
+      <ProgressiveShot class="sh-d" src={shotSrc(code, 'dark', shot)} alt="" width="340" height="713" loading="lazy" decoding="async" sizes="(max-width:760px) 280px, 290px" />
+    </div>
+    <div class="hls-txt"><h3>{hl.panes[k][0]}</h3><p>{hl.panes[k][1]}</p><p class="hls-q" dir="auto">{hl.quotes[k]}</p></div>
+  </div>)}
+</div>
+
+<script>
+  for (const w of document.querySelectorAll<HTMLElement>('.hls')) {
+    const tabs = [...w.querySelectorAll<HTMLButtonElement>('[role=tab]')];
+    const show = (k: string) => {
+      tabs.forEach(b => b.setAttribute('aria-selected', String(b.dataset.k === k)));
+      w.querySelectorAll<HTMLElement>('.hls-p').forEach(p => { p.hidden = p.id !== `hls-p-${k}`; });
+    };
+    tabs.forEach((b, i) => {
+      b.addEventListener('click', () => show(b.dataset.k!));
+      b.addEventListener('keydown', e => {
+        const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (!d) return;
+        const rtl = getComputedStyle(w).direction === 'rtl'; const n = tabs[(i + (rtl ? -d : d) + tabs.length) % tabs.length];
+        n.focus(); show(n.dataset.k!);
+      });
+    });
+  }
+</script>

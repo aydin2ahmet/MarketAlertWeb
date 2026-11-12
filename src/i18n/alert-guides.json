@@ -194,6 +194,263 @@
         "downLong": "Aşağı kesişim",
         "top100": "İlk 100"
       }
+    },
+    "24h-high-low-alerts": {
+      "link": "24 saatlik zirve/dip alarmı",
+      "title": "24 saatlik zirve ve dip alarmı nasıl kurulur? Ücretsiz | MarketAlert",
+      "h1": "Bir coin son 24 saatin zirvesini kırınca nasıl haber alırım?",
+      "description": "Binance coini son 24 saatin en yüksek ya da en düşük fiyatını kırdığında push ve Telegram bildirimi al. Ücretsiz planda; yapay zekâya yazarak ya da söyleyerek kur.",
+      "intro": "“Bugün” değil, her an geriye doğru son 24 saat. Coini ve hareketi seçersin: yeni tepe, yeni dip ya da ikisi. Fiyat bu pencerenin zirvesini geçtiği ya da dibinin altına indiği dakikanın kapanışında MarketAlert telefonuna push gönderir; mesaj [Telegram](features/telegram-crypto-alerts)'a da gidebilir. Aynı alarmı [tüm coinlerde](features/all-coins-alerts) de kurabilirsin.",
+      "prompt": "İlk 100 coinden 24 saatin zirvesini kıran olursa haber ver, saatte bir yeter.",
+      "exampleTitle": "“Son 24 saat” ne demek?",
+      "caption": "Turuncu nokta o anki fiyat. Zirve ve dip, noktadan geriye 24 saatte ölçülür.",
+      "steps": [
+        [
+          "Yapay zekâya yaz ya da söyle",
+          "AI ekranında isteğini kendi cümlenle yaz ya da mikrofona dokunup söyle, örneğin “BTC 24 saatin zirvesini kırarsa haber ver”. Eksik bir bilgi varsa yapay zekâ sorar ve alarmı kurar."
+        ],
+        [
+          "Ya da şablona dokun",
+          "AI ekranının altındaki “24 saatlik zirve kırılımı” şablonu taslağı hazır getirir. Şablon yapay zekâ hakkı harcamaz; coini değiştirip alarmı kurarsın."
+        ],
+        [
+          "Formla kurmak istersen koşul tipini seç",
+          "Alarm oluştur ekranında coini seç, koşul tipi penceresinde “24s tepe/dip” seçeneğine dokun."
+        ],
+        [
+          "Hareketi seç ve kaydet",
+          "“Yeni tepe”, “Yeni dip” ya da “İkisi de”yi seç, Koşulu kaydet’e bas. Bildirim kanalını seçip alarmı kaydet."
+        ]
+      ],
+      "details": [
+        [
+          "24 saatin zirvesi nasıl ölçülür?",
+          "Her dakikanın kapanışında, o dakikadan önceki 24 saatin (1.440 dakikalık mum) en yüksek ve en düşük fiyatına bakılır. Dakikanın en yüksek fiyatı bu zirveyi geçerse yeni tepe, en düşük fiyatı dibin altına inerse yeni dip olur. Dokunmak yetmez, geçmesi gerekir. Pencere her dakika kaydığı için eski zirve 24 saat dolunca pencereden çıkar ve çıta iner."
+        ],
+        [
+          "Bildirimde ne yazar?",
+          "Push başlığı “SOL 24 saatin zirvesini kırdı” gibidir; altında fiyat ve 24s zirve yazar. Telegram mesajında yeni zirve ya da dip, piyasa ve Binance grafiğini açan bir düğme bulunur."
+        ],
+        [
+          "Tüm coinlerde nasıl çalışır?",
+          "Tek coin yerine tüm coinleri seçersen her coin kendi 24 saatiyle ayrı ayrı izlenir ve kıranlar sana bildirilir. Plus’ta ilk 100 coinde, Pro’da tüm coinlerde çalışır. Tüm coinlerde alarm tekrarlıdır: aynı coin için iki bildirim arasında senin seçtiğin süre kadar beklenir."
+        ],
+        [
+          "Al-sat sinyali mi?",
+          "Hayır. MarketAlert yalnızca seçtiğin kırılım olduğunda haber verir. İşlem açmaz, borsa hesabına bağlanmaz ve yatırım tavsiyesi vermez."
+        ]
+      ],
+      "faq": [
+        [
+          "24 saatlik zirve/dip alarmı ücretsiz mi?",
+          "Evet. Ücretsiz planda tek coin için kurabilirsin. Telegram ve tüm coinler Plus ve Pro’da; ikisinin de 7 günlük ücretsiz denemesi var."
+        ],
+        [
+          "Bugünün en yükseğiyle farkı ne?",
+          "Takvim günü gece yarısı sıfırlanır. Bu alarm ise her an geriye doğru son 24 saate bakar; pencere dakika dakika kayar."
+        ],
+        [
+          "Bir kez mi bildirir, her kırılımda mı?",
+          "Tek coinde ister bir kez, ister tekrarlı kurarsın. Tekrarlıda iki bildirim arasında beklenecek süreyi seçersin, en az 10 dakika. Tüm coinlerde alarm hep tekrarlıdır. Tekrarlı alarm Plus ve Pro’da."
+        ],
+        [
+          "Fiyat zirveye dokunup dönerse bildirim gelir mi?",
+          "Hayır. Yeni tepe için dakikanın en yüksek fiyatı önceki 24 saatin zirvesinden büyük olmalı; eşit olması yetmez."
+        ],
+        [
+          "Yeni listelenen bir coinde çalışır mı?",
+          "Coinin 24 saatlik verisi dolunca çalışmaya başlar. O zamana kadar karşılaştıracak tam bir 24 saat yoktur."
+        ],
+        [
+          "Yapay zekâ ile nasıl kurarım?",
+          "AI ekranına yaz ya da [sesli asistana](features/voice-crypto-alerts) söyle. Tüm coinler için bekleme süresini söylemediysen yapay zekâ sorar: “Tekrarlı son 24 saat alarmında iki bildirim arasında ne kadar bekleyeyim? Örneğin 1 saat.”"
+        ]
+      ],
+      "related": [
+        "features/all-coins-alerts",
+        "features/voice-crypto-alerts",
+        "features/telegram-crypto-alerts",
+        "features/price-alerts",
+        "features/percent-change-alerts"
+      ],
+      "plans": [
+        [
+          "Free",
+          "3 alarm; fiyat, yüzde değişim ve 24 saatlik tepe/dip. Sessiz veya sesli push. Alarm koşul gerçekleşince bir kez bildirir."
+        ],
+        [
+          "Plus",
+          "20 alarm; tekrarlı alarm, alarm başına 3 koşul ve ilk 100 coinde 2 tüm coinler alarmı. Push ve Telegram."
+        ],
+        [
+          "Pro",
+          "100 alarm; alarm başına 5 koşul ve tüm coinlerde 10 tüm coinler alarmı. Push, Telegram ve imzalı webhook."
+        ]
+      ],
+      "hl": {
+        "kicker": "BINANCE · 24S ZİRVE / DİP · ÜCRETSİZ",
+        "chips": [
+          "↑ Yeni tepe",
+          "↓ Yeni dip",
+          "İkisi de",
+          "uygulama kapalıyken de"
+        ],
+        "coinK": "Spot USDT · 30 dk mum · son 48 saat",
+        "replay": "tekrar",
+        "stats": [
+          "24s zirve",
+          "şimdi",
+          "durum"
+        ],
+        "st": {
+          "w": "izleniyor",
+          "t": "dokundu",
+          "b": "kırıldı ✓"
+        },
+        "legK": [
+          "mumlar",
+          "son 24 saat",
+          "çıta: 24s zirve"
+        ],
+        "winK": "son 24 saat",
+        "annK": [
+          "son 24 saat penceresi",
+          "çıta: 24s zirve",
+          "eski zirve 24 saat dolunca çıkar",
+          "dokundu, geçemedi",
+          "geçti → bildirim"
+        ],
+        "stepsK": [
+          "Pencere son 24 saati kapsar ve her dakika kayar.",
+          "Çıta, penceredeki en yüksek fiyattır.",
+          "Eski zirve pencereden çıkınca çıta iner.",
+          "Fiyat çıtaya dokunup dönerse bildirim yok.",
+          "Çıtayı geçtiği dakika bildirim gelir."
+        ],
+        "chnPush": "Push · Ücretsiz",
+        "chnTg": "Telegram · Plus / Pro",
+        "now": "şimdi",
+        "alarm": "SOL 24s zirve",
+        "chartK": "SOL 30 dakikalık mum grafiği: 24 saatlik pencere kayıyor, eski zirve pencereden çıkınca çıta iniyor, fiyat yeni çıtayı geçince bildirim gidiyor.",
+        "lead": "Turuncu nokta o anki fiyat. Kaydırdıkça nokta ilerler ve 24 saatlik pencere onunla kayar. Zirveyi ya da dibi kırdığı anı yakala.",
+        "legP": [
+          "turuncu nokta: o anki fiyat",
+          "noktadan geriye 24 saat",
+          "24s zirve",
+          "24s dip"
+        ],
+        "hint": "Kaydır, zamanı ilerlet",
+        "slider": "Zamanı kaydır",
+        "ends": [
+          "dün",
+          "şimdi"
+        ],
+        "winP": "24 saat",
+        "tagHi": "24s zirve {v}",
+        "tagLo": "24s dip {v}",
+        "vNone": [
+          "Ne zirve ne dip kırıldı",
+          "Fiyat {p}: zirveye {d1}, dibe {d2} var. Bildirim yok."
+        ],
+        "vUp": [
+          "Yeni tepe: zirve kırıldı → bildirim",
+          "Bu mumun en yükseği {p}, önceki 24 saatin zirvesi {hi}. Geçti."
+        ],
+        "vDn": [
+          "Yeni dip: dip kırıldı → bildirim",
+          "Bu mumun en düşüğü {p}, önceki 24 saatin dibi {lo}. Altına indi."
+        ],
+        "chartP": "BTC 30 dakikalık mum grafiği; turuncu nokta kaydırılabilir, 24 saatlik zirve ve dip çizgileri noktayla birlikte değişir.",
+        "sKicker": "4 YOL · AYNI ALARM",
+        "sLead": "En kolayı yapay zekâya yazmak. Konuşarak, şablonla ya da formla da aynı alarmı kurarsın.",
+        "tabs": [
+          [
+            "Yazarak",
+            "AI sohbet"
+          ],
+          [
+            "Konuşarak",
+            "sesli asistan"
+          ],
+          [
+            "Şablonla",
+            "tek dokunuş"
+          ],
+          [
+            "Formla",
+            "kendin seç"
+          ]
+        ],
+        "easy": "en kolay",
+        "panes": {
+          "chat": [
+            "Yazarak: AI sohbet",
+            "İsteğini kendi cümlenle yaz. Tüm coinlerde bekleme süresi gerekir; söylemediysen yapay zekâ sorar, sonra alarmı kurar. Tüm coinler Plus ve Pro’da."
+          ],
+          "voice": [
+            "Konuşarak: sesli asistan",
+            "Mikrofona dokun ve söyle. İstek netse asistan alarmı hemen kurar ve sonucu kartla gösterir."
+          ],
+          "tpl": [
+            "Şablonla: tek dokunuş",
+            "AI ekranının altındaki “24 saatlik zirve kırılımı” şablonuna dokun. Taslak hazır gelir; yapay zekâ hakkı harcanmaz."
+          ],
+          "form": [
+            "Formla: kendin seç",
+            "Alarm oluştur → koşul tipi “24s tepe/dip” → Yeni tepe, Yeni dip ya da İkisi de → Koşulu kaydet."
+          ]
+        },
+        "shotAlt": [
+          "Yapay zekâ sohbetinde kurulan İlk 100 · 24s zirve alarmı",
+          "Sesli asistanın kurduğu İlk 100 · 24s zirve alarmı",
+          "24 saatlik zirve kırılımı şablonundan gelen alarm taslağı",
+          "Alarm oluştur ekranında 24 saatlik zirve/dip koşulu, Yeni tepe seçili"
+        ],
+        "nKicker": "BİR GÜNÜ OYNAT",
+        "nTitle": "Gün içinde ne zaman bildirim gelir?",
+        "nText": "ETH’nin bir günlük 15 dakikalık mumları. Yeşil çizgi 24s zirve, kırmızı çizgi 24s dip: gün içinde yükselip alçalırlar. Her kırılım halkayla işaretli. Tekrarlıda bekleme süresine denk gelen kırılımlar sessiz geçer.",
+        "modes": [
+          "Yeni tepe",
+          "Yeni dip",
+          "İkisi de"
+        ],
+        "pols": [
+          "Bir kez",
+          "Tekrarla · 1 sa"
+        ],
+        "play": "oynat",
+        "legN": [
+          "15 dk mumlar",
+          "24s zirve (çıta)",
+          "24s dip",
+          "bildirim",
+          "bekleme · sessiz"
+        ],
+        "annN": {
+          "hi": "{t} zirve kırıldı → bildirim",
+          "sil": "yine kırıldı, 1 sa bekleme → sessiz",
+          "once": "bir kez: alarm tamamlandı",
+          "lo": "{t} dip kırıldı → bildirim"
+        },
+        "feed": {
+          "hi": "24s zirve geçildi · {v}",
+          "lo": "24s dip kırıldı · {v}"
+        },
+        "stN": [
+          "bildirim",
+          "bekleme",
+          "tamamlandı"
+        ],
+        "more": "+{n} olay daha",
+        "sum": "{a} bildirim · {b} sessiz kırılım",
+        "chartN": "ETH bir günlük 15 dakikalık mum grafiği; 24 saatlik zirve ve dip çizgileri, bildirim giden ve bekleme süresinde sessiz geçen kırılımlar.",
+        "quotes": {
+          "chat": "“İlk 100 coinden 24 saatin zirvesini kıran olursa haber ver”",
+          "voice": "“İlk 100 coinden 24 saatin zirvesini kıran olursa haber ver, saatte bir yeter”",
+          "tpl": "Şablon: 24 saatlik zirve kırılımı",
+          "form": "Hangi hareket? Yeni tepe"
+        }
+      }
     }
   },
   "de": {
@@ -386,6 +643,263 @@
         "upLong": "Kreuzt nach oben",
         "downLong": "Kreuzt nach unten",
         "top100": "Top 100"
+      }
+    },
+    "24h-high-low-alerts": {
+      "link": "24h-Hoch/Tief-Alarme",
+      "title": "So richtest du einen 24-Stunden-Hoch- und Tief-Alarm ein. Kostenlos | MarketAlert",
+      "h1": "Wie werde ich benachrichtigt, wenn ein Coin sein 24-Stunden-Hoch bricht?",
+      "description": "Erhalte eine Push- und Telegram-Nachricht, wenn ein Binance-Coin seinen höchsten oder tiefsten Preis der letzten 24 Stunden bricht. Im Free-Plan; per Text oder Sprache mit der KI einrichten.",
+      "intro": "Nicht „heute“, sondern die letzten 24 Stunden, von jedem Moment aus zurückgerechnet. Du wählst den Coin und die Bewegung: neues Hoch, neues Tief oder beides. Zum Schluss der Minute, in der der Preis das Hoch des Fensters übersteigt oder unter sein Tief fällt, schickt MarketAlert einen Push auf dein Handy; die Nachricht kann auch an [Telegram](features/telegram-crypto-alerts) gehen. Denselben Alarm kannst du auch für [alle Coins](features/all-coins-alerts) einrichten.",
+      "prompt": "Sag mir, wenn ein Top-100-Coin sein 24-Stunden-Hoch bricht, einmal pro Stunde reicht.",
+      "exampleTitle": "Was heißt „die letzten 24 Stunden“?",
+      "caption": "Der orange Punkt ist der Preis in diesem Moment. Hoch und Tief werden über die 24 Stunden vor dem Punkt gemessen.",
+      "steps": [
+        [
+          "Schreib es der KI oder sag es ihr",
+          "Schreib deinen Wunsch im KI-Bildschirm in eigenen Worten oder tippe aufs Mikrofon und sag ihn, zum Beispiel „Sag mir, wenn BTC sein 24-Stunden-Hoch bricht“. Fehlt etwas, fragt die KI nach und richtet den Alarm ein."
+        ],
+        [
+          "Oder tippe auf die Vorlage",
+          "Die Vorlage „24-Stunden-Hoch-Ausbruch“ unter dem KI-Bildschirm bringt einen fertigen Entwurf. Vorlagen verbrauchen kein KI-Kontingent; ändere den Coin und setze den Alarm."
+        ],
+        [
+          "Mit dem Formular: Bedingungstyp wählen",
+          "Wähle unter Alarm erstellen den Coin und tippe im Fenster für den Bedingungstyp auf „24h Hoch/Tief“."
+        ],
+        [
+          "Bewegung wählen und speichern",
+          "Wähle „Neues Hoch“, „Neues Tief“ oder „Beides“ und tippe auf Bedingung speichern. Wähle den Benachrichtigungskanal und speichere den Alarm."
+        ]
+      ],
+      "details": [
+        [
+          "Wie wird das 24-Stunden-Hoch gemessen?",
+          "Zum Schluss jeder Minute nimmt MarketAlert den höchsten und tiefsten Preis der 24 Stunden vor dieser Minute (1.440 Minutenkerzen). Liegt das Hoch der Minute über diesem Hoch, ist es ein neues Hoch; liegt ihr Tief unter dem Tief, ein neues Tief. Berühren reicht nicht, der Preis muss darüber hinaus. Weil das Fenster jede Minute weiterrückt, fällt ein altes Hoch nach 24 Stunden heraus und die Latte sinkt."
+        ],
+        [
+          "Was steht in der Benachrichtigung?",
+          "Der Push-Titel lautet etwa „SOL hat das 24h-Hoch gebrochen“, darunter Preis und 24h-Hoch. Die Telegram-Nachricht zeigt das neue Hoch oder Tief, den Markt und eine Schaltfläche, die den Binance-Chart öffnet."
+        ],
+        [
+          "Wie funktioniert es bei allen Coins?",
+          "Wählst du alle Coins statt eines Coins, wird jeder Coin an seinen eigenen 24 Stunden gemessen, und die Coins mit einem Bruch werden dir gemeldet. Bei Plus läuft es auf den Top 100, bei Pro auf allen Coins. Bei allen Coins wiederholt sich der Alarm und wartet zwischen zwei Benachrichtigungen für denselben Coin die von dir gewählte Zeit."
+        ],
+        [
+          "Ist das ein Kauf- oder Verkaufssignal?",
+          "Nein. MarketAlert meldet nur, wenn der gewählte Bruch passiert. Es handelt nicht, verbindet sich mit keinem Börsenkonto und gibt keine Anlageberatung."
+        ]
+      ],
+      "faq": [
+        [
+          "Ist der 24-Stunden-Hoch/Tief-Alarm kostenlos?",
+          "Ja. Für einen einzelnen Coin kannst du ihn im Free-Plan einrichten. Telegram und alle Coins gibt es bei Plus und Pro, beide mit 7 Tagen kostenloser Testphase."
+        ],
+        [
+          "Was ist der Unterschied zum Tageshoch?",
+          "Ein Kalendertag beginnt um Mitternacht neu. Dieser Alarm schaut immer auf die letzten 24 Stunden ab jetzt; das Fenster rückt Minute für Minute weiter."
+        ],
+        [
+          "Meldet er sich einmal oder bei jedem Bruch?",
+          "Für einen Coin wählst du einmal oder wiederholt. Bei Wiederholung legst du die Wartezeit zwischen zwei Benachrichtigungen fest, mindestens 10 Minuten. Bei allen Coins wiederholt er sich immer. Wiederholte Alarme gibt es bei Plus und Pro."
+        ],
+        [
+          "Kommt eine Nachricht, wenn der Preis das Hoch nur berührt?",
+          "Nein. Für ein neues Hoch muss das Minutenhoch größer sein als das bisherige 24-Stunden-Hoch; gleich reicht nicht."
+        ],
+        [
+          "Funktioniert er bei einem neu gelisteten Coin?",
+          "Er startet, sobald der Coin 24 Stunden Daten hat. Vorher gibt es keine vollen 24 Stunden zum Vergleich."
+        ],
+        [
+          "Wie richte ich ihn mit der KI ein?",
+          "Schreib es im KI-Bildschirm oder sag es dem [Sprachassistenten](features/voice-crypto-alerts). Hast du bei allen Coins keine Wartezeit genannt, fragt die KI: „Wie lange soll ich bei diesem wiederholten 24-Stunden-Alarm zwischen zwei Meldungen warten? Zum Beispiel 1 Stunde.“"
+        ]
+      ],
+      "related": [
+        "features/all-coins-alerts",
+        "features/voice-crypto-alerts",
+        "features/telegram-crypto-alerts",
+        "features/price-alerts",
+        "features/percent-change-alerts"
+      ],
+      "plans": [
+        [
+          "Free",
+          "3 Alarme; Preis, prozentuale Bewegung und 24h-Hoch/Tief. Stummer Push oder Push mit Ton. Ein Alarm meldet einmal, wenn die Bedingung erfüllt ist."
+        ],
+        [
+          "Plus",
+          "20 Alarme; wiederholende Alarme, bis zu 3 Bedingungen pro Alarm und 2 Alle-Coins-Alarme für die Top 100. Push und Telegram."
+        ],
+        [
+          "Pro",
+          "100 Alarme; bis zu 5 Bedingungen pro Alarm und 10 Alle-Coins-Alarme für alle Coins. Push, Telegram und signierter Webhook."
+        ]
+      ],
+      "hl": {
+        "kicker": "BINANCE · 24H-HOCH / -TIEF · KOSTENLOS",
+        "chips": [
+          "↑ Neues Hoch",
+          "↓ Neues Tief",
+          "Beides",
+          "auch bei geschlossener App"
+        ],
+        "coinK": "Spot USDT · 30-Min.-Kerzen · letzte 48 Std.",
+        "replay": "nochmal",
+        "stats": [
+          "24h-Hoch",
+          "jetzt",
+          "Status"
+        ],
+        "st": {
+          "w": "wird beobachtet",
+          "t": "berührt",
+          "b": "gebrochen ✓"
+        },
+        "legK": [
+          "Kerzen",
+          "letzte 24 Stunden",
+          "Latte: 24h-Hoch"
+        ],
+        "winK": "letzte 24 Stunden",
+        "annK": [
+          "Fenster der letzten 24 Std.",
+          "Latte: 24h-Hoch",
+          "altes Hoch fällt nach 24 Std. heraus",
+          "berührt, nicht drüber",
+          "drüber → Benachrichtigung"
+        ],
+        "stepsK": [
+          "Das Fenster umfasst die letzten 24 Stunden und rückt jede Minute weiter.",
+          "Die Latte ist der höchste Preis im Fenster.",
+          "Fällt das alte Hoch aus dem Fenster, sinkt die Latte.",
+          "Berührt der Preis die Latte und dreht, keine Nachricht.",
+          "In der Minute, in der er die Latte übersteigt, kommt die Nachricht."
+        ],
+        "chnPush": "Push · Free",
+        "chnTg": "Telegram · Plus / Pro",
+        "now": "jetzt",
+        "alarm": "SOL 24h-Hoch",
+        "chartK": "SOL-Chart mit 30-Minuten-Kerzen: Das 24-Stunden-Fenster rückt weiter, die Latte sinkt, wenn das alte Hoch herausfällt, und eine Nachricht geht raus, wenn der Preis die neue Latte übersteigt.",
+        "lead": "Der orange Punkt ist der Preis in diesem Moment. Zieh ihn nach vorn, und das 24-Stunden-Fenster wandert mit. Finde den Moment, in dem er Hoch oder Tief bricht.",
+        "legP": [
+          "oranger Punkt: Preis in diesem Moment",
+          "24 Stunden vor dem Punkt",
+          "24h-Hoch",
+          "24h-Tief"
+        ],
+        "hint": "Ziehen, um die Zeit vorzuspulen",
+        "slider": "Zeit verschieben",
+        "ends": [
+          "gestern",
+          "jetzt"
+        ],
+        "winP": "24 Stunden",
+        "tagHi": "24h-Hoch {v}",
+        "tagLo": "24h-Tief {v}",
+        "vNone": [
+          "Weder Hoch noch Tief gebrochen",
+          "Preis {p}: {d1} bis zum Hoch, {d2} bis zum Tief. Keine Nachricht."
+        ],
+        "vUp": [
+          "Neues Hoch: Hoch gebrochen → Nachricht",
+          "Hoch dieser Kerze {p}, bisheriges 24-Stunden-Hoch {hi}. Darüber."
+        ],
+        "vDn": [
+          "Neues Tief: Tief gebrochen → Nachricht",
+          "Tief dieser Kerze {p}, bisheriges 24-Stunden-Tief {lo}. Darunter."
+        ],
+        "chartP": "BTC-Chart mit 30-Minuten-Kerzen; der orange Punkt lässt sich ziehen, die Linien für 24h-Hoch und -Tief ändern sich mit.",
+        "sKicker": "4 WEGE · DERSELBE ALARM",
+        "sLead": "Am einfachsten schreibst du es der KI. Denselben Alarm richtest du auch per Sprache, Vorlage oder Formular ein.",
+        "tabs": [
+          [
+            "Schreiben",
+            "KI-Chat"
+          ],
+          [
+            "Sprechen",
+            "Sprachassistent"
+          ],
+          [
+            "Vorlage",
+            "ein Tipp"
+          ],
+          [
+            "Formular",
+            "selbst wählen"
+          ]
+        ],
+        "easy": "am einfachsten",
+        "panes": {
+          "chat": [
+            "Schreiben: KI-Chat",
+            "Schreib deinen Wunsch in eigenen Worten. Bei allen Coins braucht es eine Wartezeit; hast du keine genannt, fragt die KI und richtet dann den Alarm ein. Alle Coins gibt es bei Plus und Pro."
+          ],
+          "voice": [
+            "Sprechen: Sprachassistent",
+            "Tippe aufs Mikrofon und sag es. Ist der Wunsch klar, richtet der Assistent den Alarm sofort ein und zeigt das Ergebnis als Karte."
+          ],
+          "tpl": [
+            "Vorlage: ein Tipp",
+            "Tippe unter dem KI-Bildschirm auf die Vorlage „24-Stunden-Hoch-Ausbruch“. Der Entwurf kommt fertig; es wird kein KI-Kontingent verbraucht."
+          ],
+          "form": [
+            "Formular: selbst wählen",
+            "Alarm erstellen → Bedingungstyp „24h Hoch/Tief“ → Neues Hoch, Neues Tief oder Beides → Bedingung speichern."
+          ]
+        },
+        "shotAlt": [
+          "Im KI-Chat eingerichteter Alarm Top 100 · 24h-Hoch",
+          "Vom Sprachassistenten eingerichteter Alarm Top 100 · 24h-Hoch",
+          "Alarmentwurf aus der Vorlage 24-Stunden-Hoch-Ausbruch",
+          "24-Stunden-Hoch/Tief-Bedingung im Bildschirm Alarm erstellen, Neues Hoch gewählt"
+        ],
+        "nKicker": "EINEN TAG ABSPIELEN",
+        "nTitle": "Wann kommen im Tagesverlauf Nachrichten?",
+        "nText": "Ein Tag ETH in 15-Minuten-Kerzen. Die grüne Linie ist das 24h-Hoch, die rote das 24h-Tief: Beide steigen und fallen im Lauf des Tages. Jeder Bruch ist mit einem Ring markiert. Wiederholt sich der Alarm, bleiben Brüche in der Wartezeit still.",
+        "modes": [
+          "Neues Hoch",
+          "Neues Tief",
+          "Beides"
+        ],
+        "pols": [
+          "Einmal",
+          "Wiederholen · 1 Std"
+        ],
+        "play": "abspielen",
+        "legN": [
+          "15-Min.-Kerzen",
+          "24h-Hoch (Latte)",
+          "24h-Tief",
+          "Nachricht",
+          "Wartezeit · still"
+        ],
+        "annN": {
+          "hi": "{t} Hoch gebrochen → Nachricht",
+          "sil": "erneut gebrochen, 1 Std Wartezeit → still",
+          "once": "einmal: Alarm erledigt",
+          "lo": "{t} Tief gebrochen → Nachricht"
+        },
+        "feed": {
+          "hi": "24h-Hoch überschritten · {v}",
+          "lo": "24h-Tief unterschritten · {v}"
+        },
+        "stN": [
+          "Nachricht",
+          "Wartezeit",
+          "erledigt"
+        ],
+        "more": "+{n} weitere Ereignisse",
+        "sum": "{a} Nachrichten · {b} stille Brüche",
+        "chartN": "Ein Tag ETH in 15-Minuten-Kerzen mit den Linien für 24h-Hoch und -Tief, Brüchen mit Nachricht und still gebliebenen Brüchen in der Wartezeit.",
+        "quotes": {
+          "chat": "„Sag mir Bescheid, wenn ein Top-100-Coin sein 24h-Hoch bricht“",
+          "voice": "„Sag mir Bescheid, wenn ein Top-100-Coin sein 24h-Hoch bricht, einmal pro Stunde reicht“",
+          "tpl": "Vorlage: 24-Stunden-Hoch-Ausbruch",
+          "form": "Welche Bewegung? Neues Hoch"
+        }
       }
     }
   },
@@ -580,6 +1094,263 @@
         "downLong": "Franchit à la baisse",
         "top100": "Top 100"
       }
+    },
+    "24h-high-low-alerts": {
+      "link": "Alertes plus haut/plus bas 24 h",
+      "title": "Créer une alerte plus haut et plus bas sur 24 heures. Gratuit | MarketAlert",
+      "h1": "Comment être alerté quand une crypto casse son plus haut sur 24 heures ?",
+      "description": "Recevez une notification push et Telegram quand une crypto Binance casse son prix le plus haut ou le plus bas des dernières 24 heures. Dans le plan Free ; à créer en écrivant ou en parlant à l’IA.",
+      "intro": "Pas « aujourd’hui », mais les dernières 24 heures comptées à rebours depuis chaque instant. Vous choisissez la crypto et le mouvement : nouveau plus haut, nouveau plus bas ou les deux. À la clôture de la minute où le prix dépasse le plus haut de la fenêtre ou passe sous son plus bas, MarketAlert envoie un push sur votre téléphone ; le message peut aussi partir sur [Telegram](features/telegram-crypto-alerts). La même alerte se crée aussi sur [toutes les cryptos](features/all-coins-alerts).",
+      "prompt": "Préviens-moi si une crypto du top 100 casse son plus haut sur 24 heures, une fois par heure suffit.",
+      "exampleTitle": "Que veut dire « les dernières 24 heures » ?",
+      "caption": "Le point orange est le prix à cet instant. Le plus haut et le plus bas sont mesurés sur les 24 heures qui précèdent le point.",
+      "steps": [
+        [
+          "Écrivez-le ou dites-le à l’IA",
+          "Sur l’écran IA, écrivez votre demande avec vos mots ou touchez le micro et dites-la, par exemple « Préviens-moi si BTC casse son plus haut sur 24 heures ». S’il manque une information, l’IA la demande puis crée l’alerte."
+        ],
+        [
+          "Ou touchez le modèle",
+          "Le modèle « Cassure du plus haut 24 h » sous l’écran IA apporte un brouillon prêt. Les modèles n’utilisent pas votre quota IA ; changez la crypto et créez l’alerte."
+        ],
+        [
+          "Avec le formulaire, choisissez le type de condition",
+          "Dans Créer une alerte, choisissez la crypto puis touchez « Haut/bas 24 h » dans la fenêtre du type de condition."
+        ],
+        [
+          "Choisissez le mouvement et enregistrez",
+          "Choisissez « Nouveau plus haut », « Nouveau plus bas » ou « Les deux » et touchez Enregistrer la condition. Choisissez le canal de notification et enregistrez l’alerte."
+        ]
+      ],
+      "details": [
+        [
+          "Comment le plus haut sur 24 heures est-il mesuré ?",
+          "À la clôture de chaque minute, MarketAlert prend le prix le plus haut et le plus bas des 24 heures qui précèdent cette minute (1 440 bougies d’une minute). Si le plus haut de la minute dépasse ce plus haut, c’est un nouveau plus haut ; si son plus bas passe sous le plus bas, c’est un nouveau plus bas. Toucher ne suffit pas, il faut dépasser. Comme la fenêtre avance chaque minute, un ancien plus haut sort après 24 heures et la barre descend."
+        ],
+        [
+          "Que dit la notification ?",
+          "Le titre du push ressemble à « SOL a franchi son plus haut 24 h », avec le prix et le plus haut 24 h en dessous. Le message Telegram affiche le nouveau plus haut ou plus bas, le marché et un bouton qui ouvre le graphique Binance."
+        ],
+        [
+          "Comment ça marche sur toutes les cryptos ?",
+          "Si vous choisissez toutes les cryptos au lieu d’une seule, chaque crypto est comparée à ses propres 24 heures et celles qui cassent vous sont signalées. Cela couvre le top 100 avec Plus et toutes les cryptos avec Pro. Sur toutes les cryptos l’alerte se répète, avec le délai que vous choisissez entre deux notifications pour une même crypto."
+        ],
+        [
+          "Est-ce un signal d’achat ou de vente ?",
+          "Non. MarketAlert vous prévient seulement quand la cassure choisie se produit. Il ne passe aucun ordre, ne se connecte à aucun compte d’exchange et ne donne pas de conseil en investissement."
+        ]
+      ],
+      "faq": [
+        [
+          "L’alerte plus haut/plus bas 24 h est-elle gratuite ?",
+          "Oui. Vous pouvez la créer pour une seule crypto dans le plan Free. Telegram et toutes les cryptos sont dans Plus et Pro, chacun avec un essai gratuit de 7 jours."
+        ],
+        [
+          "Quelle différence avec le plus haut du jour ?",
+          "Un jour calendaire repart à minuit. Cette alerte regarde toujours les 24 dernières heures à partir de maintenant ; la fenêtre avance minute par minute."
+        ],
+        [
+          "Prévient-elle une fois ou à chaque cassure ?",
+          "Pour une crypto, vous choisissez une fois ou répéter. En mode répété, vous choisissez le délai entre deux notifications, 10 minutes au minimum. Sur toutes les cryptos, elle se répète toujours. Les alertes répétées sont dans Plus et Pro."
+        ],
+        [
+          "Si le prix touche le plus haut puis repart, suis-je prévenu ?",
+          "Non. Pour un nouveau plus haut, le plus haut de la minute doit être supérieur au plus haut des 24 heures précédentes ; l’égaler ne suffit pas."
+        ],
+        [
+          "Fonctionne-t-elle sur une crypto qui vient d’être listée ?",
+          "Elle démarre dès que la crypto a 24 heures de données. Avant, il n’y a pas 24 heures complètes pour comparer."
+        ],
+        [
+          "Comment la créer avec l’IA ?",
+          "Écrivez-la sur l’écran IA ou dites-la à l’[assistant vocal](features/voice-crypto-alerts). Sur toutes les cryptos, si vous n’avez pas donné de délai, l’IA demande : « Combien de temps dois-je attendre entre deux notifications de cette alerte répétée sur 24 heures ? Par exemple 1 heure. »"
+        ]
+      ],
+      "related": [
+        "features/all-coins-alerts",
+        "features/voice-crypto-alerts",
+        "features/telegram-crypto-alerts",
+        "features/price-alerts",
+        "features/percent-change-alerts"
+      ],
+      "plans": [
+        [
+          "Free",
+          "3 alertes ; prix, variation en pourcentage et plus haut/plus bas 24 h. Push silencieux ou sonore. Une alerte prévient une fois quand sa condition est remplie."
+        ],
+        [
+          "Plus",
+          "20 alertes ; alertes répétées, jusqu’à 3 conditions par alerte et 2 alertes toutes cryptos sur le top 100. Push et Telegram."
+        ],
+        [
+          "Pro",
+          "100 alertes ; jusqu’à 5 conditions par alerte et 10 alertes toutes cryptos sur l’ensemble des cryptos. Push, Telegram et webhook signé."
+        ]
+      ],
+      "hl": {
+        "kicker": "BINANCE · PLUS HAUT / BAS 24 H · GRATUIT",
+        "chips": [
+          "↑ Nouveau plus haut",
+          "↓ Nouveau plus bas",
+          "Les deux",
+          "même app fermée"
+        ],
+        "coinK": "Spot USDT · bougies 30 min · 48 dernières heures",
+        "replay": "rejouer",
+        "stats": [
+          "plus haut 24 h",
+          "maintenant",
+          "état"
+        ],
+        "st": {
+          "w": "surveillé",
+          "t": "touché",
+          "b": "cassé ✓"
+        },
+        "legK": [
+          "bougies",
+          "24 dernières heures",
+          "barre : plus haut 24 h"
+        ],
+        "winK": "24 dernières heures",
+        "annK": [
+          "fenêtre des 24 dernières heures",
+          "barre : plus haut 24 h",
+          "l’ancien plus haut sort après 24 h",
+          "touché, pas dépassé",
+          "dépassé → notification"
+        ],
+        "stepsK": [
+          "La fenêtre couvre les 24 dernières heures et avance chaque minute.",
+          "La barre est le prix le plus haut de la fenêtre.",
+          "Quand l’ancien plus haut sort, la barre descend.",
+          "Si le prix touche la barre et repart, pas de notification.",
+          "La minute où il dépasse la barre, la notification arrive."
+        ],
+        "chnPush": "Push · Free",
+        "chnTg": "Telegram · Plus / Pro",
+        "now": "maintenant",
+        "alarm": "SOL plus haut 24 h",
+        "chartK": "Graphique SOL en bougies de 30 minutes : la fenêtre de 24 heures avance, la barre descend quand l’ancien plus haut sort, et une notification part quand le prix dépasse la nouvelle barre.",
+        "lead": "Le point orange est le prix à cet instant. Faites-le avancer et la fenêtre de 24 heures le suit. Attrapez le moment où il casse le plus haut ou le plus bas.",
+        "legP": [
+          "point orange : prix à cet instant",
+          "24 heures avant le point",
+          "plus haut 24 h",
+          "plus bas 24 h"
+        ],
+        "hint": "Faites glisser pour avancer le temps",
+        "slider": "Déplacer le temps",
+        "ends": [
+          "hier",
+          "maintenant"
+        ],
+        "winP": "24 heures",
+        "tagHi": "plus haut 24 h {v}",
+        "tagLo": "plus bas 24 h {v}",
+        "vNone": [
+          "Ni le plus haut ni le plus bas cassé",
+          "Prix {p} : {d1} jusqu’au plus haut, {d2} jusqu’au plus bas. Pas de notification."
+        ],
+        "vUp": [
+          "Nouveau plus haut : plus haut cassé → notification",
+          "Le plus haut de cette bougie est {p} ; le plus haut des 24 heures précédentes était {hi}. Dépassé."
+        ],
+        "vDn": [
+          "Nouveau plus bas : plus bas cassé → notification",
+          "Le plus bas de cette bougie est {p} ; le plus bas des 24 heures précédentes était {lo}. En dessous."
+        ],
+        "chartP": "Graphique BTC en bougies de 30 minutes ; le point orange se fait glisser et les lignes du plus haut et du plus bas 24 h changent avec lui.",
+        "sKicker": "4 FAÇONS · MÊME ALERTE",
+        "sLead": "Le plus simple est de l’écrire à l’IA. Vous pouvez aussi créer la même alerte à la voix, avec un modèle ou avec le formulaire.",
+        "tabs": [
+          [
+            "Écrire",
+            "chat IA"
+          ],
+          [
+            "Parler",
+            "assistant vocal"
+          ],
+          [
+            "Modèle",
+            "une touche"
+          ],
+          [
+            "Formulaire",
+            "à vous de choisir"
+          ]
+        ],
+        "easy": "le plus simple",
+        "panes": {
+          "chat": [
+            "Écrire : chat IA",
+            "Écrivez votre demande avec vos mots. Sur toutes les cryptos il faut un délai ; si vous ne l’avez pas donné, l’IA le demande puis crée l’alerte. Toutes les cryptos sont dans Plus et Pro."
+          ],
+          "voice": [
+            "Parler : assistant vocal",
+            "Touchez le micro et dites-le. Si la demande est claire, l’assistant crée l’alerte tout de suite et montre le résultat sous forme de carte."
+          ],
+          "tpl": [
+            "Modèle : une touche",
+            "Touchez le modèle « Cassure du plus haut 24 h » sous l’écran IA. Le brouillon arrive prêt ; votre quota IA n’est pas utilisé."
+          ],
+          "form": [
+            "Formulaire : à vous de choisir",
+            "Créer une alerte → type de condition « Haut/bas 24 h » → Nouveau plus haut, Nouveau plus bas ou Les deux → Enregistrer la condition."
+          ]
+        },
+        "shotAlt": [
+          "Alerte Top 100 · plus haut 24 h créée dans le chat IA",
+          "Alerte Top 100 · plus haut 24 h créée par l’assistant vocal",
+          "Brouillon d’alerte issu du modèle Cassure du plus haut 24 h",
+          "Condition plus haut/plus bas 24 h dans l’écran Créer une alerte, Nouveau plus haut sélectionné"
+        ],
+        "nKicker": "REJOUER UNE JOURNÉE",
+        "nTitle": "Quand les notifications arrivent-elles dans la journée ?",
+        "nText": "Une journée d’ETH en bougies de 15 minutes. La ligne verte est le plus haut 24 h, la rouge le plus bas 24 h : elles montent et descendent au fil de la journée. Chaque cassure est marquée d’un anneau. Quand l’alerte se répète, les cassures pendant le délai d’attente passent en silence.",
+        "modes": [
+          "Nouveau plus haut",
+          "Nouveau plus bas",
+          "Les deux"
+        ],
+        "pols": [
+          "Une fois",
+          "Répéter · 1 h"
+        ],
+        "play": "lire",
+        "legN": [
+          "bougies 15 min",
+          "plus haut 24 h (barre)",
+          "plus bas 24 h",
+          "notification",
+          "attente · silence"
+        ],
+        "annN": {
+          "hi": "{t} plus haut cassé → notification",
+          "sil": "encore cassé, attente 1 h → silence",
+          "once": "une fois : alerte terminée",
+          "lo": "{t} plus bas cassé → notification"
+        },
+        "feed": {
+          "hi": "plus haut 24 h dépassé · {v}",
+          "lo": "plus bas 24 h cassé · {v}"
+        },
+        "stN": [
+          "notification",
+          "attente",
+          "terminée"
+        ],
+        "more": "+{n} autres événements",
+        "sum": "{a} notifications · {b} cassures en silence",
+        "chartN": "Une journée d’ETH en bougies de 15 minutes avec les lignes du plus haut et du plus bas 24 h, les cassures notifiées et celles passées en silence pendant l’attente.",
+        "quotes": {
+          "chat": "« Préviens-moi si un coin du top 100 casse son plus haut sur 24 h »",
+          "voice": "« Préviens-moi si un coin du top 100 casse son plus haut sur 24 h, une fois par heure suffit »",
+          "tpl": "Modèle : Cassure du plus haut 24 h",
+          "form": "Quel mouvement ? Nouveau plus haut"
+        }
+      }
     }
   },
   "es": {
@@ -772,6 +1543,263 @@
         "upLong": "Cruza al alza",
         "downLong": "Cruza a la baja",
         "top100": "Top 100"
+      }
+    },
+    "24h-high-low-alerts": {
+      "link": "Alertas de máximo/mínimo de 24 h",
+      "title": "Cómo crear una alerta de máximo y mínimo de 24 horas. Gratis | MarketAlert",
+      "h1": "¿Cómo recibo un aviso cuando una moneda rompe su máximo de 24 horas?",
+      "description": "Recibe una notificación push y de Telegram cuando una moneda de Binance rompe su precio más alto o más bajo de las últimas 24 horas. En el plan Free; créala escribiendo o hablando con la IA.",
+      "intro": "No “hoy”, sino las últimas 24 horas contadas hacia atrás desde cada momento. Eliges la moneda y el movimiento: nuevo máximo, nuevo mínimo o cualquiera. Al cierre del minuto en que el precio supera el máximo de la ventana o baja de su mínimo, MarketAlert envía un push a tu teléfono; el mensaje también puede ir a [Telegram](features/telegram-crypto-alerts). La misma alerta se puede crear en [todas las monedas](features/all-coins-alerts).",
+      "prompt": "Avísame si alguna moneda del top 100 rompe su máximo de 24 horas, con una vez por hora basta.",
+      "exampleTitle": "¿Qué significa “las últimas 24 horas”?",
+      "caption": "El punto naranja es el precio en ese momento. El máximo y el mínimo se miden en las 24 horas anteriores al punto.",
+      "steps": [
+        [
+          "Escríbelo o díselo a la IA",
+          "En la pantalla de IA, escribe tu petición con tus palabras o toca el micrófono y dila, por ejemplo “Avísame si BTC rompe su máximo de 24 horas”. Si falta algo, la IA lo pregunta y crea la alerta."
+        ],
+        [
+          "O toca la plantilla",
+          "La plantilla “Ruptura del máximo de 24 h” bajo la pantalla de IA trae un borrador listo. Las plantillas no gastan tu cupo de IA; cambia la moneda y crea la alerta."
+        ],
+        [
+          "Con el formulario, elige el tipo de condición",
+          "En Crear una alerta, elige la moneda y toca “Máx./mín. 24 h” en la ventana del tipo de condición."
+        ],
+        [
+          "Elige el movimiento y guarda",
+          "Elige “Nuevo máximo”, “Nuevo mínimo” o “Cualquiera” y toca Guardar condición. Elige el canal de notificación y guarda la alerta."
+        ]
+      ],
+      "details": [
+        [
+          "¿Cómo se mide el máximo de 24 horas?",
+          "Al cierre de cada minuto, MarketAlert toma el precio más alto y más bajo de las 24 horas anteriores a ese minuto (1.440 velas de un minuto). Si el máximo del minuto supera ese máximo, es un nuevo máximo; si su mínimo baja del mínimo, es un nuevo mínimo. Tocar no basta, tiene que superarlo. Como la ventana avanza cada minuto, un máximo antiguo sale a las 24 horas y la barra baja."
+        ],
+        [
+          "¿Qué dice la notificación?",
+          "El título del push dice algo como “SOL rompió su máximo de 24 h”, con el precio y el máximo de 24 h debajo. El mensaje de Telegram muestra el nuevo máximo o mínimo, el mercado y un botón que abre el gráfico de Binance."
+        ],
+        [
+          "¿Cómo funciona en todas las monedas?",
+          "Si eliges todas las monedas en lugar de una, cada moneda se compara con sus propias 24 horas y se te avisa de las que rompen. Con Plus cubre el top 100 y con Pro todas las monedas. En todas las monedas la alerta se repite y espera el tiempo que elijas entre dos avisos de la misma moneda."
+        ],
+        [
+          "¿Es una señal de compra o venta?",
+          "No. MarketAlert solo te avisa cuando ocurre la ruptura que elegiste. No opera, no se conecta a ninguna cuenta de exchange y no da asesoramiento de inversión."
+        ]
+      ],
+      "faq": [
+        [
+          "¿La alerta de máximo/mínimo de 24 h es gratis?",
+          "Sí. Puedes crearla para una moneda en el plan Free. Telegram y todas las monedas están en Plus y Pro, ambos con 7 días de prueba gratis."
+        ],
+        [
+          "¿En qué se diferencia del máximo del día?",
+          "Un día de calendario empieza de cero a medianoche. Esta alerta siempre mira las últimas 24 horas desde ahora; la ventana avanza minuto a minuto."
+        ],
+        [
+          "¿Avisa una vez o en cada ruptura?",
+          "Para una moneda eliges una vez o repetir. Al repetir, eliges cuánto esperar entre dos avisos, como mínimo 10 minutos. En todas las monedas siempre se repite. Las alertas repetidas están en Plus y Pro."
+        ],
+        [
+          "Si el precio toca el máximo y se da la vuelta, ¿recibo aviso?",
+          "No. Para un nuevo máximo, el máximo del minuto tiene que ser mayor que el máximo de las 24 horas anteriores; igualarlo no basta."
+        ],
+        [
+          "¿Funciona con una moneda recién listada?",
+          "Empieza cuando la moneda tiene 24 horas de datos. Antes no hay 24 horas completas con las que comparar."
+        ],
+        [
+          "¿Cómo la creo con la IA?",
+          "Escríbela en la pantalla de IA o díselo al [asistente de voz](features/voice-crypto-alerts). En todas las monedas, si no dijiste cuánto esperar, la IA pregunta: “¿Cuánto espero entre dos avisos de esta alerta repetida de 24 horas? Por ejemplo, 1 hora.”"
+        ]
+      ],
+      "related": [
+        "features/all-coins-alerts",
+        "features/voice-crypto-alerts",
+        "features/telegram-crypto-alerts",
+        "features/price-alerts",
+        "features/percent-change-alerts"
+      ],
+      "plans": [
+        [
+          "Free",
+          "3 alertas; precio, variación porcentual y máximo/mínimo de 24 h. Push silencioso o con sonido. La alerta avisa una vez al cumplirse su condición."
+        ],
+        [
+          "Plus",
+          "20 alertas; alertas repetidas, hasta 3 condiciones por alerta y 2 alertas de todas las monedas en el top 100. Push y Telegram."
+        ],
+        [
+          "Pro",
+          "100 alertas; hasta 5 condiciones por alerta y 10 alertas de todas las monedas sobre todas las monedas. Push, Telegram y webhook firmado."
+        ]
+      ],
+      "hl": {
+        "kicker": "BINANCE · MÁX. / MÍN. 24 H · GRATIS",
+        "chips": [
+          "↑ Nuevo máximo",
+          "↓ Nuevo mínimo",
+          "Cualquiera",
+          "también con la app cerrada"
+        ],
+        "coinK": "Spot USDT · velas de 30 min · últimas 48 h",
+        "replay": "repetir",
+        "stats": [
+          "máx. 24 h",
+          "ahora",
+          "estado"
+        ],
+        "st": {
+          "w": "vigilando",
+          "t": "tocado",
+          "b": "roto ✓"
+        },
+        "legK": [
+          "velas",
+          "últimas 24 horas",
+          "barra: máx. 24 h"
+        ],
+        "winK": "últimas 24 horas",
+        "annK": [
+          "ventana de las últimas 24 h",
+          "barra: máx. 24 h",
+          "el máximo antiguo sale a las 24 h",
+          "tocó, no pasó",
+          "pasó → aviso"
+        ],
+        "stepsK": [
+          "La ventana cubre las últimas 24 horas y avanza cada minuto.",
+          "La barra es el precio más alto de la ventana.",
+          "Cuando el máximo antiguo sale de la ventana, la barra baja.",
+          "Si el precio toca la barra y se da la vuelta, no hay aviso.",
+          "El minuto en que supera la barra, llega el aviso."
+        ],
+        "chnPush": "Push · Free",
+        "chnTg": "Telegram · Plus / Pro",
+        "now": "ahora",
+        "alarm": "SOL máx. 24 h",
+        "chartK": "Gráfico de SOL en velas de 30 minutos: la ventana de 24 horas avanza, la barra baja cuando sale el máximo antiguo y se envía un aviso cuando el precio supera la nueva barra.",
+        "lead": "El punto naranja es el precio en ese momento. Arrástralo hacia delante y la ventana de 24 horas se mueve con él. Encuentra el momento en que rompe el máximo o el mínimo.",
+        "legP": [
+          "punto naranja: precio en ese momento",
+          "24 horas antes del punto",
+          "máx. 24 h",
+          "mín. 24 h"
+        ],
+        "hint": "Desliza para avanzar el tiempo",
+        "slider": "Mover el tiempo",
+        "ends": [
+          "ayer",
+          "ahora"
+        ],
+        "winP": "24 horas",
+        "tagHi": "máx. 24 h {v}",
+        "tagLo": "mín. 24 h {v}",
+        "vNone": [
+          "No se rompió ni el máximo ni el mínimo",
+          "Precio {p}: {d1} hasta el máximo, {d2} hasta el mínimo. Sin aviso."
+        ],
+        "vUp": [
+          "Nuevo máximo: máximo roto → aviso",
+          "El máximo de esta vela es {p}; el máximo de las 24 horas anteriores era {hi}. Lo superó."
+        ],
+        "vDn": [
+          "Nuevo mínimo: mínimo roto → aviso",
+          "El mínimo de esta vela es {p}; el mínimo de las 24 horas anteriores era {lo}. Bajó de él."
+        ],
+        "chartP": "Gráfico de BTC en velas de 30 minutos; el punto naranja se puede arrastrar y las líneas de máximo y mínimo de 24 h cambian con él.",
+        "sKicker": "4 FORMAS · LA MISMA ALERTA",
+        "sLead": "Lo más fácil es escribírselo a la IA. También puedes crear la misma alerta hablando, con una plantilla o con el formulario.",
+        "tabs": [
+          [
+            "Escribiendo",
+            "chat de IA"
+          ],
+          [
+            "Hablando",
+            "asistente de voz"
+          ],
+          [
+            "Plantilla",
+            "un toque"
+          ],
+          [
+            "Formulario",
+            "elige tú"
+          ]
+        ],
+        "easy": "lo más fácil",
+        "panes": {
+          "chat": [
+            "Escribiendo: chat de IA",
+            "Escribe tu petición con tus palabras. En todas las monedas hace falta un tiempo de espera; si no lo dijiste, la IA lo pregunta y luego crea la alerta. Todas las monedas están en Plus y Pro."
+          ],
+          "voice": [
+            "Hablando: asistente de voz",
+            "Toca el micrófono y dilo. Si la petición es clara, el asistente crea la alerta al momento y muestra el resultado como una tarjeta."
+          ],
+          "tpl": [
+            "Plantilla: un toque",
+            "Toca la plantilla “Ruptura del máximo de 24 h” bajo la pantalla de IA. El borrador llega listo; no gasta tu cupo de IA."
+          ],
+          "form": [
+            "Formulario: elige tú",
+            "Crear una alerta → tipo de condición “Máx./mín. 24 h” → Nuevo máximo, Nuevo mínimo o Cualquiera → Guardar condición."
+          ]
+        },
+        "shotAlt": [
+          "Alerta Top 100 · máx. 24 h creada en el chat de IA",
+          "Alerta Top 100 · máx. 24 h creada por el asistente de voz",
+          "Borrador de alerta de la plantilla Ruptura del máximo de 24 h",
+          "Condición de máximo/mínimo de 24 h en la pantalla Crear una alerta, Nuevo máximo elegido"
+        ],
+        "nKicker": "REPRODUCE UN DÍA",
+        "nTitle": "¿Cuándo llegan los avisos a lo largo del día?",
+        "nText": "Un día de ETH en velas de 15 minutos. La línea verde es el máximo de 24 h y la roja el mínimo de 24 h: suben y bajan durante el día. Cada ruptura lleva un anillo. Cuando la alerta se repite, las rupturas dentro del tiempo de espera pasan en silencio.",
+        "modes": [
+          "Nuevo máximo",
+          "Nuevo mínimo",
+          "Cualquiera"
+        ],
+        "pols": [
+          "Una vez",
+          "Repetir · 1 h"
+        ],
+        "play": "reproducir",
+        "legN": [
+          "velas de 15 min",
+          "máx. 24 h (barra)",
+          "mín. 24 h",
+          "aviso",
+          "espera · en silencio"
+        ],
+        "annN": {
+          "hi": "{t} máximo roto → aviso",
+          "sil": "roto otra vez, espera de 1 h → en silencio",
+          "once": "una vez: alerta completada",
+          "lo": "{t} mínimo roto → aviso"
+        },
+        "feed": {
+          "hi": "máx. 24 h superado · {v}",
+          "lo": "mín. 24 h roto · {v}"
+        },
+        "stN": [
+          "aviso",
+          "espera",
+          "completada"
+        ],
+        "more": "+{n} eventos más",
+        "sum": "{a} avisos · {b} rupturas en silencio",
+        "chartN": "Un día de ETH en velas de 15 minutos con las líneas de máximo y mínimo de 24 h, las rupturas con aviso y las que pasaron en silencio durante la espera.",
+        "quotes": {
+          "chat": "“Avísame si alguna moneda del top 100 rompe su máximo de 24 horas”",
+          "voice": "“Avísame si alguna moneda del top 100 rompe su máximo de 24 horas, una vez por hora basta”",
+          "tpl": "Plantilla: Ruptura del máximo de 24 h",
+          "form": "¿Qué movimiento? Nuevo máximo"
+        }
       }
     }
   },
@@ -966,6 +1994,263 @@
         "downLong": "Cruza para baixo",
         "top100": "Top 100"
       }
+    },
+    "24h-high-low-alerts": {
+      "link": "Alertas de máxima/mínima de 24 h",
+      "title": "Como criar um alerta de máxima e mínima de 24 horas. Grátis | MarketAlert",
+      "h1": "Como recebo um aviso quando uma moeda rompe a máxima de 24 horas?",
+      "description": "Receba uma notificação push e no Telegram quando uma moeda da Binance rompe o maior ou o menor preço das últimas 24 horas. No plano Free; crie digitando ou falando com a IA.",
+      "intro": "Não “hoje”, e sim as últimas 24 horas contadas para trás a partir de cada momento. Você escolhe a moeda e o movimento: nova máxima, nova mínima ou qualquer um. No fechamento do minuto em que o preço passa da máxima da janela ou cai abaixo da mínima, o MarketAlert envia um push para o seu celular; a mensagem também pode ir para o [Telegram](features/telegram-crypto-alerts). O mesmo alerta pode ser criado em [todas as moedas](features/all-coins-alerts).",
+      "prompt": "Me avise se alguma moeda do top 100 romper a máxima de 24 horas, uma vez por hora já basta.",
+      "exampleTitle": "O que significa “as últimas 24 horas”?",
+      "caption": "O ponto laranja é o preço naquele momento. A máxima e a mínima são medidas nas 24 horas antes do ponto.",
+      "steps": [
+        [
+          "Digite ou fale para a IA",
+          "Na tela de IA, escreva o pedido com suas palavras ou toque no microfone e fale, por exemplo “Me avise se o BTC romper a máxima de 24 horas”. Se faltar algo, a IA pergunta e cria o alerta."
+        ],
+        [
+          "Ou toque no modelo",
+          "O modelo “Rompimento da máxima de 24 h” abaixo da tela de IA traz um rascunho pronto. Modelos não gastam sua cota de IA; troque a moeda e crie o alerta."
+        ],
+        [
+          "Pelo formulário, escolha o tipo de condição",
+          "Em Criar alerta, escolha a moeda e toque em “Máx./mín. 24 h” na janela do tipo de condição."
+        ],
+        [
+          "Escolha o movimento e salve",
+          "Escolha “Nova máxima”, “Nova mínima” ou “Qualquer um” e toque em Salvar condição. Escolha o canal de notificação e salve o alerta."
+        ]
+      ],
+      "details": [
+        [
+          "Como a máxima de 24 horas é medida?",
+          "No fechamento de cada minuto, o MarketAlert pega o maior e o menor preço das 24 horas antes desse minuto (1.440 velas de um minuto). Se a máxima do minuto passar dessa máxima, é uma nova máxima; se a mínima cair abaixo da mínima, é uma nova mínima. Encostar não basta, tem que passar. Como a janela anda a cada minuto, uma máxima antiga sai depois de 24 horas e a barra desce."
+        ],
+        [
+          "O que diz a notificação?",
+          "O título do push é algo como “SOL rompeu a máxima de 24 h”, com o preço e a máxima de 24 h embaixo. A mensagem do Telegram mostra a nova máxima ou mínima, o mercado e um botão que abre o gráfico da Binance."
+        ],
+        [
+          "Como funciona em todas as moedas?",
+          "Se você escolher todas as moedas em vez de uma, cada moeda é comparada com as suas próprias 24 horas e as que rompem são avisadas. No Plus cobre o top 100 e no Pro todas as moedas. Em todas as moedas o alerta se repete e espera o tempo que você escolher entre dois avisos da mesma moeda."
+        ],
+        [
+          "É um sinal de compra ou venda?",
+          "Não. O MarketAlert só avisa quando o rompimento escolhido acontece. Ele não opera, não se conecta a nenhuma conta de corretora e não dá recomendação de investimento."
+        ]
+      ],
+      "faq": [
+        [
+          "O alerta de máxima/mínima de 24 h é grátis?",
+          "Sim. Você pode criá-lo para uma moeda no plano Free. Telegram e todas as moedas estão no Plus e no Pro, ambos com 7 dias de teste grátis."
+        ],
+        [
+          "Qual a diferença para a máxima do dia?",
+          "Um dia do calendário zera à meia-noite. Este alerta sempre olha as últimas 24 horas a partir de agora; a janela anda minuto a minuto."
+        ],
+        [
+          "Ele avisa uma vez ou a cada rompimento?",
+          "Para uma moeda você escolhe uma vez ou repetir. Ao repetir, você escolhe quanto esperar entre dois avisos, no mínimo 10 minutos. Em todas as moedas ele sempre se repete. Alertas repetidos estão no Plus e no Pro."
+        ],
+        [
+          "Se o preço encostar na máxima e voltar, recebo aviso?",
+          "Não. Para uma nova máxima, a máxima do minuto tem que ser maior que a máxima das 24 horas anteriores; igualar não basta."
+        ],
+        [
+          "Funciona com uma moeda recém-listada?",
+          "Começa quando a moeda tem 24 horas de dados. Antes disso não há 24 horas completas para comparar."
+        ],
+        [
+          "Como crio com a IA?",
+          "Digite na tela de IA ou fale para o [assistente de voz](features/voice-crypto-alerts). Em todas as moedas, se você não disse quanto esperar, a IA pergunta: “Quanto tempo devo esperar entre dois avisos deste alerta repetido de 24 horas? Por exemplo, 1 hora.”"
+        ]
+      ],
+      "related": [
+        "features/all-coins-alerts",
+        "features/voice-crypto-alerts",
+        "features/telegram-crypto-alerts",
+        "features/price-alerts",
+        "features/percent-change-alerts"
+      ],
+      "plans": [
+        [
+          "Free",
+          "3 alertas; preço, variação percentual e máxima/mínima de 24 h. Push silencioso ou com som. O alerta avisa uma vez quando a condição é atendida."
+        ],
+        [
+          "Plus",
+          "20 alertas; alertas repetidos, até 3 condições por alerta e 2 alertas de todas as moedas no top 100. Push e Telegram."
+        ],
+        [
+          "Pro",
+          "100 alertas; até 5 condições por alerta e 10 alertas de todas as moedas em todas as moedas. Push, Telegram e webhook assinado."
+        ]
+      ],
+      "hl": {
+        "kicker": "BINANCE · MÁX. / MÍN. 24 H · GRÁTIS",
+        "chips": [
+          "↑ Nova máxima",
+          "↓ Nova mínima",
+          "Qualquer um",
+          "mesmo com o app fechado"
+        ],
+        "coinK": "Spot USDT · velas de 30 min · últimas 48 h",
+        "replay": "repetir",
+        "stats": [
+          "máx. 24 h",
+          "agora",
+          "status"
+        ],
+        "st": {
+          "w": "observando",
+          "t": "encostou",
+          "b": "rompeu ✓"
+        },
+        "legK": [
+          "velas",
+          "últimas 24 horas",
+          "barra: máx. 24 h"
+        ],
+        "winK": "últimas 24 horas",
+        "annK": [
+          "janela das últimas 24 h",
+          "barra: máx. 24 h",
+          "a máxima antiga sai após 24 h",
+          "encostou, não passou",
+          "passou → aviso"
+        ],
+        "stepsK": [
+          "A janela cobre as últimas 24 horas e anda a cada minuto.",
+          "A barra é o maior preço da janela.",
+          "Quando a máxima antiga sai da janela, a barra desce.",
+          "Se o preço encosta na barra e volta, não há aviso.",
+          "No minuto em que passa da barra, o aviso chega."
+        ],
+        "chnPush": "Push · Free",
+        "chnTg": "Telegram · Plus / Pro",
+        "now": "agora",
+        "alarm": "SOL máx. 24 h",
+        "chartK": "Gráfico de SOL em velas de 30 minutos: a janela de 24 horas anda, a barra desce quando a máxima antiga sai e um aviso é enviado quando o preço passa da nova barra.",
+        "lead": "O ponto laranja é o preço naquele momento. Arraste para frente e a janela de 24 horas vai junto. Pegue o momento em que ele rompe a máxima ou a mínima.",
+        "legP": [
+          "ponto laranja: preço naquele momento",
+          "24 horas antes do ponto",
+          "máx. 24 h",
+          "mín. 24 h"
+        ],
+        "hint": "Arraste para avançar o tempo",
+        "slider": "Mover o tempo",
+        "ends": [
+          "ontem",
+          "agora"
+        ],
+        "winP": "24 horas",
+        "tagHi": "máx. 24 h {v}",
+        "tagLo": "mín. 24 h {v}",
+        "vNone": [
+          "Nem a máxima nem a mínima foi rompida",
+          "Preço {p}: {d1} até a máxima, {d2} até a mínima. Sem aviso."
+        ],
+        "vUp": [
+          "Nova máxima: máxima rompida → aviso",
+          "A máxima desta vela é {p}; a máxima das 24 horas anteriores era {hi}. Passou."
+        ],
+        "vDn": [
+          "Nova mínima: mínima rompida → aviso",
+          "A mínima desta vela é {p}; a mínima das 24 horas anteriores era {lo}. Ficou abaixo."
+        ],
+        "chartP": "Gráfico de BTC em velas de 30 minutos; o ponto laranja pode ser arrastado e as linhas de máxima e mínima de 24 h mudam com ele.",
+        "sKicker": "4 JEITOS · O MESMO ALERTA",
+        "sLead": "O mais fácil é digitar para a IA. Você também cria o mesmo alerta falando, com um modelo ou pelo formulário.",
+        "tabs": [
+          [
+            "Digitando",
+            "chat de IA"
+          ],
+          [
+            "Falando",
+            "assistente de voz"
+          ],
+          [
+            "Modelo",
+            "um toque"
+          ],
+          [
+            "Formulário",
+            "você escolhe"
+          ]
+        ],
+        "easy": "mais fácil",
+        "panes": {
+          "chat": [
+            "Digitando: chat de IA",
+            "Escreva o pedido com suas palavras. Em todas as moedas é preciso um tempo de espera; se você não disse, a IA pergunta e depois cria o alerta. Todas as moedas estão no Plus e no Pro."
+          ],
+          "voice": [
+            "Falando: assistente de voz",
+            "Toque no microfone e fale. Se o pedido for claro, o assistente cria o alerta na hora e mostra o resultado em um cartão."
+          ],
+          "tpl": [
+            "Modelo: um toque",
+            "Toque no modelo “Rompimento da máxima de 24 h” abaixo da tela de IA. O rascunho vem pronto; não gasta sua cota de IA."
+          ],
+          "form": [
+            "Formulário: você escolhe",
+            "Criar alerta → tipo de condição “Máx./mín. 24 h” → Nova máxima, Nova mínima ou Qualquer um → Salvar condição."
+          ]
+        },
+        "shotAlt": [
+          "Alerta Top 100 · máx. 24 h criado no chat de IA",
+          "Alerta Top 100 · máx. 24 h criado pelo assistente de voz",
+          "Rascunho de alerta do modelo Rompimento da máxima de 24 h",
+          "Condição de máxima/mínima de 24 h na tela Criar alerta, Nova máxima escolhido"
+        ],
+        "nKicker": "REPRODUZA UM DIA",
+        "nTitle": "Quando os avisos chegam ao longo do dia?",
+        "nText": "Um dia de ETH em velas de 15 minutos. A linha verde é a máxima de 24 h e a vermelha a mínima de 24 h: elas sobem e descem ao longo do dia. Cada rompimento tem um anel. Quando o alerta se repete, os rompimentos dentro do tempo de espera passam em silêncio.",
+        "modes": [
+          "Nova máxima",
+          "Nova mínima",
+          "Qualquer um"
+        ],
+        "pols": [
+          "Uma vez",
+          "Repetir · 1 h"
+        ],
+        "play": "reproduzir",
+        "legN": [
+          "velas de 15 min",
+          "máx. 24 h (barra)",
+          "mín. 24 h",
+          "aviso",
+          "espera · em silêncio"
+        ],
+        "annN": {
+          "hi": "{t} máxima rompida → aviso",
+          "sil": "rompeu de novo, espera de 1 h → em silêncio",
+          "once": "uma vez: alerta concluído",
+          "lo": "{t} mínima rompida → aviso"
+        },
+        "feed": {
+          "hi": "máx. 24 h superada · {v}",
+          "lo": "mín. 24 h rompida · {v}"
+        },
+        "stN": [
+          "aviso",
+          "espera",
+          "concluído"
+        ],
+        "more": "+{n} eventos",
+        "sum": "{a} avisos · {b} rompimentos em silêncio",
+        "chartN": "Um dia de ETH em velas de 15 minutos com as linhas de máxima e mínima de 24 h, os rompimentos com aviso e os que passaram em silêncio durante a espera.",
+        "quotes": {
+          "chat": "“Me avise se alguma moeda do top 100 romper a máxima de 24 horas”",
+          "voice": "“Me avise se alguma moeda do top 100 romper a máxima de 24 horas, uma vez por hora basta”",
+          "tpl": "Modelo: Rompimento da máxima de 24 h",
+          "form": "Qual movimento? Nova máxima"
+        }
+      }
     }
   },
   "ru": {
@@ -1158,6 +2443,263 @@
         "upLong": "Пересекает вверх",
         "downLong": "Пересекает вниз",
         "top100": "Топ-100"
+      }
+    },
+    "24h-high-low-alerts": {
+      "link": "Оповещения о максимуме/минимуме за 24 ч",
+      "title": "Как настроить оповещение о максимуме и минимуме за 24 часа. Бесплатно | MarketAlert",
+      "h1": "Как получить оповещение, когда монета обновляет максимум за 24 часа?",
+      "description": "Получайте push и сообщение в Telegram, когда монета на Binance пробивает самую высокую или самую низкую цену за последние 24 часа. В плане Free; настраивается текстом или голосом через ИИ.",
+      "intro": "Не «сегодня», а последние 24 часа, отсчитанные назад от каждого момента. Вы выбираете монету и движение: новый максимум, новый минимум или любое. При закрытии минуты, в которую цена прошла выше максимума окна или ниже его минимума, MarketAlert отправляет push на телефон; сообщение может прийти и в [Telegram](features/telegram-crypto-alerts). Такое же оповещение можно настроить [по всем монетам](features/all-coins-alerts).",
+      "prompt": "Сообщи, если какая-нибудь монета из топ-100 пробьёт максимум за 24 часа, раза в час хватит.",
+      "exampleTitle": "Что значит «последние 24 часа»?",
+      "caption": "Оранжевая точка — цена в этот момент. Максимум и минимум считаются за 24 часа до точки.",
+      "steps": [
+        [
+          "Напишите или скажите ИИ",
+          "На экране ИИ напишите запрос своими словами или нажмите микрофон и скажите его, например «Сообщи, если BTC пробьёт максимум за 24 часа». Если чего-то не хватает, ИИ спросит и создаст оповещение."
+        ],
+        [
+          "Или нажмите на шаблон",
+          "Шаблон «Пробой 24-часового максимума» под экраном ИИ сразу даёт готовый черновик. Шаблоны не тратят лимит ИИ; поменяйте монету и создайте оповещение."
+        ],
+        [
+          "Через форму: выберите тип условия",
+          "В разделе «Создать оповещение» выберите монету и нажмите «Макс./мин. 24 ч» в окне типа условия."
+        ],
+        [
+          "Выберите движение и сохраните",
+          "Выберите «Новый максимум», «Новый минимум» или «Любое» и нажмите «Сохранить условие». Выберите канал уведомлений и сохраните оповещение."
+        ]
+      ],
+      "details": [
+        [
+          "Как считается максимум за 24 часа?",
+          "При закрытии каждой минуты MarketAlert берёт самую высокую и самую низкую цену за 24 часа до этой минуты (1440 минутных свечей). Если максимум минуты выше этого максимума, это новый максимум; если её минимум ниже минимума, это новый минимум. Коснуться мало, нужно пройти. Окно сдвигается каждую минуту, поэтому старый максимум через 24 часа выходит из окна и планка опускается."
+        ],
+        [
+          "Что написано в уведомлении?",
+          "Заголовок push выглядит как «SOL обновил максимум за 24 ч», ниже цена и максимум за 24 ч. В сообщении Telegram новый максимум или минимум, рынок и кнопка, которая открывает график Binance."
+        ],
+        [
+          "Как это работает по всем монетам?",
+          "Если выбрать все монеты вместо одной, каждая монета сравнивается со своими 24 часами, и вам приходят те, что пробили уровень. В Plus это топ-100, в Pro все монеты. По всем монетам оповещение повторяется и между двумя уведомлениями по одной монете ждёт выбранное вами время."
+        ],
+        [
+          "Это сигнал на покупку или продажу?",
+          "Нет. MarketAlert лишь сообщает, когда происходит выбранный пробой. Он не торгует, не подключается к биржевому аккаунту и не даёт инвестиционных советов."
+        ]
+      ],
+      "faq": [
+        [
+          "Оповещение о максимуме/минимуме за 24 ч бесплатное?",
+          "Да. Для одной монеты его можно настроить в плане Free. Telegram и все монеты доступны в Plus и Pro, у обоих есть 7 дней бесплатного пробного периода."
+        ],
+        [
+          "Чем это отличается от максимума за день?",
+          "Календарный день начинается заново в полночь. Это оповещение всегда смотрит на последние 24 часа от текущего момента; окно сдвигается каждую минуту."
+        ],
+        [
+          "Оно сработает один раз или при каждом пробое?",
+          "Для одной монеты можно выбрать один раз или повтор. При повторе вы выбираете паузу между двумя уведомлениями, не меньше 10 минут. По всем монетам оповещение всегда повторяется. Повторяющиеся оповещения доступны в Plus и Pro."
+        ],
+        [
+          "Если цена коснулась максимума и развернулась, придёт уведомление?",
+          "Нет. Для нового максимума максимум минуты должен быть больше прежнего максимума за 24 часа; равенства мало."
+        ],
+        [
+          "Работает ли оно для только что добавленной монеты?",
+          "Оно начинает работать, когда у монеты накопится 24 часа данных. До этого сравнивать не с чем."
+        ],
+        [
+          "Как настроить его через ИИ?",
+          "Напишите на экране ИИ или скажите [голосовому помощнику](features/voice-crypto-alerts). Если для всех монет вы не назвали паузу, ИИ спросит: «Какую паузу делать между двумя уведомлениями этого повторяющегося 24-часового оповещения? Например, 1 час.»"
+        ]
+      ],
+      "related": [
+        "features/all-coins-alerts",
+        "features/voice-crypto-alerts",
+        "features/telegram-crypto-alerts",
+        "features/price-alerts",
+        "features/percent-change-alerts"
+      ],
+      "plans": [
+        [
+          "Free",
+          "3 алерта; цена, процентное изменение и 24-часовой максимум/минимум. Беззвучный push или push со звуком. Алерт сообщает один раз при выполнении условия."
+        ],
+        [
+          "Plus",
+          "20 алертов; повторяющиеся алерты, до 3 условий в алерте и 2 алерта по всем монетам в топ-100. Push и Telegram."
+        ],
+        [
+          "Pro",
+          "100 алертов; до 5 условий в алерте и 10 алертов по всем монетам. Push, Telegram и подписанный вебхук."
+        ]
+      ],
+      "hl": {
+        "kicker": "BINANCE · МАКС. / МИН. 24 Ч · БЕСПЛАТНО",
+        "chips": [
+          "↑ Новый максимум",
+          "↓ Новый минимум",
+          "Любое",
+          "даже при закрытом приложении"
+        ],
+        "coinK": "Spot USDT · свечи 30 мин · последние 48 ч",
+        "replay": "повторить",
+        "stats": [
+          "макс. 24 ч",
+          "сейчас",
+          "статус"
+        ],
+        "st": {
+          "w": "отслеживается",
+          "t": "коснулась",
+          "b": "пробит ✓"
+        },
+        "legK": [
+          "свечи",
+          "последние 24 часа",
+          "планка: макс. 24 ч"
+        ],
+        "winK": "последние 24 часа",
+        "annK": [
+          "окно последних 24 ч",
+          "планка: макс. 24 ч",
+          "старый максимум уходит через 24 ч",
+          "коснулась, не прошла",
+          "прошла → уведомление"
+        ],
+        "stepsK": [
+          "Окно охватывает последние 24 часа и сдвигается каждую минуту.",
+          "Планка — самая высокая цена в окне.",
+          "Когда старый максимум выходит из окна, планка опускается.",
+          "Если цена коснулась планки и развернулась, уведомления нет.",
+          "В минуту, когда цена проходит планку, приходит уведомление."
+        ],
+        "chnPush": "Push · Free",
+        "chnTg": "Telegram · Plus / Pro",
+        "now": "сейчас",
+        "alarm": "SOL макс. 24 ч",
+        "chartK": "График SOL на 30-минутных свечах: 24-часовое окно сдвигается, планка опускается, когда старый максимум выходит из окна, и уведомление уходит, когда цена проходит новую планку.",
+        "lead": "Оранжевая точка — цена в этот момент. Тяните её вперёд, и 24-часовое окно двигается вместе с ней. Поймайте момент, когда она пробивает максимум или минимум.",
+        "legP": [
+          "оранжевая точка: цена в этот момент",
+          "24 часа до точки",
+          "макс. 24 ч",
+          "мин. 24 ч"
+        ],
+        "hint": "Потяните, чтобы двигать время",
+        "slider": "Сдвинуть время",
+        "ends": [
+          "вчера",
+          "сейчас"
+        ],
+        "winP": "24 часа",
+        "tagHi": "макс. 24 ч {v}",
+        "tagLo": "мин. 24 ч {v}",
+        "vNone": [
+          "Ни максимум, ни минимум не пробит",
+          "Цена {p}: до максимума {d1}, до минимума {d2}. Уведомления нет."
+        ],
+        "vUp": [
+          "Новый максимум: максимум пробит → уведомление",
+          "Максимум этой свечи {p}, прежний максимум за 24 часа {hi}. Прошла выше."
+        ],
+        "vDn": [
+          "Новый минимум: минимум пробит → уведомление",
+          "Минимум этой свечи {p}, прежний минимум за 24 часа {lo}. Ушла ниже."
+        ],
+        "chartP": "График BTC на 30-минутных свечах; оранжевую точку можно тянуть, линии максимума и минимума за 24 ч меняются вместе с ней.",
+        "sKicker": "4 СПОСОБА · ОДНО ОПОВЕЩЕНИЕ",
+        "sLead": "Проще всего написать ИИ. То же оповещение можно настроить голосом, шаблоном или через форму.",
+        "tabs": [
+          [
+            "Текстом",
+            "чат с ИИ"
+          ],
+          [
+            "Голосом",
+            "голосовой помощник"
+          ],
+          [
+            "Шаблоном",
+            "одно касание"
+          ],
+          [
+            "Формой",
+            "выбрать самому"
+          ]
+        ],
+        "easy": "проще всего",
+        "panes": {
+          "chat": [
+            "Текстом: чат с ИИ",
+            "Напишите запрос своими словами. Для всех монет нужна пауза; если вы её не назвали, ИИ спросит и затем создаст оповещение. Все монеты доступны в Plus и Pro."
+          ],
+          "voice": [
+            "Голосом: голосовой помощник",
+            "Нажмите микрофон и скажите. Если запрос понятен, помощник сразу создаёт оповещение и показывает результат карточкой."
+          ],
+          "tpl": [
+            "Шаблоном: одно касание",
+            "Нажмите шаблон «Пробой 24-часового максимума» под экраном ИИ. Черновик готов сразу; лимит ИИ не тратится."
+          ],
+          "form": [
+            "Формой: выбрать самому",
+            "Создать оповещение → тип условия «Макс./мин. 24 ч» → Новый максимум, Новый минимум или Любое → Сохранить условие."
+          ]
+        },
+        "shotAlt": [
+          "Оповещение Топ-100 · макс. 24 ч, созданное в чате с ИИ",
+          "Оповещение Топ-100 · макс. 24 ч, созданное голосовым помощником",
+          "Черновик оповещения из шаблона Пробой 24-часового максимума",
+          "Условие максимума/минимума за 24 ч на экране создания оповещения, выбрано «Новый максимум»"
+        ],
+        "nKicker": "ПРОИГРАТЬ ДЕНЬ",
+        "nTitle": "Когда в течение дня приходят уведомления?",
+        "nText": "Один день ETH на 15-минутных свечах. Зелёная линия — максимум за 24 ч, красная — минимум за 24 ч: в течение дня они поднимаются и опускаются. Каждый пробой отмечен кольцом. Когда оповещение повторяется, пробои во время паузы проходят молча.",
+        "modes": [
+          "Новый максимум",
+          "Новый минимум",
+          "Любое"
+        ],
+        "pols": [
+          "Один раз",
+          "Повторять · 1 ч"
+        ],
+        "play": "проиграть",
+        "legN": [
+          "свечи 15 мин",
+          "макс. 24 ч (планка)",
+          "мин. 24 ч",
+          "уведомление",
+          "пауза · молча"
+        ],
+        "annN": {
+          "hi": "{t} максимум пробит → уведомление",
+          "sil": "снова пробит, пауза 1 ч → молча",
+          "once": "один раз: оповещение выполнено",
+          "lo": "{t} минимум пробит → уведомление"
+        },
+        "feed": {
+          "hi": "макс. 24 ч пройден · {v}",
+          "lo": "мин. 24 ч пробит · {v}"
+        },
+        "stN": [
+          "уведомление",
+          "пауза",
+          "выполнено"
+        ],
+        "more": "+{n} событий",
+        "sum": "уведомлений: {a} · молчаливых пробоев: {b}",
+        "chartN": "Один день ETH на 15-минутных свечах с линиями максимума и минимума за 24 ч, пробоями с уведомлением и пробоями, прошедшими молча во время паузы.",
+        "quotes": {
+          "chat": "«Сообщи, если монета из топ-100 пробьёт 24-часовой максимум»",
+          "voice": "«Сообщи, если монета из топ-100 пробьёт 24-часовой максимум, раз в час достаточно»",
+          "tpl": "Шаблон: Пробой 24-часового максимума",
+          "form": "Какое движение? Новый максимум"
+        }
       }
     }
   },
@@ -1352,6 +2894,263 @@
         "downLong": "下抜け",
         "top100": "上位100"
       }
+    },
+    "24h-high-low-alerts": {
+      "link": "24時間高値/安値アラート",
+      "title": "24時間高値・安値アラートの設定方法。無料 | MarketAlert",
+      "h1": "コインが24時間高値を更新したら通知を受けるには？",
+      "description": "Binanceのコインが直近24時間の最高値または最安値を更新したら、プッシュとTelegramで通知。Freeプランで使え、AIに入力するか話しかけるだけで設定できます。",
+      "intro": "「今日」ではなく、いつの時点から見ても直近の24時間です。コインと動きを選びます。新高値、新安値、またはどちらでも。価格がこの期間の高値を上回るか安値を下回った1分足が確定すると、MarketAlertがスマホにプッシュを送ります。メッセージは[Telegram](features/telegram-crypto-alerts)にも届きます。同じアラートを[全コイン](features/all-coins-alerts)に設定することもできます。",
+      "prompt": "上位100コインのどれかが24時間高値を更新したら教えて。1時間に1回で十分。",
+      "exampleTitle": "「直近24時間」とは？",
+      "caption": "オレンジの点はその時点の価格です。高値と安値は点から遡った24時間で測ります。",
+      "steps": [
+        [
+          "AIに入力するか話しかける",
+          "AI画面に自分の言葉で入力するか、マイクをタップして話します。例：「BTCが24時間高値を更新したら教えて」。足りない情報があればAIが質問し、アラートを設定します。"
+        ],
+        [
+          "またはテンプレートをタップ",
+          "AI画面の下にある「24時間高値ブレイク」テンプレートで下書きがすぐにできます。テンプレートはAIの利用回数を使いません。コインを変えてアラートを設定します。"
+        ],
+        [
+          "フォームなら条件タイプを選ぶ",
+          "「アラートを作成」でコインを選び、条件タイプの画面で「24h高値/安値」をタップします。"
+        ],
+        [
+          "動きを選んで保存",
+          "「新高値」「新安値」「どちらでも」から選び、「条件を保存」をタップ。通知チャネルを選んでアラートを保存します。"
+        ]
+      ],
+      "details": [
+        [
+          "24時間高値はどう測る？",
+          "毎分の確定時に、その1分より前の24時間（1分足1,440本）の最高値と最安値を見ます。その1分の高値がこの最高値を上回れば新高値、安値が最安値を下回れば新安値です。触れただけでは足りず、上回る必要があります。期間は毎分ずれるので、古い高値は24時間たつと外れ、基準線が下がります。"
+        ],
+        [
+          "通知には何が書かれる？",
+          "プッシュのタイトルは「SOL が 24 時間高値を更新しました」のようになり、その下に価格と24h高値が表示されます。Telegramのメッセージには新高値または新安値、市場、Binanceのチャートを開くボタンが付きます。"
+        ],
+        [
+          "全コインではどう動く？",
+          "1つのコインではなく全コインを選ぶと、各コインがそれぞれ自分の24時間と比べられ、更新したコインが通知されます。Plusは上位100、Proは全コインが対象です。全コインのアラートは繰り返し型で、同じコインの2回の通知の間は選んだ時間だけ待ちます。"
+        ],
+        [
+          "売買シグナルですか？",
+          "いいえ。MarketAlertは選んだ更新が起きたことを知らせるだけです。取引はせず、取引所のアカウントにも接続せず、投資助言も行いません。"
+        ]
+      ],
+      "faq": [
+        [
+          "24時間高値/安値アラートは無料？",
+          "はい。1つのコインならFreeプランで設定できます。Telegramと全コインはPlusとProで使え、どちらも7日間の無料トライアルがあります。"
+        ],
+        [
+          "今日の高値とどう違う？",
+          "カレンダーの1日は0時にリセットされます。このアラートは常に今から遡った24時間を見ていて、期間は1分ごとにずれます。"
+        ],
+        [
+          "通知は1回？更新のたび？",
+          "1つのコインでは1回だけか繰り返しを選べます。繰り返しでは2回の通知の間の待ち時間を選びます（10分以上）。全コインでは常に繰り返しです。繰り返しはPlusとProで使えます。"
+        ],
+        [
+          "価格が高値に触れて戻ったら通知は来る？",
+          "いいえ。新高値には、その1分の高値が直前24時間の高値より大きい必要があります。同じでは足りません。"
+        ],
+        [
+          "上場したばかりのコインでも使える？",
+          "コインに24時間分のデータがたまると動き始めます。それまでは比べる24時間がそろっていません。"
+        ],
+        [
+          "AIでどう設定する？",
+          "AI画面に入力するか、[音声アシスタント](features/voice-crypto-alerts)に話しかけます。全コインで待ち時間を言わなかった場合、AIが聞きます：「この繰り返しの24時間アラートでは、通知の間隔をどれくらい空けますか？たとえば1時間です。」"
+        ]
+      ],
+      "related": [
+        "features/all-coins-alerts",
+        "features/voice-crypto-alerts",
+        "features/telegram-crypto-alerts",
+        "features/price-alerts",
+        "features/percent-change-alerts"
+      ],
+      "plans": [
+        [
+          "Free",
+          "アラート3件。価格、変動率、24時間高値／安値。サイレントまたはサウンド付きプッシュ。条件を満たすと1回通知。"
+        ],
+        [
+          "Plus",
+          "アラート20件。繰り返しアラート、1件あたり最大3条件、上位100の全コインアラート2件。プッシュとTelegram。"
+        ],
+        [
+          "Pro",
+          "アラート100件。1件あたり最大5条件、全コイン対象の全コインアラート10件。プッシュ、Telegram、署名付きWebhook。"
+        ]
+      ],
+      "hl": {
+        "kicker": "BINANCE · 24H 高値 / 安値 · 無料",
+        "chips": [
+          "↑ 新高値",
+          "↓ 新安値",
+          "どちらでも",
+          "アプリを閉じていても"
+        ],
+        "coinK": "Spot USDT · 30分足 · 直近48時間",
+        "replay": "もう一度",
+        "stats": [
+          "24h高値",
+          "現在",
+          "状態"
+        ],
+        "st": {
+          "w": "監視中",
+          "t": "接触",
+          "b": "更新 ✓"
+        },
+        "legK": [
+          "ローソク足",
+          "直近24時間",
+          "基準線：24h高値"
+        ],
+        "winK": "直近24時間",
+        "annK": [
+          "直近24時間の期間",
+          "基準線：24h高値",
+          "古い高値は24時間で外れる",
+          "触れたが超えず",
+          "超えた → 通知"
+        ],
+        "stepsK": [
+          "期間は直近24時間をカバーし、毎分ずれます。",
+          "基準線は期間内の最高値です。",
+          "古い高値が期間から外れると基準線が下がります。",
+          "価格が基準線に触れて戻っても通知なし。",
+          "基準線を超えたその1分で通知が届きます。"
+        ],
+        "chnPush": "プッシュ · Free",
+        "chnTg": "Telegram · Plus / Pro",
+        "now": "今",
+        "alarm": "SOL 24h高値",
+        "chartK": "SOLの30分足チャート：24時間の期間がずれ、古い高値が外れると基準線が下がり、価格が新しい基準線を超えると通知が送られます。",
+        "lead": "オレンジの点はその時点の価格です。前へ動かすと24時間の期間も一緒に動きます。高値や安値を更新する瞬間を見つけましょう。",
+        "legP": [
+          "オレンジの点：その時点の価格",
+          "点から遡った24時間",
+          "24h高値",
+          "24h安値"
+        ],
+        "hint": "ドラッグして時間を進める",
+        "slider": "時間を動かす",
+        "ends": [
+          "昨日",
+          "現在"
+        ],
+        "winP": "24時間",
+        "tagHi": "24h高値 {v}",
+        "tagLo": "24h安値 {v}",
+        "vNone": [
+          "高値も安値も更新なし",
+          "価格 {p}：高値まで {d1}、安値まで {d2}。通知なし。"
+        ],
+        "vUp": [
+          "新高値：高値更新 → 通知",
+          "この足の高値は {p}、直前24時間の高値は {hi}。上回りました。"
+        ],
+        "vDn": [
+          "新安値：安値更新 → 通知",
+          "この足の安値は {p}、直前24時間の安値は {lo}。下回りました。"
+        ],
+        "chartP": "BTCの30分足チャート。オレンジの点はドラッグでき、24時間の高値線と安値線も一緒に変わります。",
+        "sKicker": "4つの方法 · 同じアラート",
+        "sLead": "いちばん簡単なのはAIに入力すること。話しかけても、テンプレートでも、フォームでも同じアラートを設定できます。",
+        "tabs": [
+          [
+            "入力",
+            "AIチャット"
+          ],
+          [
+            "話す",
+            "音声アシスタント"
+          ],
+          [
+            "テンプレート",
+            "ワンタップ"
+          ],
+          [
+            "フォーム",
+            "自分で選ぶ"
+          ]
+        ],
+        "easy": "いちばん簡単",
+        "panes": {
+          "chat": [
+            "入力：AIチャット",
+            "自分の言葉でリクエストを入力します。全コインでは待ち時間が必要です。言わなかった場合はAIが質問し、その後アラートを設定します。全コインはPlusとProで使えます。"
+          ],
+          "voice": [
+            "話す：音声アシスタント",
+            "マイクをタップして話します。リクエストがはっきりしていれば、アシスタントがすぐにアラートを設定し、結果をカードで表示します。"
+          ],
+          "tpl": [
+            "テンプレート：ワンタップ",
+            "AI画面の下の「24時間高値ブレイク」テンプレートをタップ。下書きがすぐにでき、AIの利用回数は使いません。"
+          ],
+          "form": [
+            "フォーム：自分で選ぶ",
+            "アラートを作成 → 条件タイプ「24h高値/安値」 → 新高値、新安値、どちらでも → 条件を保存。"
+          ]
+        },
+        "shotAlt": [
+          "AIチャットで設定した上位100 · 24h高値アラート",
+          "音声アシスタントが設定した上位100 · 24h高値アラート",
+          "24時間高値ブレイクテンプレートからのアラート下書き",
+          "アラート作成画面の24時間高値/安値条件、新高値を選択"
+        ],
+        "nKicker": "1日を再生",
+        "nTitle": "1日のうちいつ通知が来る？",
+        "nText": "ETHの1日分の15分足。緑の線が24h高値、赤の線が24h安値で、1日の中で上下します。更新のたびにリングで印を付けています。繰り返しのアラートでは、待ち時間中の更新は通知されません。",
+        "modes": [
+          "新高値",
+          "新安値",
+          "どちらでも"
+        ],
+        "pols": [
+          "1回のみ",
+          "繰り返す · 1時間"
+        ],
+        "play": "再生",
+        "legN": [
+          "15分足",
+          "24h高値（基準線）",
+          "24h安値",
+          "通知",
+          "待ち時間 · 通知なし"
+        ],
+        "annN": {
+          "hi": "{t} 高値更新 → 通知",
+          "sil": "再び更新、1時間待ち → 通知なし",
+          "once": "1回のみ：アラート完了",
+          "lo": "{t} 安値更新 → 通知"
+        },
+        "feed": {
+          "hi": "24h高値を上回る · {v}",
+          "lo": "24h安値を下回る · {v}"
+        },
+        "stN": [
+          "通知",
+          "待ち時間",
+          "完了"
+        ],
+        "more": "ほか {n} 件",
+        "sum": "通知 {a} 件 · 通知なしの更新 {b} 件",
+        "chartN": "ETHの1日分の15分足チャート。24時間の高値線と安値線、通知した更新と待ち時間中に通知しなかった更新を表示。",
+        "quotes": {
+          "chat": "「上位100銘柄のどれかが24時間高値を超えたら知らせて」",
+          "voice": "「上位100銘柄のどれかが24時間高値を超えたら知らせて、1時間に1回で十分」",
+          "tpl": "テンプレート：24時間高値ブレイク",
+          "form": "どの動き？ 新高値"
+        }
+      }
     }
   },
   "zh": {
@@ -1544,6 +3343,263 @@
         "upLong": "向上突破",
         "downLong": "向下突破",
         "top100": "前 100"
+      }
+    },
+    "24h-high-low-alerts": {
+      "link": "24 小时高点/低点提醒",
+      "title": "如何设置 24 小时最高价和最低价提醒。免费 | MarketAlert",
+      "h1": "币种突破 24 小时最高价时，怎样收到提醒？",
+      "description": "Binance 币种突破过去 24 小时的最高价或最低价时，通过推送和 Telegram 通知你。Free 计划可用；打字或对 AI 说一句话就能设置。",
+      "intro": "不是“今天”，而是从任何时刻往回数的 24 小时。你选择币种和走势：新高、新低或任一。价格在某一分钟内突破这段时间的最高价或跌破最低价，这一分钟收盘时 MarketAlert 就会向你的手机发送推送；消息也可以发到 [Telegram](features/telegram-crypto-alerts)。同样的提醒也可以设置在[全部币种](features/all-coins-alerts)上。",
+      "prompt": "前 100 的币种里有谁突破 24 小时最高价就告诉我，一小时一次就够了。",
+      "exampleTitle": "“过去 24 小时”是什么意思？",
+      "caption": "橙色圆点是那一刻的价格。最高价和最低价按圆点之前的 24 小时计算。",
+      "steps": [
+        [
+          "打字或说给 AI",
+          "在 AI 界面用自己的话写下需求，或点麦克风说出来，例如“BTC 突破 24 小时最高价就告诉我”。缺少信息时 AI 会追问，然后设置提醒。"
+        ],
+        [
+          "或者点模板",
+          "AI 界面下方的“突破 24 小时高点”模板会直接给出草稿。模板不消耗 AI 次数；换成你要的币种即可设置。"
+        ],
+        [
+          "用表单的话，选择条件类型",
+          "在“创建提醒”中选择币种，在条件类型窗口点“24小时高/低”。"
+        ],
+        [
+          "选择走势并保存",
+          "选择“新高”“新低”或“任一”，点“保存条件”。选择通知渠道并保存提醒。"
+        ]
+      ],
+      "details": [
+        [
+          "24 小时最高价怎么算？",
+          "每分钟收盘时，MarketAlert 取这一分钟之前 24 小时（1,440 根 1 分钟 K 线）的最高价和最低价。这一分钟的最高价高于该最高价就是新高；最低价低于该最低价就是新低。碰到不算，必须突破。时间窗口每分钟向前移动，所以旧的高点满 24 小时就会移出，基准线随之下降。"
+        ],
+        [
+          "通知里写什么？",
+          "推送标题类似“SOL 突破 24 小时最高价”，下面是价格和 24 小时最高。Telegram 消息显示新高或新低、市场，以及打开 Binance 图表的按钮。"
+        ],
+        [
+          "在全部币种上怎么运作？",
+          "如果选择全部币种而不是单个币种，每个币种都和自己的 24 小时比较，突破的币种会通知你。Plus 覆盖前 100，Pro 覆盖全部币种。全部币种的提醒是重复的：同一币种两次通知之间会等待你选择的时间。"
+        ],
+        [
+          "这是买卖信号吗？",
+          "不是。MarketAlert 只在你选择的突破发生时通知你。它不交易、不连接交易所账户，也不提供投资建议。"
+        ]
+      ],
+      "faq": [
+        [
+          "24 小时高点/低点提醒免费吗？",
+          "免费。在 Free 计划中可以为单个币种设置。Telegram 和全部币种在 Plus 与 Pro 中提供，两者都有 7 天免费试用。"
+        ],
+        [
+          "和当日最高价有什么不同？",
+          "自然日在午夜重新开始。这个提醒始终看从现在往回的 24 小时，窗口每分钟向前移动。"
+        ],
+        [
+          "只通知一次还是每次突破都通知？",
+          "单个币种可以选择仅一次或重复。重复时你选择两次通知之间的等待时间，至少 10 分钟。全部币种始终是重复的。重复提醒在 Plus 和 Pro 中提供。"
+        ],
+        [
+          "价格碰到最高价又回落，会通知吗？",
+          "不会。新高要求这一分钟的最高价大于之前 24 小时的最高价，相等不算。"
+        ],
+        [
+          "新上线的币种能用吗？",
+          "币种有了 24 小时的数据后开始运作。在此之前没有完整的 24 小时可供比较。"
+        ],
+        [
+          "怎样用 AI 设置？",
+          "在 AI 界面输入，或对[语音助手](features/voice-crypto-alerts)说。全部币种如果你没说等待时间，AI 会问：“这个重复的 24 小时提醒两次通知之间要等多久？比如 1 小时。”"
+        ]
+      ],
+      "related": [
+        "features/all-coins-alerts",
+        "features/voice-crypto-alerts",
+        "features/telegram-crypto-alerts",
+        "features/price-alerts",
+        "features/percent-change-alerts"
+      ],
+      "plans": [
+        [
+          "Free",
+          "3 个提醒；价格、涨跌幅和 24 小时最高/最低。静音或有声推送。条件满足时通知一次。"
+        ],
+        [
+          "Plus",
+          "20 个提醒；重复提醒、每个提醒最多 3 个条件，以及前 100 币种的 2 个全币种提醒。推送和 Telegram。"
+        ],
+        [
+          "Pro",
+          "100 个提醒；每个提醒最多 5 个条件，以及覆盖全部币种的 10 个全币种提醒。推送、Telegram 和签名 Webhook。"
+        ]
+      ],
+      "hl": {
+        "kicker": "BINANCE · 24 小时高点 / 低点 · 免费",
+        "chips": [
+          "↑ 新高",
+          "↓ 新低",
+          "任一",
+          "应用关闭也能提醒"
+        ],
+        "coinK": "Spot USDT · 30 分钟 K 线 · 最近 48 小时",
+        "replay": "重播",
+        "stats": [
+          "24 小时最高",
+          "当前",
+          "状态"
+        ],
+        "st": {
+          "w": "监控中",
+          "t": "触及",
+          "b": "已突破 ✓"
+        },
+        "legK": [
+          "K 线",
+          "过去 24 小时",
+          "基准线：24 小时最高"
+        ],
+        "winK": "过去 24 小时",
+        "annK": [
+          "过去 24 小时窗口",
+          "基准线：24 小时最高",
+          "旧高点满 24 小时移出",
+          "触及，未突破",
+          "突破 → 通知"
+        ],
+        "stepsK": [
+          "窗口覆盖过去 24 小时，每分钟向前移动。",
+          "基准线是窗口内的最高价。",
+          "旧高点移出窗口后，基准线下降。",
+          "价格触及基准线又回落，不通知。",
+          "突破基准线的那一分钟发出通知。"
+        ],
+        "chnPush": "推送 · Free",
+        "chnTg": "Telegram · Plus / Pro",
+        "now": "现在",
+        "alarm": "SOL 24 小时最高",
+        "chartK": "SOL 30 分钟 K 线图：24 小时窗口向前移动，旧高点移出后基准线下降，价格突破新基准线时发出通知。",
+        "lead": "橙色圆点是那一刻的价格。向前拖动，24 小时窗口会跟着移动。找到它突破最高价或跌破最低价的时刻。",
+        "legP": [
+          "橙色圆点：那一刻的价格",
+          "圆点之前的 24 小时",
+          "24 小时最高",
+          "24 小时最低"
+        ],
+        "hint": "拖动来推进时间",
+        "slider": "移动时间",
+        "ends": [
+          "昨天",
+          "现在"
+        ],
+        "winP": "24 小时",
+        "tagHi": "24 小时最高 {v}",
+        "tagLo": "24 小时最低 {v}",
+        "vNone": [
+          "既没有突破最高价，也没有跌破最低价",
+          "价格 {p}：距最高价 {d1}，距最低价 {d2}。不通知。"
+        ],
+        "vUp": [
+          "新高：突破最高价 → 通知",
+          "这根 K 线最高 {p}，之前 24 小时最高 {hi}。已突破。"
+        ],
+        "vDn": [
+          "新低：跌破最低价 → 通知",
+          "这根 K 线最低 {p}，之前 24 小时最低 {lo}。已跌破。"
+        ],
+        "chartP": "BTC 30 分钟 K 线图；橙色圆点可以拖动，24 小时最高线和最低线随之变化。",
+        "sKicker": "4 种方式 · 同一个提醒",
+        "sLead": "最简单的是打字告诉 AI。也可以用说话、模板或表单设置同样的提醒。",
+        "tabs": [
+          [
+            "打字",
+            "AI 对话"
+          ],
+          [
+            "说话",
+            "语音助手"
+          ],
+          [
+            "模板",
+            "一键"
+          ],
+          [
+            "表单",
+            "自己选"
+          ]
+        ],
+        "easy": "最简单",
+        "panes": {
+          "chat": [
+            "打字：AI 对话",
+            "用自己的话写下需求。全部币种需要等待时间；如果你没说，AI 会问，然后设置提醒。全部币种在 Plus 和 Pro 中提供。"
+          ],
+          "voice": [
+            "说话：语音助手",
+            "点麦克风说出来。需求明确时，助手会立即设置提醒，并以卡片显示结果。"
+          ],
+          "tpl": [
+            "模板：一键",
+            "点 AI 界面下方的“突破 24 小时高点”模板。草稿直接生成，不消耗 AI 次数。"
+          ],
+          "form": [
+            "表单：自己选",
+            "创建提醒 → 条件类型“24小时高/低” → 新高、新低 或 任一 → 保存条件。"
+          ]
+        },
+        "shotAlt": [
+          "在 AI 对话中设置的前 100 · 24 小时最高提醒",
+          "语音助手设置的前 100 · 24 小时最高提醒",
+          "来自 突破 24 小时高点 模板的提醒草稿",
+          "创建提醒界面中的 24 小时高点/低点条件，已选 新高"
+        ],
+        "nKicker": "重播一天",
+        "nTitle": "一天中什么时候会收到通知？",
+        "nText": "ETH 一天的 15 分钟 K 线。绿线是 24 小时最高，红线是 24 小时最低，它们在一天中上下变化。每次突破都用圆环标出。重复提醒时，等待时间内的突破不会发送通知。",
+        "modes": [
+          "新高",
+          "新低",
+          "任一"
+        ],
+        "pols": [
+          "仅一次",
+          "重复 · 1 小时"
+        ],
+        "play": "播放",
+        "legN": [
+          "15 分钟 K 线",
+          "24 小时最高（基准线）",
+          "24 小时最低",
+          "通知",
+          "等待 · 不通知"
+        ],
+        "annN": {
+          "hi": "{t} 突破最高价 → 通知",
+          "sil": "再次突破，等待 1 小时 → 不通知",
+          "once": "仅一次：提醒已完成",
+          "lo": "{t} 跌破最低价 → 通知"
+        },
+        "feed": {
+          "hi": "突破 24 小时最高 · {v}",
+          "lo": "跌破 24 小时最低 · {v}"
+        },
+        "stN": [
+          "通知",
+          "等待",
+          "已完成"
+        ],
+        "more": "另有 {n} 次",
+        "sum": "{a} 次通知 · {b} 次未通知的突破",
+        "chartN": "ETH 一天的 15 分钟 K 线图，显示 24 小时最高线和最低线、发出通知的突破以及等待时间内未通知的突破。",
+        "quotes": {
+          "chat": "“前 100 个币里有突破 24 小时最高价的就提醒我”",
+          "voice": "“前 100 个币里有突破 24 小时最高价的就提醒我，一小时一次就够”",
+          "tpl": "模板：突破 24 小时高点",
+          "form": "哪种走势？ 新高"
+        }
       }
     }
   },
@@ -1738,6 +3794,263 @@
         "downLong": "नीचे की ओर पार करे",
         "top100": "टॉप 100"
       }
+    },
+    "24h-high-low-alerts": {
+      "link": "24 घंटे हाई/लो अलर्ट",
+      "title": "24 घंटे के हाई और लो का अलर्ट कैसे सेट करें। मुफ़्त | MarketAlert",
+      "h1": "कोई कॉइन 24 घंटे का हाई तोड़े तो अलर्ट कैसे पाऊँ?",
+      "description": "जब Binance का कोई कॉइन पिछले 24 घंटे का सबसे ऊँचा या सबसे नीचा भाव तोड़े, तो पुश और Telegram पर सूचना पाएँ। Free प्लान में; AI को लिखकर या बोलकर सेट करें।",
+      "intro": "“आज” नहीं, बल्कि हर पल से पीछे गिने गए पिछले 24 घंटे। आप कॉइन और चाल चुनते हैं: नया उच्च, नया निम्न या कोई भी। जिस मिनट में भाव इस अवधि के हाई से ऊपर जाए या लो से नीचे आए, उस मिनट के बंद होने पर MarketAlert आपके फ़ोन पर पुश भेजता है; संदेश [Telegram](features/telegram-crypto-alerts) पर भी जा सकता है। यही अलर्ट [सभी कॉइन](features/all-coins-alerts) पर भी सेट कर सकते हैं।",
+      "prompt": "टॉप 100 में से कोई कॉइन 24 घंटे का हाई तोड़े तो बताना, घंटे में एक बार काफ़ी है।",
+      "exampleTitle": "“पिछले 24 घंटे” का क्या मतलब है?",
+      "caption": "नारंगी बिंदु उस पल का भाव है। हाई और लो बिंदु से पहले के 24 घंटों में मापे जाते हैं।",
+      "steps": [
+        [
+          "AI को लिखें या बोलें",
+          "AI स्क्रीन पर अपने शब्दों में अनुरोध लिखें या माइक्रोफ़ोन टैप करके बोलें, जैसे “BTC 24 घंटे का हाई तोड़े तो बताना”। कुछ कमी हो तो AI पूछता है और अलर्ट सेट कर देता है।"
+        ],
+        [
+          "या टेम्पलेट टैप करें",
+          "AI स्क्रीन के नीचे “24 घंटे का हाई ब्रेकआउट” टेम्पलेट तैयार ड्राफ़्ट देता है। टेम्पलेट से AI की सीमा खर्च नहीं होती; कॉइन बदलें और अलर्ट सेट करें।"
+        ],
+        [
+          "फ़ॉर्म से: शर्त का प्रकार चुनें",
+          "“अलर्ट बनाएँ” में कॉइन चुनें, फिर शर्त के प्रकार वाली विंडो में “24 घं. उच्च/निम्न” टैप करें।"
+        ],
+        [
+          "चाल चुनें और सहेजें",
+          "“नया उच्च”, “नया निम्न” या “कोई भी” चुनें और “शर्त सहेजें” टैप करें। सूचना चैनल चुनें और अलर्ट सहेजें।"
+        ]
+      ],
+      "details": [
+        [
+          "24 घंटे का हाई कैसे मापा जाता है?",
+          "हर मिनट के बंद होने पर MarketAlert उस मिनट से पहले के 24 घंटों (1,440 एक-मिनट कैंडल) का सबसे ऊँचा और सबसे नीचा भाव लेता है। अगर मिनट का हाई उस हाई से ऊपर जाए तो नया उच्च, और उसका लो उस लो से नीचे जाए तो नया निम्न। छूना काफ़ी नहीं, पार करना ज़रूरी है। अवधि हर मिनट आगे खिसकती है, इसलिए पुराना हाई 24 घंटे बाद बाहर हो जाता है और रेखा नीचे आ जाती है।"
+        ],
+        [
+          "सूचना में क्या लिखा होता है?",
+          "पुश का शीर्षक “SOL ने 24 घंटे का उच्च स्तर तोड़ा” जैसा होता है, नीचे भाव और 24 घं. उच्च। Telegram संदेश में नया हाई या लो, मार्केट और Binance चार्ट खोलने वाला बटन होता है।"
+        ],
+        [
+          "सभी कॉइन पर यह कैसे चलता है?",
+          "एक कॉइन की जगह सभी कॉइन चुनें तो हर कॉइन अपने 24 घंटों से तुलना होता है और जो तोड़ते हैं उनकी सूचना मिलती है। Plus में टॉप 100 पर, Pro में सभी कॉइन पर चलता है। सभी कॉइन पर अलर्ट दोहराता है और एक ही कॉइन की दो सूचनाओं के बीच आपका चुना समय इंतज़ार करता है।"
+        ],
+        [
+          "क्या यह खरीद-बिक्री का संकेत है?",
+          "नहीं। MarketAlert सिर्फ़ तब बताता है जब आपका चुना हुआ ब्रेक होता है। यह ट्रेड नहीं करता, किसी एक्सचेंज खाते से नहीं जुड़ता और निवेश सलाह नहीं देता।"
+        ]
+      ],
+      "faq": [
+        [
+          "क्या 24 घंटे हाई/लो अलर्ट मुफ़्त है?",
+          "हाँ। एक कॉइन के लिए Free प्लान में सेट कर सकते हैं। Telegram और सभी कॉइन Plus और Pro में हैं, दोनों में 7 दिन का मुफ़्त ट्रायल है।"
+        ],
+        [
+          "आज के हाई से यह कैसे अलग है?",
+          "कैलेंडर का दिन आधी रात को फिर से शुरू होता है। यह अलर्ट हमेशा अभी से पीछे के 24 घंटे देखता है; अवधि हर मिनट आगे खिसकती है।"
+        ],
+        [
+          "यह एक बार बताता है या हर ब्रेक पर?",
+          "एक कॉइन के लिए आप एक बार या दोहराना चुन सकते हैं। दोहराने पर दो सूचनाओं के बीच का इंतज़ार चुनते हैं, कम से कम 10 मिनट। सभी कॉइन पर यह हमेशा दोहराता है। दोहराने वाले अलर्ट Plus और Pro में हैं।"
+        ],
+        [
+          "भाव हाई को छूकर लौट जाए तो क्या सूचना आएगी?",
+          "नहीं। नए उच्च के लिए मिनट का हाई पिछले 24 घंटे के हाई से बड़ा होना चाहिए; बराबर होना काफ़ी नहीं।"
+        ],
+        [
+          "क्या नए लिस्ट हुए कॉइन पर काम करता है?",
+          "कॉइन का 24 घंटे का डेटा पूरा होते ही यह शुरू हो जाता है। तब तक तुलना के लिए पूरे 24 घंटे नहीं होते।"
+        ],
+        [
+          "AI से कैसे सेट करूँ?",
+          "AI स्क्रीन पर लिखें या [वॉइस असिस्टेंट](features/voice-crypto-alerts) से बोलें। सभी कॉइन पर अगर आपने इंतज़ार का समय नहीं बताया, तो AI पूछता है: “इस दोहराए जाने वाले 24 घंटे के अलर्ट में दो सूचनाओं के बीच कितना इंतज़ार करूँ? जैसे 1 घंटा।”"
+        ]
+      ],
+      "related": [
+        "features/all-coins-alerts",
+        "features/voice-crypto-alerts",
+        "features/telegram-crypto-alerts",
+        "features/price-alerts",
+        "features/percent-change-alerts"
+      ],
+      "plans": [
+        [
+          "Free",
+          "3 अलर्ट; कीमत, प्रतिशत बदलाव और 24 घंटे का हाई/लो। साइलेंट या आवाज़ वाला पुश। शर्त पूरी होने पर एक बार सूचना।"
+        ],
+        [
+          "Plus",
+          "20 अलर्ट; दोहराने वाले अलर्ट, हर अलर्ट में 3 शर्तें तक और टॉप 100 पर 2 सभी-कॉइन अलर्ट। पुश और Telegram।"
+        ],
+        [
+          "Pro",
+          "100 अलर्ट; हर अलर्ट में 5 शर्तें तक और सभी कॉइन पर 10 सभी-कॉइन अलर्ट। पुश, Telegram और साइन किया हुआ वेबहुक।"
+        ]
+      ],
+      "hl": {
+        "kicker": "BINANCE · 24 घं. हाई / लो · मुफ़्त",
+        "chips": [
+          "↑ नया उच्च",
+          "↓ नया निम्न",
+          "कोई भी",
+          "ऐप बंद होने पर भी"
+        ],
+        "coinK": "Spot USDT · 30 मिनट कैंडल · पिछले 48 घंटे",
+        "replay": "फिर से",
+        "stats": [
+          "24 घं. उच्च",
+          "अभी",
+          "स्थिति"
+        ],
+        "st": {
+          "w": "नज़र में",
+          "t": "छुआ",
+          "b": "टूटा ✓"
+        },
+        "legK": [
+          "कैंडल",
+          "पिछले 24 घंटे",
+          "रेखा: 24 घं. उच्च"
+        ],
+        "winK": "पिछले 24 घंटे",
+        "annK": [
+          "पिछले 24 घंटे की अवधि",
+          "रेखा: 24 घं. उच्च",
+          "पुराना हाई 24 घंटे बाद हटता है",
+          "छुआ, पार नहीं किया",
+          "पार किया → सूचना"
+        ],
+        "stepsK": [
+          "अवधि पिछले 24 घंटे को कवर करती है और हर मिनट खिसकती है।",
+          "रेखा अवधि का सबसे ऊँचा भाव है।",
+          "पुराना हाई अवधि से हटते ही रेखा नीचे आती है।",
+          "भाव रेखा को छूकर लौटे तो सूचना नहीं।",
+          "जिस मिनट रेखा पार हो, सूचना आती है।"
+        ],
+        "chnPush": "पुश · Free",
+        "chnTg": "Telegram · Plus / Pro",
+        "now": "अभी",
+        "alarm": "SOL 24 घं. उच्च",
+        "chartK": "SOL का 30 मिनट कैंडल चार्ट: 24 घंटे की अवधि खिसकती है, पुराना हाई हटने पर रेखा नीचे आती है और भाव नई रेखा पार करे तो सूचना जाती है।",
+        "lead": "नारंगी बिंदु उस पल का भाव है। इसे आगे खींचें, 24 घंटे की अवधि साथ चलती है। वह पल पकड़ें जब यह हाई या लो तोड़ता है।",
+        "legP": [
+          "नारंगी बिंदु: उस पल का भाव",
+          "बिंदु से पहले के 24 घंटे",
+          "24 घं. उच्च",
+          "24 घं. निम्न"
+        ],
+        "hint": "समय आगे बढ़ाने के लिए खींचें",
+        "slider": "समय खिसकाएँ",
+        "ends": [
+          "कल",
+          "अभी"
+        ],
+        "winP": "24 घंटे",
+        "tagHi": "24 घं. उच्च {v}",
+        "tagLo": "24 घं. निम्न {v}",
+        "vNone": [
+          "न हाई टूटा, न लो",
+          "भाव {p}: हाई तक {d1}, लो तक {d2}। सूचना नहीं।"
+        ],
+        "vUp": [
+          "नया उच्च: हाई टूटा → सूचना",
+          "इस कैंडल का हाई {p}, पिछले 24 घंटे का हाई {hi}। पार किया।"
+        ],
+        "vDn": [
+          "नया निम्न: लो टूटा → सूचना",
+          "इस कैंडल का लो {p}, पिछले 24 घंटे का लो {lo}। नीचे गया।"
+        ],
+        "chartP": "BTC का 30 मिनट कैंडल चार्ट; नारंगी बिंदु खींचा जा सकता है और 24 घंटे की हाई व लो रेखाएँ साथ बदलती हैं।",
+        "sKicker": "4 तरीके · एक ही अलर्ट",
+        "sLead": "सबसे आसान है AI को लिखना। बोलकर, टेम्पलेट से या फ़ॉर्म से भी यही अलर्ट सेट होता है।",
+        "tabs": [
+          [
+            "लिखकर",
+            "AI चैट"
+          ],
+          [
+            "बोलकर",
+            "वॉइस असिस्टेंट"
+          ],
+          [
+            "टेम्पलेट",
+            "एक टैप"
+          ],
+          [
+            "फ़ॉर्म",
+            "खुद चुनें"
+          ]
+        ],
+        "easy": "सबसे आसान",
+        "panes": {
+          "chat": [
+            "लिखकर: AI चैट",
+            "अपने शब्दों में अनुरोध लिखें। सभी कॉइन पर इंतज़ार का समय चाहिए; आपने नहीं बताया तो AI पूछता है, फिर अलर्ट सेट करता है। सभी कॉइन Plus और Pro में हैं।"
+          ],
+          "voice": [
+            "बोलकर: वॉइस असिस्टेंट",
+            "माइक्रोफ़ोन टैप करें और बोलें। अनुरोध साफ़ हो तो असिस्टेंट तुरंत अलर्ट सेट करता है और नतीजा कार्ड में दिखाता है।"
+          ],
+          "tpl": [
+            "टेम्पलेट: एक टैप",
+            "AI स्क्रीन के नीचे “24 घंटे का हाई ब्रेकआउट” टेम्पलेट टैप करें। ड्राफ़्ट तैयार आता है; AI की सीमा खर्च नहीं होती।"
+          ],
+          "form": [
+            "फ़ॉर्म: खुद चुनें",
+            "अलर्ट बनाएँ → शर्त का प्रकार “24 घं. उच्च/निम्न” → नया उच्च, नया निम्न या कोई भी → शर्त सहेजें।"
+          ]
+        },
+        "shotAlt": [
+          "AI चैट में सेट हुआ टॉप 100 · 24 घं. उच्च अलर्ट",
+          "वॉइस असिस्टेंट से सेट हुआ टॉप 100 · 24 घं. उच्च अलर्ट",
+          "24 घंटे का हाई ब्रेकआउट टेम्पलेट से अलर्ट ड्राफ़्ट",
+          "अलर्ट बनाएँ स्क्रीन पर 24 घंटे हाई/लो शर्त, नया उच्च चुना हुआ"
+        ],
+        "nKicker": "एक दिन चलाएँ",
+        "nTitle": "दिन में सूचनाएँ कब आती हैं?",
+        "nText": "ETH के एक दिन के 15 मिनट कैंडल। हरी रेखा 24 घं. उच्च और लाल रेखा 24 घं. निम्न है: ये दिन भर ऊपर-नीचे होती हैं। हर ब्रेक पर एक घेरा है। अलर्ट दोहराने पर इंतज़ार के समय में हुए ब्रेक चुपचाप निकल जाते हैं।",
+        "modes": [
+          "नया उच्च",
+          "नया निम्न",
+          "कोई भी"
+        ],
+        "pols": [
+          "एक बार",
+          "दोहराएँ · 1 घं."
+        ],
+        "play": "चलाएँ",
+        "legN": [
+          "15 मिनट कैंडल",
+          "24 घं. उच्च (रेखा)",
+          "24 घं. निम्न",
+          "सूचना",
+          "इंतज़ार · चुप"
+        ],
+        "annN": {
+          "hi": "{t} हाई टूटा → सूचना",
+          "sil": "फिर टूटा, 1 घं. इंतज़ार → चुप",
+          "once": "एक बार: अलर्ट पूरा",
+          "lo": "{t} लो टूटा → सूचना"
+        },
+        "feed": {
+          "hi": "24 घं. उच्च पार · {v}",
+          "lo": "24 घं. निम्न टूटा · {v}"
+        },
+        "stN": [
+          "सूचना",
+          "इंतज़ार",
+          "पूरा"
+        ],
+        "more": "+{n} और घटनाएँ",
+        "sum": "{a} सूचनाएँ · {b} चुप ब्रेक",
+        "chartN": "ETH के एक दिन का 15 मिनट कैंडल चार्ट, 24 घंटे की हाई और लो रेखाएँ, सूचना वाले ब्रेक और इंतज़ार में चुपचाप निकले ब्रेक।",
+        "quotes": {
+          "chat": "“टॉप 100 में से कोई कॉइन 24 घंटे का हाई तोड़े तो बताना”",
+          "voice": "“टॉप 100 में से कोई कॉइन 24 घंटे का हाई तोड़े तो बताना, घंटे में एक बार काफ़ी है”",
+          "tpl": "टेम्पलेट: 24 घंटे का हाई ब्रेकआउट",
+          "form": "कौन-सी चाल? नया उच्च"
+        }
+      }
     }
   },
   "ar": {
@@ -1930,6 +4243,263 @@
         "upLong": "يتجاوز صعودًا",
         "downLong": "يتجاوز هبوطًا",
         "top100": "أفضل 100"
+      }
+    },
+    "24h-high-low-alerts": {
+      "link": "تنبيهات أعلى/أدنى سعر خلال 24 ساعة",
+      "title": "كيف تضبط تنبيه أعلى وأدنى سعر خلال 24 ساعة. مجانًا | MarketAlert",
+      "h1": "كيف أتلقى تنبيهًا عندما تكسر عملة أعلى سعر لها خلال 24 ساعة؟",
+      "description": "تلقَّ إشعارًا فوريًا ورسالة Telegram عندما تكسر عملة على Binance أعلى أو أدنى سعر لها خلال آخر 24 ساعة. متاح في خطة Free؛ اضبطه بالكتابة أو بالتحدث إلى الذكاء الاصطناعي.",
+      "intro": "ليس «اليوم»، بل آخر 24 ساعة محسوبة إلى الوراء من كل لحظة. تختار العملة والحركة: قمة جديدة أو قاع جديد أو أيّهما. عند إغلاق الدقيقة التي يتجاوز فيها السعر أعلى سعر في هذه الفترة أو ينزل تحت أدناه، يرسل MarketAlert إشعارًا إلى هاتفك، ويمكن أن تصل الرسالة إلى [Telegram](features/telegram-crypto-alerts) أيضًا. ويمكنك ضبط التنبيه نفسه على [كل العملات](features/all-coins-alerts).",
+      "prompt": "نبّهني إذا كسرت أي عملة من أفضل 100 أعلى سعر لها خلال 24 ساعة، مرة كل ساعة تكفي.",
+      "exampleTitle": "ماذا تعني «آخر 24 ساعة»؟",
+      "caption": "النقطة البرتقالية هي السعر في تلك اللحظة. يُقاس الأعلى والأدنى في الـ24 ساعة التي تسبق النقطة.",
+      "steps": [
+        [
+          "اكتب للذكاء الاصطناعي أو تحدّث إليه",
+          "في شاشة الذكاء الاصطناعي اكتب طلبك بكلماتك أو انقر الميكروفون وقُله، مثلًا «نبّهني إذا كسر BTC أعلى سعر له خلال 24 ساعة». إذا نقصت معلومة يسأل الذكاء الاصطناعي ثم يضبط التنبيه."
+        ],
+        [
+          "أو انقر القالب",
+          "قالب «اختراق أعلى 24 ساعة» أسفل شاشة الذكاء الاصطناعي يجهّز المسودة فورًا. القوالب لا تستهلك حصة الذكاء الاصطناعي؛ غيّر العملة واضبط التنبيه."
+        ],
+        [
+          "بالنموذج: اختر نوع الشرط",
+          "في «إنشاء تنبيه» اختر العملة، ثم انقر «أعلى/أدنى 24 س» في نافذة نوع الشرط."
+        ],
+        [
+          "اختر الحركة واحفظ",
+          "اختر «قمة جديدة» أو «قاع جديد» أو «أيّهما» وانقر «حفظ الشرط». اختر قناة الإشعار واحفظ التنبيه."
+        ]
+      ],
+      "details": [
+        [
+          "كيف يُقاس أعلى سعر خلال 24 ساعة؟",
+          "عند إغلاق كل دقيقة يأخذ MarketAlert أعلى وأدنى سعر في الـ24 ساعة السابقة لتلك الدقيقة (1440 شمعة دقيقة). إذا تجاوز أعلى سعر في الدقيقة ذلك الأعلى فهي قمة جديدة، وإذا نزل أدناها تحت الأدنى فهو قاع جديد. اللمس لا يكفي، يجب التجاوز. ولأن الفترة تتحرك كل دقيقة، تخرج القمة القديمة بعد 24 ساعة وينخفض الخط."
+        ],
+        [
+          "ماذا يقول الإشعار؟",
+          "عنوان الإشعار مثل «SOL كسر أعلى سعر في 24 ساعة»، وتحته السعر وأعلى 24 س. وتعرض رسالة Telegram القمة أو القاع الجديد والسوق وزرًا يفتح رسم Binance البياني."
+        ],
+        [
+          "كيف يعمل على كل العملات؟",
+          "إذا اخترت كل العملات بدل عملة واحدة، تُقارن كل عملة بالـ24 ساعة الخاصة بها ويصلك ما يكسر منها. يعمل على أفضل 100 في Plus وعلى كل العملات في Pro. على كل العملات يتكرر التنبيه وينتظر المدة التي تختارها بين إشعارين للعملة نفسها."
+        ],
+        [
+          "هل هي إشارة شراء أو بيع؟",
+          "لا. يخبرك MarketAlert فقط عندما يحدث الكسر الذي اخترته. لا يتداول ولا يتصل بحساب في منصة تداول ولا يقدّم نصيحة استثمارية."
+        ]
+      ],
+      "faq": [
+        [
+          "هل تنبيه أعلى/أدنى 24 ساعة مجاني؟",
+          "نعم. يمكنك ضبطه لعملة واحدة في خطة Free. ويتوفر Telegram وكل العملات في Plus وPro، ولكل منهما تجربة مجانية لمدة 7 أيام."
+        ],
+        [
+          "ما الفرق بينه وبين أعلى سعر اليوم؟",
+          "اليوم التقويمي يبدأ من جديد عند منتصف الليل. أما هذا التنبيه فينظر دائمًا إلى آخر 24 ساعة من الآن، والفترة تتحرك دقيقة بدقيقة."
+        ],
+        [
+          "هل ينبّه مرة واحدة أم عند كل كسر؟",
+          "لعملة واحدة تختار مرة واحدة أو التكرار. عند التكرار تختار مدة الانتظار بين إشعارين، 10 دقائق على الأقل. على كل العملات يتكرر دائمًا. التنبيهات المتكررة متاحة في Plus وPro."
+        ],
+        [
+          "إذا لمس السعر القمة ثم ارتد، هل يصلني إشعار؟",
+          "لا. للقمة الجديدة يجب أن يكون أعلى سعر في الدقيقة أكبر من أعلى سعر في الـ24 ساعة السابقة؛ المساواة لا تكفي."
+        ],
+        [
+          "هل يعمل على عملة أُدرجت حديثًا؟",
+          "يبدأ العمل عندما تتوفر للعملة بيانات 24 ساعة. قبل ذلك لا توجد 24 ساعة كاملة للمقارنة."
+        ],
+        [
+          "كيف أضبطه بالذكاء الاصطناعي؟",
+          "اكتبه في شاشة الذكاء الاصطناعي أو قله لـ[المساعد الصوتي](features/voice-crypto-alerts). على كل العملات، إذا لم تذكر مدة الانتظار يسأل الذكاء الاصطناعي: «كم أنتظر بين إشعارين لهذا التنبيه المتكرر لمدة 24 ساعة؟ مثلًا ساعة واحدة.»"
+        ]
+      ],
+      "related": [
+        "features/all-coins-alerts",
+        "features/voice-crypto-alerts",
+        "features/telegram-crypto-alerts",
+        "features/price-alerts",
+        "features/percent-change-alerts"
+      ],
+      "plans": [
+        [
+          "Free",
+          "3 تنبيهات؛ السعر ونسبة التغير وأعلى/أدنى سعر خلال 24 ساعة. إشعار صامت أو بالصوت. ينبّه التنبيه مرة واحدة عند تحقق شرطه."
+        ],
+        [
+          "Plus",
+          "20 تنبيهًا؛ تنبيهات متكررة وحتى 3 شروط لكل تنبيه وتنبيهان لكل العملات ضمن أعلى 100. إشعارات فورية وTelegram."
+        ],
+        [
+          "Pro",
+          "100 تنبيه؛ حتى 5 شروط لكل تنبيه و10 تنبيهات لكل العملات تشمل جميع العملات. إشعارات فورية وTelegram وويب هوك موقّع."
+        ]
+      ],
+      "hl": {
+        "kicker": "BINANCE · أعلى / أدنى 24 س · مجانًا",
+        "chips": [
+          "↑ قمة جديدة",
+          "↓ قاع جديد",
+          "أيّهما",
+          "حتى والتطبيق مغلق"
+        ],
+        "coinK": "Spot USDT · شموع 30 دقيقة · آخر 48 ساعة",
+        "replay": "إعادة",
+        "stats": [
+          "أعلى 24 س",
+          "الآن",
+          "الحالة"
+        ],
+        "st": {
+          "w": "قيد المراقبة",
+          "t": "لمس",
+          "b": "كُسر ✓"
+        },
+        "legK": [
+          "الشموع",
+          "آخر 24 ساعة",
+          "الخط: أعلى 24 س"
+        ],
+        "winK": "آخر 24 ساعة",
+        "annK": [
+          "فترة آخر 24 ساعة",
+          "الخط: أعلى 24 س",
+          "القمة القديمة تخرج بعد 24 س",
+          "لمس ولم يتجاوز",
+          "تجاوز ← إشعار"
+        ],
+        "stepsK": [
+          "تغطي الفترة آخر 24 ساعة وتتحرك كل دقيقة.",
+          "الخط هو أعلى سعر في الفترة.",
+          "عندما تخرج القمة القديمة من الفترة ينخفض الخط.",
+          "إذا لمس السعر الخط وارتد فلا إشعار.",
+          "في الدقيقة التي يتجاوز فيها الخط يصل الإشعار."
+        ],
+        "chnPush": "إشعار · Free",
+        "chnTg": "Telegram · Plus / Pro",
+        "now": "الآن",
+        "alarm": "SOL أعلى 24 س",
+        "chartK": "رسم SOL بشموع 30 دقيقة: فترة الـ24 ساعة تتحرك، والخط ينخفض عندما تخرج القمة القديمة، ويُرسل إشعار عندما يتجاوز السعر الخط الجديد.",
+        "lead": "النقطة البرتقالية هي السعر في تلك اللحظة. اسحبها إلى الأمام فتتحرك فترة الـ24 ساعة معها. التقط اللحظة التي تكسر فيها القمة أو القاع.",
+        "legP": [
+          "النقطة البرتقالية: السعر في تلك اللحظة",
+          "24 ساعة قبل النقطة",
+          "أعلى 24 س",
+          "أدنى 24 س"
+        ],
+        "hint": "اسحب لتقديم الوقت",
+        "slider": "تحريك الوقت",
+        "ends": [
+          "أمس",
+          "الآن"
+        ],
+        "winP": "24 ساعة",
+        "tagHi": "أعلى 24 س {v}",
+        "tagLo": "أدنى 24 س {v}",
+        "vNone": [
+          "لم تُكسر القمة ولا القاع",
+          "السعر {p}: {d1} حتى القمة، و{d2} حتى القاع. لا إشعار."
+        ],
+        "vUp": [
+          "قمة جديدة: كُسرت القمة ← إشعار",
+          "أعلى هذه الشمعة {p}، وأعلى الـ24 ساعة السابقة {hi}. تجاوزه."
+        ],
+        "vDn": [
+          "قاع جديد: كُسر القاع ← إشعار",
+          "أدنى هذه الشمعة {p}، وأدنى الـ24 ساعة السابقة {lo}. نزل تحته."
+        ],
+        "chartP": "رسم BTC بشموع 30 دقيقة؛ يمكن سحب النقطة البرتقالية وتتغير خطوط أعلى وأدنى 24 ساعة معها.",
+        "sKicker": "4 طرق · التنبيه نفسه",
+        "sLead": "الأسهل أن تكتب للذكاء الاصطناعي. ويمكنك ضبط التنبيه نفسه بالتحدث أو بقالب أو بالنموذج.",
+        "tabs": [
+          [
+            "بالكتابة",
+            "دردشة الذكاء الاصطناعي"
+          ],
+          [
+            "بالتحدث",
+            "المساعد الصوتي"
+          ],
+          [
+            "بقالب",
+            "نقرة واحدة"
+          ],
+          [
+            "بالنموذج",
+            "اختر بنفسك"
+          ]
+        ],
+        "easy": "الأسهل",
+        "panes": {
+          "chat": [
+            "بالكتابة: دردشة الذكاء الاصطناعي",
+            "اكتب طلبك بكلماتك. على كل العملات تلزم مدة انتظار؛ إن لم تذكرها يسأل الذكاء الاصطناعي ثم يضبط التنبيه. كل العملات متاحة في Plus وPro."
+          ],
+          "voice": [
+            "بالتحدث: المساعد الصوتي",
+            "انقر الميكروفون وتحدّث. إذا كان الطلب واضحًا يضبط المساعد التنبيه فورًا ويعرض النتيجة في بطاقة."
+          ],
+          "tpl": [
+            "بقالب: نقرة واحدة",
+            "انقر قالب «اختراق أعلى 24 ساعة» أسفل شاشة الذكاء الاصطناعي. تأتي المسودة جاهزة ولا تُستهلك حصة الذكاء الاصطناعي."
+          ],
+          "form": [
+            "بالنموذج: اختر بنفسك",
+            "إنشاء تنبيه ← نوع الشرط «أعلى/أدنى 24 س» ← قمة جديدة أو قاع جديد أو أيّهما ← حفظ الشرط."
+          ]
+        },
+        "shotAlt": [
+          "تنبيه أفضل 100 · أعلى 24 س مضبوط في دردشة الذكاء الاصطناعي",
+          "تنبيه أفضل 100 · أعلى 24 س ضبطه المساعد الصوتي",
+          "مسودة تنبيه من قالب اختراق أعلى 24 ساعة",
+          "شرط أعلى/أدنى 24 ساعة في شاشة إنشاء تنبيه، مع اختيار قمة جديدة"
+        ],
+        "nKicker": "أعد تشغيل يوم",
+        "nTitle": "متى تصل الإشعارات خلال اليوم؟",
+        "nText": "يوم من ETH بشموع 15 دقيقة. الخط الأخضر هو أعلى 24 س والأحمر أدنى 24 س، ويرتفعان وينخفضان خلال اليوم. كل كسر عليه حلقة. عندما يتكرر التنبيه تمر الكسور التي تقع في مدة الانتظار بصمت.",
+        "modes": [
+          "قمة جديدة",
+          "قاع جديد",
+          "أيّهما"
+        ],
+        "pols": [
+          "مرة واحدة",
+          "تكرار · 1 س"
+        ],
+        "play": "تشغيل",
+        "legN": [
+          "شموع 15 دقيقة",
+          "أعلى 24 س (الخط)",
+          "أدنى 24 س",
+          "إشعار",
+          "انتظار · بصمت"
+        ],
+        "annN": {
+          "hi": "{t} كُسرت القمة ← إشعار",
+          "sil": "كُسرت مجددًا، انتظار 1 س ← بصمت",
+          "once": "مرة واحدة: اكتمل التنبيه",
+          "lo": "{t} كُسر القاع ← إشعار"
+        },
+        "feed": {
+          "hi": "تجاوز أعلى 24 س · {v}",
+          "lo": "كسر أدنى 24 س · {v}"
+        },
+        "stN": [
+          "إشعار",
+          "انتظار",
+          "اكتمل"
+        ],
+        "more": "+{n} أحداث أخرى",
+        "sum": "{a} إشعارات · {b} كسور بصمت",
+        "chartN": "يوم من ETH بشموع 15 دقيقة مع خطَّي أعلى وأدنى 24 ساعة، والكسور التي أُرسل عنها إشعار والتي مرت بصمت في مدة الانتظار.",
+        "quotes": {
+          "chat": "«نبّهني إذا كسرت أي عملة من أفضل 100 أعلى سعر خلال 24 ساعة»",
+          "voice": "«نبّهني إذا كسرت أي عملة من أفضل 100 أعلى سعر خلال 24 ساعة، مرة كل ساعة تكفي»",
+          "tpl": "قالب: اختراق أعلى 24 ساعة",
+          "form": "أي حركة؟ قمة جديدة"
+        }
       }
     }
   },
@@ -2127,6 +4697,263 @@
         "upLong": "Crosses above",
         "downLong": "Crosses below",
         "top100": "Top 100"
+      }
+    },
+    "24h-high-low-alerts": {
+      "link": "24h high/low alerts",
+      "title": "How to set a 24-hour high and low alert. Free | MarketAlert",
+      "h1": "How do I get an alert when a coin breaks its 24-hour high?",
+      "description": "Get a push and Telegram notification when a Binance coin breaks its highest or lowest price of the last 24 hours. On the Free plan; set it up by typing or talking to the AI.",
+      "intro": "Not “today”, but the last 24 hours counted back from every moment. You pick the coin and the move: new high, new low or either. At the close of the minute in which the price passes the window’s high or drops below its low, MarketAlert sends a push to your phone, and the message can also go to [Telegram](features/telegram-crypto-alerts). You can set the same alert on [all coins](features/all-coins-alerts) too.",
+      "prompt": "Tell me if any top 100 coin breaks its 24-hour high, once an hour is enough.",
+      "exampleTitle": "What does “the last 24 hours” mean?",
+      "caption": "The orange dot is the price at that moment. The high and low are measured over the 24 hours before the dot.",
+      "steps": [
+        [
+          "Type or say it to the AI",
+          "On the AI screen, write your request in your own words or tap the microphone and say it, for example “Tell me if BTC breaks its 24-hour high”. If something is missing, the AI asks, then sets the alert."
+        ],
+        [
+          "Or tap the template",
+          "The “24-hour high breakout” template under the AI screen brings a ready draft. Templates don’t use your AI allowance; change the coin and set the alert."
+        ],
+        [
+          "To use the form, pick the condition type",
+          "On Create an alert, choose the coin, then tap “24h high/low” in the condition type window."
+        ],
+        [
+          "Choose the move and save",
+          "Choose “New high”, “New low” or “Either” and tap Save condition. Pick the notification channel and save the alert."
+        ]
+      ],
+      "details": [
+        [
+          "How is the 24-hour high measured?",
+          "At the close of every minute, MarketAlert takes the highest and lowest price of the 24 hours before that minute (1,440 one-minute candles). If the minute’s high goes above that high, it is a new high; if its low goes below the low, it is a new low. Touching isn’t enough; it has to pass. Because the window moves every minute, an old high drops out after 24 hours and the bar comes down."
+        ],
+        [
+          "What does the notification say?",
+          "The push title reads like “SOL broke its 24h high”, with the price and the 24h high below it. The Telegram message shows the new high or low, the market and a button that opens the Binance chart."
+        ],
+        [
+          "How does it work on all coins?",
+          "If you choose all coins instead of one coin, each coin is watched against its own 24 hours and the ones that break are reported to you. It runs on the top 100 on Plus and on every coin on Pro. On all coins the alert repeats, waiting the time you choose between two notifications for the same coin."
+        ],
+        [
+          "Is it a buy or sell signal?",
+          "No. MarketAlert only tells you when the break you chose happens. It does not trade, does not connect to an exchange account and does not give investment advice."
+        ]
+      ],
+      "faq": [
+        [
+          "Is the 24-hour high/low alert free?",
+          "Yes. You can set it for a single coin on the Free plan. Telegram and all coins are on Plus and Pro, both with a 7-day free trial."
+        ],
+        [
+          "How is it different from today’s high?",
+          "A calendar day resets at midnight. This alert always looks at the last 24 hours back from now; the window moves minute by minute."
+        ],
+        [
+          "Does it notify once or on every break?",
+          "For one coin you can set it to fire once or to repeat. When it repeats, you choose how long to wait between two notifications, at least 10 minutes. On all coins it always repeats. Repeating alerts are on Plus and Pro."
+        ],
+        [
+          "If the price touches the high and turns back, do I get a notification?",
+          "No. For a new high the minute’s high must be greater than the previous 24-hour high; being equal isn’t enough."
+        ],
+        [
+          "Does it work on a newly listed coin?",
+          "It starts once the coin has 24 hours of data. Until then there isn’t a full 24 hours to compare with."
+        ],
+        [
+          "How do I set it up with the AI?",
+          "Type it on the AI screen or say it to the [voice assistant](features/voice-crypto-alerts). On all coins, if you didn’t say how long to wait, the AI asks: “How long should I wait between two notifications of this repeating 24-hour alert? For example 1 hour.”"
+        ]
+      ],
+      "related": [
+        "features/all-coins-alerts",
+        "features/voice-crypto-alerts",
+        "features/telegram-crypto-alerts",
+        "features/price-alerts",
+        "features/percent-change-alerts"
+      ],
+      "plans": [
+        [
+          "Free",
+          "3 alerts; price, percentage move and 24h high/low. Silent or Sound push. An alert notifies once when its condition is met."
+        ],
+        [
+          "Plus",
+          "20 alerts; repeating alerts, up to 3 conditions per alert and 2 all-coins alerts on the top 100. Push and Telegram."
+        ],
+        [
+          "Pro",
+          "100 alerts; up to 5 conditions per alert and 10 all-coins alerts across every coin. Push, Telegram and signed webhook."
+        ]
+      ],
+      "hl": {
+        "kicker": "BINANCE · 24H HIGH / LOW · FREE",
+        "chips": [
+          "↑ New high",
+          "↓ New low",
+          "Either",
+          "even with the app closed"
+        ],
+        "coinK": "Spot USDT · 30m candles · last 48 hours",
+        "replay": "replay",
+        "stats": [
+          "24h high",
+          "now",
+          "status"
+        ],
+        "st": {
+          "w": "watching",
+          "t": "touched",
+          "b": "broken ✓"
+        },
+        "legK": [
+          "candles",
+          "last 24 hours",
+          "bar: 24h high"
+        ],
+        "winK": "last 24 hours",
+        "annK": [
+          "last 24-hour window",
+          "bar: 24h high",
+          "old high leaves after 24 h",
+          "touched, didn’t pass",
+          "passed → notification"
+        ],
+        "stepsK": [
+          "The window covers the last 24 hours and moves every minute.",
+          "The bar is the highest price in the window.",
+          "When the old high leaves the window, the bar comes down.",
+          "If the price touches the bar and turns back, no notification.",
+          "The minute it passes the bar, the notification comes."
+        ],
+        "chnPush": "Push · Free",
+        "chnTg": "Telegram · Plus / Pro",
+        "now": "now",
+        "alarm": "SOL 24h high",
+        "chartK": "SOL 30-minute candle chart: the 24-hour window moves, the bar comes down when the old high leaves the window, and a notification goes out when the price passes the new bar.",
+        "lead": "The orange dot is the price at that moment. Drag it forward and the 24-hour window moves with it. Catch the moment it breaks the high or the low.",
+        "legP": [
+          "orange dot: price at that moment",
+          "24 hours back from the dot",
+          "24h high",
+          "24h low"
+        ],
+        "hint": "Drag to move time",
+        "slider": "Move time",
+        "ends": [
+          "yesterday",
+          "now"
+        ],
+        "winP": "24 hours",
+        "tagHi": "24h high {v}",
+        "tagLo": "24h low {v}",
+        "vNone": [
+          "Neither the high nor the low broke",
+          "Price {p}: {d1} to the high, {d2} to the low. No notification."
+        ],
+        "vUp": [
+          "New high: high broken → notification",
+          "This candle’s high is {p}; the previous 24-hour high was {hi}. It passed."
+        ],
+        "vDn": [
+          "New low: low broken → notification",
+          "This candle’s low is {p}; the previous 24-hour low was {lo}. It went below."
+        ],
+        "chartP": "BTC 30-minute candle chart; the orange dot can be dragged and the 24-hour high and low lines change with it.",
+        "sKicker": "4 WAYS · SAME ALERT",
+        "sLead": "The easiest is to type it to the AI. You can also set the same alert by talking, with a template or with the form.",
+        "tabs": [
+          [
+            "Typing",
+            "AI chat"
+          ],
+          [
+            "Talking",
+            "voice assistant"
+          ],
+          [
+            "Template",
+            "one tap"
+          ],
+          [
+            "Form",
+            "pick it yourself"
+          ]
+        ],
+        "easy": "easiest",
+        "panes": {
+          "chat": [
+            "Typing: AI chat",
+            "Write your request in your own words. On all coins a wait time is needed; if you didn’t say it, the AI asks, then sets the alert. All coins are on Plus and Pro."
+          ],
+          "voice": [
+            "Talking: voice assistant",
+            "Tap the microphone and say it. When the request is clear, the assistant sets the alert right away and shows the result as a card."
+          ],
+          "tpl": [
+            "Template: one tap",
+            "Tap the “24-hour high breakout” template under the AI screen. The draft comes ready; it doesn’t use your AI allowance."
+          ],
+          "form": [
+            "Form: pick it yourself",
+            "Create an alert → condition type “24h high/low” → New high, New low or Either → Save condition."
+          ]
+        },
+        "shotAlt": [
+          "Top 100 · 24h high alert set in the AI chat",
+          "Top 100 · 24h high alert set by the voice assistant",
+          "Alert draft from the 24-hour high breakout template",
+          "24-hour high/low condition on the Create an alert screen, New high selected"
+        ],
+        "nKicker": "REPLAY A DAY",
+        "nTitle": "When do notifications come during the day?",
+        "nText": "One day of ETH 15-minute candles. The green line is the 24h high and the red line the 24h low: they rise and fall during the day. Every break is marked with a ring. When the alert repeats, breaks that fall inside the wait time pass silently.",
+        "modes": [
+          "New high",
+          "New low",
+          "Either"
+        ],
+        "pols": [
+          "Once",
+          "Repeat · 1 h"
+        ],
+        "play": "play",
+        "legN": [
+          "15m candles",
+          "24h high (bar)",
+          "24h low",
+          "notification",
+          "waiting · silent"
+        ],
+        "annN": {
+          "hi": "{t} high broken → notification",
+          "sil": "broken again, 1 h wait → silent",
+          "once": "once: alert complete",
+          "lo": "{t} low broken → notification"
+        },
+        "feed": {
+          "hi": "24h high passed · {v}",
+          "lo": "24h low broken · {v}"
+        },
+        "stN": [
+          "notification",
+          "waiting",
+          "complete"
+        ],
+        "more": "+{n} more events",
+        "sum": "{a} notifications · {b} silent breaks",
+        "chartN": "One day of ETH 15-minute candles with the 24-hour high and low lines, breaks that sent a notification and breaks that passed silently during the wait time.",
+        "quotes": {
+          "chat": "“Tell me if any top 100 coin breaks its 24-hour high”",
+          "voice": "“Tell me if any top 100 coin breaks its 24-hour high, once an hour is enough”",
+          "tpl": "Template: 24-hour high breakout",
+          "form": "Which move? New high"
+        }
       }
     }
   }

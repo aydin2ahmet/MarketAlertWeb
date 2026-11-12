@@ -1,0 +1,62 @@
+---
+/**
+ * "Bir günü oynat", tasarım N2-2 (2026-11-12, Ahmet): ETH'nin bir günlük 15 dk soluk mumları; yeşil ve kırmızı
+ * basamak çizgileri gün içinde 24s zirvenin ve dibin nasıl değiştiğini gösterir. Bildirim giden kırılımlar numaralı
+ * halka, bekleme süresine (1 saat) denk gelenler kesik çizgili "sessiz". Yön ve "Bir kez / Tekrarla" seçilebilir.
+ * Altta olay listesi ve özet. Sayfa ilk hâliyle (JS yokken de) günün sonunu gösterir.
+ */
+import { DLAST, dayEvents, daySvg, dayTime, fill, hlLang, num, type Ev, type Mode, type Pol } from '../../lib/hl';
+import '../../styles/hl.css';
+
+interface Props { code: string; hl: any }
+const { code, hl } = Astro.props;
+const L = hlLang(code);
+const W = 1100, H = 290, mode: Mode = 'b', pol: Pol = 'rep';
+const feed = (ev: Ev[]) => { let k = 0; return ev.slice(0, 6).map(x => { const ok = x.st === 'ok'; if (ok) k++; return { nb: ok ? String(k) : '·', cls: ok ? x.k : 's', t: dayTime(x.e), txt: fill(x.k === 'h' ? hl.feed.hi : hl.feed.lo, { v: num(L.num, x.v, 1) }), st: ok ? hl.stN[0] : x.st === 'sil' ? hl.stN[1] : hl.stN[2], ok }; }); };
+const ev = dayEvents(mode, pol), rows = feed(ev), tot = ev.filter(x => x.st === 'ok').length;
+const data = { code, annN: hl.annN, feed: hl.feed, stN: hl.stN, more: hl.more, sum: hl.sum };
+---
+<section class="hld guide-section" aria-labelledby="hld-title" data-hl={JSON.stringify(data)}>
+  <p class="kicker">{hl.nKicker}</p><h2 id="hld-title">{hl.nTitle}</h2><p class="hld-text">{hl.nText}</p>
+  <div class="hl-card">
+    <div class="hld-bar">
+      <div class="hl-pill hld-m" role="group" aria-label={hl.legN[1]}>{['h', 'l', 'b'].map((k, i) => <button type="button" data-k={k} aria-pressed={String(k === mode)}>{hl.modes[i]}</button>)}</div>
+      <div class="hl-pill hld-p" role="group" aria-label={hl.legN[3]}>{['once', 'rep'].map((k, i) => <button type="button" data-k={k} aria-pressed={String(k === pol)}>{hl.pols[i]}</button>)}</div>
+      <button type="button" class="hl-btn hld-play">▶ {hl.play}</button>
+    </div>
+    <div class="hl-cvw"><svg class="hl-cv hld-cv" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={hl.chartN} set:html={daySvg(W, H, DLAST, mode, pol, hl)} /></div>
+    <div class="hl-lg" aria-hidden="true"><span><i class="lc"></i>{hl.legN[0]}</span><span><i class="lh"></i>{hl.legN[1]}</span><span><i class="ll"></i>{hl.legN[2]}</span><span><i class="lr"></i>{hl.legN[3]}</span><span><i class="ls"></i>{hl.legN[4]}</span></div>
+    <div class="hld-feed">{rows.map(r => <div><span class={`nb ${r.cls}`}>{r.nb}</span><span class="t">{r.t}</span><span>{r.txt}</span><span class={r.ok ? 'ok' : 'sl'}>{r.st}</span></div>)}{ev.length > 6 && <div class="more">{fill(hl.more, { n: ev.length - 6 })}</div>}</div>
+    <p class="hld-sum">{fill(hl.sum, { a: tot, b: ev.length - tot })}</p>
+  </div>
+</section>
+
+<script>
+  import { D0, DLAST, dayEvents, daySvg, dayTime, fill, hlLang, num, type Mode, type Pol } from '../../lib/hl';
+  import { sized } from '../../lib/hl-ui';
+  const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  for (const w of document.querySelectorAll<HTMLElement>('.hld')) {
+    const T = JSON.parse(w.dataset.hl!), L = hlLang(T.code);
+    const svg = w.querySelector<SVGSVGElement>('svg.hld-cv')!, feedEl = w.querySelector<HTMLElement>('.hld-feed')!, sumEl = w.querySelector<HTMLElement>('.hld-sum')!;
+    let mode: Mode = 'b', pol: Pol = 'rep', E = DLAST, tm = 0;
+    const draw = (W: number, H: number) => {
+      svg.innerHTML = daySvg(W, H, E, mode, pol, T);
+      const ev = dayEvents(mode, pol).filter(x => x.e <= E); let k = 0;
+      feedEl.innerHTML = ev.slice(0, 6).map(x => {
+        const ok = x.st === 'ok'; if (ok) k++;
+        return `<div><span class="nb ${ok ? x.k : 's'}">${ok ? k : '·'}</span><span class="t">${dayTime(x.e)}</span><span>${esc(fill(x.k === 'h' ? T.feed.hi : T.feed.lo, { v: num(L.num, x.v, 1) }))}</span><span class="${ok ? 'ok' : 'sl'}">${esc(ok ? T.stN[0] : x.st === 'sil' ? T.stN[1] : T.stN[2])}</span></div>`;
+      }).join('') + (ev.length > 6 ? `<div class="more">${esc(fill(T.more, { n: ev.length - 6 }))}</div>` : '');
+      const tot = ev.filter(x => x.st === 'ok').length;
+      sumEl.textContent = fill(T.sum, { a: tot, b: ev.length - tot }) + (E < DLAST ? ' …' : '');
+    };
+    const go = sized(svg, 290, draw);
+    const play = () => { clearInterval(tm); if (RM) { E = DLAST; go(); return; } E = D0; go(); tm = window.setInterval(() => { E++; if (E >= DLAST) { E = DLAST; clearInterval(tm); } go(); }, 55); };
+    const grp = (sel: string, f: (k: string) => void) => w.querySelectorAll<HTMLButtonElement>(sel + ' button').forEach(b => b.addEventListener('click', () => {
+      w.querySelectorAll(sel + ' button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); f(b.dataset.k!); play();
+    }));
+    grp('.hld-m', k => { mode = k as Mode; }); grp('.hld-p', k => { pol = k as Pol; });
+    w.querySelector('.hld-play')!.addEventListener('click', play);
+    if (!RM) { const io = new IntersectionObserver(es => { if (es[0].isIntersecting) { play(); io.disconnect(); } }); io.observe(svg); }
+  }
+</script>
