@@ -445,7 +445,7 @@
         "sum": "{a} bildirim · {b} sessiz kırılım",
         "chartN": "ETH bir günlük 15 dakikalık mum grafiği; 24 saatlik zirve ve dip çizgileri, bildirim giden ve bekleme süresinde sessiz geçen kırılımlar.",
         "quotes": {
-          "chat": "“İlk 100 coinden 24 saatin zirvesini kıran olursa haber ver”",
+          "chat": "“İlk 100 coinden 24 saatin zirvesini kıran olursa haber ver, aynı coin için 1 saat bekle”",
           "voice": "“İlk 100 coinden 24 saatin zirvesini kıran olursa haber ver, saatte bir yeter”",
           "tpl": "Şablon: 24 saatlik zirve kırılımı",
           "form": "Hangi hareket? Yeni tepe"
@@ -895,7 +895,7 @@
         "sum": "{a} Nachrichten · {b} stille Brüche",
         "chartN": "Ein Tag ETH in 15-Minuten-Kerzen mit den Linien für 24h-Hoch und -Tief, Brüchen mit Nachricht und still gebliebenen Brüchen in der Wartezeit.",
         "quotes": {
-          "chat": "„Sag mir Bescheid, wenn ein Top-100-Coin sein 24h-Hoch bricht“",
+          "chat": "„Sag mir Bescheid, wenn ein Top-100-Coin sein 24h-Hoch bricht, pro Coin 1 Stunde Pause“",
           "voice": "„Sag mir Bescheid, wenn ein Top-100-Coin sein 24h-Hoch bricht, einmal pro Stunde reicht“",
           "tpl": "Vorlage: 24-Stunden-Hoch-Ausbruch",
           "form": "Welche Bewegung? Neues Hoch"
@@ -1345,7 +1345,7 @@
         "sum": "{a} notifications · {b} cassures en silence",
         "chartN": "Une journée d’ETH en bougies de 15 minutes avec les lignes du plus haut et du plus bas 24 h, les cassures notifiées et celles passées en silence pendant l’attente.",
         "quotes": {
-          "chat": "« Préviens-moi si un coin du top 100 casse son plus haut sur 24 h »",
+          "chat": "« Préviens-moi si un coin du top 100 casse son plus haut sur 24 h, 1 heure d'attente par coin »",
           "voice": "« Préviens-moi si un coin du top 100 casse son plus haut sur 24 h, une fois par heure suffit »",
           "tpl": "Modèle : Cassure du plus haut 24 h",
           "form": "Quel mouvement ? Nouveau plus haut"
@@ -1795,7 +1795,7 @@
         "sum": "{a} avisos · {b} rupturas en silencio",
         "chartN": "Un día de ETH en velas de 15 minutos con las líneas de máximo y mínimo de 24 h, las rupturas con aviso y las que pasaron en silencio durante la espera.",
         "quotes": {
-          "chat": "“Avísame si alguna moneda del top 100 rompe su máximo de 24 horas”",
+          "chat": "“Avísame si alguna moneda del top 100 rompe su máximo de 24 horas, espera 1 hora por moneda”",
           "voice": "“Avísame si alguna moneda del top 100 rompe su máximo de 24 horas, una vez por hora basta”",
           "tpl": "Plantilla: Ruptura del máximo de 24 h",
           "form": "¿Qué movimiento? Nuevo máximo"
@@ -2245,7 +2245,7 @@
         "sum": "{a} avisos · {b} rompimentos em silêncio",
         "chartN": "Um dia de ETH em velas de 15 minutos com as linhas de máxima e mínima de 24 h, os rompimentos com aviso e os que passaram em silêncio durante a espera.",
         "quotes": {
-          "chat": "“Me avise se alguma moeda do top 100 romper a máxima de 24 horas”",
+          "chat": "“Me avise se alguma moeda do top 100 romper a máxima de 24 horas, espere 1 hora por moeda”",
           "voice": "“Me avise se alguma moeda do top 100 romper a máxima de 24 horas, uma vez por hora basta”",
           "tpl": "Modelo: Rompimento da máxima de 24 h",
           "form": "Qual movimento? Nova máxima"
@@ -2695,7 +2695,7 @@
         "sum": "уведомлений: {a} · молчаливых пробоев: {b}",
         "chartN": "Один день ETH на 15-минутных свечах с линиями максимума и минимума за 24 ч, пробоями с уведомлением и пробоями, прошедшими молча во время паузы.",
         "quotes": {
-          "chat": "«Сообщи, если монета из топ-100 пробьёт 24-часовой максимум»",
+          "chat": "«Сообщи, если монета из топ-100 пробьёт 24-часовой максимум, по одной монете не чаще раза в час»",
           "voice": "«Сообщи, если монета из топ-100 пробьёт 24-часовой максимум, раз в час достаточно»",
           "tpl": "Шаблон: Пробой 24-часового максимума",
           "form": "Какое движение? Новый максимум"
@@ -3145,7 +3145,7 @@
         "sum": "通知 {a} 件 · 通知なしの更新 {b} 件",
         "chartN": "ETHの1日分の15分足チャート。24時間の高値線と安値線、通知した更新と待ち時間中に通知しなかった更新を表示。",
         "quotes": {
-          "chat": "「上位100銘柄のどれかが24時間高値を超えたら知らせて」",
+          "chat": "「上位100銘柄のどれかが24時間高値を超えたら知らせて。同じ銘柄は1時間あけて」",
           "voice": "「上位100銘柄のどれかが24時間高値を超えたら知らせて、1時間に1回で十分」",
           "tpl": "テンプレート：24時間高値ブレイク",
           "form": "どの動き？ 新高値"
@@ -3595,7 +3595,7 @@
         "sum": "{a} 次通知 · {b} 次未通知的突破",
         "chartN": "ETH 一天的 15 分钟 K 线图，显示 24 小时最高线和最低线、发出通知的突破以及等待时间内未通知的突破。",
         "quotes": {
-          "chat": "“前 100 个币里有突破 24 小时最高价的就提醒我”",
+          "chat": "“前 100 个币里有突破 24 小时最高价的就提醒我，同一个币间隔 1 小时”",
           "voice": "“前 100 个币里有突破 24 小时最高价的就提醒我，一小时一次就够”",
           "tpl": "模板：突破 24 小时高点",
           "form": "哪种走势？ 新高"
@@ -4045,7 +4045,7 @@
         "sum": "{a} सूचनाएँ · {b} चुप ब्रेक",
         "chartN": "ETH के एक दिन का 15 मिनट कैंडल चार्ट, 24 घंटे की हाई और लो रेखाएँ, सूचना वाले ब्रेक और इंतज़ार में चुपचाप निकले ब्रेक।",
         "quotes": {
-          "chat": "“टॉप 100 में से कोई कॉइन 24 घंटे का हाई तोड़े तो बताना”",
+          "chat": "“टॉप 100 में से कोई कॉइन 24 घंटे का हाई तोड़े तो बताना, एक कॉइन के लिए 1 घंटा रुकना”",
           "voice": "“टॉप 100 में से कोई कॉइन 24 घंटे का हाई तोड़े तो बताना, घंटे में एक बार काफ़ी है”",
           "tpl": "टेम्पलेट: 24 घंटे का हाई ब्रेकआउट",
           "form": "कौन-सी चाल? नया उच्च"
@@ -4495,7 +4495,7 @@
         "sum": "{a} إشعارات · {b} كسور بصمت",
         "chartN": "يوم من ETH بشموع 15 دقيقة مع خطَّي أعلى وأدنى 24 ساعة، والكسور التي أُرسل عنها إشعار والتي مرت بصمت في مدة الانتظار.",
         "quotes": {
-          "chat": "«نبّهني إذا كسرت أي عملة من أفضل 100 أعلى سعر خلال 24 ساعة»",
+          "chat": "«نبّهني إذا كسرت أي عملة من أفضل 100 أعلى سعر خلال 24 ساعة، وانتظر ساعة لنفس العملة»",
           "voice": "«نبّهني إذا كسرت أي عملة من أفضل 100 أعلى سعر خلال 24 ساعة، مرة كل ساعة تكفي»",
           "tpl": "قالب: اختراق أعلى 24 ساعة",
           "form": "أي حركة؟ قمة جديدة"
@@ -4949,7 +4949,7 @@
         "sum": "{a} notifications · {b} silent breaks",
         "chartN": "One day of ETH 15-minute candles with the 24-hour high and low lines, breaks that sent a notification and breaks that passed silently during the wait time.",
         "quotes": {
-          "chat": "“Tell me if any top 100 coin breaks its 24-hour high”",
+          "chat": "“Tell me if any top 100 coin breaks its 24-hour high, wait 1 hour per coin”",
           "voice": "“Tell me if any top 100 coin breaks its 24-hour high, once an hour is enough”",
           "tpl": "Template: 24-hour high breakout",
           "form": "Which move? New high"
