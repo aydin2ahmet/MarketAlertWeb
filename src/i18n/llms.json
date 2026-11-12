@@ -9,7 +9,7 @@
   "Alerts can be created with a form, ready-made templates (Pump, Dump, Pump + volume, Oversold, Overbought, Trend crossover, 24-hour high breakout, Market scan), by typing to the AI assistant, or by voice. With the voice assistant a clear request is applied directly, and alerts can also be changed, listed and deleted by voice (it asks first when the target alert is unclear). In the text chat the assistant shows a draft for approval and turns alerts off with a confirmation card.",
   "Channels: push notifications with a chosen alarm sound, Telegram (via the MarketAlert bot, no chat ID needed), and HMAC-SHA256 signed webhooks.",
   "Every match is kept in the in-app notification log with timing details.",
-  "Plans: Free (3 alerts; price, percent move and 24-hour high/low conditions; push), Plus (20 alerts, all condition types, repeating alerts, Telegram, 2 all-coins alerts up to the top 100), Pro (100 alerts, webhook, 10 all-coins alerts on every coin). Plus and Pro have a 7-day free trial. Prices are shown in the app stores per country.",
+  "Plans: MarketAlert works with a subscription and has no free plan. Plus (20 alerts, all condition types, repeating alerts, push and Telegram, 2 all-coins alerts up to the top 100), Pro (100 alerts, webhook, 10 all-coins alerts on every coin). Both start with a 7-day free trial. Without a subscription a user can still prepare alerts; they wait and start working when the trial starts. Prices are shown in the app stores per country.",
   "Availability: coming soon to the App Store (iOS) and Google Play (Android). Guests can start without an account.",
   "Languages: Turkish, English, Chinese (Simplified), Spanish, Hindi, Arabic, Portuguese (Brazil), French, Russian, German, Japanese.",
   "Not affiliated with Binance. Notifications are informational and not investment advice."
@@ -20,17 +20,17 @@
   ["Notify me once on Telegram when hourly RSI is below 30 and price is above EMA20 on any top-100 coin on Binance Spot USDT.", "all-coins, RSI + EMA with AND · Plus / Pro"],
   ["Scan the top 100 coins on Binance Spot USDT. Notify me once on Telegram when 15-minute candle volume exceeds 3 times its 20-period volume average.", "all-coins volume spike · Plus / Pro"],
   ["Tell me if any top-100 coin rises 5% within 5 minutes.", "all-coins percent move, Pump template · Plus / Pro"],
-  ["Tell me if SOL rises 3% within 15 minutes.", "one coin, percent move · Free"],
-  ["Notify me once if BTC drops below 85,000 USDT.", "one coin, price level · Free"]
+  ["Tell me if SOL rises 3% within 15 minutes.", "one coin, percent move · Plus / Pro"],
+  ["Notify me once if BTC drops below 85,000 USDT.", "one coin, price level · Plus / Pro"]
  ],
  "pages": {
   "features/price-alerts": {
    "line": "Set a price alert for one coin; even a brief touch of the target is caught.",
-   "what": "A price alert watches the traded price of one coin on the Binance market you choose and notifies you when it reaches your target. It is the simplest alert and is included in the Free plan.",
+   "what": "A price alert watches the traded price of one coin on the Binance market you choose and notifies you when it reaches your target. It is the simplest alert and is included in both plans, Plus and Pro.",
    "facts": [
     "The highest and lowest traded prices are checked, so a wick that touches 70,000 and falls back to 69,880 still fires; the notification shows the touch price and the last price.",
     "Spot and Futures prices can differ at the same moment, so the alert follows the market you select.",
-    "Free: the alert notifies once. Plus and Pro: repeating alerts, and two price levels can be combined with OR in one alert.",
+    "The alert notifies once or repeats, as you choose; two price levels can be combined with OR in one alert.",
     "Silent or Sound push on every plan; Telegram on Plus and Pro; signed webhook on Pro."
    ],
    "example": "Notify me once when BTC rises above 70,000 USDT.",
@@ -40,10 +40,10 @@
   },
   "features/percent-change-alerts": {
    "line": "Get notified when a coin rises or falls by your chosen percentage within a time window.",
-   "what": "A percent-move alert ignores the price level and looks at how far the price moved within a window you choose, such as 3% in 15 minutes. It catches sudden rises and drops wherever the price is. Included in the Free plan.",
+   "what": "A percent-move alert ignores the price level and looks at how far the price moved within a window you choose, such as 3% in 15 minutes. It catches sudden rises and drops wherever the price is. Included in both plans, Plus and Pro.",
    "facts": [
     "Window from 5 to 1440 minutes; use a negative threshold (e.g. −3%) for drops.",
-    "To catch rises and drops together, combine two conditions with OR (Plus and Pro) or set two alerts on Free.",
+    "To catch rises and drops together, combine two conditions with OR, or set two separate alerts.",
     "The Pump and Dump templates catch any coin moving 5% within 5 minutes across all coins (Plus and Pro)."
    ],
    "example": "Tell me if SOL rises 3% within 15 minutes.",
@@ -108,7 +108,7 @@
   },
   "coins/bitcoin-price-alert": {
    "line": "Get notified when BTC rises above or falls below your level, including short wicks.",
-   "what": "A Bitcoin price alert watches BTC/USDT or BTC/USDC on Binance Spot or Futures and notifies you when your level is reached. All four BTC markets and price, percent-move and 24-hour high/low conditions are on the Free plan.",
+   "what": "A Bitcoin price alert watches BTC/USDT or BTC/USDC on Binance Spot or Futures and notifies you when your level is reached. All four BTC markets and every condition type (price, percent move, 24-hour high/low, RSI, MACD, moving averages) are on both plans, Plus and Pro.",
    "facts": [
     "Short wicks are caught: if BTC dips to 84,980 for a moment and the last price is 84,995, an alert below 85,000 still fires and shows both prices.",
     "Futures (perpetual) BTC can differ slightly from Spot; set the alert on the market you trade.",
@@ -141,8 +141,8 @@
     "Messages go only to your private chat with the MarketAlert bot, not to groups or channels.",
     "Each message shows what happened, the alert name, value, target, candle interval and market; single-coin messages have a Binance chart button.",
     "All-coins signal mode for Telegram: Default, Instant or Summary (one message at set intervals). Single-coin alerts always arrive right away.",
-    "The link is valid for a short time; the app offers a new link when it expires. The account can be switched or disconnected later.",
-    "On the Free plan notifications arrive as push; moving to Free switches Telegram alerts to push."
+    "The link is valid briefly; the app offers a new one when it expires. The account can be switched or disconnected.",
+    "If the subscription ends, alerts are put on hold; they resume with their Telegram setting when the user subscribes again."
    ],
    "example": "Tell me on Telegram when BTC rises above 105,000.",
    "faq": [
@@ -163,12 +163,12 @@
    "example": "Tell me when BNB's MACD crosses below its signal on the daily chart.",
    "faq": [
     ["Is there an alert for the MACD histogram or zero line?", "No. The MACD alert only watches the MACD line crossing its signal line."],
-    ["Is MACD available on the Free plan?", "No. MACD alerts are on Plus and Pro, both with a 7-day free trial."]
+    ["Is the MACD alert free?", "MarketAlert works with a subscription; MACD alerts are on Plus and Pro, both with a 7-day free trial."]
    ]
   },
   "features/24h-high-low-alerts": {
    "line": "Get a push or Telegram alert when a Binance coin breaks its highest or lowest price of the last 24 hours.",
-   "what": "The 24h high/low condition is on every plan, including Free. Pick a coin (or all coins on Plus and Pro) and New high, New low or Either. At the close of each minute MarketAlert compares the price with the 24 hours before it (not the calendar day) and notifies you when it breaks out.",
+   "what": "The 24h high/low condition is on both plans, Plus and Pro. Pick a coin (or all coins on Plus and Pro) and New high, New low or Either. At the close of each minute MarketAlert compares the price with the 24 hours before it (not the calendar day) and notifies you when it breaks out.",
    "facts": [
         "A new high needs the minute's high to be greater than the previous 24-hour high; touching it is not enough.",
     "On one coin it fires once, or on Plus and Pro repeats with a wait of at least 10 minutes; on all coins it always repeats.",
@@ -178,7 +178,7 @@
    "example": "Tell me if any top 100 coin breaks its 24-hour high, once an hour is enough.",
    "faq": [
     ["How is it different from today's high?", "A calendar day resets at midnight; this alert always looks at the last 24 hours back from now."],
-    ["Is the 24-hour high/low alert free?", "Yes, for a single coin on Free. Telegram and all coins are on Plus and Pro."]
+    ["Is the 24-hour high/low alert free?", "MarketAlert works with a subscription; the alert is on Plus and Pro, both with a 7-day free trial."]
    ]
   }
  }

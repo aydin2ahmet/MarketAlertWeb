@@ -163,10 +163,11 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
 
   <section id="plans" class="sec">
     <h2 class="st"><span class="hash">#</span> {t.plansTitle}</h2>
+    <p class="ptrial"><b>{t.chips[0]}</b><span>{t.plansTrial}</span></p>
     <div class="pcards">
-      {['Free', 'Plus', 'Pro'].map((p, i) => (
-        <div class={`pcard${i === 1 ? ' pop' : ''}${i === 2 ? ' pro' : ''}`}>
-          {i === 1 && <span class="popb">{t.popular}</span>}
+      {['Plus', 'Pro'].map((p, i) => (
+        <div class={`pcard${i === 0 ? ' pop' : ''}${i === 1 ? ' pro' : ''}`}>
+          {i === 0 && <span class="popb">{t.popular}</span>}
           <h3>{p}</h3>
           <ul>{t.planRows.map((r: string[]) => <li><span>{r[0]}</span><b>{r[i + 1]}</b></li>)}</ul>
         </div>
