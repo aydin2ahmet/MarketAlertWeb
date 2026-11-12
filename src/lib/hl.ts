@@ -16,7 +16,7 @@ export interface HlLang {
 }
 export interface Candle { o: number; h: number; l: number; c: number }
 export const hlLang = (code: string) => (msgs as any)[code] as HlLang;
-export const SHOT_VERSION = 'hl1';
+export const SHOT_VERSION = 'hl2';
 export const shotSrc = (code: string, theme: 'light' | 'dark', k: string) => `/shots/${code}/${theme}/hl-${k}.webp?v=${SHOT_VERSION}`;
 
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');

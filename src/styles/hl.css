@@ -76,11 +76,12 @@ svg.hl-cv { display: block; width: 100%; height: auto; overflow: visible; font-f
 /* bölüm başlıkları (GuidePage stilleri bileşenlere geçmez) */
 .hlh .kicker, .hlw .kicker, .hls .kicker, .hld .kicker { font: 600 12px/1.6 var(--mono); color: var(--cat3); margin: 0 0 16px; }
 .hlw h2, .hld h2 { font-size: clamp(24px, 3vw, 32px); margin: 0 0 18px; text-wrap: balance; }
-.hlw, .hld { padding: 56px 0; border-bottom: 1px solid var(--bd); }
+.hlw, .hld { margin-top: 40px; padding: 28px; border: 1px solid var(--bd); border-radius: 26px; background: var(--sf); }
+.hlw .hl-card, .hld .hl-card { background: var(--bg); }
 
 /* ilk ekran */
-.hlh { padding: 48px 0 40px; display: grid; gap: 26px; grid-template-areas: 'head' 'body' 'card' 'out'; }
-.hlh-head { grid-area: head; max-width: 860px; } .hlh-body { grid-area: body; max-width: 860px; margin-top: -26px; } .hlh-card { grid-area: card; } .hlh-out { grid-area: out; }
+.hlh { padding: 48px 0 40px; display: grid; gap: 26px; grid-template-areas: 'head' 'body' 'box'; }
+.hlh-head { grid-area: head; max-width: 860px; } .hlh-body { grid-area: body; max-width: 860px; margin-top: -26px; } .hlh-box { grid-area: box; }
 .hlh h1 { font-size: clamp(32px, 4.2vw, 52px); text-wrap: balance; }
 .hlh .intro { color: var(--mut); font-size: 18px; margin: 22px 0 18px; }
 .hlh h1 { margin: 0; }
@@ -88,9 +89,20 @@ svg.hl-cv { display: block; width: 100%; height: auto; overflow: visible; font-f
 .hlh-steps li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; align-items: start; font-size: 13px; color: var(--mut); padding: 8px; border-radius: 10px; border: 1px solid transparent; transition: all .3s; }
 .hlh-steps li.on { border-color: var(--bd); background: var(--bg); color: var(--tx); }
 .hlh-steps b { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--pri); color: var(--priText); font: 700 11px var(--mono); }
-.hlh-out { display: grid; grid-template-columns: repeat(2, minmax(0, 400px)); gap: 18px 28px; align-items: start; transition: opacity .4s; }
+.hlh-box { display: grid; gap: 14px; padding: 16px; border: 1px solid var(--bd); border-radius: 26px; background: radial-gradient(ellipse at top right, var(--priSoft), transparent 65%), var(--hlSf2); min-width: 0; }
+.hlh-out { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; align-items: stretch; transition: opacity .4s, filter .4s; }
+.hlh-nt { display: flex; flex-direction: column; min-width: 0; }
+.hlh-nt .mc-chn { margin: 2px 4px 8px; }
+.hlh-ns { flex: 1; display: flex; flex-direction: column; justify-content: center; border: 1px solid var(--bd); border-radius: 20px; overflow: hidden; min-height: 190px; }
+.hlh-np { padding: 22px 18px; background: linear-gradient(150deg, color-mix(in srgb, var(--pri) 26%, var(--sf)), color-mix(in srgb, var(--pro) 22%, var(--sf))); }
+.hlh-np .mcp { box-shadow: 0 10px 26px rgba(0, 0, 0, .16); }
+.hlh-nq { background: var(--tgChat); }
+.hlh-ns .tgc { flex: 1; display: flex; flex-direction: column; border: 0; border-radius: 0; box-shadow: none; }
+.hlh-ns .tgc-bd { flex: 1; justify-content: center; padding: 12px 14px 14px; }
 .hlh-out.wait { opacity: .3; filter: grayscale(1); }
 .hlh-out .tgc { font-size: 13.5px; }
+:root:not([data-theme=dark]) .hlh-nq { --tgChat: #DCE8D0; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme=light]) .hlh-nq { --tgChat: #0E1621; } }
 
 /* son 24 saat ne demek */
 .hlw { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 40px; align-items: start; }
@@ -147,13 +159,16 @@ svg.hl-cv { display: block; width: 100%; height: auto; overflow: visible; font-f
 .hld-sum { font: 700 13.5px var(--mono); margin: 12px 2px 0; }
 
 @media (max-width: 900px) {
-  .hlh { padding: 24px 0 28px; gap: 20px; grid-template-areas: 'head' 'card' 'out' 'body'; }
+  .hlh { padding: 24px 0 28px; gap: 20px; grid-template-areas: 'head' 'box' 'body'; }
+  .hlh-box { padding: 10px; border-radius: 22px; gap: 12px; }
+  .hlh-ns { min-height: 0; }
   .hlh-body { margin-top: 0; }
   .hlh .intro { font-size: 17px; }
   .hlh-steps { grid-template-columns: 1fr; }
   .hlh-out { grid-template-columns: 1fr; }
   .hlw { grid-template-columns: 1fr; gap: 20px; }
   .hls { padding: 20px 12px; margin-top: 32px; }
+  .hlw, .hld { margin-top: 32px; padding: 20px 12px; border-radius: 22px; }
   .hls-tabs { grid-template-columns: repeat(2, 1fr); gap: 10px 8px; }
   .hls-p { grid-template-columns: 1fr; gap: 18px; }
   .hls-shot { max-width: 280px; width: 100%; justify-self: center; }

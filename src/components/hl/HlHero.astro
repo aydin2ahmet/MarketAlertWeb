@@ -29,6 +29,7 @@ const data = { code, winK: hl.winK, annK: hl.annK, st: hl.st };
     <div class="hl-chips"><span class="hl-ck h">{hl.chips[0]}</span><span class="hl-ck l">{hl.chips[1]}</span><span class="hl-ck">{hl.chips[2]}</span><span class="hl-ck x">{hl.chips[3]}</span></div>
     <a class="btn" href="#setup">{setupTitle} <span aria-hidden="true">↓</span></a>
   </div>
+  <div class="hlh-box">
   <div class="hl-card hlh-card">
     <div class="hl-chd"><span class="hl-av" aria-hidden="true">S</span><div><b>SOL / USDT</b><small>{hl.coinK}</small></div><button type="button" class="hl-btn hlh-replay">↻ {hl.replay}</button></div>
     <div class="hl-stats">
@@ -41,8 +42,9 @@ const data = { code, winK: hl.winK, annK: hl.annK, st: hl.st };
     <ol class="hlh-steps">{hl.stepsK.map((t: string, i: number) => <li class="on" data-k={i + 1}><b>{i + 1}</b><span>{t}</span></li>)}</ol>
   </div>
   <div class="hlh-out">
-    <div><div class="mc-chn">{hl.chnPush}</div><div class="mcp" set:html={pushHtml(L, 'SOL', 'h', price, hl.now)} /></div>
-    <div><div class="mc-chn">{hl.chnTg}</div><TgChat code={code} label={`Telegram: ${tg.text.split('\n')[0].replace(/<[^>]+>/g, '')}`}><div class="tgm" set:html={msgHtml(tg, hl.now)} /></TgChat></div>
+    <div class="hlh-nt"><div class="mc-chn">{hl.chnPush}</div><div class="hlh-ns hlh-np"><div class="mcp" set:html={pushHtml(L, 'SOL', 'h', price, hl.now)} /></div></div>
+    <div class="hlh-nt"><div class="mc-chn">{hl.chnTg}</div><div class="hlh-ns hlh-nq"><TgChat code={code} label={`Telegram: ${tg.text.split('\n')[0].replace(/<[^>]+>/g, '')}`}><div class="tgm" set:html={msgHtml(tg, hl.now)} /></TgChat></div></div>
+  </div>
   </div>
 </section>
 
