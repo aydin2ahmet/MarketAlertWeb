@@ -1,7 +1,7 @@
 ---
 /**
  * Cümle örnekleri, tasarım O3 (2026-11-09): basitten zora 5 seviyeli merdiven ve plan etiketi.
- * items: [cümle, plan] — plan "free" ya da "plus".
+ * items: [cümle, plan]. 2026-11-12 "önce kur, sonra dene": ücretsiz plan yok, bütün cümleler "plus" (Plus · Pro).
  */
 interface Props { title: string; level: string; items: string[][]; plans: Record<string, string> }
 const { title, level, items, plans } = Astro.props;
@@ -32,7 +32,6 @@ const { title, level, items, plans } = Astro.props;
   .vl-bars i.on { background: var(--pri); }
   .vl-list q { font-weight: 600; font-size: 16px; }
   .vl-plan { font: 700 12px/1 var(--mono); padding: 5px 8px; border-radius: 6px; white-space: nowrap; }
-  .vl-plan.free { color: var(--up); background: color-mix(in srgb, var(--up) 13%, transparent); }
   .vl-plan.plus { color: var(--pro); background: color-mix(in srgb, var(--pro) 13%, transparent); }
   @media (max-width: 760px) {
     .vl-list li { grid-template-columns: 1fr auto; gap: 10px 12px; }

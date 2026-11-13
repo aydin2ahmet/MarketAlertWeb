@@ -138,54 +138,47 @@
     "Nadiren"
    ]
   ],
-  "plansTitle": "Ücretsiz başla, ihtiyacın büyüdükçe yükselt",
-  "plansNote": "Plus ve Pro 7 gün ücretsiz denenebilir. Fiyatlar mağazada, ülkene göre gösterilir.",
+  "plansTitle": "Planını seç, 7 gün ücretsiz dene",
+  "plansTrial": "Önce alarmını hazırla, sonra 7 günlük ücretsiz denemeyi başlat; alarmın o an çalışmaya başlar.",
+  "plansNote": "Plus ve Pro 7 gün ücretsiz denenebilir. Deneme bitmeden en az 24 saat önce iptal edersen ücret alınmaz. Fiyatlar mağazada, ülkene göre gösterilir.",
   "planRows": [
    [
     "Alarm",
-    "3",
     "20",
     "100"
    ],
    [
     "Koşul tipleri",
-    "Fiyat, %, 24s tepe/dip",
     "Tümü (8)",
     "Tümü (8)"
    ],
    [
     "Alarm başına koşul",
-    "1",
     "3",
     "5"
    ],
    [
     "Tüm coinler alarmı",
-    "—",
     "2 · İlk 100",
     "10 · Tümü"
    ],
    [
     "Tekrarlı alarm",
-    "—",
     "✓",
     "✓"
    ],
    [
     "Kanallar",
-    "Push",
-    "+ Telegram",
+    "Push + Telegram",
     "+ Webhook"
    ],
    [
     "AI / ses",
-    "5/gün",
     "200/hafta",
     "1000/hafta"
    ],
    [
     "Geçmiş",
-    "7 gün",
     "90 gün",
     "365 gün"
    ]
@@ -207,7 +200,7 @@
    ],
    [
     "MarketAlert ücretsiz mi?",
-    "Evet. Ücretsiz planla 3 alarm kurabilir; fiyat, yüzde değişim ve 24 saatlik tepe/dip koşullarını kullanabilirsin. Plus ve Pro daha çok alarm, tüm koşul tipleri ve tüm coinler alarmı açar; ikisi de 7 gün ücretsiz denenebilir."
+    "MarketAlert abonelikle çalışır; Plus ve Pro 7 gün ücretsiz denenir. Deneme bitmeden en az 24 saat önce iptal edersen ücret alınmaz. Uygulamayı indirip alarmını abone olmadan hazırlayabilirsin; alarm, denemeyi başlatınca çalışmaya başlar."
    ],
    [
     "Sesli ve yazılı asistan nasıl alarm kurar?",
@@ -223,7 +216,7 @@
    ]
   ],
   "ctaTitle": "İlk alarmını bir dakikada kur.",
-  "ctaSub": "Kayıt olmadan misafir olarak başla, alarmların sunucuda izlensin.",
+  "ctaSub": "Alarmını hazırla, 7 gün ücretsiz dene; alarmların sunucuda izlensin.",
   "legal": [
    "Gizlilik",
    "Kullanım koşulları",
@@ -233,7 +226,7 @@
   "disclaimer": "MarketAlert, Binance ile bağlantılı değildir. Bildirimler bilgilendirme amaçlıdır, yatırım tavsiyesi değildir.",
   "meta": {
    "title": "MarketAlert | Tüm Coinleri Tarayan Kripto Alarmı: RSI, Hacim, Fiyat",
-   "desc": "MarketAlert tek alarmla tüm coinlerde RSI, MACD, hacim ve fiyat koşullarını birlikte izler, gerçekleşince bildirir. Sesle ya da yazarak kur, ücretsiz başla."
+   "desc": "MarketAlert tek alarmla tüm coinlerde RSI, MACD, hacim ve fiyat koşullarını birlikte izler, gerçekleşince bildirir. Sesle ya da yazarak kur, 7 gün ücretsiz dene."
   },
   "ui": {
    "theme": "Temayı değiştir",
@@ -452,54 +445,47 @@
     "Rarely"
    ]
   ],
-  "plansTitle": "Start free, upgrade as you grow",
-  "plansNote": "Plus and Pro come with a 7-day free trial. Prices are shown in the store for your country.",
+  "plansTitle": "Pick a plan, try it free for 7 days",
+  "plansTrial": "Prepare your alert first, then start the 7-day free trial; your alert starts working right away.",
+  "plansNote": "Plus and Pro come with a 7-day free trial. Cancel at least 24 hours before the trial ends and you are not charged. Prices are shown in the store for your country.",
   "planRows": [
    [
     "Alerts",
-    "3",
     "20",
     "100"
    ],
    [
     "Condition types",
-    "Price, %, 24h high/low",
     "All (8)",
     "All (8)"
    ],
    [
     "Conditions per alert",
-    "1",
     "3",
     "5"
    ],
    [
     "All-coins alerts",
-    "—",
     "2 · Top 100",
     "10 · All"
    ],
    [
     "Repeating alerts",
-    "—",
     "✓",
     "✓"
    ],
    [
     "Channels",
-    "Push",
-    "+ Telegram",
+    "Push + Telegram",
     "+ Webhook"
    ],
    [
     "AI / voice",
-    "5/day",
     "200/week",
     "1000/week"
    ],
    [
     "History",
-    "7 days",
     "90 days",
     "365 days"
    ]
@@ -521,7 +507,7 @@
    ],
    [
     "Is MarketAlert free?",
-    "Yes. The free plan gives you 3 alerts with price, percent-change and 24-hour high/low conditions. Plus and Pro come with a 7-day free trial. Plus and Pro add more alerts, all condition types and all-coins alerts."
+    "MarketAlert works with a subscription; Plus and Pro both come with a 7-day free trial. Cancel at least 24 hours before the trial ends and you are not charged. You can download the app and prepare your alert without subscribing; it starts working when you start the trial."
    ],
    [
     "How do voice and text alerts work?",
@@ -537,7 +523,7 @@
    ]
   ],
   "ctaTitle": "Set your first alert in a minute.",
-  "ctaSub": "Start as a guest without signing up; your alerts are watched on our servers.",
+  "ctaSub": "Prepare your alert and try it free for 7 days; your alerts are watched on our servers.",
   "legal": [
    "Privacy",
    "Terms",
@@ -547,7 +533,7 @@
   "disclaimer": "MarketAlert is not affiliated with Binance. Notifications are for information only and are not investment advice.",
   "meta": {
    "title": "MarketAlert | Crypto Alerts That Scan Every Coin: RSI, Volume, Price",
-   "desc": "One MarketAlert alert watches RSI, MACD, volume and price together across every coin and notifies you when they're met. Set it by voice or text, start free."
+   "desc": "One MarketAlert alert watches RSI, MACD, volume and price together across every coin and notifies you when they're met. Set it by voice or text, try it free for 7 days."
   },
   "ui": {
    "theme": "Toggle theme",
@@ -766,54 +752,47 @@
     "很少"
    ]
   ],
-  "plansTitle": "免费开始，按需升级",
-  "plansNote": "Plus 和 Pro 可免费试用 7 天。价格以你所在国家/地区的应用商店显示为准。",
+  "plansTitle": "选择套餐，免费试用 7 天",
+  "plansTrial": "先准备好提醒，再开始 7 天免费试用；提醒会立即开始工作。",
+  "plansNote": "Plus 和 Pro 可免费试用 7 天。在试用结束前至少 24 小时取消，则不会扣费。价格以你所在国家/地区的应用商店显示为准。",
   "planRows": [
    [
     "提醒",
-    "3",
     "20",
     "100"
    ],
    [
     "条件类型",
-    "价格、%、24h 高/低",
     "全部 (8)",
     "全部 (8)"
    ],
    [
     "每个提醒的条件数",
-    "1",
     "3",
     "5"
    ],
    [
     "全部币种提醒",
-    "—",
     "2 · 前 100",
     "10 · 全部"
    ],
    [
     "重复提醒",
-    "—",
     "✓",
     "✓"
    ],
    [
     "渠道",
-    "推送",
-    "+ Telegram",
+    "推送 + Telegram",
     "+ Webhook"
    ],
    [
     "AI / 语音",
-    "5/天",
     "200/周",
     "1000/周"
    ],
    [
     "历史记录",
-    "7 天",
     "90 天",
     "365 天"
    ]
@@ -835,7 +814,7 @@
    ],
    [
     "MarketAlert 免费吗？",
-    "是的。免费套餐提供 3 个提醒，可使用价格、涨跌幅和 24 小时最高/最低条件。Plus 和 Pro 可免费试用 7 天。Plus 和 Pro 提供更多提醒、全部条件类型和全币种提醒。"
+    "MarketAlert 需要订阅使用；Plus 和 Pro 都可免费试用 7 天。在试用结束前至少 24 小时取消，则不会扣费。你可以先下载应用并在不订阅的情况下准备好提醒；开始试用后提醒即开始工作。"
    ],
    [
     "语音和文字助手如何创建提醒？",
@@ -851,7 +830,7 @@
    ]
   ],
   "ctaTitle": "一分钟设置你的第一个提醒。",
-  "ctaSub": "无需注册即可以访客身份开始，你的提醒会在我们的服务器上持续监控。",
+  "ctaSub": "准备好提醒，免费试用 7 天；你的提醒会在我们的服务器上持续监控。",
   "legal": [
    "隐私",
    "条款",
@@ -861,7 +840,7 @@
   "disclaimer": "MarketAlert 与 Binance 无关联。通知仅供参考，不构成投资建议。",
   "meta": {
    "title": "MarketAlert | 扫描所有币种的加密货币提醒：RSI、成交量、价格",
-   "desc": "MarketAlert 用一个提醒在所有币种上同时监控 RSI、MACD、成交量和价格条件，满足时立即通知你。用语音或文字设置，免费开始。"
+   "desc": "MarketAlert 用一个提醒在所有币种上同时监控 RSI、MACD、成交量和价格条件，满足时立即通知你。用语音或文字设置，免费试用 7 天。"
   },
   "ui": {
    "theme": "切换主题",
@@ -1080,54 +1059,47 @@
     "Rara vez"
    ]
   ],
-  "plansTitle": "Empieza gratis y mejora cuando lo necesites",
-  "plansNote": "Plus y Pro incluyen 7 días de prueba gratis. Los precios se muestran en la tienda para tu país.",
+  "plansTitle": "Elige tu plan y pruébalo gratis 7 días",
+  "plansTrial": "Prepara primero tu alerta y luego inicia la prueba gratis de 7 días; tu alerta empieza a funcionar al momento.",
+  "plansNote": "Plus y Pro incluyen 7 días de prueba gratis. Si cancelas al menos 24 horas antes de que termine la prueba, no se te cobra. Los precios se muestran en la tienda para tu país.",
   "planRows": [
    [
     "Alertas",
-    "3",
     "20",
     "100"
    ],
    [
     "Tipos de condición",
-    "Precio, %, máx./mín. 24 h",
     "Todos (8)",
     "Todos (8)"
    ],
    [
     "Condiciones por alerta",
-    "1",
     "3",
     "5"
    ],
    [
     "Alertas de todas las monedas",
-    "—",
     "2 · Top 100",
     "10 · Todas"
    ],
    [
     "Alertas repetidas",
-    "—",
     "✓",
     "✓"
    ],
    [
     "Canales",
-    "Push",
-    "+ Telegram",
+    "Push + Telegram",
     "+ Webhook"
    ],
    [
     "IA / voz",
-    "5/día",
     "200/sem.",
     "1000/sem."
    ],
    [
     "Historial",
-    "7 días",
     "90 días",
     "365 días"
    ]
@@ -1149,7 +1121,7 @@
    ],
    [
     "¿MarketAlert es gratis?",
-    "Sí. El plan gratuito incluye 3 alertas con condiciones de precio, variación porcentual y máximo/mínimo de 24 horas. Plus y Pro tienen 7 días de prueba gratis. Plus y Pro añaden más alertas, todos los tipos de condición y alertas de todas las monedas."
+    "MarketAlert funciona con suscripción; Plus y Pro incluyen 7 días de prueba gratis. Si cancelas al menos 24 horas antes de que termine la prueba, no se te cobra. Puedes descargar la app y preparar tu alerta sin suscribirte; empieza a funcionar cuando inicias la prueba."
    ],
    [
     "¿Cómo funcionan las alertas por voz y por texto?",
@@ -1165,7 +1137,7 @@
    ]
   ],
   "ctaTitle": "Crea tu primera alerta en un minuto.",
-  "ctaSub": "Empieza como invitado sin registrarte; tus alertas se vigilan en nuestros servidores.",
+  "ctaSub": "Prepara tu alerta y pruébala gratis 7 días; tus alertas se vigilan en nuestros servidores.",
   "legal": [
    "Privacidad",
    "Términos",
@@ -1175,7 +1147,7 @@
   "disclaimer": "MarketAlert no está afiliado a Binance. Los avisos son solo informativos y no constituyen asesoramiento de inversión.",
   "meta": {
    "title": "MarketAlert | Alertas cripto que escanean todas las monedas: RSI, volumen, precio",
-   "desc": "Una sola alerta de MarketAlert vigila a la vez RSI, MACD, volumen y precio en todas las monedas y te avisa cuando se cumplen. Por voz o texto, empieza gratis."
+   "desc": "Una sola alerta de MarketAlert vigila a la vez RSI, MACD, volumen y precio en todas las monedas y te avisa cuando se cumplen. Por voz o texto, pruébalo 7 días gratis."
   },
   "ui": {
    "theme": "Cambiar tema",
@@ -1394,54 +1366,47 @@
     "कम ही"
    ]
   ],
-  "plansTitle": "मुफ़्त शुरू करें, ज़रूरत पर अपग्रेड करें",
-  "plansNote": "Plus और Pro के साथ 7 दिन का मुफ़्त ट्रायल। कीमतें आपके देश के स्टोर में दिखाई जाती हैं।",
+  "plansTitle": "प्लान चुनें, 7 दिन मुफ़्त आज़माएँ",
+  "plansTrial": "पहले अपना अलर्ट तैयार करें, फिर 7 दिन का मुफ़्त ट्रायल शुरू करें; अलर्ट तुरंत काम करने लगता है।",
+  "plansNote": "Plus और Pro के साथ 7 दिन का मुफ़्त ट्रायल। ट्रायल खत्म होने से कम से कम 24 घंटे पहले रद्द करने पर कोई शुल्क नहीं लगता। कीमतें आपके देश के स्टोर में दिखाई जाती हैं।",
   "planRows": [
    [
     "अलर्ट",
-    "3",
     "20",
     "100"
    ],
    [
     "शर्तों के प्रकार",
-    "कीमत, %, 24h उच्च/निम्न",
     "सभी (8)",
     "सभी (8)"
    ],
    [
     "हर अलर्ट में शर्तें",
-    "1",
     "3",
     "5"
    ],
    [
     "सभी कॉइन अलर्ट",
-    "—",
     "2 · टॉप 100",
     "10 · सभी"
    ],
    [
     "दोहराए जाने वाले अलर्ट",
-    "—",
     "✓",
     "✓"
    ],
    [
     "चैनल",
-    "पुश",
-    "+ Telegram",
+    "पुश + Telegram",
     "+ Webhook"
    ],
    [
     "AI / आवाज़",
-    "5/दिन",
     "200/हफ़्ता",
     "1000/हफ़्ता"
    ],
    [
     "इतिहास",
-    "7 दिन",
     "90 दिन",
     "365 दिन"
    ]
@@ -1463,7 +1428,7 @@
    ],
    [
     "क्या MarketAlert मुफ़्त है?",
-    "हां। मुफ़्त प्लान में कीमत, प्रतिशत बदलाव और 24 घंटे उच्च/निम्न शर्तों के साथ 3 अलर्ट मिलते हैं। Plus और Pro के साथ 7 दिन का मुफ़्त ट्रायल है। Plus और Pro ज़्यादा अलर्ट, सभी शर्त प्रकार और सभी कॉइन अलर्ट देते हैं।"
+    "MarketAlert सब्सक्रिप्शन से चलता है; Plus और Pro दोनों में 7 दिन का मुफ़्त ट्रायल है। ट्रायल खत्म होने से कम से कम 24 घंटे पहले रद्द करने पर कोई शुल्क नहीं लगता। आप ऐप डाउनलोड करके सब्सक्राइब किए बिना अपना अलर्ट तैयार कर सकते हैं; ट्रायल शुरू करते ही वह काम करने लगता है।"
    ],
    [
     "वॉइस और टेक्स्ट असिस्टेंट अलर्ट कैसे बनाते हैं?",
@@ -1479,7 +1444,7 @@
    ]
   ],
   "ctaTitle": "अपना पहला अलर्ट एक मिनट में बनाएं।",
-  "ctaSub": "बिना साइन-अप गेस्ट के रूप में शुरू करें; आपके अलर्ट हमारे सर्वर पर देखे जाते हैं।",
+  "ctaSub": "अपना अलर्ट तैयार करें और 7 दिन मुफ़्त आज़माएँ; आपके अलर्ट हमारे सर्वर पर देखे जाते हैं।",
   "legal": [
    "गोपनीयता",
    "शर्तें",
@@ -1489,7 +1454,7 @@
   "disclaimer": "MarketAlert का Binance से कोई संबंध नहीं है। सूचनाएं केवल जानकारी के लिए हैं, निवेश सलाह नहीं।",
   "meta": {
    "title": "MarketAlert | सभी कॉइन स्कैन करने वाले क्रिप्टो अलर्ट: RSI, वॉल्यूम, कीमत",
-   "desc": "MarketAlert एक ही अलर्ट से सभी कॉइन पर RSI, MACD, वॉल्यूम और कीमत की शर्तें एक साथ देखता है और पूरी होने पर सूचना देता है। आवाज़ या टेक्स्ट से बनाएं, मुफ़्त शुरू करें।"
+   "desc": "MarketAlert एक ही अलर्ट से सभी कॉइन पर RSI, MACD, वॉल्यूम और कीमत की शर्तें एक साथ देखता है और पूरी होने पर सूचना देता है। आवाज़ या टेक्स्ट से बनाएं, 7 दिन मुफ़्त आज़माएँ।"
   },
   "ui": {
    "theme": "थीम बदलें",
@@ -1708,54 +1673,47 @@
     "نادرًا"
    ]
   ],
-  "plansTitle": "ابدأ مجانًا، وارتقِ عندما تحتاج",
-  "plansNote": "يمكن تجربة Plus وPro مجانًا لمدة 7 أيام. تُعرض الأسعار في المتجر حسب بلدك.",
+  "plansTitle": "اختر خطتك وجرّبها مجانًا 7 أيام",
+  "plansTrial": "جهّز تنبيهك أولًا، ثم ابدأ التجربة المجانية لمدة 7 أيام؛ يبدأ تنبيهك العمل فورًا.",
+  "plansNote": "يمكن تجربة Plus وPro مجانًا لمدة 7 أيام. إذا ألغيت قبل انتهاء التجربة بـ 24 ساعة على الأقل فلن تُحتسب عليك أي رسوم. تُعرض الأسعار في المتجر حسب بلدك.",
   "planRows": [
    [
     "التنبيهات",
-    "3",
     "20",
     "100"
    ],
    [
     "أنواع الشروط",
-    "السعر، %، أعلى/أدنى 24س",
     "الكل (8)",
     "الكل (8)"
    ],
    [
     "شروط لكل تنبيه",
-    "1",
     "3",
     "5"
    ],
    [
     "تنبيهات كل العملات",
-    "—",
     "2 · أفضل 100",
     "10 · الكل"
    ],
    [
     "تنبيهات متكررة",
-    "—",
     "✓",
     "✓"
    ],
    [
     "القنوات",
-    "إشعار",
-    "+ Telegram",
+    "إشعار + Telegram",
     "+ Webhook"
    ],
    [
     "ذكاء اصطناعي / صوت",
-    "5/يوم",
     "200/أسبوع",
     "1000/أسبوع"
    ],
    [
     "السجل",
-    "7 أيام",
     "90 يومًا",
     "365 يومًا"
    ]
@@ -1777,7 +1735,7 @@
    ],
    [
     "هل MarketAlert مجاني؟",
-    "نعم. تمنحك الخطة المجانية 3 تنبيهات بشروط السعر ونسبة التغير وأعلى/أدنى 24 ساعة. يمكن تجربة Plus وPro مجانًا لمدة 7 أيام. تضيف Plus وPro تنبيهات أكثر وكل أنواع الشروط وتنبيهات كل العملات."
+    "يعمل MarketAlert بالاشتراك؛ ويمكن تجربة Plus وPro مجانًا لمدة 7 أيام. إذا ألغيت قبل انتهاء التجربة بـ 24 ساعة على الأقل فلن تُحتسب عليك أي رسوم. يمكنك تنزيل التطبيق وتجهيز تنبيهك دون اشتراك؛ ويبدأ العمل عندما تبدأ التجربة."
    ],
    [
     "كيف ينشئ المساعد تنبيهات بالصوت والنص؟",
@@ -1793,7 +1751,7 @@
    ]
   ],
   "ctaTitle": "أنشئ تنبيهك الأول في دقيقة.",
-  "ctaSub": "ابدأ كضيف دون تسجيل، وتُراقَب تنبيهاتك على خوادمنا.",
+  "ctaSub": "جهّز تنبيهك وجرّبه مجانًا 7 أيام، وتُراقَب تنبيهاتك على خوادمنا.",
   "legal": [
    "الخصوصية",
    "الشروط",
@@ -1803,7 +1761,7 @@
   "disclaimer": "MarketAlert غير تابع لـ Binance. التنبيهات للمعلومات فقط وليست نصيحة استثمارية.",
   "meta": {
    "title": "MarketAlert | تنبيهات كريبتو تفحص كل العملات: RSI والحجم والسعر",
-   "desc": "يراقب MarketAlert شروط RSI وMACD والحجم والسعر معًا على كل العملات بتنبيه واحد ويخبرك عند تحققها. أنشئه بالصوت أو الكتابة، وابدأ مجانًا."
+   "desc": "يراقب MarketAlert شروط RSI وMACD والحجم والسعر معًا على كل العملات بتنبيه واحد ويخبرك عند تحققها. أنشئه بالصوت أو الكتابة، وجرّبه مجانًا 7 أيام."
   },
   "ui": {
    "theme": "تبديل المظهر",
@@ -2022,54 +1980,47 @@
     "Raramente"
    ]
   ],
-  "plansTitle": "Comece grátis e evolua quando precisar",
-  "plansNote": "Plus e Pro têm 7 dias de teste grátis. Os preços aparecem na loja para o seu país.",
+  "plansTitle": "Escolha seu plano e teste grátis por 7 dias",
+  "plansTrial": "Prepare seu alerta primeiro e depois inicie o teste grátis de 7 dias; seu alerta começa a funcionar na hora.",
+  "plansNote": "Plus e Pro têm 7 dias de teste grátis. Se você cancelar pelo menos 24 horas antes do fim do teste, não há cobrança. Os preços aparecem na loja para o seu país.",
   "planRows": [
    [
     "Alertas",
-    "3",
     "20",
     "100"
    ],
    [
     "Tipos de condição",
-    "Preço, %, máx./mín. 24 h",
     "Todos (8)",
     "Todos (8)"
    ],
    [
     "Condições por alerta",
-    "1",
     "3",
     "5"
    ],
    [
     "Alertas de todas as moedas",
-    "—",
     "2 · Top 100",
     "10 · Todas"
    ],
    [
     "Alertas repetidos",
-    "—",
     "✓",
     "✓"
    ],
    [
     "Canais",
-    "Push",
-    "+ Telegram",
+    "Push + Telegram",
     "+ Webhook"
    ],
    [
     "IA / voz",
-    "5/dia",
     "200/sem.",
     "1000/sem."
    ],
    [
     "Histórico",
-    "7 dias",
     "90 dias",
     "365 dias"
    ]
@@ -2091,7 +2042,7 @@
    ],
    [
     "O MarketAlert é grátis?",
-    "Sim. O plano gratuito tem 3 alertas com condições de preço, variação percentual e máxima/mínima de 24 horas. Plus e Pro têm 7 dias de teste grátis. Plus e Pro liberam mais alertas, todos os tipos de condição e alertas de todas as moedas."
+    "O MarketAlert funciona por assinatura; Plus e Pro têm 7 dias de teste grátis. Se você cancelar pelo menos 24 horas antes do fim do teste, não há cobrança. Você pode baixar o app e preparar seu alerta sem assinar; ele começa a funcionar quando você inicia o teste."
    ],
    [
     "Como funcionam os alertas por voz e por texto?",
@@ -2107,7 +2058,7 @@
    ]
   ],
   "ctaTitle": "Crie seu primeiro alerta em um minuto.",
-  "ctaSub": "Comece como convidado, sem cadastro; seus alertas são monitorados em nossos servidores.",
+  "ctaSub": "Prepare seu alerta e teste grátis por 7 dias; seus alertas são monitorados em nossos servidores.",
   "legal": [
    "Privacidade",
    "Termos",
@@ -2117,7 +2068,7 @@
   "disclaimer": "O MarketAlert não tem vínculo com a Binance. Os avisos são apenas informativos e não são recomendação de investimento.",
   "meta": {
    "title": "MarketAlert | Alertas cripto que escaneiam todas as moedas: RSI, volume, preço",
-   "desc": "O MarketAlert monitora juntos RSI, MACD, volume e preço em todas as moedas com um só alerta e avisa quando se cumprem. Crie por voz ou texto, comece grátis."
+   "desc": "O MarketAlert monitora juntos RSI, MACD, volume e preço em todas as moedas com um só alerta e avisa quando se cumprem. Crie por voz ou texto, teste grátis por 7 dias."
   },
   "ui": {
    "theme": "Mudar tema",
@@ -2336,54 +2287,47 @@
     "Rarement"
    ]
   ],
-  "plansTitle": "Commencez gratuitement, évoluez selon vos besoins",
-  "plansNote": "Plus et Pro incluent 7 jours d’essai gratuit. Les prix sont affichés dans le store pour votre pays.",
+  "plansTitle": "Choisissez votre offre, essayez-la 7 jours gratuitement",
+  "plansTrial": "Préparez d’abord votre alerte, puis lancez l’essai gratuit de 7 jours ; votre alerte fonctionne aussitôt.",
+  "plansNote": "Plus et Pro incluent 7 jours d’essai gratuit. Si vous annulez au moins 24 heures avant la fin de l’essai, rien n’est facturé. Les prix sont affichés dans le store pour votre pays.",
   "planRows": [
    [
     "Alertes",
-    "3",
     "20",
     "100"
    ],
    [
     "Types de conditions",
-    "Prix, %, haut/bas 24 h",
     "Tous (8)",
     "Tous (8)"
    ],
    [
     "Conditions par alerte",
-    "1",
     "3",
     "5"
    ],
    [
     "Alertes toutes cryptos",
-    "—",
     "2 · Top 100",
     "10 · Toutes"
    ],
    [
     "Alertes répétées",
-    "—",
     "✓",
     "✓"
    ],
    [
     "Canaux",
-    "Push",
-    "+ Telegram",
+    "Push + Telegram",
     "+ Webhook"
    ],
    [
     "IA / voix",
-    "5/jour",
     "200/sem.",
     "1000/sem."
    ],
    [
     "Historique",
-    "7 jours",
     "90 jours",
     "365 jours"
    ]
@@ -2405,7 +2349,7 @@
    ],
    [
     "MarketAlert est-il gratuit ?",
-    "Oui. L’offre gratuite comprend 3 alertes avec les conditions de prix, de variation en % et de plus haut/plus bas sur 24 h. Plus et Pro incluent 7 jours d’essai gratuit. Plus et Pro ajoutent plus d’alertes, tous les types de conditions et les alertes toutes cryptos."
+    "MarketAlert fonctionne par abonnement ; Plus et Pro incluent 7 jours d’essai gratuit. Si vous annulez au moins 24 heures avant la fin de l’essai, rien n’est facturé. Vous pouvez télécharger l’application et préparer votre alerte sans vous abonner ; elle commence à fonctionner quand vous lancez l’essai."
    ],
    [
     "Comment fonctionnent les alertes vocales et écrites ?",
@@ -2421,7 +2365,7 @@
    ]
   ],
   "ctaTitle": "Créez votre première alerte en une minute.",
-  "ctaSub": "Commencez en invité sans inscription ; vos alertes sont surveillées sur nos serveurs.",
+  "ctaSub": "Préparez votre alerte et essayez 7 jours gratuitement ; vos alertes sont surveillées sur nos serveurs.",
   "legal": [
    "Confidentialité",
    "Conditions",
@@ -2431,7 +2375,7 @@
   "disclaimer": "MarketAlert n’est pas affilié à Binance. Les notifications sont fournies à titre d’information et ne constituent pas un conseil en investissement.",
   "meta": {
    "title": "MarketAlert | Alertes crypto qui scannent toutes les cryptos : RSI, volume, prix",
-   "desc": "Une alerte MarketAlert surveille RSI, MACD, volume et prix ensemble sur toutes les cryptos et vous prévient quand ils sont réunis. À la voix ou par écrit, gratuit."
+   "desc": "Une alerte MarketAlert surveille RSI, MACD, volume et prix ensemble sur toutes les cryptos et vous prévient quand ils sont réunis. À la voix ou par écrit, 7 jours d’essai gratuit."
   },
   "ui": {
    "theme": "Changer de thème",
@@ -2650,54 +2594,47 @@
     "Редко"
    ]
   ],
-  "plansTitle": "Начните бесплатно, расширяйте по мере роста",
-  "plansNote": "Plus и Pro можно попробовать бесплатно 7 дней. Цены показываются в магазине приложений для вашей страны.",
+  "plansTitle": "Выберите тариф и попробуйте 7 дней бесплатно",
+  "plansTrial": "Сначала подготовьте оповещение, затем запустите 7 дней бесплатного пробного периода; оповещение сразу начнёт работать.",
+  "plansNote": "Plus и Pro можно попробовать бесплатно 7 дней. Если отменить не позднее чем за 24 часа до конца пробного периода, плата не взимается. Цены показываются в магазине приложений для вашей страны.",
   "planRows": [
    [
     "Оповещения",
-    "3",
     "20",
     "100"
    ],
    [
     "Типы условий",
-    "Цена, %, макс./мин. 24 ч",
     "Все (8)",
     "Все (8)"
    ],
    [
     "Условий в оповещении",
-    "1",
     "3",
     "5"
    ],
    [
     "Оповещения по всем монетам",
-    "—",
     "2 · Топ-100",
     "10 · Все"
    ],
    [
     "Повторяющиеся оповещения",
-    "—",
     "✓",
     "✓"
    ],
    [
     "Каналы",
-    "Push",
-    "+ Telegram",
+    "Push + Telegram",
     "+ Webhook"
    ],
    [
     "ИИ / голос",
-    "5/день",
     "200/нед.",
     "1000/нед."
    ],
    [
     "История",
-    "7 дней",
     "90 дней",
     "365 дней"
    ]
@@ -2719,7 +2656,7 @@
    ],
    [
     "MarketAlert бесплатный?",
-    "Да. Бесплатный тариф даёт 3 оповещения с условиями по цене, процентному изменению и максимуму/минимуму за 24 часа. Plus и Pro можно попробовать бесплатно 7 дней. Plus и Pro дают больше оповещений, все типы условий и оповещения по всем монетам."
+    "MarketAlert работает по подписке; Plus и Pro можно попробовать бесплатно 7 дней. Если отменить не позднее чем за 24 часа до конца пробного периода, плата не взимается. Можно скачать приложение и подготовить оповещение без подписки; оно начнёт работать, когда вы запустите пробный период."
    ],
    [
     "Как работают голосовые и текстовые оповещения?",
@@ -2735,7 +2672,7 @@
    ]
   ],
   "ctaTitle": "Создайте первое оповещение за минуту.",
-  "ctaSub": "Начните как гость без регистрации — ваши оповещения отслеживаются на наших серверах.",
+  "ctaSub": "Подготовьте оповещение и попробуйте 7 дней бесплатно; ваши оповещения отслеживаются на наших серверах.",
   "legal": [
    "Конфиденциальность",
    "Условия",
@@ -2745,7 +2682,7 @@
   "disclaimer": "MarketAlert не связан с Binance. Уведомления носят информационный характер и не являются инвестиционной рекомендацией.",
   "meta": {
    "title": "MarketAlert | крипто-оповещения, которые сканируют все монеты: RSI, объём, цена",
-   "desc": "Одно оповещение MarketAlert следит за RSI, MACD, объёмом и ценой на всех монетах сразу и сообщает, когда условия выполнены. Голосом или текстом, бесплатно."
+   "desc": "Одно оповещение MarketAlert следит за RSI, MACD, объёмом и ценой на всех монетах сразу и сообщает, когда условия выполнены. Голосом или текстом, 7 дней бесплатно."
   },
   "ui": {
    "theme": "Сменить тему",
@@ -2964,54 +2901,47 @@
     "Selten"
    ]
   ],
-  "plansTitle": "Kostenlos starten, bei Bedarf upgraden",
-  "plansNote": "Plus und Pro kannst du 7 Tage kostenlos testen. Preise zeigt der Store für dein Land an.",
+  "plansTitle": "Plan wählen, 7 Tage kostenlos testen",
+  "plansTrial": "Bereite zuerst deinen Alarm vor und starte dann den kostenlosen 7-Tage-Test; dein Alarm läuft sofort.",
+  "plansNote": "Plus und Pro kannst du 7 Tage kostenlos testen. Kündigst du mindestens 24 Stunden vor Ablauf des Tests, wird nichts berechnet. Preise zeigt der Store für dein Land an.",
   "planRows": [
    [
     "Alarme",
-    "3",
     "20",
     "100"
    ],
    [
     "Bedingungstypen",
-    "Preis, %, 24-h-Hoch/Tief",
     "Alle (8)",
     "Alle (8)"
    ],
    [
     "Bedingungen pro Alarm",
-    "1",
     "3",
     "5"
    ],
    [
     "Alle-Coins-Alarme",
-    "—",
     "2 · Top 100",
     "10 · Alle"
    ],
    [
     "Wiederholte Alarme",
-    "—",
     "✓",
     "✓"
    ],
    [
     "Kanäle",
-    "Push",
-    "+ Telegram",
+    "Push + Telegram",
     "+ Webhook"
    ],
    [
     "KI / Sprache",
-    "5/Tag",
     "200/Wo.",
     "1000/Wo."
    ],
    [
     "Verlauf",
-    "7 Tage",
     "90 Tage",
     "365 Tage"
    ]
@@ -3033,7 +2963,7 @@
    ],
    [
     "Ist MarketAlert kostenlos?",
-    "Ja. Der kostenlose Tarif bietet 3 Alarme mit Preis-, Prozent- und 24-Stunden-Hoch/Tief-Bedingungen. Plus und Pro kannst du 7 Tage kostenlos testen. Plus und Pro bieten mehr Alarme, alle Bedingungstypen und Alle-Coins-Alarme."
+    "MarketAlert funktioniert im Abo; Plus und Pro kannst du 7 Tage kostenlos testen. Kündigst du mindestens 24 Stunden vor Ablauf des Tests, wird nichts berechnet. Du kannst die App laden und deinen Alarm ohne Abo vorbereiten; er läuft, sobald du den Test startest."
    ],
    [
     "Wie funktionieren Alarme per Sprache und Text?",
@@ -3049,7 +2979,7 @@
    ]
   ],
   "ctaTitle": "Richte deinen ersten Alarm in einer Minute ein.",
-  "ctaSub": "Starte als Gast ohne Registrierung; deine Alarme werden auf unseren Servern überwacht.",
+  "ctaSub": "Bereite deinen Alarm vor und teste 7 Tage kostenlos; deine Alarme werden auf unseren Servern überwacht.",
   "legal": [
    "Datenschutz",
    "Nutzungsbedingungen",
@@ -3059,7 +2989,7 @@
   "disclaimer": "MarketAlert ist nicht mit Binance verbunden. Benachrichtigungen dienen nur der Information und sind keine Anlageberatung.",
   "meta": {
    "title": "MarketAlert | Krypto-Alarme, die alle Coins scannen: RSI, Volumen, Preis",
-   "desc": "Ein MarketAlert-Alarm überwacht RSI, MACD, Volumen und Preis zusammen über alle Coins und meldet sich, sobald sie erfüllt sind. Per Sprache oder Text, kostenlos."
+   "desc": "Ein MarketAlert-Alarm überwacht RSI, MACD, Volumen und Preis zusammen über alle Coins und meldet sich, sobald sie erfüllt sind. Per Sprache oder Text, 7 Tage kostenlos testen."
   },
   "ui": {
    "theme": "Design wechseln",
@@ -3278,54 +3208,47 @@
     "まれ"
    ]
   ],
-  "plansTitle": "無料で始めて、必要に応じてアップグレード",
-  "plansNote": "Plus と Pro は7日間無料でお試しいただけます。価格はお住まいの国のストアに表示されます。",
+  "plansTitle": "プランを選んで、7日間無料でお試し",
+  "plansTrial": "先にアラートを用意してから7日間の無料トライアルを開始すると、アラートがすぐに動き始めます。",
+  "plansNote": "Plus と Pro は7日間無料でお試しいただけます。トライアル終了の24時間前までに解約すれば料金はかかりません。価格はお住まいの国のストアに表示されます。",
   "planRows": [
    [
     "アラート",
-    "3",
     "20",
     "100"
    ],
    [
     "条件の種類",
-    "価格、%、24h 高値/安値",
     "すべて (8)",
     "すべて (8)"
    ],
    [
     "1アラートの条件数",
-    "1",
     "3",
     "5"
    ],
    [
     "全銘柄アラート",
-    "—",
     "2 · 上位100",
     "10 · すべて"
    ],
    [
     "繰り返しアラート",
-    "—",
     "✓",
     "✓"
    ],
    [
     "チャネル",
-    "プッシュ",
-    "+ Telegram",
+    "プッシュ + Telegram",
     "+ Webhook"
    ],
    [
     "AI / 音声",
-    "5/日",
     "200/週",
     "1000/週"
    ],
    [
     "履歴",
-    "7日",
     "90日",
     "365日"
    ]
@@ -3347,7 +3270,7 @@
    ],
    [
     "MarketAlert は無料ですか？",
-    "はい。無料プランでは、価格・変動率・24時間高値/安値の条件で3つのアラートを使えます。Plus と Pro は7日間無料でお試しいただけます。Plus と Pro では、アラート数が増え、すべての条件タイプと全銘柄アラートが使えます。"
+    "MarketAlert はサブスクリプションで利用します。Plus と Pro はどちらも7日間無料でお試しいただけます。トライアル終了の24時間前までに解約すれば料金はかかりません。アプリをダウンロードして、サブスクリプションなしでもアラートを用意できます。トライアルを開始すると動き始めます。"
    ],
    [
     "音声とテキストのアシスタントはどう動作しますか？",
@@ -3363,7 +3286,7 @@
    ]
   ],
   "ctaTitle": "最初のアラートを1分で。",
-  "ctaSub": "登録不要のゲストで始められます。アラートは当社のサーバーで監視されます。",
+  "ctaSub": "アラートを用意して7日間無料でお試しください。アラートは当社のサーバーで監視されます。",
   "legal": [
    "プライバシー",
    "利用規約",
@@ -3373,7 +3296,7 @@
   "disclaimer": "MarketAlert は Binance とは提携していません。通知は情報提供を目的としたもので、投資助言ではありません。",
   "meta": {
    "title": "MarketAlert | 全銘柄をスキャンする暗号資産アラート：RSI・出来高・価格",
-   "desc": "MarketAlert は1つのアラートで全銘柄の RSI・MACD・出来高・価格の条件を同時に監視し、条件がそろうと通知します。音声でも文字でも設定でき、無料で始められます。"
+   "desc": "MarketAlert は1つのアラートで全銘柄の RSI・MACD・出来高・価格の条件を同時に監視し、条件がそろうと通知します。音声でも文字でも設定でき、7日間無料でお試しいただけます。"
   },
   "ui": {
    "theme": "テーマを切り替え",
