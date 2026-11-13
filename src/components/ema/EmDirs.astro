@@ -1,0 +1,35 @@
+---
+/**
+ * İki yön, tasarım P4-4B (2026-11-13, Ahmet): yukarı ve aşağı kesişim için iki kart; başlığın yanında yön renginde ok
+ * rozeti, kartın kenarı yön renginde, mumlu mini grafik (turuncu hızlı EMA 9, mavi yavaş EMA 21, kesişim halkası)
+ * ve o yönün gerçek push bildirimi.
+ */
+import { emLang, miniSvg, pushHtml } from '../../lib/ema';
+import '../../styles/macd.css';
+import '../../styles/ema.css';
+
+interface Props { code: string; em: any; title: string; caption: string }
+const { code, em, title, caption } = Astro.props;
+const L = emLang(code);
+const ARW = {
+  u: '<path d="M14 46 L30 30 L38 38 L52 20"/><path d="M40 20h12v12"/>',
+  d: '<path d="M14 18 L30 34 L38 26 L52 44"/><path d="M40 44h12V32"/>',
+};
+const W = 340, H = 130;
+---
+<section class="emd" aria-labelledby="emd-t">
+  <p class="kicker">{em.dKicker}</p>
+  <h2 id="emd-t">{title}</h2>
+  <figure style="margin:0">
+    <div class="emd-g">
+      {(['u', 'd'] as const).map(k => <article class={`emd-c ${k}`}>
+        <div class="emd-h"><span class="emd-aw"><svg viewBox="0 0 64 64" aria-hidden="true" set:html={ARW[k]} /></span><div><small dir="ltr">EMA 9 / 21 · 1h</small><h3>{em.dirs[k][0]}</h3></div></div>
+        <p>{em.dirs[k][1]}</p>
+        <svg class="em-cv" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={em.dirs[k][2]} set:html={miniSvg(k, W, H)} />
+        <div class="mcp" set:html={pushHtml(L, k, '1h', em.now)} />
+      </article>)}
+    </div>
+    <div class="emd-lg" aria-hidden="true"><span><i></i>{em.leg[0]}</span><span><i class="s"></i>{em.leg[1]}</span></div>
+    <figcaption>{caption}</figcaption>
+  </figure>
+</section>

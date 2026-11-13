@@ -1,0 +1,37 @@
+---
+/**
+ * Ne zaman bildirim gelir, tasarım N5-4A (2026-11-13, Ahmet): gün, seçilen zaman diliminin mumlarına bölünür;
+ * 13:47'deki kesişimi içeren blok renkli, sağ kenarı (mumun kapanışı) bildirim anıdır. Türkçede saatler TSİ
+ * (4h ve 1d mumları 03:00'te başlar), diğer dillerde UTC.
+ */
+import { TFD, dayRow, daySentence, emLang } from '../../lib/ema';
+import '../../styles/ema.css';
+
+interface Props { code: string; em: any }
+const { code, em } = Astro.props;
+const L = emLang(code);
+const data = { code, s: em.s, sDay: em.sDay };
+---
+<section class="emn" aria-labelledby="emn-t" data-em={JSON.stringify(data)}>
+  <p class="kicker">{em.nKicker}</p>
+  <h2 id="emn-t">{em.nTitle}</h2>
+  <p>{em.nText}</p>
+  <div class="emn-c">
+    <div class="emn-pill" role="group" aria-label={em.tfLabel}>{TFD.map(t => <button type="button" aria-pressed={String(t === '1h')} data-k={t}>{t}</button>)}</div>
+    <div class="emn-strip" aria-hidden="true"><div class="emn-row" set:html={dayRow('1h', L.off)} /><div class="emn-ax"><span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>24:00 {L.tz}</span></div></div>
+    <p class="emn-s" aria-live="polite">{daySentence(em, L, '1h')}</p>
+  </div>
+</section>
+
+<script>
+  import { dayRow, daySentence, emLang } from '../../lib/ema';
+  for (const w of document.querySelectorAll<HTMLElement>('.emn')) {
+    const D = JSON.parse(w.dataset.em!), L = emLang(D.code);
+    const bs = [...w.querySelectorAll<HTMLButtonElement>('.emn-pill button')];
+    bs.forEach(b => b.addEventListener('click', () => {
+      bs.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+      w.querySelector('.emn-row')!.innerHTML = dayRow(b.dataset.k!, L.off);
+      w.querySelector('.emn-s')!.textContent = daySentence(D, L, b.dataset.k!);
+    }));
+  }
+</script>

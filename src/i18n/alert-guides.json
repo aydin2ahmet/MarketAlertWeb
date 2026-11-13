@@ -451,6 +451,174 @@
           "form": "Hangi hareket? Yeni tepe"
         }
       }
+    },
+    "ema-crossover-alerts": {
+      "link": "EMA kesişim alarmı",
+      "title": "EMA kesişim alarmı nasıl kurulur? EMA 9 / 21 | MarketAlert",
+      "h1": "EMA 9 ile EMA 21 kesişince nasıl haber alırım?",
+      "description": "Hızlı EMA yavaş EMA’yı yukarı ya da aşağı kestiğinde, mum kapanınca push ve Telegram bildirimi al. EMA veya SMA, 2–200 periyot, 1 dakikadan 1 güne zaman dilimleri.",
+      "intro": "İki ortalamayı, yönü ve zaman dilimini seçersin. Seçtiğin boydaki mum kapandığında hızlı EMA yavaşı kesmişse MarketAlert telefonuna push gönderir; istersen mesaj [Telegram’a](features/telegram-crypto-alerts) da gelir. Aynı kesişimi [tüm coinlerde](features/all-coins-alerts) tek alarmla da izleyebilirsin.",
+      "prompt": "BTC 1 saatlikte EMA 9, EMA 21’i yukarı keserse haber ver",
+      "exampleTitle": "Yukarı ve aşağı kesişim",
+      "caption": "Turuncu çizgi hızlı EMA 9, mavi çizgi yavaş EMA 21. Halka, kesişimin kesinleştiği mum kapanışı.",
+      "steps": [
+        [
+          "Alarm oluştur’a dokun",
+          "Alarmlar ekranında Alarm oluştur’a dokun ve coini seç, örneğin BTC."
+        ],
+        [
+          "Koşul türünden SMA/EMA kesişimi’ni seç",
+          "Koşul türü penceresinde “SMA/EMA kesişimi”ne dokun. Ekrandaki çizim, seçimlerine göre değişir."
+        ],
+        [
+          "Ortalamayı ve periyotları gir",
+          "Ortalama türü altında EMA’yı seç. Hızlı periyot 9, Yavaş periyot 21 gelir; ikisini de 2 ile 200 arasında değiştirebilirsin, hızlı periyot yavaştan küçük olmalı."
+        ],
+        [
+          "Yönü ve zaman dilimini seç",
+          "“Ne zaman haber verelim?” altında Yukarı kesişim ya da Aşağı kesişim seç, sonra 1m, 5m, 15m, 1h, 4h ya da 1d. Kesişime bu boydaki mum kapanınca bakılır."
+        ],
+        [
+          "Kaydet ve kanalı seç",
+          "Koşulu kaydet’e dokun, sonra bildirim kanalını seç: push, Telegram ya da Pro’da imzalı webhook. Alarmı kaydet."
+        ]
+      ],
+      "details": [
+        [
+          "EMA nedir, kesişim ne demek?",
+          "EMA (üstel hareketli ortalama) son mumlara daha çok ağırlık veren bir ortalamadır. Hızlı EMA (örneğin 9) fiyatı yakından izler, yavaş EMA (örneğin 21) daha geriden gelir. Hızlı çizgi yavaşın altından üstüne geçince yukarı kesişim, üstünden altına inince aşağı kesişim olur."
+        ],
+        [
+          "Kesişime nasıl karar verilir?",
+          "Yalnızca kapanmış mumlara bakılır. Bir önceki kapanışta hızlı EMA yavaşın altında ya da ona eşitken bu kapanışta üstündeyse yukarı kesişimdir; aşağı kesişim bunun tersidir. Açık mumda çizgiler birbirini kesip geri dönebilir, bu yüzden açık mum sayılmaz."
+        ],
+        [
+          "EMA yerine SMA seçebilir miyim?",
+          "Evet. Ortalama türü altında SMA’yı seçersen iki çizgi de basit ortalama olur, örneğin SMA 50 ile SMA 200. SMA her muma eşit ağırlık verdiği için daha yavaş döner ve daha seyrek kesişir."
+        ],
+        [
+          "Bildirimde ne yazar?",
+          "Push başlığı “BTC EMA 9/21 yukarı kesişti” gibidir; altında zaman dilimi ve iki ortalamanın değeri yazar. Telegram mesajında bunlara ek olarak fiyat ve piyasa bulunur, Binance grafiğini açan bir düğme vardır."
+        ],
+        [
+          "Al ya da sat sinyali mi?",
+          "Hayır. MarketAlert yalnızca seçtiğin kesişim olduğunda haber verir. İşlem yapmaz, borsa hesabına bağlanmaz ve yatırım tavsiyesi vermez."
+        ]
+      ],
+      "faq": [
+        [
+          "EMA kesişim alarmı ücretsiz mi?",
+          "MarketAlert abonelikle çalışır; Plus ve Pro 7 gün ücretsiz denenir. EMA kesişim alarmı iki planda da var. Abone olmadan da alarmını hazırlayabilirsin; denemeyi başlatınca çalışmaya başlar."
+        ],
+        [
+          "9 ve 21 dışında değer girebilir miyim?",
+          "Evet. İki periyot da 2 ile 200 arasında olabilir; hızlı periyot yavaştan küçük olmalıdır. Sık kullanılan çiftler 9/21, 20/50 ve 50/200’dür."
+        ],
+        [
+          "Hangi zaman dilimleri var?",
+          "1 dakika, 5 dakika, 15 dakika, 1 saat, 4 saat ve 1 gün. Kesişime seçtiğin boydaki mum kapanınca bakılır; günlük mum 03:00’te (TSİ) kapanır."
+        ],
+        [
+          "Her kesişimde bildirim gelir mi?",
+          "Tekrarla’yı seçersen her kesişimde haber verir; aynı alarm için iki bildirim arasında en az ne kadar bekleneceğini sen seçersin. Bir kez’i seçersen ilk kesişimde haber verir ve durur."
+        ],
+        [
+          "EMA kesişimini tüm coinlerde izleyebilir miyim?",
+          "Evet. Coin yerine tüm coinleri seçersen aynı kesişim her coinde ayrı ayrı izlenir. Plus’ta ilk 100 coinde, Pro’da tüm coinlerde çalışır. Ayrıntılar [tüm coinler alarmı](features/all-coins-alerts) sayfasında."
+        ],
+        [
+          "Yapay zekâya yazarak kurabilir miyim?",
+          "Evet. AI ekranına “BTC 1 saatlikte EMA 9, EMA 21’i yukarı keserse haber ver” gibi yaz. Periyot söylemezsen 9 ve 21, zaman dilimi söylemezsen 1h kullanılır."
+        ]
+      ],
+      "related": [
+        "features/macd-crossover-alerts",
+        "features/rsi-alerts",
+        "features/all-coins-alerts",
+        "features/telegram-crypto-alerts",
+        "features/multi-condition-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 alarm; tekrarlı alarm, alarm başına 3 koşul ve ilk 100 coinde 2 tüm coinler alarmı. Push ve Telegram."
+        ],
+        [
+          "Pro",
+          "100 alarm; alarm başına 5 koşul ve tüm coinlerde 10 tüm coinler alarmı. Push, Telegram ve imzalı webhook."
+        ]
+      ],
+      "em": {
+        "kicker": "BINANCE · EMA KESİŞİMİ · PUSH + TELEGRAM",
+        "chnPush": "Push",
+        "sheetAlt": "Uygulamada EMA kesişim koşulu: EMA 9 ve EMA 21, yukarı kesişim, 1h",
+        "listAlt": "Alarm listesinde EMA kesişim alarmları ve kesişime kalan fark",
+        "dKicker": "İKİ YÖN",
+        "dirs": {
+          "u": [
+            "Yukarı kesişim",
+            "Hızlı EMA, yavaş EMA’nın üstüne çıkar. Yükselişe dönüşü erken görmek için kurulur.",
+            "Yukarı kesişim: turuncu EMA 9, mavi EMA 21’in üstüne geçiyor"
+          ],
+          "d": [
+            "Aşağı kesişim",
+            "Hızlı EMA, yavaş EMA’nın altına iner. Düşüşe dönüşü erken görmek için kurulur.",
+            "Aşağı kesişim: turuncu EMA 9, mavi EMA 21’in altına iniyor"
+          ]
+        },
+        "leg": [
+          "Hızlı EMA 9",
+          "Yavaş EMA 21"
+        ],
+        "sKicker": "İKİ YOL, AYNI ALARM",
+        "sTitle": "İster yaz, ister seç",
+        "sLead": "Yapay zekâya kendi cümlenle yazarsın ya da koşul ekranında kendin seçersin; ikisi de aynı alarmı kurar.",
+        "tabs": [
+          [
+            "Yazarak",
+            "AI sohbet"
+          ],
+          [
+            "Formla",
+            "kendin seç"
+          ],
+          [
+            "Tüm coinlerde",
+            "tek alarm"
+          ]
+        ],
+        "panes": [
+          [
+            "Yazarak: AI sohbet",
+            "İsteğini kendi cümlenle yaz. Periyot söylemezsen yapay zekâ 9 ve 21, zaman dilimi söylemezsen 1h kullanır."
+          ],
+          [
+            "Formla: kendin seç",
+            "Koşul türünden “SMA/EMA kesişimi”ni seç; ortalama türünü, iki periyodu, yönü ve zaman dilimini gir. Çizim seçimine göre değişir."
+          ],
+          [
+            "Tüm coinlerde: tek alarm",
+            "Coin yerine tüm coinleri seç: aynı kesişimi ilk 100 coinde, Pro’da tüm coinlerde tek alarmla izlersin. Aynı coin için iki bildirim arasındaki en az süreyi seçersin."
+          ]
+        ],
+        "quotes": [
+          "“BTC 1 saatlikte EMA 9, EMA 21’i yukarı keserse haber ver”",
+          "EMA(9) EMA(21) değerini yukarı keserse · 1h",
+          "EMA 9 / 21 · 4h · Tekrarla"
+        ],
+        "shotAlt": [
+          "AI sohbetinde yazıyla kurulan EMA 9/21 kesişim alarmı",
+          "Koşul ekranında EMA 9, EMA 21, yukarı kesişim ve 1h",
+          "Tüm coinler için EMA 9/21 kesişim alarmı formu"
+        ],
+        "nKicker": "NE ZAMAN BİLDİRİM GELİR",
+        "nTitle": "Bildirim mum kapanınca gelir",
+        "nText": "Kesişim gün içinde herhangi bir anda olabilir; karar, seçtiğin zaman diliminin mumu kapanınca verilir. Zaman dilimini değiştir, kesişimin olduğu mumun ne zaman kapandığını gör.",
+        "s": "Kesişim saati {x}. {tf} mumu {close} ({tz}) kapanınca bildirim gelir; günde {n} kontrol yapılır.",
+        "sDay": "Kesişim saati {x}. 1d mumu günde bir kez, {close} ({tz}) kapanır; bildirim bu kapanışta gelir.",
+        "tfLabel": "Zaman dilimi",
+        "now": "şimdi"
+      }
     }
   },
   "de": {
@@ -900,6 +1068,174 @@
           "tpl": "Vorlage: 24-Stunden-Hoch-Ausbruch",
           "form": "Welche Bewegung? Neues Hoch"
         }
+      }
+    },
+    "ema-crossover-alerts": {
+      "link": "EMA-Kreuzungsalarm",
+      "title": "EMA-Kreuzungsalarm einrichten (EMA 9 / 21) | MarketAlert",
+      "h1": "Wie werde ich benachrichtigt, wenn EMA 9 die EMA 21 kreuzt?",
+      "description": "Push- und Telegram-Mitteilung, wenn die schnelle EMA die langsame nach oben oder unten kreuzt, sobald die Kerze schließt. EMA oder SMA, Perioden 2–200, Zeitrahmen von 1 Minute bis 1 Tag.",
+      "intro": "Du wählst die beiden Durchschnitte, die Richtung und den Zeitrahmen. Schließt eine Kerze dieser Länge und die schnelle EMA hat die langsame gekreuzt, schickt MarketAlert eine Push-Mitteilung auf dein Handy; die Nachricht kann auch an [Telegram](features/telegram-crypto-alerts) gehen. Dieselbe Kreuzung kannst du mit einem Alarm auch [über alle Coins](features/all-coins-alerts) beobachten.",
+      "prompt": "Sag mir Bescheid, wenn EMA 9 bei BTC im 1h-Chart EMA 21 nach oben kreuzt",
+      "exampleTitle": "Kreuzung nach oben und nach unten",
+      "caption": "Die orange Linie ist die schnelle EMA 9, die blaue die langsame EMA 21. Der Ring markiert den Kerzenschluss, an dem die Kreuzung feststeht.",
+      "steps": [
+        [
+          "Tippe auf Alarm erstellen",
+          "Tippe im Bildschirm Alarme auf Alarm erstellen und wähle den Coin, zum Beispiel BTC."
+        ],
+        [
+          "Wähle SMA/EMA-Kreuzung als Bedingungstyp",
+          "Tippe im Fenster für den Bedingungstyp auf „SMA/EMA-Kreuzung“. Die Zeichnung auf dem Bildschirm folgt deiner Auswahl."
+        ],
+        [
+          "Durchschnitt und Perioden festlegen",
+          "Wähle unter Durchschnittstyp EMA. Schnelle Periode steht auf 9, Langsame Periode auf 21; beide kannst du zwischen 2 und 200 ändern, die schnelle Periode muss kleiner sein als die langsame."
+        ],
+        [
+          "Richtung und Zeitrahmen wählen",
+          "Wähle unter „Wann sollen wir dich benachrichtigen?“ Kreuzt nach oben oder Kreuzt nach unten, dann 1m, 5m, 15m, 1h, 4h oder 1d. Die Kreuzung wird geprüft, wenn eine Kerze dieser Länge schließt."
+        ],
+        [
+          "Speichern und Kanal wählen",
+          "Tippe auf Bedingung speichern und wähle den Benachrichtigungskanal: Push, Telegram oder bei Pro ein signierter Webhook. Speichere den Alarm."
+        ]
+      ],
+      "details": [
+        [
+          "Was ist eine EMA, was ist eine Kreuzung?",
+          "Eine EMA (exponentieller gleitender Durchschnitt) gewichtet die letzten Kerzen stärker. Eine schnelle EMA (zum Beispiel 9) folgt dem Kurs eng, eine langsame EMA (zum Beispiel 21) läuft hinterher. Steigt die schnelle Linie von unter die langsame auf darüber, ist das eine Kreuzung nach oben; umgekehrt eine Kreuzung nach unten."
+        ],
+        [
+          "Wie wird über die Kreuzung entschieden?",
+          "Es zählen nur geschlossene Kerzen. Lag die schnelle EMA beim vorigen Schluss unter oder auf der langsamen und liegt sie bei diesem Schluss darüber, ist es eine Kreuzung nach oben; nach unten gilt das Gegenteil. In einer offenen Kerze können sich die Linien kreuzen und wieder zurückdrehen, deshalb zählt sie nicht."
+        ],
+        [
+          "Kann ich SMA statt EMA nehmen?",
+          "Ja. Wählst du unter Durchschnittstyp SMA, werden beide Linien einfache Durchschnitte, zum Beispiel SMA 50 und SMA 200. Eine SMA gewichtet jede Kerze gleich, dreht deshalb langsamer und kreuzt seltener."
+        ],
+        [
+          "Was steht in der Mitteilung?",
+          "Der Push-Titel lautet etwa „BTC EMA 9/21 nach oben gekreuzt“; darunter stehen der Zeitrahmen und die Werte beider Durchschnitte. Die Telegram-Nachricht zeigt zusätzlich Kurs und Markt und hat eine Schaltfläche, die den Binance-Chart öffnet."
+        ],
+        [
+          "Ist das ein Kauf- oder Verkaufssignal?",
+          "Nein. MarketAlert meldet nur, wenn die gewählte Kreuzung eintritt. Es handelt nicht, verbindet sich nicht mit deinem Börsenkonto und gibt keine Anlageberatung."
+        ]
+      ],
+      "faq": [
+        [
+          "Ist der EMA-Kreuzungsalarm kostenlos?",
+          "MarketAlert funktioniert im Abo; Plus und Pro kannst du 7 Tage kostenlos testen. Der EMA-Kreuzungsalarm ist in beiden Plänen enthalten. Du kannst deinen Alarm auch ohne Abo vorbereiten; er läuft, sobald du den Test startest."
+        ],
+        [
+          "Kann ich andere Werte als 9 und 21 nehmen?",
+          "Ja. Beide Perioden können zwischen 2 und 200 liegen, die schnelle muss kleiner sein als die langsame. Häufige Paare sind 9/21, 20/50 und 50/200."
+        ],
+        [
+          "Welche Zeitrahmen gibt es?",
+          "1 Minute, 5 Minuten, 15 Minuten, 1 Stunde, 4 Stunden und 1 Tag. Die Kreuzung wird geprüft, wenn eine Kerze der gewählten Länge schließt; die Tageskerze schließt um 00:00 UTC."
+        ],
+        [
+          "Bekomme ich bei jeder Kreuzung eine Mitteilung?",
+          "Mit Wiederholen wirst du bei jeder Kreuzung benachrichtigt und legst die Mindestwartezeit zwischen zwei Mitteilungen desselben Alarms fest. Mit Einmal meldet er die erste Kreuzung und stoppt dann."
+        ],
+        [
+          "Kann ich die EMA-Kreuzung über alle Coins beobachten?",
+          "Ja. Wählst du statt eines Coins alle Coins, wird dieselbe Kreuzung auf jedem Coin einzeln beobachtet. Bei Plus für die Top 100, bei Pro für alle Coins. Details auf der Seite [Alle-Coins-Alarm](features/all-coins-alerts)."
+        ],
+        [
+          "Kann ich ihn per Text an die KI einrichten?",
+          "Ja. Schreib im KI-Bildschirm etwa „Sag mir Bescheid, wenn EMA 9 bei BTC im 1h-Chart EMA 21 nach oben kreuzt“. Ohne Perioden nimmt die KI 9 und 21, ohne Zeitrahmen 1h."
+        ]
+      ],
+      "related": [
+        "features/macd-crossover-alerts",
+        "features/rsi-alerts",
+        "features/all-coins-alerts",
+        "features/telegram-crypto-alerts",
+        "features/multi-condition-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 Alarme; wiederholende Alarme, bis zu 3 Bedingungen pro Alarm und 2 Alle-Coins-Alarme für die Top 100. Push und Telegram."
+        ],
+        [
+          "Pro",
+          "100 Alarme; bis zu 5 Bedingungen pro Alarm und 10 Alle-Coins-Alarme für alle Coins. Push, Telegram und signierter Webhook."
+        ]
+      ],
+      "em": {
+        "kicker": "BINANCE · EMA-KREUZUNG · PUSH + TELEGRAM",
+        "chnPush": "Push",
+        "sheetAlt": "EMA-Kreuzungsbedingung in der App: EMA 9 und EMA 21, Kreuzung nach oben, 1h",
+        "listAlt": "EMA-Kreuzungsalarme in der Alarmliste mit dem Abstand bis zur Kreuzung",
+        "dKicker": "ZWEI RICHTUNGEN",
+        "dirs": {
+          "u": [
+            "Kreuzt nach oben",
+            "Die schnelle EMA steigt über die langsame. Eingerichtet, um eine Wende nach oben früh zu sehen.",
+            "Kreuzung nach oben: die orange EMA 9 steigt über die blaue EMA 21"
+          ],
+          "d": [
+            "Kreuzt nach unten",
+            "Die schnelle EMA fällt unter die langsame. Eingerichtet, um eine Wende nach unten früh zu sehen.",
+            "Kreuzung nach unten: die orange EMA 9 fällt unter die blaue EMA 21"
+          ]
+        },
+        "leg": [
+          "Schnelle EMA 9",
+          "Langsame EMA 21"
+        ],
+        "sKicker": "ZWEI WEGE, DERSELBE ALARM",
+        "sTitle": "Schreiben oder auswählen",
+        "sLead": "Schreib der KI in deinen eigenen Worten oder wähle alles im Bedingungsbildschirm; beides richtet denselben Alarm ein.",
+        "tabs": [
+          [
+            "Schreiben",
+            "KI-Chat"
+          ],
+          [
+            "Formular",
+            "selbst wählen"
+          ],
+          [
+            "Alle Coins",
+            "ein Alarm"
+          ]
+        ],
+        "panes": [
+          [
+            "Schreiben: KI-Chat",
+            "Schreib deinen Wunsch in eigenen Worten. Ohne Perioden nimmt die KI 9 und 21, ohne Zeitrahmen 1h."
+          ],
+          [
+            "Formular: selbst wählen",
+            "Wähle „SMA/EMA-Kreuzung“ als Bedingungstyp und lege Durchschnittstyp, beide Perioden, Richtung und Zeitrahmen fest. Die Zeichnung folgt deiner Auswahl."
+          ],
+          [
+            "Alle Coins: ein Alarm",
+            "Wähle statt eines Coins alle Coins: Du beobachtest dieselbe Kreuzung auf den Top 100, bei Pro auf allen Coins, mit einem Alarm. Du legst die Mindestwartezeit zwischen zwei Mitteilungen pro Coin fest."
+          ]
+        ],
+        "quotes": [
+          "„Sag mir Bescheid, wenn EMA 9 bei BTC im 1h-Chart EMA 21 nach oben kreuzt“",
+          "EMA(9) kreuzt EMA(21) nach oben · 1h",
+          "EMA 9 / 21 · 4h · Wiederholen"
+        ],
+        "shotAlt": [
+          "Per Text im KI-Chat eingerichteter EMA-9/21-Kreuzungsalarm",
+          "Bedingungsbildschirm mit EMA 9, EMA 21, Kreuzung nach oben und 1h",
+          "Formular für einen Alle-Coins-Alarm zur EMA-9/21-Kreuzung"
+        ],
+        "nKicker": "WANN DIE MITTEILUNG KOMMT",
+        "nTitle": "Die Mitteilung kommt, wenn die Kerze schließt",
+        "nText": "Eine Kreuzung kann zu jedem Zeitpunkt des Tages passieren; entschieden wird, wenn die Kerze deines Zeitrahmens schließt. Wechsle den Zeitrahmen und sieh, wann die Kerze mit der Kreuzung schließt.",
+        "s": "Die Kreuzung passiert um {x}. Die Mitteilung kommt, wenn die {tf}-Kerze um {close} ({tz}) schließt; das sind {n} Prüfungen am Tag.",
+        "sDay": "Die Kreuzung passiert um {x}. Die 1d-Kerze schließt einmal am Tag, um {close} ({tz}); dann kommt die Mitteilung.",
+        "tfLabel": "Zeitrahmen",
+        "now": "jetzt"
       }
     }
   },
@@ -1351,6 +1687,174 @@
           "form": "Quel mouvement ? Nouveau plus haut"
         }
       }
+    },
+    "ema-crossover-alerts": {
+      "link": "Alerte croisement d’EMA",
+      "title": "Créer une alerte de croisement d’EMA (EMA 9 / 21) | MarketAlert",
+      "h1": "Comment être alerté quand l’EMA 9 croise l’EMA 21 ?",
+      "description": "Recevez une notification push et Telegram quand l’EMA rapide croise l’EMA lente à la hausse ou à la baisse, à la clôture de la bougie. EMA ou SMA, périodes 2–200, unités de temps de 1 minute à 1 jour.",
+      "intro": "Vous choisissez les deux moyennes, le sens et l’unité de temps. Quand une bougie de cette durée se clôture et que l’EMA rapide a croisé la lente, MarketAlert envoie un push sur votre téléphone ; le message peut aussi partir sur [Telegram](features/telegram-crypto-alerts). Vous pouvez suivre le même croisement [sur toutes les cryptos](features/all-coins-alerts) avec une seule alerte.",
+      "prompt": "Préviens-moi quand l’EMA 9 croise l’EMA 21 à la hausse sur BTC 1h",
+      "exampleTitle": "Croisement haussier et baissier",
+      "caption": "La ligne orange est l’EMA 9 rapide, la bleue l’EMA 21 lente. L’anneau marque la clôture de bougie où le croisement est confirmé.",
+      "steps": [
+        [
+          "Touchez Créer une alerte",
+          "Sur l’écran Alertes, touchez Créer une alerte et choisissez la crypto, par exemple BTC."
+        ],
+        [
+          "Choisissez Croisement SMA/EMA comme type de condition",
+          "Dans la fenêtre du type de condition, touchez « Croisement SMA/EMA ». Le dessin à l’écran suit vos choix."
+        ],
+        [
+          "Réglez la moyenne et les périodes",
+          "Sous Type de moyenne, choisissez EMA. Période rapide vaut 9 et Période lente 21 ; vous pouvez les régler entre 2 et 200, la période rapide doit être plus petite que la lente."
+        ],
+        [
+          "Choisissez le sens et l’unité de temps",
+          "Sous « Quand souhaitez-vous être averti ? », choisissez Franchit à la hausse ou Franchit à la baisse, puis 1m, 5m, 15m, 1h, 4h ou 1d. Le croisement est vérifié à la clôture d’une bougie de cette durée."
+        ],
+        [
+          "Enregistrez et choisissez le canal",
+          "Touchez Enregistrer la condition, puis choisissez le canal de notification : push, Telegram ou, avec Pro, un webhook signé. Enregistrez l’alerte."
+        ]
+      ],
+      "details": [
+        [
+          "Qu’est-ce qu’une EMA et un croisement ?",
+          "Une EMA (moyenne mobile exponentielle) donne plus de poids aux dernières bougies. Une EMA rapide (par exemple 9) suit le prix de près, une EMA lente (par exemple 21) suit avec du retard. Quand la ligne rapide passe de sous la lente à au-dessus, c’est un croisement haussier ; dans l’autre sens, un croisement baissier."
+        ],
+        [
+          "Comment le croisement est-il décidé ?",
+          "Seules les bougies clôturées comptent. Si l’EMA rapide était sous la lente ou égale à elle à la clôture précédente et au-dessus à cette clôture, c’est un croisement haussier ; le baissier est l’inverse. Dans une bougie ouverte, les lignes peuvent se croiser puis revenir, donc elle ne compte pas."
+        ],
+        [
+          "Puis-je utiliser une SMA au lieu d’une EMA ?",
+          "Oui. Choisissez SMA sous Type de moyenne et les deux lignes deviennent des moyennes simples, par exemple SMA 50 et SMA 200. Une SMA donne le même poids à chaque bougie : elle tourne plus lentement et croise moins souvent."
+        ],
+        [
+          "Que dit la notification ?",
+          "Le titre du push ressemble à « BTC EMA 9/21 croisement haussier » ; dessous figurent l’unité de temps et la valeur des deux moyennes. Le message Telegram ajoute le prix et le marché, avec un bouton qui ouvre le graphique Binance."
+        ],
+        [
+          "Est-ce un signal d’achat ou de vente ?",
+          "Non. MarketAlert vous prévient seulement quand le croisement choisi se produit. Il ne passe pas d’ordres, ne se connecte pas à votre compte d’échange et ne donne pas de conseil en investissement."
+        ]
+      ],
+      "faq": [
+        [
+          "L’alerte de croisement d’EMA est-elle gratuite ?",
+          "MarketAlert fonctionne par abonnement ; Plus et Pro incluent 7 jours d’essai gratuit. L’alerte de croisement d’EMA est incluse dans les deux offres. Vous pouvez préparer votre alerte sans vous abonner ; elle commence à fonctionner quand vous lancez l’essai."
+        ],
+        [
+          "Puis-je utiliser d’autres valeurs que 9 et 21 ?",
+          "Oui. Les deux périodes vont de 2 à 200, et la rapide doit être plus petite que la lente. Les paires courantes sont 9/21, 20/50 et 50/200."
+        ],
+        [
+          "Quelles unités de temps sont disponibles ?",
+          "1 minute, 5 minutes, 15 minutes, 1 heure, 4 heures et 1 jour. Le croisement est vérifié à la clôture d’une bougie de la durée choisie ; la bougie journalière se clôture à 00:00 UTC."
+        ],
+        [
+          "Suis-je prévenu à chaque croisement ?",
+          "Avec Répéter, vous êtes prévenu à chaque croisement et vous choisissez l’attente minimale entre deux notifications de la même alerte. Avec Une fois, vous êtes prévenu au premier croisement et l’alerte s’arrête."
+        ],
+        [
+          "Puis-je suivre le croisement d’EMA sur toutes les cryptos ?",
+          "Oui. Choisissez toutes les cryptos au lieu d’une seule et le même croisement est suivi sur chacune séparément. Avec Plus sur le top 100, avec Pro sur toutes. Détails sur la page [alerte toutes cryptos](features/all-coins-alerts)."
+        ],
+        [
+          "Puis-je la créer en écrivant à l’IA ?",
+          "Oui. Sur l’écran IA, écrivez par exemple « Préviens-moi quand l’EMA 9 croise l’EMA 21 à la hausse sur BTC 1h ». Sans périodes, l’IA prend 9 et 21 ; sans unité de temps, 1h."
+        ]
+      ],
+      "related": [
+        "features/macd-crossover-alerts",
+        "features/rsi-alerts",
+        "features/all-coins-alerts",
+        "features/telegram-crypto-alerts",
+        "features/multi-condition-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 alertes ; alertes répétées, jusqu’à 3 conditions par alerte et 2 alertes toutes cryptos sur le top 100. Push et Telegram."
+        ],
+        [
+          "Pro",
+          "100 alertes ; jusqu’à 5 conditions par alerte et 10 alertes toutes cryptos sur l’ensemble des cryptos. Push, Telegram et webhook signé."
+        ]
+      ],
+      "em": {
+        "kicker": "BINANCE · CROISEMENT D’EMA · PUSH + TELEGRAM",
+        "chnPush": "Push",
+        "sheetAlt": "Condition de croisement d’EMA dans l’app : EMA 9 et EMA 21, croisement haussier, 1h",
+        "listAlt": "Alertes de croisement d’EMA dans la liste, avec l’écart restant avant le croisement",
+        "dKicker": "DEUX SENS",
+        "dirs": {
+          "u": [
+            "Franchit à la hausse",
+            "L’EMA rapide passe au-dessus de la lente. On la règle pour voir tôt un retournement à la hausse.",
+            "Croisement haussier : l’EMA 9 orange passe au-dessus de l’EMA 21 bleue"
+          ],
+          "d": [
+            "Franchit à la baisse",
+            "L’EMA rapide passe sous la lente. On la règle pour voir tôt un retournement à la baisse.",
+            "Croisement baissier : l’EMA 9 orange passe sous l’EMA 21 bleue"
+          ]
+        },
+        "leg": [
+          "EMA 9 rapide",
+          "EMA 21 lente"
+        ],
+        "sKicker": "DEUX FAÇONS, MÊME ALERTE",
+        "sTitle": "L’écrire ou la choisir",
+        "sLead": "Écrivez à l’IA avec vos mots ou choisissez tout sur l’écran de condition ; les deux créent la même alerte.",
+        "tabs": [
+          [
+            "En écrivant",
+            "chat IA"
+          ],
+          [
+            "Formulaire",
+            "au choix"
+          ],
+          [
+            "Toutes cryptos",
+            "une alerte"
+          ]
+        ],
+        "panes": [
+          [
+            "En écrivant : chat IA",
+            "Écrivez votre demande avec vos mots. Sans périodes, l’IA prend 9 et 21 ; sans unité de temps, 1h."
+          ],
+          [
+            "Formulaire : au choix",
+            "Choisissez « Croisement SMA/EMA » comme type de condition et réglez le type de moyenne, les deux périodes, le sens et l’unité de temps. Le dessin suit vos choix."
+          ],
+          [
+            "Toutes cryptos : une alerte",
+            "Choisissez toutes les cryptos au lieu d’une : vous suivez le même croisement sur le top 100, ou sur toutes avec Pro, avec une seule alerte. Vous choisissez l’attente minimale entre deux notifications par crypto."
+          ]
+        ],
+        "quotes": [
+          "« Préviens-moi quand l’EMA 9 croise l’EMA 21 à la hausse sur BTC 1h »",
+          "EMA(9) croise EMA(21) à la hausse · 1h",
+          "EMA 9 / 21 · 4h · Répéter"
+        ],
+        "shotAlt": [
+          "Alerte de croisement EMA 9/21 créée en écrivant dans le chat IA",
+          "Écran de condition avec EMA 9, EMA 21, croisement haussier et 1h",
+          "Formulaire d’alerte toutes cryptos pour le croisement EMA 9/21"
+        ],
+        "nKicker": "QUAND ARRIVE LA NOTIFICATION",
+        "nTitle": "La notification arrive à la clôture de la bougie",
+        "nText": "Un croisement peut arriver à tout moment de la journée ; la décision est prise à la clôture de la bougie de votre unité de temps. Changez d’unité de temps pour voir quand se clôture la bougie du croisement.",
+        "s": "Le croisement a lieu à {x}. La notification arrive à la clôture de la bougie {tf}, à {close} ({tz}) ; soit {n} vérifications par jour.",
+        "sDay": "Le croisement a lieu à {x}. La bougie 1d se clôture une fois par jour, à {close} ({tz}) ; la notification arrive à cette clôture.",
+        "tfLabel": "Unité de temps",
+        "now": "maintenant"
+      }
     }
   },
   "es": {
@@ -1800,6 +2304,174 @@
           "tpl": "Plantilla: Ruptura del máximo de 24 h",
           "form": "¿Qué movimiento? Nuevo máximo"
         }
+      }
+    },
+    "ema-crossover-alerts": {
+      "link": "Alerta de cruce de EMA",
+      "title": "Cómo crear una alerta de cruce de EMA (EMA 9 / 21) | MarketAlert",
+      "h1": "¿Cómo recibo un aviso cuando la EMA 9 cruza la EMA 21?",
+      "description": "Recibe una notificación push y por Telegram cuando la EMA rápida cruza la lenta al alza o a la baja, al cerrar la vela. EMA o SMA, periodos 2–200, temporalidades de 1 minuto a 1 día.",
+      "intro": "Eliges las dos medias, la dirección y la temporalidad. Cuando cierra una vela de ese tamaño y la EMA rápida ha cruzado la lenta, MarketAlert envía un push a tu móvil; el mensaje también puede llegar a [Telegram](features/telegram-crypto-alerts). Puedes vigilar el mismo cruce [en todas las monedas](features/all-coins-alerts) con una sola alerta.",
+      "prompt": "Avísame cuando la EMA 9 cruce al alza la EMA 21 en BTC 1h",
+      "exampleTitle": "Cruce al alza y a la baja",
+      "caption": "La línea naranja es la EMA 9 rápida y la azul la EMA 21 lenta. El anillo marca el cierre de vela en el que se confirma el cruce.",
+      "steps": [
+        [
+          "Toca Crear una alerta",
+          "En la pantalla Alertas toca Crear una alerta y elige la moneda, por ejemplo BTC."
+        ],
+        [
+          "Elige Cruce SMA/EMA como tipo de condición",
+          "En la ventana del tipo de condición toca «Cruce SMA/EMA». El dibujo de la pantalla sigue tus elecciones."
+        ],
+        [
+          "Fija la media y los periodos",
+          "En Tipo de media elige EMA. Periodo rápido viene en 9 y Periodo lento en 21; puedes cambiarlos entre 2 y 200, y el periodo rápido debe ser menor que el lento."
+        ],
+        [
+          "Elige la dirección y la temporalidad",
+          "En «¿Cuándo te avisamos?» elige Cruza al alza o Cruza a la baja y después 1m, 5m, 15m, 1h, 4h o 1d. El cruce se comprueba al cerrar una vela de ese tamaño."
+        ],
+        [
+          "Guarda y elige el canal",
+          "Toca Guardar condición y elige el canal de notificación: push, Telegram o, en Pro, un webhook firmado. Guarda la alerta."
+        ]
+      ],
+      "details": [
+        [
+          "¿Qué es una EMA y qué es un cruce?",
+          "Una EMA (media móvil exponencial) da más peso a las últimas velas. Una EMA rápida (por ejemplo 9) sigue de cerca al precio y una lenta (por ejemplo 21) va por detrás. Cuando la línea rápida pasa de estar debajo de la lenta a estar encima, es un cruce al alza; al revés, un cruce a la baja."
+        ],
+        [
+          "¿Cómo se decide el cruce?",
+          "Solo cuentan las velas cerradas. Si en el cierre anterior la EMA rápida estaba por debajo de la lenta o igual y en este cierre está por encima, es un cruce al alza; el cruce a la baja es lo contrario. Dentro de una vela abierta las líneas pueden cruzarse y volver, por eso no cuenta."
+        ],
+        [
+          "¿Puedo usar SMA en vez de EMA?",
+          "Sí. Si eliges SMA en Tipo de media, las dos líneas pasan a ser medias simples, por ejemplo SMA 50 y SMA 200. La SMA da el mismo peso a cada vela, así que gira más despacio y cruza con menos frecuencia."
+        ],
+        [
+          "¿Qué dice la notificación?",
+          "El título del push es como «BTC EMA 9/21 cruzó al alza»; debajo aparecen la temporalidad y el valor de las dos medias. El mensaje de Telegram añade el precio y el mercado, con un botón que abre el gráfico de Binance."
+        ],
+        [
+          "¿Es una señal de compra o venta?",
+          "No. MarketAlert solo te avisa cuando ocurre el cruce que elegiste. No opera, no se conecta a tu cuenta del exchange y no da asesoramiento de inversión."
+        ]
+      ],
+      "faq": [
+        [
+          "¿La alerta de cruce de EMA es gratis?",
+          "MarketAlert funciona con suscripción; Plus y Pro incluyen 7 días de prueba gratis. La alerta de cruce de EMA está en los dos planes. Puedes preparar tu alerta sin suscribirte; empieza a funcionar cuando inicias la prueba."
+        ],
+        [
+          "¿Puedo usar valores distintos de 9 y 21?",
+          "Sí. Los dos periodos pueden ir de 2 a 200 y el rápido debe ser menor que el lento. Los pares habituales son 9/21, 20/50 y 50/200."
+        ],
+        [
+          "¿Qué temporalidades hay?",
+          "1 minuto, 5 minutos, 15 minutos, 1 hora, 4 horas y 1 día. El cruce se comprueba al cerrar una vela del tamaño elegido; la vela diaria cierra a las 00:00 UTC."
+        ],
+        [
+          "¿Recibo un aviso en cada cruce?",
+          "Con Repetir te avisa en cada cruce y tú eliges la espera mínima entre dos avisos de la misma alerta. Con Una vez te avisa en el primer cruce y se detiene."
+        ],
+        [
+          "¿Puedo vigilar el cruce de EMA en todas las monedas?",
+          "Sí. Si eliges todas las monedas en lugar de una, el mismo cruce se vigila en cada moneda por separado. En Plus cubre las 100 primeras y en Pro todas. Más detalles en la página de [alerta de todas las monedas](features/all-coins-alerts)."
+        ],
+        [
+          "¿Puedo crearla escribiendo a la IA?",
+          "Sí. En la pantalla de IA escribe algo como «Avísame cuando la EMA 9 cruce al alza la EMA 21 en BTC 1h». Si no indicas periodos usa 9 y 21; si no indicas temporalidad usa 1h."
+        ]
+      ],
+      "related": [
+        "features/macd-crossover-alerts",
+        "features/rsi-alerts",
+        "features/all-coins-alerts",
+        "features/telegram-crypto-alerts",
+        "features/multi-condition-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 alertas; alertas repetidas, hasta 3 condiciones por alerta y 2 alertas de todas las monedas en el top 100. Push y Telegram."
+        ],
+        [
+          "Pro",
+          "100 alertas; hasta 5 condiciones por alerta y 10 alertas de todas las monedas sobre todas las monedas. Push, Telegram y webhook firmado."
+        ]
+      ],
+      "em": {
+        "kicker": "BINANCE · CRUCE DE EMA · PUSH + TELEGRAM",
+        "chnPush": "Push",
+        "sheetAlt": "Condición de cruce de EMA en la app: EMA 9 y EMA 21, cruce al alza, 1h",
+        "listAlt": "Alertas de cruce de EMA en la lista con la distancia que falta para el cruce",
+        "dKicker": "DOS DIRECCIONES",
+        "dirs": {
+          "u": [
+            "Cruza al alza",
+            "La EMA rápida sube por encima de la lenta. Se configura para ver pronto un giro al alza.",
+            "Cruce al alza: la EMA 9 naranja pasa por encima de la EMA 21 azul"
+          ],
+          "d": [
+            "Cruza a la baja",
+            "La EMA rápida baja por debajo de la lenta. Se configura para ver pronto un giro a la baja.",
+            "Cruce a la baja: la EMA 9 naranja pasa por debajo de la EMA 21 azul"
+          ]
+        },
+        "leg": [
+          "EMA 9 rápida",
+          "EMA 21 lenta"
+        ],
+        "sKicker": "DOS CAMINOS, LA MISMA ALERTA",
+        "sTitle": "Escríbela o elígela",
+        "sLead": "Escribe a la IA con tus palabras o elige todo en la pantalla de condición; las dos crean la misma alerta.",
+        "tabs": [
+          [
+            "Escribiendo",
+            "chat con IA"
+          ],
+          [
+            "Formulario",
+            "elígelo tú"
+          ],
+          [
+            "Todas las monedas",
+            "una alerta"
+          ]
+        ],
+        "panes": [
+          [
+            "Escribiendo: chat con IA",
+            "Escribe tu petición con tus palabras. Si no indicas periodos, la IA usa 9 y 21; si no indicas temporalidad, usa 1h."
+          ],
+          [
+            "Formulario: elígelo tú",
+            "Elige «Cruce SMA/EMA» como tipo de condición y fija el tipo de media, los dos periodos, la dirección y la temporalidad. El dibujo sigue tus elecciones."
+          ],
+          [
+            "Todas las monedas: una alerta",
+            "Elige todas las monedas en vez de una: vigilas el mismo cruce en las 100 primeras, o en todas con Pro, con una sola alerta. Eliges la espera mínima entre dos avisos por moneda."
+          ]
+        ],
+        "quotes": [
+          "«Avísame cuando la EMA 9 cruce al alza la EMA 21 en BTC 1h»",
+          "EMA(9) cruza por encima de EMA(21) · 1h",
+          "EMA 9 / 21 · 4h · Repetir"
+        ],
+        "shotAlt": [
+          "Alerta de cruce EMA 9/21 creada escribiendo en el chat con IA",
+          "Pantalla de condición con EMA 9, EMA 21, cruce al alza y 1h",
+          "Formulario de alerta de todas las monedas para el cruce EMA 9/21"
+        ],
+        "nKicker": "CUÁNDO LLEGA EL AVISO",
+        "nTitle": "El aviso llega al cerrar la vela",
+        "nText": "Un cruce puede ocurrir en cualquier momento del día; la decisión se toma cuando cierra la vela de tu temporalidad. Cambia la temporalidad y mira cuándo cierra la vela del cruce.",
+        "s": "El cruce ocurre a las {x}. El aviso llega cuando cierra la vela de {tf}, a las {close} ({tz}); son {n} comprobaciones al día.",
+        "sDay": "El cruce ocurre a las {x}. La vela de 1d cierra una vez al día, a las {close} ({tz}); el aviso llega en ese cierre.",
+        "tfLabel": "Temporalidad",
+        "now": "ahora"
       }
     }
   },
@@ -2251,6 +2923,174 @@
           "form": "Qual movimento? Nova máxima"
         }
       }
+    },
+    "ema-crossover-alerts": {
+      "link": "Alerta de cruzamento de EMA",
+      "title": "Como criar um alerta de cruzamento de EMA (EMA 9 / 21) | MarketAlert",
+      "h1": "Como sou avisado quando a EMA 9 cruza a EMA 21?",
+      "description": "Receba notificação push e no Telegram quando a EMA rápida cruzar a lenta para cima ou para baixo, no fechamento do candle. EMA ou SMA, períodos 2–200, tempos gráficos de 1 minuto a 1 dia.",
+      "intro": "Você escolhe as duas médias, a direção e o tempo gráfico. Quando um candle desse tamanho fecha e a EMA rápida cruzou a lenta, o MarketAlert envia um push para o seu celular; a mensagem também pode ir para o [Telegram](features/telegram-crypto-alerts). Você pode acompanhar o mesmo cruzamento [em todas as moedas](features/all-coins-alerts) com um único alerta.",
+      "prompt": "Me avise quando a EMA 9 cruzar a EMA 21 para cima no BTC 1h",
+      "exampleTitle": "Cruzamento para cima e para baixo",
+      "caption": "A linha laranja é a EMA 9 rápida e a azul, a EMA 21 lenta. O anel marca o fechamento do candle em que o cruzamento se confirma.",
+      "steps": [
+        [
+          "Toque em Criar alerta",
+          "Na tela Alertas, toque em Criar alerta e escolha a moeda, por exemplo BTC."
+        ],
+        [
+          "Escolha Cruz. SMA/EMA como tipo de condição",
+          "Na janela do tipo de condição, toque em “Cruz. SMA/EMA”. O desenho na tela segue suas escolhas."
+        ],
+        [
+          "Defina a média e os períodos",
+          "Em Tipo de média, escolha EMA. Período rápido vem em 9 e Período lento em 21; você pode mudar os dois entre 2 e 200, e o período rápido precisa ser menor que o lento."
+        ],
+        [
+          "Escolha a direção e o tempo gráfico",
+          "Em “Quando devemos avisar você?”, escolha Cruza para cima ou Cruza para baixo e depois 1m, 5m, 15m, 1h, 4h ou 1d. O cruzamento é verificado quando fecha um candle desse tamanho."
+        ],
+        [
+          "Salve e escolha o canal",
+          "Toque em Salvar condição e escolha o canal de notificação: push, Telegram ou, no Pro, um webhook assinado. Salve o alerta."
+        ]
+      ],
+      "details": [
+        [
+          "O que é EMA e o que é um cruzamento?",
+          "A EMA (média móvel exponencial) dá mais peso aos candles recentes. Uma EMA rápida (por exemplo 9) acompanha o preço de perto, e uma lenta (por exemplo 21) vem atrás. Quando a linha rápida passa de baixo da lenta para cima dela, é um cruzamento para cima; o contrário é um cruzamento para baixo."
+        ],
+        [
+          "Como o cruzamento é decidido?",
+          "Só contam candles fechados. Se no fechamento anterior a EMA rápida estava abaixo da lenta ou igual a ela e neste fechamento está acima, é um cruzamento para cima; para baixo é o contrário. Dentro de um candle aberto as linhas podem se cruzar e voltar, por isso ele não conta."
+        ],
+        [
+          "Posso usar SMA em vez de EMA?",
+          "Sim. Se escolher SMA em Tipo de média, as duas linhas viram médias simples, por exemplo SMA 50 e SMA 200. A SMA dá o mesmo peso a todos os candles, então vira mais devagar e cruza com menos frequência."
+        ],
+        [
+          "O que diz a notificação?",
+          "O título do push é algo como “BTC EMA 9/21 cruzou para cima”; abaixo aparecem o tempo gráfico e o valor das duas médias. A mensagem do Telegram também mostra o preço e o mercado, com um botão que abre o gráfico da Binance."
+        ],
+        [
+          "É um sinal de compra ou venda?",
+          "Não. O MarketAlert só avisa quando o cruzamento que você escolheu acontece. Ele não opera, não se conecta à sua conta na corretora e não dá recomendação de investimento."
+        ]
+      ],
+      "faq": [
+        [
+          "O alerta de cruzamento de EMA é grátis?",
+          "O MarketAlert funciona por assinatura; Plus e Pro têm 7 dias de teste grátis. O alerta de cruzamento de EMA está nos dois planos. Você pode preparar seu alerta sem assinar; ele começa a funcionar quando você inicia o teste."
+        ],
+        [
+          "Posso usar valores diferentes de 9 e 21?",
+          "Sim. Os dois períodos podem ir de 2 a 200, e o rápido precisa ser menor que o lento. Pares comuns são 9/21, 20/50 e 50/200."
+        ],
+        [
+          "Quais tempos gráficos existem?",
+          "1 minuto, 5 minutos, 15 minutos, 1 hora, 4 horas e 1 dia. O cruzamento é verificado quando fecha um candle do tamanho escolhido; o candle diário fecha às 00:00 UTC."
+        ],
+        [
+          "Recebo aviso em todo cruzamento?",
+          "Com Repetir você é avisado em todo cruzamento e escolhe a espera mínima entre dois avisos do mesmo alerta. Com Uma vez você é avisado no primeiro cruzamento e o alerta para."
+        ],
+        [
+          "Posso acompanhar o cruzamento de EMA em todas as moedas?",
+          "Sim. Se escolher todas as moedas em vez de uma, o mesmo cruzamento é acompanhado em cada moeda separadamente. No Plus vale para as 100 primeiras e no Pro para todas. Detalhes na página do [alerta de todas as moedas](features/all-coins-alerts)."
+        ],
+        [
+          "Posso criar escrevendo para a IA?",
+          "Sim. Na tela de IA escreva algo como “Me avise quando a EMA 9 cruzar a EMA 21 para cima no BTC 1h”. Sem períodos ela usa 9 e 21; sem tempo gráfico, usa 1h."
+        ]
+      ],
+      "related": [
+        "features/macd-crossover-alerts",
+        "features/rsi-alerts",
+        "features/all-coins-alerts",
+        "features/telegram-crypto-alerts",
+        "features/multi-condition-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 alertas; alertas repetidos, até 3 condições por alerta e 2 alertas de todas as moedas no top 100. Push e Telegram."
+        ],
+        [
+          "Pro",
+          "100 alertas; até 5 condições por alerta e 10 alertas de todas as moedas em todas as moedas. Push, Telegram e webhook assinado."
+        ]
+      ],
+      "em": {
+        "kicker": "BINANCE · CRUZAMENTO DE EMA · PUSH + TELEGRAM",
+        "chnPush": "Push",
+        "sheetAlt": "Condição de cruzamento de EMA no app: EMA 9 e EMA 21, cruzamento para cima, 1h",
+        "listAlt": "Alertas de cruzamento de EMA na lista, com a distância que falta para o cruzamento",
+        "dKicker": "DUAS DIREÇÕES",
+        "dirs": {
+          "u": [
+            "Cruza para cima",
+            "A EMA rápida sobe acima da lenta. É configurado para ver cedo uma virada para cima.",
+            "Cruzamento para cima: a EMA 9 laranja passa acima da EMA 21 azul"
+          ],
+          "d": [
+            "Cruza para baixo",
+            "A EMA rápida desce abaixo da lenta. É configurado para ver cedo uma virada para baixo.",
+            "Cruzamento para baixo: a EMA 9 laranja passa abaixo da EMA 21 azul"
+          ]
+        },
+        "leg": [
+          "EMA 9 rápida",
+          "EMA 21 lenta"
+        ],
+        "sKicker": "DOIS CAMINHOS, O MESMO ALERTA",
+        "sTitle": "Escreva ou escolha",
+        "sLead": "Escreva para a IA com suas palavras ou escolha tudo na tela de condição; os dois criam o mesmo alerta.",
+        "tabs": [
+          [
+            "Escrevendo",
+            "chat com IA"
+          ],
+          [
+            "Formulário",
+            "você escolhe"
+          ],
+          [
+            "Todas as moedas",
+            "um alerta"
+          ]
+        ],
+        "panes": [
+          [
+            "Escrevendo: chat com IA",
+            "Escreva seu pedido com suas palavras. Sem períodos a IA usa 9 e 21; sem tempo gráfico, usa 1h."
+          ],
+          [
+            "Formulário: você escolhe",
+            "Escolha “Cruz. SMA/EMA” como tipo de condição e defina o tipo de média, os dois períodos, a direção e o tempo gráfico. O desenho segue suas escolhas."
+          ],
+          [
+            "Todas as moedas: um alerta",
+            "Escolha todas as moedas em vez de uma: você acompanha o mesmo cruzamento nas 100 primeiras, ou em todas no Pro, com um alerta. Você escolhe a espera mínima entre dois avisos por moeda."
+          ]
+        ],
+        "quotes": [
+          "“Me avise quando a EMA 9 cruzar a EMA 21 para cima no BTC 1h”",
+          "EMA(9) cruza EMA(21) para cima · 1h",
+          "EMA 9 / 21 · 4h · Repetir"
+        ],
+        "shotAlt": [
+          "Alerta de cruzamento EMA 9/21 criado escrevendo no chat com IA",
+          "Tela de condição com EMA 9, EMA 21, cruzamento para cima e 1h",
+          "Formulário de alerta de todas as moedas para o cruzamento EMA 9/21"
+        ],
+        "nKicker": "QUANDO O AVISO CHEGA",
+        "nTitle": "O aviso chega quando o candle fecha",
+        "nText": "Um cruzamento pode acontecer a qualquer momento do dia; a decisão é tomada quando o candle do seu tempo gráfico fecha. Mude o tempo gráfico e veja quando fecha o candle do cruzamento.",
+        "s": "O cruzamento acontece às {x}. O aviso chega quando o candle de {tf} fecha, às {close} ({tz}); são {n} verificações por dia.",
+        "sDay": "O cruzamento acontece às {x}. O candle de 1d fecha uma vez por dia, às {close} ({tz}); o aviso chega nesse fechamento.",
+        "tfLabel": "Tempo gráfico",
+        "now": "agora"
+      }
     }
   },
   "ru": {
@@ -2700,6 +3540,174 @@
           "tpl": "Шаблон: Пробой 24-часового максимума",
           "form": "Какое движение? Новый максимум"
         }
+      }
+    },
+    "ema-crossover-alerts": {
+      "link": "Оповещение о пересечении EMA",
+      "title": "Как настроить оповещение о пересечении EMA (EMA 9 / 21) | MarketAlert",
+      "h1": "Как получить уведомление, когда EMA 9 пересекает EMA 21?",
+      "description": "Получайте push и сообщение в Telegram, когда быстрая EMA пересекает медленную вверх или вниз, после закрытия свечи. EMA или SMA, периоды 2–200, таймфреймы от 1 минуты до 1 дня.",
+      "intro": "Вы выбираете две средние, направление и таймфрейм. Когда свеча этого размера закрывается и быстрая EMA пересекла медленную, MarketAlert отправляет push на телефон; сообщение может прийти и в [Telegram](features/telegram-crypto-alerts). То же пересечение можно отслеживать [по всем монетам](features/all-coins-alerts) одним оповещением.",
+      "prompt": "Сообщи, когда EMA 9 пересечёт EMA 21 вверх на BTC 1h",
+      "exampleTitle": "Пересечение вверх и вниз",
+      "caption": "Оранжевая линия — быстрая EMA 9, синяя — медленная EMA 21. Кольцо отмечает закрытие свечи, на котором пересечение подтверждено.",
+      "steps": [
+        [
+          "Нажмите «Создать оповещение»",
+          "На экране оповещений нажмите «Создать оповещение» и выберите монету, например BTC."
+        ],
+        [
+          "Выберите тип условия «Пересеч. SMA/EMA»",
+          "В окне выбора типа условия нажмите «Пересеч. SMA/EMA». Рисунок на экране меняется вслед за вашим выбором."
+        ],
+        [
+          "Задайте среднюю и периоды",
+          "В поле «Тип средней» выберите EMA. «Быстрый период» по умолчанию 9, «Медленный период» — 21; оба можно менять от 2 до 200, быстрый период должен быть меньше медленного."
+        ],
+        [
+          "Выберите направление и таймфрейм",
+          "В разделе «Когда вас уведомить?» выберите «Пересекает вверх» или «Пересекает вниз», затем 1m, 5m, 15m, 1h, 4h или 1d. Пересечение проверяется при закрытии свечи этого размера."
+        ],
+        [
+          "Сохраните и выберите канал",
+          "Нажмите «Сохранить условие» и выберите канал уведомлений: push, Telegram или, в Pro, подписанный вебхук. Сохраните оповещение."
+        ]
+      ],
+      "details": [
+        [
+          "Что такое EMA и пересечение?",
+          "EMA (экспоненциальная скользящая средняя) придаёт больший вес последним свечам. Быстрая EMA (например, 9) идёт близко к цене, медленная (например, 21) отстаёт. Когда быстрая линия переходит снизу вверх через медленную, это пересечение вверх; сверху вниз — пересечение вниз."
+        ],
+        [
+          "Как определяется пересечение?",
+          "Учитываются только закрытые свечи. Если на прошлом закрытии быстрая EMA была ниже медленной или равна ей, а на этом закрытии выше, это пересечение вверх; вниз — наоборот. Внутри открытой свечи линии могут пересечься и вернуться, поэтому открытая свеча не учитывается."
+        ],
+        [
+          "Можно ли выбрать SMA вместо EMA?",
+          "Да. Если в поле «Тип средней» выбрать SMA, обе линии станут простыми средними, например SMA 50 и SMA 200. SMA даёт всем свечам одинаковый вес, поэтому разворачивается медленнее и пересекается реже."
+        ],
+        [
+          "Что написано в уведомлении?",
+          "Заголовок push выглядит как «BTC EMA 9/21 пересечение вверх»; ниже указаны таймфрейм и значения обеих средних. В сообщении Telegram также есть цена и рынок и кнопка, которая открывает график Binance."
+        ],
+        [
+          "Это сигнал на покупку или продажу?",
+          "Нет. MarketAlert только сообщает, когда происходит выбранное пересечение. Он не совершает сделок, не подключается к вашему аккаунту на бирже и не даёт инвестиционных советов."
+        ]
+      ],
+      "faq": [
+        [
+          "Оповещение о пересечении EMA бесплатное?",
+          "MarketAlert работает по подписке; Plus и Pro можно попробовать бесплатно 7 дней. Оповещение о пересечении EMA есть в обоих тарифах. Оповещение можно подготовить и без подписки; оно начнёт работать, когда вы запустите пробный период."
+        ],
+        [
+          "Можно ли задать значения, кроме 9 и 21?",
+          "Да. Оба периода могут быть от 2 до 200, быстрый должен быть меньше медленного. Частые пары — 9/21, 20/50 и 50/200."
+        ],
+        [
+          "Какие таймфреймы доступны?",
+          "1 минута, 5 минут, 15 минут, 1 час, 4 часа и 1 день. Пересечение проверяется при закрытии свечи выбранного размера; дневная свеча закрывается в 00:00 UTC."
+        ],
+        [
+          "Приходит ли уведомление при каждом пересечении?",
+          "С вариантом «Повторять» уведомление приходит при каждом пересечении, а минимальную паузу между двумя уведомлениями одного оповещения выбираете вы. С вариантом «Один раз» оно придёт при первом пересечении, и оповещение остановится."
+        ],
+        [
+          "Можно ли следить за пересечением EMA по всем монетам?",
+          "Да. Если выбрать все монеты вместо одной, то же пересечение отслеживается на каждой монете отдельно. В Plus — по топ-100, в Pro — по всем монетам. Подробнее на странице [оповещения по всем монетам](features/all-coins-alerts)."
+        ],
+        [
+          "Можно ли настроить его, написав ИИ?",
+          "Да. На экране ИИ напишите, например, «Сообщи, когда EMA 9 пересечёт EMA 21 вверх на BTC 1h». Без периодов ИИ возьмёт 9 и 21, без таймфрейма — 1h."
+        ]
+      ],
+      "related": [
+        "features/macd-crossover-alerts",
+        "features/rsi-alerts",
+        "features/all-coins-alerts",
+        "features/telegram-crypto-alerts",
+        "features/multi-condition-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 алертов; повторяющиеся алерты, до 3 условий в алерте и 2 алерта по всем монетам в топ-100. Push и Telegram."
+        ],
+        [
+          "Pro",
+          "100 алертов; до 5 условий в алерте и 10 алертов по всем монетам. Push, Telegram и подписанный вебхук."
+        ]
+      ],
+      "em": {
+        "kicker": "BINANCE · ПЕРЕСЕЧЕНИЕ EMA · PUSH + TELEGRAM",
+        "chnPush": "Push",
+        "sheetAlt": "Условие пересечения EMA в приложении: EMA 9 и EMA 21, пересечение вверх, 1h",
+        "listAlt": "Оповещения о пересечении EMA в списке с оставшимся до пересечения расстоянием",
+        "dKicker": "ДВА НАПРАВЛЕНИЯ",
+        "dirs": {
+          "u": [
+            "Пересекает вверх",
+            "Быстрая EMA поднимается над медленной. Его ставят, чтобы рано заметить разворот вверх.",
+            "Пересечение вверх: оранжевая EMA 9 поднимается над синей EMA 21"
+          ],
+          "d": [
+            "Пересекает вниз",
+            "Быстрая EMA опускается под медленную. Его ставят, чтобы рано заметить разворот вниз.",
+            "Пересечение вниз: оранжевая EMA 9 опускается под синюю EMA 21"
+          ]
+        },
+        "leg": [
+          "Быстрая EMA 9",
+          "Медленная EMA 21"
+        ],
+        "sKicker": "ДВА СПОСОБА, ОДНО ОПОВЕЩЕНИЕ",
+        "sTitle": "Напишите или выберите",
+        "sLead": "Напишите ИИ своими словами или выберите всё на экране условия; оба способа создают одно и то же оповещение.",
+        "tabs": [
+          [
+            "Текстом",
+            "чат с ИИ"
+          ],
+          [
+            "Формой",
+            "сами"
+          ],
+          [
+            "Все монеты",
+            "одно оповещение"
+          ]
+        ],
+        "panes": [
+          [
+            "Текстом: чат с ИИ",
+            "Напишите запрос своими словами. Без периодов ИИ возьмёт 9 и 21, без таймфрейма — 1h."
+          ],
+          [
+            "Формой: сами",
+            "Выберите тип условия «Пересеч. SMA/EMA» и задайте тип средней, оба периода, направление и таймфрейм. Рисунок меняется вслед за выбором."
+          ],
+          [
+            "Все монеты: одно оповещение",
+            "Выберите все монеты вместо одной: одно оповещение следит за тем же пересечением на топ-100, а в Pro — на всех монетах. Вы задаёте минимальную паузу между двумя уведомлениями по одной монете."
+          ]
+        ],
+        "quotes": [
+          "«Сообщи, когда EMA 9 пересечёт EMA 21 вверх на BTC 1h»",
+          "EMA(9) пересекает EMA(21) вверх · 1h",
+          "EMA 9 / 21 · 4h · Повторять"
+        ],
+        "shotAlt": [
+          "Оповещение о пересечении EMA 9/21, созданное текстом в чате с ИИ",
+          "Экран условия: EMA 9, EMA 21, пересечение вверх, 1h",
+          "Форма оповещения по всем монетам для пересечения EMA 9/21"
+        ],
+        "nKicker": "КОГДА ПРИХОДИТ УВЕДОМЛЕНИЕ",
+        "nTitle": "Уведомление приходит при закрытии свечи",
+        "nText": "Пересечение может случиться в любой момент дня; решение принимается, когда закрывается свеча вашего таймфрейма. Смените таймфрейм и посмотрите, когда закроется свеча с пересечением.",
+        "s": "Пересечение в {x}. Уведомление придёт при закрытии свечи {tf} в {close} ({tz}); это {n} проверок в день.",
+        "sDay": "Пересечение в {x}. Свеча 1d закрывается раз в день, в {close} ({tz}); уведомление придёт при этом закрытии.",
+        "tfLabel": "Таймфрейм",
+        "now": "сейчас"
       }
     }
   },
@@ -3151,6 +4159,174 @@
           "form": "どの動き？ 新高値"
         }
       }
+    },
+    "ema-crossover-alerts": {
+      "link": "EMAクロスアラート",
+      "title": "EMAクロスアラートの設定方法（EMA 9 / 21） | MarketAlert",
+      "h1": "EMA 9 が EMA 21 とクロスしたら通知を受け取るには？",
+      "description": "短期EMAが長期EMAを上抜け・下抜けしたとき、ローソク足の確定時にプッシュとTelegramで通知。EMAまたはSMA、期間2〜200、時間足は1分から1日まで。",
+      "intro": "2本の移動平均、方向、時間足を選びます。その長さのローソク足が確定した時点で短期EMAが長期EMAとクロスしていれば、MarketAlert がスマホにプッシュを送ります。メッセージは [Telegram](features/telegram-crypto-alerts) にも届けられます。同じクロスを1つのアラートで[全コイン](features/all-coins-alerts)で見ることもできます。",
+      "prompt": "BTC の 1 時間足で EMA 9 が EMA 21 を上抜けたら教えて",
+      "exampleTitle": "上抜けと下抜け",
+      "caption": "オレンジの線が短期EMA 9、青の線が長期EMA 21。リングはクロスが確定したローソク足の確定時点です。",
+      "steps": [
+        [
+          "「アラートを作成」をタップ",
+          "アラート画面で「アラートを作成」をタップし、コインを選びます（例：BTC）。"
+        ],
+        [
+          "条件タイプで「SMA/EMAクロス」を選ぶ",
+          "条件タイプの画面で「SMA/EMAクロス」をタップします。画面の図は選択に合わせて変わります。"
+        ],
+        [
+          "平均と期間を設定",
+          "「平均の種類」で EMA を選びます。「短期」は9、「長期」は21が初期値で、どちらも2〜200で変更できます。短期は長期より小さくする必要があります。"
+        ],
+        [
+          "方向と時間足を選ぶ",
+          "「いつ通知しますか？」で「上抜け」か「下抜け」を選び、1m、5m、15m、1h、4h、1d から時間足を選びます。その長さのローソク足が確定したときにクロスを判定します。"
+        ],
+        [
+          "保存してチャネルを選ぶ",
+          "「条件を保存」をタップし、通知チャネルを選びます：プッシュ、Telegram、Pro では署名付き Webhook。アラートを保存します。"
+        ]
+      ],
+      "details": [
+        [
+          "EMAとは？クロスとは？",
+          "EMA（指数移動平均）は直近のローソク足を重く見る平均です。短期EMA（例：9）は価格に近く動き、長期EMA（例：21）は遅れてついてきます。短期線が長期線の下から上に抜けると上抜け、上から下に抜けると下抜けです。"
+        ],
+        [
+          "クロスはどう判定される？",
+          "確定したローソク足だけを使います。前回の確定時に短期EMAが長期EMA以下で、今回の確定時に上にあれば上抜け、その逆が下抜けです。未確定の足では線が交わってから戻ることがあるため、判定に使いません。"
+        ],
+        [
+          "EMAの代わりにSMAを使える？",
+          "はい。「平均の種類」で SMA を選ぶと2本とも単純移動平均になります（例：SMA 50 と SMA 200）。SMA はすべての足を同じ重さで扱うので、向きが変わるのが遅く、クロスも少なくなります。"
+        ],
+        [
+          "通知には何が書かれる？",
+          "プッシュのタイトルは「BTC の EMA 9/21 が上抜けしました」のようになり、その下に時間足と2本の平均の値が表示されます。Telegram のメッセージには価格と市場も表示され、Binance のチャートを開くボタンが付きます。"
+        ],
+        [
+          "売買シグナルですか？",
+          "いいえ。MarketAlert は選んだクロスが起きたことを知らせるだけです。取引はせず、取引所アカウントにも接続せず、投資助言もしません。"
+        ]
+      ],
+      "faq": [
+        [
+          "EMAクロスアラートは無料？",
+          "MarketAlert はサブスクリプションで利用します。Plus と Pro はどちらも7日間無料でお試しいただけます。EMAクロスアラートはどちらのプランでも使えます。サブスクリプションなしでもアラートを用意でき、トライアルを開始すると動き始めます。"
+        ],
+        [
+          "9と21以外の値も使える？",
+          "はい。どちらの期間も2〜200で、短期は長期より小さくする必要があります。よく使われる組み合わせは 9/21、20/50、50/200 です。"
+        ],
+        [
+          "どの時間足がある？",
+          "1分、5分、15分、1時間、4時間、1日です。選んだ長さのローソク足が確定したときにクロスを判定します。日足は 00:00 UTC に確定します。"
+        ],
+        [
+          "クロスのたびに通知される？",
+          "「繰り返す」を選ぶとクロスのたびに通知され、同じアラートの通知の最短間隔を自分で決められます。「1回のみ」を選ぶと最初のクロスで通知して止まります。"
+        ],
+        [
+          "全コインでEMAクロスを見られる？",
+          "はい。1つのコインの代わりに全コインを選ぶと、同じクロスを各コインで個別に見ます。Plus は上位100コイン、Pro は全コインが対象です。詳しくは[全コインアラート](features/all-coins-alerts)のページへ。"
+        ],
+        [
+          "AIに文章で頼んで設定できる？",
+          "はい。AI画面で「BTC の 1 時間足で EMA 9 が EMA 21 を上抜けたら教えて」のように書きます。期間を書かなければ9と21、時間足を書かなければ1hが使われます。"
+        ]
+      ],
+      "related": [
+        "features/macd-crossover-alerts",
+        "features/rsi-alerts",
+        "features/all-coins-alerts",
+        "features/telegram-crypto-alerts",
+        "features/multi-condition-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "アラート20件。繰り返しアラート、1件あたり最大3条件、上位100の全コインアラート2件。プッシュとTelegram。"
+        ],
+        [
+          "Pro",
+          "アラート100件。1件あたり最大5条件、全コイン対象の全コインアラート10件。プッシュ、Telegram、署名付きWebhook。"
+        ]
+      ],
+      "em": {
+        "kicker": "BINANCE · EMAクロス · プッシュ + TELEGRAM",
+        "chnPush": "プッシュ",
+        "sheetAlt": "アプリのEMAクロス条件：EMA 9 と EMA 21、上抜け、1h",
+        "listAlt": "アラート一覧のEMAクロスアラートとクロスまでの残り",
+        "dKicker": "2つの方向",
+        "dirs": {
+          "u": [
+            "上抜け",
+            "短期EMAが長期EMAの上に出ます。上昇への転換を早めに知るために設定します。",
+            "上抜け：オレンジの EMA 9 が青の EMA 21 の上に抜ける"
+          ],
+          "d": [
+            "下抜け",
+            "短期EMAが長期EMAの下に入ります。下落への転換を早めに知るために設定します。",
+            "下抜け：オレンジの EMA 9 が青の EMA 21 の下に抜ける"
+          ]
+        },
+        "leg": [
+          "短期 EMA 9",
+          "長期 EMA 21"
+        ],
+        "sKicker": "2つの方法、同じアラート",
+        "sTitle": "書くか、選ぶか",
+        "sLead": "AIに自分の言葉で書くか、条件画面ですべて選びます。どちらも同じアラートになります。",
+        "tabs": [
+          [
+            "文章で",
+            "AIチャット"
+          ],
+          [
+            "フォームで",
+            "自分で選ぶ"
+          ],
+          [
+            "全コインで",
+            "1つのアラート"
+          ]
+        ],
+        "panes": [
+          [
+            "文章で：AIチャット",
+            "やりたいことを自分の言葉で書きます。期間を書かなければAIは9と21、時間足を書かなければ1hを使います。"
+          ],
+          [
+            "フォームで：自分で選ぶ",
+            "条件タイプで「SMA/EMAクロス」を選び、平均の種類、2つの期間、方向、時間足を設定します。図は選択に合わせて変わります。"
+          ],
+          [
+            "全コインで：1つのアラート",
+            "1つのコインの代わりに全コインを選ぶと、同じクロスを上位100コイン（Pro は全コイン）で1つのアラートで見られます。コインごとの通知の最短間隔を選べます。"
+          ]
+        ],
+        "quotes": [
+          "「BTC の 1 時間足で EMA 9 が EMA 21 を上抜けたら教えて」",
+          "EMA(9) が EMA(21) を上抜け · 1h",
+          "EMA 9 / 21 · 4h · 繰り返す"
+        ],
+        "shotAlt": [
+          "AIチャットで文章から設定したEMA 9/21クロスアラート",
+          "EMA 9、EMA 21、上抜け、1h を選んだ条件画面",
+          "EMA 9/21クロスの全コインアラートのフォーム"
+        ],
+        "nKicker": "通知が届くタイミング",
+        "nTitle": "通知はローソク足の確定時に届きます",
+        "nText": "クロスは1日のどの瞬間にも起こりえますが、判定は選んだ時間足のローソク足が確定したときです。時間足を切り替えて、クロスを含む足がいつ確定するか見てみましょう。",
+        "s": "クロスは {x}。{tf} の足が {close}（{tz}）に確定すると通知が届きます。1日 {n} 回チェックします。",
+        "sDay": "クロスは {x}。1d の足は1日1回、{close}（{tz}）に確定し、そのときに通知が届きます。",
+        "tfLabel": "時間足",
+        "now": "たった今"
+      }
     }
   },
   "zh": {
@@ -3600,6 +4776,174 @@
           "tpl": "模板：突破 24 小时高点",
           "form": "哪种走势？ 新高"
         }
+      }
+    },
+    "ema-crossover-alerts": {
+      "link": "EMA 交叉提醒",
+      "title": "如何设置 EMA 交叉提醒（EMA 9 / 21） | MarketAlert",
+      "h1": "EMA 9 与 EMA 21 交叉时如何收到通知？",
+      "description": "快速 EMA 向上或向下穿过慢速 EMA 时，在 K 线收盘后收到推送和 Telegram 通知。可选 EMA 或 SMA，周期 2–200，时间周期从 1 分钟到 1 天。",
+      "intro": "你选择两条均线、方向和时间周期。该周期的 K 线收盘时，如果快速 EMA 已经穿过慢速 EMA，MarketAlert 会向你的手机发送推送；消息也可以发到 [Telegram](features/telegram-crypto-alerts)。同一个交叉还可以用一条提醒在[全部币种](features/all-coins-alerts)上监控。",
+      "prompt": "BTC 1 小时图上 EMA 9 上穿 EMA 21 时提醒我",
+      "exampleTitle": "上穿与下穿",
+      "caption": "橙色线是快速 EMA 9，蓝色线是慢速 EMA 21。圆环标出交叉被确认的 K 线收盘点。",
+      "steps": [
+        [
+          "点按“创建提醒”",
+          "在提醒页面点按“创建提醒”，然后选择币种，例如 BTC。"
+        ],
+        [
+          "条件类型选择“SMA/EMA交叉”",
+          "在条件类型窗口中点按“SMA/EMA交叉”。屏幕上的图会随你的选择变化。"
+        ],
+        [
+          "设置均线与周期",
+          "在“均线类型”中选择 EMA。“快线周期”默认 9，“慢线周期”默认 21；两者都可在 2 到 200 之间修改，快速周期必须小于慢速周期。"
+        ],
+        [
+          "选择方向与时间周期",
+          "在“何时通知您？”下选择“向上突破”或“向下突破”，再选择 1m、5m、15m、1h、4h 或 1d。该周期的 K 线收盘时判断是否交叉。"
+        ],
+        [
+          "保存并选择渠道",
+          "点按“保存条件”，然后选择通知渠道：推送、Telegram，或 Pro 中的签名 Webhook。保存提醒。"
+        ]
+      ],
+      "details": [
+        [
+          "什么是 EMA，什么是交叉？",
+          "EMA（指数移动平均）对最近的 K 线给予更大权重。快速 EMA（例如 9）紧跟价格，慢速 EMA（例如 21）跟得更慢。快速线从慢速线下方穿到上方是上穿，从上方穿到下方是下穿。"
+        ],
+        [
+          "交叉如何判定？",
+          "只看已收盘的 K 线。如果上一次收盘时快速 EMA 低于或等于慢速 EMA，而这次收盘时高于它，就是上穿；下穿则相反。未收盘的 K 线中两条线可能交叉后又回去，所以不计入。"
+        ],
+        [
+          "可以用 SMA 代替 EMA 吗？",
+          "可以。在“均线类型”中选择 SMA，两条线都变成简单移动平均，例如 SMA 50 和 SMA 200。SMA 对每根 K 线权重相同，所以转向更慢，交叉也更少。"
+        ],
+        [
+          "通知里写什么？",
+          "推送标题类似“BTC EMA 9/21 向上交叉”，下面是时间周期和两条均线的数值。Telegram 消息还会显示价格和市场，并带有打开币安图表的按钮。"
+        ],
+        [
+          "这是买卖信号吗？",
+          "不是。MarketAlert 只在你选择的交叉发生时通知你。它不交易，不连接你的交易所账户，也不提供投资建议。"
+        ]
+      ],
+      "faq": [
+        [
+          "EMA 交叉提醒免费吗？",
+          "MarketAlert 需要订阅使用；Plus 和 Pro 都可免费试用 7 天。EMA 交叉提醒在两个方案中都有。不订阅也可以先准备好提醒；开始试用后提醒即开始工作。"
+        ],
+        [
+          "可以用 9 和 21 以外的数值吗？",
+          "可以。两个周期都可在 2 到 200 之间，快速周期必须小于慢速周期。常用组合有 9/21、20/50 和 50/200。"
+        ],
+        [
+          "有哪些时间周期？",
+          "1 分钟、5 分钟、15 分钟、1 小时、4 小时和 1 天。所选周期的 K 线收盘时判断交叉；日线在 00:00 UTC 收盘。"
+        ],
+        [
+          "每次交叉都会通知吗？",
+          "选择“重复”时每次交叉都会通知，并由你设定同一提醒两次通知之间的最短间隔。选择“仅一次”时在第一次交叉时通知，然后停止。"
+        ],
+        [
+          "可以在全部币种上监控 EMA 交叉吗？",
+          "可以。选择全部币种而不是单个币种，同一个交叉会在每个币种上分别监控。Plus 覆盖前 100 个币种，Pro 覆盖全部币种。详情见[全币种提醒](features/all-coins-alerts)页面。"
+        ],
+        [
+          "可以通过给 AI 打字来设置吗？",
+          "可以。在 AI 页面输入类似“BTC 1 小时图上 EMA 9 上穿 EMA 21 时提醒我”的内容。不写周期时使用 9 和 21，不写时间周期时使用 1h。"
+        ]
+      ],
+      "related": [
+        "features/macd-crossover-alerts",
+        "features/rsi-alerts",
+        "features/all-coins-alerts",
+        "features/telegram-crypto-alerts",
+        "features/multi-condition-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 个提醒；重复提醒、每个提醒最多 3 个条件，以及前 100 币种的 2 个全币种提醒。推送和 Telegram。"
+        ],
+        [
+          "Pro",
+          "100 个提醒；每个提醒最多 5 个条件，以及覆盖全部币种的 10 个全币种提醒。推送、Telegram 和签名 Webhook。"
+        ]
+      ],
+      "em": {
+        "kicker": "BINANCE · EMA 交叉 · 推送 + TELEGRAM",
+        "chnPush": "推送",
+        "sheetAlt": "应用中的 EMA 交叉条件：EMA 9 与 EMA 21，上穿，1h",
+        "listAlt": "提醒列表中的 EMA 交叉提醒及距交叉的差距",
+        "dKicker": "两个方向",
+        "dirs": {
+          "u": [
+            "向上突破",
+            "快速 EMA 升到慢速 EMA 上方。用来尽早看到向上的转折。",
+            "上穿：橙色 EMA 9 穿到蓝色 EMA 21 上方"
+          ],
+          "d": [
+            "向下突破",
+            "快速 EMA 跌到慢速 EMA 下方。用来尽早看到向下的转折。",
+            "下穿：橙色 EMA 9 穿到蓝色 EMA 21 下方"
+          ]
+        },
+        "leg": [
+          "快速 EMA 9",
+          "慢速 EMA 21"
+        ],
+        "sKicker": "两种方式，同一条提醒",
+        "sTitle": "打字或自己选",
+        "sLead": "用自己的话告诉 AI，或在条件页面自己选择；两种方式设置的是同一条提醒。",
+        "tabs": [
+          [
+            "打字",
+            "AI 对话"
+          ],
+          [
+            "表单",
+            "自己选"
+          ],
+          [
+            "全部币种",
+            "一条提醒"
+          ]
+        ],
+        "panes": [
+          [
+            "打字：AI 对话",
+            "用自己的话写下需求。不写周期时 AI 使用 9 和 21，不写时间周期时使用 1h。"
+          ],
+          [
+            "表单：自己选",
+            "条件类型选择“SMA/EMA交叉”，设置均线类型、两个周期、方向和时间周期。图会随选择变化。"
+          ],
+          [
+            "全部币种：一条提醒",
+            "选择全部币种而不是一个：一条提醒就能在前 100 个币种（Pro 为全部币种）上监控同一交叉。你可以设置同一币种两次通知之间的最短间隔。"
+          ]
+        ],
+        "quotes": [
+          "“BTC 1 小时图上 EMA 9 上穿 EMA 21 时提醒我”",
+          "EMA(9) 上穿 EMA(21) · 1h",
+          "EMA 9 / 21 · 4h · 重复"
+        ],
+        "shotAlt": [
+          "在 AI 对话中打字设置的 EMA 9/21 交叉提醒",
+          "条件页面：EMA 9、EMA 21、上穿、1h",
+          "EMA 9/21 交叉的全币种提醒表单"
+        ],
+        "nKicker": "通知何时到达",
+        "nTitle": "K 线收盘时收到通知",
+        "nText": "交叉可能发生在一天中的任何时刻；判定发生在你所选时间周期的 K 线收盘时。切换时间周期，看看包含交叉的 K 线何时收盘。",
+        "s": "交叉发生在 {x}。{tf} K 线在 {close}（{tz}）收盘时发送通知；每天检查 {n} 次。",
+        "sDay": "交叉发生在 {x}。1d K 线每天收盘一次，在 {close}（{tz}）；通知在这次收盘时发送。",
+        "tfLabel": "时间周期",
+        "now": "刚刚"
       }
     }
   },
@@ -4051,6 +5395,174 @@
           "form": "कौन-सी चाल? नया उच्च"
         }
       }
+    },
+    "ema-crossover-alerts": {
+      "link": "EMA क्रॉसओवर अलर्ट",
+      "title": "EMA क्रॉसओवर अलर्ट कैसे सेट करें (EMA 9 / 21) | MarketAlert",
+      "h1": "EMA 9 जब EMA 21 को काटे, तो सूचना कैसे पाऊँ?",
+      "description": "तेज़ EMA जब धीमी EMA को ऊपर या नीचे की ओर काटे, कैंडल बंद होते ही पुश और Telegram सूचना पाएँ। EMA या SMA, अवधि 2–200, 1 मिनट से 1 दिन तक के टाइमफ़्रेम।",
+      "intro": "आप दो औसत, दिशा और टाइमफ़्रेम चुनते हैं। उस आकार की कैंडल बंद होने पर अगर तेज़ EMA ने धीमी EMA को काट दिया है, तो MarketAlert आपके फ़ोन पर पुश भेजता है; संदेश [Telegram](features/telegram-crypto-alerts) पर भी जा सकता है। वही क्रॉस एक ही अलर्ट से [सभी कॉइन](features/all-coins-alerts) पर भी देखा जा सकता है।",
+      "prompt": "BTC 1h पर EMA 9 जब EMA 21 को ऊपर की ओर काटे तो बताना",
+      "exampleTitle": "ऊपर और नीचे की ओर क्रॉस",
+      "caption": "नारंगी रेखा तेज़ EMA 9 है, नीली रेखा धीमी EMA 21। घेरा उस कैंडल-क्लोज़ को दिखाता है जहाँ क्रॉस पक्का हुआ।",
+      "steps": [
+        [
+          "“अलर्ट बनाएँ” पर टैप करें",
+          "अलर्ट स्क्रीन पर “अलर्ट बनाएँ” पर टैप करें और कॉइन चुनें, जैसे BTC।"
+        ],
+        [
+          "शर्त के प्रकार में “SMA/EMA क्रॉस” चुनें",
+          "शर्त-प्रकार वाली विंडो में “SMA/EMA क्रॉस” पर टैप करें। स्क्रीन का चित्र आपकी पसंद के साथ बदलता है।"
+        ],
+        [
+          "औसत और अवधि तय करें",
+          "“एवरेज का प्रकार” में EMA चुनें। “तेज़ अवधि” 9 और “धीमी अवधि” 21 से शुरू होती है; दोनों को 2 से 200 के बीच बदल सकते हैं, तेज़ अवधि धीमी से छोटी होनी चाहिए।"
+        ],
+        [
+          "दिशा और टाइमफ़्रेम चुनें",
+          "“आपको कब सूचित करें?” में “ऊपर की ओर पार करे” या “नीचे की ओर पार करे” चुनें, फिर 1m, 5m, 15m, 1h, 4h या 1d। उस आकार की कैंडल बंद होने पर क्रॉस जाँचा जाता है।"
+        ],
+        [
+          "सेव करें और चैनल चुनें",
+          "“शर्त सहेजें” पर टैप करें, फिर सूचना चैनल चुनें: पुश, Telegram या Pro में साइन किया हुआ वेबहुक। अलर्ट सेव करें।"
+        ]
+      ],
+      "details": [
+        [
+          "EMA क्या है और क्रॉस का मतलब क्या है?",
+          "EMA (एक्सपोनेंशियल मूविंग एवरेज) हाल की कैंडलों को ज़्यादा वज़न देता है। तेज़ EMA (जैसे 9) कीमत के क़रीब चलती है, धीमी EMA (जैसे 21) पीछे चलती है। तेज़ रेखा धीमी रेखा के नीचे से ऊपर जाए तो ऊपर की ओर क्रॉस, ऊपर से नीचे आए तो नीचे की ओर क्रॉस होता है।"
+        ],
+        [
+          "क्रॉस कैसे तय होता है?",
+          "सिर्फ़ बंद कैंडल गिनी जाती हैं। पिछले क्लोज़ पर तेज़ EMA धीमी के नीचे या बराबर थी और इस क्लोज़ पर ऊपर है, तो ऊपर की ओर क्रॉस है; नीचे की ओर क्रॉस इसका उलटा है। खुली कैंडल में रेखाएँ कटकर वापस लौट सकती हैं, इसलिए वह नहीं गिनी जाती।"
+        ],
+        [
+          "क्या EMA की जगह SMA ले सकते हैं?",
+          "हाँ। “एवरेज का प्रकार” में SMA चुनें तो दोनों रेखाएँ साधारण औसत बन जाती हैं, जैसे SMA 50 और SMA 200। SMA हर कैंडल को बराबर वज़न देता है, इसलिए धीरे मुड़ता है और कम बार कटता है।"
+        ],
+        [
+          "सूचना में क्या लिखा होता है?",
+          "पुश का शीर्षक “BTC EMA 9/21 ऊपर की ओर क्रॉस हुआ” जैसा होता है; नीचे टाइमफ़्रेम और दोनों औसतों के मान होते हैं। Telegram संदेश में कीमत और मार्केट भी होते हैं, साथ में Binance चार्ट खोलने का बटन।"
+        ],
+        [
+          "क्या यह ख़रीदने या बेचने का संकेत है?",
+          "नहीं। MarketAlert सिर्फ़ तब बताता है जब आपका चुना हुआ क्रॉस होता है। यह ट्रेड नहीं करता, आपके एक्सचेंज खाते से नहीं जुड़ता और निवेश सलाह नहीं देता।"
+        ]
+      ],
+      "faq": [
+        [
+          "क्या EMA क्रॉसओवर अलर्ट मुफ़्त है?",
+          "MarketAlert सब्सक्रिप्शन से चलता है; Plus और Pro दोनों में 7 दिन का मुफ़्त ट्रायल है। EMA क्रॉसओवर अलर्ट दोनों प्लान में है। सब्सक्राइब किए बिना भी आप अपना अलर्ट तैयार कर सकते हैं; ट्रायल शुरू करते ही वह काम करने लगता है।"
+        ],
+        [
+          "क्या 9 और 21 के अलावा मान डाल सकते हैं?",
+          "हाँ। दोनों अवधि 2 से 200 के बीच हो सकती हैं और तेज़ अवधि धीमी से छोटी होनी चाहिए। आम जोड़े 9/21, 20/50 और 50/200 हैं।"
+        ],
+        [
+          "कौन से टाइमफ़्रेम हैं?",
+          "1 मिनट, 5 मिनट, 15 मिनट, 1 घंटा, 4 घंटे और 1 दिन। चुने गए आकार की कैंडल बंद होने पर क्रॉस जाँचा जाता है; दैनिक कैंडल 00:00 UTC पर बंद होती है।"
+        ],
+        [
+          "क्या हर क्रॉस पर सूचना आती है?",
+          "“दोहराएँ” चुनने पर हर क्रॉस पर सूचना आती है और एक ही अलर्ट की दो सूचनाओं के बीच कम से कम इंतज़ार आप तय करते हैं। “एक बार” चुनने पर पहले क्रॉस पर सूचना आती है और अलर्ट रुक जाता है।"
+        ],
+        [
+          "क्या EMA क्रॉस सभी कॉइन पर देख सकते हैं?",
+          "हाँ। एक कॉइन की जगह सभी कॉइन चुनें तो वही क्रॉस हर कॉइन पर अलग-अलग देखा जाता है। Plus में टॉप 100 पर, Pro में सभी कॉइन पर। विवरण [सभी कॉइन अलर्ट](features/all-coins-alerts) पेज पर है।"
+        ],
+        [
+          "क्या AI को लिखकर सेट कर सकते हैं?",
+          "हाँ। AI स्क्रीन पर “BTC 1h पर EMA 9 जब EMA 21 को ऊपर की ओर काटे तो बताना” जैसा लिखें। अवधि न लिखें तो 9 और 21, टाइमफ़्रेम न लिखें तो 1h लिया जाता है।"
+        ]
+      ],
+      "related": [
+        "features/macd-crossover-alerts",
+        "features/rsi-alerts",
+        "features/all-coins-alerts",
+        "features/telegram-crypto-alerts",
+        "features/multi-condition-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 अलर्ट; दोहराने वाले अलर्ट, हर अलर्ट में 3 शर्तें तक और टॉप 100 पर 2 सभी-कॉइन अलर्ट। पुश और Telegram।"
+        ],
+        [
+          "Pro",
+          "100 अलर्ट; हर अलर्ट में 5 शर्तें तक और सभी कॉइन पर 10 सभी-कॉइन अलर्ट। पुश, Telegram और साइन किया हुआ वेबहुक।"
+        ]
+      ],
+      "em": {
+        "kicker": "BINANCE · EMA क्रॉस · पुश + TELEGRAM",
+        "chnPush": "पुश",
+        "sheetAlt": "ऐप में EMA क्रॉस शर्त: EMA 9 और EMA 21, ऊपर की ओर क्रॉस, 1h",
+        "listAlt": "अलर्ट सूची में EMA क्रॉस अलर्ट और क्रॉस तक बचा अंतर",
+        "dKicker": "दो दिशाएँ",
+        "dirs": {
+          "u": [
+            "ऊपर की ओर पार करे",
+            "तेज़ EMA धीमी EMA के ऊपर जाती है। ऊपर की ओर मोड़ को जल्दी देखने के लिए सेट किया जाता है।",
+            "ऊपर की ओर क्रॉस: नारंगी EMA 9 नीली EMA 21 के ऊपर जाती है"
+          ],
+          "d": [
+            "नीचे की ओर पार करे",
+            "तेज़ EMA धीमी EMA के नीचे आती है। नीचे की ओर मोड़ को जल्दी देखने के लिए सेट किया जाता है।",
+            "नीचे की ओर क्रॉस: नारंगी EMA 9 नीली EMA 21 के नीचे आती है"
+          ]
+        },
+        "leg": [
+          "तेज़ EMA 9",
+          "धीमी EMA 21"
+        ],
+        "sKicker": "दो तरीके, एक ही अलर्ट",
+        "sTitle": "लिखें या चुनें",
+        "sLead": "AI को अपने शब्दों में लिखें या शर्त स्क्रीन पर ख़ुद चुनें; दोनों से एक ही अलर्ट बनता है।",
+        "tabs": [
+          [
+            "लिखकर",
+            "AI चैट"
+          ],
+          [
+            "फ़ॉर्म से",
+            "ख़ुद चुनें"
+          ],
+          [
+            "सभी कॉइन",
+            "एक अलर्ट"
+          ]
+        ],
+        "panes": [
+          [
+            "लिखकर: AI चैट",
+            "अपनी माँग अपने शब्दों में लिखें। अवधि न लिखें तो AI 9 और 21, टाइमफ़्रेम न लिखें तो 1h लेता है।"
+          ],
+          [
+            "फ़ॉर्म से: ख़ुद चुनें",
+            "शर्त के प्रकार में “SMA/EMA क्रॉस” चुनें; औसत का प्रकार, दोनों अवधि, दिशा और टाइमफ़्रेम तय करें। चित्र आपकी पसंद के साथ बदलता है।"
+          ],
+          [
+            "सभी कॉइन: एक अलर्ट",
+            "एक कॉइन की जगह सभी कॉइन चुनें: एक ही अलर्ट से वही क्रॉस टॉप 100 पर, Pro में सभी कॉइन पर देखें। एक ही कॉइन की दो सूचनाओं के बीच कम से कम इंतज़ार आप चुनते हैं।"
+          ]
+        ],
+        "quotes": [
+          "“BTC 1h पर EMA 9 जब EMA 21 को ऊपर की ओर काटे तो बताना”",
+          "EMA(9) EMA(21) को ऊपर की ओर काटे · 1h",
+          "EMA 9 / 21 · 4h · दोहराएँ"
+        ],
+        "shotAlt": [
+          "AI चैट में लिखकर बनाया गया EMA 9/21 क्रॉस अलर्ट",
+          "शर्त स्क्रीन: EMA 9, EMA 21, ऊपर की ओर क्रॉस, 1h",
+          "EMA 9/21 क्रॉस के लिए सभी कॉइन अलर्ट फ़ॉर्म"
+        ],
+        "nKicker": "सूचना कब आती है",
+        "nTitle": "सूचना कैंडल बंद होने पर आती है",
+        "nText": "क्रॉस दिन में किसी भी पल हो सकता है; फ़ैसला आपके टाइमफ़्रेम की कैंडल बंद होने पर होता है। टाइमफ़्रेम बदलकर देखें कि क्रॉस वाली कैंडल कब बंद होती है।",
+        "s": "क्रॉस {x} पर होता है। {tf} कैंडल {close} ({tz}) पर बंद होते ही सूचना आती है; दिन में {n} बार जाँच होती है।",
+        "sDay": "क्रॉस {x} पर होता है। 1d कैंडल दिन में एक बार, {close} ({tz}) पर बंद होती है; उसी समय सूचना आती है।",
+        "tfLabel": "टाइमफ़्रेम",
+        "now": "अभी"
+      }
     }
   },
   "ar": {
@@ -4500,6 +6012,174 @@
           "tpl": "قالب: اختراق أعلى 24 ساعة",
           "form": "أي حركة؟ قمة جديدة"
         }
+      }
+    },
+    "ema-crossover-alerts": {
+      "link": "تنبيه تقاطع EMA",
+      "title": "كيف تضبط تنبيه تقاطع EMA ‏(EMA 9 / 21) | MarketAlert",
+      "h1": "كيف أتلقى إشعارًا عندما يتقاطع EMA 9 مع EMA 21؟",
+      "description": "احصل على إشعار فوري ورسالة Telegram عندما يتقاطع EMA السريع مع البطيء صعودًا أو هبوطًا، عند إغلاق الشمعة. EMA أو SMA، فترات 2–200، وأطر زمنية من دقيقة إلى يوم.",
+      "intro": "تختار المتوسطين والاتجاه والإطار الزمني. عندما تُغلق شمعة بهذا الحجم ويكون EMA السريع قد تقاطع مع البطيء، يرسل MarketAlert إشعارًا فوريًا إلى هاتفك؛ ويمكن أن تصل الرسالة أيضًا إلى [Telegram](features/telegram-crypto-alerts). ويمكنك مراقبة التقاطع نفسه [في كل العملات](features/all-coins-alerts) بتنبيه واحد.",
+      "prompt": "نبّهني عندما يتقاطع EMA 9 صعودًا مع EMA 21 على BTC فريم 1h",
+      "exampleTitle": "التقاطع الصاعد والهابط",
+      "caption": "الخط البرتقالي هو EMA 9 السريع والأزرق هو EMA 21 البطيء. تشير الحلقة إلى إغلاق الشمعة الذي تأكد فيه التقاطع.",
+      "steps": [
+        [
+          "اضغط «إنشاء تنبيه»",
+          "في شاشة التنبيهات اضغط «إنشاء تنبيه» واختر العملة، مثل BTC."
+        ],
+        [
+          "اختر «تقاطع SMA/EMA» نوعًا للشرط",
+          "في نافذة نوع الشرط اضغط «تقاطع SMA/EMA». يتغير الرسم على الشاشة مع اختياراتك."
+        ],
+        [
+          "حدد المتوسط والفترات",
+          "في «نوع المتوسط» اختر EMA. تبدأ «الفترة السريعة» بـ 9 و«الفترة البطيئة» بـ 21؛ ويمكنك تغييرهما بين 2 و200، ويجب أن تكون الفترة السريعة أصغر من البطيئة."
+        ],
+        [
+          "اختر الاتجاه والإطار الزمني",
+          "تحت «متى نرسل لك إشعارًا؟» اختر «يتجاوز صعودًا» أو «يتجاوز هبوطًا»، ثم 1m أو 5m أو 15m أو 1h أو 4h أو 1d. يُفحص التقاطع عند إغلاق شمعة بهذا الحجم."
+        ],
+        [
+          "احفظ واختر القناة",
+          "اضغط «حفظ الشرط» ثم اختر قناة الإشعار: إشعار فوري أو Telegram أو، في Pro، Webhook موقّع. احفظ التنبيه."
+        ]
+      ],
+      "details": [
+        [
+          "ما هو EMA وما معنى التقاطع؟",
+          "EMA (المتوسط المتحرك الأسي) يعطي وزنًا أكبر للشموع الأخيرة. EMA السريع (مثل 9) يتبع السعر عن قرب، والبطيء (مثل 21) يتأخر عنه. عندما ينتقل الخط السريع من أسفل البطيء إلى أعلاه فهذا تقاطع صاعد، والعكس تقاطع هابط."
+        ],
+        [
+          "كيف يُحسم التقاطع؟",
+          "تُحتسب الشموع المغلقة فقط. إذا كان EMA السريع عند الإغلاق السابق أسفل البطيء أو مساويًا له، وأصبح أعلاه عند هذا الإغلاق، فهو تقاطع صاعد؛ والهابط عكس ذلك. داخل الشمعة المفتوحة قد يتقاطع الخطان ثم يعودان، لذلك لا تُحتسب."
+        ],
+        [
+          "هل يمكنني اختيار SMA بدل EMA؟",
+          "نعم. إذا اخترت SMA في «نوع المتوسط» يصبح الخطان متوسطين بسيطين، مثل SMA 50 وSMA 200. يعطي SMA كل شمعة الوزن نفسه، لذلك يتحول أبطأ ويتقاطع أقل."
+        ],
+        [
+          "ماذا يقول الإشعار؟",
+          "عنوان الإشعار الفوري مثل «BTC EMA 9/21 تقاطع صاعد»، وتحته الإطار الزمني وقيمتا المتوسطين. وتعرض رسالة Telegram أيضًا السعر والسوق، مع زر يفتح رسم Binance البياني."
+        ],
+        [
+          "هل هي إشارة شراء أو بيع؟",
+          "لا. يخبرك MarketAlert فقط عندما يحدث التقاطع الذي اخترته. لا يتداول، ولا يتصل بحسابك في المنصة، ولا يقدم نصيحة استثمارية."
+        ]
+      ],
+      "faq": [
+        [
+          "هل تنبيه تقاطع EMA مجاني؟",
+          "يعمل MarketAlert بالاشتراك؛ ويمكن تجربة Plus وPro مجانًا لمدة 7 أيام. تنبيه تقاطع EMA متاح في الخطتين. يمكنك تجهيز تنبيهك دون اشتراك؛ ويبدأ العمل عندما تبدأ التجربة."
+        ],
+        [
+          "هل يمكنني استخدام قيم غير 9 و21؟",
+          "نعم. يمكن أن تكون الفترتان بين 2 و200، ويجب أن تكون السريعة أصغر من البطيئة. الأزواج الشائعة 9/21 و20/50 و50/200."
+        ],
+        [
+          "ما الأطر الزمنية المتاحة؟",
+          "دقيقة، و5 دقائق، و15 دقيقة، وساعة، و4 ساعات، ويوم. يُفحص التقاطع عند إغلاق شمعة بالحجم المختار؛ وتُغلق الشمعة اليومية عند 00:00 UTC."
+        ],
+        [
+          "هل يصلني إشعار عند كل تقاطع؟",
+          "مع «تكرار» يصلك إشعار عند كل تقاطع، وتختار أنت أقل مدة انتظار بين إشعارين للتنبيه نفسه. ومع «مرة واحدة» يصلك إشعار عند أول تقاطع ثم يتوقف التنبيه."
+        ],
+        [
+          "هل يمكنني مراقبة تقاطع EMA في كل العملات؟",
+          "نعم. إذا اخترت كل العملات بدل عملة واحدة، يُراقب التقاطع نفسه في كل عملة على حدة. في Plus لأفضل 100 عملة، وفي Pro لكل العملات. التفاصيل في صفحة [تنبيه كل العملات](features/all-coins-alerts)."
+        ],
+        [
+          "هل يمكنني ضبطه بالكتابة للذكاء الاصطناعي؟",
+          "نعم. اكتب في شاشة الذكاء الاصطناعي شيئًا مثل «نبّهني عندما يتقاطع EMA 9 صعودًا مع EMA 21 على BTC فريم 1h». إذا لم تذكر الفترات تُستخدم 9 و21، وإذا لم تذكر الإطار الزمني يُستخدم 1h."
+        ]
+      ],
+      "related": [
+        "features/macd-crossover-alerts",
+        "features/rsi-alerts",
+        "features/all-coins-alerts",
+        "features/telegram-crypto-alerts",
+        "features/multi-condition-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 تنبيهًا؛ تنبيهات متكررة وحتى 3 شروط لكل تنبيه وتنبيهان لكل العملات ضمن أعلى 100. إشعارات فورية وTelegram."
+        ],
+        [
+          "Pro",
+          "100 تنبيه؛ حتى 5 شروط لكل تنبيه و10 تنبيهات لكل العملات تشمل جميع العملات. إشعارات فورية وTelegram وويب هوك موقّع."
+        ]
+      ],
+      "em": {
+        "kicker": "BINANCE · تقاطع EMA · إشعار فوري + TELEGRAM",
+        "chnPush": "إشعار فوري",
+        "sheetAlt": "شرط تقاطع EMA في التطبيق: EMA 9 وEMA 21، تقاطع صاعد، 1h",
+        "listAlt": "تنبيهات تقاطع EMA في قائمة التنبيهات مع المسافة المتبقية للتقاطع",
+        "dKicker": "اتجاهان",
+        "dirs": {
+          "u": [
+            "يتجاوز صعودًا",
+            "يصعد EMA السريع فوق البطيء. يُضبط لرؤية التحول إلى الصعود مبكرًا.",
+            "تقاطع صاعد: EMA 9 البرتقالي يصعد فوق EMA 21 الأزرق"
+          ],
+          "d": [
+            "يتجاوز هبوطًا",
+            "يهبط EMA السريع تحت البطيء. يُضبط لرؤية التحول إلى الهبوط مبكرًا.",
+            "تقاطع هابط: EMA 9 البرتقالي يهبط تحت EMA 21 الأزرق"
+          ]
+        },
+        "leg": [
+          "EMA 9 السريع",
+          "EMA 21 البطيء"
+        ],
+        "sKicker": "طريقتان، تنبيه واحد",
+        "sTitle": "اكتبه أو اختره",
+        "sLead": "اكتب للذكاء الاصطناعي بكلماتك أو اختر كل شيء في شاشة الشرط؛ الطريقتان تضبطان التنبيه نفسه.",
+        "tabs": [
+          [
+            "بالكتابة",
+            "دردشة الذكاء الاصطناعي"
+          ],
+          [
+            "بالنموذج",
+            "اختر بنفسك"
+          ],
+          [
+            "كل العملات",
+            "تنبيه واحد"
+          ]
+        ],
+        "panes": [
+          [
+            "بالكتابة: دردشة الذكاء الاصطناعي",
+            "اكتب طلبك بكلماتك. إذا لم تذكر الفترات يستخدم الذكاء الاصطناعي 9 و21، وإذا لم تذكر الإطار الزمني يستخدم 1h."
+          ],
+          [
+            "بالنموذج: اختر بنفسك",
+            "اختر «تقاطع SMA/EMA» نوعًا للشرط، وحدد نوع المتوسط والفترتين والاتجاه والإطار الزمني. يتغير الرسم مع اختياراتك."
+          ],
+          [
+            "كل العملات: تنبيه واحد",
+            "اختر كل العملات بدل عملة واحدة: تراقب التقاطع نفسه في أفضل 100 عملة، أو كل العملات في Pro، بتنبيه واحد. وتختار أقل مدة انتظار بين إشعارين للعملة نفسها."
+          ]
+        ],
+        "quotes": [
+          "«نبّهني عندما يتقاطع EMA 9 صعودًا مع EMA 21 على BTC فريم 1h»",
+          "EMA(9) يتقاطع صعودًا مع EMA(21) · 1h",
+          "EMA 9 / 21 · 4h · تكرار"
+        ],
+        "shotAlt": [
+          "تنبيه تقاطع EMA 9/21 مضبوط بالكتابة في دردشة الذكاء الاصطناعي",
+          "شاشة الشرط: EMA 9 وEMA 21، تقاطع صاعد، 1h",
+          "نموذج تنبيه كل العملات لتقاطع EMA 9/21"
+        ],
+        "nKicker": "متى يصل الإشعار",
+        "nTitle": "يصل الإشعار عند إغلاق الشمعة",
+        "nText": "قد يحدث التقاطع في أي لحظة من اليوم؛ أما القرار فيُتخذ عند إغلاق شمعة إطارك الزمني. غيّر الإطار الزمني لترى متى تُغلق الشمعة التي حدث فيها التقاطع.",
+        "s": "يحدث التقاطع عند {x}. يصل الإشعار عند إغلاق شمعة {tf} في {close} ({tz})؛ عدد الفحوص في اليوم: {n}.",
+        "sDay": "يحدث التقاطع عند {x}. تُغلق شمعة 1d مرة في اليوم، عند {close} ({tz})؛ ويصل الإشعار عند هذا الإغلاق.",
+        "tfLabel": "الإطار الزمني",
+        "now": "الآن"
       }
     }
   },
@@ -4954,6 +6634,174 @@
           "tpl": "Template: 24-hour high breakout",
           "form": "Which move? New high"
         }
+      }
+    },
+    "ema-crossover-alerts": {
+      "link": "EMA crossover alert",
+      "title": "How to set an EMA crossover alert (EMA 9 / 21) | MarketAlert",
+      "h1": "How do I get notified when EMA 9 crosses EMA 21?",
+      "description": "Get a push and Telegram notification when the fast EMA crosses the slow EMA up or down, once the candle closes. EMA or SMA, periods 2–200, timeframes from 1 minute to 1 day.",
+      "intro": "You pick the two averages, the direction and the timeframe. When a candle of that size closes and the fast EMA has crossed the slow one, MarketAlert sends a push to your phone; the message can also go to [Telegram](features/telegram-crypto-alerts). You can watch the same cross [across all coins](features/all-coins-alerts) with a single alert.",
+      "prompt": "Tell me when EMA 9 crosses above EMA 21 on BTC 1h",
+      "exampleTitle": "Upward and downward cross",
+      "caption": "The orange line is the fast EMA 9, the blue line the slow EMA 21. The ring marks the candle close where the cross is confirmed.",
+      "steps": [
+        [
+          "Tap Create an alert",
+          "On the Alerts screen tap Create an alert and pick a coin, for example BTC."
+        ],
+        [
+          "Choose SMA/EMA cross as the condition type",
+          "In the condition type sheet tap “SMA/EMA cross”. The drawing on the screen follows your choices."
+        ],
+        [
+          "Set the average and periods",
+          "Under Average type pick EMA. Fast period starts at 9 and Slow period at 21; you can set both between 2 and 200, and the fast period must be smaller than the slow one."
+        ],
+        [
+          "Pick the direction and timeframe",
+          "Under “When should we notify you?” choose Crosses above or Crosses below, then 1m, 5m, 15m, 1h, 4h or 1d. The cross is checked when a candle of that size closes."
+        ],
+        [
+          "Save and choose the channel",
+          "Tap Save condition, then pick the notification channel: push, Telegram or, on Pro, a signed webhook. Save the alert."
+        ]
+      ],
+      "details": [
+        [
+          "What is an EMA, and what is a cross?",
+          "An EMA (exponential moving average) gives more weight to recent candles. A fast EMA (for example 9) follows the price closely, a slow EMA (for example 21) lags behind. When the fast line moves from below the slow line to above it, that is an upward cross; moving from above to below is a downward cross."
+        ],
+        [
+          "How is the cross decided?",
+          "Only closed candles count. If the fast EMA was below or equal to the slow EMA at the previous close and is above it at this close, it is an upward cross; a downward cross is the opposite. Inside an open candle the lines can cross and turn back, so an open candle does not count."
+        ],
+        [
+          "Can I use SMA instead of EMA?",
+          "Yes. Pick SMA under Average type and both lines become simple averages, for example SMA 50 and SMA 200. An SMA weighs every candle equally, so it turns more slowly and crosses less often."
+        ],
+        [
+          "What does the notification say?",
+          "The push title reads like “BTC EMA 9/21 crossed up”; below it you see the timeframe and the value of both averages. The Telegram message also shows the price and the market, with a button that opens the Binance chart."
+        ],
+        [
+          "Is it a buy or sell signal?",
+          "No. MarketAlert only tells you when the cross you chose happens. It does not trade, does not connect to your exchange account and does not give investment advice."
+        ]
+      ],
+      "faq": [
+        [
+          "Is the EMA crossover alert free?",
+          "MarketAlert works with a subscription; Plus and Pro both come with a 7-day free trial. The EMA crossover alert is included in both plans. You can prepare your alert without subscribing; it starts working when you start the trial."
+        ],
+        [
+          "Can I use values other than 9 and 21?",
+          "Yes. Both periods can be between 2 and 200, and the fast period must be smaller than the slow one. Common pairs are 9/21, 20/50 and 50/200."
+        ],
+        [
+          "Which timeframes are available?",
+          "1 minute, 5 minutes, 15 minutes, 1 hour, 4 hours and 1 day. The cross is checked when a candle of the chosen size closes; the daily candle closes at 00:00 UTC."
+        ],
+        [
+          "Do I get a notification on every cross?",
+          "With Repeat you are notified on every cross, and you choose the minimum wait between two notifications of the same alert. With Once you are notified on the first cross and the alert stops."
+        ],
+        [
+          "Can I watch the EMA cross across all coins?",
+          "Yes. Pick all coins instead of one and the same cross is watched on each coin separately. On Plus it covers the top 100 coins, on Pro every coin. Details are on the [all-coins alert](features/all-coins-alerts) page."
+        ],
+        [
+          "Can I set it up by typing to the AI?",
+          "Yes. On the AI screen type something like “Tell me when EMA 9 crosses above EMA 21 on BTC 1h”. If you leave out the periods it uses 9 and 21; if you leave out the timeframe it uses 1h."
+        ]
+      ],
+      "related": [
+        "features/macd-crossover-alerts",
+        "features/rsi-alerts",
+        "features/all-coins-alerts",
+        "features/telegram-crypto-alerts",
+        "features/multi-condition-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 alerts; repeating alerts, up to 3 conditions per alert and 2 all-coins alerts on the top 100. Push and Telegram."
+        ],
+        [
+          "Pro",
+          "100 alerts; up to 5 conditions per alert and 10 all-coins alerts across every coin. Push, Telegram and signed webhook."
+        ]
+      ],
+      "em": {
+        "kicker": "BINANCE · EMA CROSS · PUSH + TELEGRAM",
+        "chnPush": "Push",
+        "sheetAlt": "EMA cross condition in the app: EMA 9 and EMA 21, cross above, 1h",
+        "listAlt": "EMA cross alerts in the alert list with the gap left to the cross",
+        "dKicker": "TWO DIRECTIONS",
+        "dirs": {
+          "u": [
+            "Crosses above",
+            "The fast EMA rises above the slow EMA. People set it to spot a turn upward early.",
+            "Upward cross: the orange EMA 9 moves above the blue EMA 21"
+          ],
+          "d": [
+            "Crosses below",
+            "The fast EMA drops below the slow EMA. People set it to spot a turn downward early.",
+            "Downward cross: the orange EMA 9 moves below the blue EMA 21"
+          ]
+        },
+        "leg": [
+          "Fast EMA 9",
+          "Slow EMA 21"
+        ],
+        "sKicker": "TWO WAYS, SAME ALERT",
+        "sTitle": "Type it or pick it",
+        "sLead": "Write to the AI in your own words or choose everything on the condition screen; both set up the same alert.",
+        "tabs": [
+          [
+            "Typing",
+            "AI chat"
+          ],
+          [
+            "Form",
+            "pick it yourself"
+          ],
+          [
+            "All coins",
+            "one alert"
+          ]
+        ],
+        "panes": [
+          [
+            "Typing: AI chat",
+            "Write your request in your own words. If you leave out the periods the AI uses 9 and 21; if you leave out the timeframe it uses 1h."
+          ],
+          [
+            "Form: pick it yourself",
+            "Choose “SMA/EMA cross” as the condition type and set the average type, both periods, the direction and the timeframe. The drawing follows your choices."
+          ],
+          [
+            "All coins: one alert",
+            "Pick all coins instead of one: you watch the same cross on the top 100 coins, or every coin on Pro, with one alert. You choose the minimum wait between two notifications for the same coin."
+          ]
+        ],
+        "quotes": [
+          "“Tell me when EMA 9 crosses above EMA 21 on BTC 1h”",
+          "EMA(9) crosses above EMA(21) · 1h",
+          "EMA 9 / 21 · 4h · Repeat"
+        ],
+        "shotAlt": [
+          "EMA 9/21 cross alert set up by typing in the AI chat",
+          "Condition screen with EMA 9, EMA 21, cross above and 1h",
+          "All-coins EMA 9/21 cross alert form"
+        ],
+        "nKicker": "WHEN THE NOTIFICATION COMES",
+        "nTitle": "The notification comes when the candle closes",
+        "nText": "A cross can happen at any moment of the day; the decision is made when the candle of your timeframe closes. Change the timeframe to see when the candle with the cross closes.",
+        "s": "The cross happens at {x}. You are notified when the {tf} candle closes at {close} ({tz}); that is {n} checks a day.",
+        "sDay": "The cross happens at {x}. The 1d candle closes once a day, at {close} ({tz}); you are notified at that close.",
+        "tfLabel": "Timeframe",
+        "now": "now"
       }
     }
   }

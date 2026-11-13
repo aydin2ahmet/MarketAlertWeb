@@ -1,0 +1,49 @@
+---
+/**
+ * Kurulum ekranları (2026-11-13, Ahmet): masaüstünde S3 "aynı alarm, iki yol" (yapay zekâ sohbeti = koşul ekranı),
+ * telefonda S2 üç sekme: Yazarak (SCR-AI-01-S11), Formla (SCR-AFRM-02-S12), Tüm coinlerde (SCR-AFRM-01-S07).
+ */
+import ProgressiveShot from '../ProgressiveShot.astro';
+import { shotSrc } from '../../lib/ema';
+import '../../styles/ema.css';
+
+interface Props { code: string; em: any }
+const { code, em } = Astro.props;
+const KEYS = ['chat', 'sheet', 'form'];
+const src = (k: string) => [shotSrc(code, 'light', k), shotSrc(code, 'dark', k)];
+---
+<div class="ems">
+  <p class="kicker">{em.sKicker}</p>
+  <h3>{em.sTitle}</h3>
+  <p class="ems-lead">{em.sLead}</p>
+  <div class="ems-two">
+    <figure><div class="em-shot"><ProgressiveShot class="sh-l" src={src('chat')[0]} alt={em.shotAlt[0]} width="340" height="713" loading="lazy" decoding="async" sizes="290px" /><ProgressiveShot class="sh-d" src={src('chat')[1]} alt="" width="340" height="713" loading="lazy" decoding="async" sizes="290px" /></div><figcaption>{em.tabs[0][0]}<small dir="auto">{em.quotes[0]}</small></figcaption></figure>
+    <div class="ems-eq" aria-hidden="true">=</div>
+    <figure><div class="em-shot"><ProgressiveShot class="sh-l" src={src('sheet')[0]} alt={em.shotAlt[1]} width="340" height="713" loading="lazy" decoding="async" sizes="290px" /><ProgressiveShot class="sh-d" src={src('sheet')[1]} alt="" width="340" height="713" loading="lazy" decoding="async" sizes="290px" /></div><figcaption>{em.tabs[1][0]}<small dir="auto">{em.quotes[1]}</small></figcaption></figure>
+  </div>
+  <div class="ems-tabs" role="tablist">
+    {KEYS.map((k, i) => <button type="button" role="tab" id={`ems-t-${k}`} aria-controls={`ems-p-${k}`} aria-selected={String(i === 0)} data-k={k}>{em.tabs[i][0]}<small>{em.tabs[i][1]}</small></button>)}
+  </div>
+  {KEYS.map((k, i) => <div class="ems-p" role="tabpanel" id={`ems-p-${k}`} aria-labelledby={`ems-t-${k}`} hidden={i !== 0}>
+    <div class="em-shot"><ProgressiveShot class="sh-l" src={src(k)[0]} alt={em.shotAlt[i]} width="340" height="713" loading="lazy" decoding="async" sizes="280px" /><ProgressiveShot class="sh-d" src={src(k)[1]} alt="" width="340" height="713" loading="lazy" decoding="async" sizes="280px" /></div>
+    <h4>{em.panes[i][0]}</h4><p>{em.panes[i][1]}</p><p class="ems-q" dir="auto">{em.quotes[i]}</p>
+  </div>)}
+</div>
+
+<script>
+  for (const w of document.querySelectorAll<HTMLElement>('.ems')) {
+    const tabs = [...w.querySelectorAll<HTMLButtonElement>('[role=tab]')];
+    const show = (k: string) => {
+      tabs.forEach(b => b.setAttribute('aria-selected', String(b.dataset.k === k)));
+      w.querySelectorAll<HTMLElement>('.ems-p').forEach(p => { p.hidden = p.id !== `ems-p-${k}`; });
+    };
+    tabs.forEach((b, i) => {
+      b.addEventListener('click', () => show(b.dataset.k!));
+      b.addEventListener('keydown', e => {
+        const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (!d) return;
+        const rtl = getComputedStyle(w).direction === 'rtl'; const n = tabs[(i + (rtl ? -d : d) + tabs.length) % tabs.length];
+        n.focus(); show(n.dataset.k!);
+      });
+    });
+  }
+</script>
