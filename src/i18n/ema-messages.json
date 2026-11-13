@@ -1,0 +1,409 @@
+{
+ "tr": {
+  "push": {
+   "u": "{0} EMA {2}/{3} yukarı kesişti",
+   "d": "{0} EMA {2}/{3} aşağı kesişti"
+  },
+  "tg": {
+   "u": "{0}: {1}, {2} üstüne çıktı",
+   "d": "{0}: {1}, {2} altına indi",
+   "fast": "Hızlı",
+   "slow": "Yavaş",
+   "price": "Fiyat",
+   "button": "📈 Grafik",
+   "market": "Spot USDT",
+   "tf": {
+    "1m": "1dk",
+    "5m": "5dk",
+    "15m": "15dk",
+    "1h": "1s",
+    "4h": "4s",
+    "1d": "1g"
+   }
+  },
+  "cond": {
+   "u": "{ma}({fast}) {ma}({slow}) değerini yukarı keserse · {timeframe}",
+   "d": "{ma}({fast}) {ma}({slow}) değerini aşağı keserse · {timeframe}"
+  },
+  "live": "Kesişime {percent}",
+  "pct": "%{v}",
+  "num": {
+   "dec": ",",
+   "grp": ".",
+   "indian": false,
+   "neg": "-"
+  },
+  "off": 180,
+  "tz": "TSİ"
+ },
+ "de": {
+  "push": {
+   "u": "{0} EMA {2}/{3} nach oben gekreuzt",
+   "d": "{0} EMA {2}/{3} nach unten gekreuzt"
+  },
+  "tg": {
+   "u": "{0}: {1} kreuzt {2} nach oben",
+   "d": "{0}: {1} kreuzt {2} nach unten",
+   "fast": "Schnell",
+   "slow": "Langsam",
+   "price": "Kurs",
+   "button": "📈 Chart",
+   "market": "Spot USDT",
+   "tf": {
+    "1m": "1 Min",
+    "5m": "5 Min",
+    "15m": "15 Min",
+    "1h": "1 Std",
+    "4h": "4 Std",
+    "1d": "1 Tag"
+   }
+  },
+  "cond": {
+   "u": "{ma}({fast}) kreuzt {ma}({slow}) nach oben · {timeframe}",
+   "d": "{ma}({fast}) kreuzt {ma}({slow}) nach unten · {timeframe}"
+  },
+  "live": "{percent} bis Kreuzung",
+  "pct": "{v} %",
+  "num": {
+   "dec": ",",
+   "grp": ".",
+   "indian": false,
+   "neg": "-"
+  },
+  "off": 0,
+  "tz": "UTC"
+ },
+ "fr": {
+  "push": {
+   "u": "{0} EMA {2}/{3} croisement haussier",
+   "d": "{0} EMA {2}/{3} croisement baissier"
+  },
+  "tg": {
+   "u": "{0} : {1} croise la {2} à la hausse",
+   "d": "{0} : {1} croise la {2} à la baisse",
+   "fast": "Rapide",
+   "slow": "Lente",
+   "price": "Prix",
+   "button": "📈 Graphique",
+   "market": "Spot USDT",
+   "tf": {
+    "1m": "1 min",
+    "5m": "5 min",
+    "15m": "15 min",
+    "1h": "1 h",
+    "4h": "4 h",
+    "1d": "1 j"
+   }
+  },
+  "cond": {
+   "u": "{ma}({fast}) croise {ma}({slow}) à la hausse · {timeframe}",
+   "d": "{ma}({fast}) croise {ma}({slow}) à la baisse · {timeframe}"
+  },
+  "live": "à {percent} du croisement",
+  "pct": "{v} %",
+  "num": {
+   "dec": ",",
+   "grp": " ",
+   "indian": false,
+   "neg": "-"
+  },
+  "off": 0,
+  "tz": "UTC"
+ },
+ "es": {
+  "push": {
+   "u": "{0} EMA {2}/{3} cruzó al alza",
+   "d": "{0} EMA {2}/{3} cruzó a la baja"
+  },
+  "tg": {
+   "u": "{0}: {1} cruzó al alza la {2}",
+   "d": "{0}: {1} cruzó a la baja la {2}",
+   "fast": "Rápida",
+   "slow": "Lenta",
+   "price": "Precio",
+   "button": "📈 Gráfico",
+   "market": "Spot USDT",
+   "tf": {
+    "1m": "1 min",
+    "5m": "5 min",
+    "15m": "15 min",
+    "1h": "1 h",
+    "4h": "4 h",
+    "1d": "1 d"
+   }
+  },
+  "cond": {
+   "u": "{ma}({fast}) cruza por encima de {ma}({slow}) · {timeframe}",
+   "d": "{ma}({fast}) cruza por debajo de {ma}({slow}) · {timeframe}"
+  },
+  "live": "a {percent} del cruce",
+  "pct": "{v} %",
+  "num": {
+   "dec": ",",
+   "grp": ".",
+   "indian": false,
+   "neg": "-"
+  },
+  "off": 0,
+  "tz": "UTC"
+ },
+ "pt-br": {
+  "push": {
+   "u": "{0} EMA {2}/{3} cruzou para cima",
+   "d": "{0} EMA {2}/{3} cruzou para baixo"
+  },
+  "tg": {
+   "u": "{0}: {1} cruzou a {2} para cima",
+   "d": "{0}: {1} cruzou a {2} para baixo",
+   "fast": "Rápida",
+   "slow": "Lenta",
+   "price": "Preço",
+   "button": "📈 Gráfico",
+   "market": "Spot USDT",
+   "tf": {
+    "1m": "1 min",
+    "5m": "5 min",
+    "15m": "15 min",
+    "1h": "1 h",
+    "4h": "4 h",
+    "1d": "1 d"
+   }
+  },
+  "cond": {
+   "u": "{ma}({fast}) cruza {ma}({slow}) para cima · {timeframe}",
+   "d": "{ma}({fast}) cruza {ma}({slow}) para baixo · {timeframe}"
+  },
+  "live": "{percent} ao cruzar",
+  "pct": "{v}%",
+  "num": {
+   "dec": ",",
+   "grp": ".",
+   "indian": false,
+   "neg": "-"
+  },
+  "off": 0,
+  "tz": "UTC"
+ },
+ "ru": {
+  "push": {
+   "u": "{0} EMA {2}/{3} пересечение вверх",
+   "d": "{0} EMA {2}/{3} пересечение вниз"
+  },
+  "tg": {
+   "u": "{0}: {1} пересекла {2} снизу вверх",
+   "d": "{0}: {1} пересекла {2} сверху вниз",
+   "fast": "Быстрая",
+   "slow": "Медленная",
+   "price": "Цена",
+   "button": "📈 График",
+   "market": "Спот USDT",
+   "tf": {
+    "1m": "1м",
+    "5m": "5м",
+    "15m": "15м",
+    "1h": "1ч",
+    "4h": "4ч",
+    "1d": "1д"
+   }
+  },
+  "cond": {
+   "u": "{ma}({fast}) пересекает {ma}({slow}) вверх · {timeframe}",
+   "d": "{ma}({fast}) пересекает {ma}({slow}) вниз · {timeframe}"
+  },
+  "live": "до пересечения {percent}",
+  "pct": "{v} %",
+  "num": {
+   "dec": ",",
+   "grp": " ",
+   "indian": false,
+   "neg": "-"
+  },
+  "off": 0,
+  "tz": "UTC"
+ },
+ "ja": {
+  "push": {
+   "u": "{0} の EMA {2}/{3} が上抜けしました",
+   "d": "{0} の EMA {2}/{3} が下抜けしました"
+  },
+  "tg": {
+   "u": "{0}：{1} が {2} を上抜け",
+   "d": "{0}：{1} が {2} を下抜け",
+   "fast": "短期",
+   "slow": "長期",
+   "price": "価格",
+   "button": "📈 チャート",
+   "market": "現物 USDT",
+   "tf": {
+    "1m": "1分",
+    "5m": "5分",
+    "15m": "15分",
+    "1h": "1時間",
+    "4h": "4時間",
+    "1d": "1日"
+   }
+  },
+  "cond": {
+   "u": "{ma}({fast}) が {ma}({slow}) を上抜け · {timeframe}",
+   "d": "{ma}({fast}) が {ma}({slow}) を下抜け · {timeframe}"
+  },
+  "live": "交差まで {percent}",
+  "pct": "{v}%",
+  "num": {
+   "dec": ".",
+   "grp": ",",
+   "indian": false,
+   "neg": "-"
+  },
+  "off": 0,
+  "tz": "UTC"
+ },
+ "zh": {
+  "push": {
+   "u": "{0} EMA {2}/{3} 向上交叉",
+   "d": "{0} EMA {2}/{3} 向下交叉"
+  },
+  "tg": {
+   "u": "{0}：{1} 上穿 {2}",
+   "d": "{0}：{1} 下穿 {2}",
+   "fast": "快线",
+   "slow": "慢线",
+   "price": "价格",
+   "button": "📈 图表",
+   "market": "现货 USDT",
+   "tf": {
+    "1m": "1分",
+    "5m": "5分",
+    "15m": "15分",
+    "1h": "1小时",
+    "4h": "4小时",
+    "1d": "1日"
+   }
+  },
+  "cond": {
+   "u": "{ma}({fast}) 上穿 {ma}({slow}) · {timeframe}",
+   "d": "{ma}({fast}) 下穿 {ma}({slow}) · {timeframe}"
+  },
+  "live": "距交叉 {percent}",
+  "pct": "{v}%",
+  "num": {
+   "dec": ".",
+   "grp": ",",
+   "indian": false,
+   "neg": "-"
+  },
+  "off": 0,
+  "tz": "UTC"
+ },
+ "hi": {
+  "push": {
+   "u": "{0} EMA {2}/{3} ऊपर की ओर क्रॉस हुआ",
+   "d": "{0} EMA {2}/{3} नीचे की ओर क्रॉस हुआ"
+  },
+  "tg": {
+   "u": "{0}: {1} ने {2} को ऊपर की ओर काटा",
+   "d": "{0}: {1} ने {2} को नीचे की ओर काटा",
+   "fast": "तेज़",
+   "slow": "धीमी",
+   "price": "कीमत",
+   "button": "📈 चार्ट",
+   "market": "स्पॉट USDT",
+   "tf": {
+    "1m": "1मि",
+    "5m": "5मि",
+    "15m": "15मि",
+    "1h": "1घं",
+    "4h": "4घं",
+    "1d": "1दि"
+   }
+  },
+  "cond": {
+   "u": "{ma}({fast}) {ma}({slow}) को ऊपर की ओर काटे · {timeframe}",
+   "d": "{ma}({fast}) {ma}({slow}) को नीचे की ओर काटे · {timeframe}"
+  },
+  "live": "क्रॉस से {percent}",
+  "pct": "{v}%",
+  "num": {
+   "dec": ".",
+   "grp": ",",
+   "indian": true,
+   "neg": "-"
+  },
+  "off": 0,
+  "tz": "UTC"
+ },
+ "ar": {
+  "push": {
+   "u": "{0} EMA {2}/{3} تقاطع صاعد",
+   "d": "{0} EMA {2}/{3} تقاطع هابط"
+  },
+  "tg": {
+   "u": "{0}: {1} تقاطع صعودًا مع {2}",
+   "d": "{0}: {1} تقاطع هبوطًا مع {2}",
+   "fast": "السريع",
+   "slow": "البطيء",
+   "price": "السعر",
+   "button": "📈 الرسم البياني",
+   "market": "الفوري USDT",
+   "tf": {
+    "1m": "1د",
+    "5m": "5د",
+    "15m": "15د",
+    "1h": "1س",
+    "4h": "4س",
+    "1d": "1ي"
+   }
+  },
+  "cond": {
+   "u": "{ma}({fast}) يتقاطع صعودًا مع {ma}({slow}) · {timeframe}",
+   "d": "{ma}({fast}) يتقاطع هبوطًا مع {ma}({slow}) · {timeframe}"
+  },
+  "live": "{percent} إلى التقاطع",
+  "pct": "{v}%",
+  "num": {
+   "dec": "٫",
+   "grp": "٬",
+   "indian": false,
+   "neg": "؜-"
+  },
+  "off": 0,
+  "tz": "UTC"
+ },
+ "en": {
+  "push": {
+   "u": "{0} EMA {2}/{3} crossed up",
+   "d": "{0} EMA {2}/{3} crossed down"
+  },
+  "tg": {
+   "u": "{0}: {1} crossed above {2}",
+   "d": "{0}: {1} crossed below {2}",
+   "fast": "Fast",
+   "slow": "Slow",
+   "price": "Price",
+   "button": "📈 Chart",
+   "market": "Spot USDT",
+   "tf": {
+    "1m": "1m",
+    "5m": "5m",
+    "15m": "15m",
+    "1h": "1h",
+    "4h": "4h",
+    "1d": "1d"
+   }
+  },
+  "cond": {
+   "u": "{ma}({fast}) crosses above {ma}({slow}) · {timeframe}",
+   "d": "{ma}({fast}) crosses below {ma}({slow}) · {timeframe}"
+  },
+  "live": "{percent} to cross",
+  "pct": "{v}%",
+  "num": {
+   "dec": ".",
+   "grp": ",",
+   "indian": false,
+   "neg": "-"
+  },
+  "off": 0,
+  "tz": "UTC"
+ }
+}

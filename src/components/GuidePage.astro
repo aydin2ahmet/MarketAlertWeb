@@ -24,6 +24,10 @@ import HlHero from './hl/HlHero.astro';
 import HlWindow from './hl/HlWindow.astro';
 import HlSetup from './hl/HlSetup.astro';
 import HlDay from './hl/HlDay.astro';
+import EmHero from './ema/EmHero.astro';
+import EmDirs from './ema/EmDirs.astro';
+import EmSetup from './ema/EmSetup.astro';
+import EmDay from './ema/EmDay.astro';
 import logicCards from '../i18n/logic-cards.json';
 import content from '../i18n/content.json';
 import guides from '../i18n/alert-guides.json';
@@ -42,7 +46,7 @@ const r = (rsiGuides as any)[code];
 const lcAll = (logicCards as any)[code];
 const lc = lcAll?.[`${section}/${slug}`];
 // Rehber başına görsel ve kod satırları. Yeni rehber eklerken buraya da bir kayıt ekle.
-const VISUAL: Record<string, { kicker: string; exampleKicker: string; condition: string[]; foot: string; shot: string; version: string; width: number; height: number | null; logic?: string[][]; hook?: { pair: string; market: string; from: number; target: number; touch: number; last: number; op: '<' | '>'; unit?: 'pct' }; stepShots?: [string, number][]; voice?: true; tg?: true; mc?: true; hl?: true }> = {
+const VISUAL: Record<string, { kicker: string; exampleKicker: string; condition: string[]; foot: string; shot: string; version: string; width: number; height: number | null; logic?: string[][]; hook?: { pair: string; market: string; from: number; target: number; touch: number; last: number; op: '<' | '>'; unit?: 'pct' }; stepShots?: [string, number][]; voice?: true; tg?: true; mc?: true; hl?: true; em?: true }> = {
   'features/price-alerts': { kicker: 'BINANCE · PRICE · PUSH', exampleKicker: 'BTC/USDT · 70,000 · ONCE', condition: ['BTC/USDT', '≥', '70,000 USDT'], foot: 'BINANCE SPOT · USDT · ONCE → PUSH', shot: 'price', version: 'price1', width: 1080, height: 2280,
     logic: [['HIGH 69,990 · LAST 69,880', '→ ✕'], ['HIGH 70,012 · LAST 69,880', 'TOUCH → ✓']] },
   'features/volume-spike-alerts': { kicker: 'BINANCE · VOLUME / SMA · TELEGRAM', exampleKicker: '15m · SMA(20) · 3×', condition: ['VOLUME', '>', '3 × SMA(20)'], foot: 'BINANCE SPOT · USDT · TOP 100 → TELEGRAM', shot: 'rsi/volume-result', version: 'volume1', width: 390, height: null },
@@ -67,12 +71,15 @@ const VISUAL: Record<string, { kicker: string; exampleKicker: string; condition:
   'features/macd-crossover-alerts': { kicker: 'BINANCE · MACD · PUSH + TELEGRAM', exampleKicker: '', condition: [], foot: '', shot: 'mc-grid', version: 'mc1', width: 1020, height: 975, mc: true },
   // 8. gün: 24 saatlik zirve/dip sayfası kendi bloklarını kullanır (components/hl, metinler rehberin `hl` alanında).
   'features/24h-high-low-alerts': { kicker: 'BINANCE · 24H HIGH / LOW · FREE', exampleKicker: '', condition: [], foot: '', shot: 'hl-chat', version: 'hl2', width: 1020, height: 2139, hl: true },
+  // 9. gün: EMA kesişim sayfası kendi bloklarını kullanır (components/ema, metinler rehberin `em` alanında).
+  'features/ema-crossover-alerts': { kicker: 'BINANCE · EMA CROSS · PUSH + TELEGRAM', exampleKicker: '', condition: [], foot: '', shot: 'em-list', version: 'em1', width: 1020, height: 2139, em: true },
 };
 const v = VISUAL[`${section}/${slug}`];
 const vo = v.voice ? g.voice : undefined;
 const tg = v.tg ? g.tg : undefined;
 const mc = v.mc ? g.mc : undefined;
 const hl = v.hl ? g.hl : undefined;
+const em = v.em ? g.em : undefined;
 const shotKind = v.shot.split('/').pop() as string;
 const shotHeight = (theme: 'light' | 'dark') => v.height ? Math.round(390 * v.height / v.width) : (screenSizes as any)[code][theme][shotKind];
 const plans: string[][] = g.plans || r.plans;
@@ -108,7 +115,10 @@ const jsonLd = [
   </header>
   <main class="alert-guide">
     <nav class="breadcrumbs" aria-label="MarketAlert"><a href={`/${code}/`}>MarketAlert</a><span aria-hidden="true"> / </span><span>{g.link}</span></nav>
-    {hl ? <>
+    {em ? <>
+    <EmHero code={code} em={em} h1={g.h1} introHtml={L(g.intro)} setupTitle={setupTitle} />
+    <EmDirs code={code} em={em} title={g.exampleTitle} caption={g.caption} />
+    </> : hl ? <>
     <HlHero code={code} hl={hl} h1={g.h1} introHtml={L(g.intro)} setupTitle={setupTitle} />
     <HlWindow code={code} hl={hl} title={g.exampleTitle} caption={g.caption} />
     </> : mc ? <>
@@ -145,10 +155,11 @@ const jsonLd = [
     <section id="setup" class="guide-section"><p class="kicker">{`01 → ${String(g.steps.length).padStart(2, '0')}`}</p><h2>{setupTitle}</h2>{tg ? <TgLanes code={code} lanes={tg.lanes} cells={tg.cells} alts={tg.alts} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : vo ? <VoiceSteps code={code} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : v.stepShots && g.stepActions ? <>
       <StepArc code={code} titles={g.steps.map((s: string[]) => s[0])} actions={g.stepActions} ready={g.ready} shots={v.stepShots} version={v.version} />
       <ol class="step-notes">{g.steps.map((step: string[], i: number) => <li><span class="step-number" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><div><h3>{step[0]}</h3><p set:html={L(step[1])} /></div></li>)}</ol>
-    </> : <ol class="steps">{g.steps.map((step: string[], i: number) => <li><span class="step-number" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><div><h3>{step[0]}</h3><p set:html={L(step[1])} /></div></li>)}</ol>}{mc && <McSetup code={code} mc={mc} />}{hl && <HlSetup code={code} hl={hl} />}</section>
+    </> : <ol class="steps">{g.steps.map((step: string[], i: number) => <li><span class="step-number" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><div><h3>{step[0]}</h3><p set:html={L(step[1])} /></div></li>)}</ol>}{mc && <McSetup code={code} mc={mc} />}{hl && <HlSetup code={code} hl={hl} />}{em && <EmSetup code={code} em={em} />}</section>
     <section class="guide-section explain">{g.details.map((section: string[]) => <article><h2>{section[0]}</h2><p set:html={L(section[1])} /></article>)}</section>
     {mc && <McCandle code={code} mc={mc} />}
     {hl && <HlDay code={code} hl={hl} />}
+    {em && <EmDay code={code} em={em} />}
     {tg && <TgSettings code={code} title={tg.setTitle} items={tg.callouts} alt={tg.setAlt} />}
     {vo && <VoiceActions title={vo.actionsTitle} items={vo.actions} note={vo.actionsNote} />}
     {vo && <VoiceLadder title={vo.ladderTitle} level={vo.level} items={vo.ladder} plans={vo.plans} />}

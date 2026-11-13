@@ -180,6 +180,20 @@
     ["How is it different from today's high?", "A calendar day resets at midnight; this alert always looks at the last 24 hours back from now."],
     ["Is the 24-hour high/low alert free?", "Yes, for a single coin on Free. Telegram and all coins are on Plus and Pro."]
    ]
+  },
+  "features/ema-crossover-alerts": {
+   "line": "Get a push or Telegram alert when a Binance coin's fast EMA crosses its slow EMA (for example 9 and 21), checked at candle close.",
+   "what": "The SMA/EMA cross is a condition type on Plus and Pro. Pick the coin (or all coins), EMA or SMA, a fast and a slow period, Crosses above or Crosses below, and a timeframe from 1m to 1d. At the candle close MarketAlert notifies you by push, Telegram or signed webhook (Pro).",
+   "facts": [
+    "Default periods are 9 and 21; both can be 2 to 200 and the fast period must be smaller than the slow one.",
+    "Only closed candles count: fast at or below slow at the previous close, above it at this close (reverse for down). SMA 50/200 works too.",
+    "The push title reads like 'BTC EMA 9/21 crossed up' with the timeframe and both values; the Telegram message adds price, market and a Binance chart button.",
+    "On all coins the same cross is watched on each coin: top 100 on Plus, every coin on Pro."
+   ],
+   "example": "Tell me when EMA 9 crosses above EMA 21 on BTC 1h.",
+   "faq": [
+    ["Is the EMA crossover alert free?", "MarketAlert works with a subscription; Plus and Pro both come with a 7-day free trial, and the EMA crossover alert is included in both."]
+   ]
   }
  }
 }

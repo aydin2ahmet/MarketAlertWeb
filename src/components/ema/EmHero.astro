@@ -1,0 +1,44 @@
+---
+/**
+ * İlk ekran, tasarım K3-4 (2026-11-13, Ahmet): masaüstünde iki eğik telefon (koşul ekranı + alarm listesi), push üstte,
+ * Telegram altta ortada (K3-4C); telefonda alarm listesi ortada, push üstten, Telegram alttan biner ve BTC kartının
+ * yanında "Kesişime %0,2" canlı değer etiketi durur (K3-4B). Push ve Telegram metinleri sunucunun gerçek şablonları.
+ */
+import ProgressiveShot from '../ProgressiveShot.astro';
+import TgChat from '../telegram/TgChat.astro';
+import { msgHtml } from '../../lib/telegram';
+import { emLang, fill, pct, pushHtml, shotSrc, tgMsg } from '../../lib/ema';
+import '../../styles/macd.css';
+import '../../styles/ema.css';
+
+interface Props { code: string; em: any; h1: string; introHtml: string; setupTitle: string }
+const { code, em, h1, introHtml, setupTitle } = Astro.props;
+const L = emLang(code);
+const push = pushHtml(L, 'u', '1h', em.now);
+const tg = tgMsg(L, 'u', '1h');
+const tgLabel = `Telegram: ${tg.text.split('\n')[0].replace(/<[^>]+>/g, '')}`;
+const chip = fill(L.live, { percent: pct(L, 0.2) });
+const shot = (k: string, alt: string, w: number) => [
+  { cls: 'sh-l', src: shotSrc(code, 'light', k), alt },
+  { cls: 'sh-d', src: shotSrc(code, 'dark', k), alt: '' },
+].map(s => ({ ...s, w }));
+---
+<section class="emh">
+  <div class="emh-head">
+    <p class="kicker">{em.kicker}</p><h1>{h1}</h1>
+    <p class="intro" set:html={introHtml} />
+    <div class="emh-cta"><a class="btn" href="#setup">{setupTitle} <span aria-hidden="true">↓</span></a></div>
+  </div>
+  <div class="emh-col emh-d">
+    <div class="emh-p1 em-shot">{shot('sheet', em.sheetAlt, 250).map(s => <ProgressiveShot class={s.cls} src={s.src} alt={s.alt} width="340" height="713" loading="lazy" decoding="async" sizes="250px" />)}</div>
+    <div class="emh-p2 em-shot">{shot('list', em.listAlt, 270).map(s => <ProgressiveShot class={s.cls} src={s.src} alt={s.alt} width="340" height="713" loading="lazy" decoding="async" sizes="270px" />)}</div>
+    <div class="emh-f2 em-fl"><div class="mcp" role="img" aria-label={`${em.chnPush}: ${push.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()}`} set:html={push} /></div>
+    <div class="emh-f1 em-fl"><TgChat code={code} label={tgLabel}><div class="tgm" set:html={msgHtml(tg, '14:00')} /></TgChat></div>
+  </div>
+  <div class="emh-col emh-m">
+    <div class="emh-f2 em-fl"><div class="mcp" aria-hidden="true" set:html={push} /></div>
+    <div class="emh-bk em-shot">{shot('list', em.listAlt, 240).map(s => <ProgressiveShot class={s.cls} src={s.src} alt={s.alt} width="340" height="713" loading="lazy" decoding="async" sizes="240px" />)}</div>
+    <span class="emh-chip" dir="auto">{chip}</span>
+    <div class="emh-f1 em-fl" aria-hidden="true"><TgChat code={code} label={tgLabel}><div class="tgm" set:html={msgHtml(tg, '14:00')} /></TgChat></div>
+  </div>
+</section>
