@@ -91,7 +91,7 @@
     "Push, Telegram ya da webhook. Uygulama kapalıyken bile."
    ]
   ],
-  "whyTitle": "Neden MarketAlert?",
+  "whyTitle": "Sıradan alarmdan farkı",
   "whySub": "Sıradan bir fiyat alarmının yapamadıkları, tek uygulamada.",
   "cmpUs": "MarketAlert",
   "cmpThem": "Sıradan fiyat alarmı",
@@ -397,7 +397,7 @@
     "Push, Telegram or webhook. Even when the app is closed."
    ]
   ],
-  "whyTitle": "Why MarketAlert?",
+  "whyTitle": "Versus a basic price alert",
   "whySub": "What a basic price alert can't do, in one app.",
   "cmpUs": "MarketAlert",
   "cmpThem": "Basic price alert",
@@ -703,7 +703,7 @@
     "推送、Telegram 或 Webhook。即使应用已关闭。"
    ]
   ],
-  "whyTitle": "为什么选择 MarketAlert？",
+  "whyTitle": "与普通价格提醒的区别",
   "whySub": "普通价格提醒做不到的，都在一个应用里。",
   "cmpUs": "MarketAlert",
   "cmpThem": "普通价格提醒",
@@ -1009,7 +1009,7 @@
     "Push, Telegram o webhook. Incluso con la app cerrada."
    ]
   ],
-  "whyTitle": "¿Por qué MarketAlert?",
+  "whyTitle": "Frente a una alerta de precio común",
   "whySub": "Lo que una alerta de precio básica no puede hacer, en una sola app.",
   "cmpUs": "MarketAlert",
   "cmpThem": "Alerta de precio básica",
@@ -1315,7 +1315,7 @@
     "पुश, Telegram या वेबहुक। ऐप बंद होने पर भी।"
    ]
   ],
-  "whyTitle": "MarketAlert क्यों?",
+  "whyTitle": "साधारण अलर्ट से फ़र्क",
   "whySub": "जो एक साधारण प्राइस अलर्ट नहीं कर सकता, वह सब एक ऐप में।",
   "cmpUs": "MarketAlert",
   "cmpThem": "साधारण प्राइस अलर्ट",
@@ -1621,7 +1621,7 @@
     "إشعار أو Telegram أو Webhook. حتى والتطبيق مغلق."
    ]
   ],
-  "whyTitle": "لماذا MarketAlert؟",
+  "whyTitle": "الفرق عن التنبيه العادي",
   "whySub": "ما لا يستطيعه تنبيه السعر العادي، في تطبيق واحد.",
   "cmpUs": "MarketAlert",
   "cmpThem": "تنبيه سعر عادي",
@@ -1927,7 +1927,7 @@
     "Push, Telegram ou webhook. Mesmo com o app fechado."
    ]
   ],
-  "whyTitle": "Por que o MarketAlert?",
+  "whyTitle": "A diferença para um alerta comum",
   "whySub": "O que um alerta de preço básico não faz, em um só app.",
   "cmpUs": "MarketAlert",
   "cmpThem": "Alerta de preço básico",
@@ -2233,7 +2233,7 @@
     "Push, Telegram ou webhook. Même app fermée."
    ]
   ],
-  "whyTitle": "Pourquoi MarketAlert ?",
+  "whyTitle": "La différence avec une alerte classique",
   "whySub": "Ce qu’une alerte de prix basique ne sait pas faire, dans une seule app.",
   "cmpUs": "MarketAlert",
   "cmpThem": "Alerte de prix basique",
@@ -2539,7 +2539,7 @@
     "Push, Telegram или webhook. Даже когда приложение закрыто."
    ]
   ],
-  "whyTitle": "Почему MarketAlert?",
+  "whyTitle": "Чем отличается от обычного алерта",
   "whySub": "То, чего не умеет обычное ценовое оповещение, — в одном приложении.",
   "cmpUs": "MarketAlert",
   "cmpThem": "Обычное ценовое оповещение",
@@ -2845,7 +2845,7 @@
     "Push, Telegram oder Webhook. Auch bei geschlossener App."
    ]
   ],
-  "whyTitle": "Warum MarketAlert?",
+  "whyTitle": "Der Unterschied zum einfachen Alarm",
   "whySub": "Was ein einfacher Preisalarm nicht kann – in einer App.",
   "cmpUs": "MarketAlert",
   "cmpThem": "Einfacher Preisalarm",
@@ -3151,7 +3151,7 @@
     "プッシュ、Telegram、Webhook。アプリを閉じていても。"
    ]
   ],
-  "whyTitle": "MarketAlert を選ぶ理由",
+  "whyTitle": "一般的なアラートとの違い",
   "whySub": "一般的な価格アラートにできないことを、1つのアプリで。",
   "cmpUs": "MarketAlert",
   "cmpThem": "一般的な価格アラート",

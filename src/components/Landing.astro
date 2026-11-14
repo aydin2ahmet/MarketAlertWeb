@@ -103,29 +103,29 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
 
   {t.what && <WhatIs d={t.what} />}
 
+  <!-- Neden MarketAlert (tasarım H1, 2026-11-14): koyu bant, her kartın üstünde küçük canlı sahne. -->
   <section class="hl" aria-labelledby="hl-t">
     <h2 class="st" id="hl-t">{t.hl.title}</h2>
     <div class="hlg">
-      <article class="hc" style="--c:var(--cat2)">
-        <span class="hi"><Fragment set:html={svg('spark')} /></span>
+      <article class="hc" style="--c:#B99AFF">
+        <div class="hsc" aria-hidden="true"><p class="hty">{t.sayExample}</p><div class="hdr"><b dir="ltr">BTC/USDT · RSI(14)</b><span><Fragment set:html={svg('check')} /></span></div></div>
+        <span class="hk" dir="ltr">AI</span>
         <h3>{t.hl.ai.t}</h3>
         <p>{t.hl.ai.d}</p>
-        <p class="bub">{t.sayExample}</p>
         <ul class="acts">{t.hl.acts.map((a: string, i: number) => <li><Fragment set:html={svg(['plus', 'edit', 'list', 'power'][i])} />{a}</li>)}</ul>
       </article>
-      <article class="hc" style="--c:var(--cat3)">
-        <span class="hi"><Fragment set:html={svg('radar')} /></span>
+      <article class="hc" style="--c:#4FD1C5">
+        <div class="hsc" aria-hidden="true"><div class="dots">{Array.from({ length: 40 }, (_, i) => <i class={[3, 11, 17, 26, 34].includes(i) ? 'up' : [8, 22].includes(i) ? 'dn' : ''} style={`animation-delay:${((i % 10) * .3).toFixed(1)}s`}></i>)}</div><div class="hscan"></div></div>
+        <span class="hk" dir="ltr">7/24</span>
         <h3>{t.hl.scan.t}</h3>
         <p>{t.hl.scan.d}</p>
-        <div class="dots" aria-hidden="true">{Array.from({ length: 40 }, (_, i) => <i class={[3, 11, 17, 26, 34].includes(i) ? 'up' : [8, 22].includes(i) ? 'dn' : ''}></i>)}</div>
         <ul class="acts" dir="ltr">{['RSI', 'MACD', 'VOL', 'SMA/EMA'].map(a => <li>{a}</li>)}</ul>
       </article>
-      <article class="hc" style="--c:var(--cat0)">
-        <span class="hi"><Fragment set:html={svg('bell')} /></span>
+      <article class="hc" style="--c:#F7B548">
+        <div class="hsc" aria-hidden="true"><p class="hlk" dir="ltr">14:32</p><div class="push"><img src="/icons/logo-96.png" alt="" width="36" height="36" loading="lazy" /><span><small dir="ltr">MarketAlert · 14:32</small><b>{t.hl.push}</b></span></div></div>
+        <span class="hk" dir="ltr">Push · Telegram · Webhook</span>
         <h3>{t.hl.bg.t}</h3>
         <p>{t.hl.bg.d}</p>
-        <div class="push" aria-hidden="true"><img src="/icons/logo-96.png" alt="" width="36" height="36" loading="lazy" /><span><small dir="ltr">MarketAlert · 14:32</small><b>{t.hl.push}</b></span></div>
-        <ul class="acts" dir="ltr">{['Push', 'Telegram', 'Webhook'].map(a => <li>{a}</li>)}</ul>
       </article>
     </div>
   </section>
