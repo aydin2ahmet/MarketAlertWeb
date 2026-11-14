@@ -1,4 +1,5 @@
 ---
+import { existsSync } from 'node:fs';
 import StoreBadges from '../../../components/StoreBadges.astro';
 import SearchBox from '../../../components/SearchBox.astro';
 import SocialLinks from '../../../components/SocialLinks.astro';
@@ -30,8 +31,11 @@ const jsonLd = [
   ] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: locale.hreflang, mainEntity: g.faq.map((q: string[]) => ({ '@type': 'Question', name: q[0], acceptedAnswer: { '@type': 'Answer', text: q[1] } })) },
 ];
+// Sayfaya özel paylaşım görseli (scripts/generate-og-images.cjs); yoksa genel görsel.
+const ogPage = `/og/features/rsi-alerts/${code}.jpg`;
+const ogImage = existsSync(`public${ogPage}`) ? ogPage : `/og/${code}.png`;
 ---
-<Base lang={code === 'pt-br' ? 'pt-BR' : code} dir={locale.dir} title={g.title} description={g.description} path={path} ogImage={`/og/${code}.png`} jsonLd={jsonLd} alternates={alternates}>
+<Base lang={code === 'pt-br' ? 'pt-BR' : code} dir={locale.dir} title={g.title} description={g.description} path={path} ogImage={ogImage} jsonLd={jsonLd} alternates={alternates}>
   <a class="skip" href="#setup">{g.stepsTitle}</a>
   <header class="hd">
     <a class="logo" href={`/${code}/`}><img src="/icons/logo-96.png" alt="" width="32" height="32" /><b>MarketAlert</b></a>
