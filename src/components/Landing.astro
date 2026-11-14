@@ -14,6 +14,7 @@ const { t, code, appLocale } = Astro.props;
 const ICO: Record<string, string> = {
   check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
   x: '<path d="M7 7l10 10M17 7L7 17"/>',
+  minus: '<path d="M6 12h12"/>',
   globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>',
   sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
   moon: '<path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z"/>',
@@ -160,10 +161,13 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
   <section id="why" class="sec">
     <h2 class="st"><span class="hash">#</span> {t.whyTitle}</h2>
     <p class="ss">{t.whySub}</p>
-    <table class="cmp">
-      <thead><tr><th><span class="skip">{t.whyTitle}</span></th><th class="us">{t.cmpUs}</th><th>{t.cmpThem}</th></tr></thead>
-      <tbody>{t.cmp.map((r: any[]) => <tr><th scope="row">{r[0]}</th><td class="us"><Fragment set:html={cell(r[1])} /></td><td><Fragment set:html={cell(r[2])} /></td></tr>)}</tbody>
-    </table>
+    <!-- Önce / sonra sürgüsü (tasarım W5, 2026-11-14): solda sıradan alarm, sağda MarketAlert; tutamaç sürüklenir. -->
+    <div class="vs" style="--x:50%">
+      <div class="vs-l vs-us"><p class="vs-lbl">{t.cmpUs}</p><ul>{t.cmp.map((r: any[]) => <li><Fragment set:html={svg('check')} /><span>{r[0]}</span></li>)}</ul></div>
+      <div class="vs-l vs-them"><p class="vs-lbl">{t.cmpThem}</p><ul>{t.cmp.map((r: any[]) => <li class={r[2] === 1 ? 'ok' : ''}><Fragment set:html={svg(r[2] === 1 ? 'check' : 'minus')} /><span>{r[0]}</span></li>)}</ul></div>
+      <div class="vs-h" aria-hidden="true"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></b></div>
+      <input class="vs-in" type="range" min="4" max="96" value="50" aria-label={`${t.cmpThem} / ${t.cmpUs}`} />
+    </div>
   </section>
 
   <section id="plans" class="sec">
@@ -353,6 +357,23 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
     if (busy) raf = requestAnimationFrame(tick);
   };
   const onScroll = () => { if (!raf) raf = requestAnimationFrame(tick); };
+  // Önce / sonra sürgüsü: sürükle ya da klavyeyle kaydır; görününce bir kez kendisi gidip gelir.
+  const vs = document.querySelector<HTMLElement>('.vs');
+  if (vs) {
+    const inp = vs.querySelector<HTMLInputElement>('.vs-in')!;
+    const put = (v: number) => { v = Math.max(4, Math.min(96, v)); vs.style.setProperty('--x', v + '%'); inp.value = String(v); };
+    let drag = false;
+    const at = (x: number) => { const r = vs.getBoundingClientRect(); const v = (x - r.left) / r.width * 100; put(v); };
+    vs.addEventListener('pointerdown', e => { drag = true; vs.setPointerCapture(e.pointerId); at(e.clientX); });
+    vs.addEventListener('pointermove', e => { if (drag) at(e.clientX); });
+    vs.addEventListener('pointerup', () => { drag = false; });
+    inp.addEventListener('input', () => put(Number(inp.value)));
+    if (!reduce) new IntersectionObserver(([e], o) => {
+      if (!e.isIntersecting) return; o.disconnect();
+      let t0 = 0; const f = (ts: number) => { t0 ||= ts; const k = (ts - t0) / 1800; if (k >= 1) { put(50); return; } put(50 + Math.sin(k * Math.PI * 2) * 28); requestAnimationFrame(f); };
+      requestAnimationFrame(f);
+    }, { threshold: .4 }).observe(vs);
+  }
   tourEl?.classList.add('pin');
   const build = () => { blocks.forEach(layout); cur = -1; onScroll(); };
   addEventListener('scroll', onScroll, { passive: true });

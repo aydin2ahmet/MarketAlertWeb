@@ -186,6 +186,26 @@ svg.ar .bx { fill: none; stroke: var(--pri); stroke-width: 2.4; }
 .how .n { width: 34px; height: 34px; border-radius: 50%; background: var(--pri); color: var(--priText); display: grid; place-items: center; font-weight: 750; flex: none; }
 .how h3 { font-size: 17px; margin-bottom: 6px; font-family: var(--f); }
 .how p { color: var(--mut); font-size: 15px; }
+.vs { position: relative; display: grid; border-radius: 22px; overflow: hidden; border: 1px solid var(--bd); user-select: none; touch-action: pan-y; cursor: ew-resize; max-width: 860px; }
+.vs-l { grid-area: 1 / 1; padding: 22px 18px; }
+.vs-us { background: linear-gradient(150deg, color-mix(in srgb, var(--pri) 22%, var(--sf)), var(--sf)); }
+.vs-them { background: color-mix(in srgb, var(--bd) 55%, var(--bg)); clip-path: inset(0 calc(100% - var(--x)) 0 0); }
+.vs-lbl { font: 700 11.5px var(--mono); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; }
+.vs-us .vs-lbl { text-align: right; } .vs-them .vs-lbl { text-align: left; }
+.vs-us .vs-lbl { color: var(--ink); } .vs-them .vs-lbl { color: var(--mut); }
+.vs ul { list-style: none; margin: 0 auto; padding: 0; display: grid; gap: 2px; max-width: 560px; }
+.vs li { display: flex; gap: 10px; align-items: center; padding: 7px 0; font-size: 14.5px; }
+.vs li .ic { flex: none; width: 18px; height: 18px; }
+.vs-us .ic { color: var(--up); }
+.vs-them li { color: var(--mut); }
+.vs-them li.ok { color: var(--tx); }
+.vs-them .ic { color: #9BA3B0; }
+.vs-h { position: absolute; top: 0; bottom: 0; left: var(--x); width: 2px; background: var(--pri); transform: translateX(-1px); pointer-events: none; }
+.vs-h b { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 42px; height: 42px; border-radius: 50%; background: var(--pri); color: var(--priText); display: grid; place-items: center; box-shadow: 0 6px 20px -6px rgba(0, 0, 0, .4); }
+.vs-h svg { width: 20px; height: 20px; }
+.vs-in { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.vs:has(.vs-in:focus-visible) .vs-h b { outline: 3px solid var(--tx); outline-offset: 2px; }
+@media (min-width: 861px) { .vs-l { padding: 30px 36px; } .vs li { font-size: 16px; } }
 .cmp { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--sf); border: 1px solid var(--bd); border-radius: 18px; overflow: hidden; font-size: 15px; }
 .cmp th, .cmp td { padding: 13px 18px; text-align: start; border-top: 1px solid var(--bd); vertical-align: middle; }
 .cmp thead th { border-top: 0; font-size: 13px; color: var(--mut); font-weight: 600; }
