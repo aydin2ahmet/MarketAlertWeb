@@ -36,11 +36,13 @@ const n = t.f.length;
 // Ana sayfa turu: ekranın çevresinde kısa el yazısı notlar, kaydırdıkça kalem okuyla işaret ettikleri yere bağlanır.
 // Kutular TR ekranından ölçüldü; Arapça ekran aynalı olduğu için taraf ve x ters çevrilir.
 const HAND = ['tr', 'en', 'de', 'fr', 'es', 'pt-br', 'ru'];
-const boxes = (k: string) => ((tour as any).boxes[k] as any[]).map(([sd, x, y, w, h]) => code === 'ar' ? [sd === 'L' ? 'R' : 'L', 100 - x, y, w, h] : [sd, x, y, w, h]);
+// Çerçeveler her dilin kendi ekranından ölçülür (boxesByLang; ar zaten aynalı); yoksa TR ölçüsü kullanılır.
+const TOUR_KEYS = new Set(['price', 'types', 'multi', 'all', 'ai', 'tpl', 'ch', 'live', 'log']);
+const boxes = (k: string) => ((tour as any).boxesByLang?.[code]?.[k] as any[]) ?? ((tour as any).boxes[k] as any[]).map(([sd, x, y, w, h]) => code === 'ar' ? [sd === 'L' ? 'R' : 'L', 100 - x, y, w, h] : [sd, x, y, w, h]);
 const tourNotes = (k: string): string[] => ((tour as any).notes[code] ?? (tour as any).notes.en)[k];
 const pad = (i: number) => String(i).padStart(2, '0');
 const shot = (k: string, alt: string, eager = false, tall = false) => {
-  const version = k === 'ai' || k === 'hero-list' ? 'nav4' : k === 'hero-voice' ? '3x-conditions2' : code === 'ar' ? '3x-ar2' : k === 'ch' || k === 'log' ? '3x-text2' : '3x';
+  const version = TOUR_KEYS.has(k) ? 'cat2' : k === 'hero-list' ? 'nav4' : k === 'hero-voice' ? '3x-conditions2' : code === 'ar' ? '3x-ar2' : k === 'ch' || k === 'log' ? '3x-text2' : '3x';
   return ['light', 'dark'].map((theme, i) => {
     const src = `/shots/${code}/${theme}/${k}.webp?v=${version}`;
     const sources = shotSources(src);
