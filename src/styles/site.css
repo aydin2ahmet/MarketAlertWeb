@@ -143,6 +143,7 @@ img { max-width: 100%; }
 .step { padding: 40px 0 56px; }
 .step + .step { border-top: 1px dashed var(--bd); }
 .th { display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 640px; margin: 0 auto; }
+.meta { display: flex; align-items: center; gap: 12px; }
 .th .meta { justify-content: center; }
 .th .feature-label { margin: 12px 0 2px; }
 .step h2 { font-size: clamp(24px, 3vw, 36px); text-wrap: balance; }

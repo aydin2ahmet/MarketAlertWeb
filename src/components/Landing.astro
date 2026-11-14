@@ -39,7 +39,7 @@ const boxes = (k: string) => ((tour as any).boxes[k] as any[]).map(([sd, x, y, w
 const tourNotes = (k: string): string[] => ((tour as any).notes[code] ?? (tour as any).notes.en)[k];
 const pad = (i: number) => String(i).padStart(2, '0');
 const shot = (k: string, alt: string, eager = false, tall = false) => {
-  const version = k === 'ai' ? 'ai-nochip' : k === 'hero-voice' ? '3x-conditions2' : code === 'ar' ? '3x-ar2' : k === 'ch' || k === 'log' ? '3x-text2' : '3x';
+  const version = k === 'ai' || k === 'hero-list' ? 'nav4' : k === 'hero-voice' ? '3x-conditions2' : code === 'ar' ? '3x-ar2' : k === 'ch' || k === 'log' ? '3x-text2' : '3x';
   return ['light', 'dark'].map((theme, i) => {
     const src = `/shots/${code}/${theme}/${k}.webp?v=${version}`;
     const sources = shotSources(src);
