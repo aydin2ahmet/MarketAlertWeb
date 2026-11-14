@@ -615,6 +615,189 @@
         "tfLabel": "Zaman dilimi",
         "now": "şimdi"
       }
+    },
+    "ai-crypto-alert-assistant": {
+      "link": "Yapay zekâ alarm asistanı",
+      "title": "Yapay zekâya yazarak kripto alarmı nasıl kurulur? | MarketAlert",
+      "h1": "Yapay zekâya yazarak alarm nasıl kurdurulur?",
+      "description": "Alarmı kendi cümlenle yaz: “Tüm coinlerde RSI 30 altına inip hacim 2 katına çıkınca haber ver.” Yapay zekâ asistanı taslağı hazırlar, Alarmı kur’a basınca kurulur. Push ve Telegram.",
+      "intro": "İstediğini kendi cümlenle yazarsın; asistan coin, koşul, kanal ve tetiklemeyi içeren bir taslak hazırlar. Alarm, sen taslaktaki Alarmı kur’a basınca kurulur. İki koşullu alarmlar, [tüm coinlerde](features/all-coins-alerts) tarama ve golden cross gibi kurması zor alarmlar da tek cümle. İstersen [sesle](features/voice-crypto-alerts) de kurabilirsin.",
+      "prompt": "ETH düşerse ve RSI 30 altına inerse haber ver",
+      "exampleTitle": "Ne yazabilirsin?",
+      "caption": "Her ekran, o cümle yazıldığında uygulamada hazırlanan taslak.",
+      "steps": [
+        [
+          "Cümleni yaz",
+          "AI sekmesini aç; coini, koşulları ve istersen kanalı kendi cümlenle yaz. İki koşul da olur: “ETH düşerse ve RSI 30 altına inerse haber ver”."
+        ],
+        [
+          "Eksikse cevapla",
+          "Bir bilgi eksikse asistan tek soru sorar ve örnek cevapları çip olarak önerir. Burada fiyat eksik; “3.000 altı” çipine dokunman yeter."
+        ],
+        [
+          "Taslağı kontrol et",
+          "Coin, iki koşul, kanal ve tetikleme kartta görünür. “Telegram olsun” yazarak ya da Formda düzenle ile değiştirebilirsin."
+        ],
+        [
+          "Alarmı kur’a bas",
+          "Alarm ancak bu dokunuşla kurulur. Taslak 30 dakika bekler; süresi dolarsa yeniden hazırlatabilirsin."
+        ]
+      ],
+      "details": [
+        [
+          "Asistan neleri yapabilir?",
+          "Fiyat, yüzde değişim, RSI, EMA/SMA kesişimi, MACD, hacim ve 24 saatlik zirve/dip koşullarıyla tek ya da çok koşullu alarm hazırlar. Alarmlarını listeler, değiştirir ve kapatır; “BTC alarmım neden çalmadı?” sorusunu alarmın durumuna bakarak cevaplar ve uygulamanın nasıl çalıştığını anlatır. Değiştirmede ve kapatmada da karttaki düğmeyle onayın beklenir."
+        ],
+        [
+          "Tüm coinleri tarayan alarm",
+          "“Hangi coinlerin RSI’ı 30 altında?” gibi bir tarama isteğinde asistan anlık liste vermez; tüm coinlere bakan bir alarm önerir ve koşul tutan her coin için haber alırsın. Plus’ta hacmi en yüksek 100 coin, Pro’da tüm coinler izlenir."
+        ],
+        [
+          "Neleri yapmaz?",
+          "Yatırım tavsiyesi vermez, “bugün ne alayım?” sorusunu cevaplamaz ve canlı piyasa yorumu yapmaz. Senin onayın olmadan alarm kurmaz, değiştirmez ya da kapatmaz."
+        ]
+      ],
+      "faq": [
+        [
+          "Yapay zekâ asistanı ücretsiz mi?",
+          "MarketAlert abonelikle çalışır; Plus ve Pro 7 gün ücretsiz denenir. Yapay zekâ asistanı iki planda da var. Abone olmadan da alarmını hazırlayabilirsin; denemeyi başlatınca çalışmaya başlar."
+        ],
+        [
+          "Yazdığım anda alarm kurulur mu?",
+          "Hayır. Önce taslak gelir; Alarmı kur’a basınca kurulur. Basmazsan taslağın süresi 30 dakika sonra dolar."
+        ],
+        [
+          "Kurduğum alarmı yazarak değiştirebilir miyim?",
+          "Evet. “BTC 70 bin alarmımı 72 bin yap” yazarsın; eski ve yeni değer kartta görünür, Değişikliği kaydet’e basınca kaydedilir."
+        ],
+        [
+          "Hazır şablon çipleri yapay zekâ hakkı harcar mı?",
+          "Hayır. Sohbetteki hazır şablon çiplerine dokunmak yapay zekâ hakkından düşmez."
+        ],
+        [
+          "Sesli asistandan farkı ne?",
+          "Yazarak kurduğunda her işlemi karttaki düğmeyle onaylarsın. Sesli asistan ise söylediğini doğrudan yapar; ayrıntılar [sesli alarm](features/voice-crypto-alerts) sayfasında."
+        ]
+      ],
+      "related": [
+        "features/voice-crypto-alerts",
+        "features/all-coins-alerts",
+        "features/multi-condition-alerts",
+        "features/rsi-alerts",
+        "features/ema-crossover-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 alarm; tekrarlı alarm, alarm başına 3 koşul ve ilk 100 coinde 2 tüm coinler alarmı. Push ve Telegram."
+        ],
+        [
+          "Pro",
+          "100 alarm; alarm başına 5 koşul ve tüm coinlerde 10 tüm coinler alarmı. Push, Telegram ve imzalı webhook."
+        ]
+      ],
+      "ai": {
+        "kicker": "YAPAY ZEKÂ · YAZARAK KUR · PLUS / PRO",
+        "tap": "Bir baloncuğa dokun, o cümleyle hazırlanan alarmı gör.",
+        "bub": [
+          "Tüm coinlerde RSI 30 altı + hacim 2 katı",
+          "15 dakikada %5 yükselen coinler",
+          "BTC 100 bin olunca",
+          "ETH 3.000 altı + RSI 30 altı",
+          "24 saatin zirvesini kıran coinler",
+          "BTC golden cross"
+        ],
+        "wheel": [
+          "Tüm coin RSI",
+          "Pump",
+          "BTC 100 bin",
+          "ETH + RSI",
+          "24s zirve",
+          "Golden cross"
+        ],
+        "what": [
+          "İki koşul, tüm coinler: ikisi aynı anda tutan her coin için haber gelir.",
+          "Tüm coinlere bakar; hangisi 15 dakikada %5 yükselirse haber verir.",
+          "Tek koşul, tek coin: fiyat 100.000 USDT üstüne çıkınca bir kez çalar.",
+          "Fiyat ve RSI aynı anda tutunca haber verir.",
+          "Tüm coinlerde fiyat 24 saatin yeni tepesine çıkınca haber gelir.",
+          "Günlük grafikte SMA(50), SMA(200)’ü yukarı kesince haber verir."
+        ],
+        "dTitle": "Ne yazmak istersin?",
+        "dLead": "Bir cümleyi sürükleyip Zilbo’nun üstüne bırak ya da dokun; uygulamada hazırlanan taslak açılsın.",
+        "wTitle": "Çarkı çevir",
+        "wLead": "Kurması zor altı alarmdan biri gelsin.",
+        "spin": "Çevir",
+        "pTitle": "Dört adımda alarm",
+        "pLead": "Aşağı kaydır, Zilbo seni adım adım götürsün.",
+        "jTitle": "Asistan ne yapar, ne yapmaz?",
+        "jLead": "Zilbo ayıklasın.",
+        "yes": "Yapar",
+        "no": "Yapmaz",
+        "again": "Tekrar",
+        "cards": [
+          [
+            "Cümleni alarma çevirir",
+            "fiyat, RSI, EMA, MACD, hacim…",
+            1
+          ],
+          [
+            "Al-sat tavsiyesi verir",
+            "“Bugün BTC alınır mı?”",
+            0
+          ],
+          [
+            "Tüm coinleri tarayan alarm kurar",
+            "“Hangi coinlerin RSI’ı 30 altında?”",
+            1
+          ],
+          [
+            "Onaysız alarm kurar",
+            "Alarmı kur’a basman şart",
+            0
+          ],
+          [
+            "Eksikse sorar",
+            "tek soru + cevap çipleri",
+            1
+          ],
+          [
+            "Canlı piyasa yorumu yapar",
+            "anlık veriye bakmaz",
+            0
+          ],
+          [
+            "Alarmlarını listeler, değiştirir, kapatır",
+            "senin onayınla",
+            1
+          ],
+          [
+            "Uygulama dışı iş yapar",
+            "haber, hatırlatma…",
+            0
+          ],
+          [
+            "“Neden çalmadı?” sorusunu cevaplar",
+            "alarmın durumundan",
+            1
+          ]
+        ],
+        "alt": "“{q}” cümlesiyle uygulamada hazırlanan alarm taslağı",
+        "flowAlt": [
+          "AI sohbetinde yazılan iki koşullu ETH isteği",
+          "Asistanın eksik fiyatı sorduğu soru ve cevap çipleri",
+          "ETH fiyat ve RSI koşullu alarm taslağı",
+          "Alarmı kur’a basınca kurulan alarm"
+        ],
+        "q": [
+          "Tüm coinlerde RSI 30 altına inip hacim 2 katına çıkınca haber ver",
+          "15 dakikada %5 yükselen coinleri haber ver",
+          "BTC 100 bin olunca haber ver",
+          "ETH 3.000 altına inip RSI 30 altına inerse haber ver",
+          "Hangi coin 24 saatin zirvesini kırarsa haber ver",
+          "BTC'de golden cross olunca haber ver"
+        ]
+      }
     }
   },
   "de": {
@@ -1228,6 +1411,189 @@
         "sDay": "Die Kreuzung passiert um {x}. Die 1d-Kerze schließt einmal am Tag, um {close} ({tz}); dann kommt die Mitteilung.",
         "tfLabel": "Zeitrahmen",
         "now": "jetzt"
+      }
+    },
+    "ai-crypto-alert-assistant": {
+      "link": "KI-Alarmassistent",
+      "title": "Krypto-Alarme per KI-Chat einrichten | MarketAlert",
+      "h1": "Wie richte ich einen Alarm ein, indem ich der KI schreibe?",
+      "description": "Schreib den Alarm in eigenen Worten: „Sag mir Bescheid, wenn bei irgendeinem Coin der RSI unter 30 fällt und sich das Volumen verdoppelt.“ Der KI-Assistent bereitet einen Entwurf vor; mit Alarm setzen ist er aktiv. Push und Telegram.",
+      "intro": "Du schreibst in eigenen Worten, was du willst; der Assistent bereitet einen Entwurf mit Coin, Bedingungen, Kanal und Auslösung vor. Aktiv wird der Alarm erst, wenn du im Entwurf auf Alarm setzen tippst. Alarme mit zwei Bedingungen, Scans über [alle Coins](features/all-coins-alerts) und schwierige Fälle wie ein Golden Cross brauchen nur einen Satz. Du kannst sie auch [per Sprache](features/voice-crypto-alerts) einrichten.",
+      "prompt": "Sag mir Bescheid, wenn ETH fällt und der RSI unter 30 sinkt",
+      "exampleTitle": "Was kannst du schreiben?",
+      "caption": "Jeder Bildschirm ist der Entwurf, den die App zu diesem Satz vorbereitet.",
+      "steps": [
+        [
+          "Schreib deinen Satz",
+          "Öffne den KI-Tab und schreib Coin, Bedingungen und, wenn du willst, den Kanal in eigenen Worten. Auch zwei Bedingungen gehen: „Sag mir Bescheid, wenn ETH fällt und der RSI unter 30 sinkt“."
+        ],
+        [
+          "Antworte, wenn etwas fehlt",
+          "Fehlt eine Angabe, stellt der Assistent eine Frage und schlägt Antworten als Chips vor. Hier fehlt der Preis; ein Tipp auf „Unter 3.000“ genügt."
+        ],
+        [
+          "Prüf den Entwurf",
+          "Die Karte zeigt Coin, beide Bedingungen, Kanal und Auslösung. Ändern kannst du sie, indem du „per Telegram“ schreibst oder Im Formular bearbeiten nutzt."
+        ],
+        [
+          "Tipp auf Alarm setzen",
+          "Erst dieser Tipp setzt den Alarm. Der Entwurf wartet 30 Minuten; ist er abgelaufen, lässt du ihn neu vorbereiten."
+        ]
+      ],
+      "details": [
+        [
+          "Was kann der Assistent?",
+          "Er bereitet Alarme mit einer oder mehreren Bedingungen vor: Preis, prozentuale Änderung, RSI, EMA/SMA-Kreuzung, MACD, Volumen und 24-Stunden-Hoch/-Tief. Er listet, ändert und deaktiviert deine Alarme, beantwortet „Warum hat mein BTC-Alarm nicht ausgelöst?“ anhand des Alarmstatus und erklärt die App. Auch Änderungen und Deaktivierungen warten auf deinen Tipp auf der Karte."
+        ],
+        [
+          "Alarme, die alle Coins scannen",
+          "Bei einer Scan-Frage wie „Welche Coins haben einen RSI unter 30?“ liefert der Assistent keine Live-Liste; er schlägt einen Alarm für alle Coins vor, damit du von jedem Coin hörst, der die Bedingung erfüllt. Plus beobachtet die 100 Coins mit dem höchsten Volumen, Pro alle Coins."
+        ],
+        [
+          "Was macht er nicht?",
+          "Er gibt keine Anlageberatung, beantwortet nicht „Was soll ich heute kaufen?“ und kommentiert nicht den Live-Markt. Ohne deine Bestätigung setzt, ändert oder deaktiviert er keinen Alarm."
+        ]
+      ],
+      "faq": [
+        [
+          "Ist der KI-Assistent kostenlos?",
+          "MarketAlert funktioniert im Abo; Plus und Pro kannst du 7 Tage kostenlos testen. Der KI-Assistent ist in beiden Plänen enthalten. Du kannst deinen Alarm auch ohne Abo vorbereiten; er läuft, sobald du den Test startest."
+        ],
+        [
+          "Wird der Alarm sofort beim Schreiben gesetzt?",
+          "Nein. Zuerst kommt ein Entwurf; gesetzt wird der Alarm, wenn du auf Alarm setzen tippst. Tust du das nicht, läuft der Entwurf nach 30 Minuten ab."
+        ],
+        [
+          "Kann ich einen Alarm per Text ändern?",
+          "Ja. Schreib „ändere meinen BTC-70.000-Alarm auf 72.000“; alter und neuer Wert stehen auf der Karte, mit Änderung speichern wird gespeichert."
+        ],
+        [
+          "Verbrauchen die Vorlagen-Chips KI-Nachrichten?",
+          "Nein. Ein Tipp auf einen fertigen Vorlagen-Chip im Chat zählt nicht zu deinen KI-Nachrichten."
+        ],
+        [
+          "Was ist der Unterschied zum Sprachassistenten?",
+          "Beim Schreiben bestätigst du jede Aktion mit der Schaltfläche auf der Karte. Der Sprachassistent führt direkt aus, was du sagst; mehr dazu auf der Seite [Sprachalarme](features/voice-crypto-alerts)."
+        ]
+      ],
+      "related": [
+        "features/voice-crypto-alerts",
+        "features/all-coins-alerts",
+        "features/multi-condition-alerts",
+        "features/rsi-alerts",
+        "features/ema-crossover-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 Alarme; wiederholende Alarme, bis zu 3 Bedingungen pro Alarm und 2 Alle-Coins-Alarme für die Top 100. Push und Telegram."
+        ],
+        [
+          "Pro",
+          "100 Alarme; bis zu 5 Bedingungen pro Alarm und 10 Alle-Coins-Alarme für alle Coins. Push, Telegram und signierter Webhook."
+        ]
+      ],
+      "ai": {
+        "kicker": "KI · PER TEXT EINRICHTEN · PLUS / PRO",
+        "tap": "Tipp auf eine Blase und sieh den Alarm, der aus diesem Satz entsteht.",
+        "bub": [
+          "Alle Coins: RSI unter 30 + 2-faches Volumen",
+          "Coins mit 5 % Plus in 15 Minuten",
+          "Wenn BTC 100.000 erreicht",
+          "ETH unter 3.000 + RSI unter 30",
+          "Coins über ihrem 24-Std.-Hoch",
+          "BTC Golden Cross"
+        ],
+        "wheel": [
+          "Alle-Coins-RSI",
+          "Pump",
+          "BTC 100.000",
+          "ETH + RSI",
+          "24-Std.-Hoch",
+          "Golden Cross"
+        ],
+        "what": [
+          "Zwei Bedingungen, alle Coins: Du hörst von jedem Coin, bei dem beide gleichzeitig zutreffen.",
+          "Beobachtet alle Coins und meldet, welcher in 15 Minuten um 5 % steigt.",
+          "Eine Bedingung, ein Coin: löst einmal aus, wenn der Preis über 100.000 USDT steigt.",
+          "Meldet sich, wenn Preis und RSI gleichzeitig zutreffen.",
+          "Meldet sich, wenn ein Coin ein neues 24-Stunden-Hoch erreicht.",
+          "Meldet sich, wenn im Tageschart der SMA(50) den SMA(200) nach oben kreuzt."
+        ],
+        "dTitle": "Was möchtest du schreiben?",
+        "dLead": "Zieh einen Satz auf Zilbo oder tipp ihn an, um den Entwurf aus der App zu öffnen.",
+        "wTitle": "Dreh das Rad",
+        "wLead": "Einer von sechs schwierigen Alarmen.",
+        "spin": "Drehen",
+        "pTitle": "Ein Alarm in vier Schritten",
+        "pLead": "Scroll nach unten, Zilbo führt dich Schritt für Schritt.",
+        "jTitle": "Was macht der Assistent, was nicht?",
+        "jLead": "Zilbo sortiert.",
+        "yes": "Macht er",
+        "no": "Macht er nicht",
+        "again": "Nochmal",
+        "cards": [
+          [
+            "Macht aus deinem Satz einen Alarm",
+            "Preis, RSI, EMA, MACD, Volumen…",
+            1
+          ],
+          [
+            "Gibt Kauf-/Verkaufstipps",
+            "„Soll ich heute BTC kaufen?“",
+            0
+          ],
+          [
+            "Setzt Alarme, die alle Coins scannen",
+            "„Welche Coins haben RSI unter 30?“",
+            1
+          ],
+          [
+            "Setzt Alarme ohne Bestätigung",
+            "Alarm setzen ist Pflicht",
+            0
+          ],
+          [
+            "Fragt nach, wenn etwas fehlt",
+            "eine Frage + Antwort-Chips",
+            1
+          ],
+          [
+            "Kommentiert den Live-Markt",
+            "sieht keine Live-Daten",
+            0
+          ],
+          [
+            "Listet, ändert und deaktiviert deine Alarme",
+            "mit deiner Bestätigung",
+            1
+          ],
+          [
+            "Erledigt Dinge außerhalb der App",
+            "News, Erinnerungen…",
+            0
+          ],
+          [
+            "Beantwortet „Warum kam nichts?“",
+            "aus dem Alarmstatus",
+            1
+          ]
+        ],
+        "alt": "Alarmentwurf aus „{q}“ in der App",
+        "flowAlt": [
+          "Eine ETH-Anfrage mit zwei Bedingungen im KI-Chat",
+          "Der Assistent fragt nach dem fehlenden Preis, mit Antwort-Chips",
+          "Alarmentwurf mit ETH-Preis- und RSI-Bedingung",
+          "Der Alarm nach dem Tipp auf Alarm setzen"
+        ],
+        "q": [
+          "Sag mir Bescheid, wenn bei irgendeinem Coin der RSI unter 30 fällt und sich das Volumen verdoppelt",
+          "Melde mir Coins, die in 15 Minuten um 5 % steigen",
+          "Sag mir Bescheid, wenn BTC 100.000 erreicht",
+          "Sag mir Bescheid, wenn ETH unter 3.000 fällt und der RSI unter 30 sinkt",
+          "Sag mir Bescheid, wenn ein Coin sein 24-Stunden-Hoch bricht",
+          "Sag mir Bescheid beim Golden Cross von BTC"
+        ]
       }
     }
   },
@@ -1843,6 +2209,189 @@
         "tfLabel": "Unité de temps",
         "now": "maintenant"
       }
+    },
+    "ai-crypto-alert-assistant": {
+      "link": "Assistant d’alertes IA",
+      "title": "Créer des alertes crypto en écrivant à l’IA | MarketAlert",
+      "h1": "Comment créer une alerte en écrivant à l’IA ?",
+      "description": "Écrivez l’alerte avec vos mots : « Préviens-moi quand une crypto a un RSI sous 30 et un volume qui double. » L’assistant IA prépare un brouillon ; l’alerte est créée quand vous touchez Créer l’alerte. Push et Telegram.",
+      "intro": "Vous écrivez ce que vous voulez avec vos mots ; l’assistant prépare un brouillon avec la crypto, les conditions, le canal et le déclenchement. L’alerte n’est créée que lorsque vous touchez Créer l’alerte sur le brouillon. Les alertes à deux conditions, les scans sur [toutes les cryptos](features/all-coins-alerts) et les cas difficiles comme un golden cross tiennent en une phrase. Vous pouvez aussi les créer [à la voix](features/voice-crypto-alerts).",
+      "prompt": "Préviens-moi si ETH baisse et que le RSI passe sous 30",
+      "exampleTitle": "Que pouvez-vous écrire ?",
+      "caption": "Chaque écran est le brouillon que l’app prépare quand cette phrase est écrite.",
+      "steps": [
+        [
+          "Écrivez votre phrase",
+          "Ouvrez l’onglet IA et écrivez la crypto, les conditions et, si vous voulez, le canal avec vos mots. Deux conditions, c’est possible : « Préviens-moi si ETH baisse et que le RSI passe sous 30 »."
+        ],
+        [
+          "Répondez s’il manque quelque chose",
+          "S’il manque une information, l’assistant pose une seule question et propose des réponses en chips. Ici, le prix manque ; il suffit de toucher « Sous 3 000 »."
+        ],
+        [
+          "Vérifiez le brouillon",
+          "La carte affiche la crypto, les deux conditions, le canal et le déclenchement. Modifiez-la en écrivant « sur Telegram » ou avec Modifier dans le formulaire."
+        ],
+        [
+          "Touchez Créer l’alerte",
+          "L’alerte n’est créée qu’avec ce geste. Le brouillon attend 30 minutes ; s’il expire, vous pouvez le faire préparer à nouveau."
+        ]
+      ],
+      "details": [
+        [
+          "Que peut faire l’assistant ?",
+          "Il prépare des alertes à une ou plusieurs conditions : prix, variation en pourcentage, RSI, croisement EMA/SMA, MACD, volume et plus haut/plus bas sur 24 heures. Il liste, modifie et désactive vos alertes, répond à « pourquoi mon alerte BTC ne s’est pas déclenchée ? » en regardant l’état de l’alerte et explique le fonctionnement de l’app. Les modifications et désactivations attendent aussi votre geste sur la carte."
+        ],
+        [
+          "Des alertes qui scannent toutes les cryptos",
+          "Pour une demande de scan comme « quelles cryptos ont un RSI sous 30 ? », l’assistant ne donne pas de liste en direct ; il propose une alerte qui surveille toutes les cryptos et vous êtes prévenu pour chaque crypto qui remplit la condition. Plus surveille les 100 cryptos au plus fort volume, Pro toutes les cryptos."
+        ],
+        [
+          "Que ne fait-il pas ?",
+          "Il ne donne pas de conseil en investissement, ne répond pas à « que dois-je acheter aujourd’hui ? » et ne commente pas le marché en direct. Il ne crée, ne modifie ni ne désactive jamais une alerte sans votre accord."
+        ]
+      ],
+      "faq": [
+        [
+          "L’assistant IA est-il gratuit ?",
+          "MarketAlert fonctionne par abonnement ; Plus et Pro incluent 7 jours d’essai gratuit. L’assistant IA est inclus dans les deux offres. Vous pouvez préparer votre alerte sans vous abonner ; elle commence à fonctionner quand vous lancez l’essai."
+        ],
+        [
+          "L’alerte est-elle créée dès que j’écris ?",
+          "Non. Un brouillon arrive d’abord ; l’alerte est créée quand vous touchez Créer l’alerte. Sinon, le brouillon expire au bout de 30 minutes."
+        ],
+        [
+          "Puis-je modifier une alerte en écrivant ?",
+          "Oui. Écrivez « passe mon alerte BTC 70 000 à 72 000 » ; l’ancienne et la nouvelle valeur s’affichent sur la carte, et la modification est enregistrée quand vous touchez Enregistrer."
+        ],
+        [
+          "Les chips de modèles consomment-ils des messages IA ?",
+          "Non. Toucher un chip de modèle prêt à l’emploi dans le chat ne compte pas dans vos messages IA."
+        ],
+        [
+          "Quelle différence avec l’assistant vocal ?",
+          "À l’écrit, vous validez chaque action avec le bouton de la carte. L’assistant vocal fait directement ce que vous dites ; détails sur la page [alertes vocales](features/voice-crypto-alerts)."
+        ]
+      ],
+      "related": [
+        "features/voice-crypto-alerts",
+        "features/all-coins-alerts",
+        "features/multi-condition-alerts",
+        "features/rsi-alerts",
+        "features/ema-crossover-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 alertes ; alertes répétées, jusqu’à 3 conditions par alerte et 2 alertes toutes cryptos sur le top 100. Push et Telegram."
+        ],
+        [
+          "Pro",
+          "100 alertes ; jusqu’à 5 conditions par alerte et 10 alertes toutes cryptos sur l’ensemble des cryptos. Push, Telegram et webhook signé."
+        ]
+      ],
+      "ai": {
+        "kicker": "IA · CRÉER EN ÉCRIVANT · PLUS / PRO",
+        "tap": "Touchez une bulle pour voir l’alerte préparée avec cette phrase.",
+        "bub": [
+          "Toutes les cryptos : RSI sous 30 + volume x2",
+          "Cryptos en hausse de 5 % en 15 minutes",
+          "Quand BTC atteint 100 000",
+          "ETH sous 3 000 + RSI sous 30",
+          "Cryptos qui cassent leur plus haut 24 h",
+          "Golden cross BTC"
+        ],
+        "wheel": [
+          "RSI toutes",
+          "Pump",
+          "BTC 100 000",
+          "ETH + RSI",
+          "Plus haut 24 h",
+          "Golden cross"
+        ],
+        "what": [
+          "Deux conditions, toutes les cryptos : vous êtes prévenu pour chaque crypto où les deux sont vraies en même temps.",
+          "Surveille toutes les cryptos et indique laquelle monte de 5 % en 15 minutes.",
+          "Une condition, une crypto : se déclenche une fois quand le prix dépasse 100 000 USDT.",
+          "Vous prévient quand le prix et le RSI sont vrais en même temps.",
+          "Vous prévient quand une crypto atteint un nouveau plus haut sur 24 heures.",
+          "Vous prévient quand la SMA(50) croise à la hausse la SMA(200) sur le graphique journalier."
+        ],
+        "dTitle": "Que voulez-vous écrire ?",
+        "dLead": "Glissez une phrase sur Zilbo ou touchez-la pour ouvrir le brouillon préparé par l’app.",
+        "wTitle": "Faites tourner la roue",
+        "wLead": "Une des six alertes difficiles à créer.",
+        "spin": "Tourner",
+        "pTitle": "Une alerte en quatre étapes",
+        "pLead": "Faites défiler, Zilbo vous guide étape par étape.",
+        "jTitle": "Ce que fait l’assistant, et ce qu’il ne fait pas",
+        "jLead": "Zilbo fait le tri.",
+        "yes": "Il fait",
+        "no": "Il ne fait pas",
+        "again": "Recommencer",
+        "cards": [
+          [
+            "Transforme votre phrase en alerte",
+            "prix, RSI, EMA, MACD, volume…",
+            1
+          ],
+          [
+            "Donne des conseils d’achat ou de vente",
+            "« J’achète du BTC aujourd’hui ? »",
+            0
+          ],
+          [
+            "Crée des alertes qui scannent toutes les cryptos",
+            "« Quelles cryptos ont un RSI sous 30 ? »",
+            1
+          ],
+          [
+            "Crée des alertes sans accord",
+            "Créer l’alerte est obligatoire",
+            0
+          ],
+          [
+            "Pose une question s’il manque quelque chose",
+            "une question + chips de réponse",
+            1
+          ],
+          [
+            "Commente le marché en direct",
+            "ne regarde pas les données en direct",
+            0
+          ],
+          [
+            "Liste, modifie et désactive vos alertes",
+            "avec votre accord",
+            1
+          ],
+          [
+            "Fait des choses hors de l’app",
+            "actualités, rappels…",
+            0
+          ],
+          [
+            "Répond à « pourquoi rien ? »",
+            "d’après l’état de l’alerte",
+            1
+          ]
+        ],
+        "alt": "Brouillon d’alerte préparé dans l’app avec « {q} »",
+        "flowAlt": [
+          "Une demande ETH à deux conditions écrite dans le chat IA",
+          "L’assistant demande le prix manquant, avec des chips de réponse",
+          "Brouillon d’alerte avec conditions de prix et de RSI sur ETH",
+          "L’alerte créée après avoir touché Créer l’alerte"
+        ],
+        "q": [
+          "Préviens-moi quand une crypto a un RSI sous 30 et un volume qui double",
+          "Signale-moi les cryptos qui montent de 5 % en 15 minutes",
+          "Préviens-moi quand BTC atteint 100 000",
+          "Préviens-moi quand ETH passe sous 3 000 et que le RSI passe sous 30",
+          "Préviens-moi quand une crypto casse son plus haut sur 24 h",
+          "Préviens-moi lors d’un golden cross sur BTC"
+        ]
+      }
     }
   },
   "es": {
@@ -2456,6 +3005,189 @@
         "sDay": "El cruce ocurre a las {x}. La vela de 1d cierra una vez al día, a las {close} ({tz}); el aviso llega en ese cierre.",
         "tfLabel": "Temporalidad",
         "now": "ahora"
+      }
+    },
+    "ai-crypto-alert-assistant": {
+      "link": "Asistente de alertas con IA",
+      "title": "Cómo crear alertas cripto escribiendo a la IA | MarketAlert",
+      "h1": "¿Cómo creo una alerta escribiéndole a la IA?",
+      "description": "Escribe la alerta con tus palabras: «Avísame cuando cualquier moneda tenga el RSI por debajo de 30 y el volumen se duplique». El asistente de IA prepara un borrador y la alerta se crea al tocar Crear alerta. Push y Telegram.",
+      "intro": "Escribes lo que quieres con tus palabras; el asistente prepara un borrador con la moneda, las condiciones, el canal y el disparo. La alerta se crea solo cuando tocas Crear alerta en el borrador. Las alertas de dos condiciones, los escaneos en [todas las monedas](features/all-coins-alerts) y casos difíciles como un golden cross caben en una frase. También puedes crearlas [por voz](features/voice-crypto-alerts).",
+      "prompt": "Avísame si ETH baja y el RSI cae por debajo de 30",
+      "exampleTitle": "¿Qué puedes escribir?",
+      "caption": "Cada pantalla es el borrador que prepara la app cuando se escribe esa frase.",
+      "steps": [
+        [
+          "Escribe tu frase",
+          "Abre la pestaña de IA y escribe la moneda, las condiciones y, si quieres, el canal con tus palabras. También vale con dos condiciones: «Avísame si ETH baja y el RSI cae por debajo de 30»."
+        ],
+        [
+          "Responde si falta algo",
+          "Si falta un dato, el asistente hace una sola pregunta y sugiere respuestas como chips. Aquí falta el precio; basta con tocar «Por debajo de 3000»."
+        ],
+        [
+          "Revisa el borrador",
+          "La tarjeta muestra la moneda, las dos condiciones, el canal y el disparo. Puedes cambiarla escribiendo «por Telegram» o con Editar en el formulario."
+        ],
+        [
+          "Toca Crear alerta",
+          "La alerta solo se crea con este toque. El borrador espera 30 minutos; si caduca, puedes pedir que se prepare de nuevo."
+        ]
+      ],
+      "details": [
+        [
+          "¿Qué puede hacer el asistente?",
+          "Prepara alertas de una o varias condiciones con precio, cambio porcentual, RSI, cruce EMA/SMA, MACD, volumen y máximo/mínimo de 24 horas. Lista, cambia y desactiva tus alertas, responde «¿por qué no saltó mi alerta de BTC?» mirando el estado de la alerta y explica cómo funciona la app. Los cambios y las desactivaciones también esperan tu toque en la tarjeta."
+        ],
+        [
+          "Alertas que escanean todas las monedas",
+          "Ante una petición de escaneo como «¿qué monedas tienen el RSI por debajo de 30?», el asistente no da una lista en vivo; propone una alerta que vigila todas las monedas y recibes aviso de cada moneda que cumpla la condición. Plus vigila las 100 monedas con más volumen; Pro, todas."
+        ],
+        [
+          "¿Qué no hace?",
+          "No da consejos de inversión, no responde a «¿qué compro hoy?» y no comenta el mercado en vivo. Nunca crea, cambia ni desactiva una alerta sin tu aprobación."
+        ]
+      ],
+      "faq": [
+        [
+          "¿El asistente de IA es gratis?",
+          "MarketAlert funciona con suscripción; Plus y Pro incluyen 7 días de prueba gratis. El asistente de IA está en los dos planes. Puedes preparar tu alerta sin suscribirte; empieza a funcionar cuando inicias la prueba."
+        ],
+        [
+          "¿La alerta se crea en cuanto escribo?",
+          "No. Primero llega un borrador; la alerta se crea al tocar Crear alerta. Si no lo tocas, el borrador caduca a los 30 minutos."
+        ],
+        [
+          "¿Puedo cambiar una alerta escribiendo?",
+          "Sí. Escribe «cambia mi alerta de BTC 70.000 a 72.000»; el valor anterior y el nuevo aparecen en la tarjeta y se guarda al tocar Guardar cambios."
+        ],
+        [
+          "¿Los chips de plantilla gastan mensajes de IA?",
+          "No. Tocar un chip de plantilla en el chat no descuenta de tus mensajes de IA."
+        ],
+        [
+          "¿En qué se diferencia del asistente de voz?",
+          "Al escribir, apruebas cada acción con el botón de la tarjeta. El asistente de voz hace directamente lo que dices; los detalles están en la página de [alertas por voz](features/voice-crypto-alerts)."
+        ]
+      ],
+      "related": [
+        "features/voice-crypto-alerts",
+        "features/all-coins-alerts",
+        "features/multi-condition-alerts",
+        "features/rsi-alerts",
+        "features/ema-crossover-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 alertas; alertas repetidas, hasta 3 condiciones por alerta y 2 alertas de todas las monedas en el top 100. Push y Telegram."
+        ],
+        [
+          "Pro",
+          "100 alertas; hasta 5 condiciones por alerta y 10 alertas de todas las monedas sobre todas las monedas. Push, Telegram y webhook firmado."
+        ]
+      ],
+      "ai": {
+        "kicker": "IA · CREAR ESCRIBIENDO · PLUS / PRO",
+        "tap": "Toca una burbuja y mira la alerta preparada con esa frase.",
+        "bub": [
+          "Todas las monedas: RSI bajo 30 + volumen x2",
+          "Monedas que suben 5 % en 15 minutos",
+          "Cuando BTC llegue a 100.000",
+          "ETH bajo 3000 + RSI bajo 30",
+          "Monedas que rompen su máximo de 24 h",
+          "Golden cross de BTC"
+        ],
+        "wheel": [
+          "RSI todas",
+          "Pump",
+          "BTC 100.000",
+          "ETH + RSI",
+          "Máximo 24 h",
+          "Golden cross"
+        ],
+        "what": [
+          "Dos condiciones, todas las monedas: te avisa de cada moneda donde se cumplen las dos a la vez.",
+          "Vigila todas las monedas y te dice cuál sube 5 % en 15 minutos.",
+          "Una condición, una moneda: salta una vez cuando el precio supera 100.000 USDT.",
+          "Te avisa cuando el precio y el RSI se cumplen a la vez.",
+          "Te avisa cuando cualquier moneda marca un nuevo máximo de 24 horas.",
+          "Te avisa cuando la SMA(50) cruza al alza la SMA(200) en el gráfico diario."
+        ],
+        "dTitle": "¿Qué quieres escribir?",
+        "dLead": "Arrastra una frase sobre Zilbo o tócala para abrir el borrador que prepara la app.",
+        "wTitle": "Gira la ruleta",
+        "wLead": "Te toca una de seis alertas difíciles.",
+        "spin": "Girar",
+        "pTitle": "Una alerta en cuatro pasos",
+        "pLead": "Desplázate hacia abajo y Zilbo te lleva paso a paso.",
+        "jTitle": "¿Qué hace el asistente y qué no?",
+        "jLead": "Que Zilbo lo ordene.",
+        "yes": "Sí hace",
+        "no": "No hace",
+        "again": "Otra vez",
+        "cards": [
+          [
+            "Convierte tu frase en una alerta",
+            "precio, RSI, EMA, MACD, volumen…",
+            1
+          ],
+          [
+            "Da consejos de compra o venta",
+            "«¿Compro BTC hoy?»",
+            0
+          ],
+          [
+            "Crea alertas que escanean todas las monedas",
+            "«¿Qué monedas tienen RSI bajo 30?»",
+            1
+          ],
+          [
+            "Crea alertas sin aprobación",
+            "hay que tocar Crear alerta",
+            0
+          ],
+          [
+            "Pregunta si falta algo",
+            "una pregunta + chips de respuesta",
+            1
+          ],
+          [
+            "Comenta el mercado en vivo",
+            "no mira datos en vivo",
+            0
+          ],
+          [
+            "Lista, cambia y desactiva tus alertas",
+            "con tu aprobación",
+            1
+          ],
+          [
+            "Hace cosas fuera de la app",
+            "noticias, recordatorios…",
+            0
+          ],
+          [
+            "Responde «¿por qué no saltó?»",
+            "según el estado de la alerta",
+            1
+          ]
+        ],
+        "alt": "Borrador de alerta preparado en la app con «{q}»",
+        "flowAlt": [
+          "Petición de ETH con dos condiciones escrita en el chat de IA",
+          "El asistente pregunta el precio que falta, con chips de respuesta",
+          "Borrador de alerta con condiciones de precio y RSI de ETH",
+          "La alerta creada tras tocar Crear alerta"
+        ],
+        "q": [
+          "Avísame cuando cualquier moneda tenga el RSI por debajo de 30 y el volumen se duplique",
+          "Avísame de las monedas que suban un 5 % en 15 minutos",
+          "Avísame cuando BTC llegue a 100.000",
+          "Avísame cuando ETH baje de 3.000 y el RSI caiga por debajo de 30",
+          "Avísame cuando una moneda rompa su máximo de 24 horas",
+          "Avísame del golden cross de BTC"
+        ]
       }
     }
   },
@@ -3071,6 +3803,189 @@
         "tfLabel": "Tempo gráfico",
         "now": "agora"
       }
+    },
+    "ai-crypto-alert-assistant": {
+      "link": "Assistente de alertas com IA",
+      "title": "Como criar alertas cripto escrevendo para a IA | MarketAlert",
+      "h1": "Como crio um alerta escrevendo para a IA?",
+      "description": "Escreva o alerta com suas palavras: “Me avise quando qualquer moeda tiver RSI abaixo de 30 e o volume dobrar.” O assistente de IA prepara um rascunho e o alerta é criado ao tocar em Criar alerta. Push e Telegram.",
+      "intro": "Você escreve o que quer com suas palavras; o assistente prepara um rascunho com a moeda, as condições, o canal e o disparo. O alerta só é criado quando você toca em Criar alerta no rascunho. Alertas de duas condições, varreduras em [todas as moedas](features/all-coins-alerts) e casos difíceis como um golden cross cabem em uma frase. Você também pode criá-los [por voz](features/voice-crypto-alerts).",
+      "prompt": "Me avise se o ETH cair e o RSI ficar abaixo de 30",
+      "exampleTitle": "O que você pode escrever?",
+      "caption": "Cada tela é o rascunho que o app prepara quando aquela frase é escrita.",
+      "steps": [
+        [
+          "Escreva sua frase",
+          "Abra a aba de IA e escreva a moeda, as condições e, se quiser, o canal com suas palavras. Duas condições também funcionam: “Me avise se o ETH cair e o RSI ficar abaixo de 30”."
+        ],
+        [
+          "Responda se faltar algo",
+          "Se faltar uma informação, o assistente faz uma única pergunta e sugere respostas como chips. Aqui falta o preço; basta tocar em “Abaixo de 3.000”."
+        ],
+        [
+          "Confira o rascunho",
+          "O cartão mostra a moeda, as duas condições, o canal e o disparo. Você pode mudar escrevendo “pelo Telegram” ou com Editar no formulário."
+        ],
+        [
+          "Toque em Criar alerta",
+          "O alerta só é criado com esse toque. O rascunho espera 30 minutos; se expirar, você pode pedir para prepará-lo de novo."
+        ]
+      ],
+      "details": [
+        [
+          "O que o assistente faz?",
+          "Prepara alertas de uma ou várias condições com preço, variação percentual, RSI, cruzamento EMA/SMA, MACD, volume e máxima/mínima de 24 horas. Lista, altera e desativa seus alertas, responde “por que meu alerta de BTC não disparou?” olhando o status do alerta e explica como o app funciona. Alterações e desativações também esperam seu toque no cartão."
+        ],
+        [
+          "Alertas que varrem todas as moedas",
+          "Para um pedido de varredura como “quais moedas estão com RSI abaixo de 30?”, o assistente não dá uma lista ao vivo; ele propõe um alerta que acompanha todas as moedas, e você é avisado de cada moeda que cumprir a condição. O Plus acompanha as 100 moedas com maior volume; o Pro, todas."
+        ],
+        [
+          "O que ele não faz?",
+          "Não dá conselho de investimento, não responde “o que compro hoje?” e não comenta o mercado ao vivo. Nunca cria, altera ou desativa um alerta sem a sua aprovação."
+        ]
+      ],
+      "faq": [
+        [
+          "O assistente de IA é grátis?",
+          "O MarketAlert funciona por assinatura; Plus e Pro têm 7 dias de teste grátis. O assistente de IA está nos dois planos. Você pode preparar seu alerta sem assinar; ele começa a funcionar quando você inicia o teste."
+        ],
+        [
+          "O alerta é criado assim que eu escrevo?",
+          "Não. Primeiro chega um rascunho; o alerta é criado quando você toca em Criar alerta. Se não tocar, o rascunho expira depois de 30 minutos."
+        ],
+        [
+          "Posso mudar um alerta escrevendo?",
+          "Sim. Escreva “mude meu alerta de BTC 70 mil para 72 mil”; o valor antigo e o novo aparecem no cartão e a mudança é salva ao tocar em Salvar alteração."
+        ],
+        [
+          "Os chips de modelo gastam mensagens de IA?",
+          "Não. Tocar em um chip de modelo pronto no chat não conta nas suas mensagens de IA."
+        ],
+        [
+          "Qual a diferença para o assistente de voz?",
+          "Ao escrever, você aprova cada ação com o botão do cartão. O assistente de voz faz diretamente o que você diz; detalhes na página de [alertas por voz](features/voice-crypto-alerts)."
+        ]
+      ],
+      "related": [
+        "features/voice-crypto-alerts",
+        "features/all-coins-alerts",
+        "features/multi-condition-alerts",
+        "features/rsi-alerts",
+        "features/ema-crossover-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 alertas; alertas repetidos, até 3 condições por alerta e 2 alertas de todas as moedas no top 100. Push e Telegram."
+        ],
+        [
+          "Pro",
+          "100 alertas; até 5 condições por alerta e 10 alertas de todas as moedas em todas as moedas. Push, Telegram e webhook assinado."
+        ]
+      ],
+      "ai": {
+        "kicker": "IA · CRIAR ESCREVENDO · PLUS / PRO",
+        "tap": "Toque em uma bolha e veja o alerta preparado com aquela frase.",
+        "bub": [
+          "Todas as moedas: RSI abaixo de 30 + volume 2x",
+          "Moedas que sobem 5% em 15 minutos",
+          "Quando o BTC chegar a 100 mil",
+          "ETH abaixo de 3.000 + RSI abaixo de 30",
+          "Moedas que rompem a máxima de 24 h",
+          "Golden cross do BTC"
+        ],
+        "wheel": [
+          "RSI todas",
+          "Pump",
+          "BTC 100 mil",
+          "ETH + RSI",
+          "Máxima 24 h",
+          "Golden cross"
+        ],
+        "what": [
+          "Duas condições, todas as moedas: você é avisado de cada moeda em que as duas valem ao mesmo tempo.",
+          "Acompanha todas as moedas e avisa qual sobe 5% em 15 minutos.",
+          "Uma condição, uma moeda: dispara uma vez quando o preço passa de 100.000 USDT.",
+          "Avisa quando o preço e o RSI valem ao mesmo tempo.",
+          "Avisa quando qualquer moeda faz uma nova máxima de 24 horas.",
+          "Avisa quando a SMA(50) cruza para cima a SMA(200) no gráfico diário."
+        ],
+        "dTitle": "O que você quer escrever?",
+        "dLead": "Arraste uma frase até o Zilbo ou toque nela para abrir o rascunho que o app prepara.",
+        "wTitle": "Gire a roleta",
+        "wLead": "Saia um de seis alertas difíceis.",
+        "spin": "Girar",
+        "pTitle": "Um alerta em quatro passos",
+        "pLead": "Role para baixo e o Zilbo leva você passo a passo.",
+        "jTitle": "O que o assistente faz e o que não faz?",
+        "jLead": "O Zilbo separa.",
+        "yes": "Faz",
+        "no": "Não faz",
+        "again": "De novo",
+        "cards": [
+          [
+            "Transforma sua frase em alerta",
+            "preço, RSI, EMA, MACD, volume…",
+            1
+          ],
+          [
+            "Dá dicas de compra e venda",
+            "“Compro BTC hoje?”",
+            0
+          ],
+          [
+            "Cria alertas que varrem todas as moedas",
+            "“Quais moedas têm RSI abaixo de 30?”",
+            1
+          ],
+          [
+            "Cria alertas sem aprovação",
+            "é preciso tocar em Criar alerta",
+            0
+          ],
+          [
+            "Pergunta se faltar algo",
+            "uma pergunta + chips de resposta",
+            1
+          ],
+          [
+            "Comenta o mercado ao vivo",
+            "não olha dados ao vivo",
+            0
+          ],
+          [
+            "Lista, altera e desativa seus alertas",
+            "com sua aprovação",
+            1
+          ],
+          [
+            "Faz coisas fora do app",
+            "notícias, lembretes…",
+            0
+          ],
+          [
+            "Responde “por que não disparou?”",
+            "pelo status do alerta",
+            1
+          ]
+        ],
+        "alt": "Rascunho de alerta preparado no app com “{q}”",
+        "flowAlt": [
+          "Pedido de ETH com duas condições escrito no chat de IA",
+          "O assistente pergunta o preço que falta, com chips de resposta",
+          "Rascunho de alerta com condições de preço e RSI do ETH",
+          "O alerta criado depois de tocar em Criar alerta"
+        ],
+        "q": [
+          "Me avise quando qualquer moeda tiver RSI abaixo de 30 e o volume dobrar",
+          "Me avise das moedas que subirem 5% em 15 minutos",
+          "Me avise quando o BTC chegar a 100 mil",
+          "Me avise quando o ETH cair abaixo de 3.000 e o RSI ficar abaixo de 30",
+          "Me avise quando uma moeda romper a máxima de 24 horas",
+          "Me avise do golden cross do BTC"
+        ]
+      }
     }
   },
   "ru": {
@@ -3684,6 +4599,189 @@
         "sDay": "Пересечение в {x}. Свеча 1d закрывается раз в день, в {close} ({tz}); уведомление придёт при этом закрытии.",
         "tfLabel": "Таймфрейм",
         "now": "сейчас"
+      }
+    },
+    "ai-crypto-alert-assistant": {
+      "link": "ИИ-ассистент оповещений",
+      "title": "Как создать крипто-оповещение, написав ИИ | MarketAlert",
+      "h1": "Как создать оповещение, написав ИИ?",
+      "description": "Напишите оповещение своими словами: «Сообщи, когда у любой монеты RSI ниже 30 и объём вырастет вдвое». ИИ-ассистент подготовит черновик, а оповещение создаётся кнопкой «Создать алерт». Push и Telegram.",
+      "intro": "Вы пишете своими словами, что нужно; ассистент готовит черновик с монетой, условиями, каналом и режимом срабатывания. Оповещение создаётся только после нажатия «Создать алерт» в черновике. Оповещения с двумя условиями, сканирование [всех монет](features/all-coins-alerts) и сложные случаи вроде золотого креста укладываются в одну фразу. Создать их можно и [голосом](features/voice-crypto-alerts).",
+      "prompt": "Сообщи, если ETH упадёт и RSI опустится ниже 30",
+      "exampleTitle": "Что можно написать?",
+      "caption": "Каждый экран — черновик, который приложение готовит по этой фразе.",
+      "steps": [
+        [
+          "Напишите фразу",
+          "Откройте вкладку ИИ и своими словами напишите монету, условия и, если нужно, канал. Можно и два условия: «Сообщи, если ETH упадёт и RSI опустится ниже 30»."
+        ],
+        [
+          "Ответьте, если чего-то не хватает",
+          "Если данных не хватает, ассистент задаёт один вопрос и предлагает ответы чипами. Здесь не указана цена; достаточно нажать «Ниже 3 000»."
+        ],
+        [
+          "Проверьте черновик",
+          "На карточке видны монета, оба условия, канал и режим срабатывания. Изменить можно, написав «пусть будет Telegram», или кнопкой «Изменить в форме»."
+        ],
+        [
+          "Нажмите «Создать алерт»",
+          "Оповещение создаётся только этим нажатием. Черновик ждёт 30 минут; если срок вышел, его можно подготовить заново."
+        ]
+      ],
+      "details": [
+        [
+          "Что умеет ассистент?",
+          "Готовит оповещения с одним или несколькими условиями: цена, изменение в процентах, RSI, пересечение EMA/SMA, MACD, объём и максимум/минимум за 24 часа. Показывает список ваших оповещений, меняет и отключает их, отвечает на вопрос «почему не сработало оповещение по BTC?» по его статусу и объясняет, как работает приложение. Изменения и отключения тоже ждут вашего нажатия на карточке."
+        ],
+        [
+          "Оповещения по всем монетам",
+          "На запрос вроде «у каких монет RSI ниже 30?» ассистент не выдаёт живой список; он предлагает оповещение по всем монетам, и вы узнаёте о каждой монете, где выполнено условие. В Plus отслеживаются 100 монет с наибольшим объёмом, в Pro — все монеты."
+        ],
+        [
+          "Чего он не делает?",
+          "Не даёт инвестиционных советов, не отвечает на вопрос «что купить сегодня?» и не комментирует рынок в реальном времени. Без вашего подтверждения он не создаёт, не меняет и не отключает оповещения."
+        ]
+      ],
+      "faq": [
+        [
+          "ИИ-ассистент бесплатный?",
+          "MarketAlert работает по подписке; Plus и Pro можно попробовать бесплатно 7 дней. ИИ-ассистент есть в обоих тарифах. Оповещение можно подготовить и без подписки; оно начнёт работать, когда вы запустите пробный период."
+        ],
+        [
+          "Оповещение создаётся сразу, как только я напишу?",
+          "Нет. Сначала приходит черновик; оповещение создаётся после нажатия «Создать алерт». Если не нажать, черновик истечёт через 30 минут."
+        ],
+        [
+          "Можно изменить оповещение текстом?",
+          "Да. Напишите «измени моё оповещение BTC 70 000 на 72 000»; старое и новое значения появятся на карточке, а изменение сохранится кнопкой «Сохранить изменения»."
+        ],
+        [
+          "Тратят ли чипы шаблонов сообщения ИИ?",
+          "Нет. Нажатие на готовый чип шаблона в чате не расходует сообщения ИИ."
+        ],
+        [
+          "Чем это отличается от голосового ассистента?",
+          "В чате вы подтверждаете каждое действие кнопкой на карточке. Голосовой ассистент сразу выполняет сказанное; подробнее на странице [голосовых оповещений](features/voice-crypto-alerts)."
+        ]
+      ],
+      "related": [
+        "features/voice-crypto-alerts",
+        "features/all-coins-alerts",
+        "features/multi-condition-alerts",
+        "features/rsi-alerts",
+        "features/ema-crossover-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 алертов; повторяющиеся алерты, до 3 условий в алерте и 2 алерта по всем монетам в топ-100. Push и Telegram."
+        ],
+        [
+          "Pro",
+          "100 алертов; до 5 условий в алерте и 10 алертов по всем монетам. Push, Telegram и подписанный вебхук."
+        ]
+      ],
+      "ai": {
+        "kicker": "ИИ · СОЗДАТЬ ТЕКСТОМ · PLUS / PRO",
+        "tap": "Нажмите на пузырь и посмотрите оповещение, подготовленное по этой фразе.",
+        "bub": [
+          "Все монеты: RSI ниже 30 + объём x2",
+          "Монеты +5 % за 15 минут",
+          "Когда BTC дойдёт до 100 000",
+          "ETH ниже 3 000 + RSI ниже 30",
+          "Монеты, пробившие максимум 24 ч",
+          "Золотой крест BTC"
+        ],
+        "wheel": [
+          "RSI всех",
+          "Памп",
+          "BTC 100 000",
+          "ETH + RSI",
+          "Максимум 24 ч",
+          "Золотой крест"
+        ],
+        "what": [
+          "Два условия, все монеты: вы узнаёте о каждой монете, где оба выполнены одновременно.",
+          "Следит за всеми монетами и сообщает, какая выросла на 5 % за 15 минут.",
+          "Одно условие, одна монета: срабатывает один раз, когда цена превысит 100 000 USDT.",
+          "Сообщает, когда цена и RSI выполнены одновременно.",
+          "Сообщает, когда любая монета обновит максимум за 24 часа.",
+          "Сообщает, когда на дневном графике SMA(50) пересечёт SMA(200) снизу вверх."
+        ],
+        "dTitle": "Что вы хотите написать?",
+        "dLead": "Перетащите фразу на Zilbo или нажмите на неё, чтобы открыть черновик из приложения.",
+        "wTitle": "Крутите колесо",
+        "wLead": "Выпадет одно из шести сложных оповещений.",
+        "spin": "Крутить",
+        "pTitle": "Оповещение за четыре шага",
+        "pLead": "Прокрутите вниз — Zilbo проведёт вас по шагам.",
+        "jTitle": "Что ассистент делает, а что нет?",
+        "jLead": "Пусть Zilbo разложит.",
+        "yes": "Делает",
+        "no": "Не делает",
+        "again": "Ещё раз",
+        "cards": [
+          [
+            "Превращает фразу в оповещение",
+            "цена, RSI, EMA, MACD, объём…",
+            1
+          ],
+          [
+            "Даёт советы купить или продать",
+            "«Покупать BTC сегодня?»",
+            0
+          ],
+          [
+            "Создаёт оповещения по всем монетам",
+            "«У каких монет RSI ниже 30?»",
+            1
+          ],
+          [
+            "Создаёт оповещения без подтверждения",
+            "нужно нажать «Создать алерт»",
+            0
+          ],
+          [
+            "Спрашивает, если чего-то не хватает",
+            "один вопрос + чипы ответов",
+            1
+          ],
+          [
+            "Комментирует рынок онлайн",
+            "не смотрит живые данные",
+            0
+          ],
+          [
+            "Показывает, меняет и отключает оповещения",
+            "с вашим подтверждением",
+            1
+          ],
+          [
+            "Делает что-то вне приложения",
+            "новости, напоминания…",
+            0
+          ],
+          [
+            "Отвечает «почему не сработало?»",
+            "по статусу оповещения",
+            1
+          ]
+        ],
+        "alt": "Черновик оповещения в приложении по фразе «{q}»",
+        "flowAlt": [
+          "Запрос по ETH с двумя условиями в чате ИИ",
+          "Ассистент спрашивает недостающую цену, с чипами ответов",
+          "Черновик оповещения с условиями цены и RSI для ETH",
+          "Оповещение, созданное после нажатия «Создать алерт»"
+        ],
+        "q": [
+          "Сообщи, когда у любой монеты RSI ниже 30 и объём вырастет вдвое",
+          "Сообщай о монетах, выросших на 5% за 15 минут",
+          "Сообщи, когда BTC дойдёт до 100 тысяч",
+          "Сообщи, когда ETH упадёт ниже 3 000 и RSI опустится ниже 30",
+          "Сообщи, когда монета обновит максимум за 24 часа",
+          "Сообщи о золотом кресте на BTC"
+        ]
       }
     }
   },
@@ -4299,6 +5397,189 @@
         "tfLabel": "時間足",
         "now": "たった今"
       }
+    },
+    "ai-crypto-alert-assistant": {
+      "link": "AIアラートアシスタント",
+      "title": "AIに書いて暗号資産アラートを設定する方法 | MarketAlert",
+      "h1": "AIに書くだけでアラートを設定するには？",
+      "description": "アラートを自分の言葉で書くだけ。「どれかのコインで RSI が 30 未満になって出来高が 2 倍になったら知らせて」。AIアシスタントが下書きを用意し、「アラートを設定」を押すと設定されます。プッシュとTelegramに対応。",
+      "intro": "やりたいことを自分の言葉で書くと、アシスタントがコイン、条件、通知方法、通知タイミングを入れた下書きを用意します。アラートが設定されるのは、下書きの「アラートを設定」を押したときだけです。2つの条件を組み合わせたアラートや[全コイン](features/all-coins-alerts)のスキャン、ゴールデンクロスのような設定しにくいものも一文で済みます。[音声](features/voice-crypto-alerts)でも設定できます。",
+      "prompt": "ETH が下がって RSI が 30 を下回ったら知らせて",
+      "exampleTitle": "何を書けばいい？",
+      "caption": "どの画面も、その文を書いたときにアプリが用意する下書きです。",
+      "steps": [
+        [
+          "文を書く",
+          "AIタブを開き、コイン、条件、必要なら通知方法を自分の言葉で書きます。条件は2つでも大丈夫です：「ETH が下がって RSI が 30 を下回ったら知らせて」。"
+        ],
+        [
+          "足りなければ答える",
+          "情報が足りないと、アシスタントは質問を1つだけして、答えの候補をボタンで出します。ここでは価格が足りないので「3,000 未満」を押すだけです。"
+        ],
+        [
+          "下書きを確認する",
+          "カードにコイン、2つの条件、通知方法、通知タイミングが表示されます。「Telegramにして」と書くか、「フォームで編集」で変更できます。"
+        ],
+        [
+          "「アラートを設定」を押す",
+          "このタップで初めてアラートが設定されます。下書きは30分有効です。期限が切れたら、もう一度用意してもらえます。"
+        ]
+      ],
+      "details": [
+        [
+          "アシスタントにできること",
+          "価格、変動率、RSI、EMA/SMAクロス、MACD、出来高、24時間の高値・安値を使って、条件が1つまたは複数のアラートを用意します。アラートの一覧表示、変更、オフもでき、「BTCのアラートが鳴らなかったのはなぜ？」にはアラートの状態を見て答え、アプリの使い方も説明します。変更とオフも、カードでのタップを待ってから行います。"
+        ],
+        [
+          "全コインをスキャンするアラート",
+          "「RSI が 30 未満のコインは？」のようなスキャンの質問には、その場の一覧を出すのではなく、全コインを見張るアラートを提案します。条件を満たしたコインごとに通知が届きます。Plusは出来高上位100コイン、Proは全コインが対象です。"
+        ],
+        [
+          "しないこと",
+          "投資助言はせず、「今日は何を買えばいい？」には答えず、リアルタイムの相場解説もしません。あなたの確認なしにアラートを設定、変更、オフにすることはありません。"
+        ]
+      ],
+      "faq": [
+        [
+          "AIアシスタントは無料ですか？",
+          "MarketAlert はサブスクリプションで利用します。Plus と Pro はどちらも7日間無料でお試しいただけます。AIアシスタントはどちらのプランでも使えます。サブスクリプションなしでもアラートを用意でき、トライアルを開始すると動き始めます。"
+        ],
+        [
+          "書いた瞬間にアラートが設定されますか？",
+          "いいえ。まず下書きが届き、「アラートを設定」を押すと設定されます。押さなければ、下書きは30分で期限切れになります。"
+        ],
+        [
+          "書いてアラートを変更できますか？",
+          "はい。「BTC 7万のアラートを7.2万にして」と書くと、変更前後の値がカードに表示され、「変更を保存」を押すと保存されます。"
+        ],
+        [
+          "テンプレートのボタンはAIの回数を使いますか？",
+          "いいえ。チャットにある既製テンプレートのボタンを押しても、AIのメッセージ回数は減りません。"
+        ],
+        [
+          "音声アシスタントとの違いは？",
+          "文字で使うときは、操作ごとにカードのボタンで確認します。音声アシスタントは話した内容をそのまま実行します。詳しくは[音声アラート](features/voice-crypto-alerts)のページへ。"
+        ]
+      ],
+      "related": [
+        "features/voice-crypto-alerts",
+        "features/all-coins-alerts",
+        "features/multi-condition-alerts",
+        "features/rsi-alerts",
+        "features/ema-crossover-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "アラート20件。繰り返しアラート、1件あたり最大3条件、上位100の全コインアラート2件。プッシュとTelegram。"
+        ],
+        [
+          "Pro",
+          "アラート100件。1件あたり最大5条件、全コイン対象の全コインアラート10件。プッシュ、Telegram、署名付きWebhook。"
+        ]
+      ],
+      "ai": {
+        "kicker": "AI · 書いて設定 · PLUS / PRO",
+        "tap": "泡をタップすると、その文から用意されたアラートが見られます。",
+        "bub": [
+          "全コイン：RSI 30 未満 + 出来高 2 倍",
+          "15 分で 5% 上がったコイン",
+          "BTC が 10 万になったら",
+          "ETH 3,000 未満 + RSI 30 未満",
+          "24 時間高値を更新したコイン",
+          "BTC ゴールデンクロス"
+        ],
+        "wheel": [
+          "全コインRSI",
+          "急騰",
+          "BTC 10万",
+          "ETH + RSI",
+          "24h高値",
+          "GC"
+        ],
+        "what": [
+          "条件2つ、全コイン：両方が同時に成り立ったコインごとに通知します。",
+          "全コインを見張り、15分で 5% 上がったコインを知らせます。",
+          "条件1つ、コイン1つ：価格が 100,000 USDT を超えたら1回通知します。",
+          "価格と RSI が同時に成り立ったら知らせます。",
+          "どれかのコインが24時間の高値を更新したら知らせます。",
+          "日足で SMA(50) が SMA(200) を上抜けたら知らせます。"
+        ],
+        "dTitle": "何を書きますか？",
+        "dLead": "文を Zilbo の上にドラッグするか、タップすると、アプリが用意した下書きが開きます。",
+        "wTitle": "ルーレットを回す",
+        "wLead": "設定しにくい6つのアラートから1つ。",
+        "spin": "回す",
+        "pTitle": "4ステップでアラート",
+        "pLead": "下にスクロールすると、Zilbo が一歩ずつ案内します。",
+        "jTitle": "アシスタントがすること、しないこと",
+        "jLead": "Zilbo が仕分けます。",
+        "yes": "する",
+        "no": "しない",
+        "again": "もう一度",
+        "cards": [
+          [
+            "文をアラートにする",
+            "価格、RSI、EMA、MACD、出来高…",
+            1
+          ],
+          [
+            "売買の助言をする",
+            "「今日 BTC を買うべき？」",
+            0
+          ],
+          [
+            "全コインをスキャンするアラートを作る",
+            "「RSI 30 未満のコインは？」",
+            1
+          ],
+          [
+            "確認なしでアラートを設定する",
+            "「アラートを設定」が必要",
+            0
+          ],
+          [
+            "足りないと質問する",
+            "質問1つ + 回答ボタン",
+            1
+          ],
+          [
+            "リアルタイムの相場を解説する",
+            "ライブデータは見ない",
+            0
+          ],
+          [
+            "アラートを一覧、変更、オフにする",
+            "あなたの確認つき",
+            1
+          ],
+          [
+            "アプリ外のことをする",
+            "ニュース、リマインダー…",
+            0
+          ],
+          [
+            "「なぜ鳴らない？」に答える",
+            "アラートの状態から",
+            1
+          ]
+        ],
+        "alt": "「{q}」からアプリが用意したアラートの下書き",
+        "flowAlt": [
+          "AIチャットに書いた ETH の2条件リクエスト",
+          "足りない価格を尋ねる質問と回答ボタン",
+          "ETH の価格と RSI の条件が入ったアラートの下書き",
+          "「アラートを設定」を押して設定されたアラート"
+        ],
+        "q": [
+          "どれかのコインで RSI が 30 未満になって出来高が 2 倍になったら知らせて",
+          "15 分で 5% 上がったコインを知らせて",
+          "BTC が 10 万になったら知らせて",
+          "ETH が 3,000 を下回って RSI が 30 未満になったら知らせて",
+          "24 時間高値を更新したコインを知らせて",
+          "BTC でゴールデンクロスが出たら知らせて"
+        ]
+      }
     }
   },
   "zh": {
@@ -4912,6 +6193,189 @@
         "sDay": "交叉发生在 {x}。1d K 线每天收盘一次，在 {close}（{tz}）；通知在这次收盘时发送。",
         "tfLabel": "时间周期",
         "now": "刚刚"
+      }
+    },
+    "ai-crypto-alert-assistant": {
+      "link": "AI 提醒助手",
+      "title": "如何通过和 AI 聊天设置加密货币提醒 | MarketAlert",
+      "h1": "怎样给 AI 写一句话来设置提醒？",
+      "description": "用自己的话写下提醒：“任何币种 RSI 低于 30 且成交量翻倍时提醒我。”AI 助手会准备草稿，点“设置提醒”后才会创建。支持推送和 Telegram。",
+      "intro": "用自己的话写下你想要的；助手会准备一份草稿，包含币种、条件、渠道和触发方式。只有你在草稿上点“设置提醒”，提醒才会创建。双条件提醒、扫描[全部币种](features/all-coins-alerts)以及黄金交叉这类难设置的提醒，一句话就够。你也可以[用语音](features/voice-crypto-alerts)设置。",
+      "prompt": "ETH 下跌且 RSI 跌破 30 时提醒我",
+      "exampleTitle": "你可以写什么？",
+      "caption": "每个画面都是写下这句话后应用准备的草稿。",
+      "steps": [
+        [
+          "写下你的句子",
+          "打开 AI 标签页，用自己的话写下币种、条件，需要的话再写上渠道。两个条件也可以：“ETH 下跌且 RSI 跌破 30 时提醒我”。"
+        ],
+        [
+          "缺信息就回答",
+          "如果缺少信息，助手只问一个问题，并把可选答案做成按钮。这里缺少价格，点“跌破 3,000”即可。"
+        ],
+        [
+          "检查草稿",
+          "卡片上会显示币种、两个条件、渠道和触发方式。写“改成 Telegram”或点“在表单中编辑”都可以修改。"
+        ],
+        [
+          "点“设置提醒”",
+          "只有这一下才会创建提醒。草稿保留 30 分钟；过期后可以让助手重新准备。"
+        ]
+      ],
+      "details": [
+        [
+          "助手能做什么？",
+          "它可以用价格、百分比变化、RSI、EMA/SMA 交叉、MACD、成交量以及 24 小时最高/最低价准备单条件或多条件提醒。它能列出、修改和关闭你的提醒，查看提醒状态来回答“为什么我的 BTC 提醒没响？”，并讲解应用怎么用。修改和关闭同样要等你在卡片上确认。"
+        ],
+        [
+          "扫描全部币种的提醒",
+          "对于“哪些币的 RSI 低于 30？”这类扫描请求，助手不会给出实时列表，而是建议一个盯着全部币种的提醒，任何满足条件的币种都会通知你。Plus 监控成交量最高的 100 个币种，Pro 监控全部币种。"
+        ],
+        [
+          "它不做什么？",
+          "不提供投资建议，不回答“今天买什么？”，也不评论实时行情。没有你的确认，它不会创建、修改或关闭任何提醒。"
+        ]
+      ],
+      "faq": [
+        [
+          "AI 助手免费吗？",
+          "MarketAlert 需要订阅使用；Plus 和 Pro 都可免费试用 7 天。两个方案都包含 AI 助手。不订阅也可以先准备好提醒；开始试用后提醒即开始工作。"
+        ],
+        [
+          "我一写完提醒就创建了吗？",
+          "没有。先出现草稿；点“设置提醒”后才创建。不点的话，草稿 30 分钟后过期。"
+        ],
+        [
+          "可以用文字修改已有提醒吗？",
+          "可以。写“把我的 BTC 7 万提醒改成 7.2 万”，卡片会显示旧值和新值，点“保存修改”即保存。"
+        ],
+        [
+          "模板按钮会消耗 AI 次数吗？",
+          "不会。点聊天里的现成模板按钮不计入 AI 消息次数。"
+        ],
+        [
+          "和语音助手有什么不同？",
+          "用文字时，每个操作都要在卡片上点按钮确认。语音助手会直接执行你说的话；详情见[语音提醒](features/voice-crypto-alerts)页面。"
+        ]
+      ],
+      "related": [
+        "features/voice-crypto-alerts",
+        "features/all-coins-alerts",
+        "features/multi-condition-alerts",
+        "features/rsi-alerts",
+        "features/ema-crossover-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 个提醒；重复提醒、每个提醒最多 3 个条件，以及前 100 币种的 2 个全币种提醒。推送和 Telegram。"
+        ],
+        [
+          "Pro",
+          "100 个提醒；每个提醒最多 5 个条件，以及覆盖全部币种的 10 个全币种提醒。推送、Telegram 和签名 Webhook。"
+        ]
+      ],
+      "ai": {
+        "kicker": "AI · 写字设置 · PLUS / PRO",
+        "tap": "点一个气泡，看看这句话生成的提醒。",
+        "bub": [
+          "全部币种：RSI 低于 30 + 成交量 2 倍",
+          "15 分钟上涨 5% 的币",
+          "BTC 到 10 万时",
+          "ETH 跌破 3,000 + RSI 低于 30",
+          "突破 24 小时最高价的币",
+          "BTC 黄金交叉"
+        ],
+        "wheel": [
+          "全币 RSI",
+          "暴涨",
+          "BTC 10 万",
+          "ETH + RSI",
+          "24h 新高",
+          "黄金交叉"
+        ],
+        "what": [
+          "两个条件，全部币种：任何币种同时满足两个条件都会通知你。",
+          "盯着全部币种，告诉你哪个 15 分钟内涨了 5%。",
+          "一个条件，一个币种：价格突破 100,000 USDT 时提醒一次。",
+          "价格和 RSI 同时满足时通知你。",
+          "任何币种创 24 小时新高时通知你。",
+          "日线上 SMA(50) 上穿 SMA(200) 时通知你。"
+        ],
+        "dTitle": "你想写什么？",
+        "dLead": "把一句话拖到 Zilbo 身上，或直接点它，打开应用准备的草稿。",
+        "wTitle": "转动转盘",
+        "wLead": "随机来一个难设置的提醒。",
+        "spin": "转动",
+        "pTitle": "四步设置提醒",
+        "pLead": "向下滚动，Zilbo 带你一步步走。",
+        "jTitle": "助手做什么，不做什么？",
+        "jLead": "让 Zilbo 来分一分。",
+        "yes": "会做",
+        "no": "不做",
+        "again": "再来",
+        "cards": [
+          [
+            "把你的话变成提醒",
+            "价格、RSI、EMA、MACD、成交量…",
+            1
+          ],
+          [
+            "给买卖建议",
+            "“今天该买 BTC 吗？”",
+            0
+          ],
+          [
+            "设置扫描全部币种的提醒",
+            "“哪些币 RSI 低于 30？”",
+            1
+          ],
+          [
+            "不经确认就设置提醒",
+            "必须点“设置提醒”",
+            0
+          ],
+          [
+            "缺信息时会问",
+            "一个问题 + 答案按钮",
+            1
+          ],
+          [
+            "评论实时行情",
+            "不看实时数据",
+            0
+          ],
+          [
+            "列出、修改、关闭你的提醒",
+            "经你确认",
+            1
+          ],
+          [
+            "做应用以外的事",
+            "新闻、日程提醒…",
+            0
+          ],
+          [
+            "回答“为什么没响？”",
+            "根据提醒状态",
+            1
+          ]
+        ],
+        "alt": "应用根据“{q}”准备的提醒草稿",
+        "flowAlt": [
+          "在 AI 聊天中写下的 ETH 双条件请求",
+          "助手询问缺少的价格，并给出答案按钮",
+          "包含 ETH 价格和 RSI 条件的提醒草稿",
+          "点“设置提醒”后创建的提醒"
+        ],
+        "q": [
+          "任何币种 RSI 低于 30 且成交量翻倍时提醒我",
+          "告诉我 15 分钟内上涨 5% 的币",
+          "BTC 到 10 万时提醒我",
+          "ETH 跌破 3000 且 RSI 跌破 30 时提醒我",
+          "有币种突破 24 小时最高价时提醒我",
+          "BTC 出现黄金交叉时提醒我"
+        ]
       }
     }
   },
@@ -5527,6 +6991,189 @@
         "tfLabel": "टाइमफ़्रेम",
         "now": "अभी"
       }
+    },
+    "ai-crypto-alert-assistant": {
+      "link": "AI अलर्ट सहायक",
+      "title": "AI को लिखकर क्रिप्टो अलर्ट कैसे सेट करें | MarketAlert",
+      "h1": "AI को लिखकर अलर्ट कैसे सेट करवाएँ?",
+      "description": "अलर्ट अपने शब्दों में लिखें: “किसी भी कॉइन का RSI 30 से नीचे जाए और वॉल्यूम दोगुना हो तो बताना।” AI सहायक ड्राफ़्ट तैयार करता है, अलर्ट सेट करें दबाते ही अलर्ट बन जाता है। पुश और Telegram।",
+      "intro": "आप अपने शब्दों में लिखते हैं कि क्या चाहिए; सहायक कॉइन, शर्तें, चैनल और ट्रिगर के साथ एक ड्राफ़्ट तैयार करता है। अलर्ट तभी बनता है जब आप ड्राफ़्ट पर अलर्ट सेट करें दबाते हैं। दो शर्तों वाले अलर्ट, [सभी कॉइन](features/all-coins-alerts) पर स्कैन और गोल्डन क्रॉस जैसे मुश्किल अलर्ट भी एक वाक्य में बन जाते हैं। चाहें तो [आवाज़ से](features/voice-crypto-alerts) भी सेट कर सकते हैं।",
+      "prompt": "ETH गिरे और RSI 30 से नीचे जाए तो बताना",
+      "exampleTitle": "आप क्या लिख सकते हैं?",
+      "caption": "हर स्क्रीन वह ड्राफ़्ट है जो वह वाक्य लिखने पर ऐप तैयार करता है।",
+      "steps": [
+        [
+          "अपना वाक्य लिखें",
+          "AI टैब खोलें और कॉइन, शर्तें और चाहें तो चैनल अपने शब्दों में लिखें। दो शर्तें भी चलेंगी: “ETH गिरे और RSI 30 से नीचे जाए तो बताना”।"
+        ],
+        [
+          "कुछ छूटा हो तो जवाब दें",
+          "कोई जानकारी छूटी हो तो सहायक एक ही सवाल पूछता है और जवाब चिप के रूप में सुझाता है। यहाँ कीमत छूटी है; “3,000 से नीचे” दबाना काफ़ी है।"
+        ],
+        [
+          "ड्राफ़्ट जाँचें",
+          "कार्ड पर कॉइन, दोनों शर्तें, चैनल और ट्रिगर दिखते हैं। “Telegram पर भेजो” लिखकर या फ़ॉर्म में बदलें से बदल सकते हैं।"
+        ],
+        [
+          "अलर्ट सेट करें दबाएँ",
+          "अलर्ट सिर्फ़ इसी टैप से बनता है। ड्राफ़्ट 30 मिनट तक रहता है; समय निकल जाए तो दोबारा तैयार करवा सकते हैं।"
+        ]
+      ],
+      "details": [
+        [
+          "सहायक क्या कर सकता है?",
+          "कीमत, प्रतिशत बदलाव, RSI, EMA/SMA क्रॉस, MACD, वॉल्यूम और 24 घंटे के हाई/लो से एक या कई शर्तों वाले अलर्ट तैयार करता है। आपके अलर्ट की सूची दिखाता है, उन्हें बदलता और बंद करता है, अलर्ट की स्थिति देखकर “मेरा BTC अलर्ट क्यों नहीं बजा?” का जवाब देता है और ऐप कैसे काम करता है यह समझाता है। बदलाव और बंद करने में भी कार्ड पर आपके टैप का इंतज़ार होता है।"
+        ],
+        [
+          "सभी कॉइन स्कैन करने वाले अलर्ट",
+          "“किन कॉइन का RSI 30 से नीचे है?” जैसे स्कैन अनुरोध पर सहायक लाइव सूची नहीं देता; वह सभी कॉइन पर नज़र रखने वाला अलर्ट सुझाता है और शर्त पूरी करने वाले हर कॉइन की सूचना आपको मिलती है। Plus में वॉल्यूम के हिसाब से टॉप 100 कॉइन, Pro में सभी कॉइन देखे जाते हैं।"
+        ],
+        [
+          "यह क्या नहीं करता?",
+          "निवेश सलाह नहीं देता, “आज क्या खरीदूँ?” का जवाब नहीं देता और लाइव बाज़ार पर टिप्पणी नहीं करता। आपकी मंज़ूरी के बिना कोई अलर्ट सेट, बदल या बंद नहीं करता।"
+        ]
+      ],
+      "faq": [
+        [
+          "क्या AI सहायक मुफ़्त है?",
+          "MarketAlert सब्सक्रिप्शन से चलता है; Plus और Pro दोनों में 7 दिन का मुफ़्त ट्रायल है। AI सहायक दोनों प्लान में है। सब्सक्राइब किए बिना भी आप अपना अलर्ट तैयार कर सकते हैं; ट्रायल शुरू करते ही वह काम करने लगता है।"
+        ],
+        [
+          "क्या लिखते ही अलर्ट सेट हो जाता है?",
+          "नहीं। पहले ड्राफ़्ट आता है; अलर्ट सेट करें दबाने पर अलर्ट बनता है। न दबाएँ तो ड्राफ़्ट 30 मिनट बाद समाप्त हो जाता है।"
+        ],
+        [
+          "क्या लिखकर अलर्ट बदल सकते हैं?",
+          "हाँ। “मेरा BTC 70,000 वाला अलर्ट 72,000 कर दो” लिखें; पुराना और नया मान कार्ड पर दिखता है और बदलाव सेव करें दबाने पर सेव हो जाता है।"
+        ],
+        [
+          "क्या टेम्पलेट चिप AI संदेश खर्च करते हैं?",
+          "नहीं। चैट में तैयार टेम्पलेट चिप दबाने से AI संदेश नहीं घटते।"
+        ],
+        [
+          "वॉइस सहायक से इसमें क्या फ़र्क है?",
+          "लिखकर इस्तेमाल करने पर हर काम कार्ड के बटन से मंज़ूर करते हैं। वॉइस सहायक आपकी कही बात सीधे कर देता है; विवरण [वॉइस अलर्ट](features/voice-crypto-alerts) पेज पर है।"
+        ]
+      ],
+      "related": [
+        "features/voice-crypto-alerts",
+        "features/all-coins-alerts",
+        "features/multi-condition-alerts",
+        "features/rsi-alerts",
+        "features/ema-crossover-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 अलर्ट; दोहराने वाले अलर्ट, हर अलर्ट में 3 शर्तें तक और टॉप 100 पर 2 सभी-कॉइन अलर्ट। पुश और Telegram।"
+        ],
+        [
+          "Pro",
+          "100 अलर्ट; हर अलर्ट में 5 शर्तें तक और सभी कॉइन पर 10 सभी-कॉइन अलर्ट। पुश, Telegram और साइन किया हुआ वेबहुक।"
+        ]
+      ],
+      "ai": {
+        "kicker": "AI · लिखकर सेट करें · PLUS / PRO",
+        "tap": "किसी बुलबुले पर टैप करें और उस वाक्य से तैयार अलर्ट देखें।",
+        "bub": [
+          "सभी कॉइन: RSI 30 से नीचे + वॉल्यूम 2 गुना",
+          "15 मिनट में 5% चढ़े कॉइन",
+          "BTC 1 लाख डॉलर पर",
+          "ETH 3,000 से नीचे + RSI 30 से नीचे",
+          "24 घंटे का हाई तोड़ने वाले कॉइन",
+          "BTC गोल्डन क्रॉस"
+        ],
+        "wheel": [
+          "सभी कॉइन RSI",
+          "पंप",
+          "BTC 1 लाख",
+          "ETH + RSI",
+          "24 घंटे हाई",
+          "गोल्डन क्रॉस"
+        ],
+        "what": [
+          "दो शर्तें, सभी कॉइन: जिस कॉइन पर दोनों एक साथ पूरी हों, उसकी सूचना मिलती है।",
+          "सभी कॉइन पर नज़र रखता है और बताता है कि कौन-सा 15 मिनट में 5% चढ़ा।",
+          "एक शर्त, एक कॉइन: कीमत 1,00,000 USDT से ऊपर जाते ही एक बार बजता है।",
+          "कीमत और RSI एक साथ पूरी हों तो बताता है।",
+          "कोई भी कॉइन 24 घंटे का नया हाई बनाए तो बताता है।",
+          "डेली चार्ट पर SMA(50) जब SMA(200) को ऊपर काटे तो बताता है।"
+        ],
+        "dTitle": "आप क्या लिखना चाहेंगे?",
+        "dLead": "कोई वाक्य Zilbo पर खींचकर छोड़ें या उस पर टैप करें; ऐप का तैयार ड्राफ़्ट खुल जाएगा।",
+        "wTitle": "पहिया घुमाएँ",
+        "wLead": "छह मुश्किल अलर्ट में से एक आएगा।",
+        "spin": "घुमाएँ",
+        "pTitle": "चार कदम में अलर्ट",
+        "pLead": "नीचे स्क्रॉल करें, Zilbo आपको कदम-दर-कदम ले चलेगा।",
+        "jTitle": "सहायक क्या करता है, क्या नहीं?",
+        "jLead": "Zilbo छाँट देगा।",
+        "yes": "करता है",
+        "no": "नहीं करता",
+        "again": "फिर से",
+        "cards": [
+          [
+            "आपके वाक्य को अलर्ट बनाता है",
+            "कीमत, RSI, EMA, MACD, वॉल्यूम…",
+            1
+          ],
+          [
+            "खरीद-बिक्री की सलाह देता है",
+            "“आज BTC खरीदूँ?”",
+            0
+          ],
+          [
+            "सभी कॉइन स्कैन करने वाला अलर्ट बनाता है",
+            "“किन कॉइन का RSI 30 से नीचे है?”",
+            1
+          ],
+          [
+            "बिना मंज़ूरी अलर्ट सेट करता है",
+            "अलर्ट सेट करें दबाना ज़रूरी",
+            0
+          ],
+          [
+            "कुछ छूटे तो पूछता है",
+            "एक सवाल + जवाब चिप",
+            1
+          ],
+          [
+            "लाइव बाज़ार पर टिप्पणी करता है",
+            "लाइव डेटा नहीं देखता",
+            0
+          ],
+          [
+            "अलर्ट की सूची दिखाता, बदलता, बंद करता है",
+            "आपकी मंज़ूरी से",
+            1
+          ],
+          [
+            "ऐप के बाहर के काम करता है",
+            "ख़बरें, रिमाइंडर…",
+            0
+          ],
+          [
+            "“क्यों नहीं बजा?” का जवाब देता है",
+            "अलर्ट की स्थिति से",
+            1
+          ]
+        ],
+        "alt": "“{q}” से ऐप में तैयार अलर्ट ड्राफ़्ट",
+        "flowAlt": [
+          "AI चैट में लिखा गया दो शर्तों वाला ETH अनुरोध",
+          "सहायक छूटी हुई कीमत पूछता है, जवाब चिप के साथ",
+          "ETH कीमत और RSI शर्तों वाला अलर्ट ड्राफ़्ट",
+          "अलर्ट सेट करें दबाने के बाद बना अलर्ट"
+        ],
+        "q": [
+          "किसी भी कॉइन का RSI 30 से नीचे जाए और वॉल्यूम दोगुना हो तो बताना",
+          "15 मिनट में 5% चढ़ने वाले कॉइन बताना",
+          "BTC 1 लाख डॉलर पर पहुँचे तो बताना",
+          "ETH 3,000 से नीचे जाए और RSI 30 से नीचे हो तो बताना",
+          "कोई कॉइन 24 घंटे का हाई तोड़े तो बताना",
+          "BTC में गोल्डन क्रॉस हो तो बताना"
+        ]
+      }
     }
   },
   "ar": {
@@ -6140,6 +7787,189 @@
         "sDay": "يحدث التقاطع عند {x}. تُغلق شمعة 1d مرة في اليوم، عند {close} ({tz})؛ ويصل الإشعار عند هذا الإغلاق.",
         "tfLabel": "الإطار الزمني",
         "now": "الآن"
+      }
+    },
+    "ai-crypto-alert-assistant": {
+      "link": "مساعد التنبيهات بالذكاء الاصطناعي",
+      "title": "كيف تنشئ تنبيهات العملات المشفرة بالكتابة للذكاء الاصطناعي | MarketAlert",
+      "h1": "كيف أنشئ تنبيهًا بالكتابة للذكاء الاصطناعي؟",
+      "description": "اكتب التنبيه بكلماتك: «نبّهني عندما ينزل RSI لأي عملة تحت 30 ويتضاعف حجم التداول». يجهّز المساعد الذكي مسودة، ويُنشأ التنبيه عند الضغط على إنشاء التنبيه. إشعارات فورية وTelegram.",
+      "intro": "تكتب ما تريده بكلماتك؛ فيجهّز المساعد مسودة فيها العملة والشروط والقناة وطريقة التفعيل. لا يُنشأ التنبيه إلا عندما تضغط إنشاء التنبيه في المسودة. التنبيهات بشرطين، والمسح على [كل العملات](features/all-coins-alerts)، والحالات الصعبة مثل التقاطع الذهبي، كلها تكفيها جملة واحدة. ويمكنك إنشاؤها [بالصوت](features/voice-crypto-alerts) أيضًا.",
+      "prompt": "نبّهني إذا هبط ETH ونزل RSI تحت 30",
+      "exampleTitle": "ماذا يمكنك أن تكتب؟",
+      "caption": "كل شاشة هي المسودة التي يجهّزها التطبيق عند كتابة تلك الجملة.",
+      "steps": [
+        [
+          "اكتب جملتك",
+          "افتح تبويب الذكاء الاصطناعي واكتب العملة والشروط، والقناة إن أردت، بكلماتك. يصلح شرطان أيضًا: «نبّهني إذا هبط ETH ونزل RSI تحت 30»."
+        ],
+        [
+          "أجب إن نقص شيء",
+          "إذا نقصت معلومة يسأل المساعد سؤالًا واحدًا ويقترح الإجابات كأزرار. هنا ينقص السعر؛ يكفي أن تضغط «تحت 3,000»."
+        ],
+        [
+          "راجع المسودة",
+          "تعرض البطاقة العملة والشرطين والقناة وطريقة التفعيل. يمكنك التغيير بكتابة «اجعله على Telegram» أو عبر تعديل في النموذج."
+        ],
+        [
+          "اضغط إنشاء التنبيه",
+          "لا يُنشأ التنبيه إلا بهذه الضغطة. تبقى المسودة 30 دقيقة؛ وإذا انتهت يمكنك طلب تجهيزها من جديد."
+        ]
+      ],
+      "details": [
+        [
+          "ماذا يستطيع المساعد أن يفعل؟",
+          "يجهّز تنبيهات بشرط واحد أو أكثر: السعر ونسبة التغيّر وRSI وتقاطع EMA/SMA وMACD والحجم وأعلى/أدنى سعر في 24 ساعة. يعرض تنبيهاتك ويغيّرها ويوقفها، ويجيب عن «لماذا لم يرنّ تنبيه BTC؟» بالنظر في حالة التنبيه، ويشرح طريقة عمل التطبيق. والتغيير والإيقاف ينتظران ضغطتك على البطاقة كذلك."
+        ],
+        [
+          "تنبيهات تمسح كل العملات",
+          "عند طلب مسح مثل «ما العملات التي RSI لها تحت 30؟» لا يعطي المساعد قائمة مباشرة؛ بل يقترح تنبيهًا يراقب كل العملات، فيصلك إشعار عن كل عملة يتحقق فيها الشرط. تراقب Plus أعلى 100 عملة من حيث الحجم، وتراقب Pro كل العملات."
+        ],
+        [
+          "ما الذي لا يفعله؟",
+          "لا يقدّم نصائح استثمارية، ولا يجيب عن «ماذا أشتري اليوم؟»، ولا يعلّق على السوق المباشر. ولا ينشئ تنبيهًا أو يغيّره أو يوقفه دون موافقتك."
+        ]
+      ],
+      "faq": [
+        [
+          "هل المساعد الذكي مجاني؟",
+          "يعمل MarketAlert بالاشتراك؛ ويمكن تجربة Plus وPro مجانًا لمدة 7 أيام. المساعد الذكي متاح في الخطتين. يمكنك تجهيز تنبيهك دون اشتراك؛ ويبدأ العمل عندما تبدأ التجربة."
+        ],
+        [
+          "هل يُنشأ التنبيه بمجرد أن أكتب؟",
+          "لا. تصل مسودة أولًا؛ ويُنشأ التنبيه عندما تضغط إنشاء التنبيه. وإن لم تضغط تنتهي صلاحية المسودة بعد 30 دقيقة."
+        ],
+        [
+          "هل يمكنني تغيير تنبيه بالكتابة؟",
+          "نعم. اكتب «غيّر تنبيه BTC عند 70 ألفًا إلى 72 ألفًا»؛ تظهر القيمة القديمة والجديدة على البطاقة، ويُحفظ التغيير عند الضغط على حفظ التعديل."
+        ],
+        [
+          "هل تستهلك أزرار القوالب رسائل الذكاء الاصطناعي؟",
+          "لا. الضغط على زر قالب جاهز في المحادثة لا يُحتسب من رسائل الذكاء الاصطناعي."
+        ],
+        [
+          "ما الفرق عن المساعد الصوتي؟",
+          "عند الكتابة توافق على كل إجراء بزر البطاقة. أما المساعد الصوتي فينفّذ ما تقوله مباشرة؛ التفاصيل في صفحة [التنبيهات الصوتية](features/voice-crypto-alerts)."
+        ]
+      ],
+      "related": [
+        "features/voice-crypto-alerts",
+        "features/all-coins-alerts",
+        "features/multi-condition-alerts",
+        "features/rsi-alerts",
+        "features/ema-crossover-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 تنبيهًا؛ تنبيهات متكررة وحتى 3 شروط لكل تنبيه وتنبيهان لكل العملات ضمن أعلى 100. إشعارات فورية وTelegram."
+        ],
+        [
+          "Pro",
+          "100 تنبيه؛ حتى 5 شروط لكل تنبيه و10 تنبيهات لكل العملات تشمل جميع العملات. إشعارات فورية وTelegram وويب هوك موقّع."
+        ]
+      ],
+      "ai": {
+        "kicker": "ذكاء اصطناعي · إنشاء بالكتابة · PLUS / PRO",
+        "tap": "اضغط على فقاعة لترى التنبيه الذي جُهّز من تلك الجملة.",
+        "bub": [
+          "كل العملات: RSI تحت 30 + الحجم ضعفان",
+          "عملات ارتفعت 5% في 15 دقيقة",
+          "عندما يصل BTC إلى 100 ألف",
+          "ETH تحت 3,000 + RSI تحت 30",
+          "عملات كسرت أعلى سعر في 24 ساعة",
+          "التقاطع الذهبي في BTC"
+        ],
+        "wheel": [
+          "RSI للكل",
+          "قفزة",
+          "BTC 100 ألف",
+          "ETH + RSI",
+          "أعلى 24 س",
+          "تقاطع ذهبي"
+        ],
+        "what": [
+          "شرطان وكل العملات: يصلك إشعار عن كل عملة يتحقق فيها الشرطان معًا.",
+          "يراقب كل العملات ويخبرك أيّها ارتفع 5% خلال 15 دقيقة.",
+          "شرط واحد وعملة واحدة: يرنّ مرة واحدة عندما يتجاوز السعر 100,000 USDT.",
+          "يخبرك عندما يتحقق السعر وRSI في الوقت نفسه.",
+          "يخبرك عندما تسجّل أي عملة أعلى سعر جديد خلال 24 ساعة.",
+          "يخبرك عندما يقطع SMA(50) المتوسط SMA(200) صعودًا على الرسم اليومي."
+        ],
+        "dTitle": "ماذا تريد أن تكتب؟",
+        "dLead": "اسحب جملة إلى Zilbo أو اضغط عليها لتفتح المسودة التي يجهّزها التطبيق.",
+        "wTitle": "أدِر العجلة",
+        "wLead": "يظهر لك واحد من ستة تنبيهات صعبة.",
+        "spin": "أدِر",
+        "pTitle": "تنبيه في أربع خطوات",
+        "pLead": "مرّر للأسفل وسيأخذك Zilbo خطوة بخطوة.",
+        "jTitle": "ماذا يفعل المساعد وماذا لا يفعل؟",
+        "jLead": "دع Zilbo يفرزها.",
+        "yes": "يفعل",
+        "no": "لا يفعل",
+        "again": "مرة أخرى",
+        "cards": [
+          [
+            "يحوّل جملتك إلى تنبيه",
+            "السعر، RSI، EMA، MACD، الحجم…",
+            1
+          ],
+          [
+            "يقدّم نصائح بيع وشراء",
+            "«هل أشتري BTC اليوم؟»",
+            0
+          ],
+          [
+            "ينشئ تنبيهات تمسح كل العملات",
+            "«ما العملات التي RSI لها تحت 30؟»",
+            1
+          ],
+          [
+            "ينشئ تنبيهات دون موافقة",
+            "لا بد من ضغط إنشاء التنبيه",
+            0
+          ],
+          [
+            "يسأل إن نقص شيء",
+            "سؤال واحد + أزرار إجابة",
+            1
+          ],
+          [
+            "يعلّق على السوق المباشر",
+            "لا ينظر إلى البيانات المباشرة",
+            0
+          ],
+          [
+            "يعرض تنبيهاتك ويغيّرها ويوقفها",
+            "بموافقتك",
+            1
+          ],
+          [
+            "يقوم بأمور خارج التطبيق",
+            "أخبار، تذكيرات…",
+            0
+          ],
+          [
+            "يجيب عن «لماذا لم يرنّ؟»",
+            "من حالة التنبيه",
+            1
+          ]
+        ],
+        "alt": "مسودة تنبيه جهّزها التطبيق من «{q}»",
+        "flowAlt": [
+          "طلب ETH بشرطين مكتوب في محادثة الذكاء الاصطناعي",
+          "المساعد يسأل عن السعر الناقص مع أزرار الإجابة",
+          "مسودة تنبيه بشرطي سعر ETH وRSI",
+          "التنبيه الذي أُنشئ بعد الضغط على إنشاء التنبيه"
+        ],
+        "q": [
+          "نبّهني عندما ينزل RSI لأي عملة تحت 30 ويتضاعف حجم التداول",
+          "أخبرني بالعملات التي ترتفع 5% خلال 15 دقيقة",
+          "نبّهني عندما يصل BTC إلى 100 ألف",
+          "نبّهني عندما يهبط ETH تحت 3000 وينزل RSI تحت 30",
+          "نبّهني عندما تكسر أي عملة أعلى سعر في 24 ساعة",
+          "نبّهني عند التقاطع الذهبي في BTC"
+        ]
       }
     }
   },
@@ -6758,6 +8588,189 @@
         "sDay": "The cross happens at {x}. The 1d candle closes once a day, at {close} ({tz}); you are notified at that close.",
         "tfLabel": "Timeframe",
         "now": "now"
+      }
+    },
+    "ai-crypto-alert-assistant": {
+      "link": "AI alert assistant",
+      "title": "How to set crypto alerts by chatting with AI | MarketAlert",
+      "h1": "How do I set an alert by writing to the AI?",
+      "description": "Write the alert in your own words: “Alert me when any coin has RSI below 30 and volume doubles.” The AI assistant prepares a draft and the alert is set when you tap Set alert. Push and Telegram.",
+      "intro": "You write what you want in your own words; the assistant prepares a draft with the coin, conditions, channel and trigger. The alert is set only when you tap Set alert on the draft. Two-condition alerts, scans across [all coins](features/all-coins-alerts) and hard ones like a golden cross take a single sentence. You can also set them [by voice](features/voice-crypto-alerts).",
+      "prompt": "Alert me if ETH drops and RSI goes below 30",
+      "exampleTitle": "What can you write?",
+      "caption": "Each screen is the draft the app prepares when that sentence is written.",
+      "steps": [
+        [
+          "Write your sentence",
+          "Open the AI tab and write the coin, the conditions and, if you like, the channel in your own words. Two conditions work too: “Alert me if ETH drops and RSI goes below 30”."
+        ],
+        [
+          "Answer if something is missing",
+          "If something is missing, the assistant asks one question and suggests answers as chips. Here the price is missing; tapping “Below 3,000” is enough."
+        ],
+        [
+          "Check the draft",
+          "The card shows the coin, both conditions, the channel and the trigger. Change it by writing “make it Telegram” or with Edit in form."
+        ],
+        [
+          "Tap Set alert",
+          "The alert is set only with this tap. The draft waits 30 minutes; if it expires, you can have it prepared again."
+        ]
+      ],
+      "details": [
+        [
+          "What can the assistant do?",
+          "It prepares single or multi-condition alerts with price, percent change, RSI, EMA/SMA cross, MACD, volume and 24-hour high/low conditions. It lists, changes and turns off your alerts, answers “why didn’t my BTC alert fire?” by checking the alert’s status, and explains how the app works. Changes and turn-offs also wait for your tap on the card."
+        ],
+        [
+          "Alerts that scan all coins",
+          "For a scan request like “which coins have RSI below 30?” the assistant gives no live list; it offers an alert that watches all coins, so you hear about every coin that meets the condition. Plus watches the top 100 coins by volume, Pro watches every coin."
+        ],
+        [
+          "What doesn’t it do?",
+          "It gives no investment advice, doesn’t answer “what should I buy today?” and doesn’t comment on the live market. It never sets, changes or turns off an alert without your approval."
+        ]
+      ],
+      "faq": [
+        [
+          "Is the AI assistant free?",
+          "MarketAlert works with a subscription; Plus and Pro both come with a 7-day free trial. The AI assistant is included in both plans. You can prepare your alert without subscribing; it starts working when you start the trial."
+        ],
+        [
+          "Is the alert set the moment I write?",
+          "No. A draft comes first; the alert is set when you tap Set alert. If you don’t, the draft expires after 30 minutes."
+        ],
+        [
+          "Can I change an alert by writing?",
+          "Yes. Write “change my BTC 70k alert to 72k”; the old and new values show on the card and the change is saved when you tap Save changes."
+        ],
+        [
+          "Do the template chips use AI messages?",
+          "No. Tapping a ready-made template chip in the chat doesn’t count against your AI messages."
+        ],
+        [
+          "How is it different from the voice assistant?",
+          "When you write, you approve each action with the button on the card. The voice assistant does what you say directly; details are on the [voice alerts](features/voice-crypto-alerts) page."
+        ]
+      ],
+      "related": [
+        "features/voice-crypto-alerts",
+        "features/all-coins-alerts",
+        "features/multi-condition-alerts",
+        "features/rsi-alerts",
+        "features/ema-crossover-alerts"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 alerts; repeating alerts, up to 3 conditions per alert and 2 all-coins alerts on the top 100. Push and Telegram."
+        ],
+        [
+          "Pro",
+          "100 alerts; up to 5 conditions per alert and 10 all-coins alerts across every coin. Push, Telegram and signed webhook."
+        ]
+      ],
+      "ai": {
+        "kicker": "AI · SET BY WRITING · PLUS / PRO",
+        "tap": "Tap a bubble to see the alert prepared from that sentence.",
+        "bub": [
+          "All coins: RSI below 30 + volume 2x",
+          "Coins up 5% in 15 minutes",
+          "When BTC hits 100k",
+          "ETH below 3,000 + RSI below 30",
+          "Coins breaking their 24h high",
+          "BTC golden cross"
+        ],
+        "wheel": [
+          "All-coin RSI",
+          "Pump",
+          "BTC 100k",
+          "ETH + RSI",
+          "24h high",
+          "Golden cross"
+        ],
+        "what": [
+          "Two conditions, all coins: you hear about every coin where both are true at once.",
+          "Watches all coins and tells you which one rises 5% in 15 minutes.",
+          "One condition, one coin: fires once when the price goes above 100,000 USDT.",
+          "Tells you when price and RSI are both true at the same time.",
+          "Tells you when any coin makes a new 24-hour high.",
+          "Tells you when SMA(50) crosses above SMA(200) on the daily chart."
+        ],
+        "dTitle": "What would you like to write?",
+        "dLead": "Drag a sentence onto Zilbo or tap it to open the draft the app prepares.",
+        "wTitle": "Spin the wheel",
+        "wLead": "Get one of six hard-to-set alerts.",
+        "spin": "Spin",
+        "pTitle": "An alert in four steps",
+        "pLead": "Scroll down and Zilbo walks you through each step.",
+        "jTitle": "What does the assistant do, and not do?",
+        "jLead": "Let Zilbo sort it out.",
+        "yes": "Does",
+        "no": "Doesn’t",
+        "again": "Again",
+        "cards": [
+          [
+            "Turns your sentence into an alert",
+            "price, RSI, EMA, MACD, volume…",
+            1
+          ],
+          [
+            "Gives buy/sell advice",
+            "“Should I buy BTC today?”",
+            0
+          ],
+          [
+            "Sets alerts that scan all coins",
+            "“Which coins have RSI below 30?”",
+            1
+          ],
+          [
+            "Sets alerts without approval",
+            "you must tap Set alert",
+            0
+          ],
+          [
+            "Asks if something is missing",
+            "one question + answer chips",
+            1
+          ],
+          [
+            "Comments on the live market",
+            "doesn’t look at live data",
+            0
+          ],
+          [
+            "Lists, changes and turns off your alerts",
+            "with your approval",
+            1
+          ],
+          [
+            "Does things outside the app",
+            "news, reminders…",
+            0
+          ],
+          [
+            "Answers “why didn’t it fire?”",
+            "from the alert’s status",
+            1
+          ]
+        ],
+        "alt": "Alert draft prepared in the app from “{q}”",
+        "flowAlt": [
+          "A two-condition ETH request written in the AI chat",
+          "The assistant asks for the missing price, with answer chips",
+          "Alert draft with ETH price and RSI conditions",
+          "The alert set after tapping Set alert"
+        ],
+        "q": [
+          "Alert me when any coin has RSI below 30 and volume doubles",
+          "Tell me which coins rise 5% in 15 minutes",
+          "Alert me when BTC hits 100k",
+          "Alert me when ETH drops below 3,000 and RSI goes below 30",
+          "Alert me when any coin breaks its 24h high",
+          "Alert me on a BTC golden cross"
+        ]
       }
     }
   }

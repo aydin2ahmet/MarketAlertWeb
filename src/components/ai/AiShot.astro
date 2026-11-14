@@ -1,0 +1,10 @@
+---
+/** Bir uygulama ekranının açık ve koyu hâli (temaya göre biri görünür). */
+import ProgressiveShot from '../ProgressiveShot.astro';
+import { aiSize, aiSrc } from '../../lib/ai';
+interface Props { code: string; k: string; alt: string; sizes: string; eager?: boolean }
+const { code, k, alt, sizes, eager } = Astro.props;
+const l = aiSize(code, 'light', k), d = aiSize(code, 'dark', k);
+---
+<ProgressiveShot class="sh-l" src={aiSrc(code, 'light', k)} alt={alt} width={String(l[0])} height={String(l[1])} loading={eager ? 'eager' : 'lazy'} decoding="async" sizes={sizes} />
+<ProgressiveShot class="sh-d" src={aiSrc(code, 'dark', k)} alt="" width={String(d[0])} height={String(d[1])} loading={eager ? 'eager' : 'lazy'} decoding="async" sizes={sizes} />

@@ -194,6 +194,21 @@
    "faq": [
     ["Is the EMA crossover alert free?", "MarketAlert works with a subscription; Plus and Pro both come with a 7-day free trial, and the EMA crossover alert is included in both."]
    ]
+  },
+  "features/ai-crypto-alert-assistant": {
+   "line": "Set Binance crypto alerts by writing a sentence to MarketAlert's AI assistant; it prepares a draft and the alert is set only when you tap Set alert.",
+   "what": "The AI assistant is in the app's AI tab on Plus and Pro. Write what you want; it prepares a draft card with coin or all coins, conditions, channel and trigger, and you tap Set alert. If something is missing it asks one question with answer chips.",
+   "facts": [
+    "It prepares single and multi-condition alerts: price, percent change, RSI, EMA/SMA cross, MACD, volume and 24-hour high/low.",
+    "Nothing is set, changed or turned off without the user's tap on the card; a draft expires after 30 minutes.",
+    "A scan question like 'which coins have RSI below 30' gets an all-coins alert offer, not a live list: top 100 by volume on Plus, every coin on Pro.",
+    "It lists, changes and turns off alerts and answers 'why didn't my alert fire?' from the alert's status.",
+    "It gives no investment advice and no live market commentary. Template chips in the chat use no AI messages."
+   ],
+   "example": "Alert me if ETH drops below 3,000 and RSI goes below 30.",
+   "faq": [
+    ["Is the AI assistant free?", "MarketAlert works with a subscription; Plus and Pro both come with a 7-day free trial, and the AI assistant is included in both."]
+   ]
   }
  }
 }
