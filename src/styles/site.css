@@ -167,7 +167,7 @@ svg.ar .bx { fill: none; stroke: var(--pri); stroke-width: 2.4; }
 @media (prefers-reduced-motion: reduce) { .pb.on .nt { transition: none; } }
 .tprog { display: none; }
 /* JS varsa sabit sahne: her özellik bir ekran boyu kaydırma; telefon ortada sabit kalır */
-.tour.pin { --top: 65px; --bot: 0px; height: calc(var(--n) * 100svh); padding-block: 0; position: relative; }
+.tour.pin { --top: 65px; --bot: 0px; height: calc(var(--n) * 125svh); padding-block: 0; position: relative; }
 .pin .tstick { position: sticky; top: var(--top); height: calc(100svh - var(--top) - var(--bot)); overflow: clip; }
 .pin .step { position: absolute; inset: 0; padding: 18px 0 0; border: 0; display: flex; flex-direction: column; opacity: 0; visibility: hidden; transition: opacity .35s, visibility 0s .35s; }
 .pin .step.on { opacity: 1; visibility: visible; transition: opacity .35s; }
