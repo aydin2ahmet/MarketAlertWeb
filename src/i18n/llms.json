@@ -10,7 +10,7 @@
   "Channels: push notifications with a chosen alarm sound, Telegram (via the MarketAlert bot, no chat ID needed), and HMAC-SHA256 signed webhooks.",
   "Every match is kept in the in-app notification log with timing details.",
   "Plans: MarketAlert works with a subscription and has no free plan. Plus (20 alerts, all condition types, repeating alerts, push and Telegram, 2 all-coins alerts up to the top 100), Pro (100 alerts, webhook, 10 all-coins alerts on every coin). Both start with a 7-day free trial. Without a subscription a user can still prepare alerts; they wait and start working when the trial starts. Prices are shown in the app stores per country.",
-  "Availability: coming soon to the App Store (iOS) and Google Play (Android). Guests can start without an account.",
+  "Availability: coming soon to the App Store (iOS) and Google Play (Android).",
   "Languages: Turkish, English, Chinese (Simplified), Spanish, Hindi, Arabic, Portuguese (Brazil), French, Russian, German, Japanese.",
   "Not affiliated with Binance. Notifications are informational and not investment advice."
  ],

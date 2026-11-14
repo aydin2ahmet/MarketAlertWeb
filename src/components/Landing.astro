@@ -132,7 +132,8 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
   <div class="tape" aria-hidden="true" dir="ltr"><div>{[...TAPE, ...TAPE].map(x => <span>{x}</span>)}</div></div>
   <p class="mband"><Fragment set:html={svg('candle')} /><span>{t.markets}</span></p>
 
-  <section id="features" class={`tour${HAND.includes(code) ? ' hand' : ''}`}>
+  <section id="features" class={`tour${HAND.includes(code) ? ' hand' : ''}`} style={`--n:${n}`}>
+    <div class="tstick">
     {t.f.map((f: any, i: number) => (
       <article class="step" data-i={i} data-k={f.k} style={`--c:var(--cat${CAT[f.k]})`}>
         <div class="th">
@@ -152,6 +153,8 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
         </div>
       </article>
     ))}
+    <div class="tprog" aria-hidden="true">{t.f.map((f: any, i: number) => <i data-i={i} style={`--c:var(--cat${CAT[f.k]})`}></i>)}</div>
+    </div>
   </section>
 
   <section id="why" class="sec">
@@ -244,8 +247,6 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
     new IntersectionObserver(([e]) => { heroOut = !e.isIntersecting && e.boundingClientRect.top < 0; sync(); }).observe(heroEl);
     if (cta) new IntersectionObserver(([e]) => { ctaIn = e.isIntersecting; sync(); }).observe(cta);
   }
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) show(Number((e.target as HTMLElement).dataset.i)); }), { rootMargin: '-45% 0px -45% 0px' });
-  steps.forEach(s => io.observe(s));
 
   // Kalem okları: notlar telefonun iki yanında; sayfa kaydırıldıkça her ok yavaşça çizilir,
   // ucu ekrana varınca işaret edilen yer çerçevelenir. Hızlı kaydırınca da çizim acele etmez; geri kaydırınca geri sarılır.
@@ -271,7 +272,14 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
     const { pb } = k;
     const cw = pb.parentElement!.clientWidth;
     const sm = cw < 600;
-    const ph = sm ? Math.min(140, cw * .37) : 300, gap = sm ? 30 : 110;
+    let ph = sm ? Math.min(156, cw * .43) : 300;
+    if (pinned()) {
+      // Sahne yüksekliğine sığdır: başlık + telefon + ilerleme çubuğu ekrana sığmalı.
+      const th = pb.previousElementSibling as HTMLElement;
+      const room = stick!.clientHeight - th.offsetHeight - 52;
+      ph = Math.max(110, Math.min(ph, (room - 8) / SR));
+    }
+    const gap = sm ? 26 : 110;
     const col = sm ? (cw - ph - gap * 2) / 2 : Math.min(220, (cw - ph - gap * 2 - 40) / 2);
     const W = col * 2 + gap * 2 + ph, bord = sm ? 6 : 9;
     const sw = ph - bord * 2, shh = sw * SR, H = shh + bord * 2 + 8;
@@ -307,10 +315,36 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
     });
     draw(k, k.p ?? 0);
   };
-  const target = (k: Blk) => { const r = k.pb.getBoundingClientRect(); return reduce ? 1 : clamp((innerHeight * .9 - r.top) / (r.height + innerHeight * .45)); };
+  // Sabit sahne: tur bölümü uzun bir kaydırma yolu; telefon ekranın ortasında sabit kalır,
+  // kaydırdıkça sıradaki özelliğe geçilir ve o özelliğin okları o anda çizilir.
+  const tourEl = document.querySelector<HTMLElement>('.tour');
+  const stick = document.querySelector<HTMLElement>('.tstick');
+  const ticks = [...document.querySelectorAll<HTMLElement>('.tprog i')];
+  let cur = -1;
+  const pinned = () => !!tourEl && tourEl.classList.contains('pin');
+  const where = () => {
+    if (!tourEl || !stick) return { idx: 0, loc: 1 };
+    const span = tourEl.offsetHeight - stick.offsetHeight;
+    const f = clamp(-tourEl.getBoundingClientRect().top / Math.max(1, span)) * blocks.length;
+    const idx = Math.min(blocks.length - 1, Math.floor(f));
+    return { idx, loc: Math.min(1, f - idx) };
+  };
+  const setCur = (i: number) => {
+    if (i === cur) return; cur = i;
+    steps.forEach((s, j) => s.classList.toggle('on', j === i));
+    ticks.forEach((t, j) => t.classList.toggle('on', j <= i));
+    show(i);
+  };
+  const target = (k: Blk) => {
+    if (reduce) return 1;
+    if (!pinned()) { const r = k.pb.getBoundingClientRect(); return clamp((innerHeight * .9 - r.top) / (r.height + innerHeight * .45)); }
+    const { idx, loc } = where(); const j = blocks.indexOf(k);
+    return j < idx ? 1 : j > idx ? 0 : clamp(loc / .7);
+  };
   let raf = 0;
   const tick = () => {
     raf = 0; let busy = false;
+    if (pinned()) setCur(where().idx);
     for (const k of blocks) {
       const t = target(k), c = k.p ?? 0, d = t - c;
       const nx = Math.abs(d) < .002 ? t : c + Math.sign(d) * Math.min(Math.abs(d), .0018 + Math.abs(d) * .014);
@@ -319,7 +353,8 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
     if (busy) raf = requestAnimationFrame(tick);
   };
   const onScroll = () => { if (!raf) raf = requestAnimationFrame(tick); };
-  const build = () => { blocks.forEach(layout); onScroll(); };
+  tourEl?.classList.add('pin');
+  const build = () => { blocks.forEach(layout); cur = -1; onScroll(); };
   addEventListener('scroll', onScroll, { passive: true });
   let rt = 0; let lastW = innerWidth;
   addEventListener('resize', () => { if (innerWidth === lastW) return; lastW = innerWidth; clearTimeout(rt); rt = window.setTimeout(build, 150); });

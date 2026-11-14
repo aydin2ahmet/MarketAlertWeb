@@ -16,7 +16,6 @@
   "heroSub": "Form doldurma. Karmaşık alarmını bile konuşarak ya da yazarak saniyeler içinde kur. MarketAlert, seçtiğin Binance piyasasındaki tüm coinleri RSI, MACD, hacim ve SMA/EMA koşullarıyla sürekli tarasın.",
   "chips": [
    "7 gün ücretsiz deneme",
-   "Kayıt olmadan misafir başla",
    "Uygulama kapalıyken de takipte"
   ],
   "sayExample": "“BTC 70 bin üstü ve saatlik RSI 30 altıysa haber ver.”",
@@ -323,7 +322,6 @@
   "heroSub": "Skip the forms. Create even complex alerts in seconds by speaking or typing. MarketAlert continuously scans every coin in your selected Binance market for RSI, MACD, volume and SMA/EMA conditions.",
   "chips": [
    "7-day free trial",
-   "Start as a guest, no sign-up",
    "Monitoring even when the app is closed"
   ],
   "sayExample": "“Notify me when BTC is above 70,000 and hourly RSI is below 30.”",
@@ -630,7 +628,6 @@
   "heroSub": "无需填写表单。通过语音或文字，几秒内即可创建复杂提醒。MarketAlert 持续扫描所选币安市场的所有币种，监控 RSI、MACD、成交量及 SMA/EMA 条件。",
   "chips": [
    "7 天免费试用",
-   "无需注册，访客即可开始",
    "关闭应用也能持续监控"
   ],
   "sayExample": "“BTC 高于 70000 且小时线 RSI 低于 30 时通知我。”",
@@ -937,7 +934,6 @@
   "heroSub": "Sin formularios. Crea incluso alertas complejas en segundos hablando o escribiendo. MarketAlert analiza continuamente todas las monedas del mercado de Binance que elijas según condiciones de RSI, MACD, volumen y SMA/EMA.",
   "chips": [
    "Prueba gratis de 7 días",
-   "Empieza como invitado, sin registro",
    "Sigue vigilando con la app cerrada"
   ],
   "sayExample": "“Avísame si BTC supera los 70.000 y el RSI de una hora está por debajo de 30.”",
@@ -1244,7 +1240,6 @@
   "heroSub": "फ़ॉर्म भरने की ज़रूरत नहीं। बोलकर या लिखकर जटिल अलर्ट भी सेकंडों में बनाएँ। MarketAlert आपके चुने हुए Binance बाज़ार के सभी कॉइन को RSI, MACD, वॉल्यूम और SMA/EMA की शर्तों पर लगातार स्कैन करता है।",
   "chips": [
    "7 दिन का मुफ़्त ट्रायल",
-   "बिना साइन-अप, गेस्ट के रूप में शुरू करें",
    "ऐप बंद होने पर भी निगरानी जारी"
   ],
   "sayExample": "“BTC 70,000 से ऊपर हो और एक घंटे का RSI 30 से नीचे हो तो बताएँ।”",
@@ -1551,7 +1546,6 @@
   "heroSub": "بلا تعبئة نماذج. أنشئ حتى التنبيهات المعقدة خلال ثوانٍ بالكلام أو الكتابة. يفحص MarketAlert جميع عملات سوق Binance الذي تختاره باستمرار وفق شروط RSI وMACD وحجم التداول وSMA/EMA.",
   "chips": [
    "تجربة مجانية 7 أيام",
-   "ابدأ كضيف دون تسجيل",
    "تستمر المراقبة حتى مع إغلاق التطبيق"
   ],
   "sayExample": "“أخبرني عندما يتجاوز BTC مستوى 70000 ويكون RSI للساعة أقل من 30.”",
@@ -1858,7 +1852,6 @@
   "heroSub": "Sem preencher formulários. Crie até alertas complexos em segundos, falando ou digitando. O MarketAlert analisa continuamente todas as moedas do mercado da Binance escolhido, com condições de RSI, MACD, volume e SMA/EMA.",
   "chips": [
    "7 dias de teste grátis",
-   "Comece como convidado, sem cadastro",
    "Monitora mesmo com o app fechado"
   ],
   "sayExample": "“Avise quando o BTC estiver acima de 70.000 e o RSI de uma hora abaixo de 30.”",
@@ -2165,7 +2158,6 @@
   "heroSub": "Plus de formulaire. Créez même des alertes complexes en quelques secondes, à la voix ou par écrit. MarketAlert analyse en continu toutes les cryptos du marché Binance choisi selon vos conditions de RSI, MACD, volume et SMA/EMA.",
   "chips": [
    "Essai gratuit de 7 jours",
-   "Commencez en invité, sans inscription",
    "Surveille même lorsque l’app est fermée"
   ],
   "sayExample": "“Préviens-moi si le BTC dépasse 70 000 et si le RSI horaire passe sous 30.”",
@@ -2472,7 +2464,6 @@
   "heroSub": "Без заполнения форм. Создавайте даже сложные оповещения за секунды голосом или текстом. MarketAlert непрерывно проверяет все монеты выбранного рынка Binance по условиям RSI, MACD, объёма и SMA/EMA.",
   "chips": [
    "7 дней бесплатно",
-   "Начните как гость, без регистрации",
    "Следит за рынком даже при закрытом приложении"
   ],
   "sayExample": "“Сообщи, когда BTC выше 70 000, а часовой RSI ниже 30.”",
@@ -2779,7 +2770,6 @@
   "heroSub": "Keine Formulare. Erstelle selbst komplexe Alarme in Sekunden per Sprache oder Text. MarketAlert prüft kontinuierlich alle Coins im gewählten Binance-Markt auf RSI-, MACD-, Volumen- und SMA/EMA-Bedingungen.",
   "chips": [
    "7 Tage kostenlos testen",
-   "Als Gast starten, ohne Registrierung",
    "Überwacht auch bei geschlossener App"
   ],
   "sayExample": "“Benachrichtige mich, wenn BTC über 70.000 und der Stunden-RSI unter 30 liegt.”",
@@ -3086,7 +3076,6 @@
   "heroSub": "フォーム入力は不要。複雑なアラートも、音声やテキストで数秒で作成。MarketAlertは選択したBinance市場の全コインを、RSI・MACD・出来高・SMA/EMAの条件で継続的にスキャンします。",
   "chips": [
    "7日間無料トライアル",
-   "登録不要、ゲストで開始",
    "アプリを閉じても監視を継続"
   ],
   "sayExample": "“BTCが70000を超え、1時間足のRSIが30を下回ったら知らせて。”",
