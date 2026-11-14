@@ -1,0 +1,731 @@
+{
+ "_": "Ana sayfa turu: kalem okları. boxes = [taraf, x%, y%, genişlik%, yükseklik%] ekran görüntüsünde (TR konumları, ar aynalanır). notes = dil başına her özelliğin 3 kısa notu.",
+ "boxes": {
+  "price": [
+   [
+    "L",
+    46,
+    47.5,
+    50,
+    5.5
+   ],
+   [
+    "R",
+    50,
+    57,
+    94,
+    5
+   ],
+   [
+    "L",
+    50,
+    80,
+    94,
+    6.5
+   ]
+  ],
+  "types": [
+   [
+    "L",
+    50,
+    34,
+    94,
+    13
+   ],
+   [
+    "R",
+    50,
+    61,
+    94,
+    18
+   ],
+   [
+    "L",
+    50,
+    81,
+    94,
+    10
+   ]
+  ],
+  "multi": [
+   [
+    "L",
+    28,
+    45.5,
+    46,
+    4
+   ],
+   [
+    "R",
+    50,
+    57,
+    94,
+    4
+   ],
+   [
+    "L",
+    50,
+    77,
+    94,
+    11
+   ]
+  ],
+  "all": [
+   [
+    "R",
+    50,
+    24.5,
+    94,
+    6
+   ],
+   [
+    "L",
+    27,
+    45,
+    47,
+    10
+   ],
+   [
+    "L",
+    27,
+    56,
+    47,
+    8
+   ]
+  ],
+  "ai": [
+   [
+    "L",
+    55,
+    20.5,
+    82,
+    10
+   ],
+   [
+    "R",
+    50,
+    46,
+    96,
+    34
+   ],
+   [
+    "L",
+    46,
+    87.5,
+    88,
+    5.5
+   ]
+  ],
+  "tpl": [
+   [
+    "L",
+    50,
+    32,
+    94,
+    14
+   ],
+   [
+    "R",
+    84,
+    29,
+    13,
+    4
+   ],
+   [
+    "L",
+    50,
+    48,
+    94,
+    15
+   ]
+  ],
+  "ch": [
+   [
+    "L",
+    50,
+    22,
+    94,
+    18
+   ],
+   [
+    "L",
+    50,
+    40,
+    94,
+    4.5
+   ],
+   [
+    "R",
+    50,
+    66,
+    94,
+    32
+   ]
+  ],
+  "live": [
+   [
+    "R",
+    79,
+    33,
+    32,
+    4
+   ],
+   [
+    "L",
+    30,
+    39,
+    52,
+    6.5
+   ],
+   [
+    "R",
+    50,
+    50,
+    94,
+    11
+   ]
+  ],
+  "log": [
+   [
+    "L",
+    50,
+    58,
+    94,
+    5
+   ],
+   [
+    "R",
+    86,
+    64,
+    24,
+    26
+   ],
+   [
+    "L",
+    50,
+    75.5,
+    94,
+    4.5
+   ]
+  ]
+ },
+ "notes": {
+  "tr": {
+   "price": [
+    "İğne bile yakalanır",
+    "Hedefi %'yle seç",
+    "Push, Telegram, webhook"
+   ],
+   "types": [
+    "Fiyat ve % hareket",
+    "RSI, MACD, hacim",
+    "EMA / SMA kesişimi"
+   ],
+   "multi": [
+    "5 koşula kadar",
+    "VE ya da VEYA",
+    "Bir kez ya da tekrar"
+   ],
+   "all": [
+    "İlk 100, 200 ya da hepsi",
+    "Spot ve vadeli",
+    "Anlık, Dengeli, Özet"
+   ],
+   "ai": [
+    "Cümleni yaz",
+    "Taslağı gör, onayla",
+    "Yazarak değiştir"
+   ],
+   "tpl": [
+    "Pump ve Dump",
+    "Tek dokunuşla kur",
+    "Hacimle birlikte"
+   ],
+   "ch": [
+    "Telegram tek dokunuş",
+    "Sohbet kimliği yok",
+    "Anında ya da Özet"
+   ],
+   "live": [
+    "Şu an sağlanıyor mu?",
+    "Canlı değer",
+    "Hedefe kalan yol"
+   ],
+   "log": [
+    "Koşul gerçekleşti",
+    "Saniyesi saniyesine",
+    "Telefona ulaştı"
+   ]
+  },
+  "en": {
+   "price": [
+    "Even a wick counts",
+    "Pick the target by %",
+    "Push, Telegram, webhook"
+   ],
+   "types": [
+    "Price and % move",
+    "RSI, MACD, volume",
+    "EMA / SMA cross"
+   ],
+   "multi": [
+    "Up to 5 conditions",
+    "AND or OR",
+    "Once or repeat"
+   ],
+   "all": [
+    "Top 100, 200 or all",
+    "Spot and futures",
+    "Instant, Balanced, Digest"
+   ],
+   "ai": [
+    "Type a sentence",
+    "See the draft, confirm",
+    "Edit by typing"
+   ],
+   "tpl": [
+    "Pump and Dump",
+    "Set up in one tap",
+    "Paired with volume"
+   ],
+   "ch": [
+    "Telegram in one tap",
+    "No chat ID needed",
+    "Instant or Summary"
+   ],
+   "live": [
+    "Met right now?",
+    "Live value",
+    "Distance to target"
+   ],
+   "log": [
+    "Condition met",
+    "To the second",
+    "Reached your phone"
+   ]
+  },
+  "de": {
+   "price": [
+    "Auch Dochte zählen",
+    "Ziel per % wählen",
+    "Push, Telegram, Webhook"
+   ],
+   "types": [
+    "Preis und %-Bewegung",
+    "RSI, MACD, Volumen",
+    "EMA/SMA-Kreuzung"
+   ],
+   "multi": [
+    "Bis zu 5 Bedingungen",
+    "UND oder ODER",
+    "Einmal oder wieder"
+   ],
+   "all": [
+    "Top 100, 200 oder alle",
+    "Spot und Futures",
+    "Drei Push-Modi"
+   ],
+   "ai": [
+    "Satz eintippen",
+    "Entwurf prüfen, bestätigen",
+    "Per Text ändern"
+   ],
+   "tpl": [
+    "Pump und Dump",
+    "Mit einem Tipp",
+    "Mit Volumen"
+   ],
+   "ch": [
+    "Telegram mit einem Tipp",
+    "Keine Chat-ID",
+    "Sofort oder gesammelt"
+   ],
+   "live": [
+    "Jetzt erfüllt?",
+    "Live-Wert",
+    "Abstand zum Ziel"
+   ],
+   "log": [
+    "Bedingung erfüllt",
+    "Sekundengenau",
+    "Am Handy angekommen"
+   ]
+  },
+  "fr": {
+   "price": [
+    "Même une mèche compte",
+    "Cible en %",
+    "Push, Telegram, webhook"
+   ],
+   "types": [
+    "Prix et variation %",
+    "RSI, MACD, volume",
+    "Croisement EMA/SMA"
+   ],
+   "multi": [
+    "Jusqu'à 5 conditions",
+    "ET ou OU",
+    "Une fois ou en boucle"
+   ],
+   "all": [
+    "Top 100, 200 ou toutes",
+    "Spot et futures",
+    "Trois rythmes de push"
+   ],
+   "ai": [
+    "Écrivez une phrase",
+    "Vérifiez le brouillon",
+    "Modifiez en écrivant"
+   ],
+   "tpl": [
+    "Pump et Dump",
+    "En une touche",
+    "Avec le volume"
+   ],
+   "ch": [
+    "Telegram en une touche",
+    "Sans ID de chat",
+    "Instantané ou récap"
+   ],
+   "live": [
+    "Remplie en ce moment ?",
+    "Valeur en direct",
+    "Écart à la cible"
+   ],
+   "log": [
+    "Condition remplie",
+    "À la seconde près",
+    "Arrivée sur le téléphone"
+   ]
+  },
+  "es": {
+   "price": [
+    "Hasta una mecha cuenta",
+    "Objetivo en %",
+    "Push, Telegram, webhook"
+   ],
+   "types": [
+    "Precio y % de cambio",
+    "RSI, MACD, volumen",
+    "Cruce EMA/SMA"
+   ],
+   "multi": [
+    "Hasta 5 condiciones",
+    "Y u O",
+    "Una vez o repetir"
+   ],
+   "all": [
+    "Top 100, 200 o todas",
+    "Spot y futuros",
+    "Instantáneo, Equilibrado, Resumen"
+   ],
+   "ai": [
+    "Escribe una frase",
+    "Revisa el borrador",
+    "Cambia escribiendo"
+   ],
+   "tpl": [
+    "Pump y Dump",
+    "Con un toque",
+    "Junto al volumen"
+   ],
+   "ch": [
+    "Telegram con un toque",
+    "Sin ID de chat",
+    "Al instante o Resumen"
+   ],
+   "live": [
+    "¿Se cumple ahora?",
+    "Valor en vivo",
+    "Distancia al objetivo"
+   ],
+   "log": [
+    "Condición cumplida",
+    "Al segundo",
+    "Llegó al teléfono"
+   ]
+  },
+  "pt-br": {
+   "price": [
+    "Até um pavio conta",
+    "Alvo em %",
+    "Push, Telegram, webhook"
+   ],
+   "types": [
+    "Preço e variação %",
+    "RSI, MACD, volume",
+    "Cruzamento EMA/SMA"
+   ],
+   "multi": [
+    "Até 5 condições",
+    "E ou OU",
+    "Uma vez ou repetir"
+   ],
+   "all": [
+    "Top 100, 200 ou todas",
+    "Spot e futuros",
+    "Instantâneo, Equilibrado, Resumo"
+   ],
+   "ai": [
+    "Escreva uma frase",
+    "Revise o rascunho",
+    "Mude escrevendo"
+   ],
+   "tpl": [
+    "Pump e Dump",
+    "Com um toque",
+    "Junto com volume"
+   ],
+   "ch": [
+    "Telegram com um toque",
+    "Sem ID de chat",
+    "Instantâneo ou Resumo"
+   ],
+   "live": [
+    "Atendida agora?",
+    "Valor ao vivo",
+    "Distância do alvo"
+   ],
+   "log": [
+    "Condição atendida",
+    "No segundo exato",
+    "Chegou ao celular"
+   ]
+  },
+  "ru": {
+   "price": [
+    "Даже тень свечи",
+    "Цель в %",
+    "Push, Telegram, вебхук"
+   ],
+   "types": [
+    "Цена и % движения",
+    "RSI, MACD, объём",
+    "Пересечение EMA/SMA"
+   ],
+   "multi": [
+    "До 5 условий",
+    "И или ИЛИ",
+    "Один раз или снова"
+   ],
+   "all": [
+    "Топ-100, 200 или все",
+    "Спот и фьючерсы",
+    "Три режима push"
+   ],
+   "ai": [
+    "Напишите фразу",
+    "Проверьте черновик",
+    "Правьте текстом"
+   ],
+   "tpl": [
+    "Памп и дамп",
+    "Одно касание",
+    "Вместе с объёмом"
+   ],
+   "ch": [
+    "Telegram одним касанием",
+    "Без chat ID",
+    "Мгновенно или сводка"
+   ],
+   "live": [
+    "Выполнено сейчас?",
+    "Живое значение",
+    "Сколько до цели"
+   ],
+   "log": [
+    "Условие выполнено",
+    "До секунды",
+    "Дошло до телефона"
+   ]
+  },
+  "ja": {
+   "price": [
+    "ヒゲも逃さない",
+    "%で目標を選ぶ",
+    "プッシュ・Telegram・Webhook"
+   ],
+   "types": [
+    "価格と%変動",
+    "RSI・MACD・出来高",
+    "EMA/SMAクロス"
+   ],
+   "multi": [
+    "最大5条件",
+    "AND か OR",
+    "1回か繰り返し"
+   ],
+   "all": [
+    "上位100・200・全銘柄",
+    "現物と先物",
+    "即時・バランス・まとめ"
+   ],
+   "ai": [
+    "文で入力",
+    "下書きを確認して承認",
+    "入力で変更"
+   ],
+   "tpl": [
+    "パンプとダンプ",
+    "ワンタップで設定",
+    "出来高と組み合わせ"
+   ],
+   "ch": [
+    "Telegramはワンタップ",
+    "チャットID不要",
+    "即時かまとめ"
+   ],
+   "live": [
+    "今、満たしている？",
+    "ライブ値",
+    "目標までの距離"
+   ],
+   "log": [
+    "条件成立",
+    "秒単位で記録",
+    "スマホに届いた"
+   ]
+  },
+  "zh": {
+   "price": [
+    "插针也能抓到",
+    "按 % 选目标",
+    "推送、Telegram、Webhook"
+   ],
+   "types": [
+    "价格与 % 涨跌",
+    "RSI、MACD、成交量",
+    "EMA/SMA 交叉"
+   ],
+   "multi": [
+    "最多 5 个条件",
+    "AND 或 OR",
+    "一次或重复"
+   ],
+   "all": [
+    "前 100、200 或全部",
+    "现货和合约",
+    "即时、均衡、摘要"
+   ],
+   "ai": [
+    "写一句话",
+    "看草稿，确认",
+    "打字修改"
+   ],
+   "tpl": [
+    "拉升和砸盘",
+    "一键创建",
+    "结合成交量"
+   ],
+   "ch": [
+    "一键连接 Telegram",
+    "无需聊天 ID",
+    "即时或汇总"
+   ],
+   "live": [
+    "现在满足吗？",
+    "实时数值",
+    "距目标多远"
+   ],
+   "log": [
+    "条件已满足",
+    "精确到秒",
+    "已送达手机"
+   ]
+  },
+  "hi": {
+   "price": [
+    "विक भी पकड़ में",
+    "% से लक्ष्य चुनें",
+    "पुश, Telegram, वेबहुक"
+   ],
+   "types": [
+    "कीमत और % बदलाव",
+    "RSI, MACD, वॉल्यूम",
+    "EMA/SMA क्रॉस"
+   ],
+   "multi": [
+    "5 शर्तों तक",
+    "AND या OR",
+    "एक बार या बार-बार"
+   ],
+   "all": [
+    "टॉप 100, 200 या सभी",
+    "स्पॉट और फ़्यूचर्स",
+    "तुरंत, संतुलित, सारांश"
+   ],
+   "ai": [
+    "अपना वाक्य लिखें",
+    "ड्राफ़्ट देखें, पुष्टि करें",
+    "लिखकर बदलें"
+   ],
+   "tpl": [
+    "पंप और डंप",
+    "एक टैप में सेट",
+    "वॉल्यूम के साथ"
+   ],
+   "ch": [
+    "एक टैप में Telegram",
+    "चैट ID नहीं चाहिए",
+    "तुरंत या सारांश"
+   ],
+   "live": [
+    "अभी पूरी हुई?",
+    "लाइव वैल्यू",
+    "लक्ष्य से दूरी"
+   ],
+   "log": [
+    "शर्त पूरी हुई",
+    "सेकंड तक सटीक",
+    "फ़ोन तक पहुँचा"
+   ]
+  },
+  "ar": {
+   "price": [
+    "حتى الذيل يُلتقط",
+    "اختر الهدف بالنسبة",
+    "إشعار وTelegram وWebhook"
+   ],
+   "types": [
+    "السعر ونسبة الحركة",
+    "RSI وMACD والحجم",
+    "تقاطع EMA/SMA"
+   ],
+   "multi": [
+    "حتى 5 شروط",
+    "AND أو OR",
+    "مرة أو تكرار"
+   ],
+   "all": [
+    "أول 100 أو 200 أو الكل",
+    "الفوري والآجل",
+    "فوري، متوازن، ملخص"
+   ],
+   "ai": [
+    "اكتب جملتك",
+    "راجع المسودة وأكّد",
+    "عدّل بالكتابة"
+   ],
+   "tpl": [
+    "ضخ وتفريغ",
+    "إعداد بلمسة واحدة",
+    "مع الحجم"
+   ],
+   "ch": [
+    "Telegram بلمسة واحدة",
+    "بلا معرّف محادثة",
+    "فوري أو ملخّص"
+   ],
+   "live": [
+    "هل يتحقق الآن؟",
+    "القيمة المباشرة",
+    "المسافة إلى الهدف"
+   ],
+   "log": [
+    "تحقق الشرط",
+    "بدقة الثانية",
+    "وصل إلى الهاتف"
+   ]
+  }
+ }
+}

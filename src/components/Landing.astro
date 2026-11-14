@@ -6,6 +6,7 @@ import WhatIs from './WhatIs.astro';
 import { GA_ID, LOCALES, legalUrl, shotSources } from '../config';
 import alertGuides from '../i18n/alert-guides.json';
 import coinGuides from '../i18n/coin-guides.json';
+import tour from '../i18n/tour-notes.json';
 
 interface Props { t: any; code: string; appLocale: string }
 const { t, code, appLocale } = Astro.props;
@@ -13,6 +14,7 @@ const { t, code, appLocale } = Astro.props;
 const ICO: Record<string, string> = {
   check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
   x: '<path d="M7 7l10 10M17 7L7 17"/>',
+  minus: '<path d="M6 12h12"/>',
   globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>',
   sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
   moon: '<path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z"/>',
@@ -31,13 +33,18 @@ const CAT: Record<string, number> = { price: 0, types: 3, multi: 8, all: 7, ai: 
 const KEY: Record<string, string> = { price: 'PRICE_WICK', types: 'CONDITIONS', multi: 'AND_OR', all: 'ALL_COINS', ai: 'AI_VOICE', tpl: 'TEMPLATES', ch: 'CHANNELS', live: 'LIVE_STATUS', log: 'DELIVERY_LOG' };
 const TAPE = ['PRICE ≥ 70,000 USDT', 'RSI(14) < 30 · 1h', 'Δ +5% / 5m', 'EMA(9) ↗ EMA(21) · 4h', 'MACD(12,26,9) ↗ SIGNAL · 1d', 'VOL > 3× SMA(20) · 15m', '24h HIGH ↑', 'ALL COINS · TOP 100', 'PRICE ↘ SMA(50) · 1h', 'AND · OR'];
 const n = t.f.length;
+// Ana sayfa turu: ekranın çevresinde kısa el yazısı notlar, kaydırdıkça kalem okuyla işaret ettikleri yere bağlanır.
+// Kutular TR ekranından ölçüldü; Arapça ekran aynalı olduğu için taraf ve x ters çevrilir.
+const HAND = ['tr', 'en', 'de', 'fr', 'es', 'pt-br', 'ru'];
+const boxes = (k: string) => ((tour as any).boxes[k] as any[]).map(([sd, x, y, w, h]) => code === 'ar' ? [sd === 'L' ? 'R' : 'L', 100 - x, y, w, h] : [sd, x, y, w, h]);
+const tourNotes = (k: string): string[] => ((tour as any).notes[code] ?? (tour as any).notes.en)[k];
 const pad = (i: number) => String(i).padStart(2, '0');
 const shot = (k: string, alt: string, eager = false, tall = false) => {
-  const version = k === 'hero-voice' || k === 'ai' ? '3x-conditions2' : code === 'ar' ? '3x-ar2' : k === 'ch' || k === 'log' ? '3x-text2' : '3x';
+  const version = k === 'ai' || k === 'hero-list' ? 'nav4' : k === 'hero-voice' ? '3x-conditions2' : code === 'ar' ? '3x-ar2' : k === 'ch' || k === 'log' ? '3x-text2' : '3x';
   return ['light', 'dark'].map((theme, i) => {
     const src = `/shots/${code}/${theme}/${k}.webp?v=${version}`;
     const sources = shotSources(src);
-    const sizes = tall ? (k === 'hero-voice' ? '(max-width:860px) 196px, 238px' : '(max-width:860px) 170px, 220px') : '(max-width:860px) 224px, 282px';
+    const sizes = tall ? (k === 'hero-voice' ? '(max-width:860px) 196px, 238px' : '(max-width:860px) 170px, 220px') : '(max-width:600px) 130px, 286px';
     const attrs = `class="sh-${i === 0 ? 'l' : 'd'}" alt="${i === 0 ? alt : ''}" width="${tall ? 360 : 600}" height="${tall ? 940 : 1268}" ${eager && i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"`;
     // Asıl adres keskin dosya (Google görsel arama bunu alır); bulanık ön izleme yalnızca arka plan.
     return `<img ${attrs} style="background:url('${sources.preview}') center/cover no-repeat" src="${sources.src}" srcset="${sources.srcset}" sizes="${sizes}">`;
@@ -96,29 +103,29 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
 
   {t.what && <WhatIs d={t.what} />}
 
+  <!-- Neden MarketAlert (tasarım H1, 2026-11-14): sayfa temasında, her kartın üstünde küçük canlı sahne. -->
   <section class="hl" aria-labelledby="hl-t">
     <h2 class="st" id="hl-t">{t.hl.title}</h2>
     <div class="hlg">
       <article class="hc" style="--c:var(--cat2)">
-        <span class="hi"><Fragment set:html={svg('spark')} /></span>
+        <div class="hsc" aria-hidden="true"><p class="hty">{t.sayExample}</p><div class="hdr"><b dir="ltr">BTC/USDT · RSI(14)</b><span><Fragment set:html={svg('check')} /></span></div></div>
+        <span class="hk" dir="ltr">AI</span>
         <h3>{t.hl.ai.t}</h3>
         <p>{t.hl.ai.d}</p>
-        <p class="bub">{t.sayExample}</p>
         <ul class="acts">{t.hl.acts.map((a: string, i: number) => <li><Fragment set:html={svg(['plus', 'edit', 'list', 'power'][i])} />{a}</li>)}</ul>
       </article>
       <article class="hc" style="--c:var(--cat3)">
-        <span class="hi"><Fragment set:html={svg('radar')} /></span>
+        <div class="hsc" aria-hidden="true"><div class="dots">{Array.from({ length: 40 }, (_, i) => <i class={[3, 11, 17, 26, 34].includes(i) ? 'up' : [8, 22].includes(i) ? 'dn' : ''} style={`animation-delay:${((i % 10) * .3).toFixed(1)}s`}></i>)}</div><div class="hscan"></div></div>
+        <span class="hk" dir="ltr">7/24</span>
         <h3>{t.hl.scan.t}</h3>
         <p>{t.hl.scan.d}</p>
-        <div class="dots" aria-hidden="true">{Array.from({ length: 40 }, (_, i) => <i class={[3, 11, 17, 26, 34].includes(i) ? 'up' : [8, 22].includes(i) ? 'dn' : ''}></i>)}</div>
         <ul class="acts" dir="ltr">{['RSI', 'MACD', 'VOL', 'SMA/EMA'].map(a => <li>{a}</li>)}</ul>
       </article>
       <article class="hc" style="--c:var(--cat0)">
-        <span class="hi"><Fragment set:html={svg('bell')} /></span>
+        <div class="hsc" aria-hidden="true"><p class="hlk" dir="ltr">14:32</p><div class="push"><img src="/icons/logo-96.png" alt="" width="36" height="36" loading="lazy" /><span><small dir="ltr">MarketAlert · 14:32</small><b>{t.hl.push}</b></span></div></div>
+        <span class="hk" dir="ltr">Push · Telegram · Webhook</span>
         <h3>{t.hl.bg.t}</h3>
         <p>{t.hl.bg.d}</p>
-        <div class="push" aria-hidden="true"><img src="/icons/logo-96.png" alt="" width="36" height="36" loading="lazy" /><span><small dir="ltr">MarketAlert · 14:32</small><b>{t.hl.push}</b></span></div>
-        <ul class="acts" dir="ltr">{['Push', 'Telegram', 'Webhook'].map(a => <li>{a}</li>)}</ul>
       </article>
     </div>
   </section>
@@ -126,39 +133,41 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
   <div class="tape" aria-hidden="true" dir="ltr"><div>{[...TAPE, ...TAPE].map(x => <span>{x}</span>)}</div></div>
   <p class="mband"><Fragment set:html={svg('candle')} /><span>{t.markets}</span></p>
 
-  <section id="features" class="tour">
-    <div>
-      {t.f.map((f: any, i: number) => (
-        <article class={`step${i === 0 ? ' on' : ''}`} data-i={i} data-k={f.k} style={`--c:var(--cat${CAT[f.k]})`}>
+  <section id="features" class={`tour${HAND.includes(code) ? ' hand' : ''}`} style={`--n:${n}`}>
+    <div class="tstick">
+    {t.f.map((f: any, i: number) => (
+      <article class="step" data-i={i} data-k={f.k} style={`--c:var(--cat${CAT[f.k]})`}>
+        <div class="th">
           <p class="meta"><span class="num">{pad(i + 1)}/{pad(n)}</span><code class="tag">{KEY[f.k]}</code></p>
           <p class="feature-label">{f.s}</p>
           <h2>{f.t}</h2>
-          <p>{f.d}</p>
           {f.k === 'price' && <a class="rsi-guide-link" href={`/${code}/features/price-alerts/`}>{(alertGuides as any)[code]['price-alerts'].link} <span aria-hidden="true">↗</span></a>}
           {f.k === 'price' && coinLinks.length > 0 && <p class="coin-guides"><b>{COIN_LABEL[code]}</b>{coinLinks.map(c => <a href={c.href}>{c.link}</a>)}</p>}
           {f.k === 'all' && <a class="rsi-guide-link" href={`/${code}/features/rsi-alerts/`}>{t.rsiGuideLink} <span aria-hidden="true">↗</span></a>}
           {f.k === 'multi' && <a class="rsi-guide-link" href={`/${code}/features/multi-condition-alerts/`}>{(alertGuides as any)[code]['multi-condition-alerts'].link} <span aria-hidden="true">↗</span></a>}
           {f.k === 'tpl' && <a class="rsi-guide-link" href={`/${code}/features/volume-spike-alerts/`}>{(alertGuides as any)[code]['volume-spike-alerts'].link} <span aria-hidden="true">↗</span></a>}
+        </div>
+        <div class="pb" data-b={JSON.stringify(boxes(f.k))}>
           <figure class="pf"><Fragment set:html={shot(f.k, f.t)} /></figure>
-        </article>
-      ))}
-    </div>
-    <div class="stick" aria-hidden="true">
-      <div class="frame"><div class="screen">
-        {t.f.map((f: any, i: number) => <Fragment set:html={shot(f.k, '').replace(/class="sh-(l|d)"/g, `class="sh-$1${i === 0 ? ' on' : ''}" data-i="${i}"`)} />)}
-      </div></div>
-      <div class="hud" dir="ltr" style={`--c:var(--cat${CAT[t.f[0].k]})`}><span id="hud-n">01/{pad(n)}</span><span class="hud-key" id="hud-k">{KEY[t.f[0].k]}</span></div>
-      <div class="prog">{t.f.map((f: any, i: number) => <i class={i === 0 ? 'on' : ''} data-i={i} style={`--c:var(--cat${CAT[f.k]})`}></i>)}</div>
+          <svg class="ar" aria-hidden="true"></svg>
+          <ul class="nts">{tourNotes(f.k).map((x: string, j: number) => <li class={`nt ${boxes(f.k)[j][0]}`}>{x}</li>)}</ul>
+        </div>
+      </article>
+    ))}
+    <div class="tprog" aria-hidden="true">{t.f.map((f: any, i: number) => <i data-i={i} style={`--c:var(--cat${CAT[f.k]})`}></i>)}</div>
     </div>
   </section>
 
   <section id="why" class="sec">
     <h2 class="st"><span class="hash">#</span> {t.whyTitle}</h2>
     <p class="ss">{t.whySub}</p>
-    <table class="cmp">
-      <thead><tr><th><span class="skip">{t.whyTitle}</span></th><th class="us">{t.cmpUs}</th><th>{t.cmpThem}</th></tr></thead>
-      <tbody>{t.cmp.map((r: any[]) => <tr><th scope="row">{r[0]}</th><td class="us"><Fragment set:html={cell(r[1])} /></td><td><Fragment set:html={cell(r[2])} /></td></tr>)}</tbody>
-    </table>
+    <!-- Önce / sonra sürgüsü (tasarım W5, 2026-11-14): solda sıradan alarm, sağda MarketAlert; tutamaç sürüklenir. -->
+    <div class="vs" style="--x:50%">
+      <div class="vs-l vs-us"><p class="vs-lbl">{t.cmpUs}</p><ul>{t.cmp.map((r: any[]) => <li><Fragment set:html={svg('check')} /><span>{r[0]}</span></li>)}</ul></div>
+      <div class="vs-l vs-them"><p class="vs-lbl">{t.cmpThem}</p><ul>{t.cmp.map((r: any[]) => <li class={r[2] === 1 ? 'ok' : ''}><Fragment set:html={svg(r[2] === 1 ? 'check' : 'minus')} /><span>{r[0]}</span></li>)}</ul></div>
+      <div class="vs-h" aria-hidden="true"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></b></div>
+      <input class="vs-in" type="range" min="4" max="96" value="50" aria-label={`${t.cmpThem} / ${t.cmpUs}`} />
+    </div>
   </section>
 
   <section id="plans" class="sec">
@@ -225,22 +234,13 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
     track('language_switch', { to_lang: (e.target as HTMLSelectElement).value });
     location.href = '/' + (e.target as HTMLSelectElement).value + '/' + location.hash;
   });
-  // Tur: ortadaki adım öne çıkar, sabit telefon onun ekranını gösterir.
+  // Tur: her özellik ekranı sayfa başına bir kez sayılır (hangi özelliğe kadar okunduğunu gösterir).
   const steps = [...document.querySelectorAll<HTMLElement>('.step')];
-  const hudN = document.getElementById('hud-n');
-  const hudK = document.getElementById('hud-k');
-  const hud = document.querySelector<HTMLElement>('.hud');
-  const total = String(steps.length).padStart(2, '0');
+  const seen = new Set<string>();
   const show = (i: number) => {
-    document.querySelectorAll<HTMLElement>('.step, .screen img, .prog i').forEach(el => el.classList.toggle('on', Number(el.dataset.i) === i));
-    if (hudN) hudN.textContent = String(i + 1).padStart(2, '0') + '/' + total;
-    if (hudK) hudK.textContent = steps[i].querySelector('code')?.textContent ?? '';
-    hud?.style.setProperty('--c', steps[i].style.getPropertyValue('--c'));
-    // Her özellik ekranı sayfa başına bir kez sayılır: hangi özelliğe kadar okunduğunu gösterir.
     const key = steps[i].dataset.k;
     if (key && !seen.has(key)) { seen.add(key); track('feature_view', { feature: key }); }
   };
-  const seen = new Set<string>();
   // Telefonda ilk ekran geçilince alttan mağaza barı çıkar.
   const bar = document.getElementById('dlbar');
   const heroEl = document.querySelector('.hero .stores');
@@ -251,6 +251,134 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
     new IntersectionObserver(([e]) => { heroOut = !e.isIntersecting && e.boundingClientRect.top < 0; sync(); }).observe(heroEl);
     if (cta) new IntersectionObserver(([e]) => { ctaIn = e.isIntersecting; sync(); }).observe(cta);
   }
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) show(Number((e.target as HTMLElement).dataset.i)); }), { rootMargin: '-45% 0px -45% 0px' });
-  steps.forEach(s => io.observe(s));
+
+  // Kalem okları: notlar telefonun iki yanında; sayfa kaydırıldıkça her ok yavaşça çizilir,
+  // ucu ekrana varınca işaret edilen yer çerçevelenir. Hızlı kaydırınca da çizim acele etmez; geri kaydırınca geri sarılır.
+  type Box = [string, number, number, number, number];
+  type Part = { nt: HTMLElement; ln: SVGPathElement; Ll: number; hd: SVGPathElement; bx: SVGRectElement; Lb: number };
+  type Blk = { pb: HTMLElement; b: Box[]; p?: number; parts?: Part[] };
+  const SR = 1268 / 600;
+  const clamp = (v: number) => Math.max(0, Math.min(1, v));
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const blocks: Blk[] = [...document.querySelectorAll<HTMLElement>('.tour .pb')].map(pb => ({ pb, b: JSON.parse(pb.dataset.b || '[]') }));
+  const draw = (k: Blk, p: number) => {
+    k.p = p;
+    k.parts?.forEach((e, i) => {
+      const t = clamp((p - .12 - i * .24) / .24), ta = clamp(t / .6), tb = clamp((t - .6) / .4);
+      e.ln.style.strokeDashoffset = String(e.Ll * (1 - ta));
+      e.hd.style.opacity = ta > .97 ? '1' : '0';
+      e.bx.style.strokeDashoffset = String(e.Lb * (1 - tb));
+      e.nt.style.opacity = String(clamp(t * 4));
+      e.nt.style.transform = `translateY(${(1 - clamp(t * 3)) * 8}px)`;
+    });
+  };
+  const layout = (k: Blk) => {
+    const { pb } = k;
+    const cw = pb.parentElement!.clientWidth;
+    const sm = cw < 600;
+    let ph = sm ? Math.min(156, cw * .43) : 300;
+    if (pinned()) {
+      // Sahne yüksekliğine sığdır: başlık + telefon + ilerleme çubuğu ekrana sığmalı.
+      const th = pb.previousElementSibling as HTMLElement;
+      const room = stick!.clientHeight - th.offsetHeight - 52;
+      ph = Math.max(110, Math.min(ph, (room - 8) / SR));
+    }
+    const gap = sm ? 26 : 110;
+    const col = sm ? (cw - ph - gap * 2) / 2 : Math.min(220, (cw - ph - gap * 2 - 40) / 2);
+    const W = col * 2 + gap * 2 + ph, bord = sm ? 6 : 9;
+    const sw = ph - bord * 2, shh = sw * SR, H = shh + bord * 2 + 8;
+    pb.classList.add('on');
+    Object.assign(pb.style, { width: W + 'px', height: H + 'px' });
+    const fig = pb.querySelector<HTMLElement>('.pf')!;
+    const px = col + gap, py = 4, sx = px + bord, sy = py + bord;
+    Object.assign(fig.style, { left: px + 'px', top: py + 'px', width: ph + 'px', padding: bord + 'px', borderRadius: (sm ? 22 : 40) + 'px' });
+    fig.querySelectorAll('img').forEach(im => { im.style.borderRadius = (sm ? 16 : 32) + 'px'; });
+    const nts = [...pb.querySelectorAll<HTMLElement>('.nt')];
+    const used: Record<string, number[][]> = { L: [], R: [] };
+    let svg = '';
+    k.b.forEach(([sd, x, y0p, w, h], i) => {
+      const e = nts[i]; const L = sd === 'L';
+      e.style.width = col + 'px'; e.style.left = (L ? 0 : W - col) + 'px';
+      const cx = sx + x / 100 * sw, cy = sy + y0p / 100 * shh, bw = w / 100 * sw, bh = h / 100 * shh;
+      const eh = e.offsetHeight;
+      let y = cy - eh / 2 + (i % 2 ? 1 : -1) * (sm ? 18 : 42);
+      for (const [a, c] of used[sd]) if (y < c + 10 && y + eh > a - 10) y = c + 10;
+      y = Math.max(0, Math.min(H - eh, y)); used[sd].push([y, y + eh]); e.style.top = y + 'px';
+      const x0 = L ? col + 6 : W - col - 6, y0 = y + eh / 2, xe = L ? px - 3 : px + ph + 3, ye = cy, dx = xe - x0, v = ye > y0 ? 1 : -1;
+      const d = `M${x0} ${y0} C ${x0 + dx * .35} ${y0 - v * 28}, ${xe - dx * .65} ${ye + v * 6}, ${xe} ${ye}`;
+      const ang = L ? 0 : Math.PI, hp = (t: number) => `${xe - 9 * Math.cos(ang + t)} ${ye - 9 * Math.sin(ang + t)}`;
+      const bx = Math.max(sx + 2, cx - bw / 2), bww = Math.min(bw, sw - 4);
+      svg += `<path class="ln" d="${d}"/><path class="hh" d="M${hp(.5)} L${xe} ${ye} L${hp(-.5)}"/><rect class="bx" x="${bx}" y="${cy - bh / 2}" width="${bww}" height="${bh}" rx="${sm ? 5 : 8}"/>`;
+    });
+    const s = pb.querySelector('svg')!; s.innerHTML = svg;
+    const lns = s.querySelectorAll<SVGPathElement>('.ln'), hds = s.querySelectorAll<SVGPathElement>('.hh'), bxs = s.querySelectorAll<SVGRectElement>('.bx');
+    k.parts = nts.map((nt, i) => {
+      const Ll = lns[i].getTotalLength(), Lb = bxs[i].getTotalLength();
+      lns[i].style.strokeDasharray = `${Ll} ${Ll}`; bxs[i].style.strokeDasharray = `${Lb} ${Lb}`;
+      return { nt, ln: lns[i], Ll, hd: hds[i], bx: bxs[i], Lb };
+    });
+    draw(k, k.p ?? 0);
+  };
+  // Sabit sahne: tur bölümü uzun bir kaydırma yolu; telefon ekranın ortasında sabit kalır,
+  // kaydırdıkça sıradaki özelliğe geçilir ve o özelliğin okları o anda çizilir.
+  const tourEl = document.querySelector<HTMLElement>('.tour');
+  const stick = document.querySelector<HTMLElement>('.tstick');
+  const ticks = [...document.querySelectorAll<HTMLElement>('.tprog i')];
+  let cur = -1;
+  const pinned = () => !!tourEl && tourEl.classList.contains('pin');
+  const where = () => {
+    if (!tourEl || !stick) return { idx: 0, loc: 1 };
+    const span = tourEl.offsetHeight - stick.offsetHeight;
+    const f = clamp(-tourEl.getBoundingClientRect().top / Math.max(1, span)) * blocks.length;
+    const idx = Math.min(blocks.length - 1, Math.floor(f));
+    return { idx, loc: Math.min(1, f - idx) };
+  };
+  const setCur = (i: number) => {
+    if (i === cur) return; cur = i;
+    steps.forEach((s, j) => s.classList.toggle('on', j === i));
+    ticks.forEach((t, j) => t.classList.toggle('on', j <= i));
+    show(i);
+  };
+  const target = (k: Blk) => {
+    if (reduce) return 1;
+    if (!pinned()) { const r = k.pb.getBoundingClientRect(); return clamp((innerHeight * .9 - r.top) / (r.height + innerHeight * .45)); }
+    const { idx, loc } = where(); const j = blocks.indexOf(k);
+    return j < idx ? 1 : j > idx ? 0 : clamp(loc / .7);
+  };
+  let raf = 0;
+  const tick = () => {
+    raf = 0; let busy = false;
+    if (pinned()) setCur(where().idx);
+    for (const k of blocks) {
+      const t = target(k), c = k.p ?? 0, d = t - c;
+      const nx = Math.abs(d) < .002 ? t : c + Math.sign(d) * Math.min(Math.abs(d), .0018 + Math.abs(d) * .014);
+      if (nx !== c) { draw(k, nx); busy = true; }
+    }
+    if (busy) raf = requestAnimationFrame(tick);
+  };
+  const onScroll = () => { if (!raf) raf = requestAnimationFrame(tick); };
+  // Önce / sonra sürgüsü: sürükle ya da klavyeyle kaydır; görününce bir kez kendisi gidip gelir.
+  const vs = document.querySelector<HTMLElement>('.vs');
+  if (vs) {
+    const inp = vs.querySelector<HTMLInputElement>('.vs-in')!;
+    const put = (v: number) => { v = Math.max(4, Math.min(96, v)); vs.style.setProperty('--x', v + '%'); inp.value = String(v); };
+    let drag = false;
+    const at = (x: number) => { const r = vs.getBoundingClientRect(); const v = (x - r.left) / r.width * 100; put(v); };
+    vs.addEventListener('pointerdown', e => { drag = true; vs.setPointerCapture(e.pointerId); at(e.clientX); });
+    vs.addEventListener('pointermove', e => { if (drag) at(e.clientX); });
+    vs.addEventListener('pointerup', () => { drag = false; });
+    inp.addEventListener('input', () => put(Number(inp.value)));
+    if (!reduce) new IntersectionObserver(([e], o) => {
+      if (!e.isIntersecting) return; o.disconnect();
+      let t0 = 0; const f = (ts: number) => { t0 ||= ts; const k = (ts - t0) / 1800; if (k >= 1) { put(50); return; } put(50 + Math.sin(k * Math.PI * 2) * 28); requestAnimationFrame(f); };
+      requestAnimationFrame(f);
+    }, { threshold: .4 }).observe(vs);
+  }
+  tourEl?.classList.add('pin');
+  const build = () => { blocks.forEach(layout); cur = -1; onScroll(); };
+  addEventListener('scroll', onScroll, { passive: true });
+  let rt = 0; let lastW = innerWidth;
+  addEventListener('resize', () => { if (innerWidth === lastW) return; lastW = innerWidth; clearTimeout(rt); rt = window.setTimeout(build, 150); });
+  build();
+  document.fonts?.ready.then(build);
 </script>
