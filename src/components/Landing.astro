@@ -264,7 +264,7 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
   const draw = (k: Blk, p: number) => {
     k.p = p;
     k.parts?.forEach((e, i) => {
-      const t = clamp((p - .12 - i * .24) / .24), ta = clamp(t / .6), tb = clamp((t - .6) / .4);
+      const t = clamp((p - .04 - i * .22) / .3), ta = clamp(t / .6), tb = clamp((t - .6) / .4);
       e.ln.style.strokeDashoffset = String(e.Ll * (1 - ta));
       e.hd.style.opacity = ta > .97 ? '1' : '0';
       e.bx.style.strokeDashoffset = String(e.Lb * (1 - tb));
@@ -343,7 +343,7 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
     if (reduce) return 1;
     if (!pinned()) { const r = k.pb.getBoundingClientRect(); return clamp((innerHeight * .9 - r.top) / (r.height + innerHeight * .45)); }
     const { idx, loc } = where(); const j = blocks.indexOf(k);
-    return j < idx ? 1 : j > idx ? 0 : clamp(loc / .7);
+    return j < idx ? 1 : j > idx ? 0 : clamp(loc / .6);
   };
   let raf = 0;
   const tick = () => {
@@ -351,7 +351,7 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
     if (pinned()) setCur(where().idx);
     for (const k of blocks) {
       const t = target(k), c = k.p ?? 0, d = t - c;
-      const nx = Math.abs(d) < .002 ? t : c + Math.sign(d) * Math.min(Math.abs(d), .0018 + Math.abs(d) * .014);
+      const nx = Math.abs(d) < .002 ? t : c + Math.sign(d) * Math.min(Math.abs(d), .004 + Math.abs(d) * .03);
       if (nx !== c) { draw(k, nx); busy = true; }
     }
     if (busy) raf = requestAnimationFrame(tick);
