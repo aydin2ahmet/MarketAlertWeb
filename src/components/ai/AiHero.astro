@@ -1,0 +1,75 @@
+---
+/**
+ * İlk ekran, tasarım K7a (2026-11-14, Ahmet): telefon ortada, Zilbo sol altta telefona yaslanmış; örnek cümleler
+ * baloncuk olup iki yandan yükselir. Dokunulan baloncuk telefona uçar, o cümleyle hazırlanan gerçek taslak açılır.
+ * JS yoksa baloncuklar telefonun altında düz liste olarak durur ve ilk ekran görünür.
+ */
+import AiShot from './AiShot.astro';
+import AiZb from './AiZb.astro';
+import { AI_EX, fillQ } from '../../lib/ai';
+import '../../styles/ai.css';
+interface Props { code: string; ai: any; h1: string; introHtml: string; setupTitle: string }
+const { code, ai, h1, introHtml, setupTitle } = Astro.props;
+---
+<section class="ai-h" data-ai-h>
+  <div class="ai-h-head">
+    <p class="ai-kick">{ai.kicker}</p><h1>{h1}</h1>
+    <p class="ai-intro" set:html={introHtml} />
+    <a class="btn" href="#setup">{setupTitle} <span aria-hidden="true">↓</span></a>
+  </div>
+  <div class="ai-h-st">
+    <div class="ai-h-sky" aria-hidden="true"></div>
+    <div class="ai-h-c">
+      <div class="ai-h-ph"><div class="ai-h-win">{AI_EX.map((e, i) => <div class={i === 0 ? 'ai-h-p on' : 'ai-h-p'}><AiShot code={code} k={`hero-${e}`} alt={fillQ(ai.alt, ai.q[i])} sizes="(max-width:760px) 200px, 290px" eager={i === 0} /></div>)}</div></div>
+      <AiZb m="zipla" class="ai-h-zb" />
+    </div>
+    <p class="ai-h-tap">{ai.tap}</p>
+  </div>
+  <ul class="ai-h-bubs">{ai.bub.map((b: string, i: number) => <li><button type="button" data-i={i}>{b}</button></li>)}</ul>
+</section>
+
+<script>
+  import { onVisible, reduce, zbInit, zbPlay } from '../../lib/aiZilbo';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-ai-h]')) {
+    const st = k.querySelector<HTMLElement>('.ai-h-st')!, sky = k.querySelector<HTMLElement>('.ai-h-sky')!;
+    const ph = k.querySelector<HTMLElement>('.ai-h-ph')!, zb = k.querySelector<HTMLElement>('.ai-zb')!;
+    const ps = [...k.querySelectorAll<HTMLElement>('.ai-h-p')];
+    const labels = [...k.querySelectorAll<HTMLButtonElement>('.ai-h-bubs button')].map(b => b.textContent || '');
+    zbInit(zb);
+    let cur = 0, last = Date.now(), n = 0;
+    const show = (i: number) => { cur = i; ps.forEach((p, j) => p.classList.toggle('on', j === i)); last = Date.now(); };
+    k.querySelectorAll<HTMLButtonElement>('.ai-h-bubs button').forEach(b => b.addEventListener('click', () => { show(+b.dataset.i!); zbPlay(zb, 'sasir', false, 'zipla'); }));
+    if (reduce) continue;
+    k.classList.add('ai-js');
+    const fly = async (b: HTMLElement) => {
+      const i = +b.dataset.i!; last = Date.now();
+      const sr = st.getBoundingClientRect(), pr = ph.getBoundingClientRect(), r = b.getBoundingClientRect();
+      const tx = pr.left - sr.left + pr.width / 2, ty = pr.top - sr.top + pr.height * .32;
+      const bx = r.left - sr.left + r.width / 2, by = r.top - sr.top + r.height / 2;
+      const c = b.cloneNode(true) as HTMLElement; c.className = 'ai-h-fly'; c.style.left = bx + 'px'; c.style.top = by + 'px'; st.append(c); b.remove();
+      await c.animate([{ transform: 'translate(-50%,-50%) scale(1)', opacity: 1 }, { transform: `translate(calc(-50% + ${tx - bx}px),calc(-50% + ${ty - by}px)) scale(.15)`, opacity: .1 }], { duration: 650, easing: 'cubic-bezier(.5,-.2,.4,1)', fill: 'forwards' }).finished;
+      c.remove(); ph.classList.remove('flash'); void ph.offsetWidth; ph.classList.add('flash'); show(i); zbPlay(zb, 'sasir', false, 'zipla');
+    };
+    const spawn = () => {
+      if (document.hidden) return;
+      const narrow = st.clientWidth < 560;
+      if (narrow && n % 3 === 2 && Math.random() < .5) { n++; return; }
+      const i = n++ % labels.length; const b = document.createElement('button'); b.type = 'button'; b.textContent = labels[i]; b.dataset.i = String(i); b.tabIndex = -1; sky.append(b);
+      const W = st.clientWidth, H = st.clientHeight, sr = st.getBoundingClientRect(), pr = ph.getBoundingClientRect(), bw = b.offsetWidth, bh = b.offsetHeight;
+      const L = pr.left - sr.left, R = pr.right - sr.left, side = n % 2, room = side ? W - R : L;
+      const cx = room > bw + 16 ? (side ? R + 8 + bw / 2 + Math.random() * (room - bw - 16) : 8 + bw / 2 + Math.random() * (room - bw - 16)) : (side ? W - bw / 2 - 4 : bw / 2 + 4);
+      const lo = bw / 2 + 4, hi = W - bw / 2 - 4, cl = (v: number) => Math.min(hi, Math.max(lo, v)); const x1 = cl(cx + (Math.random() * 30 - 15)), sw = narrow ? 0 : side ? 16 : -16, dur = 10000 + Math.random() * 3000;
+      const a = b.animate([{ transform: `translate(${cx - bw / 2}px,${H}px)` }, { transform: `translate(${(cx + x1) / 2 - bw / 2 + sw}px,${H / 2 - bh / 2}px)`, offset: .5 }, { transform: `translate(${x1 - bw / 2}px,${-bh}px)` }], { duration: dur, easing: 'linear' });
+      a.onfinish = () => b.remove(); b.addEventListener('click', () => fly(b));
+    };
+    onVisible(k, () => {
+      spawn(); setInterval(spawn, 1500);
+      setInterval(() => {
+        if (Date.now() - last < 6500 || document.hidden) return;
+        const sr = st.getBoundingClientRect();
+        const c = [...sky.children as any as HTMLElement[]].filter(b => { const r = b.getBoundingClientRect(); return +b.dataset.i! !== cur && r.top > sr.top + 60 && r.bottom < sr.bottom - 60; });
+        if (c.length) fly(c[0]); else { show((cur + 1) % ps.length); zbPlay(zb, 'sasir', false, 'zipla'); }
+      }, 1200);
+    }, .2);
+  }
+</script>

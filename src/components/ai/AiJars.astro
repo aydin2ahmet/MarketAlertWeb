@@ -1,0 +1,54 @@
+---
+/**
+ * Ne yapar, ne yapmaz: tasarım G7a (2026-11-14, Ahmet) cam kavanozlar. Kartlar yukarıdan düşer, Zilbo yön gösterir;
+ * "yapar" kartları yeşil, "yapmaz" kartları turuncu kavanoza girer. JS yoksa kavanozlar dolu gelir.
+ */
+import AiZb from './AiZb.astro';
+import '../../styles/ai.css';
+interface Props { ai: any }
+const { ai } = Astro.props;
+const yes = ai.cards.filter((c: any[]) => c[2]), no = ai.cards.filter((c: any[]) => !c[2]);
+---
+<section class="ai-j" aria-labelledby="ai-j-t">
+  <h2 id="ai-j-t">{ai.jTitle}</h2>
+  <p class="ai-j-lead">{ai.jLead}</p>
+  <div class="ai-j-st" data-ai-j>
+    <div class="ai-j-zb"><AiZb m="el" /></div>
+    <div class="ai-j-drop" aria-hidden="true"></div>
+    <div class="ai-j-b y"><ul class="ai-j-pile">{yes.map((c: any[]) => <li>{c[0]}<small>{c[1]}</small></li>)}</ul><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" /></svg>{ai.yes} <span class="ai-j-n">{yes.length}</span></b></div>
+    <div class="ai-j-b n"><ul class="ai-j-pile">{no.map((c: any[]) => <li>{c[0]}<small>{c[1]}</small></li>)}</ul><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>{ai.no} <span class="ai-j-n">{no.length}</span></b></div>
+    <button type="button" class="ai-j-re" hidden>↺ {ai.again}</button>
+  </div>
+  <script type="application/json" class="ai-j-data" set:html={JSON.stringify(ai.cards).replace(/</g, '\\u003c')} />
+</section>
+
+<script>
+  import { onVisible, reduce, sleep, zbInit, zbPlay } from '../../lib/aiZilbo';
+  for (const g of document.querySelectorAll<HTMLElement>('[data-ai-j]')) {
+    const C: [string, string, number][] = JSON.parse(g.parentElement!.querySelector('.ai-j-data')!.textContent!);
+    const drop = g.querySelector<HTMLElement>('.ai-j-drop')!, bs = [...g.querySelectorAll<HTMLElement>('.ai-j-b')];
+    const pl = bs.map(b => b.querySelector<HTMLElement>('.ai-j-pile')!), cn = bs.map(b => b.querySelector<HTMLElement>('.ai-j-n')!);
+    const zb = g.querySelector<HTMLElement>('.ai-zb')!, re = g.querySelector<HTMLButtonElement>('.ai-j-re')!;
+    zbInit(zb);
+    if (reduce) continue;
+    let rid = 0;
+    const item = (t: string, s: string) => { const li = document.createElement('li'); li.append(t); const sm = document.createElement('small'); sm.textContent = s; li.append(sm); return li; };
+    const run = async () => {
+      const id = ++rid; pl.forEach(p => p.replaceChildren()); cn.forEach(c => c.textContent = '0'); const N = [0, 0]; re.hidden = true;
+      for (const [t, s, ok] of C) {
+        if (id !== rid) return;
+        const e = document.createElement('div'); e.className = 'ai-j-cd'; e.append(t); const sm = document.createElement('small'); sm.textContent = s; e.append(sm); drop.append(e);
+        const W = g.clientWidth; e.style.transform = 'translate(-50%,-30px)'; e.style.opacity = '0'; await sleep(30); e.style.opacity = '1'; zbPlay(zb, ok ? 'el' : 'sasir', false, 'el');
+        const B = bs[ok ? 0 : 1], a = B.getBoundingClientRect(), gr = g.getBoundingClientRect();
+        e.style.transform = `translate(calc(-50% + ${(a.left - gr.left + a.width / 2) - W / 2}px),${a.top - gr.top + 20}px) rotate(${ok ? -4 : 4}deg) scale(.85)`;
+        await sleep(800); e.remove(); if (id !== rid) return;
+        pl[ok ? 0 : 1].append(item(t, s)); cn[ok ? 0 : 1].textContent = String(++N[ok ? 0 : 1]);
+        B.classList.remove('hit'); void B.offsetWidth; B.classList.add('hit');
+        await sleep(380);
+      }
+      re.hidden = false;
+    };
+    re.addEventListener('click', run);
+    onVisible(g, run, .35);
+  }
+</script>

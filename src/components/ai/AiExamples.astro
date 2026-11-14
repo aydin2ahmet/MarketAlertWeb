@@ -1,0 +1,91 @@
+---
+/**
+ * "Ne yazabilirsin" (2026-11-14, Ahmet): masaüstünde Ö9 (cümleyi Zilbo'ya sürükle ya da dokun), telefonda Ö8 (çark).
+ * Altı örnek, insanların aradığı kurması zor alarmlar; her ekran o cümleyle uygulamada hazırlanan taslak.
+ */
+import AiShot from './AiShot.astro';
+import AiZb from './AiZb.astro';
+import { AI_EX, fillQ } from '../../lib/ai';
+import '../../styles/ai.css';
+interface Props { code: string; ai: any; title: string; caption: string }
+const { code, ai, title, caption } = Astro.props;
+const n = AI_EX.length;
+const slices = AI_EX.map((_, i) => {
+  const a0 = (i / n) * Math.PI * 2 - Math.PI / 2, a1 = ((i + 1) / n) * Math.PI * 2 - Math.PI / 2, am = (a0 + a1) / 2, r = 100;
+  const p = (a: number, rr: number) => `${(Math.cos(a) * rr).toFixed(2)} ${(Math.sin(a) * rr).toFixed(2)}`;
+  return { d: `M0 0L${p(a0, r)}A${r} ${r} 0 0 1 ${p(a1, r)}Z`, tx: (Math.cos(am) * 70).toFixed(2), ty: (Math.sin(am) * 70).toFixed(2), rot: (am * 180 / Math.PI + 90).toFixed(2) };
+});
+---
+<section class="ai-x" aria-labelledby="ai-x-t">
+  <h2 id="ai-x-t">{title}</h2>
+  <div class="ai-x-d" data-ai-d>
+    <p class="ai-x-lead"><b>{ai.dTitle}</b> {ai.dLead}</p>
+    <div class="ai-x-st">
+      <ul class="ai-x-chips">{ai.q.map((q: string, i: number) => <li><button type="button" class={i === 0 ? 'cur' : undefined} data-i={i} dir="auto">{q}</button></li>)}</ul>
+      <div class="ai-x-zw"><AiZb m="el" /><span class="ai-x-ring" aria-hidden="true"></span></div>
+      <div class="ai-x-r"><p class="ai-x-what" aria-live="polite">{ai.what[0]}</p>
+        <div class="ai-x-pv">{AI_EX.map((e, i) => <figure class={i === 0 ? 'on' : undefined}><div class="ai-shot"><AiShot code={code} k={`ex-${e}`} alt={fillQ(ai.alt, ai.q[i])} sizes="300px" /></div></figure>)}</div>
+      </div>
+    </div>
+  </div>
+  <div class="ai-x-m" data-ai-m>
+    <p class="ai-x-lead"><b>{ai.wTitle}</b> {ai.wLead}</p>
+    <div class="ai-x-w">
+      <svg class="ai-x-wheel" viewBox="-110 -110 220 220" aria-hidden="true" style="transform:rotate(330deg)">{slices.map((s, i) => <g><path d={s.d} class={`ai-x-s${i}`} /><text x={s.tx} y={s.ty} transform={`rotate(${s.rot} ${s.tx} ${s.ty})`} text-anchor="middle" dominant-baseline="middle">{ai.wheel[i]}</text></g>)}</svg>
+      <span class="ai-x-ptr" aria-hidden="true"></span>
+      <div class="ai-x-hub"><AiZb m="zil" /></div>
+    </div>
+    <button type="button" class="btn ai-x-go">{ai.spin}</button>
+    <p class="ai-x-say" dir="auto" aria-live="polite">{ai.q[0]}</p>
+    <p class="ai-x-what2">{ai.what[0]}</p>
+    <div class="ai-x-pv">{AI_EX.map((e, i) => <figure class={i === 0 ? 'on' : undefined}><div class="ai-shot"><AiShot code={code} k={`ex-${e}`} alt={fillQ(ai.alt, ai.q[i])} sizes="(max-width:760px) 90vw, 300px" /></div></figure>)}</div>
+  </div>
+  <p class="ai-x-cap">{caption}</p>
+  <script type="application/json" class="ai-x-data" set:html={JSON.stringify({ q: ai.q, what: ai.what }).replace(/</g, '\\u003c')} />
+</section>
+
+<script>
+  import { reduce, sleep, zbInit, zbPlay } from '../../lib/aiZilbo';
+  for (const sec of document.querySelectorAll<HTMLElement>('.ai-x')) {
+    const D = JSON.parse(sec.querySelector('.ai-x-data')!.textContent!);
+    // masaüstü: sürükle bırak ya da dokun
+    const d = sec.querySelector<HTMLElement>('[data-ai-d]')!;
+    const zw = d.querySelector<HTMLElement>('.ai-x-zw')!, zb = zw.querySelector<HTMLElement>('.ai-zb')!; zbInit(zb);
+    const cs = [...d.querySelectorAll<HTMLButtonElement>('.ai-x-chips button')], pv = [...d.querySelectorAll<HTMLElement>('.ai-x-pv figure')], wt = d.querySelector<HTMLElement>('.ai-x-what')!;
+    const sel = (i: number) => { pv.forEach((x, j) => x.classList.toggle('on', j === i)); cs.forEach((c, j) => c.classList.toggle('cur', j === i)); wt.textContent = D.what[i]; };
+    const eat = (c: HTMLElement, i: number) => {
+      if (reduce) { sel(i); return; }
+      const a = c.getBoundingClientRect(), b = zw.getBoundingClientRect();
+      c.animate([{ transform: c.style.transform || 'none' }, { transform: `translate(${b.left + b.width / 2 - a.left - a.width / 2}px,${b.top + b.height / 2 - a.top - a.height / 2}px) scale(.2)`, opacity: 0 }], { duration: 450, easing: 'cubic-bezier(.5,-.3,.4,1)' }).onfinish = () => { c.style.transform = ''; };
+      setTimeout(() => { zbPlay(zb, 'sevin', false, 'el'); sel(i); }, 420);
+    };
+    cs.forEach((c, i) => {
+      let sx = 0, sy = 0, mv = false, down = false;
+      c.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse' || reduce) return; sx = e.clientX; sy = e.clientY; mv = false; down = true; c.setPointerCapture(e.pointerId); c.classList.add('drag'); });
+      c.addEventListener('pointermove', e => {
+        if (!down) return; const dx = e.clientX - sx, dy = e.clientY - sy; if (Math.abs(dx) + Math.abs(dy) > 6) mv = true;
+        c.style.transform = `translate(${dx}px,${dy}px)`; const b = zw.getBoundingClientRect();
+        zw.classList.toggle('over', e.clientX > b.left && e.clientX < b.right && e.clientY > b.top && e.clientY < b.bottom);
+      });
+      c.addEventListener('pointerup', () => {
+        if (!down) return; down = false; c.classList.remove('drag'); const over = zw.classList.contains('over'); zw.classList.remove('over');
+        if (over) eat(c, i); else if (mv) { c.animate([{ transform: c.style.transform }, { transform: 'none' }], { duration: 300 }); c.style.transform = ''; }
+      });
+      c.addEventListener('click', () => { if (!mv) eat(c, i); mv = false; });
+    });
+    // telefon: çark
+    const m = sec.querySelector<HTMLElement>('[data-ai-m]')!;
+    const W = m.querySelector<SVGElement>('.ai-x-wheel')!, go = m.querySelector<HTMLButtonElement>('.ai-x-go')!, say = m.querySelector<HTMLElement>('.ai-x-say')!, w2 = m.querySelector<HTMLElement>('.ai-x-what2')!;
+    const mp = [...m.querySelectorAll<HTMLElement>('.ai-x-pv figure')], hz = m.querySelector<HTMLElement>('.ai-zb')!; zbInit(hz);
+    const n = mp.length; let rot = 330, busy = false, prev = 0;
+    const show = (i: number) => { say.textContent = D.q[i]; w2.textContent = D.what[i]; mp.forEach((x, j) => x.classList.toggle('on', j === i)); };
+    go.addEventListener('click', async () => {
+      if (busy) return; busy = true;
+      let i = Math.floor(Math.random() * (n - 1)); if (i >= prev) i++; prev = i;
+      if (reduce) { show(i); busy = false; return; }
+      const target = 360 - (i + .5) * 360 / n; rot = rot - (rot % 360) + 360 * 4 + target;
+      W.style.transform = `rotate(${rot}deg)`; mp.forEach(x => x.classList.remove('on')); zbPlay(hz, 'zipla');
+      await sleep(3600); zbPlay(hz, 'zil', false, 'sevin'); show(i); busy = false;
+    });
+  }
+</script>

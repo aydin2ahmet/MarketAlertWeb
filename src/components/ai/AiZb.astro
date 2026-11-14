@@ -1,0 +1,6 @@
+---
+/** Zilbo: durağan resim + kare kare çizim (src/lib/aiZilbo.ts). Süs; aria-hidden. */
+interface Props { m: string; class?: string }
+const { m, class: cls } = Astro.props;
+---
+<span class:list={['ai-zb', cls]} data-m={m} aria-hidden="true"><img src="/zilbo/zilbo.webp" width="250" height="265" alt="" loading="lazy" decoding="async" /><svg viewBox="-150 -290 300 318"></svg></span>

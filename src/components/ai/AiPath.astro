@@ -1,0 +1,47 @@
+---
+/**
+ * Kurulum, tasarım A6 (2026-11-14, Ahmet): Zilbo'nun yolu. Kesik çizgide Zilbo sayfa kaydırıldıkça iner, uğradığı
+ * durak yanar. Dört durak aynı alarm: "ETH düşerse ve RSI 30 altına inerse" → fiyat sorusu → taslak → kuruldu.
+ */
+import AiShot from './AiShot.astro';
+import AiZb from './AiZb.astro';
+import '../../styles/ai.css';
+interface Props { code: string; ai: any; steps: string[][]; html: string[] }
+const { code, ai, steps, html } = Astro.props;
+---
+<div class="ai-p">
+  <p class="ai-p-lead"><b>{ai.pTitle}</b> {ai.pLead}</p>
+  <ol class="ai-p-l" data-ai-p>
+    <svg class="ai-p-path" preserveAspectRatio="none" aria-hidden="true"><path /></svg>
+    <li class="ai-p-zl" aria-hidden="true"><AiZb m="zipla" /></li>
+    {steps.map((s, i) => <li class="ai-p-st on">
+      <div class="ai-p-tx"><h3><span class="ai-p-n">{i + 1}</span>{s[0]}</h3><p set:html={html[i]} /></div>
+      <div class="ai-shot"><AiShot code={code} k={`step-${i + 1}`} alt={ai.flowAlt[i]} sizes="(max-width:760px) 86vw, 300px" /></div>
+    </li>)}
+  </ol>
+</div>
+
+<script>
+  import { reduce, zbInit, zbPlay } from '../../lib/aiZilbo';
+  for (const a of document.querySelectorAll<HTMLElement>('[data-ai-p]')) {
+    const svg = a.querySelector<SVGSVGElement>('.ai-p-path')!, p = svg.querySelector('path')!, zl = a.querySelector<HTMLElement>('.ai-p-zl')!, zb = zl.querySelector<HTMLElement>('.ai-zb')!;
+    const sts = [...a.querySelectorAll<HTMLElement>('.ai-p-st')];
+    zbInit(zb);
+    if (reduce) continue;
+    a.classList.add('ai-js');
+    const draw = () => {
+      const H = a.clientHeight, W = svg.getBoundingClientRect().width; svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+      let d = `M ${W / 2} 0`; const n = 6; for (let i = 1; i <= n; i++) { const y = H * i / n; d += ` Q ${i % 2 ? W : 0} ${y - H / n / 2}, ${W / 2} ${y}`; } p.setAttribute('d', d);
+    };
+    let done = false;
+    const on = () => {
+      const r = a.getBoundingClientRect(), prog = Math.min(1, Math.max(0, (innerHeight * .55 - r.top) / r.height));
+      const pt = p.getPointAtLength(prog * p.getTotalLength()), zs = zl.getBoundingClientRect().width;
+      zl.style.transform = `translate(${pt.x - zs / 2}px,${pt.y - zs * .85}px)`;
+      sts.forEach(s => s.classList.toggle('on', s.getBoundingClientRect().top < innerHeight * .62));
+      const last = sts[sts.length - 1].classList.contains('on');
+      if (last && !done) { done = true; zbPlay(zb, 'sevin', false, 'zipla'); } else if (!last) done = false;
+    };
+    draw(); addEventListener('resize', () => { draw(); on(); }); addEventListener('scroll', on, { passive: true }); on();
+  }
+</script>
