@@ -4,7 +4,7 @@
   "closeLabel": "Kapat",
   "terms": {
    "title": "Kullanım Koşulları",
-   "effectiveDate": "2026-11-12",
+   "effectiveDate": "2026-11-13",
    "intro": "MarketAlert uygulamasını kullanarak aşağıdaki koşulları kabul etmiş olursun. Koşulları kabul etmiyorsan uygulamayı kullanma.",
    "sections": [
     {
@@ -29,7 +29,7 @@
     },
     {
      "heading": "Ücretlendirme ve planlar",
-     "body": "MarketAlert abonelikle çalışır: alarmlar yalnızca Plus veya Pro aboneliğiyle çalışır. Mağaza ücretsiz deneme sunuyorsa abonelik bu denemeyle başlar; deneme bitmeden iptal etmezsen abonelik ücretli olarak devam eder ve sen iptal edene kadar kendiliğinden yenilenir. Abone olmadan alarm hazırlayabilirsin; bu alarmlar abonelik ya da deneme başlayana kadar çalışmaz. Plus veya Pro aboneliği satın alırsan ödeme, indirdiğin mağaza (Apple App Store veya Google Play) üzerinden alınır ve aboneliğin iptali ile iade talepleri o mağazanın kurallarına tabidir. Plus ve Pro planlarının kapsamı zaman içinde değişebilir."
+     "body": "MarketAlert abonelikle çalışır: alarmlar yalnızca Plus veya Pro aboneliğiyle çalışır. Mağaza ücretsiz deneme sunuyorsa abonelik bu denemeyle başlar; deneme bitmeden iptal etmezsen abonelik ücretli olarak devam eder ve sen iptal edene kadar kendiliğinden yenilenir. Abone olmadan alarm hazırlayabilirsin; bu alarmlar abonelik ya da deneme başlayana kadar çalışmaz. Plus veya Pro aboneliği satın alırsan ödeme, indirdiğin mağaza (Apple App Store veya Google Play) üzerinden alınır ve aboneliğin iptali ile iade talepleri o mağazanın kurallarına tabidir. Hesap oluşturmadan, misafir olarak da abone olabilirsin; bu durumda abonelik mağaza hesabına bağlıdır ve misafir hesap aynı anda tek cihazda kullanılır. Telefon değiştirirsen ya da uygulamayı yeniden kurarsan “Satın alımları geri yükle” ile aynı mağaza hesabından aboneliğini ve alarmlarını geri alırsın; abonelik kayıtlı bir hesaba bağlıysa o hesapla giriş yapman gerekir. Plus ve Pro planlarının kapsamı zaman içinde değişebilir."
     },
     {
      "heading": "Sorumluluk sınırı ve değişiklikler",
@@ -82,7 +82,7 @@
   "closeLabel": "Close",
   "terms": {
    "title": "Terms of Use",
-   "effectiveDate": "2026-11-12",
+   "effectiveDate": "2026-11-13",
    "intro": "By using MarketAlert you accept the terms below. If you do not accept them, please do not use the app.",
    "sections": [
     {
@@ -107,7 +107,7 @@
     },
     {
      "heading": "Pricing and plans",
-     "body": "MarketAlert works with a subscription: alerts run only with a Plus or Pro subscription. If the store offers a free trial, the subscription starts with it; unless you cancel before the trial ends, the subscription continues as a paid one and renews automatically until you cancel. You can prepare alerts without a subscription; they do not run until a subscription or trial starts. If you buy a Plus or Pro subscription, payment is taken through the store you installed from (Apple App Store or Google Play), and cancellation and refund requests follow that store’s rules. The scope of the Plus and Pro plans may change over time."
+     "body": "MarketAlert works with a subscription: alerts run only with a Plus or Pro subscription. If the store offers a free trial, the subscription starts with it; unless you cancel before the trial ends, the subscription continues as a paid one and renews automatically until you cancel. You can prepare alerts without a subscription; they do not run until a subscription or trial starts. If you buy a Plus or Pro subscription, payment is taken through the store you installed from (Apple App Store or Google Play), and cancellation and refund requests follow that store’s rules. You can also subscribe as a guest, without creating an account; in that case the subscription is tied to your store account and the guest account is used on one device at a time. If you change phones or reinstall the app, “Restore purchases” brings back your subscription and alerts through the same store account; if the subscription belongs to a registered account, you need to sign in to that account. The scope of the Plus and Pro plans may change over time."
     },
     {
      "heading": "Liability and changes",
@@ -160,7 +160,7 @@
   "closeLabel": "关闭",
   "terms": {
    "title": "使用条款",
-   "effectiveDate": "2026-11-12",
+   "effectiveDate": "2026-11-13",
    "intro": "使用 MarketAlert 即表示你接受以下条款。如不接受，请勿使用本应用。",
    "sections": [
     {
@@ -185,7 +185,7 @@
     },
     {
      "heading": "收费与方案",
-     "body": "MarketAlert 需要订阅使用：提醒只有在订阅 Plus 或 Pro 后才会运行。如果商店提供免费试用，订阅将从试用期开始；若未在试用结束前取消，订阅将转为付费并自动续订，直至你取消。未订阅时也可以准备提醒，但在订阅或试用开始之前，这些提醒不会运行。购买 Plus 或 Pro 订阅时，付款通过你安装应用的商店（Apple App Store 或 Google Play）收取，取消与退款遵循该商店规则。Plus 和 Pro 方案的范围可能随时间变化。"
+     "body": "MarketAlert 需要订阅使用：提醒只有在订阅 Plus 或 Pro 后才会运行。如果商店提供免费试用，订阅将从试用期开始；若未在试用结束前取消，订阅将转为付费并自动续订，直至你取消。未订阅时也可以准备提醒，但在订阅或试用开始之前，这些提醒不会运行。购买 Plus 或 Pro 订阅时，付款通过你安装应用的商店（Apple App Store 或 Google Play）收取，取消与退款遵循该商店规则。你也可以不注册账户，以访客身份订阅；此时订阅与你的商店账户绑定，访客账户同一时间只能在一台设备上使用。更换手机或重装应用后，可通过“恢复购买”用同一商店账户找回订阅和提醒；如果订阅属于已注册账户，则需要登录该账户。Plus 和 Pro 方案的范围可能随时间变化。"
     },
     {
      "heading": "责任限制与条款变更",
@@ -238,7 +238,7 @@
   "closeLabel": "Cerrar",
   "terms": {
    "title": "Condiciones de uso",
-   "effectiveDate": "2026-11-12",
+   "effectiveDate": "2026-11-13",
    "intro": "Al usar MarketAlert aceptas las condiciones siguientes. Si no las aceptas, no uses la aplicación.",
    "sections": [
     {
@@ -263,7 +263,7 @@
     },
     {
      "heading": "Precios y planes",
-     "body": "MarketAlert funciona con suscripción: las alertas solo funcionan con una suscripción Plus o Pro. Si la tienda ofrece una prueba gratis, la suscripción empieza con ella; si no cancelas antes de que termine la prueba, la suscripción continúa como de pago y se renueva automáticamente hasta que la canceles. Puedes preparar alertas sin suscripción; no funcionan hasta que empiece una suscripción o una prueba. Si compras una suscripción Plus o Pro, el pago se realiza a través de la tienda desde la que instalaste la aplicación (Apple App Store o Google Play), y las cancelaciones y reembolsos siguen las reglas de esa tienda. El alcance de los planes Plus y Pro puede cambiar con el tiempo."
+     "body": "MarketAlert funciona con suscripción: las alertas solo funcionan con una suscripción Plus o Pro. Si la tienda ofrece una prueba gratis, la suscripción empieza con ella; si no cancelas antes de que termine la prueba, la suscripción continúa como de pago y se renueva automáticamente hasta que la canceles. Puedes preparar alertas sin suscripción; no funcionan hasta que empiece una suscripción o una prueba. Si compras una suscripción Plus o Pro, el pago se realiza a través de la tienda desde la que instalaste la aplicación (Apple App Store o Google Play), y las cancelaciones y reembolsos siguen las reglas de esa tienda. También puedes suscribirte como invitado, sin crear una cuenta; en ese caso la suscripción queda vinculada a tu cuenta de la tienda y la cuenta de invitado se usa en un solo dispositivo a la vez. Si cambias de teléfono o reinstalas la aplicación, “Restaurar compras” recupera tu suscripción y tus alertas con la misma cuenta de la tienda; si la suscripción pertenece a una cuenta registrada, debes iniciar sesión en esa cuenta. El alcance de los planes Plus y Pro puede cambiar con el tiempo."
     },
     {
      "heading": "Responsabilidad y cambios",
@@ -316,7 +316,7 @@
   "closeLabel": "बंद करें",
   "terms": {
    "title": "उपयोग की शर्तें",
-   "effectiveDate": "2026-11-12",
+   "effectiveDate": "2026-11-13",
    "intro": "MarketAlert का उपयोग करके आप नीचे दी गई शर्तें स्वीकार करते हैं। यदि आप इन्हें स्वीकार नहीं करते तो कृपया ऐप का उपयोग न करें।",
    "sections": [
     {
@@ -341,7 +341,7 @@
     },
     {
      "heading": "शुल्क और प्लान",
-     "body": "MarketAlert सदस्यता के साथ काम करता है: अलर्ट केवल Plus या Pro सदस्यता के साथ चलते हैं। यदि स्टोर निःशुल्क ट्रायल देता है, तो सदस्यता उसी से शुरू होती है; ट्रायल समाप्त होने से पहले रद्द न करने पर सदस्यता सशुल्क रूप में जारी रहती है और आपके रद्द करने तक अपने-आप नवीनीकृत होती रहती है। आप सदस्यता के बिना अलर्ट तैयार कर सकते हैं; सदस्यता या ट्रायल शुरू होने तक वे नहीं चलते। Plus या Pro सदस्यता खरीदने पर भुगतान उसी स्टोर से लिया जाता है जहाँ से आपने ऐप इंस्टॉल किया (Apple App Store या Google Play), और रद्दीकरण तथा धनवापसी उसी स्टोर के नियमों के अधीन हैं। Plus और Pro प्लान का दायरा समय के साथ बदल सकता है।"
+     "body": "MarketAlert सदस्यता के साथ काम करता है: अलर्ट केवल Plus या Pro सदस्यता के साथ चलते हैं। यदि स्टोर निःशुल्क ट्रायल देता है, तो सदस्यता उसी से शुरू होती है; ट्रायल समाप्त होने से पहले रद्द न करने पर सदस्यता सशुल्क रूप में जारी रहती है और आपके रद्द करने तक अपने-आप नवीनीकृत होती रहती है। आप सदस्यता के बिना अलर्ट तैयार कर सकते हैं; सदस्यता या ट्रायल शुरू होने तक वे नहीं चलते। Plus या Pro सदस्यता खरीदने पर भुगतान उसी स्टोर से लिया जाता है जहाँ से आपने ऐप इंस्टॉल किया (Apple App Store या Google Play), और रद्दीकरण तथा धनवापसी उसी स्टोर के नियमों के अधीन हैं। आप अकाउंट बनाए बिना, गेस्ट के रूप में भी सदस्यता ले सकते हैं; तब सदस्यता आपके स्टोर अकाउंट से जुड़ी रहती है और गेस्ट अकाउंट एक समय में एक ही डिवाइस पर चलता है। फ़ोन बदलने या ऐप दोबारा इंस्टॉल करने पर “ख़रीदारी रीस्टोर करें” उसी स्टोर अकाउंट से आपकी सदस्यता और अलर्ट वापस लाता है; यदि सदस्यता किसी पंजीकृत अकाउंट की है, तो आपको उसी अकाउंट से साइन इन करना होगा। Plus और Pro प्लान का दायरा समय के साथ बदल सकता है।"
     },
     {
      "heading": "दायित्व की सीमा और परिवर्तन",
@@ -394,7 +394,7 @@
   "closeLabel": "إغلاق",
   "terms": {
    "title": "شروط الاستخدام",
-   "effectiveDate": "2026-11-12",
+   "effectiveDate": "2026-11-13",
    "intro": "باستخدامك تطبيق MarketAlert فإنك توافق على الشروط أدناه. إذا كنت لا توافق عليها فلا تستخدم التطبيق.",
    "sections": [
     {
@@ -419,7 +419,7 @@
     },
     {
      "heading": "التسعير والخطط",
-     "body": "يعمل MarketAlert بالاشتراك: لا تعمل التنبيهات إلا باشتراك Plus أو Pro. إذا قدّم المتجر تجربة مجانية يبدأ الاشتراك بها؛ وإذا لم تُلغِ قبل انتهاء التجربة يستمر الاشتراك مدفوعًا ويتجدد تلقائيًا إلى أن تلغيه. يمكنك تجهيز التنبيهات دون اشتراك، لكنها لا تعمل حتى يبدأ اشتراك أو تجربة. عند شراء اشتراك Plus أو Pro يتم الدفع عبر المتجر الذي ثبّتت منه التطبيق (Apple App Store أو Google Play)، ويخضع الإلغاء واسترداد المبالغ لقواعد ذلك المتجر. قد يتغير نطاق خطتي Plus وPro بمرور الوقت."
+     "body": "يعمل MarketAlert بالاشتراك: لا تعمل التنبيهات إلا باشتراك Plus أو Pro. إذا قدّم المتجر تجربة مجانية يبدأ الاشتراك بها؛ وإذا لم تُلغِ قبل انتهاء التجربة يستمر الاشتراك مدفوعًا ويتجدد تلقائيًا إلى أن تلغيه. يمكنك تجهيز التنبيهات دون اشتراك، لكنها لا تعمل حتى يبدأ اشتراك أو تجربة. عند شراء اشتراك Plus أو Pro يتم الدفع عبر المتجر الذي ثبّتت منه التطبيق (Apple App Store أو Google Play)، ويخضع الإلغاء واسترداد المبالغ لقواعد ذلك المتجر. يمكنك أيضًا الاشتراك كضيف دون إنشاء حساب؛ وفي هذه الحالة يرتبط الاشتراك بحسابك في المتجر ويُستخدم حساب الضيف على جهاز واحد في كل مرة. إذا غيّرت هاتفك أو أعدت تثبيت التطبيق فإن «استعادة المشتريات» تعيد اشتراكك وتنبيهاتك عبر حساب المتجر نفسه؛ وإذا كان الاشتراك تابعًا لحساب مسجّل فعليك تسجيل الدخول إلى ذلك الحساب. قد يتغير نطاق خطتي Plus وPro بمرور الوقت."
     },
     {
      "heading": "حدود المسؤولية والتغييرات",
@@ -472,7 +472,7 @@
   "closeLabel": "Fechar",
   "terms": {
    "title": "Termos de Uso",
-   "effectiveDate": "2026-11-12",
+   "effectiveDate": "2026-11-13",
    "intro": "Ao usar o MarketAlert você aceita os termos abaixo. Se não os aceita, não use o aplicativo.",
    "sections": [
     {
@@ -497,7 +497,7 @@
     },
     {
      "heading": "Preços e planos",
-     "body": "O MarketAlert funciona por assinatura: os alertas só funcionam com uma assinatura Plus ou Pro. Se a loja oferecer um teste grátis, a assinatura começa por ele; se você não cancelar antes do fim do teste, a assinatura continua como paga e é renovada automaticamente até você cancelar. Você pode preparar alertas sem assinatura; eles não funcionam até que uma assinatura ou um teste comece. Ao comprar uma assinatura Plus ou Pro, o pagamento é feito pela loja de onde você instalou o aplicativo (Apple App Store ou Google Play), e cancelamentos e reembolsos seguem as regras dessa loja. O escopo dos planos Plus e Pro pode mudar com o tempo."
+     "body": "O MarketAlert funciona por assinatura: os alertas só funcionam com uma assinatura Plus ou Pro. Se a loja oferecer um teste grátis, a assinatura começa por ele; se você não cancelar antes do fim do teste, a assinatura continua como paga e é renovada automaticamente até você cancelar. Você pode preparar alertas sem assinatura; eles não funcionam até que uma assinatura ou um teste comece. Ao comprar uma assinatura Plus ou Pro, o pagamento é feito pela loja de onde você instalou o aplicativo (Apple App Store ou Google Play), e cancelamentos e reembolsos seguem as regras dessa loja. Você também pode assinar como convidado, sem criar uma conta; nesse caso a assinatura fica vinculada à sua conta da loja e a conta de convidado é usada em um dispositivo por vez. Se você trocar de celular ou reinstalar o aplicativo, “Restaurar compras” traz de volta sua assinatura e seus alertas pela mesma conta da loja; se a assinatura pertencer a uma conta registrada, é preciso entrar nessa conta. O escopo dos planos Plus e Pro pode mudar com o tempo."
     },
     {
      "heading": "Limitação de responsabilidade e alterações",
@@ -550,7 +550,7 @@
   "closeLabel": "Fermer",
   "terms": {
    "title": "Conditions d’utilisation",
-   "effectiveDate": "2026-11-12",
+   "effectiveDate": "2026-11-13",
    "intro": "En utilisant MarketAlert, tu acceptes les conditions ci-dessous. Si tu ne les acceptes pas, n’utilise pas l’application.",
    "sections": [
     {
@@ -575,7 +575,7 @@
     },
     {
      "heading": "Tarifs et formules",
-     "body": "MarketAlert fonctionne par abonnement : les alertes ne fonctionnent qu’avec un abonnement Plus ou Pro. Si la boutique propose un essai gratuit, l’abonnement commence par cet essai ; si tu n’annules pas avant la fin de l’essai, l’abonnement se poursuit en version payante et se renouvelle automatiquement jusqu’à ce que tu l’annules. Tu peux préparer des alertes sans abonnement ; elles ne fonctionnent pas tant qu’un abonnement ou un essai n’a pas commencé. Si tu souscris un abonnement Plus ou Pro, le paiement est prélevé par la boutique depuis laquelle tu as installé l’application (Apple App Store ou Google Play), et les annulations et remboursements suivent les règles de cette boutique. L’étendue des formules Plus et Pro peut évoluer."
+     "body": "MarketAlert fonctionne par abonnement : les alertes ne fonctionnent qu’avec un abonnement Plus ou Pro. Si la boutique propose un essai gratuit, l’abonnement commence par cet essai ; si tu n’annules pas avant la fin de l’essai, l’abonnement se poursuit en version payante et se renouvelle automatiquement jusqu’à ce que tu l’annules. Tu peux préparer des alertes sans abonnement ; elles ne fonctionnent pas tant qu’un abonnement ou un essai n’a pas commencé. Si tu souscris un abonnement Plus ou Pro, le paiement est prélevé par la boutique depuis laquelle tu as installé l’application (Apple App Store ou Google Play), et les annulations et remboursements suivent les règles de cette boutique. Tu peux aussi t’abonner en tant qu’invité, sans créer de compte ; l’abonnement est alors lié à ton compte de la boutique et le compte invité s’utilise sur un seul appareil à la fois. Si tu changes de téléphone ou réinstalles l’application, « Restaurer les achats » récupère ton abonnement et tes alertes via le même compte de la boutique ; si l’abonnement appartient à un compte enregistré, tu dois te connecter à ce compte. L’étendue des formules Plus et Pro peut évoluer."
     },
     {
      "heading": "Limitation de responsabilité et modifications",
@@ -628,7 +628,7 @@
   "closeLabel": "Закрыть",
   "terms": {
    "title": "Условия использования",
-   "effectiveDate": "2026-11-12",
+   "effectiveDate": "2026-11-13",
    "intro": "Используя MarketAlert, вы принимаете приведённые ниже условия. Если вы с ними не согласны, не используйте приложение.",
    "sections": [
     {
@@ -653,7 +653,7 @@
     },
     {
      "heading": "Оплата и тарифы",
-     "body": "MarketAlert работает по подписке: оповещения работают только при подписке Plus или Pro. Если магазин предлагает бесплатный пробный период, подписка начинается с него; если не отменить её до конца пробного периода, подписка продолжится как платная и будет продлеваться автоматически, пока вы её не отмените. Оповещения можно подготовить и без подписки; они не работают, пока не начнётся подписка или пробный период. При покупке подписки Plus или Pro оплата производится через магазин, из которого вы установили приложение (Apple App Store или Google Play); отмена и возврат подчиняются правилам этого магазина. Состав тарифов Plus и Pro может со временем меняться."
+     "body": "MarketAlert работает по подписке: оповещения работают только при подписке Plus или Pro. Если магазин предлагает бесплатный пробный период, подписка начинается с него; если не отменить её до конца пробного периода, подписка продолжится как платная и будет продлеваться автоматически, пока вы её не отмените. Оповещения можно подготовить и без подписки; они не работают, пока не начнётся подписка или пробный период. При покупке подписки Plus или Pro оплата производится через магазин, из которого вы установили приложение (Apple App Store или Google Play); отмена и возврат подчиняются правилам этого магазина. Оформить подписку можно и как гость, без создания аккаунта; в этом случае подписка привязана к вашему аккаунту магазина, а гостевой аккаунт используется одновременно только на одном устройстве. Если вы смените телефон или переустановите приложение, «Восстановить покупки» вернёт подписку и оповещения через тот же аккаунт магазина; если подписка принадлежит зарегистрированному аккаунту, нужно войти в этот аккаунт. Состав тарифов Plus и Pro может со временем меняться."
     },
     {
      "heading": "Ограничение ответственности и изменения",
@@ -706,7 +706,7 @@
   "closeLabel": "Schließen",
   "terms": {
    "title": "Nutzungsbedingungen",
-   "effectiveDate": "2026-11-12",
+   "effectiveDate": "2026-11-13",
    "intro": "Mit der Nutzung von MarketAlert akzeptierst du die folgenden Bedingungen. Wenn du sie nicht akzeptierst, nutze die App bitte nicht.",
    "sections": [
     {
@@ -731,7 +731,7 @@
     },
     {
      "heading": "Preise und Pläne",
-     "body": "MarketAlert funktioniert im Abonnement: Alarme laufen nur mit einem Plus- oder Pro-Abonnement. Bietet der Store einen kostenlosen Testzeitraum an, beginnt das Abonnement damit; kündigst du nicht vor Ablauf des Testzeitraums, läuft das Abonnement kostenpflichtig weiter und verlängert sich automatisch, bis du kündigst. Du kannst Alarme ohne Abonnement vorbereiten; sie laufen erst, wenn ein Abonnement oder ein Testzeitraum beginnt. Beim Kauf eines Plus- oder Pro-Abonnements erfolgt die Zahlung über den Store, aus dem du die App installiert hast (Apple App Store oder Google Play); Kündigung und Erstattung richten sich nach den Regeln dieses Stores. Der Umfang der Pläne Plus und Pro kann sich im Laufe der Zeit ändern."
+     "body": "MarketAlert funktioniert im Abonnement: Alarme laufen nur mit einem Plus- oder Pro-Abonnement. Bietet der Store einen kostenlosen Testzeitraum an, beginnt das Abonnement damit; kündigst du nicht vor Ablauf des Testzeitraums, läuft das Abonnement kostenpflichtig weiter und verlängert sich automatisch, bis du kündigst. Du kannst Alarme ohne Abonnement vorbereiten; sie laufen erst, wenn ein Abonnement oder ein Testzeitraum beginnt. Beim Kauf eines Plus- oder Pro-Abonnements erfolgt die Zahlung über den Store, aus dem du die App installiert hast (Apple App Store oder Google Play); Kündigung und Erstattung richten sich nach den Regeln dieses Stores. Du kannst auch als Gast abonnieren, ohne ein Konto zu erstellen; das Abo ist dann an dein Store-Konto gebunden und das Gastkonto wird jeweils nur auf einem Gerät genutzt. Wechselst du das Handy oder installierst die App neu, holt „Käufe wiederherstellen“ dein Abo und deine Alarme über dasselbe Store-Konto zurück; gehört das Abo zu einem registrierten Konto, musst du dich bei diesem Konto anmelden. Der Umfang der Pläne Plus und Pro kann sich im Laufe der Zeit ändern."
     },
     {
      "heading": "Haftung und Änderungen",
@@ -784,7 +784,7 @@
   "closeLabel": "閉じる",
   "terms": {
    "title": "利用規約",
-   "effectiveDate": "2026-11-12",
+   "effectiveDate": "2026-11-13",
    "intro": "MarketAlert をご利用いただくことで、以下の規約に同意したものとみなされます。同意いただけない場合は本アプリをご利用にならないでください。",
    "sections": [
     {
@@ -809,7 +809,7 @@
     },
     {
      "heading": "料金とプラン",
-     "body": "MarketAlert は購読制です。アラートは Plus または Pro の購読がある場合にのみ動作します。ストアが無料トライアルを提供している場合、購読はトライアルから始まります。トライアル終了前に解約しない場合、購読は有料として継続し、解約するまで自動的に更新されます。購読がなくてもアラートを用意できますが、購読またはトライアルが始まるまで動作しません。Plus または Pro の購読を購入した場合、支払いはインストール元のストア（Apple App Store または Google Play）を通じて行われ、解約および返金は当該ストアの規定に従います。Plus と Pro の各プランの範囲は将来変更される場合があります。"
+     "body": "MarketAlert は購読制です。アラートは Plus または Pro の購読がある場合にのみ動作します。ストアが無料トライアルを提供している場合、購読はトライアルから始まります。トライアル終了前に解約しない場合、購読は有料として継続し、解約するまで自動的に更新されます。購読がなくてもアラートを用意できますが、購読またはトライアルが始まるまで動作しません。Plus または Pro の購読を購入した場合、支払いはインストール元のストア（Apple App Store または Google Play）を通じて行われ、解約および返金は当該ストアの規定に従います。アカウントを作成せず、ゲストのまま購読することもできます。この場合、購読はストアのアカウントに紐づき、ゲストアカウントは同時に 1 台のデバイスでのみ利用できます。機種変更やアプリの再インストール後は、「購入を復元」で同じストアのアカウントから購読とアラートを復元できます。購読が登録済みアカウントに属している場合は、そのアカウントでログインする必要があります。Plus と Pro の各プランの範囲は将来変更される場合があります。"
     },
     {
      "heading": "責任の制限と規約の変更",
