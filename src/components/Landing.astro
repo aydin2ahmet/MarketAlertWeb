@@ -6,6 +6,7 @@ import WhatIs from './WhatIs.astro';
 import { GA_ID, LOCALES, legalUrl, shotSources } from '../config';
 import alertGuides from '../i18n/alert-guides.json';
 import coinGuides from '../i18n/coin-guides.json';
+import tour from '../i18n/tour-notes.json';
 
 interface Props { t: any; code: string; appLocale: string }
 const { t, code, appLocale } = Astro.props;
@@ -31,13 +32,18 @@ const CAT: Record<string, number> = { price: 0, types: 3, multi: 8, all: 7, ai: 
 const KEY: Record<string, string> = { price: 'PRICE_WICK', types: 'CONDITIONS', multi: 'AND_OR', all: 'ALL_COINS', ai: 'AI_VOICE', tpl: 'TEMPLATES', ch: 'CHANNELS', live: 'LIVE_STATUS', log: 'DELIVERY_LOG' };
 const TAPE = ['PRICE ≥ 70,000 USDT', 'RSI(14) < 30 · 1h', 'Δ +5% / 5m', 'EMA(9) ↗ EMA(21) · 4h', 'MACD(12,26,9) ↗ SIGNAL · 1d', 'VOL > 3× SMA(20) · 15m', '24h HIGH ↑', 'ALL COINS · TOP 100', 'PRICE ↘ SMA(50) · 1h', 'AND · OR'];
 const n = t.f.length;
+// Ana sayfa turu: ekranın çevresinde kısa el yazısı notlar, kaydırdıkça kalem okuyla işaret ettikleri yere bağlanır.
+// Kutular TR ekranından ölçüldü; Arapça ekran aynalı olduğu için taraf ve x ters çevrilir.
+const HAND = ['tr', 'en', 'de', 'fr', 'es', 'pt-br', 'ru'];
+const boxes = (k: string) => ((tour as any).boxes[k] as any[]).map(([sd, x, y, w, h]) => code === 'ar' ? [sd === 'L' ? 'R' : 'L', 100 - x, y, w, h] : [sd, x, y, w, h]);
+const tourNotes = (k: string): string[] => ((tour as any).notes[code] ?? (tour as any).notes.en)[k];
 const pad = (i: number) => String(i).padStart(2, '0');
 const shot = (k: string, alt: string, eager = false, tall = false) => {
-  const version = k === 'hero-voice' || k === 'ai' ? '3x-conditions2' : code === 'ar' ? '3x-ar2' : k === 'ch' || k === 'log' ? '3x-text2' : '3x';
+  const version = k === 'ai' ? 'ai-nochip' : k === 'hero-voice' ? '3x-conditions2' : code === 'ar' ? '3x-ar2' : k === 'ch' || k === 'log' ? '3x-text2' : '3x';
   return ['light', 'dark'].map((theme, i) => {
     const src = `/shots/${code}/${theme}/${k}.webp?v=${version}`;
     const sources = shotSources(src);
-    const sizes = tall ? (k === 'hero-voice' ? '(max-width:860px) 196px, 238px' : '(max-width:860px) 170px, 220px') : '(max-width:860px) 224px, 282px';
+    const sizes = tall ? (k === 'hero-voice' ? '(max-width:860px) 196px, 238px' : '(max-width:860px) 170px, 220px') : '(max-width:600px) 130px, 286px';
     const attrs = `class="sh-${i === 0 ? 'l' : 'd'}" alt="${i === 0 ? alt : ''}" width="${tall ? 360 : 600}" height="${tall ? 940 : 1268}" ${eager && i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"`;
     // Asıl adres keskin dosya (Google görsel arama bunu alır); bulanık ön izleme yalnızca arka plan.
     return `<img ${attrs} style="background:url('${sources.preview}') center/cover no-repeat" src="${sources.src}" srcset="${sources.srcset}" sizes="${sizes}">`;
@@ -126,30 +132,26 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
   <div class="tape" aria-hidden="true" dir="ltr"><div>{[...TAPE, ...TAPE].map(x => <span>{x}</span>)}</div></div>
   <p class="mband"><Fragment set:html={svg('candle')} /><span>{t.markets}</span></p>
 
-  <section id="features" class="tour">
-    <div>
-      {t.f.map((f: any, i: number) => (
-        <article class={`step${i === 0 ? ' on' : ''}`} data-i={i} data-k={f.k} style={`--c:var(--cat${CAT[f.k]})`}>
+  <section id="features" class={`tour${HAND.includes(code) ? ' hand' : ''}`}>
+    {t.f.map((f: any, i: number) => (
+      <article class="step" data-i={i} data-k={f.k} style={`--c:var(--cat${CAT[f.k]})`}>
+        <div class="th">
           <p class="meta"><span class="num">{pad(i + 1)}/{pad(n)}</span><code class="tag">{KEY[f.k]}</code></p>
           <p class="feature-label">{f.s}</p>
           <h2>{f.t}</h2>
-          <p>{f.d}</p>
           {f.k === 'price' && <a class="rsi-guide-link" href={`/${code}/features/price-alerts/`}>{(alertGuides as any)[code]['price-alerts'].link} <span aria-hidden="true">↗</span></a>}
           {f.k === 'price' && coinLinks.length > 0 && <p class="coin-guides"><b>{COIN_LABEL[code]}</b>{coinLinks.map(c => <a href={c.href}>{c.link}</a>)}</p>}
           {f.k === 'all' && <a class="rsi-guide-link" href={`/${code}/features/rsi-alerts/`}>{t.rsiGuideLink} <span aria-hidden="true">↗</span></a>}
           {f.k === 'multi' && <a class="rsi-guide-link" href={`/${code}/features/multi-condition-alerts/`}>{(alertGuides as any)[code]['multi-condition-alerts'].link} <span aria-hidden="true">↗</span></a>}
           {f.k === 'tpl' && <a class="rsi-guide-link" href={`/${code}/features/volume-spike-alerts/`}>{(alertGuides as any)[code]['volume-spike-alerts'].link} <span aria-hidden="true">↗</span></a>}
+        </div>
+        <div class="pb" data-b={JSON.stringify(boxes(f.k))}>
           <figure class="pf"><Fragment set:html={shot(f.k, f.t)} /></figure>
-        </article>
-      ))}
-    </div>
-    <div class="stick" aria-hidden="true">
-      <div class="frame"><div class="screen">
-        {t.f.map((f: any, i: number) => <Fragment set:html={shot(f.k, '').replace(/class="sh-(l|d)"/g, `class="sh-$1${i === 0 ? ' on' : ''}" data-i="${i}"`)} />)}
-      </div></div>
-      <div class="hud" dir="ltr" style={`--c:var(--cat${CAT[t.f[0].k]})`}><span id="hud-n">01/{pad(n)}</span><span class="hud-key" id="hud-k">{KEY[t.f[0].k]}</span></div>
-      <div class="prog">{t.f.map((f: any, i: number) => <i class={i === 0 ? 'on' : ''} data-i={i} style={`--c:var(--cat${CAT[f.k]})`}></i>)}</div>
-    </div>
+          <svg class="ar" aria-hidden="true"></svg>
+          <ul class="nts">{tourNotes(f.k).map((x: string, j: number) => <li class={`nt ${boxes(f.k)[j][0]}`}>{x}</li>)}</ul>
+        </div>
+      </article>
+    ))}
   </section>
 
   <section id="why" class="sec">
@@ -225,22 +227,13 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
     track('language_switch', { to_lang: (e.target as HTMLSelectElement).value });
     location.href = '/' + (e.target as HTMLSelectElement).value + '/' + location.hash;
   });
-  // Tur: ortadaki adım öne çıkar, sabit telefon onun ekranını gösterir.
+  // Tur: her özellik ekranı sayfa başına bir kez sayılır (hangi özelliğe kadar okunduğunu gösterir).
   const steps = [...document.querySelectorAll<HTMLElement>('.step')];
-  const hudN = document.getElementById('hud-n');
-  const hudK = document.getElementById('hud-k');
-  const hud = document.querySelector<HTMLElement>('.hud');
-  const total = String(steps.length).padStart(2, '0');
+  const seen = new Set<string>();
   const show = (i: number) => {
-    document.querySelectorAll<HTMLElement>('.step, .screen img, .prog i').forEach(el => el.classList.toggle('on', Number(el.dataset.i) === i));
-    if (hudN) hudN.textContent = String(i + 1).padStart(2, '0') + '/' + total;
-    if (hudK) hudK.textContent = steps[i].querySelector('code')?.textContent ?? '';
-    hud?.style.setProperty('--c', steps[i].style.getPropertyValue('--c'));
-    // Her özellik ekranı sayfa başına bir kez sayılır: hangi özelliğe kadar okunduğunu gösterir.
     const key = steps[i].dataset.k;
     if (key && !seen.has(key)) { seen.add(key); track('feature_view', { feature: key }); }
   };
-  const seen = new Set<string>();
   // Telefonda ilk ekran geçilince alttan mağaza barı çıkar.
   const bar = document.getElementById('dlbar');
   const heroEl = document.querySelector('.hero .stores');
@@ -253,4 +246,83 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
   }
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) show(Number((e.target as HTMLElement).dataset.i)); }), { rootMargin: '-45% 0px -45% 0px' });
   steps.forEach(s => io.observe(s));
+
+  // Kalem okları: notlar telefonun iki yanında; sayfa kaydırıldıkça her ok yavaşça çizilir,
+  // ucu ekrana varınca işaret edilen yer çerçevelenir. Hızlı kaydırınca da çizim acele etmez; geri kaydırınca geri sarılır.
+  type Box = [string, number, number, number, number];
+  type Part = { nt: HTMLElement; ln: SVGPathElement; Ll: number; hd: SVGPathElement; bx: SVGRectElement; Lb: number };
+  type Blk = { pb: HTMLElement; b: Box[]; p?: number; parts?: Part[] };
+  const SR = 1268 / 600;
+  const clamp = (v: number) => Math.max(0, Math.min(1, v));
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const blocks: Blk[] = [...document.querySelectorAll<HTMLElement>('.tour .pb')].map(pb => ({ pb, b: JSON.parse(pb.dataset.b || '[]') }));
+  const draw = (k: Blk, p: number) => {
+    k.p = p;
+    k.parts?.forEach((e, i) => {
+      const t = clamp((p - .12 - i * .24) / .24), ta = clamp(t / .6), tb = clamp((t - .6) / .4);
+      e.ln.style.strokeDashoffset = String(e.Ll * (1 - ta));
+      e.hd.style.opacity = ta > .97 ? '1' : '0';
+      e.bx.style.strokeDashoffset = String(e.Lb * (1 - tb));
+      e.nt.style.opacity = String(clamp(t * 4));
+      e.nt.style.transform = `translateY(${(1 - clamp(t * 3)) * 8}px)`;
+    });
+  };
+  const layout = (k: Blk) => {
+    const { pb } = k;
+    const cw = pb.parentElement!.clientWidth;
+    const sm = cw < 600;
+    const ph = sm ? Math.min(140, cw * .37) : 300, gap = sm ? 30 : 110;
+    const col = sm ? (cw - ph - gap * 2) / 2 : Math.min(220, (cw - ph - gap * 2 - 40) / 2);
+    const W = col * 2 + gap * 2 + ph, bord = sm ? 6 : 9;
+    const sw = ph - bord * 2, shh = sw * SR, H = shh + bord * 2 + 8;
+    pb.classList.add('on');
+    Object.assign(pb.style, { width: W + 'px', height: H + 'px' });
+    const fig = pb.querySelector<HTMLElement>('.pf')!;
+    const px = col + gap, py = 4, sx = px + bord, sy = py + bord;
+    Object.assign(fig.style, { left: px + 'px', top: py + 'px', width: ph + 'px', padding: bord + 'px', borderRadius: (sm ? 22 : 40) + 'px' });
+    fig.querySelectorAll('img').forEach(im => { im.style.borderRadius = (sm ? 16 : 32) + 'px'; });
+    const nts = [...pb.querySelectorAll<HTMLElement>('.nt')];
+    const used: Record<string, number[][]> = { L: [], R: [] };
+    let svg = '';
+    k.b.forEach(([sd, x, y0p, w, h], i) => {
+      const e = nts[i]; const L = sd === 'L';
+      e.style.width = col + 'px'; e.style.left = (L ? 0 : W - col) + 'px';
+      const cx = sx + x / 100 * sw, cy = sy + y0p / 100 * shh, bw = w / 100 * sw, bh = h / 100 * shh;
+      const eh = e.offsetHeight;
+      let y = cy - eh / 2 + (i % 2 ? 1 : -1) * (sm ? 18 : 42);
+      for (const [a, c] of used[sd]) if (y < c + 10 && y + eh > a - 10) y = c + 10;
+      y = Math.max(0, Math.min(H - eh, y)); used[sd].push([y, y + eh]); e.style.top = y + 'px';
+      const x0 = L ? col + 6 : W - col - 6, y0 = y + eh / 2, xe = L ? px - 3 : px + ph + 3, ye = cy, dx = xe - x0, v = ye > y0 ? 1 : -1;
+      const d = `M${x0} ${y0} C ${x0 + dx * .35} ${y0 - v * 28}, ${xe - dx * .65} ${ye + v * 6}, ${xe} ${ye}`;
+      const ang = L ? 0 : Math.PI, hp = (t: number) => `${xe - 9 * Math.cos(ang + t)} ${ye - 9 * Math.sin(ang + t)}`;
+      const bx = Math.max(sx + 2, cx - bw / 2), bww = Math.min(bw, sw - 4);
+      svg += `<path class="ln" d="${d}"/><path class="hh" d="M${hp(.5)} L${xe} ${ye} L${hp(-.5)}"/><rect class="bx" x="${bx}" y="${cy - bh / 2}" width="${bww}" height="${bh}" rx="${sm ? 5 : 8}"/>`;
+    });
+    const s = pb.querySelector('svg')!; s.innerHTML = svg;
+    const lns = s.querySelectorAll<SVGPathElement>('.ln'), hds = s.querySelectorAll<SVGPathElement>('.hh'), bxs = s.querySelectorAll<SVGRectElement>('.bx');
+    k.parts = nts.map((nt, i) => {
+      const Ll = lns[i].getTotalLength(), Lb = bxs[i].getTotalLength();
+      lns[i].style.strokeDasharray = `${Ll} ${Ll}`; bxs[i].style.strokeDasharray = `${Lb} ${Lb}`;
+      return { nt, ln: lns[i], Ll, hd: hds[i], bx: bxs[i], Lb };
+    });
+    draw(k, k.p ?? 0);
+  };
+  const target = (k: Blk) => { const r = k.pb.getBoundingClientRect(); return reduce ? 1 : clamp((innerHeight * .9 - r.top) / (r.height + innerHeight * .45)); };
+  let raf = 0;
+  const tick = () => {
+    raf = 0; let busy = false;
+    for (const k of blocks) {
+      const t = target(k), c = k.p ?? 0, d = t - c;
+      const nx = Math.abs(d) < .002 ? t : c + Math.sign(d) * Math.min(Math.abs(d), .0018 + Math.abs(d) * .014);
+      if (nx !== c) { draw(k, nx); busy = true; }
+    }
+    if (busy) raf = requestAnimationFrame(tick);
+  };
+  const onScroll = () => { if (!raf) raf = requestAnimationFrame(tick); };
+  const build = () => { blocks.forEach(layout); onScroll(); };
+  addEventListener('scroll', onScroll, { passive: true });
+  let rt = 0; let lastW = innerWidth;
+  addEventListener('resize', () => { if (innerWidth === lastW) return; lastW = innerWidth; clearTimeout(rt); rt = window.setTimeout(build, 150); });
+  build();
+  document.fonts?.ready.then(build);
 </script>
