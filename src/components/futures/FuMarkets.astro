@@ -1,0 +1,20 @@
+---
+/** Dört piyasa, tasarım P1: her piyasa kendi kartında (ne olduğu + bildirim başlığı), yanında gerçek Piyasa penceresi. */
+import FuShot from './FuShot.astro';
+import { fuPush } from '../../lib/fu';
+import '../../styles/fu.css';
+interface Props { code: string; fu: any; title: string; caption: string }
+const { code, fu, title, caption } = Astro.props;
+const ex: [string, number][] = [['BTC', 70000], ['ETH', 4000], ['BTC', 70000], ['SOL', 200]];
+---
+<section class="fu-p" aria-labelledby="fu-p-t">
+  <div class="fu-p-copy">
+    <p class="fu-kick">{fu.pKicker}</p><h2 id="fu-p-t">{title}</h2><p class="fu-lead">{fu.pLead}</p>
+    <div class="fu-p-cards">{fu.cards.map((d: string, i: number) => <article class="fu-p-c">
+      <h3><span class={`fu-mk${i === 1 ? ' us' : i > 1 ? ' fu' : ''}`}>{fu.mk[i]}</span></h3>
+      <p>{d}</p>
+      <div class="fu-p-push"><span>{fu.pushLabel}</span><code>{fuPush(fu, ex[i][0], i as 0 | 1 | 2 | 3, ex[i][1])}</code></div>
+    </article>)}</div>
+  </div>
+  <figure class="fu-p-ph"><div class="fu-fr"><FuShot code={code} k="sheet" alt={fu.sheetAlt} sizes="(max-width:760px) 250px, 290px" /></div><figcaption>{caption}</figcaption></figure>
+</section>

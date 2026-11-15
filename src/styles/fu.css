@@ -1,0 +1,93 @@
+/* Binance Vadeli sayfası (11. gün): K5 ilk ekran, P1 dört piyasa, F3 sürgü + mum, B3 kilit ekranı. Önek: fu- */
+:root { --fuDn: #C2410C; --fuSf2: #F3F2EC; --fuFu: #9A5B00; --fuUs: #1D5FD1; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme=light]) { --fuDn: #FF8A65; --fuSf2: #1B2129; --fuFu: #F7B548; --fuUs: #7AA7FF; } }
+:root[data-theme=dark] { --fuDn: #FF8A65; --fuSf2: #1B2129; --fuFu: #F7B548; --fuUs: #7AA7FF; }
+
+.fu-kick { font: 600 12px/1.6 var(--mono); color: var(--cat3); margin: 0 0 14px; }
+.fu-lead { color: var(--mut); font-size: 17px; max-width: 640px; margin: 0 0 20px; }
+.fu-fr { position: relative; width: 100%; border-radius: 30px; overflow: hidden; border: 7px solid var(--frame); background: var(--sf); box-shadow: var(--shadow); }
+.fu-fr img { display: block; width: 100%; height: auto; }
+.fu-mk { display: inline-flex; align-items: center; font: 700 12.5px/1.2 var(--mono); border-radius: 999px; padding: 6px 11px; border: 1px solid var(--bd); background: var(--sf); color: var(--tx); white-space: nowrap; }
+.fu-mk.us { border-color: color-mix(in srgb, var(--fuUs) 45%, transparent); color: var(--fuUs); }
+.fu-mk.fu { border-color: color-mix(in srgb, var(--pri) 65%, transparent); background: var(--priSoft); color: var(--fuFu); }
+
+/* ---------- K5 ilk ekran ---------- */
+.fu-h { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: center; padding: 48px 0 56px; }
+.fu-h h1 { font-size: clamp(32px, 4.2vw, 54px); text-wrap: balance; }
+.fu-intro { color: var(--mut); font-size: 19px; max-width: 700px; margin: 20px 0 0; }
+.fu-mks { list-style: none; padding: 0; margin: 22px 0 26px; display: flex; flex-wrap: wrap; gap: 8px; }
+.fu-h-ph { width: 300px; }
+
+/* ---------- P1 dört piyasa ---------- */
+.fu-p { display: grid; grid-template-columns: minmax(0, 1fr) 290px; gap: 44px; align-items: start; padding: 36px; border: 1px solid var(--bd); border-radius: 24px; background: radial-gradient(ellipse at top right, var(--priSoft), transparent 70%), var(--sf); }
+.fu-p h2 { margin-bottom: 10px; }
+.fu-p-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.fu-p-c { background: var(--bg); border: 1px solid var(--bd); border-radius: 18px; padding: 16px 18px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.fu-p-c h3 { margin: 0; font-size: 16px; }
+.fu-p-c p { margin: 0; color: var(--mut); font-size: 14.5px; }
+.fu-p-push { display: grid; gap: 4px; margin-top: 2px; }
+.fu-p-push span { font: 600 10.5px/1.4 var(--mono); color: var(--mut); text-transform: uppercase; letter-spacing: .04em; }
+.fu-p-push code { font: 600 12.5px/1.45 var(--mono); background: var(--fuSf2); border-radius: 8px; padding: 6px 9px; overflow-wrap: anywhere; justify-self: start; }
+.fu-p-ph { margin: 0; position: sticky; top: 90px; }
+.fu-p-ph figcaption { color: var(--mut); font-size: 12px; margin-top: 14px; text-align: center; }
+
+/* ---------- F3 sürgü + mum ---------- */
+.fu-s { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 470px); gap: 56px; align-items: center; padding: 56px 0; border-bottom: 1px solid var(--bd); }
+.fu-s h2, .fu-l h2, .fu-p h2 { margin-bottom: 14px; }
+.fu-s-box { display: grid; gap: 18px; }
+.fu-s-two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.fu-s-c { background: var(--sf); border: 1.5px solid var(--bd); border-radius: 18px; padding: 12px 12px 14px; display: grid; gap: 8px; transition: border-color .3s, box-shadow .3s; min-width: 0; }
+.fu-s-c.hit { border-color: var(--up); box-shadow: 0 0 0 3px color-mix(in srgb, var(--up) 14%, transparent); }
+.fu-s-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px; }
+.fu-s-st { font-size: 13px; font-weight: 700; color: var(--mut); }
+.fu-s-c.hit .fu-s-st { color: var(--up); }
+.fu-s-ch { direction: ltr; width: 100%; height: auto; display: block; background: linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 100% 25%; border-radius: 10px; }
+.fu-s-tg { stroke: var(--pri); stroke-width: 1.4; stroke-dasharray: 4 3; }
+.fu-s-tl { font: 600 9px var(--mono); fill: var(--fuFu); }
+.fu-s-old { opacity: .35; }
+.fu-s-old.up rect, .fu-s-live.up rect { fill: var(--up); }
+.fu-s-old.dn rect, .fu-s-live.dn rect { fill: var(--fuDn); }
+.fu-s-live rect { transition: y .12s linear, height .12s linear; }
+.fu-s-c.hit .fu-s-b { filter: drop-shadow(0 0 4px color-mix(in srgb, var(--up) 60%, transparent)); }
+.fu-s-p { font: 700 21px/1.2 var(--mono); text-align: center; }
+.fu-s-r { width: 100%; accent-color: var(--pri); height: 28px; cursor: pointer; }
+.fu-s-note { color: var(--mut); font-size: 13px; margin: 0; }
+
+/* ---------- B3 kilit ekranı ---------- */
+.fu-l { display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 48px; align-items: center; padding: 56px 0; border-bottom: 1px solid var(--bd); }
+.fu-l-ph { position: relative; width: 270px; aspect-ratio: 720 / 1522; border-radius: 34px; border: 7px solid var(--frame); overflow: hidden; box-shadow: var(--shadow); box-sizing: content-box; background: #0E1A2B; }
+.fu-l-lock { position: absolute; inset: 0; background: linear-gradient(160deg, #2B2140, #0E1A2B 55%, #1A1206); color: #fff; text-align: center; }
+.fu-l-tm { font: 600 54px/1 var(--f); margin-top: 58px; letter-spacing: -.01em; }
+.fu-l-dt { font-size: 13px; opacity: .8; margin-top: 6px; }
+.fu-l-ps { position: absolute; left: 10px; right: 10px; bottom: 120px; display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 10px; text-align: start; background: rgba(255, 255, 255, .9); color: #14171D; border-radius: 18px; padding: 10px 12px; box-shadow: 0 14px 34px rgba(0, 0, 0, .25); }
+.fu-l-ps img { width: 34px; height: 34px; border-radius: 9px; }
+.fu-l-h { display: flex; gap: 8px; align-items: baseline; font-size: 12px; color: #5B6270; }
+.fu-l-h b { color: #14171D; font-size: 12.5px; }
+.fu-l-h span { margin-inline-start: auto; }
+.fu-l-t { display: block; font-size: 14px; font-weight: 650; line-height: 1.3; }
+.fu-l-b { display: block; font: 500 10.5px/1.4 var(--mono); letter-spacing: -.02em; opacity: .85; unicode-bidi: isolate; text-align: start; }
+.fu-l-det { position: absolute; inset: 0; opacity: 0; transition: opacity .6s; background: var(--sf); }
+.fu-l-det img { display: block; width: 100%; height: auto; }
+.fu-l-tap { position: absolute; left: 50%; top: 66%; width: 46px; height: 46px; border-radius: 50%; border: 3px solid var(--pri); transform: translate(-50%, -50%) scale(.6); opacity: 0; pointer-events: none; z-index: 2; }
+.fu-l-tap.go { animation: fu-tap 1s ease-out; }
+@keyframes fu-tap { 0% { opacity: .95; transform: translate(-50%, -50%) scale(.5); } 100% { opacity: 0; transform: translate(-50%, -50%) scale(1.5); } }
+.fu-js .fu-l-ps { transition: transform .6s cubic-bezier(.2, .9, .3, 1.15), opacity .4s; transform: translateY(-24px); opacity: 0; }
+.fu-js.in .fu-l-ps { transform: none; opacity: 1; }
+.fu-js.det .fu-l-det { opacity: 1; }
+
+@media (max-width: 760px) {
+  .fu-h { grid-template-columns: 1fr; gap: 28px; padding: 28px 0 40px; }
+  .fu-intro { font-size: 17px; }
+  .fu-h-ph { width: min(250px, 72vw); margin-inline: auto; }
+  .fu-p { grid-template-columns: 1fr; gap: 28px; padding: 20px; }
+  .fu-p-cards { grid-template-columns: 1fr; }
+  .fu-p-ph { position: static; width: min(250px, 72vw); margin-inline: auto; }
+  .fu-s { grid-template-columns: 1fr; gap: 20px; padding: 40px 0; }
+  .fu-s-two { gap: 8px; }
+  .fu-s-c { padding: 10px 8px 12px; }
+  .fu-s-p { font-size: 17px; }
+  .fu-mk { font-size: 11.5px; padding: 5px 9px; }
+  .fu-l { grid-template-columns: 1fr; gap: 24px; padding: 40px 0; }
+  .fu-l-ph { width: min(250px, 72vw); margin-inline: auto; }
+  .fu-l-tm { font-size: 46px; margin-top: 48px; }
+}
