@@ -1,0 +1,49 @@
+---
+/**
+ * Bildirim, tasarım B3 (2026-11-15, Ahmet): kilit ekranına vadeli push düşer, dokunulur, gerçek Alarm detayı
+ * (BTC / USDT · Vadeli USDT, Piyasa: Vadeli USDT) açılır; döngü. JS yoksa kilit ekranı ve bildirim görünür.
+ * Bildirim metni sunucudaki şablonla aynı (Push.Event.PriceAbove + NotificationMarketLabel, FormatPrice).
+ */
+import FuShot from './FuShot.astro';
+import { fuNum, fuPush } from '../../lib/fu';
+import '../../styles/fu.css';
+interface Props { code: string; hreflang: string; fu: any }
+const { code, hreflang, fu } = Astro.props;
+const at = new Date(Date.UTC(2026, 10, 15, 14, 32));
+const loc = `${hreflang}-u-nu-latn`;
+const time = new Intl.DateTimeFormat(loc, { hour: 'numeric', minute: '2-digit', timeZone: 'UTC' }).formatToParts(at).filter(p => p.type !== 'dayPeriod').map(p => p.value).join('').trim();
+const date = new Intl.DateTimeFormat(loc, { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' }).format(at);
+const title = fuPush(fu, 'BTC', 2, 70000);
+const body = `↑ ${fuNum(fu.sep, 70012.4, 1)} $  │  > ${fuNum(fu.sep, 70000)} $  ✓`;
+---
+<section class="fu-l" aria-labelledby="fu-l-t">
+  <div class="fu-l-copy"><p class="fu-kick">{fu.lKicker}</p><h2 id="fu-l-t">{fu.lTitle}</h2><p class="fu-lead">{fu.lLead}</p></div>
+  <div class="fu-l-ph" data-fu-l role="img" aria-label={fu.lockAlt}>
+    <div class="fu-l-lock" aria-hidden="true"><div class="fu-l-tm">{time}</div><div class="fu-l-dt">{date}</div>
+      <div class="fu-l-ps"><img src="/icons/logo-96.png" alt="" width="34" height="34" /><div><div class="fu-l-h"><b>MarketAlert</b><span>{fu.now}</span></div><b class="fu-l-t">{title}</b><span class="fu-l-b" dir="ltr">{body}</span></div></div>
+    </div>
+    <div class="fu-l-det"><FuShot code={code} k="detail" alt={fu.detailAlt} sizes="(max-width:760px) 250px, 270px" /></div>
+    <span class="fu-l-tap" aria-hidden="true"></span>
+  </div>
+</section>
+
+<script>
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const sl = (ms: number) => new Promise(r => setTimeout(r, ms));
+  for (const k of document.querySelectorAll<HTMLElement>('[data-fu-l]')) {
+    if (reduce) continue;
+    k.classList.add('fu-js');
+    const tap = k.querySelector<HTMLElement>('.fu-l-tap')!;
+    let on = false;
+    new IntersectionObserver(es => { on = es[0].isIntersecting; }, { threshold: .35 }).observe(k);
+    (async () => {
+      while (true) {
+        while (!on || document.hidden) await sl(400);
+        k.classList.remove('det', 'in'); await sl(900);
+        k.classList.add('in'); await sl(1900);
+        tap.classList.remove('go'); void tap.offsetWidth; tap.classList.add('go'); await sl(380);
+        k.classList.add('det'); await sl(4300);
+      }
+    })();
+  }
+</script>

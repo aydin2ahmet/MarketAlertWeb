@@ -209,6 +209,24 @@
    "faq": [
     ["Is the AI assistant free?", "MarketAlert works with a subscription; Plus and Pro both come with a 7-day free trial, and the AI assistant is included in both."]
    ]
+  },
+  "features/binance-futures-alerts": {
+   "line": "Set Binance Futures alerts in MarketAlert: pick Futures USDT or Futures USDC in the alert form's Market row.",
+   "what": "Four Binance markets are watched: Spot USDT, Spot USDC, Futures USDT and Futures USDC, all on Plus and Pro. Futures means USD-margined perpetual contracts. Futures alerts have their own tab in the list, and the push title names the market, e.g. 'BTC/USDT Futures rose above 70,000'.",
+   "facts": [
+    "The futures alert watches the last trade price on the futures market; Binance mark price and funding rate are not watched.",
+    "Every condition type works on all four markets; all-coins alerts scan each market separately.",
+    "The AI assistant picks futures when the user says futures; Settings > Default market sets where quick alerts and the AI start.",
+    "Telegram messages end with the market, e.g. '1m · Futures USDT'; the Chart button opens the coin's Binance futures page.",
+    "No COIN-M futures, funding rate or open interest alerts; a coin missing from the chosen market is flagged in the form."
+   ],
+   "example": "Tell me when BTC futures goes above 70K.",
+   "faq": [
+    [
+     "Are Binance Futures alerts free?",
+     "MarketAlert works with a subscription; Plus and Pro both come with a 7-day free trial, and futures alerts are included in both."
+    ]
+   ]
   }
  }
 }

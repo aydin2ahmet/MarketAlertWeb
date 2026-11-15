@@ -798,6 +798,131 @@
           "BTC'de golden cross olunca haber ver"
         ]
       }
+    },
+    "binance-futures-alerts": {
+      "link": "Binance Vadeli alarmı",
+      "title": "Binance Vadeli coinler için fiyat alarmı nasıl kurulur? | MarketAlert",
+      "h1": "Binance Vadeli coinler için fiyat alarmı nasıl kurulur?",
+      "description": "Alarmı Binance Vadeli USDT ya da Vadeli USDC piyasasında kur: fiyat vadeli son işlemden izlenir, bildirimde “BTC/USDT Vadeli” yazar. Vadeli alarmların listede kendi sekmesinde durur.",
+      "intro": "Alarm formunda Piyasa satırından Vadeli USDT ya da Vadeli USDC’yi seçersin; alarm o piyasanın fiyatını izler. Vadeli alarmların listede kendi sekmesinde durur, bildirim başlığında “BTC/USDT Vadeli” yazar. [Fiyat](features/price-alerts), [RSI](features/rsi-alerts), [MACD](features/macd-crossover-alerts) ve [tüm coinler](features/all-coins-alerts) alarmları dört piyasada da kurulur.",
+      "prompt": "BTC vadeli 70 bin üstüne çıkınca haber ver",
+      "exampleTitle": "Hangi piyasada alarm kurabilirim?",
+      "caption": "Alarm formunda Piyasa satırına dokununca açılan pencere.",
+      "steps": [
+        [
+          "Piyasa satırına dokun",
+          "Alarm oluştur’da “Ne izlenecek” kutusundaki Piyasa satırına dokun; dört piyasanın olduğu pencere açılır."
+        ],
+        [
+          "Vadeli USDT ya da USDC’yi seç",
+          "Vadeli satırında USDT ya da USDC’yi seç. Coin listesi o piyasada işlem gören coinlere göre değişir."
+        ],
+        [
+          "Coini ve koşulu seç",
+          "Coini seç ve koşulu ekle, örneğin fiyat 70.000 üstüne çıkınca. Coin o piyasada yoksa formda “Bu coin seçilen piyasada işlem görmüyor” yazar."
+        ],
+        [
+          "Kanalı seç ve kur",
+          "Push, Telegram ya da ikisini seç ve alarmı kur. Alarm listede Vadeli sekmesinde, kartında piyasa rozetiyle görünür."
+        ]
+      ],
+      "details": [
+        [
+          "Vadeli alarm hangi fiyatı izler?",
+          "Vadeli piyasada gerçekleşen son işlemin fiyatını. Binance’in işaret fiyatı ve fonlama oranı izlenmez. Aynı anda vadeli fiyatı spottan biraz farklı olabilir; alarm yalnızca seçtiğin piyasaya bakar."
+        ],
+        [
+          "Vadelide hangi alarmlar kurulur?",
+          "Hepsi: fiyat, [yüzde değişim](features/percent-change-alerts), [24 saatlik zirve/dip](features/24h-high-low-alerts), RSI, MACD, [EMA kesişimi](features/ema-crossover-alerts) ve hacim. Tüm coinler alarmında her piyasa ayrı taranır; Vadeli USDT seçersen vadeli coinler izlenir."
+        ],
+        [
+          "Yazarak ya da sesle",
+          "[Yapay zekâya](features/ai-crypto-alert-assistant) “BTC vadeli 70 bin üstüne çıkınca haber ver” yaz ya da [söyle](features/voice-crypto-alerts); asistan alarmı Vadeli USDT’de hazırlar. Hazır bir taslakta “vadeli olsun” demen de yeter. Piyasa söylemezsen Ayarlar › Varsayılan piyasa kullanılır."
+        ]
+      ],
+      "faq": [
+        [
+          "Binance Vadeli alarmı ücretsiz mi?",
+          "MarketAlert abonelikle çalışır; Plus ve Pro 7 gün ücretsiz denenir. Vadeli alarmlar iki planda da var. Abone olmadan da alarmını hazırlayabilirsin; denemeyi başlatınca çalışmaya başlar."
+        ],
+        [
+          "Vadeli alarm işaret fiyatına mı bakar?",
+          "Hayır. Alarm vadeli piyasadaki son işlem fiyatına bakar; işaret fiyatı ve fonlama oranı izlenmez."
+        ],
+        [
+          "Seçtiğim coin vadelide yoksa ne olur?",
+          "Formda “Bu coin seçilen piyasada işlem görmüyor” uyarısı çıkar. Piyasayı değiştirebilir ya da başka bir coin seçebilirsin."
+        ],
+        [
+          "Her alarmda piyasayı yeniden mi seçeceğim?",
+          "Hayır. Alarm formu son alarmının piyasasıyla açılır. Ayarlar › Varsayılan piyasa’dan Vadeli USDT’yi seçersen hızlı alarm ve yapay zekâ da bu piyasayla başlar."
+        ],
+        [
+          "Telegram mesajında vadeli nasıl görünür?",
+          "Mesajın altında “⏱ 1dk · Vadeli USDT” yazar; Grafik düğmesi Binance’te o coinin vadeli sayfasını açar. Ayrıntılar [Telegram](features/telegram-crypto-alerts) sayfasında."
+        ],
+        [
+          "COIN-M vadeli ve fonlama oranı alarmı var mı?",
+          "Hayır. USDT ve USDC ile marjlanan sürekli sözleşmeler izlenir; COIN-M sözleşmeler, fonlama oranı ve açık pozisyon alarmı yok."
+        ]
+      ],
+      "related": [
+        "features/price-alerts",
+        "features/all-coins-alerts",
+        "features/ai-crypto-alert-assistant",
+        "features/telegram-crypto-alerts",
+        "coins/bitcoin-price-alert"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 alarm; tekrarlı alarm ve alarm başına 3 koşul. Push ve Telegram, tüm alarm sesleri."
+        ],
+        [
+          "Pro",
+          "100 alarm; alarm başına 5 koşul. Push, Telegram ve imzalı webhook."
+        ]
+      ],
+      "fu": {
+        "kicker": "BINANCE VADELİ · DÖRT PİYASA",
+        "listAlt": "Alarmlarım ekranında Vadeli USDT sekmesi ve Vadeli USDT rozetli BTC alarmı",
+        "pKicker": "DÖRT PİYASA · İKİ PLANDA DA",
+        "pLead": "Binance’in dört piyasası; hepsi Plus’ta da Pro’da da açık. Bildirim başlığı hangi piyasada olduğunu söyler.",
+        "cards": [
+          "Coinin kendisi alınıp satılır. Uygulamanın varsayılan piyasası.",
+          "Aynı coinin USDC ile işlem gören çifti; fiyatı USDT çiftinden ayrı izlenir.",
+          "Sürekli sözleşmeler (perpetual), vade sonu yok. Fiyat son işlemden alınır.",
+          "USDC ile marjlanan sürekli sözleşmeler; her coin bu piyasada olmayabilir."
+        ],
+        "pushLabel": "Bildirim başlığı",
+        "sheetAlt": "Alarm formundaki Piyasa penceresi: Spot ve Vadeli, USDT ve USDC",
+        "sKicker": "AYNI ANDA İKİ FİYAT",
+        "sTitle": "Sürgüyü kaydır: hangi alarm çalar?",
+        "sLead": "İki alarm da BTC 70.000 üstü; biri Spot USDT’de, biri Vadeli USDT’de. Vadeli fiyatı çoğu zaman spottan biraz farklıdır, bu yüzden biri çalarken öbürü bekleyebilir.",
+        "sAria": "BTC spot fiyatı",
+        "hit": "Çalar",
+        "wait": "Bekler",
+        "target": "Hedef",
+        "sNote": "Örnekte vadeli fiyatı spotun biraz üstünde varsayıldı; gerçek fark coine ve ana göre değişir. Alarmı işlem yaptığın piyasada kur.",
+        "lKicker": "BİLDİRİMDE",
+        "lTitle": "Bildirime dokununca alarmın açılır",
+        "lLead": "Başlıkta piyasa yazar. Dokununca açılan Alarm detayında Piyasa satırı Vadeli USDT’dir.",
+        "lockAlt": "Kilit ekranında vadeli bildirimi; dokununca Alarm detayı açılıyor",
+        "detailAlt": "Alarm detayı: BTC / USDT · Vadeli USDT, Piyasa satırında Vadeli USDT",
+        "mk": [
+          "Spot USDT",
+          "Spot USDC",
+          "Vadeli USDT",
+          "Vadeli USDC"
+        ],
+        "push": "{0} {1} üstüne çıktı",
+        "fut": "Vadeli",
+        "sep": [
+          ".",
+          ","
+        ],
+        "now": "şimdi"
+      }
     }
   },
   "de": {
@@ -1594,6 +1719,131 @@
           "Sag mir Bescheid, wenn ein Coin sein 24-Stunden-Hoch bricht",
           "Sag mir Bescheid beim Golden Cross von BTC"
         ]
+      }
+    },
+    "binance-futures-alerts": {
+      "link": "Binance-Futures-Alarme",
+      "title": "Preisalarme für Binance-Futures-Coins einrichten | MarketAlert",
+      "h1": "Wie richtest du einen Preisalarm für Binance-Futures-Coins ein?",
+      "description": "Setze den Alarm auf den Markt Binance Futures USDT oder Futures USDC: Der Kurs wird aus dem letzten Futures-Trade beobachtet, die Benachrichtigung sagt „BTC/USDT Futures“. Futures-Alarme haben einen eigenen Tab in der Liste.",
+      "intro": "Im Alarmformular wählst du in der Zeile Markt Futures USDT oder Futures USDC; der Alarm beobachtet dann den Kurs dieses Marktes. Futures-Alarme stehen in der Liste in einem eigenen Tab, und im Titel der Benachrichtigung steht „BTC/USDT Futures“. [Preis](features/price-alerts)-, [RSI](features/rsi-alerts)-, [MACD](features/macd-crossover-alerts)- und [Alle-Coins](features/all-coins-alerts)-Alarme funktionieren auf allen vier Märkten.",
+      "prompt": "Sag mir, wenn BTC-Futures über 70K steigt",
+      "exampleTitle": "Auf welchen Märkten kann ich Alarme setzen?",
+      "caption": "Das Fenster, das sich öffnet, wenn du im Alarmformular auf die Zeile Markt tippst.",
+      "steps": [
+        [
+          "Auf die Zeile Markt tippen",
+          "Tippe in Alarm erstellen im Feld „Was beobachten“ auf die Zeile Markt; ein Fenster mit den vier Märkten öffnet sich."
+        ],
+        [
+          "Futures USDT oder USDC wählen",
+          "Wähle in der Zeile Futures USDT oder USDC. Die Coinliste zeigt dann die Coins, die auf diesem Markt gehandelt werden."
+        ],
+        [
+          "Coin und Bedingung wählen",
+          "Wähle den Coin und füge die Bedingung hinzu, zum Beispiel Kurs steigt über 70.000. Gibt es den Coin auf dem Markt nicht, steht im Formular „Dieser Coin wird im gewählten Markt nicht gehandelt.“"
+        ],
+        [
+          "Kanal wählen und setzen",
+          "Wähle Push, Telegram oder beides und setze den Alarm. Er erscheint im Futures-Tab der Liste, mit Markt-Badge auf der Karte."
+        ]
+      ],
+      "details": [
+        [
+          "Welchen Kurs beobachtet ein Futures-Alarm?",
+          "Den Kurs des letzten Trades auf dem Futures-Markt. Binances Markpreis und Funding-Rate werden nicht beobachtet. Im selben Moment kann der Futures-Kurs leicht vom Spot abweichen; der Alarm schaut nur auf den Markt, den du gewählt hast."
+        ],
+        [
+          "Welche Alarme gehen auf Futures?",
+          "Alle: Preis, [prozentuale Änderung](features/percent-change-alerts), [24-Stunden-Hoch/Tief](features/24h-high-low-alerts), RSI, MACD, [EMA-Kreuzung](features/ema-crossover-alerts) und Volumen. Alle-Coins-Alarme prüfen jeden Markt getrennt; wählst du Futures USDT, werden die Futures-Coins beobachtet."
+        ],
+        [
+          "Per Text oder Stimme",
+          "Schreib dem [KI-Assistenten](features/ai-crypto-alert-assistant) „Sag mir, wenn BTC-Futures über 70K steigt“ oder [sag es](features/voice-crypto-alerts); der Assistent bereitet den Alarm auf Futures USDT vor. Bei einem fertigen Entwurf reicht „mach Futures daraus“. Nennst du keinen Markt, gilt Einstellungen › Standardmarkt."
+        ]
+      ],
+      "faq": [
+        [
+          "Sind Binance-Futures-Alarme kostenlos?",
+          "MarketAlert funktioniert im Abo; Plus und Pro kannst du 7 Tage kostenlos testen. Futures-Alarme sind in beiden Plänen enthalten. Du kannst deinen Alarm auch ohne Abo vorbereiten; er läuft, sobald du den Test startest."
+        ],
+        [
+          "Nutzt ein Futures-Alarm den Markpreis?",
+          "Nein. Der Alarm schaut auf den Kurs des letzten Trades auf dem Futures-Markt; Markpreis und Funding-Rate werden nicht beobachtet."
+        ],
+        [
+          "Was, wenn mein Coin nicht auf Futures ist?",
+          "Das Formular zeigt „Dieser Coin wird im gewählten Markt nicht gehandelt.“ Du kannst den Markt ändern oder einen anderen Coin wählen."
+        ],
+        [
+          "Muss ich den Markt bei jedem Alarm neu wählen?",
+          "Nein. Das Alarmformular öffnet mit dem Markt deines letzten Alarms. Wählst du Futures USDT unter Einstellungen › Standardmarkt, starten auch Schnellalarme und die KI damit."
+        ],
+        [
+          "Wie erscheint Futures in einer Telegram-Nachricht?",
+          "Unten in der Nachricht steht „⏱ 1 Min · Futures USDT“, und der Chart-Button öffnet die Futures-Seite des Coins auf Binance. Mehr auf der [Telegram](features/telegram-crypto-alerts)-Seite."
+        ],
+        [
+          "Gibt es COIN-M-Futures oder Funding-Rate-Alarme?",
+          "Nein. Beobachtet werden Perpetual-Kontrakte mit USDT- und USDC-Margin; COIN-M-Kontrakte sowie Alarme für Funding-Rate und Open Interest gibt es nicht."
+        ]
+      ],
+      "related": [
+        "features/price-alerts",
+        "features/all-coins-alerts",
+        "features/ai-crypto-alert-assistant",
+        "features/telegram-crypto-alerts",
+        "coins/bitcoin-price-alert"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 Alarme; wiederholende Alarme und bis zu 3 Bedingungen pro Alarm. Push und Telegram, alle Alarmtöne."
+        ],
+        [
+          "Pro",
+          "100 Alarme; bis zu 5 Bedingungen pro Alarm. Push, Telegram und signierter Webhook."
+        ]
+      ],
+      "fu": {
+        "kicker": "BINANCE FUTURES · VIER MÄRKTE",
+        "listAlt": "Meine Alarme mit dem Tab Futures USDT und einem BTC-Alarm mit Futures-USDT-Badge",
+        "pKicker": "VIER MÄRKTE · IN BEIDEN PLÄNEN",
+        "pLead": "Die vier Märkte von Binance, alle offen in Plus und Pro. Der Titel der Benachrichtigung sagt, von welchem Markt sie kommt.",
+        "cards": [
+          "Der Coin selbst wird gekauft und verkauft. Der Standardmarkt der App.",
+          "Das USDC-Paar desselben Coins; sein Kurs wird getrennt vom USDT-Paar beobachtet.",
+          "Unbefristete Kontrakte (Perpetuals) ohne Laufzeitende. Der Kurs stammt aus dem letzten Trade.",
+          "Perpetuals mit USDC-Margin; nicht jeder Coin ist auf diesem Markt."
+        ],
+        "pushLabel": "Titel der Benachrichtigung",
+        "sheetAlt": "Das Fenster Markt im Alarmformular: Spot und Futures, USDT und USDC",
+        "sKicker": "ZWEI KURSE GLEICHZEITIG",
+        "sTitle": "Schieb den Regler: Welcher Alarm löst aus?",
+        "sLead": "Beide Alarme lauten BTC über 70.000; einer auf Spot USDT, einer auf Futures USDT. Der Futures-Kurs weicht meist etwas vom Spot ab, deshalb kann einer auslösen, während der andere wartet.",
+        "sAria": "BTC-Spotkurs",
+        "hit": "Löst aus",
+        "wait": "Wartet",
+        "target": "Ziel",
+        "sNote": "Im Beispiel liegt Futures etwas über Spot; der echte Abstand hängt von Coin und Moment ab. Setze den Alarm auf dem Markt, auf dem du handelst.",
+        "lKicker": "IN DER BENACHRICHTIGUNG",
+        "lTitle": "Tipp auf die Benachrichtigung, und dein Alarm öffnet sich",
+        "lLead": "Der Titel nennt den Markt. Tippst du darauf, zeigt Alarmdetails Markt: Futures USDT.",
+        "lockAlt": "Futures-Benachrichtigung auf dem Sperrbildschirm; ein Tipp öffnet Alarmdetails",
+        "detailAlt": "Alarmdetails: BTC / USDT · Futures USDT, in der Zeile Markt Futures USDT",
+        "mk": [
+          "Spot USDT",
+          "Spot USDC",
+          "Futures USDT",
+          "Futures USDC"
+        ],
+        "push": "{0} ist über {1} gestiegen",
+        "fut": "Futures",
+        "sep": [
+          ".",
+          ","
+        ],
+        "now": "jetzt"
       }
     }
   },
@@ -2392,6 +2642,131 @@
           "Préviens-moi lors d’un golden cross sur BTC"
         ]
       }
+    },
+    "binance-futures-alerts": {
+      "link": "Alertes Binance Futures",
+      "title": "Créer une alerte de prix sur les cryptos Binance Futures | MarketAlert",
+      "h1": "Comment créer une alerte de prix sur les cryptos Binance Futures ?",
+      "description": "Créez l’alerte sur le marché Binance Futures USDT ou Futures USDC : le prix est suivi à partir de la dernière transaction futures et la notification indique « BTC/USDT Futures ». Les alertes futures ont leur propre onglet.",
+      "intro": "Dans le formulaire d’alerte, choisissez Futures USDT ou Futures USDC à la ligne Marché ; l’alerte suit alors le prix de ce marché. Les alertes futures ont leur propre onglet dans la liste et le titre de la notification indique « BTC/USDT Futures ». Les alertes de [prix](features/price-alerts), [RSI](features/rsi-alerts), [MACD](features/macd-crossover-alerts) et [toutes les cryptos](features/all-coins-alerts) fonctionnent sur les quatre marchés.",
+      "prompt": "Préviens-moi quand le BTC futures passe au-dessus de 70K",
+      "exampleTitle": "Sur quels marchés puis-je créer une alerte ?",
+      "caption": "La fenêtre qui s’ouvre quand vous touchez la ligne Marché du formulaire d’alerte.",
+      "steps": [
+        [
+          "Touchez la ligne Marché",
+          "Dans Créer une alerte, touchez la ligne Marché de l’encadré « Quoi surveiller » ; une fenêtre avec les quatre marchés s’ouvre."
+        ],
+        [
+          "Choisissez Futures USDT ou USDC",
+          "Sur la ligne Futures, choisissez USDT ou USDC. La liste des cryptos montre alors celles échangées sur ce marché."
+        ],
+        [
+          "Choisissez la crypto et la condition",
+          "Choisissez la crypto et ajoutez la condition, par exemple le prix passe au-dessus de 70 000. Si la crypto n’est pas sur ce marché, le formulaire indique « Cette crypto n’est pas échangée sur le marché choisi. »"
+        ],
+        [
+          "Choisissez le canal et créez",
+          "Choisissez push, Telegram ou les deux, puis créez l’alerte. Elle apparaît dans l’onglet Futures de la liste, avec un badge de marché sur sa carte."
+        ]
+      ],
+      "details": [
+        [
+          "Quel prix une alerte futures suit-elle ?",
+          "Le prix de la dernière transaction sur le marché futures. Le prix de marque et le taux de financement de Binance ne sont pas suivis. Au même instant, le prix futures peut différer légèrement du spot ; l’alerte ne regarde que le marché choisi."
+        ],
+        [
+          "Quelles alertes fonctionnent sur les futures ?",
+          "Toutes : prix, [variation en pourcentage](features/percent-change-alerts), [plus haut/plus bas 24 h](features/24h-high-low-alerts), RSI, MACD, [croisement EMA](features/ema-crossover-alerts) et volume. Les alertes toutes les cryptos analysent chaque marché séparément ; choisissez Futures USDT et ce sont les cryptos futures qui sont suivies."
+        ],
+        [
+          "En écrivant ou à la voix",
+          "Écrivez « Préviens-moi quand le BTC futures passe au-dessus de 70K » à l’[assistant IA](features/ai-crypto-alert-assistant) ou [dites-le](features/voice-crypto-alerts) ; l’assistant prépare l’alerte sur Futures USDT. Sur un brouillon prêt, « mets-la en futures » suffit. Sans marché précisé, Réglages › Marché par défaut s’applique."
+        ]
+      ],
+      "faq": [
+        [
+          "Les alertes Binance Futures sont-elles gratuites ?",
+          "MarketAlert fonctionne par abonnement ; Plus et Pro incluent 7 jours d’essai gratuit. Les alertes futures sont incluses dans les deux offres. Vous pouvez préparer votre alerte sans vous abonner ; elle commence à fonctionner quand vous lancez l’essai."
+        ],
+        [
+          "Une alerte futures utilise-t-elle le prix de marque ?",
+          "Non. L’alerte regarde le prix de la dernière transaction sur le marché futures ; le prix de marque et le taux de financement ne sont pas suivis."
+        ],
+        [
+          "Et si ma crypto n’est pas sur les futures ?",
+          "Le formulaire affiche « Cette crypto n’est pas échangée sur le marché choisi. » Vous pouvez changer de marché ou choisir une autre crypto."
+        ],
+        [
+          "Dois-je rechoisir le marché à chaque alerte ?",
+          "Non. Le formulaire d’alerte s’ouvre avec le marché de votre dernière alerte. Si vous choisissez Futures USDT dans Réglages › Marché par défaut, les alertes rapides et l’IA démarrent aussi avec ce marché."
+        ],
+        [
+          "Comment les futures apparaissent-ils dans Telegram ?",
+          "Le bas du message indique « ⏱ 1 min · Futures USDT » et le bouton Graphique ouvre la page futures de la crypto sur Binance. Plus de détails sur la page [Telegram](features/telegram-crypto-alerts)."
+        ],
+        [
+          "Les futures COIN-M et le taux de financement sont-ils pris en charge ?",
+          "Non. Ce sont les contrats perpétuels margés en USDT et en USDC qui sont suivis ; il n’y a ni contrats COIN-M, ni alertes de taux de financement ou d’intérêt ouvert."
+        ]
+      ],
+      "related": [
+        "features/price-alerts",
+        "features/all-coins-alerts",
+        "features/ai-crypto-alert-assistant",
+        "features/telegram-crypto-alerts",
+        "coins/bitcoin-price-alert"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 alertes ; alertes répétées et jusqu’à 3 conditions par alerte. Push et Telegram, tous les sons d’alerte."
+        ],
+        [
+          "Pro",
+          "100 alertes ; jusqu’à 5 conditions par alerte. Push, Telegram et webhook signé."
+        ]
+      ],
+      "fu": {
+        "kicker": "BINANCE FUTURES · QUATRE MARCHÉS",
+        "listAlt": "Écran Mes alertes avec l’onglet Futures USDT et une alerte BTC portant le badge Futures USDT",
+        "pKicker": "QUATRE MARCHÉS · DANS LES DEUX OFFRES",
+        "pLead": "Les quatre marchés de Binance, tous ouverts sur Plus et Pro. Le titre de la notification indique de quel marché elle vient.",
+        "cards": [
+          "On achète et vend la crypto elle-même. Le marché par défaut de l’app.",
+          "La paire USDC de la même crypto ; son prix est suivi séparément de la paire USDT.",
+          "Contrats perpétuels, sans échéance. Le prix provient de la dernière transaction.",
+          "Contrats perpétuels margés en USDC ; toutes les cryptos ne sont pas sur ce marché."
+        ],
+        "pushLabel": "Titre de la notification",
+        "sheetAlt": "La fenêtre Marché du formulaire d’alerte : Spot et Futures, USDT et USDC",
+        "sKicker": "DEUX PRIX EN MÊME TEMPS",
+        "sTitle": "Faites glisser le curseur : quelle alerte se déclenche ?",
+        "sLead": "Les deux alertes sont « BTC au-dessus de 70 000 » ; l’une sur Spot USDT, l’autre sur Futures USDT. Le prix futures diffère souvent un peu du spot : l’une peut se déclencher pendant que l’autre attend.",
+        "sAria": "Prix spot du BTC",
+        "hit": "Se déclenche",
+        "wait": "Attend",
+        "target": "Cible",
+        "sNote": "L’exemple suppose que les futures sont un peu au-dessus du spot ; l’écart réel dépend de la crypto et du moment. Créez l’alerte sur le marché où vous tradez.",
+        "lKicker": "DANS LA NOTIFICATION",
+        "lTitle": "Touchez la notification pour ouvrir votre alerte",
+        "lLead": "Le titre indique le marché. En le touchant, Détails de l’alerte affiche Marché : Futures USDT.",
+        "lockAlt": "Notification futures sur l’écran verrouillé ; la toucher ouvre Détails de l’alerte",
+        "detailAlt": "Détails de l’alerte : BTC / USDT · Futures USDT, Futures USDT à la ligne Marché",
+        "mk": [
+          "Spot USDT",
+          "Spot USDC",
+          "Futures USDT",
+          "Futures USDC"
+        ],
+        "push": "{0} est passé au-dessus de {1}",
+        "fut": "Futures",
+        "sep": [
+          " ",
+          ","
+        ],
+        "now": "maintenant"
+      }
     }
   },
   "es": {
@@ -3188,6 +3563,131 @@
           "Avísame cuando una moneda rompa su máximo de 24 horas",
           "Avísame del golden cross de BTC"
         ]
+      }
+    },
+    "binance-futures-alerts": {
+      "link": "Alertas de Binance Futuros",
+      "title": "Cómo crear alertas de precio para monedas de Binance Futuros | MarketAlert",
+      "h1": "¿Cómo se crea una alerta de precio para monedas de Binance Futuros?",
+      "description": "Crea la alerta en el mercado Binance Futuros USDT o Futuros USDC: el precio se sigue desde la última operación de futuros y la notificación dice “BTC/USDT Futuros”. Las alertas de futuros tienen su propia pestaña.",
+      "intro": "En el formulario de alerta eliges Futuros USDT o Futuros USDC en la fila Mercado; la alerta sigue entonces el precio de ese mercado. Las alertas de futuros están en su propia pestaña de la lista y el título de la notificación dice “BTC/USDT Futuros”. Las alertas de [precio](features/price-alerts), [RSI](features/rsi-alerts), [MACD](features/macd-crossover-alerts) y [todas las monedas](features/all-coins-alerts) funcionan en los cuatro mercados.",
+      "prompt": "Avísame cuando BTC futuros supere los 70K",
+      "exampleTitle": "¿En qué mercados puedo crear alertas?",
+      "caption": "La ventana que se abre al tocar la fila Mercado del formulario de alerta.",
+      "steps": [
+        [
+          "Toca la fila Mercado",
+          "En Crear una alerta, toca la fila Mercado del cuadro “Qué vigilar”; se abre una ventana con los cuatro mercados."
+        ],
+        [
+          "Elige Futuros USDT o USDC",
+          "En la fila Futuros, elige USDT o USDC. La lista de monedas pasa a mostrar las que cotizan en ese mercado."
+        ],
+        [
+          "Elige la moneda y la condición",
+          "Elige la moneda y añade la condición, por ejemplo el precio sube de 70.000. Si la moneda no está en ese mercado, el formulario dice “Esta moneda no se negocia en el mercado elegido.”"
+        ],
+        [
+          "Elige el canal y créala",
+          "Elige push, Telegram o ambos y crea la alerta. Aparece en la pestaña Futuros de la lista, con una insignia de mercado en su tarjeta."
+        ]
+      ],
+      "details": [
+        [
+          "¿Qué precio sigue una alerta de futuros?",
+          "El precio de la última operación en el mercado de futuros. El precio de marca y la tasa de financiación de Binance no se siguen. En el mismo momento, el precio de futuros puede diferir un poco del spot; la alerta solo mira el mercado que elegiste."
+        ],
+        [
+          "¿Qué alertas funcionan en futuros?",
+          "Todas: precio, [cambio porcentual](features/percent-change-alerts), [máximo/mínimo de 24 h](features/24h-high-low-alerts), RSI, MACD, [cruce de EMA](features/ema-crossover-alerts) y volumen. Las alertas de todas las monedas revisan cada mercado por separado; si eliges Futuros USDT, se siguen las monedas de futuros."
+        ],
+        [
+          "Escribiendo o con la voz",
+          "Escribe “Avísame cuando BTC futuros supere los 70K” al [asistente de IA](features/ai-crypto-alert-assistant) o [dilo](features/voice-crypto-alerts); el asistente prepara la alerta en Futuros USDT. En un borrador listo basta con “pásala a futuros”. Si no nombras un mercado, se usa Ajustes › Mercado predeterminado."
+        ]
+      ],
+      "faq": [
+        [
+          "¿Las alertas de Binance Futuros son gratis?",
+          "MarketAlert funciona con suscripción; Plus y Pro incluyen 7 días de prueba gratis. Las alertas de futuros están en los dos planes. Puedes preparar tu alerta sin suscribirte; empieza a funcionar cuando inicias la prueba."
+        ],
+        [
+          "¿Una alerta de futuros usa el precio de marca?",
+          "No. La alerta mira el precio de la última operación en el mercado de futuros; el precio de marca y la tasa de financiación no se siguen."
+        ],
+        [
+          "¿Y si mi moneda no está en futuros?",
+          "El formulario muestra “Esta moneda no se negocia en el mercado elegido.” Puedes cambiar el mercado o elegir otra moneda."
+        ],
+        [
+          "¿Tengo que elegir el mercado en cada alerta?",
+          "No. El formulario de alerta abre con el mercado de tu última alerta. Si eliges Futuros USDT en Ajustes › Mercado predeterminado, las alertas rápidas y la IA también empiezan con él."
+        ],
+        [
+          "¿Cómo se ve futuros en un mensaje de Telegram?",
+          "Al pie del mensaje dice “⏱ 1 min · Futuros USDT” y el botón Gráfico abre la página de futuros de la moneda en Binance. Más en la página de [Telegram](features/telegram-crypto-alerts)."
+        ],
+        [
+          "¿Hay futuros COIN-M o alertas de tasa de financiación?",
+          "No. Se siguen contratos perpetuos con margen en USDT y USDC; no hay contratos COIN-M ni alertas de tasa de financiación o interés abierto."
+        ]
+      ],
+      "related": [
+        "features/price-alerts",
+        "features/all-coins-alerts",
+        "features/ai-crypto-alert-assistant",
+        "features/telegram-crypto-alerts",
+        "coins/bitcoin-price-alert"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 alertas; alertas repetidas y hasta 3 condiciones por alerta. Push y Telegram, todos los sonidos de alerta."
+        ],
+        [
+          "Pro",
+          "100 alertas; hasta 5 condiciones por alerta. Push, Telegram y webhook firmado."
+        ]
+      ],
+      "fu": {
+        "kicker": "BINANCE FUTUROS · CUATRO MERCADOS",
+        "listAlt": "Pantalla Mis alertas con la pestaña Futuros USDT y una alerta de BTC con la insignia Futuros USDT",
+        "pKicker": "CUATRO MERCADOS · EN LOS DOS PLANES",
+        "pLead": "Los cuatro mercados de Binance, todos abiertos en Plus y Pro. El título de la notificación dice de qué mercado viene.",
+        "cards": [
+          "Se compra y vende la propia moneda. El mercado predeterminado de la app.",
+          "El par en USDC de la misma moneda; su precio se sigue aparte del par en USDT.",
+          "Contratos perpetuos, sin fecha de vencimiento. El precio se toma de la última operación.",
+          "Contratos perpetuos con margen en USDC; no todas las monedas están en este mercado."
+        ],
+        "pushLabel": "Título de la notificación",
+        "sheetAlt": "La ventana Mercado del formulario de alerta: Spot y Futuros, USDT y USDC",
+        "sKicker": "DOS PRECIOS A LA VEZ",
+        "sTitle": "Mueve el control: ¿qué alerta salta?",
+        "sLead": "Las dos alertas son BTC por encima de 70.000; una en Spot USDT y otra en Futuros USDT. El precio de futuros suele ser un poco distinto del spot, así que una puede saltar mientras la otra espera.",
+        "sAria": "Precio spot de BTC",
+        "hit": "Salta",
+        "wait": "Espera",
+        "target": "Objetivo",
+        "sNote": "El ejemplo supone futuros un poco por encima del spot; la diferencia real depende de la moneda y del momento. Crea la alerta en el mercado donde operas.",
+        "lKicker": "EN LA NOTIFICACIÓN",
+        "lTitle": "Toca la notificación y se abre tu alerta",
+        "lLead": "El título nombra el mercado. Al tocarlo, Detalle de la alerta muestra Mercado: Futuros USDT.",
+        "lockAlt": "Notificación de futuros en la pantalla de bloqueo; al tocarla se abre Detalle de la alerta",
+        "detailAlt": "Detalle de la alerta: BTC / USDT · Futuros USDT, con Futuros USDT en la fila Mercado",
+        "mk": [
+          "Spot USDT",
+          "Spot USDC",
+          "Futuros USDT",
+          "Futuros USDC"
+        ],
+        "push": "{0} subió de {1}",
+        "fut": "Futuros",
+        "sep": [
+          ".",
+          ","
+        ],
+        "now": "ahora"
       }
     }
   },
@@ -3986,6 +4486,131 @@
           "Me avise do golden cross do BTC"
         ]
       }
+    },
+    "binance-futures-alerts": {
+      "link": "Alertas de Binance Futuros",
+      "title": "Como criar alertas de preço para moedas da Binance Futuros | MarketAlert",
+      "h1": "Como criar um alerta de preço para moedas da Binance Futuros?",
+      "description": "Crie o alerta no mercado Binance Futuros USDT ou Futuros USDC: o preço é acompanhado pela última negociação de futuros e a notificação diz “BTC/USDT Futuros”. Alertas de futuros ficam numa aba própria.",
+      "intro": "No formulário de alerta, você escolhe Futuros USDT ou Futuros USDC na linha Mercado; o alerta passa a acompanhar o preço desse mercado. Os alertas de futuros ficam numa aba própria da lista, e o título da notificação diz “BTC/USDT Futuros”. Alertas de [preço](features/price-alerts), [RSI](features/rsi-alerts), [MACD](features/macd-crossover-alerts) e [todas as moedas](features/all-coins-alerts) funcionam nos quatro mercados.",
+      "prompt": "Me avise quando o BTC futuros passar de 70K",
+      "exampleTitle": "Em quais mercados posso criar alertas?",
+      "caption": "A janela que abre quando você toca na linha Mercado do formulário de alerta.",
+      "steps": [
+        [
+          "Toque na linha Mercado",
+          "Em Criar alerta, toque na linha Mercado do quadro “O que monitorar”; abre uma janela com os quatro mercados."
+        ],
+        [
+          "Escolha Futuros USDT ou USDC",
+          "Na linha Futuros, escolha USDT ou USDC. A lista de moedas passa a mostrar as negociadas nesse mercado."
+        ],
+        [
+          "Escolha a moeda e a condição",
+          "Escolha a moeda e adicione a condição, por exemplo preço sobe acima de 70.000. Se a moeda não estiver nesse mercado, o formulário diz “Esta moeda não é negociada no mercado escolhido.”"
+        ],
+        [
+          "Escolha o canal e crie",
+          "Escolha push, Telegram ou os dois e crie o alerta. Ele aparece na aba Futuros da lista, com um selo de mercado no cartão."
+        ]
+      ],
+      "details": [
+        [
+          "Que preço um alerta de futuros acompanha?",
+          "O preço da última negociação no mercado de futuros. O preço de marcação e a taxa de financiamento da Binance não são acompanhados. No mesmo instante, o preço de futuros pode ser um pouco diferente do spot; o alerta olha só o mercado que você escolheu."
+        ],
+        [
+          "Quais alertas funcionam em futuros?",
+          "Todos: preço, [variação percentual](features/percent-change-alerts), [máxima/mínima de 24 h](features/24h-high-low-alerts), RSI, MACD, [cruzamento de EMA](features/ema-crossover-alerts) e volume. Alertas de todas as moedas varrem cada mercado separadamente; escolha Futuros USDT e as moedas de futuros são acompanhadas."
+        ],
+        [
+          "Escrevendo ou por voz",
+          "Escreva “Me avise quando o BTC futuros passar de 70K” para o [assistente de IA](features/ai-crypto-alert-assistant) ou [fale](features/voice-crypto-alerts); o assistente prepara o alerta em Futuros USDT. Num rascunho pronto, basta dizer “muda para futuros”. Se você não disser o mercado, vale Ajustes › Mercado padrão."
+        ]
+      ],
+      "faq": [
+        [
+          "Os alertas da Binance Futuros são grátis?",
+          "O MarketAlert funciona por assinatura; Plus e Pro têm 7 dias de teste grátis. Os alertas de futuros estão nos dois planos. Você pode preparar seu alerta sem assinar; ele começa a funcionar quando você inicia o teste."
+        ],
+        [
+          "O alerta de futuros usa o preço de marcação?",
+          "Não. O alerta olha o preço da última negociação no mercado de futuros; preço de marcação e taxa de financiamento não são acompanhados."
+        ],
+        [
+          "E se minha moeda não estiver em futuros?",
+          "O formulário mostra “Esta moeda não é negociada no mercado escolhido.” Você pode trocar o mercado ou escolher outra moeda."
+        ],
+        [
+          "Preciso escolher o mercado em todo alerta?",
+          "Não. O formulário de alerta abre com o mercado do seu último alerta. Se você escolher Futuros USDT em Ajustes › Mercado padrão, os alertas rápidos e a IA também começam com ele."
+        ],
+        [
+          "Como futuros aparece numa mensagem do Telegram?",
+          "O rodapé da mensagem diz “⏱ 1 min · Futuros USDT”, e o botão Gráfico abre a página de futuros da moeda na Binance. Mais na página do [Telegram](features/telegram-crypto-alerts)."
+        ],
+        [
+          "Há futuros COIN-M ou alertas de taxa de financiamento?",
+          "Não. São acompanhados contratos perpétuos com margem em USDT e USDC; não há contratos COIN-M nem alertas de taxa de financiamento ou contratos em aberto."
+        ]
+      ],
+      "related": [
+        "features/price-alerts",
+        "features/all-coins-alerts",
+        "features/ai-crypto-alert-assistant",
+        "features/telegram-crypto-alerts",
+        "coins/bitcoin-price-alert"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 alertas; alertas repetidos e até 3 condições por alerta. Push e Telegram, todos os sons de alerta."
+        ],
+        [
+          "Pro",
+          "100 alertas; até 5 condições por alerta. Push, Telegram e webhook assinado."
+        ]
+      ],
+      "fu": {
+        "kicker": "BINANCE FUTUROS · QUATRO MERCADOS",
+        "listAlt": "Tela Meus alertas com a aba Futuros USDT e um alerta de BTC com o selo Futuros USDT",
+        "pKicker": "QUATRO MERCADOS · NOS DOIS PLANOS",
+        "pLead": "Os quatro mercados da Binance, todos abertos no Plus e no Pro. O título da notificação diz de qual mercado ela veio.",
+        "cards": [
+          "A própria moeda é comprada e vendida. O mercado padrão do app.",
+          "O par em USDC da mesma moeda; o preço é acompanhado separado do par em USDT.",
+          "Contratos perpétuos, sem data de vencimento. O preço vem da última negociação.",
+          "Contratos perpétuos com margem em USDC; nem toda moeda está neste mercado."
+        ],
+        "pushLabel": "Título da notificação",
+        "sheetAlt": "A janela Mercado do formulário de alerta: Spot e Futuros, USDT e USDC",
+        "sKicker": "DOIS PREÇOS AO MESMO TEMPO",
+        "sTitle": "Arraste o controle: qual alerta dispara?",
+        "sLead": "Os dois alertas são BTC acima de 70.000; um em Spot USDT, outro em Futuros USDT. O preço de futuros costuma ser um pouco diferente do spot, então um pode disparar enquanto o outro espera.",
+        "sAria": "Preço spot do BTC",
+        "hit": "Dispara",
+        "wait": "Espera",
+        "target": "Alvo",
+        "sNote": "O exemplo supõe futuros um pouco acima do spot; a diferença real depende da moeda e do momento. Crie o alerta no mercado onde você opera.",
+        "lKicker": "NA NOTIFICAÇÃO",
+        "lTitle": "Toque na notificação e seu alerta abre",
+        "lLead": "O título diz o mercado. Ao tocar, Detalhes do alerta mostra Mercado: Futuros USDT.",
+        "lockAlt": "Notificação de futuros na tela de bloqueio; ao tocar, abre Detalhes do alerta",
+        "detailAlt": "Detalhes do alerta: BTC / USDT · Futuros USDT, com Futuros USDT na linha Mercado",
+        "mk": [
+          "Spot USDT",
+          "Spot USDC",
+          "Futuros USDT",
+          "Futuros USDC"
+        ],
+        "push": "{0} subiu acima de {1}",
+        "fut": "Futuros",
+        "sep": [
+          ".",
+          ","
+        ],
+        "now": "agora"
+      }
     }
   },
   "ru": {
@@ -4782,6 +5407,131 @@
           "Сообщи, когда монета обновит максимум за 24 часа",
           "Сообщи о золотом кресте на BTC"
         ]
+      }
+    },
+    "binance-futures-alerts": {
+      "link": "Алерты Binance Фьючерсы",
+      "title": "Как настроить ценовой алерт для монет Binance Фьючерсы | MarketAlert",
+      "h1": "Как настроить ценовой алерт для монет Binance Фьючерсы?",
+      "description": "Создайте алерт на рынке Binance Фьючерсы USDT или Фьючерсы USDC: цена берётся по последней фьючерсной сделке, а в уведомлении написано «BTC/USDT Фьючерсы». У фьючерсных алертов своя вкладка в списке.",
+      "intro": "В форме алерта выберите в строке «Рынок» Фьючерсы USDT или Фьючерсы USDC — алерт будет следить за ценой этого рынка. Фьючерсные алерты лежат в списке на своей вкладке, а в заголовке уведомления написано «BTC/USDT Фьючерсы». Алерты на [цену](features/price-alerts), [RSI](features/rsi-alerts), [MACD](features/macd-crossover-alerts) и [все монеты](features/all-coins-alerts) работают на всех четырёх рынках.",
+      "prompt": "Сообщи, когда фьючерс BTC поднимется выше 70K",
+      "exampleTitle": "На каких рынках можно ставить алерты?",
+      "caption": "Окно, которое открывается по нажатию на строку «Рынок» в форме алерта.",
+      "steps": [
+        [
+          "Нажмите строку «Рынок»",
+          "В «Создать оповещение» нажмите строку «Рынок» в блоке «Что отслеживать» — откроется окно с четырьмя рынками."
+        ],
+        [
+          "Выберите Фьючерсы USDT или USDC",
+          "В строке «Фьючерсы» выберите USDT или USDC. Список монет покажет те, что торгуются на этом рынке."
+        ],
+        [
+          "Выберите монету и условие",
+          "Выберите монету и добавьте условие, например цена поднимется выше 70 000. Если монеты нет на этом рынке, форма напишет «Эта монета не торгуется на выбранном рынке»."
+        ],
+        [
+          "Выберите канал и создайте",
+          "Выберите push, Telegram или оба и создайте алерт. Он появится на вкладке «Фьючерсы» в списке, с меткой рынка на карточке."
+        ]
+      ],
+      "details": [
+        [
+          "За какой ценой следит фьючерсный алерт?",
+          "За ценой последней сделки на фьючерсном рынке. Маркировочная цена и ставка финансирования Binance не отслеживаются. В один и тот же момент фьючерсная цена может немного отличаться от спота; алерт смотрит только на выбранный рынок."
+        ],
+        [
+          "Какие алерты работают на фьючерсах?",
+          "Все: цена, [изменение в процентах](features/percent-change-alerts), [максимум/минимум за 24 часа](features/24h-high-low-alerts), RSI, MACD, [пересечение EMA](features/ema-crossover-alerts) и объём. Алерты на все монеты проверяют каждый рынок отдельно; выберите Фьючерсы USDT — и отслеживаться будут фьючерсные монеты."
+        ],
+        [
+          "Текстом или голосом",
+          "Напишите [ИИ-ассистенту](features/ai-crypto-alert-assistant) «Сообщи, когда фьючерс BTC поднимется выше 70K» или [скажите это](features/voice-crypto-alerts) — ассистент подготовит алерт на рынке Фьючерсы USDT. В готовом черновике достаточно сказать «сделай фьючерсы». Если рынок не назван, берётся Настройки › Рынок по умолчанию."
+        ]
+      ],
+      "faq": [
+        [
+          "Алерты Binance Фьючерсы бесплатны?",
+          "MarketAlert работает по подписке; Plus и Pro можно попробовать бесплатно 7 дней. Фьючерсные алерты есть в обоих тарифах. Алерт можно подготовить и без подписки; он начнёт работать, когда вы запустите пробный период."
+        ],
+        [
+          "Фьючерсный алерт смотрит на маркировочную цену?",
+          "Нет. Алерт смотрит на цену последней сделки на фьючерсном рынке; маркировочная цена и ставка финансирования не отслеживаются."
+        ],
+        [
+          "Что, если моей монеты нет на фьючерсах?",
+          "Форма покажет «Эта монета не торгуется на выбранном рынке». Можно сменить рынок или выбрать другую монету."
+        ],
+        [
+          "Нужно ли выбирать рынок для каждого алерта?",
+          "Нет. Форма алерта открывается с рынком вашего последнего алерта. Если выбрать Фьючерсы USDT в Настройки › Рынок по умолчанию, быстрые алерты и ИИ тоже начнут с него."
+        ],
+        [
+          "Как фьючерсы выглядят в сообщении Telegram?",
+          "Внизу сообщения написано «⏱ 1м · Фьючерсы USDT», а кнопка «График» открывает фьючерсную страницу монеты на Binance. Подробнее на странице [Telegram](features/telegram-crypto-alerts)."
+        ],
+        [
+          "Есть ли COIN-M фьючерсы и алерты на ставку финансирования?",
+          "Нет. Отслеживаются бессрочные контракты с маржой в USDT и USDC; COIN-M контрактов, алертов на ставку финансирования и открытый интерес нет."
+        ]
+      ],
+      "related": [
+        "features/price-alerts",
+        "features/all-coins-alerts",
+        "features/ai-crypto-alert-assistant",
+        "features/telegram-crypto-alerts",
+        "coins/bitcoin-price-alert"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 алертов; повторяющиеся алерты и до 3 условий в алерте. Push и Telegram, все звуки алертов."
+        ],
+        [
+          "Pro",
+          "100 алертов; до 5 условий в алерте. Push, Telegram и подписанный вебхук."
+        ]
+      ],
+      "fu": {
+        "kicker": "BINANCE ФЬЮЧЕРСЫ · ЧЕТЫРЕ РЫНКА",
+        "listAlt": "Экран «Мои оповещения» с вкладкой Фьючерсы USDT и алертом BTC с меткой Фьючерсы USDT",
+        "pKicker": "ЧЕТЫРЕ РЫНКА · В ОБОИХ ТАРИФАХ",
+        "pLead": "Четыре рынка Binance, все открыты в Plus и Pro. Заголовок уведомления говорит, с какого рынка оно пришло.",
+        "cards": [
+          "Покупается и продаётся сама монета. Рынок приложения по умолчанию.",
+          "Пара той же монеты к USDC; её цена отслеживается отдельно от пары к USDT.",
+          "Бессрочные контракты, без даты экспирации. Цена берётся по последней сделке.",
+          "Бессрочные контракты с маржой в USDC; не каждая монета есть на этом рынке."
+        ],
+        "pushLabel": "Заголовок уведомления",
+        "sheetAlt": "Окно «Рынок» в форме алерта: Спот и Фьючерсы, USDT и USDC",
+        "sKicker": "ДВЕ ЦЕНЫ ОДНОВРЕМЕННО",
+        "sTitle": "Сдвиньте ползунок: какой алерт сработает?",
+        "sLead": "Оба алерта — BTC выше 70 000; один на Спот USDT, другой на Фьючерсы USDT. Фьючерсная цена обычно немного отличается от спота, поэтому один может сработать, пока другой ждёт.",
+        "sAria": "Спотовая цена BTC",
+        "hit": "Сработает",
+        "wait": "Ждёт",
+        "target": "Цель",
+        "sNote": "В примере фьючерс чуть выше спота; реальная разница зависит от монеты и момента. Ставьте алерт на том рынке, где торгуете.",
+        "lKicker": "В УВЕДОМЛЕНИИ",
+        "lTitle": "Нажмите на уведомление — откроется ваш алерт",
+        "lLead": "В заголовке указан рынок. По нажатию «Детали оповещения» показывают Рынок: Фьючерсы USDT.",
+        "lockAlt": "Фьючерсное уведомление на экране блокировки; нажатие открывает «Детали оповещения»",
+        "detailAlt": "Детали оповещения: BTC / USDT · Фьючерсы USDT, в строке «Рынок» Фьючерсы USDT",
+        "mk": [
+          "Спот USDT",
+          "Спот USDC",
+          "Фьючерсы USDT",
+          "Фьючерсы USDC"
+        ],
+        "push": "{0} поднялся выше {1}",
+        "fut": "Фьючерсы",
+        "sep": [
+          " ",
+          ","
+        ],
+        "now": "сейчас"
       }
     }
   },
@@ -5580,6 +6330,131 @@
           "BTC でゴールデンクロスが出たら知らせて"
         ]
       }
+    },
+    "binance-futures-alerts": {
+      "link": "Binance先物アラート",
+      "title": "Binance先物コインの価格アラートを設定する方法 | MarketAlert",
+      "h1": "Binance先物のコインに価格アラートを設定するには？",
+      "description": "Binance 先物 USDT または 先物 USDC 市場でアラートを設定できます。価格は先物の直近約定から監視し、通知には「BTC/USDT 先物」と表示されます。先物アラートは一覧の専用タブにまとまります。",
+      "intro": "アラートフォームの「市場」行で 先物 USDT か 先物 USDC を選ぶと、アラートはその市場の価格を監視します。先物アラートは一覧の専用タブに並び、通知のタイトルには「BTC/USDT 先物」と表示されます。[価格](features/price-alerts)、[RSI](features/rsi-alerts)、[MACD](features/macd-crossover-alerts)、[全コイン](features/all-coins-alerts)のアラートは4つの市場すべてで使えます。",
+      "prompt": "BTC先物が7万を超えたら知らせて",
+      "exampleTitle": "どの市場でアラートを設定できますか？",
+      "caption": "アラートフォームで「市場」行をタップすると開くウィンドウ。",
+      "steps": [
+        [
+          "「市場」行をタップ",
+          "「アラートを作成」の「監視対象」にある「市場」行をタップすると、4つの市場が並ぶウィンドウが開きます。"
+        ],
+        [
+          "先物 USDT か USDC を選ぶ",
+          "「先物」の行で USDT か USDC を選びます。コイン一覧はその市場で取引されているコインに変わります。"
+        ],
+        [
+          "コインと条件を選ぶ",
+          "コインを選んで条件を追加します。例：価格が 70,000 を上回ったとき。その市場にないコインなら、フォームに「このコインは選択した市場で取引されていません。」と表示されます。"
+        ],
+        [
+          "チャネルを選んで設定",
+          "プッシュ、Telegram、または両方を選んでアラートを設定します。一覧の「先物」タブに、市場バッジ付きのカードで表示されます。"
+        ]
+      ],
+      "details": [
+        [
+          "先物アラートはどの価格を監視しますか？",
+          "先物市場の直近約定価格です。Binance のマーク価格と資金調達率は監視しません。同じ瞬間でも先物の価格は現物と少し違うことがあり、アラートは選んだ市場だけを見ます。"
+        ],
+        [
+          "先物ではどのアラートが使えますか？",
+          "すべて使えます：価格、[変化率](features/percent-change-alerts)、[24時間高値/安値](features/24h-high-low-alerts)、RSI、MACD、[EMAクロス](features/ema-crossover-alerts)、出来高。全コインアラートは市場ごとに別々にスキャンし、先物 USDT を選べば先物のコインが監視されます。"
+        ],
+        [
+          "書いても、話しても",
+          "[AIアシスタント](features/ai-crypto-alert-assistant)に「BTC先物が7万を超えたら知らせて」と書くか[話す](features/voice-crypto-alerts)と、アシスタントが 先物 USDT でアラートを用意します。用意された下書きなら「先物にして」だけで切り替わります。市場を言わなければ「設定 › 既定の市場」が使われます。"
+        ]
+      ],
+      "faq": [
+        [
+          "Binance先物アラートは無料？",
+          "MarketAlert はサブスクリプションで利用します。Plus と Pro はどちらも7日間無料でお試しいただけます。先物アラートはどちらのプランでも使えます。サブスクリプションなしでもアラートを用意でき、トライアルを開始すると動き始めます。"
+        ],
+        [
+          "先物アラートはマーク価格を使いますか？",
+          "いいえ。先物市場の直近約定価格を見ます。マーク価格と資金調達率は監視しません。"
+        ],
+        [
+          "選んだコインが先物にない場合は？",
+          "フォームに「このコインは選択した市場で取引されていません。」と表示されます。市場を変えるか、別のコインを選んでください。"
+        ],
+        [
+          "アラートごとに市場を選び直す必要がありますか？",
+          "いいえ。アラートフォームは最新のアラートの市場で開きます。「設定 › 既定の市場」で 先物 USDT を選べば、クイックアラートと AI もこの市場で始まります。"
+        ],
+        [
+          "Telegram のメッセージでは先物はどう表示されますか？",
+          "メッセージの下に「⏱ 1分 · 先物 USDT」と表示され、チャートボタンで Binance のそのコインの先物ページが開きます。詳しくは[Telegram](features/telegram-crypto-alerts)のページへ。"
+        ],
+        [
+          "COIN-M先物や資金調達率のアラートはありますか？",
+          "いいえ。監視するのは USDT と USDC を証拠金とする無期限契約です。COIN-M契約、資金調達率や建玉のアラートはありません。"
+        ]
+      ],
+      "related": [
+        "features/price-alerts",
+        "features/all-coins-alerts",
+        "features/ai-crypto-alert-assistant",
+        "features/telegram-crypto-alerts",
+        "coins/bitcoin-price-alert"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "アラート20件。繰り返しアラート、1アラートあたり最大3条件。プッシュとTelegram、すべてのアラート音。"
+        ],
+        [
+          "Pro",
+          "アラート100件。1アラートあたり最大5条件。プッシュ、Telegram、署名付きWebhook。"
+        ]
+      ],
+      "fu": {
+        "kicker": "BINANCE 先物 · 4つの市場",
+        "listAlt": "アラート一覧の 先物 USDT タブと、先物 USDT バッジ付きの BTC アラート",
+        "pKicker": "4つの市場 · 両プランで",
+        "pLead": "Binance の4つの市場は Plus でも Pro でもすべて使えます。通知のタイトルでどの市場か分かります。",
+        "cards": [
+          "コインそのものを売買する市場。アプリの既定の市場です。",
+          "同じコインの USDC ペア。価格は USDT ペアとは別に監視します。",
+          "無期限契約（パーペチュアル）で満期はありません。価格は直近の約定から取得します。",
+          "USDC 証拠金の無期限契約。すべてのコインがこの市場にあるわけではありません。"
+        ],
+        "pushLabel": "通知のタイトル",
+        "sheetAlt": "アラートフォームの「市場」ウィンドウ：現物と先物、USDT と USDC",
+        "sKicker": "同時に2つの価格",
+        "sTitle": "スライダーを動かすと、どのアラートが鳴る？",
+        "sLead": "どちらも「BTC 70,000 超え」のアラートで、1つは 現物 USDT、もう1つは 先物 USDT。先物の価格はふつう現物と少し違うので、片方が鳴っても、もう片方は待つことがあります。",
+        "sAria": "BTC 現物価格",
+        "hit": "鳴る",
+        "wait": "待機",
+        "target": "目標",
+        "sNote": "この例では先物が現物より少し上としています。実際の差はコインと時間によって変わります。アラートは取引している市場で設定しましょう。",
+        "lKicker": "通知では",
+        "lTitle": "通知をタップするとアラートが開く",
+        "lLead": "タイトルに市場が表示されます。タップして開く「アラート詳細」の市場は 先物 USDT です。",
+        "lockAlt": "ロック画面の先物通知。タップするとアラート詳細が開く",
+        "detailAlt": "アラート詳細：BTC / USDT · 先物 USDT、市場の行に 先物 USDT",
+        "mk": [
+          "現物 USDT",
+          "現物 USDC",
+          "先物 USDT",
+          "先物 USDC"
+        ],
+        "push": "{0} が {1} を上回りました",
+        "fut": "先物",
+        "sep": [
+          ",",
+          "."
+        ],
+        "now": "たった今"
+      }
     }
   },
   "zh": {
@@ -6376,6 +7251,131 @@
           "有币种突破 24 小时最高价时提醒我",
           "BTC 出现黄金交叉时提醒我"
         ]
+      }
+    },
+    "binance-futures-alerts": {
+      "link": "币安合约提醒",
+      "title": "如何为币安合约币种设置价格提醒 | MarketAlert",
+      "h1": "如何为币安合约币种设置价格提醒？",
+      "description": "在币安 合约 USDT 或 合约 USDC 市场设置提醒：价格取自合约最新成交，通知里写着“BTC/USDT 合约”。合约提醒在列表中有单独的标签页。",
+      "intro": "在提醒表单的“市场”一行选择 合约 USDT 或 合约 USDC，提醒就会监控该市场的价格。合约提醒在列表中有自己的标签页，通知标题写着“BTC/USDT 合约”。[价格](features/price-alerts)、[RSI](features/rsi-alerts)、[MACD](features/macd-crossover-alerts) 和[全部币种](features/all-coins-alerts)提醒在四个市场都能用。",
+      "prompt": "BTC 合约涨破 7 万时提醒我",
+      "exampleTitle": "可以在哪些市场设置提醒？",
+      "caption": "在提醒表单中点“市场”一行时打开的窗口。",
+      "steps": [
+        [
+          "点“市场”一行",
+          "在“创建提醒”中，点“监控对象”框里的“市场”一行，会打开列出四个市场的窗口。"
+        ],
+        [
+          "选择 合约 USDT 或 USDC",
+          "在“合约”一行选择 USDT 或 USDC。币种列表会换成在该市场交易的币种。"
+        ],
+        [
+          "选择币种和条件",
+          "选择币种并添加条件，例如价格涨破 70,000。如果该市场没有这个币种，表单会显示“该币种不在所选市场交易。”"
+        ],
+        [
+          "选择渠道并设置",
+          "选择推送、Telegram 或两者，然后设置提醒。它会出现在列表的“合约”标签页，卡片上带有市场标记。"
+        ]
+      ],
+      "details": [
+        [
+          "合约提醒监控哪个价格？",
+          "合约市场的最新成交价。不监控币安的标记价格和资金费率。同一时刻合约价格可能与现货略有不同，提醒只看你选择的市场。"
+        ],
+        [
+          "合约上能用哪些提醒？",
+          "全部都能：价格、[涨跌幅](features/percent-change-alerts)、[24 小时最高/最低](features/24h-high-low-alerts)、RSI、MACD、[EMA 交叉](features/ema-crossover-alerts)和成交量。全部币种提醒会分别扫描每个市场；选择 合约 USDT 就监控合约币种。"
+        ],
+        [
+          "打字或语音都行",
+          "给 [AI 助手](features/ai-crypto-alert-assistant)写“BTC 合约涨破 7 万时提醒我”，或[直接说](features/voice-crypto-alerts)，助手会在 合约 USDT 上准备好提醒。已有草稿时说“改成合约”就行。没说市场时使用“设置 › 默认市场”。"
+        ]
+      ],
+      "faq": [
+        [
+          "币安合约提醒免费吗？",
+          "MarketAlert 需要订阅使用；Plus 和 Pro 都可免费试用 7 天。合约提醒在两个方案中都有。不订阅也可以先准备好提醒；开始试用后提醒即开始工作。"
+        ],
+        [
+          "合约提醒用的是标记价格吗？",
+          "不是。提醒看的是合约市场的最新成交价；不监控标记价格和资金费率。"
+        ],
+        [
+          "我选的币种没有合约怎么办？",
+          "表单会显示“该币种不在所选市场交易。”你可以换一个市场或选择其他币种。"
+        ],
+        [
+          "每个提醒都要重新选市场吗？",
+          "不用。提醒表单会以你最近一条提醒的市场打开。在“设置 › 默认市场”中选择 合约 USDT 后，快速提醒和 AI 也会从这个市场开始。"
+        ],
+        [
+          "Telegram 消息里合约怎么显示？",
+          "消息底部写着“⏱ 1分 · 合约 USDT”，图表按钮会打开该币种在币安的合约页面。详见 [Telegram](features/telegram-crypto-alerts) 页面。"
+        ],
+        [
+          "支持币本位合约或资金费率提醒吗？",
+          "不支持。监控的是以 USDT 和 USDC 为保证金的永续合约；没有币本位（COIN-M）合约，也没有资金费率和持仓量提醒。"
+        ]
+      ],
+      "related": [
+        "features/price-alerts",
+        "features/all-coins-alerts",
+        "features/ai-crypto-alert-assistant",
+        "features/telegram-crypto-alerts",
+        "coins/bitcoin-price-alert"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 个提醒；重复提醒，每个提醒最多 3 个条件。推送和 Telegram，全部提醒音。"
+        ],
+        [
+          "Pro",
+          "100 个提醒；每个提醒最多 5 个条件。推送、Telegram 和签名 Webhook。"
+        ]
+      ],
+      "fu": {
+        "kicker": "币安合约 · 四个市场",
+        "listAlt": "我的提醒页面的 合约 USDT 标签页，以及带 合约 USDT 标记的 BTC 提醒",
+        "pKicker": "四个市场 · 两个方案都有",
+        "pLead": "币安的四个市场在 Plus 和 Pro 中全部开放。通知标题会告诉你来自哪个市场。",
+        "cards": [
+          "直接买卖币种本身。应用的默认市场。",
+          "同一币种的 USDC 交易对；价格与 USDT 交易对分开监控。",
+          "永续合约，无到期日。价格取自最新成交。",
+          "以 USDC 为保证金的永续合约；并非每个币种都在这个市场。"
+        ],
+        "pushLabel": "通知标题",
+        "sheetAlt": "提醒表单中的“市场”窗口：现货和合约，USDT 和 USDC",
+        "sKicker": "同一时刻两个价格",
+        "sTitle": "拖动滑块：哪个提醒会响？",
+        "sLead": "两个提醒都是 BTC 涨破 70,000；一个在 现货 USDT，一个在 合约 USDT。合约价格通常与现货略有不同，所以可能一个响了，另一个还在等。",
+        "sAria": "BTC 现货价格",
+        "hit": "会响",
+        "wait": "等待",
+        "target": "目标",
+        "sNote": "示例假设合约略高于现货；实际差价因币种和时刻而异。请在你交易的市场设置提醒。",
+        "lKicker": "通知里",
+        "lTitle": "点通知，打开你的提醒",
+        "lLead": "标题写明市场。点开后，“提醒详情”中的市场是 合约 USDT。",
+        "lockAlt": "锁屏上的合约通知；点击后打开提醒详情",
+        "detailAlt": "提醒详情：BTC / USDT · 合约 USDT，市场一行为 合约 USDT",
+        "mk": [
+          "现货 USDT",
+          "现货 USDC",
+          "合约 USDT",
+          "合约 USDC"
+        ],
+        "push": "{0} 突破 {1}",
+        "fut": "合约",
+        "sep": [
+          ",",
+          "."
+        ],
+        "now": "刚刚"
       }
     }
   },
@@ -7174,6 +8174,131 @@
           "BTC में गोल्डन क्रॉस हो तो बताना"
         ]
       }
+    },
+    "binance-futures-alerts": {
+      "link": "Binance फ़्यूचर्स अलर्ट",
+      "title": "Binance फ़्यूचर्स कॉइन के लिए प्राइस अलर्ट कैसे सेट करें | MarketAlert",
+      "h1": "Binance फ़्यूचर्स कॉइन के लिए प्राइस अलर्ट कैसे सेट करें?",
+      "description": "अलर्ट Binance फ़्यूचर्स USDT या फ़्यूचर्स USDC मार्केट में सेट करें: कीमत फ़्यूचर्स के आख़िरी ट्रेड से देखी जाती है और सूचना में “BTC/USDT फ़्यूचर्स” लिखा होता है। फ़्यूचर्स अलर्ट सूची में अपने टैब में रहते हैं।",
+      "intro": "अलर्ट फ़ॉर्म की मार्केट पंक्ति में फ़्यूचर्स USDT या फ़्यूचर्स USDC चुनें; अलर्ट उसी मार्केट की कीमत देखता है। फ़्यूचर्स अलर्ट सूची में अपने टैब में रहते हैं और सूचना के शीर्षक में “BTC/USDT फ़्यूचर्स” लिखा होता है। [प्राइस](features/price-alerts), [RSI](features/rsi-alerts), [MACD](features/macd-crossover-alerts) और [सभी कॉइन](features/all-coins-alerts) अलर्ट चारों मार्केट में काम करते हैं।",
+      "prompt": "BTC फ़्यूचर्स 70K से ऊपर जाए तो बताना",
+      "exampleTitle": "किन मार्केट में अलर्ट सेट कर सकते हैं?",
+      "caption": "अलर्ट फ़ॉर्म में मार्केट पंक्ति पर टैप करने से खुलने वाली विंडो।",
+      "steps": [
+        [
+          "मार्केट पंक्ति पर टैप करें",
+          "अलर्ट बनाएँ में “क्या देखें” बॉक्स की मार्केट पंक्ति पर टैप करें; चारों मार्केट वाली विंडो खुलती है।"
+        ],
+        [
+          "फ़्यूचर्स USDT या USDC चुनें",
+          "फ़्यूचर्स पंक्ति में USDT या USDC चुनें। कॉइन सूची उस मार्केट में ट्रेड होने वाले कॉइन दिखाने लगती है।"
+        ],
+        [
+          "कॉइन और शर्त चुनें",
+          "कॉइन चुनें और शर्त जोड़ें, जैसे कीमत 70,000 से ऊपर जाए। कॉइन उस मार्केट में न हो तो फ़ॉर्म में “यह कॉइन चुने गए मार्केट में ट्रेड नहीं होता।” लिखा आता है।"
+        ],
+        [
+          "चैनल चुनें और सेट करें",
+          "पुश, Telegram या दोनों चुनें और अलर्ट सेट करें। अलर्ट सूची के फ़्यूचर्स टैब में, कार्ड पर मार्केट बैज के साथ दिखता है।"
+        ]
+      ],
+      "details": [
+        [
+          "फ़्यूचर्स अलर्ट कौन-सी कीमत देखता है?",
+          "फ़्यूचर्स मार्केट में हुए आख़िरी ट्रेड की कीमत। Binance की मार्क प्राइस और फ़ंडिंग रेट नहीं देखे जाते। एक ही पल में फ़्यूचर्स कीमत स्पॉट से थोड़ी अलग हो सकती है; अलर्ट सिर्फ़ आपके चुने मार्केट को देखता है।"
+        ],
+        [
+          "फ़्यूचर्स पर कौन-से अलर्ट चलते हैं?",
+          "सभी: प्राइस, [प्रतिशत बदलाव](features/percent-change-alerts), [24 घंटे का हाई/लो](features/24h-high-low-alerts), RSI, MACD, [EMA क्रॉस](features/ema-crossover-alerts) और वॉल्यूम। सभी कॉइन अलर्ट हर मार्केट को अलग से स्कैन करते हैं; फ़्यूचर्स USDT चुनें तो फ़्यूचर्स कॉइन देखे जाते हैं।"
+        ],
+        [
+          "लिखकर या बोलकर",
+          "[AI असिस्टेंट](features/ai-crypto-alert-assistant) को “BTC फ़्यूचर्स 70K से ऊपर जाए तो बताना” लिखें या [बोलें](features/voice-crypto-alerts); असिस्टेंट अलर्ट फ़्यूचर्स USDT पर तैयार करता है। तैयार ड्राफ़्ट में “फ़्यूचर्स कर दो” कहना काफ़ी है। मार्केट न बताएँ तो सेटिंग › डिफ़ॉल्ट मार्केट लिया जाता है।"
+        ]
+      ],
+      "faq": [
+        [
+          "क्या Binance फ़्यूचर्स अलर्ट मुफ़्त हैं?",
+          "MarketAlert सब्सक्रिप्शन से चलता है; Plus और Pro दोनों में 7 दिन का मुफ़्त ट्रायल है। फ़्यूचर्स अलर्ट दोनों प्लान में है। सब्सक्राइब किए बिना भी आप अपना अलर्ट तैयार कर सकते हैं; ट्रायल शुरू करते ही वह काम करने लगता है।"
+        ],
+        [
+          "क्या फ़्यूचर्स अलर्ट मार्क प्राइस देखता है?",
+          "नहीं। अलर्ट फ़्यूचर्स मार्केट के आख़िरी ट्रेड की कीमत देखता है; मार्क प्राइस और फ़ंडिंग रेट नहीं देखे जाते।"
+        ],
+        [
+          "मेरा कॉइन फ़्यूचर्स में न हो तो?",
+          "फ़ॉर्म में “यह कॉइन चुने गए मार्केट में ट्रेड नहीं होता।” दिखता है। आप मार्केट बदल सकते हैं या दूसरा कॉइन चुन सकते हैं।"
+        ],
+        [
+          "क्या हर अलर्ट में मार्केट फिर से चुनना होगा?",
+          "नहीं। अलर्ट फ़ॉर्म आपके पिछले अलर्ट के मार्केट से खुलता है। सेटिंग › डिफ़ॉल्ट मार्केट में फ़्यूचर्स USDT चुनें तो क्विक अलर्ट और AI भी इसी से शुरू होते हैं।"
+        ],
+        [
+          "Telegram संदेश में फ़्यूचर्स कैसे दिखता है?",
+          "संदेश के नीचे “⏱ 1मि · फ़्यूचर्स USDT” लिखा होता है, और चार्ट बटन Binance पर उस कॉइन का फ़्यूचर्स पेज खोलता है। ज़्यादा जानकारी [Telegram](features/telegram-crypto-alerts) पेज पर।"
+        ],
+        [
+          "क्या COIN-M फ़्यूचर्स या फ़ंडिंग रेट अलर्ट हैं?",
+          "नहीं। USDT और USDC मार्जिन वाले पर्पेचुअल कॉन्ट्रैक्ट देखे जाते हैं; COIN-M कॉन्ट्रैक्ट, फ़ंडिंग रेट और ओपन इंटरेस्ट अलर्ट नहीं हैं।"
+        ]
+      ],
+      "related": [
+        "features/price-alerts",
+        "features/all-coins-alerts",
+        "features/ai-crypto-alert-assistant",
+        "features/telegram-crypto-alerts",
+        "coins/bitcoin-price-alert"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 अलर्ट; दोहराने वाले अलर्ट और हर अलर्ट में 3 शर्तें तक। पुश और Telegram, सभी अलर्ट आवाज़ें।"
+        ],
+        [
+          "Pro",
+          "100 अलर्ट; हर अलर्ट में 5 शर्तें तक। पुश, Telegram और साइन किया हुआ वेबहुक।"
+        ]
+      ],
+      "fu": {
+        "kicker": "BINANCE फ़्यूचर्स · चार मार्केट",
+        "listAlt": "मेरे अलर्ट स्क्रीन पर फ़्यूचर्स USDT टैब और फ़्यूचर्स USDT बैज वाला BTC अलर्ट",
+        "pKicker": "चार मार्केट · दोनों प्लान में",
+        "pLead": "Binance के चारों मार्केट, Plus और Pro दोनों में खुले। सूचना का शीर्षक बताता है कि वह किस मार्केट से आई।",
+        "cards": [
+          "कॉइन ख़ुद ख़रीदा-बेचा जाता है। ऐप का डिफ़ॉल्ट मार्केट।",
+          "उसी कॉइन की USDC जोड़ी; इसकी कीमत USDT जोड़ी से अलग देखी जाती है।",
+          "पर्पेचुअल कॉन्ट्रैक्ट, कोई समाप्ति तिथि नहीं। कीमत आख़िरी ट्रेड से ली जाती है।",
+          "USDC मार्जिन वाले पर्पेचुअल कॉन्ट्रैक्ट; हर कॉइन इस मार्केट में नहीं होता।"
+        ],
+        "pushLabel": "सूचना का शीर्षक",
+        "sheetAlt": "अलर्ट फ़ॉर्म की मार्केट विंडो: स्पॉट और फ़्यूचर्स, USDT और USDC",
+        "sKicker": "एक साथ दो कीमतें",
+        "sTitle": "स्लाइडर खिसकाएँ: कौन-सा अलर्ट बजेगा?",
+        "sLead": "दोनों अलर्ट BTC 70,000 से ऊपर के हैं; एक स्पॉट USDT पर, एक फ़्यूचर्स USDT पर। फ़्यूचर्स कीमत अक्सर स्पॉट से थोड़ी अलग होती है, इसलिए एक बज सकता है जबकि दूसरा इंतज़ार करे।",
+        "sAria": "BTC स्पॉट कीमत",
+        "hit": "बजेगा",
+        "wait": "इंतज़ार",
+        "target": "लक्ष्य",
+        "sNote": "उदाहरण में फ़्यूचर्स को स्पॉट से थोड़ा ऊपर माना गया है; असली अंतर कॉइन और समय पर निर्भर है। अलर्ट उसी मार्केट में सेट करें जहाँ आप ट्रेड करते हैं।",
+        "lKicker": "सूचना में",
+        "lTitle": "सूचना पर टैप करें, आपका अलर्ट खुलता है",
+        "lLead": "शीर्षक में मार्केट लिखा होता है। टैप करने पर अलर्ट का विवरण में मार्केट: फ़्यूचर्स USDT दिखता है।",
+        "lockAlt": "लॉक स्क्रीन पर फ़्यूचर्स सूचना; टैप करने पर अलर्ट का विवरण खुलता है",
+        "detailAlt": "अलर्ट का विवरण: BTC / USDT · फ़्यूचर्स USDT, मार्केट पंक्ति में फ़्यूचर्स USDT",
+        "mk": [
+          "स्पॉट USDT",
+          "स्पॉट USDC",
+          "फ़्यूचर्स USDT",
+          "फ़्यूचर्स USDC"
+        ],
+        "push": "{0} {1} से ऊपर गया",
+        "fut": "फ़्यूचर्स",
+        "sep": [
+          ",",
+          "."
+        ],
+        "now": "अभी"
+      }
     }
   },
   "ar": {
@@ -7970,6 +9095,131 @@
           "نبّهني عندما تكسر أي عملة أعلى سعر في 24 ساعة",
           "نبّهني عند التقاطع الذهبي في BTC"
         ]
+      }
+    },
+    "binance-futures-alerts": {
+      "link": "تنبيهات العقود الآجلة في Binance",
+      "title": "كيف تضبط تنبيه سعر لعملات العقود الآجلة في Binance | MarketAlert",
+      "h1": "كيف تضبط تنبيه سعر لعملات العقود الآجلة في Binance؟",
+      "description": "اضبط التنبيه في سوق العقود الآجلة USDT أو العقود الآجلة USDC على Binance: يُتابَع السعر من آخر صفقة في العقود الآجلة، ويظهر في الإشعار «BTC/USDT العقود الآجلة». ولتنبيهات العقود الآجلة تبويب خاص في القائمة.",
+      "intro": "في نموذج التنبيه اختر العقود الآجلة USDT أو العقود الآجلة USDC من صف السوق، فيتابع التنبيه سعر ذلك السوق. تظهر تنبيهات العقود الآجلة في تبويب خاص بها في القائمة، ويكتب عنوان الإشعار «BTC/USDT العقود الآجلة». تعمل تنبيهات [السعر](features/price-alerts) و[RSI](features/rsi-alerts) و[MACD](features/macd-crossover-alerts) و[كل العملات](features/all-coins-alerts) في الأسواق الأربعة.",
+      "prompt": "أخبرني عندما تتجاوز عقود BTC الآجلة 70 ألفًا",
+      "exampleTitle": "في أي الأسواق يمكنني ضبط التنبيهات؟",
+      "caption": "النافذة التي تُفتح عند لمس صف السوق في نموذج التنبيه.",
+      "steps": [
+        [
+          "المس صف السوق",
+          "في إنشاء تنبيه، المس صف السوق في مربع «ما الذي نراقبه»؛ فتُفتح نافذة فيها الأسواق الأربعة."
+        ],
+        [
+          "اختر العقود الآجلة USDT أو USDC",
+          "في صف العقود الآجلة اختر USDT أو USDC. تتغير قائمة العملات إلى العملات المتداولة في ذلك السوق."
+        ],
+        [
+          "اختر العملة والشرط",
+          "اختر العملة وأضف الشرط، مثل صعود السعر فوق 70٬000. إن لم تكن العملة في ذلك السوق يظهر في النموذج «لا يتم تداول هذه العملة في السوق المختار.»"
+        ],
+        [
+          "اختر القناة واضبطه",
+          "اختر الإشعارات الفورية أو Telegram أو كليهما واضبط التنبيه. يظهر في تبويب العقود الآجلة في القائمة، وعلى بطاقته شارة السوق."
+        ]
+      ],
+      "details": [
+        [
+          "أي سعر يتابعه تنبيه العقود الآجلة؟",
+          "سعر آخر صفقة في سوق العقود الآجلة. لا يُتابَع سعر العلامة ولا معدل التمويل في Binance. وفي اللحظة نفسها قد يختلف سعر العقود الآجلة قليلًا عن الفوري؛ والتنبيه ينظر إلى السوق الذي اخترته فقط."
+        ],
+        [
+          "ما التنبيهات التي تعمل على العقود الآجلة؟",
+          "كلها: السعر و[نسبة التغير](features/percent-change-alerts) و[أعلى/أدنى سعر خلال 24 ساعة](features/24h-high-low-alerts) وRSI وMACD و[تقاطع EMA](features/ema-crossover-alerts) والحجم. تفحص تنبيهات كل العملات كل سوق على حدة؛ اختر العقود الآجلة USDT فتُتابَع عملات العقود الآجلة."
+        ],
+        [
+          "بالكتابة أو بالصوت",
+          "اكتب لـ[مساعد الذكاء الاصطناعي](features/ai-crypto-alert-assistant) «أخبرني عندما تتجاوز عقود BTC الآجلة 70 ألفًا» أو [قلها](features/voice-crypto-alerts)؛ فيجهّز المساعد التنبيه على العقود الآجلة USDT. وفي مسودة جاهزة يكفي أن تقول «اجعله عقودًا آجلة». وإن لم تذكر السوق يُستخدم الإعدادات › السوق الافتراضي."
+        ]
+      ],
+      "faq": [
+        [
+          "هل تنبيهات العقود الآجلة في Binance مجانية؟",
+          "يعمل MarketAlert بالاشتراك؛ ويمكن تجربة Plus وPro مجانًا لمدة 7 أيام. تنبيهات العقود الآجلة متاحة في الخطتين. يمكنك تجهيز تنبيهك دون اشتراك؛ ويبدأ العمل عندما تبدأ التجربة."
+        ],
+        [
+          "هل يستخدم تنبيه العقود الآجلة سعر العلامة؟",
+          "لا. ينظر التنبيه إلى سعر آخر صفقة في سوق العقود الآجلة؛ ولا يُتابَع سعر العلامة ولا معدل التمويل."
+        ],
+        [
+          "ماذا لو لم تكن عملتي في العقود الآجلة؟",
+          "يعرض النموذج «لا يتم تداول هذه العملة في السوق المختار.» يمكنك تغيير السوق أو اختيار عملة أخرى."
+        ],
+        [
+          "هل أختار السوق من جديد في كل تنبيه؟",
+          "لا. يفتح نموذج التنبيه بسوق آخر تنبيه لك. وإن اخترت العقود الآجلة USDT في الإعدادات › السوق الافتراضي تبدأ التنبيهات السريعة والذكاء الاصطناعي به أيضًا."
+        ],
+        [
+          "كيف تظهر العقود الآجلة في رسالة Telegram؟",
+          "يُكتب أسفل الرسالة «⏱ 1د · العقود الآجلة USDT»، ويفتح زر الرسم البياني صفحة العقود الآجلة للعملة على Binance. التفاصيل في صفحة [Telegram](features/telegram-crypto-alerts)."
+        ],
+        [
+          "هل تُدعم عقود COIN-M أو تنبيهات معدل التمويل؟",
+          "لا. تُتابَع العقود الدائمة بهامش USDT وUSDC؛ ولا توجد عقود COIN-M ولا تنبيهات لمعدل التمويل أو للعقود المفتوحة."
+        ]
+      ],
+      "related": [
+        "features/price-alerts",
+        "features/all-coins-alerts",
+        "features/ai-crypto-alert-assistant",
+        "features/telegram-crypto-alerts",
+        "coins/bitcoin-price-alert"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 تنبيهًا؛ تنبيهات متكررة وحتى 3 شروط لكل تنبيه. إشعارات فورية وTelegram وكل أصوات التنبيه."
+        ],
+        [
+          "Pro",
+          "100 تنبيه؛ حتى 5 شروط لكل تنبيه. إشعارات فورية وTelegram وويب هوك موقّع."
+        ]
+      ],
+      "fu": {
+        "kicker": "BINANCE العقود الآجلة · أربعة أسواق",
+        "listAlt": "شاشة تنبيهاتي مع تبويب العقود الآجلة USDT وتنبيه BTC بشارة العقود الآجلة USDT",
+        "pKicker": "أربعة أسواق · في الخطتين",
+        "pLead": "أسواق Binance الأربعة كلها مفتوحة في Plus وPro. ويخبرك عنوان الإشعار من أي سوق جاء.",
+        "cards": [
+          "تُشترى العملة نفسها وتُباع. السوق الافتراضي في التطبيق.",
+          "زوج العملة نفسها مقابل USDC؛ يُتابَع سعره منفصلًا عن زوج USDT.",
+          "عقود دائمة بلا تاريخ انتهاء. يؤخذ السعر من آخر صفقة.",
+          "عقود دائمة بهامش USDC؛ ليست كل العملات في هذا السوق."
+        ],
+        "pushLabel": "عنوان الإشعار",
+        "sheetAlt": "نافذة السوق في نموذج التنبيه: الفوري والعقود الآجلة، USDT وUSDC",
+        "sKicker": "سعران في اللحظة نفسها",
+        "sTitle": "حرّك المؤشر: أي تنبيه سيعمل؟",
+        "sLead": "التنبيهان كلاهما BTC فوق 70٬000؛ أحدهما على فوري USDT والآخر على العقود الآجلة USDT. يختلف سعر العقود الآجلة عادةً قليلًا عن الفوري، لذا قد يعمل أحدهما بينما ينتظر الآخر.",
+        "sAria": "سعر BTC الفوري",
+        "hit": "يعمل",
+        "wait": "ينتظر",
+        "target": "الهدف",
+        "sNote": "يفترض المثال أن العقود الآجلة أعلى قليلًا من الفوري؛ والفرق الحقيقي يتغير بحسب العملة واللحظة. اضبط التنبيه في السوق الذي تتداول فيه.",
+        "lKicker": "في الإشعار",
+        "lTitle": "المس الإشعار فيُفتح تنبيهك",
+        "lLead": "يذكر العنوان السوق. وعند لمسه تعرض تفاصيل التنبيه السوق: العقود الآجلة USDT.",
+        "lockAlt": "إشعار عقود آجلة على شاشة القفل؛ لمسه يفتح تفاصيل التنبيه",
+        "detailAlt": "تفاصيل التنبيه: BTC / USDT · العقود الآجلة USDT، وفي صف السوق العقود الآجلة USDT",
+        "mk": [
+          "فوري USDT",
+          "فوري USDC",
+          "العقود الآجلة USDT",
+          "العقود الآجلة USDC"
+        ],
+        "push": "{0} صعد فوق {1}",
+        "fut": "العقود الآجلة",
+        "sep": [
+          "٬",
+          "٫"
+        ],
+        "now": "الآن"
       }
     }
   },
@@ -8771,6 +10021,131 @@
           "Alert me when any coin breaks its 24h high",
           "Alert me on a BTC golden cross"
         ]
+      }
+    },
+    "binance-futures-alerts": {
+      "link": "Binance Futures alerts",
+      "title": "How to set price alerts for Binance Futures coins | MarketAlert",
+      "h1": "How do you set a price alert for Binance Futures coins?",
+      "description": "Set the alert on the Binance Futures USDT or Futures USDC market: the price is watched from the last futures trade and the notification says “BTC/USDT Futures”. Futures alerts get their own tab in the list.",
+      "intro": "In the alert form, pick Futures USDT or Futures USDC in the Market row; the alert then watches that market’s price. Futures alerts sit in their own tab in the list, and the notification title says “BTC/USDT Futures”. [Price](features/price-alerts), [RSI](features/rsi-alerts), [MACD](features/macd-crossover-alerts) and [all-coins](features/all-coins-alerts) alerts work on all four markets.",
+      "prompt": "Tell me when BTC futures goes above 70K",
+      "exampleTitle": "Which markets can I set alerts on?",
+      "caption": "The window that opens when you tap the Market row in the alert form.",
+      "steps": [
+        [
+          "Tap the Market row",
+          "In Create an alert, tap the Market row in the “What to watch” box; a window with the four markets opens."
+        ],
+        [
+          "Pick Futures USDT or USDC",
+          "In the Futures row, pick USDT or USDC. The coin list changes to the coins traded on that market."
+        ],
+        [
+          "Pick the coin and condition",
+          "Pick the coin and add the condition, for example price rises above 70,000. If the coin is not on that market, the form says “This coin is not traded in the selected market.”"
+        ],
+        [
+          "Pick a channel and set it",
+          "Choose push, Telegram or both and set the alert. It shows in the Futures tab of the list, with a market badge on its card."
+        ]
+      ],
+      "details": [
+        [
+          "Which price does a futures alert watch?",
+          "The price of the last trade on the futures market. Binance’s mark price and funding rate are not watched. At the same moment the futures price can differ slightly from spot; the alert only looks at the market you picked."
+        ],
+        [
+          "Which alerts work on futures?",
+          "All of them: price, [percent change](features/percent-change-alerts), [24-hour high/low](features/24h-high-low-alerts), RSI, MACD, [EMA cross](features/ema-crossover-alerts) and volume. All-coins alerts scan each market separately; pick Futures USDT and the futures coins are watched."
+        ],
+        [
+          "By typing or by voice",
+          "Write “Tell me when BTC futures goes above 70K” to the [AI assistant](features/ai-crypto-alert-assistant) or [say it](features/voice-crypto-alerts); the assistant prepares the alert on Futures USDT. On a ready draft, “make it futures” is enough. If you don’t name a market, Settings › Default market is used."
+        ]
+      ],
+      "faq": [
+        [
+          "Are Binance Futures alerts free?",
+          "MarketAlert works with a subscription; Plus and Pro both come with a 7-day free trial. Futures alerts are included in both plans. You can prepare your alert without subscribing; it starts working when you start the trial."
+        ],
+        [
+          "Does a futures alert use the mark price?",
+          "No. The alert looks at the last trade price on the futures market; the mark price and funding rate are not watched."
+        ],
+        [
+          "What if my coin is not on futures?",
+          "The form shows “This coin is not traded in the selected market.” You can change the market or pick another coin."
+        ],
+        [
+          "Do I pick the market again for every alert?",
+          "No. The alert form opens with the market of your latest alert. If you choose Futures USDT in Settings › Default market, quick alerts and the AI start with it too."
+        ],
+        [
+          "How does futures show in a Telegram message?",
+          "The message footer says “⏱ 1m · Futures USDT”, and the Chart button opens the coin’s futures page on Binance. More on the [Telegram](features/telegram-crypto-alerts) page."
+        ],
+        [
+          "Are COIN-M futures or funding rate alerts supported?",
+          "No. Perpetual contracts margined in USDT and USDC are watched; there are no COIN-M contracts and no funding rate or open interest alerts."
+        ]
+      ],
+      "related": [
+        "features/price-alerts",
+        "features/all-coins-alerts",
+        "features/ai-crypto-alert-assistant",
+        "features/telegram-crypto-alerts",
+        "coins/bitcoin-price-alert"
+      ],
+      "plans": [
+        [
+          "Plus",
+          "20 alerts; repeating alerts and up to 3 conditions per alert. Push and Telegram, all alert sounds."
+        ],
+        [
+          "Pro",
+          "100 alerts; up to 5 conditions per alert. Push, Telegram and signed webhook."
+        ]
+      ],
+      "fu": {
+        "kicker": "BINANCE FUTURES · FOUR MARKETS",
+        "listAlt": "My alerts screen with the Futures USDT tab and a BTC alert with a Futures USDT badge",
+        "pKicker": "FOUR MARKETS · ON BOTH PLANS",
+        "pLead": "Binance’s four markets, all open on Plus and Pro. The notification title tells you which market it came from.",
+        "cards": [
+          "The coin itself is bought and sold. The app’s default market.",
+          "The same coin’s pair traded against USDC; its price is watched separately from the USDT pair.",
+          "Perpetual contracts with no expiry. The price comes from the last trade.",
+          "Perpetual contracts margined in USDC; not every coin is on this market."
+        ],
+        "pushLabel": "Notification title",
+        "sheetAlt": "The Market window in the alert form: Spot and Futures, USDT and USDC",
+        "sKicker": "TWO PRICES AT ONCE",
+        "sTitle": "Move the slider: which alert fires?",
+        "sLead": "Both alerts are BTC above 70,000; one is on Spot USDT, one on Futures USDT. The futures price is usually a little different from spot, so one can fire while the other waits.",
+        "sAria": "BTC spot price",
+        "hit": "Fires",
+        "wait": "Waits",
+        "target": "Target",
+        "sNote": "The example assumes futures trades a little above spot; the real gap depends on the coin and the moment. Set the alert on the market you trade.",
+        "lKicker": "IN THE NOTIFICATION",
+        "lTitle": "Tap the notification to open your alert",
+        "lLead": "The title names the market. Tap it and the Alert details screen shows Market: Futures USDT.",
+        "lockAlt": "A futures notification on the lock screen; tapping it opens Alert details",
+        "detailAlt": "Alert details: BTC / USDT · Futures USDT, with Futures USDT in the Market row",
+        "mk": [
+          "Spot USDT",
+          "Spot USDC",
+          "Futures USDT",
+          "Futures USDC"
+        ],
+        "push": "{0} rose above {1}",
+        "fut": "Futures",
+        "sep": [
+          ",",
+          "."
+        ],
+        "now": "now"
       }
     }
   }

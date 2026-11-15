@@ -1,0 +1,74 @@
+---
+/**
+ * Sürgü, tasarım F3 + mum (2026-11-15, Ahmet: "bir de mum olsun, kaydırdıkça mumda büyüyüp küçülsün").
+ * İki alarm da BTC 70.000 üstü: biri Spot USDT, biri Vadeli USDT (vadeli fiyatı spotun biraz üstünde varsayılır).
+ * Sürgü ya da sayfa kaydırması fiyatı oynatır; her kutudaki son mum gövdesi büyür/küçülür, 70.000 çizgisini geçen "çalar".
+ * JS yoksa başlangıç durumu görünür: spot bekler, vadeli çalar.
+ */
+import { fuNum } from '../../lib/fu';
+import '../../styles/fu.css';
+interface Props { fu: any }
+const { fu } = Astro.props;
+const MIN = 69900, MAX = 70060, START = 69990, GAP = 18, TARGET = 70000, OPEN = 69930;
+const LO = 69855, HI = 70090;
+const y = (p: number) => +(196 - (p - LO) / (HI - LO) * 184).toFixed(1);
+// Önceki mumlar (soluk): [açılış, kapanış, en düşük, en yüksek]
+const past: number[][] = [[69905, 69872, 69862, 69914], [69872, 69918, 69866, 69926], [69918, 69896, 69884, 69934], [69896, 69930, 69890, 69938]];
+const boxes = [{ k: 's', mk: fu.mk[0], cls: '', off: 0 }, { k: 'f', mk: fu.mk[2], cls: ' fu', off: GAP }];
+const geo = (off: number, v: number) => {
+  const o = OPEN + off, c = v + off, top = Math.max(o, c), bot = Math.min(o, c);
+  return { by: y(top), bh: Math.max(1.5, +(y(bot) - y(top)).toFixed(1)), wy: y(top + 6), wh: +(y(bot - 12) - y(top + 6)).toFixed(1), up: c >= o, hit: c >= TARGET, c };
+};
+---
+<section class="fu-s" aria-labelledby="fu-s-t" data-fu-s data-sep={JSON.stringify(fu.sep)} data-min={MIN} data-max={MAX} data-gap={GAP} data-target={TARGET} data-open={OPEN} data-lo={LO} data-hi={HI}>
+  <div class="fu-s-copy"><p class="fu-kick">{fu.sKicker}</p><h2 id="fu-s-t">{fu.sTitle}</h2><p class="fu-lead">{fu.sLead}</p><p class="fu-s-note">{fu.sNote}</p></div>
+  <div class="fu-s-box">
+    <div class="fu-s-two">{boxes.map(b => { const g = geo(b.off, START); return <div class={g.hit ? 'fu-s-c hit' : 'fu-s-c'} data-k={b.k} data-off={b.off}>
+      <div class="fu-s-top"><span class={`fu-mk${b.cls}`}>{b.mk}</span><span class="fu-s-st" data-hit={`✓ ${fu.hit}`} data-wait={fu.wait}>{g.hit ? `✓ ${fu.hit}` : fu.wait}</span></div>
+      <svg class="fu-s-ch" viewBox="0 0 150 200" aria-hidden="true" dir="ltr">
+        <line class="fu-s-tg" x1="0" x2="150" y1={y(TARGET)} y2={y(TARGET)} />
+        <text class="fu-s-tl" x="3" y={y(TARGET) - 5}>{fu.target} {fuNum(fu.sep, TARGET)}</text>
+        {past.map((p, i) => { const q = p.map(v => v + b.off); return <g class={q[1] >= q[0] ? 'fu-s-old up' : 'fu-s-old dn'}><rect x={14 + i * 22 + 6.5} width="1.6" y={y(q[3])} height={y(q[2]) - y(q[3])} /><rect x={14 + i * 22} width="14" y={y(Math.max(q[0], q[1]))} height={Math.max(1.5, y(Math.min(q[0], q[1])) - y(Math.max(q[0], q[1])))} rx="1.5" /></g>; })}
+        <g class={g.up ? 'fu-s-live up' : 'fu-s-live dn'}><rect class="fu-s-w" x="112.2" width="1.6" y={g.wy} height={g.wh} /><rect class="fu-s-b" x="103" width="20" y={g.by} height={g.bh} rx="2" /></g>
+      </svg>
+      <div class="fu-s-p" dir="ltr">{fuNum(fu.sep, g.c, 1)}</div>
+    </div>; })}</div>
+    <input class="fu-s-r" type="range" min={MIN} max={MAX} step="1" value={START} aria-label={fu.sAria} />
+  </div>
+</section>
+
+<script>
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  for (const k of document.querySelectorAll<HTMLElement>('[data-fu-s]')) {
+    const d = k.dataset, sep = JSON.parse(d.sep!), n = (s: string) => +(d[s] as string);
+    const MIN = n('min'), MAX = n('max'), GAP = n('gap'), TARGET = n('target'), OPEN = n('open'), LO = n('lo'), HI = n('hi');
+    const y = (p: number) => 196 - (p - LO) / (HI - LO) * 184;
+    const num = (v: number) => { const [i, f] = v.toFixed(1).split('.'); return i.replace(/\B(?=(\d{3})+(?!\d))/g, sep[0]) + sep[1] + f; };
+    const r = k.querySelector<HTMLInputElement>('.fu-s-r')!, box = k.querySelector<HTMLElement>('.fu-s-box')!;
+    const cs = [...k.querySelectorAll<HTMLElement>('.fu-s-c')];
+    const set = (v: number) => {
+      for (const c of cs) {
+        const off = +c.dataset.off!, o = OPEN + off, p = v + off, top = Math.max(o, p), bot = Math.min(o, p), hit = p >= TARGET;
+        const b = c.querySelector('.fu-s-b')!, w = c.querySelector('.fu-s-w')!;
+        b.setAttribute('y', y(top).toFixed(1)); b.setAttribute('height', Math.max(1.5, y(bot) - y(top)).toFixed(1));
+        w.setAttribute('y', y(top + 6).toFixed(1)); w.setAttribute('height', (y(bot - 12) - y(top + 6)).toFixed(1));
+        c.querySelector('.fu-s-live')!.setAttribute('class', p >= o ? 'fu-s-live up' : 'fu-s-live dn');
+        c.querySelector('.fu-s-p')!.textContent = num(p);
+        const st = c.querySelector<HTMLElement>('.fu-s-st')!; st.textContent = hit ? st.dataset.hit! : st.dataset.wait!;
+        c.classList.toggle('hit', hit);
+      }
+    };
+    let user = false;
+    r.addEventListener('input', () => { user = true; set(+r.value); });
+    if (reduce) continue;
+    // Kullanıcı sürgüye dokunana kadar fiyat sayfa kaydırmasıyla yükselir/düşer: mum gövdesi büyüyüp küçülür.
+    let raf = 0;
+    const onScroll = () => { if (user || raf) return; raf = requestAnimationFrame(() => {
+      // Kutunun ortası ekranın altından üst beşte birine çıkarken fiyat 69.950'den 70.025'e yükselir: önce vadeli, sonra spot çalar.
+      raf = 0; const rc = box.getBoundingClientRect(), vh = innerHeight, c = rc.top + rc.height / 2;
+      const t = Math.min(1, Math.max(0, (vh - c) / (vh * .8)));
+      const v = Math.round(69950 + 75 * t); r.value = String(v); set(v);
+    }); };
+    addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  }
+</script>

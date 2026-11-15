@@ -1,0 +1,19 @@
+---
+/**
+ * İlk ekran, tasarım K5 (2026-11-15, Ahmet): solda başlık ve dört piyasa çipi, sağda gerçek Alarmlarım ekranı
+ * (Vadeli USDT sekmesi seçili, kartta Vadeli USDT rozeti).
+ */
+import FuShot from './FuShot.astro';
+import '../../styles/fu.css';
+interface Props { code: string; fu: any; h1: string; introHtml: string; setupTitle: string }
+const { code, fu, h1, introHtml, setupTitle } = Astro.props;
+---
+<section class="fu-h">
+  <div class="fu-h-head">
+    <p class="fu-kick">{fu.kicker}</p><h1>{h1}</h1>
+    <p class="fu-intro" set:html={introHtml} />
+    <ul class="fu-mks">{fu.mk.map((m: string, i: number) => <li class={`fu-mk${i === 1 ? ' us' : i > 1 ? ' fu' : ''}`}>{m}</li>)}</ul>
+    <a class="btn" href="#setup">{setupTitle} <span aria-hidden="true">↓</span></a>
+  </div>
+  <div class="fu-h-ph"><div class="fu-fr"><FuShot code={code} k="list" alt={fu.listAlt} sizes="(max-width:760px) 250px, 300px" eager /></div></div>
+</section>

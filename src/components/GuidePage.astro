@@ -33,6 +33,10 @@ import AiHero from './ai/AiHero.astro';
 import AiExamples from './ai/AiExamples.astro';
 import AiPath from './ai/AiPath.astro';
 import AiJars from './ai/AiJars.astro';
+import FuHero from './futures/FuHero.astro';
+import FuMarkets from './futures/FuMarkets.astro';
+import FuSlider from './futures/FuSlider.astro';
+import FuLock from './futures/FuLock.astro';
 import logicCards from '../i18n/logic-cards.json';
 import content from '../i18n/content.json';
 import guides from '../i18n/alert-guides.json';
@@ -51,7 +55,7 @@ const r = (rsiGuides as any)[code];
 const lcAll = (logicCards as any)[code];
 const lc = lcAll?.[`${section}/${slug}`];
 // Rehber başına görsel ve kod satırları. Yeni rehber eklerken buraya da bir kayıt ekle.
-const VISUAL: Record<string, { kicker: string; exampleKicker: string; condition: string[]; foot: string; shot: string; version: string; width: number; height: number | null; logic?: string[][]; hook?: { pair: string; market: string; from: number; target: number; touch: number; last: number; op: '<' | '>'; unit?: 'pct' }; stepShots?: [string, number][]; voice?: true; tg?: true; mc?: true; hl?: true; em?: true; ai?: true }> = {
+const VISUAL: Record<string, { kicker: string; exampleKicker: string; condition: string[]; foot: string; shot: string; version: string; width: number; height: number | null; logic?: string[][]; hook?: { pair: string; market: string; from: number; target: number; touch: number; last: number; op: '<' | '>'; unit?: 'pct' }; stepShots?: [string, number][]; voice?: true; tg?: true; mc?: true; hl?: true; em?: true; ai?: true; fu?: true }> = {
   'features/price-alerts': { kicker: 'BINANCE · PRICE · PUSH', exampleKicker: 'BTC/USDT · 70,000 · ONCE', condition: ['BTC/USDT', '≥', '70,000 USDT'], foot: 'BINANCE SPOT · USDT · ONCE → PUSH', shot: 'price', version: 'cat2', width: 1080, height: 2280,
     logic: [['HIGH 69,990 · LAST 69,880', '→ ✕'], ['HIGH 70,012 · LAST 69,880', 'TOUCH → ✓']] },
   'features/volume-spike-alerts': { kicker: 'BINANCE · VOLUME / SMA · TELEGRAM', exampleKicker: '15m · SMA(20) · 3×', condition: ['VOLUME', '>', '3 × SMA(20)'], foot: 'BINANCE SPOT · USDT · TOP 100 → TELEGRAM', shot: 'rsi/volume-result', version: 'volume1', width: 390, height: null },
@@ -80,6 +84,8 @@ const VISUAL: Record<string, { kicker: string; exampleKicker: string; condition:
   'features/ema-crossover-alerts': { kicker: 'BINANCE · EMA CROSS · PUSH + TELEGRAM', exampleKicker: '', condition: [], foot: '', shot: 'em-list', version: 'em1', width: 1020, height: 2139, em: true },
   // 10. gün: yapay zekâ asistanı sayfası kendi bloklarını kullanır (components/ai, metinler rehberin `ai` alanında).
   'features/ai-crypto-alert-assistant': { kicker: 'AI · SET BY WRITING · PLUS / PRO', exampleKicker: '', condition: [], foot: '', shot: 'ai-ex-rsihac', version: 'ai1', width: 720, height: 1600, ai: true },
+  // 11. gün: Binance Vadeli sayfası kendi bloklarını kullanır (components/futures, metinler rehberin `fu` alanında).
+  'features/binance-futures-alerts': { kicker: 'BINANCE FUTURES · FOUR MARKETS', exampleKicker: '', condition: [], foot: '', shot: 'fu-list', version: 'fu1', width: 720, height: 1522, fu: true },
 };
 const v = VISUAL[`${section}/${slug}`];
 const vo = v.voice ? g.voice : undefined;
@@ -88,6 +94,7 @@ const mc = v.mc ? g.mc : undefined;
 const hl = v.hl ? g.hl : undefined;
 const em = v.em ? g.em : undefined;
 const ai = v.ai ? g.ai : undefined;
+const fu = v.fu ? g.fu : undefined;
 const shotKind = v.shot.split('/').pop() as string;
 const shotHeight = (theme: 'light' | 'dark') => v.height ? Math.round(390 * v.height / v.width) : (screenSizes as any)[code][theme][shotKind];
 const plans: string[][] = g.plans || r.plans;
@@ -126,7 +133,10 @@ const ogImage = existsSync(`public${ogPage}`) ? ogPage : `/og/${code}.png`;
   </header>
   <main class="alert-guide">
     <nav class="breadcrumbs" aria-label="MarketAlert"><a href={`/${code}/`}>MarketAlert</a><span aria-hidden="true"> / </span><span>{g.link}</span></nav>
-    {ai ? <>
+    {fu ? <>
+    <FuHero code={code} fu={fu} h1={g.h1} introHtml={L(g.intro)} setupTitle={setupTitle} />
+    <FuMarkets code={code} fu={fu} title={g.exampleTitle} caption={g.caption} />
+    </> : ai ? <>
     <AiHero code={code} ai={ai} h1={g.h1} introHtml={L(g.intro)} setupTitle={setupTitle} />
     <AiExamples code={code} ai={ai} title={g.exampleTitle} caption={g.caption} />
     </> : em ? <>
@@ -175,6 +185,8 @@ const ogImage = existsSync(`public${ogPage}`) ? ogPage : `/og/${code}.png`;
     {hl && <HlDay code={code} hl={hl} />}
     {em && <EmDay code={code} em={em} />}
     {ai && <AiJars ai={ai} />}
+    {fu && <FuSlider fu={fu} />}
+    {fu && <FuLock code={code} hreflang={locale.hreflang} fu={fu} />}
     {tg && <TgSettings code={code} title={tg.setTitle} items={tg.callouts} alt={tg.setAlt} />}
     {vo && <VoiceActions title={vo.actionsTitle} items={vo.actions} note={vo.actionsNote} />}
     {vo && <VoiceLadder title={vo.ladderTitle} level={vo.level} items={vo.ladder} plans={vo.plans} />}
