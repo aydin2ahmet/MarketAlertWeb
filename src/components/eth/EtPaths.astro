@@ -1,0 +1,41 @@
+---
+/**
+ * Kurulum, tasarım SA2 (2026-11-16, Ahmet): üç yol, üç karakterli sekme (Zilbe hızlı alarm, Zilbo alarm formu,
+ * Zilba yapay zekâ). Her sekmede o yolun kendi gerçek ekranı (Ahmet: "her biri için farklı görsel"):
+ * hızlı alarm paneli, Sembol seç (ETH / USDT satırı), AI Asistan sohbeti. JS yoksa üç adım alt alta okunur.
+ */
+import Zb from './Zb.astro';
+import EtShot from './EtShot.astro';
+import '../../styles/et.css';
+interface Props { code: string; et: any; steps: string[][]; html: string[] }
+const { code, et, steps, html } = Astro.props;
+const WHO = ['zilbe', 'zilbo', 'zilba'] as const;
+const K = ['quick', 'sym', 'ai'];
+---
+<div class="et-s" data-et-s>
+  <div class="et-s-l">
+    <div class="et-s-t" role="tablist">{steps.map((s, i) => <button type="button" role="tab" id={`et-tab-${i}`} aria-controls={`et-pn-${i}`} aria-selected={i === 0 ? 'true' : 'false'}><Zb who={WHO[i]} /><b>{s[0]}</b></button>)}</div>
+    {steps.map((s, i) => <div class={`et-s-p${i === 0 ? ' on' : ''}`} role="tabpanel" id={`et-pn-${i}`} aria-labelledby={`et-tab-${i}`}><h3><span aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>{s[0]}</h3><p set:html={html[i]} /></div>)}
+    <p class="et-s-note">{et.sNote}</p>
+  </div>
+  <div class="et-s-ph"><div class="et-fr">{K.map((k, i) => <div class={`et-s-sc${i === 0 ? ' on' : ''}`}><EtShot code={code} k={k} alt={et.sAlts[i]} sizes="(max-width:760px) 230px, 250px" />{k === 'sym' && <span class="et-s-hl" aria-hidden="true"></span>}</div>)}</div></div>
+</div>
+
+<script>
+  import { zbPlay, zbPrime } from '../../lib/zb';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-et-s]')) {
+    zbPrime(k);
+    k.classList.add('et-js');
+    const bs = [...k.querySelectorAll<HTMLButtonElement>('.et-s-t button')], ps = [...k.querySelectorAll('.et-s-p')], sc = [...k.querySelectorAll('.et-s-sc')];
+    const set = (n: number, anim: boolean) => {
+      bs.forEach((b, j) => { b.setAttribute('aria-selected', String(j === n)); b.tabIndex = j === n ? 0 : -1; });
+      ps.forEach((p, j) => p.classList.toggle('on', j === n)); sc.forEach((s, j) => s.classList.toggle('on', j === n));
+      if (anim) zbPlay(bs[n].querySelector<HTMLElement>('.zb'), `${bs[n].querySelector<HTMLElement>('.zb')!.dataset.who}-el`);
+    };
+    bs.forEach((b, n) => {
+      b.addEventListener('click', () => set(n, true));
+      b.addEventListener('keydown', e => { const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (d) { const m = (n + d + bs.length) % bs.length; set(m, true); bs[m].focus(); } });
+    });
+    set(0, false);
+  }
+</script>

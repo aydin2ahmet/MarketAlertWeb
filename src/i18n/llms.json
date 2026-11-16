@@ -119,6 +119,28 @@
     ["Can I be notified every time BTC drops sharply?", "Yes, with a percent-move condition such as down 5% in 1 hour and a repeating alert (Plus and Pro)."]
    ]
   },
+  "coins/ethereum-price-alert": {
+    "line": "Get notified when ETH falls below or rises above your level, or combine price and RSI in one alert.",
+    "what": "An Ethereum price alert watches ETH/USDT or ETH/USDC on Binance Spot or Futures and notifies you by push, and optionally Telegram, when your level is reached. It is available on both plans, Plus and Pro.",
+    "facts": [
+      "Short wicks are caught: a dip to 2,998 that bounces back to 3,004 still fires an alert below 3,000.",
+      "The four ETH markets are Spot USDT, Spot USDC, Futures USDT and Futures USDC; the notification title names the market.",
+      "The ETH/BTC pair is not tracked; alerts follow the ETH price in USDT or USDC.",
+      "Price and RSI can be combined with OR in one alert, for example RSI(14) on 15m below 30 OR price below 3,000; either condition fires it.",
+      "Set it from the quick alert, the alert form or the AI assistant, which asks for a missing target price."
+    ],
+    "example": "Notify me once if ETH drops below 3,000 USDT.",
+    "faq": [
+      [
+        "Can one alert watch both below 3,000 and above 3,500?",
+        "Yes. Combine two price conditions with OR; the alert fires on whichever level ETH reaches first."
+      ],
+      [
+        "Will I be notified every time ETH drops to 3,000?",
+        "Yes, if the trigger is set to Repeat; with Once the alert stops after the first notification."
+      ]
+    ]
+  },
   "features/voice-crypto-alerts": {
    "line": "Say an alert out loud; the voice assistant turns the sentence into conditions and creates it.",
    "what": "The voice assistant creates crypto alerts from a spoken sentence. Speech becomes text on the device in the app language; only the text is sent. A clear request is applied directly and shown as an alert card; if something is missing, the assistant asks. Every plan, signed in; each sentence uses one AI message.",

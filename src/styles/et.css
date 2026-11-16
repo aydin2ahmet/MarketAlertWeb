@@ -1,0 +1,127 @@
+/* Ethereum fiyat alarmı sayfası (12. gün): KA5 fiyat çubuğu, EA4 fiyat VEYA RSI, SA2 üç yol, BA2 paraşütlü kilit ekranı. Önek: et- */
+:root { --etDn: #C2410C; --etSf2: #F3F2EC; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme=light]) { --etDn: #FF8A65; --etSf2: #1B2129; } }
+:root[data-theme=dark] { --etDn: #FF8A65; --etSf2: #1B2129; }
+
+/* Karakter yuvası (src/lib/zb.ts) */
+.zb { display: inline-block; width: var(--zs, 72px); aspect-ratio: 300 / 318; flex: none; position: relative; }
+.zb img, .zb svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.zb.zb-on img { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme=light]) .zb > * { filter: drop-shadow(0 0 1.1px #F1ECE4) drop-shadow(0 0 1.1px #F1ECE4); } }
+:root[data-theme=dark] .zb > * { filter: drop-shadow(0 0 1.1px #F1ECE4) drop-shadow(0 0 1.1px #F1ECE4); }
+
+.et-kick { font: 600 12px/1.6 var(--mono); color: var(--cat3); margin: 0 0 14px; }
+.et-lead { color: var(--mut); font-size: 17px; max-width: 640px; margin: 0 0 20px; }
+.et-fr { position: relative; width: 100%; border-radius: 30px; overflow: hidden; border: 7px solid var(--frame); background: var(--sf); box-shadow: var(--shadow); }
+.et-fr img { display: block; width: 100%; height: auto; }
+.et-bub { position: relative; margin: 0; background: var(--sf); border: 1px solid var(--bd); border-radius: 14px; padding: 8px 11px; font-size: 13.5px; line-height: 1.35; box-shadow: 0 8px 20px -14px rgba(0, 0, 0, .4); }
+.et-bub.pop { animation: et-pop .35s; }
+@keyframes et-pop { 0% { transform: scale(.85); opacity: .3; } 100% { transform: none; opacity: 1; } }
+
+/* Push kartı (gerçek şablon) */
+.et-ps { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 10px; background: var(--sf); border: 1px solid var(--bd); border-radius: 18px; padding: 10px 12px; box-shadow: 0 14px 34px rgba(0, 0, 0, .14); text-align: start; }
+.et-ps img, .et-l-ps img { width: 34px; height: 34px; border-radius: 9px; }
+.et-ps-h { display: flex; gap: 8px; align-items: baseline; font-size: 12px; color: var(--mut); }
+.et-ps-h b { color: var(--tx); font-size: 12.5px; }
+.et-ps-h span { margin-inline-start: auto; }
+.et-ps-t { display: block; font-size: 14.5px; font-weight: 650; line-height: 1.3; }
+.et-ps-b { display: block; font: 500 11.5px/1.45 var(--mono); opacity: .85; unicode-bidi: isolate; text-align: start; white-space: pre-wrap; }
+
+/* ---------- KA5 ilk ekran ---------- */
+.et-h { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 48px; align-items: center; padding: 48px 0 56px; }
+.et-h h1 { font-size: clamp(32px, 4.2vw, 54px); text-wrap: balance; }
+.et-intro { color: var(--mut); font-size: 19px; max-width: 700px; margin: 20px 0 26px; }
+.et-g { display: grid; gap: 14px; }
+.et-g .et-ps { transition: transform .6s cubic-bezier(.2, .9, .3, 1.15), opacity .4s; }
+.et-g.et-js .et-ps:not(.in) { transform: translateY(-22px); opacity: 0; }
+.et-bar { position: relative; height: 196px; }
+.et-line { position: absolute; left: 9%; right: 9%; top: 98px; height: 6px; border-radius: 3px; background: linear-gradient(90deg, var(--etDn), var(--bd) 28% 72%, var(--up)); }
+.et-mk { position: absolute; top: 0; left: var(--x); transform: translateX(-50%); display: grid; justify-items: center; gap: 2px; transition: left 1.1s ease-in-out; z-index: 2; --zs: 56px; }
+.et-mk code { font: 700 12px var(--mono); background: var(--sf); border: 1px solid var(--bd); border-radius: 7px; padding: 2px 7px; white-space: nowrap; }
+.et-mk::after { content: ""; width: 2px; height: 8px; background: var(--pri); }
+.et-end { position: absolute; top: 112px; transform: translateX(-50%); display: grid; justify-items: center; --zs: 60px; }
+.et-end.dn { left: 9%; } .et-end.up { left: 91%; }
+.et-end b { font: 700 13px var(--mono); }
+.et-end.dn b { color: var(--etDn); } .et-end.up b { color: var(--up); }
+
+/* ---------- EA4 fiyat VEYA RSI ---------- */
+.et-r { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 44px; align-items: center; padding: 36px; border: 1px solid var(--bd); border-radius: 24px; background: radial-gradient(ellipse at top right, var(--priSoft), transparent 70%), var(--sf); }
+.et-r h2, .et-l h2 { margin-bottom: 12px; }
+.et-r-c { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.et-r-c button { display: flex; align-items: center; gap: 9px; font: 600 15px var(--f); color: var(--tx); background: var(--bg); border: 1.5px solid var(--bd); border-radius: 12px; padding: 11px 14px; cursor: pointer; min-height: 44px; }
+.et-r-c button i { width: 18px; height: 18px; border-radius: 5px; border: 2px solid var(--mut); flex: none; display: grid; place-items: center; }
+.et-r-c button[aria-pressed=true] { border-color: var(--pri); }
+.et-r-c button[aria-pressed=true] i { background: var(--pri); border-color: var(--pri); }
+.et-r-c button[aria-pressed=true] i::before { content: ""; width: 5px; height: 9px; border: solid var(--priText, #fff); border-width: 0 2px 2px 0; transform: translateY(-1px) rotate(45deg); }
+.et-or { font: 800 12px var(--mono); color: var(--cat3); }
+.et-r-r { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 6px 10px; align-items: center; margin-top: 18px; max-width: 460px; }
+.et-r-zo { --zs: 64px; opacity: .5; transition: opacity .3s; }
+.et-r-r.on .et-r-zo { opacity: 1; }
+.et-r-r strong { font-size: 16px; color: var(--mut); }
+.et-r-r.on strong { color: var(--up); }
+.et-r-r .et-bub { grid-column: 1 / 3; grid-row: 2; justify-self: end; }
+.et-r-za { grid-column: 3; grid-row: 2; --zs: 58px; }
+.et-r-fig { margin: 0; }
+.et-r-fig figcaption { color: var(--mut); font-size: 12px; margin-top: 14px; text-align: center; }
+
+/* ---------- SA2 üç yol ---------- */
+.et-s { display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: 44px; align-items: start; margin-top: 28px; }
+.et-s-t { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; max-width: 560px; }
+.et-s-t button { display: grid; justify-items: center; gap: 2px; font: inherit; color: var(--tx); background: var(--sf); border: 1.5px solid var(--bd); border-radius: 16px; padding: 8px 4px 10px; cursor: pointer; --zs: 54px; transition: border-color .2s, box-shadow .2s, transform .2s; }
+.et-s-t button:hover { transform: translateY(-2px); }
+.et-s-t button b { font-size: 13.5px; line-height: 1.25; text-align: center; }
+.et-s-t button[aria-selected=true] { border-color: var(--pri); box-shadow: 0 0 0 3px color-mix(in srgb, var(--pri) 20%, transparent); }
+.et-s-p { margin-top: 14px; background: var(--sf); border: 1px solid var(--bd); border-radius: 14px; padding: 14px 16px; max-width: 560px; }
+.et-s-p h3 { display: flex; gap: 10px; align-items: baseline; margin: 0 0 6px; font-size: 17px; }
+.et-s-p h3 span { color: var(--pri); font: 800 13px var(--mono); }
+.et-s-p p { margin: 0; color: var(--mut); }
+.et-s.et-js .et-s-p:not(.on) { display: none; }
+.et-s-note { color: var(--mut); font-size: 13.5px; margin: 12px 0 0; }
+.et-s-ph { position: sticky; top: 90px; }
+.et-s-sc { position: relative; }
+.et-s-sc:not(.on) { display: none; }
+.et-s-hl { position: absolute; left: 2%; right: 2%; top: 44.5%; height: 9.5%; border: 3px solid var(--pri); border-radius: 10px; }
+
+/* ---------- BA2 kilit ekranı, paraşütlü Zilbo ---------- */
+.et-l { display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 48px; align-items: center; padding: 56px 0; border-bottom: 1px solid var(--bd); }
+.et-l-ph { position: relative; width: 270px; aspect-ratio: 720 / 1522; border-radius: 34px; border: 7px solid var(--frame); overflow: hidden; box-shadow: var(--shadow); box-sizing: content-box; background: #0E1A2B; }
+.et-l-lock { position: absolute; inset: 0; background: linear-gradient(160deg, #2B2140, #0E1A2B 55%, #1A1206); color: #fff; text-align: center; }
+.et-l-tm { font: 600 54px/1 var(--f); margin-top: 58px; letter-spacing: -.01em; }
+.et-l-dt { font-size: 13px; opacity: .8; margin-top: 6px; }
+.et-l-ps { position: absolute; left: 10px; right: 10px; top: 150px; display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 10px; text-align: start; background: rgba(255, 255, 255, .9); color: #14171D; border-radius: 18px; padding: 10px 12px; box-shadow: 0 14px 34px rgba(0, 0, 0, .25); z-index: 2; }
+.et-l-ps .et-ps-h { color: #5B6270; } .et-l-ps .et-ps-h b { color: #14171D; }
+.et-l-ps .et-ps-t { font-size: 14px; }
+.et-l-ps .et-ps-b { font-size: 10.5px; letter-spacing: -.02em; }
+.et-l-pz { position: absolute; left: 50%; bottom: 14px; width: 112px; margin-left: -56px; display: grid; justify-items: center; transform-origin: 50% 0; --zs: 80px; }
+.et-l-pz .zb > * { filter: drop-shadow(0 0 1.1px #F1ECE4) drop-shadow(0 0 1.1px #F1ECE4); }
+.et-l-pc { width: 112px; display: block; margin-bottom: -16px; transform-origin: 50% 100%; transition: opacity .5s, transform .5s; opacity: 0; transform: scaleY(.25); }
+.et-l-pc .cn { fill: #F5A524; stroke: #fff; stroke-width: 1.5; } .et-l-pc .st { fill: none; stroke: #fff; stroke-width: 1.5; opacity: .8; } .et-l-pc .ln line { stroke: #F1ECE4; stroke-width: 1; }
+.et-l-det { position: absolute; inset: 0; opacity: 0; transition: opacity .6s; background: var(--sf); z-index: 3; }
+.et-l-det img { display: block; width: 100%; height: auto; }
+.et-l-tap { position: absolute; left: 50%; top: 22%; width: 46px; height: 46px; border-radius: 50%; border: 3px solid var(--pri); transform: translate(-50%, -50%) scale(.6); opacity: 0; pointer-events: none; z-index: 4; }
+.et-l-tap.go { animation: et-tap 1s ease-out; }
+@keyframes et-tap { 0% { opacity: .95; transform: translate(-50%, -50%) scale(.5); } 100% { opacity: 0; transform: translate(-50%, -50%) scale(1.5); } }
+.et-js .et-l-ps { transition: transform .6s cubic-bezier(.2, .9, .3, 1.15), opacity .4s; transform: translateY(-24px); opacity: 0; }
+.et-js.in .et-l-ps { transform: none; opacity: 1; }
+.et-js .et-l-pz { translate: 0 -440px; }
+.et-js .et-l-pc { opacity: 1; transform: none; }
+.et-js.fall .et-l-pz { translate: 0 0; transition: translate 2.6s cubic-bezier(.3, .6, .4, 1); animation: et-sway 1.3s ease-in-out 2 alternate; }
+.et-js.land .et-l-pc { opacity: 0; transform: scaleY(.25); }
+@keyframes et-sway { 0% { rotate: -7deg; } 100% { rotate: 7deg; } }
+.et-js.det .et-l-det { opacity: 1; }
+
+@media (max-width: 760px) {
+  .et-h { grid-template-columns: 1fr; gap: 24px; padding: 28px 0 40px; }
+  .et-intro { font-size: 17px; }
+  .et-r { grid-template-columns: 1fr; gap: 28px; padding: 20px; }
+  .et-r-fig { width: min(280px, 80vw); margin-inline: auto; }
+  .et-r-c button { font-size: 14px; }
+  .et-s { grid-template-columns: 1fr; gap: 20px; }
+  .et-s-ph { position: static; width: min(230px, 66vw); margin-inline: auto; }
+  .et-s-t button { --zs: 46px; }
+  .et-s-t button b { font-size: 12.5px; }
+  .et-l { grid-template-columns: 1fr; gap: 24px; padding: 40px 0; }
+  .et-l-ph { width: min(250px, 72vw); margin-inline: auto; }
+  .et-l-tm { font-size: 46px; margin-top: 48px; }
+  .et-l-ps { top: 132px; }
+}

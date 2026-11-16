@@ -1,0 +1,38 @@
+---
+/**
+ * Örnek bölüm, tasarım EA4 (2026-11-16, Ahmet): "Fiyat 3.000 altı" VEYA "RSI(14) · 15m 30 altı" düğmeleri.
+ * Biri bile açıksa Zilbo zilini çalar; Zilba baloncukta kuralı söyler (sayfadaki bilginin aynısı).
+ * Yanında gerçek Bildirim detayı ekranı (ETH RSI VEYA Fiyat < 3.000), olay akışının üstünden kırpılmış.
+ */
+import Zb from './Zb.astro';
+import EtShot from './EtShot.astro';
+import '../../styles/et.css';
+interface Props { code: string; et: any; title: string; caption: string }
+const { code, et, title, caption } = Astro.props;
+---
+<section class="et-r" aria-labelledby="et-r-t">
+  <div class="et-r-copy" data-et-r data-wait={et.wait} data-hit={et.hit} data-b={JSON.stringify(et.bub)}>
+    <p class="et-kick">{et.rKicker}</p><h2 id="et-r-t">{title}</h2><p class="et-lead">{et.rLead}</p>
+    <div class="et-r-c"><button type="button" aria-pressed="false"><i aria-hidden="true"></i>{et.c[0]}</button><span class="et-or">{et.orw}</span><button type="button" aria-pressed="false"><i aria-hidden="true"></i>{et.c[1]}</button></div>
+    <div class="et-r-r"><Zb who="zilbo" class="et-r-zo" /><strong aria-live="polite">{et.wait}</strong><p class="et-bub">{et.bub[0]}</p><Zb who="zilba" class="et-r-za" /></div>
+  </div>
+  <figure class="et-r-fig"><div class="et-fr"><EtShot code={code} k="rsi" alt={et.rsiAlt} sizes="(max-width:760px) 280px, 300px" /></div><figcaption>{caption}</figcaption></figure>
+</section>
+
+<script>
+  import { zbPlay, zbPrime } from '../../lib/zb';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-et-r]')) {
+    zbPrime(k);
+    const bs = [...k.querySelectorAll<HTMLButtonElement>('.et-r-c button')], r = k.querySelector<HTMLElement>('.et-r-r')!;
+    const o = r.querySelector('strong')!, bub = r.querySelector<HTMLElement>('.et-bub')!, B = JSON.parse(k.dataset.b!);
+    const zo = r.querySelector<HTMLElement>('.et-r-zo'), za = r.querySelector<HTMLElement>('.et-r-za');
+    for (const b of bs) b.addEventListener('click', () => {
+      b.setAttribute('aria-pressed', String(b.getAttribute('aria-pressed') !== 'true'));
+      const n = bs.filter(x => x.getAttribute('aria-pressed') === 'true').length, was = r.classList.contains('on');
+      r.classList.toggle('on', n > 0); o.textContent = n ? k.dataset.hit! : k.dataset.wait!;
+      if (n && !was) zbPlay(zo, 'zilbo-zil');
+      bub.textContent = B[Math.min(n, 2)]; bub.classList.remove('pop'); void bub.offsetWidth; bub.classList.add('pop');
+      zbPlay(za, 'zilba-el');
+    });
+  }
+</script>
