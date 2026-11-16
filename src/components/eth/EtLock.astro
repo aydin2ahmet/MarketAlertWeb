@@ -1,0 +1,52 @@
+---
+/**
+ * Bildirim, tasarım BA2 (2026-11-16, Ahmet: "zilbo paraşütle insin sonra bildirim gelsin"): Zilbo kilit ekranının
+ * tepesinden paraşütle süzülür, iner, paraşüt kapanır, zilini çalar; gerçek push düşer, dokunulur, gerçek Alarm
+ * detayı açılır. JS yoksa ya da hareket azaltma açıksa Zilbo aşağıda durur ve bildirim görünür.
+ */
+import Zb from './Zb.astro';
+import EtShot from './EtShot.astro';
+import { etPush } from '../../lib/et';
+import '../../styles/et.css';
+interface Props { code: string; hreflang: string; et: any }
+const { code, hreflang, et } = Astro.props;
+const at = new Date(Date.UTC(2026, 10, 16, 14, 32));
+const loc = `${hreflang}-u-nu-latn`;
+const time = new Intl.DateTimeFormat(loc, { hour: 'numeric', minute: '2-digit', timeZone: 'UTC' }).formatToParts(at).filter(p => p.type !== 'dayPeriod').map(p => p.value).join('').trim();
+const date = new Intl.DateTimeFormat(loc, { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' }).format(at);
+const [title, body] = etPush(et, 'dn');
+---
+<section class="et-l" aria-labelledby="et-l-t">
+  <div class="et-l-copy"><p class="et-kick">{et.lKicker}</p><h2 id="et-l-t">{et.lTitle}</h2><p class="et-lead">{et.lLead}</p></div>
+  <div class="et-l-ph" data-et-l role="img" aria-label={et.lockAlt}>
+    <div class="et-l-lock" aria-hidden="true"><div class="et-l-tm">{time}</div><div class="et-l-dt">{date}</div>
+      <div class="et-l-ps"><img src="/icons/logo-96.png" alt="" width="34" height="34" /><div><div class="et-ps-h"><b>MarketAlert</b><span>{et.now}</span></div><b class="et-ps-t">{title}</b><span class="et-ps-b" dir="ltr">{body}</span></div></div>
+      <div class="et-l-pz"><svg class="et-l-pc" viewBox="0 0 100 74"><path class="cn" d="M4 40 Q50 -22 96 40 Q84 31 73 40 Q61 31 50 40 Q39 31 27 40 Q16 31 4 40Z" /><path class="st" d="M27 40 Q50 6 73 40" /><g class="ln"><line x1="4" y1="40" x2="38" y2="74" /><line x1="27" y1="40" x2="44" y2="74" /><line x1="73" y1="40" x2="56" y2="74" /><line x1="96" y1="40" x2="62" y2="74" /></g></svg><Zb who="zilbo" /></div>
+    </div>
+    <div class="et-l-det"><EtShot code={code} k="detail" alt={et.detailAlt} sizes="(max-width:760px) 250px, 270px" /></div>
+    <span class="et-l-tap" aria-hidden="true"></span>
+  </div>
+</section>
+
+<script>
+  import { zbPlay, zbPrime, zbReduce, sleep, watchVisible } from '../../lib/zb';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-et-l]')) {
+    zbPrime(k);
+    if (zbReduce) continue;
+    k.classList.add('et-js');
+    const pz = k.querySelector<HTMLElement>('.et-l-pz')!, z = pz.querySelector<HTMLElement>('.zb'), tap = k.querySelector<HTMLElement>('.et-l-tap')!;
+    const wait = watchVisible(k, .35);
+    (async () => {
+      while (true) {
+        await wait();
+        k.classList.remove('det', 'in', 'fall', 'land'); void k.offsetWidth; await sleep(500);
+        k.classList.add('fall'); await sleep(2700);
+        k.classList.add('land'); await sleep(350);
+        await zbPlay(z, 'zilbo-zil');
+        k.classList.add('in'); await sleep(1900);
+        tap.classList.remove('go'); void tap.offsetWidth; tap.classList.add('go'); await sleep(380);
+        k.classList.add('det'); await sleep(4300);
+      }
+    })();
+  }
+</script>

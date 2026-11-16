@@ -1,0 +1,64 @@
+---
+/**
+ * İlk ekran, tasarım KA5 (2026-11-16, Ahmet): yatay fiyat çubuğu, solda 3.000 (Zilba), sağda 3.500 (Zilbe).
+ * Zilbo ETH'nin fiyat etiketinin üstünde çubukta gezer; sol uca varınca Zilba, sağ uca varınca Zilbe zilini çalar
+ * ve gerçek push düşer. JS yoksa ya da hareket azaltma açıksa son hâl (2.998,4, bildirim görünür) durur.
+ */
+import Zb from './Zb.astro';
+import { etNum, etPush } from '../../lib/et';
+import '../../styles/et.css';
+interface Props { et: any; h1: string; introHtml: string; setupTitle: string }
+const { et, h1, introHtml, setupTitle } = Astro.props;
+const dn = etPush(et, 'dn'), up = etPush(et, 'up');
+const n = (v: number, d = 0) => etNum(et.sep, v, d);
+---
+<section class="et-h">
+  <div class="et-h-head">
+    <p class="et-kick">{et.kicker}</p><h1>{h1}</h1>
+    <p class="et-intro" set:html={introHtml} />
+    <a class="btn" href="#setup">{setupTitle} <span aria-hidden="true">↓</span></a>
+  </div>
+  <div class="et-g" data-et-g role="img" aria-label={et.barAria} data-sep={JSON.stringify(et.sep)} data-dn={JSON.stringify(dn)} data-up={JSON.stringify(up)}>
+    <div class="et-ps in" aria-hidden="true"><img src="/icons/logo-96.png" alt="" width="34" height="34" /><div><div class="et-ps-h"><b>MarketAlert</b><span>{et.now}</span></div><b class="et-ps-t">{dn[0]}</b><span class="et-ps-b" dir="ltr">{dn[1]}</span></div></div>
+    <div class="et-bar" aria-hidden="true" dir="ltr">
+      <div class="et-mk" style="--x:9%"><Zb who="zilbo" /><code>ETH {n(2998.4, 1)}</code></div>
+      <div class="et-line"></div>
+      <div class="et-end dn"><b>{n(3000)}</b><Zb who="zilba" /></div>
+      <div class="et-end up"><b>{n(3500)}</b><Zb who="zilbe" /></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { zbPlay, zbPrime, zbReduce, sleep, watchVisible } from '../../lib/zb';
+  import { fuNum } from '../../lib/fu';
+  for (const g of document.querySelectorAll<HTMLElement>('[data-et-g]')) {
+    zbPrime(g);
+    if (zbReduce) continue;
+    const sep = JSON.parse(g.dataset.sep!), P = { dn: JSON.parse(g.dataset.dn!), up: JSON.parse(g.dataset.up!) };
+    const ps = g.querySelector<HTMLElement>('.et-ps')!, mk = g.querySelector<HTMLElement>('.et-mk')!, code = mk.querySelector('code')!;
+    const zo = mk.querySelector<HTMLElement>('.zb'), zd = g.querySelector<HTMLElement>('.et-end.dn .zb'), zu = g.querySelector<HTMLElement>('.et-end.up .zb');
+    const setPush = (k: 'dn' | 'up') => { ps.querySelector('.et-ps-t')!.textContent = P[k][0]; ps.querySelector('.et-ps-b')!.textContent = P[k][1]; };
+    const X = (p: number) => 9 + Math.max(0, Math.min(1, (p - 3000) / 500)) * 82;
+    let cur = 3240;
+    const go = async (p: number, dec = 0) => {
+      const a = cur, t0 = performance.now();
+      mk.style.setProperty('--x', X(p) + '%'); zbPlay(zo, 'zilbo-zipla');
+      await new Promise<void>(r => { const f = (t: number) => { const q = Math.min(1, (t - t0) / 1100); code.textContent = 'ETH ' + fuNum(sep, q < 1 ? Math.round(a + (p - a) * q) : p, q < 1 ? 0 : dec); q < 1 ? requestAnimationFrame(f) : r(); }; requestAnimationFrame(f); });
+      cur = p;
+    };
+    const wait = watchVisible(g);
+    g.classList.add('et-js'); ps.classList.remove('in');
+    mk.style.setProperty('--x', X(cur) + '%'); code.textContent = 'ETH ' + fuNum(sep, cur);
+    (async () => {
+      while (true) {
+        await wait(); ps.classList.remove('in');
+        for (const p of [3180, 3310, 3120, 3060]) { await go(p); await sleep(250); }
+        await go(2998.4, 1); setPush('dn'); ps.classList.add('in'); await zbPlay(zd, 'zilba-zil'); await sleep(2400);
+        await wait(); ps.classList.remove('in');
+        for (const p of [3150, 3280, 3420]) { await go(p); await sleep(250); }
+        await go(3501.7, 1); setPush('up'); ps.classList.add('in'); await zbPlay(zu, 'zilbe-zil'); await sleep(2800);
+      }
+    })();
+  }
+</script>

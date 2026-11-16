@@ -1,0 +1,6 @@
+---
+/** Karakter yuvası: kareler yüklenene kadar duran resim (src/lib/zb.ts oynatır). Süstür, ekran okuyucudan gizli. */
+interface Props { who: 'zilbo' | 'zilbe' | 'zilba'; class?: string }
+const { who, class: cls } = Astro.props;
+---
+<span class={`zb${cls ? ' ' + cls : ''}`} data-who={who} aria-hidden="true"><img src={`/zilbo/${who}-el.webp`} width="200" height="212" alt="" loading="lazy" decoding="async" /></span>
