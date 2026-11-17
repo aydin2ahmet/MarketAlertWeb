@@ -3,13 +3,6 @@
 @media (prefers-color-scheme: dark) { :root:not([data-theme=light]) { --etDn: #FF8A65; --etSf2: #1B2129; } }
 :root[data-theme=dark] { --etDn: #FF8A65; --etSf2: #1B2129; }
 
-/* Karakter yuvası (src/lib/zb.ts) */
-.zb { display: inline-block; width: var(--zs, 72px); aspect-ratio: 300 / 318; flex: none; position: relative; }
-.zb img, .zb svg { display: block; width: 100%; height: 100%; overflow: visible; }
-.zb.zb-on img { display: none; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme=light]) .zb > * { filter: drop-shadow(0 0 1.1px #F1ECE4) drop-shadow(0 0 1.1px #F1ECE4); } }
-:root[data-theme=dark] .zb > * { filter: drop-shadow(0 0 1.1px #F1ECE4) drop-shadow(0 0 1.1px #F1ECE4); }
-
 .et-kick { font: 600 12px/1.6 var(--mono); color: var(--cat3); margin: 0 0 14px; }
 .et-lead { color: var(--mut); font-size: 17px; max-width: 640px; margin: 0 0 20px; }
 .et-fr { position: relative; width: 100%; border-radius: 30px; overflow: hidden; border: 7px solid var(--frame); background: var(--sf); box-shadow: var(--shadow); }

@@ -249,6 +249,24 @@
      "MarketAlert works with a subscription; Plus and Pro both come with a 7-day free trial, and futures alerts are included in both."
     ]
    ]
+  },
+  "features/pump-alerts": {
+   "line": "Get notified when any coin pumps: MarketAlert's Pump template reports a coin rising a set percentage within a set time.",
+   "what": "Pump is a ready-made all-coins alert template: by default a 5% rise within 5 minutes across the top 100 Binance coins by volume. Rise is 1% to 20%, the window 5 min, 15 min or 1 h. Plus scans up to the top 100 coins, Pro every coin.",
+   "facts": [
+    "Each coin is checked on its own; every coin that crosses the threshold is reported separately.",
+    "After a coin is reported, that coin waits 15 minutes before it can be reported again; other coins are not blocked.",
+    "Pump + volume also requires volume above 3x the average, filtering out thin spikes; Dump reports falls with the same settings.",
+    "Default Balanced delivery: the first coin arrives at once with sound, later coins on the same alert within 15 minutes arrive silently in short groups.",
+    "It reports the move the user defined; it is not a buy signal."
+   ],
+   "example": "Tell me when any coin rises 5% within 5 minutes.",
+   "faq": [
+    [
+     "Is the Pump alert free?",
+     "MarketAlert works with a subscription; Plus and Pro both come with a 7-day free trial, and Pump is included in both."
+    ]
+   ]
   }
  }
 }

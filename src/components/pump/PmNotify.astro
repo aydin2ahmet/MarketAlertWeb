@@ -1,0 +1,55 @@
+---
+/**
+ * Bildirim (P3): radar kaydı. Varsayılan Dengeli tempoda ilk coin hemen ve sesli gelir; aynı alarmın 15 dakikalık
+ * döneminde sonra eşleşenler 5 saniyelik sessiz gruplarda gelir (PushSignalDeliveryPolicy, yüzde değişimi 5 sn).
+ * Örnekte DOGE/AVAX/SOL aynı 5 saniyede eşleşir, tek sessiz bildirim olur (CoinSummaryTextBuilder metni). Kayıt satırları
+ * sırayla yanar, Zilbo ilk satırda çalar, sonra gerçek özet push metni ve gerçek Bildirim detayı ekranı. JS yoksa hepsi görünür.
+ */
+import Zb from '../eth/Zb.astro';
+import PmShot from './PmShot.astro';
+import { fill, pmPct } from '../../lib/pm';
+import '../../styles/pm.css';
+interface Props { code: string; pm: any; caption: string }
+const { code, pm, caption } = Astro.props;
+const nf = pm.nf;
+const tm = (h: number, m: number, s: number) => new Intl.DateTimeFormat(`${nf}`, { hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23', timeZone: 'UTC' }).format(new Date(Date.UTC(2026, 9, 13, h, m, s)));
+const rows: [string, string][] = [
+  [`${tm(14, 40, 12)} · ARB ${pmPct(nf, 7.2, true)}`, pm.logNow],
+  [`${tm(14, 47, 1)} · DOGE ${pmPct(nf, 5.2, true)}`, pm.logSum],
+  [`${tm(14, 47, 2)} · AVAX ${pmPct(nf, 6.1, true)}`, pm.logSum],
+  [`${tm(14, 47, 4)} · SOL ${pmPct(nf, 8.4, true)}`, pm.logSum],
+  [tm(14, 47, 5), pm.logEnd],
+];
+const sumT = fill(pm.app.sumTitle, { 0: pm.app.pump, 1: 3 });
+const sumB = [['SOL', 8.4], ['AVAX', 6.1], ['DOGE', 5.2]].map(([c, v]) => `${c} ${pmPct(nf, v as number, true)}`).join(' · ');
+---
+<section class="pm-n" aria-labelledby="pm-n-t" data-pm-n>
+  <div>
+    <h2 id="pm-n-t">{pm.nTitle}</h2><p class="pm-lead">{pm.nLead}</p>
+    <div class="pm-ns">
+      <ol class="pm-log">{rows.map(r => <li><i aria-hidden="true"></i><span><span dir="ltr">{r[0]}</span> → {r[1]}</span></li>)}</ol>
+      <div class="pm-ps"><img src="/icons/logo-96.png" alt="" width="34" height="34" /><div><div class="pm-ps-h"><b>MarketAlert</b><span>🔕 {pm.silent} · {pm.now}</span></div><b class="pm-ps-t">{sumT}</b><span class="pm-ps-b" dir="ltr">{sumB}</span></div></div>
+      <Zb who="zilbo" />
+    </div>
+  </div>
+  <figure><div class="pm-ph" style="width:260px"><PmShot code={code} k="sum" alt={pm.sumAlt} sizes="260px" /></div><figcaption>{caption}</figcaption></figure>
+</section>
+
+<script>
+  import { zbPlay, zbPrime, zbReduce, sleep, watchVisible } from '../../lib/zb';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-pm-n]')) {
+    zbPrime(k);
+    if (zbReduce) continue;
+    k.classList.add('pm-js');
+    const rows = [...k.querySelectorAll<HTMLElement>('.pm-log li')], ps = k.querySelector<HTMLElement>('.pm-ns .pm-ps')!, z = k.querySelector<HTMLElement>('.pm-ns .zb');
+    const wait = watchVisible(k, .35);
+    (async () => {
+      while (true) {
+        await wait();
+        rows.forEach(r => r.classList.remove('on')); ps.classList.remove('on'); await sleep(700);
+        for (let i = 0; i < rows.length; i++) { rows[i].classList.add('on'); if (i === 0) zbPlay(z, 'zilbo-zil'); await sleep(900); }
+        ps.classList.add('on'); await sleep(5000);
+      }
+    })();
+  }
+</script>
