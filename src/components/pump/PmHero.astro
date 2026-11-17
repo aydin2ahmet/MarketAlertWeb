@@ -1,0 +1,88 @@
+---
+/**
+ * İlk ekran, tasarım P3 (2026-11-17, Ahmet): radar. Halkalar sayfa zemininde çizilir ve kenarda kaybolur, tarama
+ * ışığı döner. Her nokta bir coin; turuncu kesik halka eşik. Altındaki iki ayar uygulamadaki ayarların aynısıdır
+ * (Yükseliş en az, Kaç dakikada) ve halkayı büyütüp küçültür. Halkayı geçen olunca ortadaki Zilbo çalar, Zilbe sevinir,
+ * gerçek push metni düşer. JS yoksa ya da hareket azaltma açıksa SOL halkanın dışında, bildirim görünür durur.
+ */
+import Zb from '../eth/Zb.astro';
+import { PM_COINS, fill, pmPct } from '../../lib/pm';
+import '../../styles/pm.css';
+interface Props { pm: any; h1: string; introHtml: string; setupTitle: string }
+const { pm, h1, introHtml, setupTitle } = Astro.props;
+const nf = pm.nf;
+const T0 = 5;
+const r = (v: number) => 90 + Math.min(v, T0 + 2.2) * 14;
+const push = [fill(pm.app.push, { 0: 'SOL', 1: pmPct(nf, 8.4, false), 4: 5 }), `↑ ${pmPct(nf, 8.4, true)}  │  Δ%·5m  ✓`];
+const cfg = { nf, push: pm.app.push, min: pm.app.min, hour: pm.app.hour, coins: PM_COINS };
+---
+<section class="pm-h" data-pm-h data-cfg={JSON.stringify(cfg)}>
+  <div class="pm-h-head">
+    <p class="pm-kick">{pm.kicker}</p><h1>{h1}</h1>
+    <p class="pm-intro" set:html={introHtml} />
+    <a class="btn" href="#setup">{setupTitle} <span aria-hidden="true">↓</span></a>
+  </div>
+  <div class="pm-bleed pm-st" role="img" aria-label={pm.radarAlt}>
+    <div class="pm-mask" aria-hidden="true"><div class="pm-rd" style={`--t:${90 + T0 * 14}`}>
+      <div class="pm-sw"></div>
+      {[90, 170, 250, 330, 410].map(x => <div class="pm-ring" style={`--r:${x}`}></div>)}
+      <div class="pm-thr"><i dir="ltr">{`${pmPct(nf, T0, true, 0)} · ${fill(pm.app.min, { count: 5 })}`}</i></div>
+      {PM_COINS.map(([c, a, v]) => <div class={`pm-dot${v >= T0 ? ' hit' : ''}${Math.cos(a * Math.PI / 180) < -.2 ? ' lft' : ''}`} style={`--a:${a}deg;--r:${r(v)}`}><b dir="ltr">{c}{v >= T0 ? ' ' + pmPct(nf, v, true) : ''}</b></div>)}
+    </div></div>
+    <Zb who="zilbo" class="pm-zo" /><Zb who="zilbe" class="pm-ze" /><Zb who="zilba" class="pm-za" />
+    <div class="pm-pop on" aria-hidden="true"><div class="pm-ps"><img src="/icons/logo-96.png" alt="" width="34" height="34" /><div><div class="pm-ps-h"><b>MarketAlert</b><span>{pm.now}</span></div><b class="pm-ps-t">{push[0]}</b><span class="pm-ps-b" dir="ltr">{push[1]}</span></div></div></div>
+  </div>
+  <div class="pm-knobs">
+    <div class="pm-knob"><span>{pm.app.rise}</span><div><button type="button" data-k="p" data-d="-1" aria-label="−">−</button><output data-o="p" aria-live="polite" dir="ltr">{pmPct(nf, T0, false, 0)}</output><button type="button" data-k="p" data-d="1" aria-label="+">+</button></div></div>
+    <div class="pm-knob"><span>{pm.app.window}</span><div><button type="button" data-k="m" data-d="-1" aria-label="−">−</button><output data-o="m" aria-live="polite">{fill(pm.app.min, { count: 5 })}</output><button type="button" data-k="m" data-d="1" aria-label="+">+</button></div></div>
+  </div>
+  <p class="pm-note">{pm.knobNote}</p>
+</section>
+
+<script>
+  import { zbPlay, zbPrime, zbReduce, sleep, watchVisible } from '../../lib/zb';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-pm-h]')) {
+    zbPrime(k);
+    if (zbReduce) continue;
+    k.classList.add('pm-js');
+    const C = JSON.parse(k.dataset.cfg!);
+    const pf = (v: number, s: boolean, d = 1) => new Intl.NumberFormat(C.nf, { style: 'percent', minimumFractionDigits: d, maximumFractionDigits: d, signDisplay: s ? 'always' : 'never' }).format(v / 100);
+    const fill = (s: string, p: Record<string, string | number>) => Object.entries(p).reduce((a, [x, v]) => a.split(`{${x}}`).join(String(v)), s);
+    const rd = k.querySelector<HTMLElement>('.pm-rd')!, thr = rd.querySelector<HTMLElement>('.pm-thr i')!;
+    const pop = k.querySelector<HTMLElement>('.pm-pop')!, pt = pop.querySelector('.pm-ps-t')!, pb = pop.querySelector('.pm-ps-b')!;
+    const zo = k.querySelector<HTMLElement>('.pm-zo'), ze = k.querySelector<HTMLElement>('.pm-ze'), za = k.querySelector<HTMLElement>('.pm-za');
+    const PS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 20], MS = [5, 15, 60];
+    let pi = 4, mi = 0;
+    const win = () => MS[mi] === 60 ? fill(C.hour, { count: 1 }) : fill(C.min, { count: MS[mi] });
+    const dots = [...rd.querySelectorAll<HTMLElement>('.pm-dot')].map((d, i) => ({ d, c: C.coins[i][0] as string, v: C.coins[i][2] as number }));
+    const pos = () => { const t = PS[pi]; for (const o of dots) { o.d.style.setProperty('--r', String(90 + Math.min(o.v, t + 2.2) * 14)); const hit = o.v >= t; o.d.classList.toggle('hit', hit); o.d.querySelector('b')!.textContent = o.c + (hit ? ' ' + pf(o.v, true) : ''); } };
+    const upd = () => {
+      rd.style.setProperty('--t', String(90 + PS[pi] * 14)); thr.textContent = `${pf(PS[pi], true, 0)} · ${win()}`;
+      k.querySelector('[data-o=p]')!.textContent = pf(PS[pi], false, 0); k.querySelector('[data-o=m]')!.textContent = win();
+      k.querySelectorAll<HTMLButtonElement>('.pm-knob button').forEach(b => { const d = +b.dataset.d!; b.disabled = b.dataset.k === 'p' ? (pi + d < 0 || pi + d >= PS.length) : (mi + d < 0 || mi + d > 2); });
+      pos();
+    };
+    k.querySelectorAll<HTMLButtonElement>('.pm-knob button').forEach(b => b.addEventListener('click', () => { if (b.dataset.k === 'p') pi = Math.max(0, Math.min(PS.length - 1, pi + +b.dataset.d!)); else mi = Math.max(0, Math.min(2, mi + +b.dataset.d!)); upd(); zbPlay(za, 'zilba-el'); }));
+    for (const o of dots) o.v = Math.random() * 3;
+    upd();
+    const wait = watchVisible(k, .25);
+    (async () => {
+      let n = 0;
+      while (true) {
+        await wait();
+        const amp = [1, 1.4, 1.9][mi], t = PS[pi];
+        for (const o of dots) o.v = Math.max(0, Math.min(18, o.v * .6 + Math.random() * 2.4 * amp));
+        if (n % 3 === 2) dots[Math.floor(Math.random() * dots.length)].v = t + 1 + Math.random() * 3; else for (const o of dots) if (o.v >= t) o.v = t - .4 - Math.random();
+        pos();
+        const hit = dots.find(o => o.v >= t);
+        if (hit) {
+          await sleep(1000);
+          pt.textContent = fill(C.push, { 0: hit.c, 1: pf(hit.v, false), 4: MS[mi] }); pb.textContent = `↑ ${pf(hit.v, true)}  │  Δ%·${MS[mi]}m  ✓`;
+          pop.classList.add('on'); zbPlay(zo, 'zilbo-zil'); zbPlay(ze, 'zilbe-sevin');
+          await sleep(2600); pop.classList.remove('on');
+        }
+        n++; await sleep(2200);
+      }
+    })();
+  }
+</script>

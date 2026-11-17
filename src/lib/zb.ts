@@ -1,5 +1,5 @@
 /**
- * Zilbo, Zilbe ve Zilba oynatıcısı (12. gün, 2026-11-16). Kareler /zilbo/aile-1.json içinde (≈50 KB gzip),
+ * Zilbo, Zilbe ve Zilba oynatıcısı (12. gün, 2026-11-16). Kareler /zilbo/aile-2.json içinde (≈80 KB gzip; 13. günde Zilbe sevin, Zilba şaşır, Zilbo sevin eklendi),
  * yalnızca karakterli bölüm ekrana yaklaşınca indirilir. O zamana kadar ve hareket azaltma açıkken
  * karakterler duran resimdir (/zilbo/{kim}-el.webp). Karakterler süstür; sayfanın anlamı metinde kalır.
  * Kurallar: küçük kalırlar, yalnızca bir olayda (seviye, dokunuş) bir kez oynarlar, sonra ilk kareye dönerler.
@@ -7,7 +7,7 @@
 type Frames = Record<string, string[]> & { defs: string };
 let framesP: Promise<Frames> | null = null;
 export const zbReduce = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
-export const zbLoad = () => framesP ??= fetch('/zilbo/aile-1.json').then(r => r.json()).then((f: Frames) => {
+export const zbLoad = () => framesP ??= fetch('/zilbo/aile-2.json').then(r => r.json()).then((f: Frames) => {
   const holder = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   holder.setAttribute('width', '0'); holder.setAttribute('height', '0'); holder.setAttribute('aria-hidden', 'true');
   holder.style.position = 'absolute';

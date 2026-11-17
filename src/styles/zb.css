@@ -1,0 +1,6 @@
+/* Karakter yuvası (src/lib/zb.ts): Zilbo, Zilbe, Zilba. */
+.zb { display: inline-block; width: var(--zs, 72px); aspect-ratio: 300 / 318; flex: none; position: relative; }
+.zb img, .zb svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.zb.zb-on img { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme=light]) .zb > * { filter: drop-shadow(0 0 1.1px #F1ECE4) drop-shadow(0 0 1.1px #F1ECE4); } }
+:root[data-theme=dark] .zb > * { filter: drop-shadow(0 0 1.1px #F1ECE4) drop-shadow(0 0 1.1px #F1ECE4); }

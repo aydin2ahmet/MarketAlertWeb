@@ -1,0 +1,33 @@
+---
+/**
+ * Kurulum (P3): numaralı turuncu noktalar ve her adımın gerçek ekranı; masaüstünde radarın dev halkası sayfanın
+ * kenarından görünmeye devam eder. Zilba ayar adımında el sallar, Zilbe son adımda sevinir.
+ */
+import Zb from '../eth/Zb.astro';
+import PmShot from './PmShot.astro';
+import '../../styles/pm.css';
+interface Props { code: string; pm: any; steps: string[][]; html: string[] }
+const { code, pm, steps, html } = Astro.props;
+const shots = ['start', 'pump', 'gal'];
+---
+<div class="pm-c" data-pm-c>
+  <div class="pm-big" aria-hidden="true"></div>
+  <ol>{steps.map((s, i) => <li>
+    <span class="pm-tick" aria-hidden="true">{i + 1}</span>
+    <div><h3>{s[0]}</h3><p set:html={html[i]} /></div>
+    <div class="pm-rise" style="position:relative"><div class="pm-ph"><PmShot code={code} k={shots[i]} alt={pm.stepAlts[i]} sizes="250px" /></div>{i === 1 && <Zb who="zilba" />}{i === 2 && <Zb who="zilbe" />}</div>
+  </li>)}</ol>
+</div>
+
+<script>
+  import { zbPlay, zbPrime, zbReduce } from '../../lib/zb';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-pm-c]')) {
+    zbPrime(k);
+    if (zbReduce) continue;
+    k.classList.add('pm-js');
+    for (const r of k.querySelectorAll<HTMLElement>('.pm-rise')) {
+      const io = new IntersectionObserver(es => { if (!es[0].isIntersecting) return; io.disconnect(); r.classList.add('in'); const z = r.querySelector<HTMLElement>('.zb'); if (z) setTimeout(() => zbPlay(z, z.dataset.who === 'zilbe' ? 'zilbe-sevin' : 'zilba-el'), 700); }, { threshold: .25 });
+      io.observe(r);
+    }
+  }
+</script>
