@@ -1,0 +1,124 @@
+/* RSI 70/30 sayfası (14. gün): R3 sarkaç saati. Bölümler çerçevesiz, doğrudan sayfa zemininde. Önek: ro- */
+:root { --roCold: #2F7FD8; --roHot: #E8590C; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme=light]) { --roCold: #6AAEF5; --roHot: #FF8A4C; } }
+:root[data-theme=dark] { --roCold: #6AAEF5; --roHot: #FF8A4C; }
+
+.ro-kick { font: 600 12px/1.6 var(--mono); color: var(--cat3); margin: 0 0 14px; }
+.ro-bleed { position: relative; width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); overflow: hidden; }
+.ro-h { padding: 0; }
+
+/* ---------- sarkaç ---------- */
+.ro-st { height: 500px; background: radial-gradient(ellipse 50% 60% at 50% 0, color-mix(in srgb, var(--priSoft) 80%, transparent), transparent 70%); }
+.ro-arc { position: absolute; left: 50%; top: 44px; width: min(740px, 96vw); transform: translateX(-50%); }
+.ro-arc svg { display: block; width: 100%; height: auto; overflow: visible; }
+.ro-arc path { fill: none; stroke-width: 18; stroke-linecap: round; transition: stroke-width .3s; }
+.ro-arc .a0 { stroke: var(--bd); }
+.ro-arc .aos { stroke: color-mix(in srgb, var(--roCold) 35%, transparent); }
+.ro-arc .aob { stroke: color-mix(in srgb, var(--roHot) 35%, transparent); }
+.ro-arc .act { stroke-width: 26; } .ro-arc .aos.act { stroke: var(--roCold); } .ro-arc .aob.act { stroke: var(--roHot); }
+.ro-arc text { font: 700 13px var(--mono); fill: var(--mut); text-anchor: middle; }
+.ro-pv { position: absolute; left: 50%; top: 44px; width: 0; height: 0; }
+.ro-pv::before { content: ''; position: absolute; left: -10px; top: -14px; width: 20px; height: 20px; border-radius: 50%; background: var(--tx); }
+.ro-rod { position: absolute; left: -2px; top: -4px; width: 4px; height: clamp(220px, calc(min(740px, 96vw) * .4), 296px); background: var(--tx); transform-origin: top; }
+.ro-js .ro-rod { transition: transform 1s cubic-bezier(.3, 1.5, .5, 1); }
+.ro-bob { position: absolute; left: 50%; bottom: 0; width: 0; }
+.ro-st .zb { position: absolute; }
+.ro-zo { --zs: 100px; left: -50px; top: -30px; }
+.ro-za { --zs: 110px; left: max(10px, calc(50% - 300px)); top: 350px; }
+.ro-ze { --zs: 106px; right: max(10px, calc(50% - 300px)); top: 350px; }
+.ro-val { position: absolute; left: 50%; top: 420px; transform: translateX(-50%); margin: 0; font: 700 13px var(--mono); color: var(--mut); white-space: nowrap; }
+.ro-val b { color: var(--tx); font-size: 22px; }
+.ro-tick { position: absolute; left: 50%; top: 460px; transform: translateX(-50%); margin: 0; font: 800 14px var(--mono); color: var(--pri); white-space: nowrap; opacity: 0; transition: opacity .3s; }
+.ro-tick.on { opacity: 1; }
+.ro-h .ro-pop { position: absolute; left: 50%; top: 190px; z-index: 6; transform: translateX(-50%); }
+.ro-h.ro-js .ro-pop { transform: translate(-50%, -30px); opacity: 0; transition: transform .55s cubic-bezier(.2, 1.3, .4, 1), opacity .3s; }
+.ro-h.ro-js .ro-pop.on { transform: translateX(-50%); opacity: 1; }
+
+/* bildirim kartı */
+.ro-ps { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 10px; width: min(340px, calc(100vw - 32px)); background: color-mix(in srgb, var(--sf) 92%, transparent); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-radius: 18px; padding: 10px 12px; box-shadow: 0 18px 40px -16px rgba(0, 0, 0, .45); text-align: start; font-size: 13.5px; line-height: 1.35; }
+.ro-ps img { width: 34px; height: 34px; border-radius: 9px; }
+.ro-ps-h { display: flex; justify-content: space-between; gap: 8px; color: var(--mut); font-size: 12px; }
+.ro-ps-t { display: block; font-weight: 700; }
+.ro-ps-b { font-family: var(--mono); font-size: 12.5px; white-space: pre; }
+
+/* ayarlar: ilk ekranda, sarkacın hemen altında */
+.ro-kn { display: none; flex-direction: column; align-items: center; gap: 12px; margin-top: 10px; position: relative; z-index: 4; }
+.ro-h.ro-js .ro-kn { display: flex; }
+.ro-seg { display: inline-flex; border: 1.5px solid var(--tx); border-radius: 999px; padding: 3px; gap: 3px; }
+.ro-seg button { font: 700 14px var(--f); border: 0; border-radius: 999px; padding: 8px 14px; background: transparent; color: var(--tx); cursor: pointer; min-height: 40px; }
+.ro-seg button[aria-pressed=true] { background: var(--tx); color: var(--bg); }
+.ro-knobs { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.ro-knob { display: grid; gap: 4px; font: 600 13px var(--f); color: var(--mut); }
+.ro-knob div { display: flex; align-items: center; gap: 6px; background: var(--sf); border: 1.5px solid var(--bd); border-radius: 14px; padding: 4px; }
+.ro-knob button { width: 42px; height: 42px; border: 0; border-radius: 10px; background: var(--priSoft); color: var(--tx); font: 700 20px var(--f); cursor: pointer; }
+.ro-knob button:disabled { opacity: .35; cursor: default; }
+.ro-knob output { min-width: 56px; text-align: center; font: 800 18px var(--mono); color: var(--tx); }
+.ro-note { font: 600 12px/1.6 var(--mono); color: var(--mut); text-align: center; margin: 0 auto; max-width: 620px; }
+.ro-head { max-width: 860px; margin: 34px auto 0; text-align: center; }
+.ro-head h1 { font-size: clamp(32px, 4.2vw, 54px); text-wrap: balance; }
+.ro-intro { color: var(--mut); font-size: 18px; max-width: 700px; margin: 16px auto 22px; }
+.ro-intro a { color: var(--tx); text-decoration-color: var(--pri); text-underline-offset: 3px; }
+
+/* ---------- mum kapanınca ---------- */
+.ro-m { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: center; padding: 70px 0 30px; }
+.ro-m h2, .ro-n h2 { font-size: clamp(24px, 3vw, 34px); margin-bottom: 10px; }
+.ro-lead { color: var(--mut); font-size: 17px; max-width: 620px; margin: 0; }
+.ro-ms { position: relative; height: 320px; }
+.ro-sec { position: absolute; inset-inline-start: 8%; top: 20px; width: 150px; height: 150px; border-radius: 50%; border: 4px solid var(--tx); }
+.ro-sec i { position: absolute; left: 50%; bottom: 50%; transform-origin: bottom; }
+.ro-sec .h { height: 40px; border-left: 5px solid var(--tx); margin-left: -2px; }
+.ro-sec .s { height: 62px; border-left: 2px solid var(--pri); transform: rotate(360deg); transition: transform .55s; }
+.ro-bar { position: absolute; left: 0; right: 0; top: 210px; height: 16px; border-radius: 8px; background: var(--bd); }
+.ro-bf { height: 100%; border-radius: 8px; background: var(--roCold); transition: width .5s; }
+.ro-bar span { position: absolute; left: 30%; top: -22px; transform: translateX(-50%); font: 700 11px var(--mono); color: var(--roCold); }
+.ro-bar::after { content: ''; position: absolute; left: 30%; top: -6px; bottom: -6px; border-left: 2px dashed var(--roCold); }
+.ro-ml { position: absolute; inset-inline-start: 0; top: 250px; margin: 0; font: 700 14px var(--mono); }
+.ro-say { position: absolute; z-index: 5; inset-inline-end: 0; top: 146px; max-width: 210px; margin: 0; background: var(--sf); border: 1.5px solid var(--tx); border-radius: 16px; padding: 7px 11px; font-size: 13.5px; line-height: 1.35; opacity: 0; transform: translateY(6px); transition: .35s cubic-bezier(.2, 1.3, .4, 1); pointer-events: none; }
+.ro-say.on { opacity: 1; transform: none; }
+.ro-ms .zb { position: absolute; --zs: 110px; inset-inline-end: 0; top: 16px; }
+
+/* ---------- kurulum: üç kadran ---------- */
+.ro-c ol { list-style: none; margin: 30px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+.ro-c li { position: relative; }
+.ro-face { position: relative; width: 70px; height: 70px; border-radius: 50%; border: 3px solid var(--tx); margin-bottom: 12px; }
+.ro-face i { position: absolute; left: 50%; bottom: 50%; height: 26px; border-left: 4px solid var(--pri); margin-left: -2px; transform-origin: bottom; }
+.ro-face b { position: absolute; inset-inline-end: -26px; top: -6px; font: 800 22px var(--disp); }
+.ro-c h3 { margin: 0 0 6px; font-size: 19px; }
+.ro-c p { color: var(--mut); margin: 0 0 18px; }
+.ro-rise { position: relative; width: 240px; transition: opacity .9s, transform .9s cubic-bezier(.2, 1.1, .3, 1); }
+.ro-c.ro-js .ro-rise:not(.in) { opacity: 0; transform: translateY(50px); }
+.ro-ph { position: relative; width: 100%; border-radius: 30px; border: 7px solid var(--frame); overflow: hidden; background: var(--sf); box-shadow: var(--shadow); }
+.ro-ph img { display: block; width: 100%; height: auto; }
+.ro-c .zb { position: absolute; --zs: 88px; inset-inline-end: -40px; bottom: -14px; }
+
+/* ---------- bildirim ---------- */
+.ro-n { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 40px; align-items: center; padding: 56px 0; }
+.ro-nt { position: relative; }
+.ro-nt .ro-ps { margin-top: 20px; }
+.ro-nz { position: relative; --zs: 96px; margin-top: 14px; }
+.ro-n figure { position: relative; margin: 0; justify-self: center; width: 260px; }
+.ro-ne { position: absolute !important; --zs: 100px; inset-inline-start: -70px; bottom: 30px; }
+.ro-n figcaption { color: var(--mut); font-size: 12px; margin-top: 12px; text-align: center; }
+
+@media (max-width: 760px) {
+  .ro-st { height: 392px; }
+  .ro-arc, .ro-pv { top: 32px; }
+  .ro-arc text { font-size: 22px; }
+  .ro-rod { height: 196px; }
+  .ro-zo { --zs: 80px; left: -40px; top: -24px; }
+  .ro-za { --zs: 78px; top: 258px; left: 4px; }
+  .ro-ze { --zs: 76px; top: 258px; right: 4px; }
+  .ro-val { top: 322px; } .ro-tick { top: 356px; }
+  .ro-kn { margin-top: 4px; gap: 10px; }
+  .ro-h .ro-pop { top: 160px; }
+  .ro-head { margin-top: 26px; }
+  .ro-intro { font-size: 17px; }
+  .ro-m { grid-template-columns: 1fr; gap: 24px; padding: 46px 0 10px; }
+  .ro-say { max-width: 170px; }
+  .ro-c ol { grid-template-columns: 1fr; gap: 44px; }
+  .ro-rise { margin-inline: auto; width: min(240px, 100%); }
+  .ro-c .zb { --zs: 70px; inset-inline-end: -18px; }
+  .ro-n { grid-template-columns: 1fr; padding: 40px 0; }
+  .ro-ne { --zs: 80px; inset-inline-start: -46px; }
+}
+@media (prefers-reduced-motion: reduce) { .ro-rod, .ro-rise, .ro-say, .ro-bf, .ro-sec .s { transition: none !important; } }

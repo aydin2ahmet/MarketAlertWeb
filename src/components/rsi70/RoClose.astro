@@ -1,0 +1,52 @@
+---
+/**
+ * "Saat yalnızca mum kapanınca tık yapar" (R3): saniye ibresi mum boyunca döner, çubuk RSI'ın mum içindeki
+ * gezintisi. Mumun ortasında 29,2'ye iner ama kapanış 31,4 olunca bildirim yok (Zilba şaşırır: saymadım);
+ * sonraki turda kapanış 28,2, bildirim (Zilba sevinir yerine el sallar). JS yoksa 31,4 kapanışı ve Zilba'nın sözü durur.
+ */
+import Zb from '../eth/Zb.astro';
+import { roNum, fill } from '../../lib/ro';
+import '../../styles/ro.css';
+interface Props { ro: any; title: string }
+const { ro, title } = Astro.props;
+const nf = ro.nf;
+const cfg = { nf, sayWait: ro.sayWait, sayNo: ro.sayNo, endNo: ro.endNo, endYes: ro.endYes };
+---
+<section class="ro-m" data-ro-m data-cfg={JSON.stringify(cfg)}>
+  <div><h2>{title}</h2><p class="ro-lead">{ro.mLead}</p></div>
+  <div class="ro-ms" role="img" aria-label={ro.closeAlt}>
+    <div class="ro-sec" aria-hidden="true"><i class="h"></i><i class="s"></i></div>
+    <div class="ro-bar" aria-hidden="true" dir="ltr"><div class="ro-bf" style="width:31.4%"></div><span>30</span></div>
+    <p class="ro-say on" aria-hidden="true">{fill(ro.sayNo, { v: roNum(nf, 31.4) })}</p>
+    <Zb who="zilba" class="ro-mz" />
+    <p class="ro-ml" aria-hidden="true">{fill(ro.endNo, { v: roNum(nf, 31.4) })}</p>
+  </div>
+</section>
+
+<script>
+  import { zbPlay, zbPrime, zbReduce, sleep, watchVisible } from '../../lib/zb';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-ro-m]')) {
+    zbPrime(k);
+    if (zbReduce) continue;
+    k.classList.add('ro-js');
+    const C = JSON.parse(k.dataset.cfg!);
+    const num = (v: number) => new Intl.NumberFormat(C.nf, { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(v);
+    const fill = (s: string, p: Record<string, string | number>) => Object.entries(p).reduce((a, [x, v]) => a.split(`{${x}}`).join(String(v)), s);
+    const bf = k.querySelector<HTMLElement>('.ro-bf')!, sh = k.querySelector<HTMLElement>('.ro-sec .s')!, sy = k.querySelector<HTMLElement>('.ro-say')!, ml = k.querySelector<HTMLElement>('.ro-ml')!, mz = k.querySelector<HTMLElement>('.ro-mz');
+    const say = async (t: string, ms: number) => { sy.textContent = t; sy.classList.add('on'); await sleep(ms); sy.classList.remove('on'); };
+    sy.classList.remove('on'); ml.textContent = '';
+    const wait = watchVisible(k, .35);
+    (async () => {
+      let round = 0;
+      while (true) {
+        await wait();
+        const fin = round++ % 2 ? 28.2 : 31.4; ml.textContent = '';
+        const path = [38, 35, 32, 30.5, 29.2, 29.6, 30.8, fin];
+        for (let i = 0; i < path.length; i++) { bf.style.width = path[i] + '%'; sh.style.transform = `rotate(${i * 51.4}deg)`; if (i === 4) say(C.sayWait, 1600); await sleep(600); }
+        if (fin < 30) { ml.textContent = fill(C.endYes, { v: num(fin) }); zbPlay(mz, 'zilba-el'); }
+        else { ml.textContent = fill(C.endNo, { v: num(fin) }); zbPlay(mz, 'zilba-sasir'); say(fill(C.sayNo, { v: num(fin) }), 2200); }
+        await sleep(3400);
+      }
+    })();
+  }
+</script>

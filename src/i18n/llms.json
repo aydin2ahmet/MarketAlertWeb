@@ -267,6 +267,24 @@
      "MarketAlert works with a subscription; Plus and Pro both come with a 7-day free trial, and Pump is included in both."
     ]
    ]
+  },
+  "features/rsi-overbought-oversold-alerts": {
+   "line": "Get notified when a coin's RSI rises above 70 or falls below 30: MarketAlert's Oversold and Overbought templates watch one coin's RSI(14).",
+   "what": "Oversold and Overbought are ready-made single-coin templates (default BTC). Oversold levels run 10 to 35 (default 30), overbought 65 to 90 (default 70), in steps of 5; the chart is 15m, 1h, 4h or 1d (default 1h). To scan many coins, use the all-coins RSI alert.",
+   "facts": [
+    "RSI(14) is evaluated on the closed candle of the chosen chart; mid-candle dips that recover by the close do not notify.",
+    "The template is set to Repeat with 1 hour: at most one notification per hour while RSI stays beyond the level; Once is also available.",
+    "Push title reads like 'BTC RSI fell below 30'; the body shows the chart, the RSI value at the close and the threshold.",
+    "Alert details show live RSI and points left to the threshold.",
+    "RSI is a measurement the user defines; it is not a trading recommendation."
+   ],
+   "example": "Tell me when BTC's 1-hour RSI falls below 30.",
+   "faq": [
+    [
+     "Is the RSI alert free?",
+     "MarketAlert works with a subscription; Plus and Pro both come with a 7-day free trial, and the RSI alert is included in both."
+    ]
+   ]
   }
  }
 }
