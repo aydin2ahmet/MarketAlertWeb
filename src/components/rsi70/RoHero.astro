@@ -1,0 +1,91 @@
+---
+/**
+ * İlk ekran, tasarım R3 (2026-11-18, Ahmet): sarkaç saati. Sayfanın tepesinden sarkan sarkacın ucunda Zilbo var;
+ * arkadaki yay 0–100 RSI ölçeği (sol mavi 30 altı, sağ turuncu 70 üstü). Sarkaç yalnızca mum kapanınca yeni RSI'a
+ * gider ("tık"); arada titrer ama saymaz. Ayarlar uygulamadakilerin aynısı ve ilk ekranda görünür (Ahmet: düğmeler
+ * başlığın üstünde). JS yoksa ya da hareket azaltma açıksa sarkaç 28,4'te, bildirim görünür durur.
+ */
+import Zb from '../eth/Zb.astro';
+import { roNum, roArc, roPt, roAng, fill } from '../../lib/ro';
+import '../../styles/ro.css';
+interface Props { ro: any; h1: string; introHtml: string; setupTitle: string }
+const { ro, h1, introHtml, setupTitle } = Astro.props;
+const nf = ro.nf, A = ro.app;
+const V0 = 28.4;
+const labels = Array.from({ length: 11 }, (_, i) => { const [x, y] = roPt(i * 10, 286); return { x: x.toFixed(1), y: (y + 4).toFixed(1), t: i * 10 }; });
+const cfg = { nf, app: A, say: { tick: ro.tick } };
+---
+<section class="ro-h" data-ro-h data-cfg={JSON.stringify(cfg)}>
+  <div class="ro-bleed ro-st" role="img" aria-label={ro.arcAlt} dir="ltr">
+    <div class="ro-arc" aria-hidden="true"><svg viewBox="-300 -40 600 340"><path class="a0" d={roArc(0, 100)} /><path class="aos act" d={roArc(0, 30)} /><path class="aob" d={roArc(70, 100)} />{labels.map(l => <text x={l.x} y={l.y}>{l.t}</text>)}</svg></div>
+    <div class="ro-pv" aria-hidden="true"><div class="ro-rod" style={`transform:rotate(${roAng(V0)}deg)`}><div class="ro-bob"><Zb who="zilbo" class="ro-zo" /></div></div></div>
+    <Zb who="zilba" class="ro-za" /><Zb who="zilbe" class="ro-ze" />
+    <p class="ro-val" aria-hidden="true"><span>{`RSI(14)·1h `}</span><b>{roNum(nf, V0)}</b></p>
+    <p class="ro-tick" aria-hidden="true">{ro.tick}</p>
+    <div class="ro-pop on" aria-hidden="true"><div class="ro-ps"><img src="/icons/logo-96.png" alt="" width="34" height="34" /><div><div class="ro-ps-h"><b>MarketAlert</b><span>{ro.now}</span></div><b class="ro-ps-t" dir="auto">{fill(A.pushBelow, { 0: 'BTC', 1: 30 })}</b><span class="ro-ps-b" dir="ltr">{`RSI(14)·1h  ${roNum(nf, V0)}  │  < 30  ✓`}</span></div></div></div>
+  </div>
+  <div class="ro-kn">
+    <div class="ro-seg" role="group"><button type="button" data-m="os" aria-pressed="true">{A.os}</button><button type="button" data-m="ob" aria-pressed="false">{A.ob}</button></div>
+    <div class="ro-knobs">
+      <div class="ro-knob"><span data-o="lt">{A.below}</span><div><button type="button" data-k="l" data-d="-1" aria-label="−">−</button><output data-o="l" aria-live="polite">30</output><button type="button" data-k="l" data-d="1" aria-label="+">+</button></div></div>
+      <div class="ro-knob"><span>{A.tf}</span><div><button type="button" data-k="t" data-d="-1" aria-label="−">−</button><output data-o="t" aria-live="polite">1h</output><button type="button" data-k="t" data-d="1" aria-label="+">+</button></div></div>
+    </div>
+    <p class="ro-note">{ro.knobNote}</p>
+  </div>
+  <div class="ro-head">
+    <p class="ro-kick">{ro.kicker}</p><h1>{h1}</h1>
+    <p class="ro-intro" set:html={introHtml} />
+    <a class="btn" href="#setup">{setupTitle} <span aria-hidden="true">↓</span></a>
+  </div>
+</section>
+
+<script>
+  import { zbPlay, zbPrime, zbReduce, sleep, watchVisible } from '../../lib/zb';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-ro-h]')) {
+    zbPrime(k);
+    if (zbReduce) continue;
+    k.classList.add('ro-js');
+    const C = JSON.parse(k.dataset.cfg!), A = C.app;
+    const num = (v: number) => new Intl.NumberFormat(C.nf, { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(v);
+    const fill = (s: string, p: Record<string, string | number>) => Object.entries(p).reduce((a, [x, v]) => a.split(`{${x}}`).join(String(v)), s);
+    const pt = (x: number) => { const a = Math.PI * (1 - x / 100); return [Math.cos(a) * 260, 220 - Math.sin(a) * 260]; };
+    const arc = (a: number, b: number) => { const [x1, y1] = pt(a), [x2, y2] = pt(b); return `M${x1} ${y1} A260 260 0 0 1 ${x2} ${y2}`; };
+    const rod = k.querySelector<HTMLElement>('.ro-rod')!, vb = k.querySelector('.ro-val b')!, vs = k.querySelector('.ro-val span')!, tk = k.querySelector<HTMLElement>('.ro-tick')!;
+    const pop = k.querySelector<HTMLElement>('.ro-pop')!, pt1 = pop.querySelector('.ro-ps-t')!, pb = pop.querySelector('.ro-ps-b')!;
+    const aos = k.querySelector('.aos')!, aob = k.querySelector('.aob')!;
+    const zo = k.querySelector<HTMLElement>('.ro-zo'), ze = k.querySelector<HTMLElement>('.ro-ze'), za = k.querySelector<HTMLElement>('.ro-za');
+    const LV: Record<string, number[]> = { os: [10, 15, 20, 25, 30, 35], ob: [65, 70, 75, 80, 85, 90] }, TF = ['15m', '1h', '4h', '1d'];
+    const S = { m: 'os', lvl: 30, tf: 1 };
+    const draw = () => {
+      aos.setAttribute('d', arc(0, S.m === 'os' ? S.lvl : 30)); aob.setAttribute('d', arc(S.m === 'ob' ? S.lvl : 70, 100));
+      aos.classList.toggle('act', S.m === 'os'); aob.classList.toggle('act', S.m === 'ob');
+      k.querySelector('[data-o=l]')!.textContent = String(S.lvl); k.querySelector('[data-o=t]')!.textContent = TF[S.tf];
+      k.querySelector('[data-o=lt]')!.textContent = S.m === 'os' ? A.below : A.above; vs.textContent = `RSI(14)·${TF[S.tf]} `;
+      k.querySelectorAll<HTMLButtonElement>('.ro-seg button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.m === S.m)));
+      k.querySelectorAll<HTMLButtonElement>('.ro-knob button').forEach(b => { const d = +b.dataset.d!; if (b.dataset.k === 'l') { const i = LV[S.m].indexOf(S.lvl) + d; b.disabled = i < 0 || i >= 6; } else b.disabled = S.tf + d < 0 || S.tf + d > 3; });
+    };
+    k.querySelectorAll<HTMLButtonElement>('.ro-seg button').forEach(b => b.addEventListener('click', () => { S.m = b.dataset.m!; S.lvl = S.m === 'os' ? 30 : 70; draw(); zbPlay(za, 'zilba-el'); }));
+    k.querySelectorAll<HTMLButtonElement>('.ro-knob button').forEach(b => b.addEventListener('click', () => { const d = +b.dataset.d!; if (b.dataset.k === 'l') { const L = LV[S.m], i = L.indexOf(S.lvl); S.lvl = L[Math.max(0, Math.min(5, i + d))]; } else S.tf = Math.max(0, Math.min(3, S.tf + d)); draw(); zbPlay(za, 'zilba-el'); }));
+    const setP = (x: number) => { rod.style.transform = `rotate(${-(x - 50) * .9}deg)`; vb.textContent = num(x); };
+    let v = 48, n = 0;
+    pop.classList.remove('on'); draw(); setP(v);
+    const next = () => { const L = S.lvl, dir = S.m === 'os' ? -1 : 1; let x; if (n % 5 === 3) x = L + dir * (1 + Math.random() * 3); else if (n % 5 === 4) x = L - dir * (4 + Math.random() * 6); else x = v + (Math.random() - .5) * 14 + (50 - v) * .15; n++; return Math.max(6, Math.min(94, x)); };
+    const wait = watchVisible(k, .25);
+    (async () => {
+      while (true) {
+        await wait();
+        const nv = next();
+        for (let i = 0; i < 5; i++) { setP(v + (Math.random() - .5) * 6); await sleep(320); }
+        v = nv; setP(v); tk.classList.add('on'); setTimeout(() => tk.classList.remove('on'), 700);
+        const hit = S.m === 'os' ? v < S.lvl : v > S.lvl;
+        if (hit) {
+          await sleep(700);
+          pt1.textContent = fill(S.m === 'os' ? A.pushBelow : A.pushAbove, { 0: 'BTC', 1: S.lvl });
+          pb.textContent = `RSI(14)·${TF[S.tf]}  ${num(v)}  │  ${S.m === 'os' ? '<' : '>'} ${S.lvl}  ✓`;
+          pop.classList.add('on'); zbPlay(zo, 'zilbo-zil'); zbPlay(S.m === 'os' ? za : ze, S.m === 'os' ? 'zilba-zil' : 'zilbe-sevin');
+          await sleep(2600); pop.classList.remove('on');
+        } else await sleep(1100);
+      }
+    })();
+  }
+</script>
