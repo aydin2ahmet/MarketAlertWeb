@@ -30,12 +30,11 @@ export const LOCALES = [
 export type LocaleCode = (typeof LOCALES)[number]['code'];
 
 /**
- * Uygulama henüz mağazalarda değil: boş adres "Yakında" rozeti gösterir.
- * Yayına çıkınca doldur. Play: https://play.google.com/store/apps/details?id=com.marketalertapp
+ * Boş adres "Yakında" rozeti gösterir. Play yayında (2026-11-19); App Store adresi onaydan sonra girilecek.
  */
 export const STORE = {
   appStore: '',
-  play: '',
+  play: 'https://play.google.com/store/apps/details?id=com.marketalertapp',
 };
 
 /** Arama motoru doğrulama kodları (Yandex Webmaster, Bing Webmaster Tools). Boşken etiket basılmaz. */

@@ -198,7 +198,7 @@ const heroBackImages = isLanding ? Object.fromEntries(['light', 'dark'].map(them
             }
             if (e.target.closest('[data-consent-open]')) { box.hidden = false; return; }
             var t = e.target.closest('[data-ev]');
-            if (t) window.maTrack(t.getAttribute('data-ev'), { store: t.getAttribute('data-store') || undefined, to_lang: t.getAttribute('data-to') || undefined });
+            if (t) window.maTrack(t.getAttribute('data-ev'), { store: t.getAttribute('data-store') || undefined, place: t.getAttribute('data-place') || undefined, to_lang: t.getAttribute('data-to') || undefined });
           });
         })();
       </script>

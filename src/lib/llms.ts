@@ -4,7 +4,7 @@
  */
 import data from '../i18n/llms.json';
 import { SECTIONS, pageLink } from './pages';
-import { LOCALES, SITE, SOCIAL } from '../config';
+import { LOCALES, SITE, SOCIAL, STORE } from '../config';
 
 type Block = { line: string; what: string; facts: string[]; example: string; faq: [string, string][] };
 const D = data as unknown as { definition: string; facts: string[]; examples: [string, string][]; pages: Record<string, Block> };
@@ -68,6 +68,7 @@ function buildShort(): string {
     '## Example uses (what users say to the app)', ...D.examples.map(([s, n]) => `- "${s}" (${n})`), '',
     '## Pages', ...LOCALES.map(l => `- [${l.name}](${SITE}/${l.code}/)`), '',
     ...Object.entries(bySection).flatMap(([s, ps]) => [`## ${groups[s] || s} (English; each also exists in the 10 other languages)`, ...ps.map(p => `- [${title(p)}](${url(p)}): ${D.pages[p].line}`), '']),
+    ...(STORE.play || STORE.appStore ? ['## Download', ...(STORE.appStore ? [`- [App Store](${STORE.appStore})`] : []), ...(STORE.play ? [`- [Google Play](${STORE.play})`] : []), ''] : []),
     '## Official accounts', ...SOCIAL.map(s => `- [${s.name}](${s.url})`), '',
     '## Legal', `- [Privacy policy](${SITE}/en/legal/privacy/)`, `- [Terms of use](${SITE}/en/legal/terms/)`, '',
   ].join('\n');
