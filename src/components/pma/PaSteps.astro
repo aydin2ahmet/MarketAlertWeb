@@ -1,0 +1,33 @@
+---
+/**
+ * Kurulum (O2): üç adım güneşin yükselişi gibi (şafak, sabah, öğle; küçük güneş her adımda biraz daha yüksekte).
+ * Her adımın yanında gerçek ekran. Zilba ikinci adımda el sallar, Zilbe son adımda sevinir.
+ */
+import Zb from '../eth/Zb.astro';
+import PaShot from './PaShot.astro';
+import '../../styles/pa.css';
+interface Props { code: string; pa: any; steps: string[][]; html: string[] }
+const { code, pa, steps, html } = Astro.props;
+const shots = ['ed', 'form', 'rev'];
+---
+<div class="pa-c" data-pa-c>
+  <ol>{steps.map((s, i) => <li>
+    <div class="pa-sky" aria-hidden="true"><svg viewBox="0 0 120 70"><path d="M0 52 C40 46 80 56 120 48 V70 H0Z" class="pa-sh" /><circle cx="60" cy={[50, 32, 14][i]} r="10" class="pa-ss" /></svg><span>{pa.dayParts[i]}</span></div>
+    <h3>{s[0]}</h3><p set:html={html[i]} />
+    <div class="pa-rise"><div class="pa-ph"><PaShot code={code} k={shots[i]} alt={pa.stepAlts[i]} sizes="240px" /></div>{i === 1 && <Zb who="zilba" />}{i === 2 && <Zb who="zilbe" />}</div>
+  </li>)}</ol>
+</div>
+<script>
+  import { zbPlay, zbPrime, zbReduce } from '../../lib/zb';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-pa-c]')) {
+    zbPrime(k);
+    if (zbReduce) continue;
+    k.classList.add('pa-js');
+    for (const r of k.querySelectorAll<HTMLElement>('.pa-rise')) {
+      // Görsel yalnızca kaydırınca belirmez: 1,5 sn içinde görünmezse yine de açılır (Ahmet 2026-11-19: telefon görselleri görünmedi).
+      const show = () => { r.classList.add('in'); const z = r.querySelector<HTMLElement>('.zb'); if (z) setTimeout(() => zbPlay(z, z.dataset.who === 'zilbe' ? 'zilbe-sevin' : 'zilba-el'), 700); };
+      const io = new IntersectionObserver(es => { if (!es[0].isIntersecting) return; io.disconnect(); show(); }, { threshold: .1 });
+      io.observe(r); setTimeout(() => r.classList.add('in'), 1500);
+    }
+  }
+</script>

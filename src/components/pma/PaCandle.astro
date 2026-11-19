@@ -1,0 +1,43 @@
+---
+/**
+ * "Fitil sayılmaz, kapanış sayılır" (O2): mum açıkken güneş tepenin üstünden görünür ama alarm bakmaz; mum kapanınca
+ * güneşin kaldığı yer sayılır. Turlar sırayla: kapanışta battı (bildirim yok), kapanışta üstte kaldı (bildirim). Zilba izler.
+ */
+import Zb from '../eth/Zb.astro';
+import '../../styles/pa.css';
+interface Props { pa: any }
+const { pa } = Astro.props;
+const C = pa.cand;
+---
+<section class="pa-cd" data-pa-cd data-cfg={JSON.stringify({ wait: C.sayWait, no: C.endNo, yes: C.endYes, say: C.sayNo })}>
+  <div><h2>{C.title}</h2><p class="pa-lead">{C.lead}</p></div>
+  <div class="pa-cs" role="img" aria-label={C.alt}>
+    <svg viewBox="0 0 400 220" aria-hidden="true"><defs><linearGradient id="pa-hill2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4D7C0F" /><stop offset="1" stop-color="#3F6212" stop-opacity="0" /></linearGradient></defs>
+      <circle class="pa-csun" cx="200" cy="105" r="26" />
+      <path d="M0 132 C110 124 270 140 400 128 V220 H0Z" fill="url(#pa-hill2)" /><path d="M0 132 C110 124 270 140 400 128" class="pa-ce" /></svg>
+    <span class="pa-ctag" dir="ltr">EMA 200</span>
+    <Zb who="zilba" class="pa-cz" /><p class="pa-say" aria-hidden="true"></p>
+    <p class="pa-cl">{C.endYes}</p>
+  </div>
+</section>
+<script>
+  import { zbPlay, zbPrime, zbReduce, sleep, watchVisible } from '../../lib/zb';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-pa-cd]')) {
+    zbPrime(k);
+    if (zbReduce) continue;
+    const C = JSON.parse(k.dataset.cfg!), sun = k.querySelector('.pa-csun')!, z = k.querySelector<HTMLElement>('.pa-cz'), say = k.querySelector<HTMLElement>('.pa-say')!, line = k.querySelector<HTMLElement>('.pa-cl')!;
+    const wait = watchVisible(k, .35);
+    (async () => {
+      let n = 0;
+      while (true) {
+        await wait();
+        const yes = n++ % 2 === 1; line.textContent = '';
+        for (const y of [170, 145, 110, 86]) { sun.setAttribute('cy', String(y)); await sleep(450); }
+        say.textContent = C.wait; say.classList.add('on'); await sleep(1700); say.classList.remove('on');
+        if (yes) { sun.setAttribute('cy', '104'); line.textContent = C.yes; zbPlay(z, 'zilba-el'); }
+        else { sun.setAttribute('cy', '160'); line.textContent = C.no; zbPlay(z, 'zilba-sasir'); say.textContent = C.say; say.classList.add('on'); setTimeout(() => say.classList.remove('on'), 2000); }
+        await sleep(3400); sun.setAttribute('cy', '175'); await sleep(500);
+      }
+    })();
+  }
+</script>

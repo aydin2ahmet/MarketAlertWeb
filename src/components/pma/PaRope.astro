@@ -1,0 +1,60 @@
+---
+/**
+ * "Üstüne çıkarsa mı, Üstündeyse mi?" (tasarım O3 ip atlama, Ahmet 2026-11-19). Zilba ve Zilbe ipin iki ucunu tutar; ipin
+ * yüksekliği ortalamadır. Zilbo fiyattır ve her mum kapanışında bir yere konar. Soldaki sahne geçişi (bir kez çalar),
+ * sağdaki durumu (alarm kurulunca zaten üstündeyse ilk kapanışta çalar) gösterir. Yanında uygulamanın turuncu notlu ekranı.
+ * JS yoksa iki sahne son karede durur ve günlük satırları metin olarak görünür.
+ */
+import Zb from '../eth/Zb.astro';
+import PaShot from './PaShot.astro';
+import '../../styles/pa.css';
+interface Props { code: string; pa: any }
+const { code, pa } = Astro.props;
+const R = pa.rope, A = pa.app;
+const rope = 'M46 150 Q150 66 254 150';
+const fill2 = (t: string, _: number) => t.replace('{0}', 'BTC').replace('{1}', 'EMA 200');
+const fill2b = (t: string) => t;
+---
+<section class="pa-m" data-pa-m>
+  <div class="pa-m-t"><h2>{R.title}</h2><p class="pa-lead">{R.lead}</p></div>
+  <div class="pa-m-g">
+    {R.cards.map((c: any, i: number) => <div class="pa-rc" data-i={i} data-log={JSON.stringify(c.log)}>
+      <div class="pa-rs" aria-hidden="true">
+        <svg viewBox="0 0 300 220"><line x1="0" y1="200" x2="300" y2="200" class="pa-rg" /><path class="pa-rp" d={rope} /><text x="150" y="98" class="pa-rt">EMA 200</text></svg>
+        <Zb who="zilba" class="pa-rz1" /><Zb who="zilbe" class="pa-rz2" /><Zb who="zilbo" class="pa-rz0 top" />
+        <span class="pa-rb">{'🔔 ' + fill2(i ? A.p1 : A.p3, i)}</span>
+      </div>
+      <span class="pa-chip">{A[i ? 'd1' : 'd3']}</span><h3>{c.h}</h3><p>{c.p}</p>
+      <ol class="pa-rl">{c.log.map((l: string, j: number) => <li class={j === c.log.length - 1 ? 'on' : ''}>{l}</li>)}</ol>
+    </div>)}
+    <figure class="pa-m-f"><div class="pa-ph"><PaShot code={code} k="st" alt={R.shotAlt} sizes="240px" /></div><figcaption>{R.shotCap}</figcaption></figure>
+  </div>
+</section>
+<script>
+  import { zbPlay, zbPrime, zbReduce, sleep, watchVisible } from '../../lib/zb';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-pa-m]')) {
+    zbPrime(k);
+    if (zbReduce) continue;
+    k.classList.add('pa-js');
+    for (const c of k.querySelectorAll<HTMLElement>('.pa-rc')) {
+      const i = +c.dataset.i!, log = [...c.querySelectorAll('.pa-rl li')], zo = c.querySelector<HTMLElement>('.pa-rz0')!, z1 = c.querySelector<HTMLElement>('.pa-rz1'), z2 = c.querySelector<HTMLElement>('.pa-rz2'), bell = c.querySelector<HTMLElement>('.pa-rb')!;
+      // Geçiş: altında, altında → üstünde (çalar) → hâlâ üstünde (çalmaz). Durum: kurulurken zaten üstünde → ilk kapanış çalar.
+      const seq = i === 0 ? [['low', 0, false], ['top', 1, true], ['top', 2, false]] : [['top', 0, false], ['top', 1, true]];
+      const wait = watchVisible(c, .35);
+      (async () => {
+        while (true) {
+          await wait();
+          log.forEach(l => l.classList.remove('on')); bell.classList.remove('on'); zo.classList.remove('top'); zo.classList.toggle('top', i === 1);
+          await sleep(900);
+          for (const [pos, li, ring] of seq as [string, number, boolean][]) {
+            zbPlay(zo, 'zilbo-zipla'); await sleep(260);
+            zo.classList.toggle('top', pos === 'top'); log.forEach((l, j) => l.classList.toggle('on', j === li));
+            if (ring) { bell.classList.add('on'); zbPlay(z1, 'zilba-el'); zbPlay(z2, 'zilbe-sevin'); }
+            await sleep(1500); bell.classList.remove('on');
+          }
+          await sleep(2200);
+        }
+      })();
+    }
+  }
+</script>
