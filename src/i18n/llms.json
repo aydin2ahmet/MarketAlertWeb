@@ -285,6 +285,24 @@
      "MarketAlert works with a subscription; Plus and Pro both come with a 7-day free trial, and the RSI alert is included in both."
     ]
    ]
-  }
+  },
+  "features/price-crosses-moving-average": {
+    "line": "Get notified when a coin's price crosses above or below a moving average such as EMA 200: MarketAlert's Price vs SMA/EMA condition.",
+    "what": "Price vs SMA/EMA compares each closed candle's close with an EMA or SMA of 2 to 200 periods (default EMA 50, Crosses above, 4h). Four directions: Crosses above, Crosses below, Is above, Is below. Timeframes 1m to 1d. Works on one coin or all coins. Two averages crossing each other is a separate condition (EMA crossover alert).",
+    "facts": [
+     "Crosses above needs the previous close at or below the average and the new close above it; a mid-candle wick does not count.",
+     "Is above and Is below are states: if already true when the alert is set, it fires at the first candle close, and the app shows an orange note before saving.",
+     "Push title reads like 'BTC crossed above EMA 200'; the body shows the close and the average value.",
+     "It can be combined with other conditions such as RSI using AND / OR.",
+     "Moving averages are measurements the user defines; they are not trading recommendations."
+    ],
+    "example": "Tell me when BTC closes above EMA 200 on the 4-hour chart.",
+    "faq": [
+     [
+      "Is the price vs moving average alert free?",
+      "MarketAlert works with a subscription; Plus and Pro both come with a 7-day free trial, and Price vs SMA/EMA is included in both."
+     ]
+    ]
+   }
  }
 }

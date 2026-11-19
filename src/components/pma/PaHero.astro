@@ -1,0 +1,121 @@
+---
+/**
+ * İlk ekran, tasarım O2-B "Güneşin izi" (2026-11-19, Ahmet). Ortalama (EMA 200) tepelerin parlayan sırtıdır, fiyat güneştir.
+ * Güneş her mum kapanışında yer değiştirir ve gökyüzünde iz bırakır (sarı iz = fiyat, yeşil sırt = ortalama). Sırttaki etiket
+ * ortalamanın değerini ve ne olduğunu, kesikli dikey çizgi aradaki farkı yazar. Fiyat altında kapanınca güneş tepenin arkasına
+ * batar ve sahne geceye döner. Ayarlar uygulamadakilerin aynısı, ilk ekranda (Ahmet, 14. gün kuralı).
+ * JS yoksa ya da hareket azaltma açıksa sahne sunucunun çizdiği karede durur.
+ */
+import Zb from '../eth/Zb.astro';
+import { paSim, paGeom, pnum, emLang, fill, DIRS } from '../../lib/pa';
+import '../../styles/pa.css';
+interface Props { code: string; pa: any; h1: string; introHtml: string; setupTitle: string }
+const { code, pa, h1, introHtml, setupTitle } = Astro.props;
+const A = pa.app, E = emLang(code), N = E.num;
+const paNum = (_: unknown, v: number) => pnum(N, v);
+const W = 1000, H = 440, s = paSim(), G = paGeom(s, W, H);
+const c = s.c[s.c.length - 1], m = s.m[s.m.length - 1];
+const pc = (y: number) => `${(y / H * 100).toFixed(2)}%`, px = (x: number) => `${(x / W * 100).toFixed(2)}%`;
+const pctTxt = (up: boolean, v: number) => fill(up ? pa.gapUp : pa.gapDown, { v: fill(E.pct, { v: pnum(N, Math.abs(v), 2) }) });
+const cfg = { N, pct: E.pct, app: A, ridge: pa.ridgeNote, gapUp: pa.gapUp, gapDown: pa.gapDown, coin: 'BTC' };
+const pushT = fill(A.p3, { 0: 'BTC', 1: 'EMA 200' });
+const pushB = `↑ ${paNum(0, 67120.5)} USDT  │  ↗ EMA(200)·4h ${paNum(0, 66910.4)} USDT  ✓`;
+---
+<section class="pa-h" data-pa-h data-cfg={JSON.stringify(cfg)}>
+  <div class={`pa-bleed pa-st${G.up ? ' day' : ''}`} role="img" aria-label={pa.alt}>
+    <svg class="pa-sv" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="pa-hill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4D7C0F" /><stop offset=".55" stop-color="#3F6212" stop-opacity=".9" /><stop offset="1" stop-color="#3F6212" stop-opacity="0" /></linearGradient></defs>
+      <path class="pa-tr" d={G.trail} vector-effect="non-scaling-stroke" />
+      <g class="pa-td">{G.dots.map(d => <circle cx={d.x.toFixed(1)} cy={d.y.toFixed(1)} r={d.r.toFixed(1)} opacity={d.o.toFixed(2)} />)}</g>
+    </svg>
+    <div class="pa-sun" style={`left:${px(G.sx)};top:${pc(G.yc)}`}></div>
+    <svg class="pa-sv pa-hz" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" aria-hidden="true">
+      <path class="pa-f" d={G.fill} /><path class="pa-fu" d={G.fut} vector-effect="non-scaling-stroke" /><path class="pa-e" d={G.ridge} vector-effect="non-scaling-stroke" />
+      <g class="pa-md">{G.mdots.map(d => <circle cx={d.x.toFixed(1)} cy={d.y.toFixed(1)} r="3.5" />)}</g>
+      <line class="pa-gap" x1={G.sx} x2={G.sx} y1={G.yc} y2={G.ym} vector-effect="non-scaling-stroke" />
+    </svg>
+    <div class="pa-lg" aria-hidden="true"><span><i></i>{pa.legTrail}</span><span><i class="m"></i>{fill(pa.legRidge, { ma: 'EMA 200' })}</span></div>
+    <Zb who="zilbo" class="pa-zo" /><Zb who="zilba" class="pa-za" /><Zb who="zilbe" class="pa-ze" />
+    <span class={`pa-lab${G.up ? '' : ' up'}`} aria-hidden="true" style={`left:calc(${px(G.sx)} - 28px);top:${G.up ? `calc(${pc(G.ym)} + 14px)` : `calc(${pc(G.ym)} - 64px)`}`}><b dir="ltr">{`EMA 200 · ${paNum(0, m)}`}</b><small>{fill(pa.ridgeNote, { p: 200 })}</small></span>
+    <span class={`pa-gt ${G.up ? 'u' : 'd'}`} aria-hidden="true" style={`left:calc(${px(G.sx)} + 10px);top:calc(${pc((G.yc + G.ym) / 2)} - 12px)`}>{pctTxt(G.up, G.pct)}</span>
+    <span class="pa-pt" aria-hidden="true" dir="ltr" style={`left:calc(${px(G.sx)} - 190px);top:calc(${pc(G.yc)} - 12px)`}>{`BTC ${paNum(0, c)}`}</span>
+    <div class="pa-pop" aria-hidden="true"><div class="pa-ps"><img src="/icons/logo-96.png" alt="" width="34" height="34" /><div><div class="pa-ps-h"><b>MarketAlert</b><span>{pa.now}</span></div><b class="pa-ps-t" dir="auto">{pushT}</b><span class="pa-ps-b" dir="ltr">{pushB}</span></div></div></div>
+  </div>
+  <div class="pa-kn">
+    <div class="pa-r">
+      <div class="pa-seg" role="group" aria-label={A.avgType}><button type="button" data-a="EMA" aria-pressed="true">EMA</button><button type="button" data-a="SMA" aria-pressed="false">SMA</button></div>
+      <div class="pa-knob"><span>{A.period}</span><div><button type="button" data-k="p" data-d="-1" aria-label="−">−</button><output data-o="p" aria-live="polite">200</output><button type="button" data-k="p" data-d="1" aria-label="+">+</button></div></div>
+      <div class="pa-knob"><span>{A.tf}</span><div><button type="button" data-k="t" data-d="-1" aria-label="−">−</button><output data-o="t" aria-live="polite">4h</output><button type="button" data-k="t" data-d="1" aria-label="+">+</button></div></div>
+    </div>
+    <div class="pa-dirs" role="group" aria-label={A.when}>{DIRS.map(d => <button type="button" class={d === 3 || d === 1 ? 'u' : 'd'} data-dir={d} aria-pressed={String(d === 3)}><i aria-hidden="true">{d === 3 || d === 1 ? '↑' : '↓'}</i>{A['d' + d]}</button>)}</div>
+    <p class="pa-note">{pa.knobNote}</p>
+  </div>
+  <div class="pa-head">
+    <p class="pa-kick">{pa.kicker}</p><h1>{h1}</h1>
+    <p class="pa-intro" set:html={introHtml} />
+    <a class="btn" href="#setup">{setupTitle} <span aria-hidden="true">↓</span></a>
+  </div>
+</section>
+
+<script>
+  import { zbPlay, zbPrime, zbReduce, sleep, watchVisible } from '../../lib/zb';
+  import { paSim, paStep, paGeom, paHit, pnum, TF, PER, OP } from '../../lib/pa';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-pa-h]')) {
+    zbPrime(k);
+    if (zbReduce) continue;
+    k.classList.add('pa-js');
+    const C = JSON.parse(k.dataset.cfg!), A = C.app;
+    const num = (v: number) => pnum(C.N, v);
+    const fill = (s: string, p: Record<string, string | number>) => Object.entries(p).reduce((a, [x, v]) => a.split(`{${x}}`).join(String(v)), s);
+    const pct = (v: number) => fill(C.pct, { v: pnum(C.N, Math.abs(v), 2) });
+    const st = k.querySelector<HTMLElement>('.pa-st')!, svs = k.querySelectorAll<SVGSVGElement>('.pa-sv');
+    const q = <T extends Element>(s: string) => k.querySelector<T>(s)!;
+    const tr = q<SVGPathElement>('.pa-tr'), td = q('.pa-td'), f = q('.pa-f'), fu = q('.pa-fu'), e = q('.pa-e'), md = q('.pa-md'), gp = q('.pa-gap');
+    const sun = q<HTMLElement>('.pa-sun'), lab = q<HTMLElement>('.pa-lab'), gt = q<HTMLElement>('.pa-gt'), pt = q<HTMLElement>('.pa-pt');
+    const zo = q<HTMLElement>('.pa-zo'), za = q<HTMLElement>('.pa-za'), ze = q<HTMLElement>('.pa-ze');
+    const pop = q<HTMLElement>('.pa-pop'), pT = q('.pa-ps-t'), pB = q('.pa-ps-b');
+    const S = { a: 'EMA', p: 200, dir: 3, tf: 4, armed: true };
+    const sim = paSim(Date.now() % 1000);
+    const draw = () => {
+      const W = st.clientWidth, H = st.clientHeight, G = paGeom(sim, W, H), n = sim.c.length, c = sim.c[n - 1], m = sim.m[n - 1];
+      svs.forEach(s => s.setAttribute('viewBox', `0 0 ${W} ${H}`));
+      tr.setAttribute('d', G.trail); td.innerHTML = G.dots.map(d => `<circle cx="${d.x}" cy="${d.y}" r="${d.r}" opacity="${d.o}"/>`).join('');
+      f.setAttribute('d', G.fill); fu.setAttribute('d', G.fut); e.setAttribute('d', G.ridge); md.innerHTML = G.mdots.map(d => `<circle cx="${d.x}" cy="${d.y}" r="3.5"/>`).join('');
+      gp.setAttribute('x1', String(G.sx)); gp.setAttribute('x2', String(G.sx)); gp.setAttribute('y1', String(G.yc)); gp.setAttribute('y2', String(G.ym));
+      st.classList.toggle('day', G.up);
+      sun.style.left = G.sx + 'px'; sun.style.top = G.yc + 'px';
+      zo.style.left = (G.sx - zo.offsetWidth / 2) + 'px'; zo.style.top = (G.yc - zo.offsetWidth * .6) + 'px';
+      const zi = 3; za.style.left = (G.X(zi) - za.offsetWidth / 2) + 'px'; za.style.top = (G.Y(sim.m[zi]) - za.offsetWidth * .92) + 'px';
+      ze.style.left = (W - ze.offsetWidth - 14) + 'px'; ze.style.top = (G.ym - ze.offsetWidth * .92) + 'px';
+      lab.querySelector('b')!.textContent = `${S.a} ${S.p} · ${num(m)}`; lab.querySelector('small')!.textContent = fill(C.ridge, { p: S.p });
+      lab.classList.toggle('up', !G.up);
+      lab.style.left = Math.min(W - lab.offsetWidth - 8, Math.max(8, G.sx - 28)) + 'px'; lab.style.top = (G.up ? G.ym + 14 : G.ym - lab.offsetHeight - 14) + 'px';
+      gt.className = 'pa-gt ' + (G.up ? 'u' : 'd'); gt.textContent = fill(G.up ? C.gapUp : C.gapDown, { v: pct(G.pct) });
+      gt.style.left = Math.min(W - gt.offsetWidth - 6, G.sx + 10) + 'px'; gt.style.top = ((G.yc + G.ym) / 2 - 12) + 'px';
+      pt.textContent = `${C.coin} ${num(c)}`; pt.style.left = Math.max(8, G.sx - pt.offsetWidth - sun.offsetWidth * .32) + 'px'; pt.style.top = (G.yc - 12) + 'px';
+      k.querySelector('[data-o=p]')!.textContent = String(S.p); k.querySelector('[data-o=t]')!.textContent = TF[S.tf];
+      k.querySelectorAll<HTMLButtonElement>('.pa-seg button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.a === S.a)));
+      k.querySelectorAll<HTMLButtonElement>('.pa-dirs button').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.dir! === S.dir)));
+      k.querySelectorAll<HTMLButtonElement>('.pa-knob button').forEach(b => { const d = +b.dataset.d!; if (b.dataset.k === 'p') { const i = PER.indexOf(S.p) + d; b.disabled = i < 0 || i >= PER.length; } else b.disabled = S.tf + d < 0 || S.tf + d > 5; });
+    };
+    k.querySelectorAll<HTMLButtonElement>('.pa-seg button').forEach(b => b.addEventListener('click', () => { S.a = b.dataset.a!; draw(); zbPlay(za, 'zilba-el'); }));
+    k.querySelectorAll<HTMLButtonElement>('.pa-dirs button').forEach(b => b.addEventListener('click', () => { S.dir = +b.dataset.dir!; S.armed = true; draw(); zbPlay(za, 'zilba-el'); }));
+    k.querySelectorAll<HTMLButtonElement>('.pa-knob button').forEach(b => b.addEventListener('click', () => { const d = +b.dataset.d!; if (b.dataset.k === 'p') { const i = PER.indexOf(S.p); S.p = PER[Math.max(0, Math.min(PER.length - 1, i + d))]; } else S.tf = Math.max(0, Math.min(5, S.tf + d)); draw(); zbPlay(za, 'zilba-el'); }));
+    pop.classList.remove('on'); draw();
+    addEventListener('resize', draw);
+    const wait = watchVisible(k, .25);
+    (async () => {
+      while (true) {
+        await wait(); await sleep(1400);
+        paStep(sim, S.p, S.a === 'SMA'); draw();
+        if (paHit(S.dir, sim, S)) {
+          const n = sim.c.length, c = sim.c[n - 1], m = sim.m[n - 1];
+          pT.textContent = fill(A['p' + S.dir], { 0: C.coin, 1: `${S.a} ${S.p}` });
+          pB.textContent = `${c > m ? '↑' : '↓'} ${num(c)} USDT  │  ${OP[S.dir]} ${S.a}(${S.p})·${TF[S.tf]} ${num(m)} USDT  ✓`;
+          pop.classList.add('on'); zbPlay(zo, 'zilbo-zipla'); zbPlay(S.dir === 1 || S.dir === 3 ? ze : za, S.dir === 1 || S.dir === 3 ? 'zilbe-sevin' : 'zilba-sasir');
+          await sleep(2600); pop.classList.remove('on');
+        }
+      }
+    })();
+  }
+</script>
