@@ -82,7 +82,7 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
       <p class="prompt" aria-hidden="true"><span>&gt;</span> <span class="type">{t.sayExample}</span><i class="caret"></i></p>
       <p class="hero-category">{t.heroKicker}</p>
       <h1>{t.heroTitle}<br /><span class="hero-title-second">{t.heroTitleSecond}</span></h1>
-      <StoreBadges code={code} />
+      <StoreBadges code={code} place="hero" />
     </div>
     <div class="h-v">
       <figure class="pf back"><Fragment set:html={shot('hero-list', t.heroListAlt, false, true)} /></figure>
@@ -200,7 +200,7 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
   </section>
 </main>
 
-<div class="dlbar" id="dlbar" aria-label={t.download}><b>{t.download}</b><StoreBadges code={code} /></div>
+<div class="dlbar" id="dlbar" aria-label={t.download}><b>{t.download}</b><StoreBadges code={code} place="bar" /></div>
 
 <footer class="ft">
   <div class="ftop">

@@ -6,11 +6,15 @@
 import content from '../i18n/content.json';
 import { LOCALES, STORE } from '../config';
 
-interface Props { code: string; size?: 'md' | 'sm'; class?: string }
-const { code, size = 'md', class: extra = '' } = Astro.props;
+/** place: rozetin sayfadaki yeri (hero, cta, bar, footer); Play bağlantısına UTM olarak eklenir. */
+interface Props { code: string; size?: 'md' | 'sm'; class?: string; place?: string }
+const { code, size = 'md', class: extra = '', place = size === 'sm' ? 'footer' : 'cta' } = Astro.props;
 const t = (content as any)[code];
 const appLocale = LOCALES.find(l => l.code === code)?.app ?? 'en';
-const playUrl = STORE.play && `${STORE.play}${STORE.play.includes('?') ? '&' : '?'}hl=${appLocale}`;
+// Play Console "Edinme" raporu kaynağı referrer içindeki UTM'den okur: sayfa = campaign, rozet yeri = content, dil = term.
+const page = Astro.url.pathname.split('/').filter(Boolean).slice(1).join('_') || 'home';
+const utm = `utm_source=marketalertapp.com&utm_medium=website&utm_campaign=${page}&utm_content=${place}&utm_term=${code}`;
+const playUrl = STORE.play && `${STORE.play}${STORE.play.includes('?') ? '&' : '?'}hl=${appLocale}&referrer=${encodeURIComponent(utm)}`;
 const items = [
   { store: 'app', url: STORE.appStore, small: t.store1s, big: t.store1, name: 'App Store' },
   { store: 'play', url: playUrl, small: t.store2s, big: t.store2, name: 'Google Play' },
@@ -20,6 +24,6 @@ const PLAY = '<svg viewBox="0 0 24 24" class="sbi" aria-hidden="true"><path fill
 ---
 <div class={`stores${size === 'sm' ? ' sm' : ''}${extra ? ' ' + extra : ''}`}>
   {items.map(i => i.url
-    ? <a class="sb" href={i.url} rel="noopener" data-ev="store_click" data-store={i.store}><Fragment set:html={i.store === 'app' ? APPLE : PLAY} /><span><small>{i.small}</small><b>{i.big}</b></span></a>
+    ? <a class="sb" href={i.url} rel="noopener" data-ev="store_click" data-store={i.store} data-place={place}><Fragment set:html={i.store === 'app' ? APPLE : PLAY} /><span><small>{i.small}</small><b>{i.big}</b></span></a>
     : <span class="sb soon" aria-disabled="true"><Fragment set:html={i.store === 'app' ? APPLE : PLAY} /><span><small>{t.soon}</small><b>{i.name}</b></span></span>)}
 </div>
