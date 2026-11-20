@@ -1,0 +1,37 @@
+---
+/**
+ * Kurulum: üç dokunuş (zil → liste → kart). Her adımın üstünde zarfın yolculuğunu gösteren küçük çizim (kutu, açılan kutu, açık mektup),
+ * yanında gerçek ekran. Zilbe ilk adımda zile dokunur, Zilba son adımda mektubu okur. Çerçeve yok, sayfa zemininde.
+ */
+import Zb from '../eth/Zb.astro';
+import NhShot from './NhShot.astro';
+import '../../styles/nh.css';
+interface Props { code: string; nh: any; steps: string[][]; html: string[] }
+const { code, nh, steps, html } = Astro.props;
+const shots = ['bell', 'list', 'det'];
+const ICON = [
+  '<path d="M20 54 V30 a14 14 0 0 1 28 0 V54 Z M26 30 h16" /><path d="M34 54 v14" />',
+  '<path d="M14 26 h40 v28 h-40 Z M14 26 l20 16 l20 -16" /><path d="M20 62 h28 M24 68 h20" />',
+  '<path d="M16 14 h30 l8 8 v42 h-38 Z M46 14 v8 h8" /><path d="M23 32 h22 M23 40 h22 M23 48 h14" />',
+];
+---
+<div class="nh-c" data-nh-c>
+  <ol>{steps.map((s, i) => <li>
+    <svg class="nh-ic" viewBox="0 0 68 72" aria-hidden="true" set:html={ICON[i]} />
+    <h3>{s[0]}</h3><p set:html={html[i]} />
+    <div class="nh-rise"><div class="nh-ph"><NhShot code={code} k={shots[i]} alt={nh.stepAlts[i]} sizes="240px" /></div>{i === 0 && <Zb who="zilbe" />}{i === 2 && <Zb who="zilba" />}</div>
+  </li>)}</ol>
+</div>
+<script>
+  import { zbPlay, zbPrime, zbReduce } from '../../lib/zb';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-nh-c]')) {
+    zbPrime(k);
+    if (zbReduce) continue;
+    k.classList.add('nh-js');
+    for (const r of k.querySelectorAll<HTMLElement>('.nh-rise')) {
+      const show = () => { r.classList.add('in'); const z = r.querySelector<HTMLElement>('.zb'); if (z) setTimeout(() => zbPlay(z, ({ zilbe: 'zilbe-zil', zilba: 'zilba-el', zilbo: 'zilbo-zil' } as Record<string, string>)[z.dataset.who || 'zilbo']), 700); };
+      const io = new IntersectionObserver(es => { if (!es[0].isIntersecting) return; io.disconnect(); show(); }, { threshold: .1 });
+      io.observe(r); setTimeout(() => r.classList.add('in'), 1500);
+    }
+  }
+</script>

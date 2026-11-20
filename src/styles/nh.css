@@ -1,0 +1,95 @@
+/* Bildirim geçmişi sayfası (16. gün): A "Posta kutusu". Sahne sayfanın kareli zemininde mürekkep çizgisiyle, tek vurgu turuncu
+   (Ahmet 2026-11-20: renkli arka plan yok). Önek: nh- */
+.nh-bleed { position: relative; width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); overflow: hidden; }
+.nh-st { height: 380px; }
+.nh-st .zb { position: absolute; z-index: 4; }
+.nh-gl { position: absolute; left: 0; right: 0; bottom: 54px; border-top: 2px solid var(--tx); z-index: 2; }
+.nh-clk { position: absolute; left: var(--gut); top: 14px; z-index: 5; display: flex; gap: 8px; align-items: center; font: 800 20px var(--mono); color: var(--tx); }
+.nh-clk i { display: inline-block; width: 22px; height: 22px; border-radius: 50%; box-shadow: inset -6px 3px 0 0 var(--tx); }
+.nh-st.morning .nh-clk i { box-shadow: none; border: 2px solid var(--pri); background: radial-gradient(circle, var(--pri) 0 45%, transparent 46%); }
+.nh-house { --x: max(10px, calc(50% - 420px)); position: absolute; left: var(--x); bottom: 54px; width: 150px; height: 140px; border: 2px solid var(--tx); border-bottom: 0; }
+.nh-roof { position: absolute; left: -18px; top: -60px; width: 186px; height: 62px; overflow: visible; }
+.nh-roof path { fill: none; stroke: var(--tx); stroke-width: 2; stroke-linejoin: round; }
+.nh-win { position: absolute; left: 18px; top: 22px; width: 54px; height: 44px; border: 2px solid var(--tx); display: grid; place-items: center; font: 700 14px var(--mono); color: var(--mut); background: repeating-linear-gradient(135deg, transparent 0 5px, color-mix(in srgb, var(--tx) 18%, transparent) 5px 6px); }
+.nh-st.morning .nh-win { background: none; }
+.nh-st.morning .nh-win span { visibility: hidden; }
+.nh-door { position: absolute; right: 18px; bottom: 0; width: 42px; height: 76px; border: 2px solid var(--tx); border-bottom: 0; border-radius: 21px 21px 0 0; }
+.nh-bell { position: absolute; left: -16px; top: 24px; width: 10px; height: 10px; border-radius: 50%; background: var(--pri); transition: box-shadow .3s; }
+.nh-st.ring .nh-bell { box-shadow: 0 0 0 7px color-mix(in srgb, var(--pri) 35%, transparent), 0 0 0 14px color-mix(in srgb, var(--pri) 12%, transparent); }
+.nh-st[data-ph=off] .nh-bell { background: var(--mut); }
+.nh-st[data-ph=off] .nh-bell::after { content: ""; position: absolute; left: -4px; top: 4px; width: 18px; height: 2px; background: #DC2626; transform: rotate(-40deg); }
+.nh-box { position: absolute; left: calc(max(10px, calc(50% - 420px)) + 172px); bottom: 54px; width: 80px; height: 118px; z-index: 3; }
+.nh-box::before { content: ""; position: absolute; left: 4px; right: 4px; top: 0; height: 66px; border: 2px solid var(--tx); border-radius: 36px 36px 6px 6px; background: var(--bg); }
+.nh-box::after { content: ""; position: absolute; left: 38px; top: 68px; bottom: 0; border-left: 2px solid var(--tx); }
+.nh-slot { position: absolute; left: 22px; right: 22px; top: 22px; border-top: 3px solid var(--tx); z-index: 1; }
+.nh-box b { position: absolute; left: 6px; right: 6px; top: 30px; height: 30px; display: flex; align-items: center; justify-content: center; text-align: center; font: 800 8.5px/1.15 var(--mono); color: var(--tx); z-index: 1; overflow: hidden; overflow-wrap: anywhere; hyphens: auto; }
+.nh-box b.lg { font-size: 7.5px; }
+.nh-cnt { position: absolute; right: -6px; top: -8px; min-width: 24px; height: 24px; padding: 0 5px; border-radius: 12px; background: var(--pri); color: var(--priText); font: 800 12px var(--mono); display: grid; place-items: center; z-index: 2; }
+.nh-zo { --zs: 96px; bottom: 46px; left: calc(100% - 120px); transition: left .9s ease; }
+.nh-zo.run { left: calc(max(10px, calc(50% - 420px)) + 236px); }
+.nh-ze { --zs: 84px; left: calc(max(10px, calc(50% - 420px)) + 90px); bottom: 46px; opacity: 0; transition: opacity .4s; }
+.nh-st.morning .nh-ze { opacity: 1; }
+.nh-za { --zs: 104px; right: max(4px, calc(50% - 440px)); bottom: 46px; display: none; }
+.nh-env { position: absolute; z-index: 6; left: calc(max(10px, calc(50% - 420px)) + 120px); bottom: 182px; max-width: calc(100vw - 140px); overflow: hidden; text-overflow: ellipsis; background: var(--bg); color: var(--tx); border: 1.5px solid var(--tx); border-radius: 4px; padding: 5px 8px; font: 600 11.5px var(--f); white-space: nowrap; opacity: 0; transform: translateY(10px); transition: .5s; }
+.nh-env.in { opacity: 1; transform: none; }
+.nh-env.drop { transform: translate(20px, 40px) scale(.25); opacity: 0; }
+.nh-env b { font-family: var(--mono); }
+.nh-say { position: absolute; z-index: 8; left: 50%; top: 70px; transform: translateX(-50%); max-width: 260px; margin: 0; background: var(--sf); color: var(--tx); border: 1.5px solid var(--tx); border-radius: 16px; padding: 7px 11px; font-size: 13.5px; line-height: 1.35; opacity: 0; transition: opacity .35s; pointer-events: none; text-align: center; }
+.nh-say.on { opacity: 1; }
+/* sabah listesi: uygulamadaki kartın sade hâli */
+.nh-list { position: absolute; z-index: 7; left: 50%; top: 48px; width: min(360px, 92vw); transform: translateX(-50%); display: none; gap: 7px; max-height: 250px; overflow: hidden; -webkit-mask: linear-gradient(#000 80%, transparent); mask: linear-gradient(#000 80%, transparent); }
+.nh-st.morning .nh-list { display: grid; }
+.nh-nc { display: grid; grid-template-columns: 44px 34px minmax(0, 1fr); gap: 8px; align-items: start; background: var(--sf); border: 1px solid var(--bd); border-radius: 14px; padding: 9px 10px; font-size: 13px; line-height: 1.3; text-align: start; opacity: 0; transform: translateY(-14px); transition: .45s cubic-bezier(.2, 1.2, .4, 1); }
+.nh-nc.in { opacity: 1; transform: none; }
+.nh-nc.un { border-inline-start: 3px solid var(--pri); }
+.nh-nt { font: 700 12px var(--mono); color: var(--mut); padding-top: 2px; }
+.nh-cb { width: 30px; height: 30px; border-radius: 9px; background: var(--priSoft); color: var(--tx); font: 800 9.5px var(--mono); display: grid; place-items: center; }
+.nh-nc b { display: block; font-weight: 700; color: var(--tx); }
+.nh-nc i { display: block; font-style: normal; color: var(--mut); font-size: 11.5px; margin-top: 2px; }
+.nh-w1 { background: var(--bg); border: 1.5px solid var(--pri); color: var(--tx); border-radius: 14px; padding: 8px 10px; font-size: 12.5px; text-align: start; }
+.nh-w1 b { display: block; }
+/* ayarlar: tek satır simge */
+.nh-kn { display: grid; justify-items: center; gap: 6px; padding: 8px 16px 0; position: relative; z-index: 5; }
+.nh-r { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.nh-ig { display: inline-flex; align-items: center; gap: 2px; border: 1.5px solid var(--tx); border-radius: 999px; padding: 3px; background: var(--bg); }
+.nh-ig button { width: 38px; height: 38px; border-radius: 50%; border: 0; background: transparent; color: var(--tx); display: grid; place-items: center; cursor: pointer; font: 800 18px var(--f); }
+.nh-ig button svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.nh-ig button[aria-pressed=true] { background: var(--tx); color: var(--bg); }
+.nh-ig button:focus-visible { outline: 2px solid var(--pri); outline-offset: 2px; }
+.nh-hs output { font: 800 14px var(--mono); min-width: 48px; text-align: center; }
+.nh-cap { margin: 0; font: 600 12.5px var(--mono); color: var(--mut); text-align: center; }
+.nh-head { max-width: 860px; margin: 30px auto 0; text-align: center; }
+.nh-head h1 { font-size: clamp(32px, 4.2vw, 54px); text-wrap: balance; }
+.nh-kick { font: 600 12px/1.6 var(--mono); color: var(--cat3); margin: 0 0 14px; }
+.nh-intro { color: var(--mut); font-size: 18px; max-width: 700px; margin: 16px auto 22px; }
+.nh-intro a { color: var(--tx); text-decoration-color: var(--pri); text-underline-offset: 3px; }
+/* adımlar ve durumlar */
+.nh-ph { position: relative; width: 100%; border-radius: 30px; border: 7px solid var(--frame); overflow: hidden; background: var(--sf); box-shadow: var(--shadow); }
+.nh-ph img { display: block; width: 100%; height: auto; }
+.nh-c ol { list-style: none; margin: 30px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+.nh-c li { position: relative; }
+.nh-ic { width: 56px; height: 60px; fill: none; stroke: var(--tx); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; display: block; margin-bottom: 8px; }
+.nh-c li:nth-child(2) .nh-ic path:first-child { fill: var(--priSoft); }
+.nh-c h3 { margin: 0 0 6px; font-size: 19px; }
+.nh-c p { color: var(--mut); margin: 0 0 18px; }
+.nh-rise { position: relative; width: 240px; transition: opacity .9s, transform .9s cubic-bezier(.2, 1.1, .3, 1); }
+.nh-js .nh-rise:not(.in) { opacity: 0; transform: translateY(40px); }
+.nh-rise .zb { position: absolute; --zs: 92px; inset-inline-end: -46px; bottom: -14px; }
+.nh-m { display: grid; gap: 70px; padding: 70px 0 20px; }
+.nh-mr { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 60px; align-items: center; max-width: 900px; margin: 0 auto; width: 100%; }
+.nh-mr.rev { grid-template-columns: 240px minmax(0, 1fr); }
+.nh-mr.rev > div:first-child { order: 2; }
+.nh-mr h2 { font-size: clamp(24px, 3vw, 34px); margin: 0 0 10px; }
+.nh-mr p { color: var(--mut); font-size: 17px; margin: 0; }
+@media (min-width: 761px) { .nh-za { display: block; } .nh-r { gap: 34px; } .nh-kn { gap: 10px; } }
+@media (max-width: 760px) {
+  .nh-c ol { grid-template-columns: 1fr; gap: 44px; }
+  .nh-rise { margin-inline: auto; width: min(240px, 100%); }
+  .nh-mr, .nh-mr.rev { grid-template-columns: 1fr; gap: 22px; }
+  .nh-mr.rev > div:first-child { order: 0; }
+  .nh-m { gap: 54px; padding-top: 54px; }
+  .nh-head { margin-top: 22px; }
+  .nh-intro { font-size: 17px; }
+}
+@media (max-width: 420px) { .nh-kn { padding-inline: 0; } .nh-ig button { width: 32px; height: 32px; } .nh-ig button svg { width: 18px; height: 18px; } .nh-hs output { min-width: 40px; font-size: 13px; } .nh-r { gap: 6px; flex-wrap: nowrap; } .nh-cap { font-size: 11.5px; } }
+@media (prefers-reduced-motion: reduce) { .nh-st *, .nh-rise { transition: none !important; } }
