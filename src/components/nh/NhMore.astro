@@ -1,0 +1,18 @@
+---
+/**
+ * Üç durum, her biri gerçek ekranla: Telegram iletilemedi (olay akışı), tek alarmın Bildirimler sekmesi, bildirim izni kapalı uyarısı.
+ * Metin ve ekran sırayla yer değiştirir; çerçeve yok. Zilbo ilk durumda şaşırmaz, zarfı yine kutuya bırakmıştır: kayıt durur.
+ */
+import Zb from '../eth/Zb.astro';
+import NhShot from './NhShot.astro';
+import '../../styles/nh.css';
+interface Props { code: string; nh: any }
+const { code, nh } = Astro.props;
+const shots = ['fail', 'tab', 'w1'];
+---
+<section class="nh-m" data-nh-c>
+  {nh.more.map((m: any, i: number) => <div class={`nh-mr${i % 2 ? ' rev' : ''}`}>
+    <div><h2>{m.h}</h2><p>{m.p}</p></div>
+    <div class="nh-rise"><div class="nh-ph"><NhShot code={code} k={shots[i]} alt={m.alt} sizes="240px" /></div>{i === 0 && <Zb who="zilbo" />}</div>
+  </div>)}
+</section>

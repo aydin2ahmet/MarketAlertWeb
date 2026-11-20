@@ -303,6 +303,23 @@
       "MarketAlert works with a subscription; Plus and Pro both come with a 7-day free trial, and Price vs SMA/EMA is included in both."
      ]
     ]
+   },
+  "features/notification-history": {
+    "line": "See every alert that fired, even ones you missed: MarketAlert's Notifications page lists each triggered alert with its time and delivery steps.",
+    "what": "Tap the bell at the top right of the Alerts screen. Notifications lists triggered alerts newest first with day and time; unread ones are marked. Each card shows the channels used (Push, Telegram). Tapping a card opens the notification detail with the alert definition and an event flow: Alert created, Condition met, Notification created, then one delivery line per channel.",
+    "facts": [
+     "The record stays in Notifications even if the phone was silent, notification permission was off or Telegram could not be reached.",
+     "If Telegram delivery fails, the detail shows 'Telegram failed' with the retry count while the push line stays green.",
+     "When push permission is off, the page shows a warning that triggered alerts are only visible there, with a button to turn it back on.",
+      "How far back history goes depends on the plan; Pro keeps the longest history."
+    ],
+    "example": "Which of my alerts fired last night?",
+    "faq": [
+     [
+      "Is notification history free?",
+      "MarketAlert works with a subscription; Plus and Pro both come with a 7-day free trial, and the Notifications page is in both."
+     ]
+    ]
    }
  }
 }

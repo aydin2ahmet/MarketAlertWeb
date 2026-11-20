@@ -1,0 +1,110 @@
+---
+/**
+ * İlk ekran, tasarım A "Posta kutusu" (2026-11-20, Ahmet). Sahne sayfanın kareli zemininde, mürekkep çizgisiyle çizilir
+ * (Ahmet: renkli gökyüzü/çimen yok, arka plan kaybolmasın). Gece Zilbe uyur; her alarm çaldığında Zilbo bir zarf getirip
+ * "Bildirimler" kutusuna atar. Sabah zarflar uygulamadaki Bildirimler listesi gibi dizilir.
+ * Ayarlar tek satır simge (Ahmet: alt alta yazı kaba): kanal (Anlık / Telegram), telefonun durumu, uzakta kalınan süre.
+ * JS yoksa ya da hareket azaltma açıksa sahne sabah karesinde (liste açık) durur.
+ */
+import Zb from '../eth/Zb.astro';
+import { nhEvents, fill } from '../../lib/nh';
+import '../../styles/nh.css';
+interface Props { code: string; nh: any; h1: string; introHtml: string; setupTitle: string }
+const { nh, h1, introHtml, setupTitle } = Astro.props;
+const S = { ch: 'pt', ph: 'on', h: 5 };
+const ev0 = nhEvents(S.h, nh.ev.length);
+const chs = (ch: string) => ch.split('').map(c => nh.chn[c]).join(' · ');
+const cap = fill(nh.cap, { ch: chs(S.ch), ph: nh.phn[S.ph], h: S.h });
+const IC: Record<string, string> = {
+  p: '<path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z M10 20a2 2 0 0 0 4 0"/>',
+  t: '<path d="M3 11.5 20.5 4l-3 16-5.5-4.5L9 19l-.5-5L17 7.5 7.5 13z"/>',
+  on: '<path d="M4 9h4l5-4v14l-5-4H4z M16 9a4 4 0 0 1 0 6 M18.5 6.5a7.5 7.5 0 0 1 0 11"/>',
+  mute: '<path d="M4 9h4l5-4v14l-5-4H4z M16 9.5l5 5 M21 9.5l-5 5"/>',
+  off: '<path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z M10 20a2 2 0 0 0 4 0 M3 3l18 18"/>',
+};
+const cfg = { ev: nh.ev, chn: nh.chn, phn: nh.phn, cap: nh.cap, hu: nh.hu, say: nh.say, perm: nh.perm };
+---
+<section class="nh-h" data-nh-h data-cfg={JSON.stringify(cfg)}>
+  <div class="nh-bleed nh-st morning" role="img" aria-label={nh.alt} dir="ltr">
+    <div class="nh-clk" aria-hidden="true"><i></i><span>07:30</span></div>
+    <div class="nh-gl" aria-hidden="true"></div>
+    <div class="nh-house" aria-hidden="true"><svg class="nh-roof" viewBox="0 0 186 62"><path d="M2 61 L93 2 L184 61" /></svg><div class="nh-win"><span>z z</span></div><div class="nh-door"><span class="nh-bell"></span></div></div>
+    <div class="nh-box" aria-hidden="true"><span class="nh-cnt">{ev0.length}</span><div class="nh-slot"></div><b class={nh.box.length > 13 ? "lg" : undefined}>{nh.box}</b></div>
+    <Zb who="zilbo" class="nh-zo" /><Zb who="zilbe" class="nh-ze" /><Zb who="zilba" class="nh-za" />
+    <p class="nh-say" aria-hidden="true"></p>
+    <div class="nh-list" aria-hidden="true">{ev0.slice().reverse().map(e => <div class="nh-nc un in"><span class="nh-nt">{e.hm}</span><span class="nh-cb">{nh.ev[e.i][0]}</span><div><b dir="auto">{nh.ev[e.i][1]}</b><i>{chs(S.ch)}</i></div></div>)}</div>
+  </div>
+  <div class="nh-kn">
+    <div class="nh-r">
+      <span class="nh-ig" role="group" aria-label={nh.aria.ch}>{['p', 't'].map(v => <button type="button" data-c={v} aria-label={nh.chn[v]} aria-pressed={String(S.ch.includes(v))}><svg viewBox="0 0 24 24" aria-hidden="true" set:html={IC[v]} /></button>)}</span>
+      <span class="nh-ig" role="group" aria-label={nh.aria.ph}>{['on', 'mute', 'off'].map(v => <button type="button" data-ph={v} aria-label={nh.phn[v]} aria-pressed={String(S.ph === v)}><svg viewBox="0 0 24 24" aria-hidden="true" set:html={IC[v]} /></button>)}</span>
+      <span class="nh-ig nh-hs" role="group" aria-label={nh.aria.h}><button type="button" data-s="-1" aria-label={nh.aria.minus}>−</button><output aria-live="polite">{`${S.h} ${nh.hu}`}</output><button type="button" data-s="1" aria-label={nh.aria.plus}>+</button></span>
+    </div>
+    <p class="nh-cap">{cap}</p>
+  </div>
+  <div class="nh-head">
+    <p class="nh-kick">{nh.kicker}</p><h1>{h1}</h1>
+    <p class="nh-intro" set:html={introHtml} />
+    <a class="btn" href="#setup">{setupTitle} <span aria-hidden="true">↓</span></a>
+  </div>
+</section>
+
+<script>
+  import { zbPlay, zbPrime, zbReduce, sleep } from '../../lib/zb';
+  import { nhEvents, fill } from '../../lib/nh';
+  for (const r of document.querySelectorAll<HTMLElement>('[data-nh-h]')) {
+    const C = JSON.parse(r.dataset.cfg || '{}');
+    const st = r.querySelector<HTMLElement>('.nh-st')!, ck = st.querySelector<HTMLElement>('.nh-clk span')!, cnt = st.querySelector<HTMLElement>('.nh-cnt')!;
+    const ls = st.querySelector<HTMLElement>('.nh-list')!, sy = st.querySelector<HTMLElement>('.nh-say')!;
+    const zo = st.querySelector<HTMLElement>('.nh-zo'), ze = st.querySelector<HTMLElement>('.nh-ze'), za = st.querySelector<HTMLElement>('.nh-za');
+    const S = { ch: 'pt', ph: 'on', h: 5 };
+    const chs = () => S.ch.split('').map(c => C.chn[c]).join(' · ');
+    const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+    const card = (e: { i: number; hm: string }) => `<div class="nh-nc un"><span class="nh-nt">${e.hm}</span><span class="nh-cb">${esc(C.ev[e.i][0])}</span><div><b dir="auto">${esc(C.ev[e.i][1])}</b><i>${esc(chs())}</i></div></div>`;
+    const perm = () => S.ph !== 'off' ? '' : `<div class="nh-w1"><b>${esc(C.perm.title)}</b><span>${esc(C.perm.text)}${S.ch.includes('t') ? ' ' + esc(C.perm.tg) : ''}</span></div>`;
+    const upd = () => {
+      r.querySelectorAll<HTMLElement>('[data-c]').forEach(b => b.setAttribute('aria-pressed', String(S.ch.includes(b.dataset.c!))));
+      r.querySelectorAll<HTMLElement>('[data-ph]').forEach(b => b.setAttribute('aria-pressed', String(S.ph === b.dataset.ph)));
+      r.querySelector('.nh-hs output')!.textContent = `${S.h} ${C.hu}`;
+      r.querySelector('.nh-cap')!.textContent = fill(C.cap, { ch: chs(), ph: C.phn[S.ph], h: S.h });
+      st.dataset.ph = S.ph;
+    };
+    const morning = (ev: { i: number; hm: string }[]) => {
+      st.classList.add('morning'); ck.textContent = '07:30'; cnt.textContent = String(ev.length);
+      ls.innerHTML = perm() + ev.slice().reverse().map(card).join('');
+      ls.querySelectorAll<HTMLElement>('.nh-nc').forEach((c, i) => setTimeout(() => c.classList.add('in'), zbReduce ? 0 : 140 * i));
+    };
+    let run = 0;
+    const go = async () => {
+      const k = ++run, ok = () => k === run;
+      const ev = nhEvents(S.h, C.ev.length);
+      if (zbReduce) { morning(ev); return; }
+      st.classList.remove('morning'); ls.innerHTML = ''; cnt.textContent = '0';
+      st.querySelectorAll('.nh-env').forEach(e => e.remove());
+      for (let i = 0; i < ev.length && ok(); i++) {
+        while (document.hidden || !vis) { await sleep(400); if (!ok()) return; }
+        const e = ev[i]; ck.textContent = e.hm; zo?.classList.add('run'); zbPlay(zo, 'zilbo-zipla');
+        await sleep(900); if (!ok()) return;
+        const env = document.createElement('div'); env.className = 'nh-env'; env.innerHTML = `<b>${e.hm}</b> ${esc(C.ev[e.i][1])}`; env.dir = 'auto'; st.append(env);
+        requestAnimationFrame(() => env.classList.add('in'));
+        if (S.ph === 'on') st.classList.add('ring');
+        await sleep(700); st.classList.remove('ring'); env.classList.add('drop'); cnt.textContent = String(i + 1); zo?.classList.remove('run');
+        await sleep(600); env.remove();
+      }
+      if (!ok()) return;
+      sy.textContent = C.say[S.ph]; sy.classList.add('on'); await sleep(2300); sy.classList.remove('on'); if (!ok()) return;
+      morning(ev); zbPlay(ze, 'zilbe-sevin'); setTimeout(() => zbPlay(za, 'zilba-el'), 600);
+      await sleep(5200 + ev.length * 300); if (ok()) go();
+    };
+    let vis = false, started = false;
+    new IntersectionObserver(es => { vis = es[0].isIntersecting; if (vis && !started) { started = true; go(); } }, { threshold: .1 }).observe(st);
+    zbPrime(r);
+    r.querySelectorAll<HTMLElement>('[data-c]').forEach(b => b.onclick = () => {
+      const has = new Set(S.ch.split('')); const c = b.dataset.c!;
+      if (has.has(c)) { if (has.size === 1) return; has.delete(c); } else has.add(c);
+      S.ch = ['p', 't'].filter(x => has.has(x)).join(''); upd(); go();
+    });
+    r.querySelectorAll<HTMLElement>('[data-ph]').forEach(b => b.onclick = () => { S.ph = b.dataset.ph!; upd(); go(); });
+    r.querySelectorAll<HTMLElement>('.nh-hs button').forEach(b => b.onclick = () => { S.h = Math.max(1, Math.min(9, S.h + Number(b.dataset.s))); upd(); go(); });
+  }
+</script>
