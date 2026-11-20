@@ -1,0 +1,1289 @@
+{
+ "tr": {
+  "link": "Eşik raporu",
+  "title": "Eşiğe ne kadar kaldı? Kripto eşik raporu | MarketAlert",
+  "description": "En çok işlem gören 30 kripto paranın RSI, 24 saatlik değişim, zirveye uzaklık ve hacim katı tek cetvelde; dakikada bir hesaplanır. Eşiği geçenler ve yaklaşanlar öne çıkar.",
+  "eyebrow": "Canlı rapor · {t} · dakikada bir",
+  "h1": "Eşiğe ne kadar kaldı?",
+  "sub": "En çok işlem gören 30 coinin göstergeleri tek cetvelde. Çizgiyi geçenler ve eşiğe yaklaşanlar öne çıkar; birine dokun, alarmını kur.",
+  "metricGroup": "Gösterge",
+  "tfGroup": "Grafik aralığı",
+  "metrics": {
+   "rsi": "RSI",
+   "ch": "24s %",
+   "hi": "Zirve",
+   "vx": "Hacim"
+  },
+  "q": {
+   "rsi": "RSI(14) · {tf} grafikte coinler 30 ve 70 çizgisine ne kadar yakın?",
+   "ch": "Son 24 saatte hangi coinler %10’dan fazla oynadı, hangileri yaklaşıyor?",
+   "hi": "Hangi coinler 24 saatlik zirvesine %1’den yakın?",
+   "vx": "Son 15 dakikada hacmi ortalamasının 3 katını geçen coinler hangileri?"
+  },
+  "zones": {
+   "rsiLo": "Aşırı satım",
+   "rsiHi": "Aşırı alım",
+   "chLo": "%10+ düşüş",
+   "chHi": "%10+ yükseliş",
+   "hiHi": "Zirveye %1’den yakın",
+   "vxHi": "Ani hacim (×3 üstü)"
+  },
+  "stats": {
+   "watched": "İzlenen",
+   "near": "Eşiğe yakın",
+   "coin": "coin"
+  },
+  "hint": "Üstte: çizgiyi geçen ve eşiğe yaklaşan coinler, değerleriyle. Alttaki noktalar: diğer coinler. Dokun: alarm önerileri.",
+  "l1": "Çizginin ötesinde",
+  "l1p": "Eşiği geçmiş coinler.",
+  "l2": "Eşiğe en yakın",
+  "l2s": "ilk 6",
+  "l2p": "Henüz geçmedi; alarm kurarsan geçtiği an haber alırsın.",
+  "l3": "Son geçişler",
+  "l3s": "son 15 dk",
+  "l3p": "Dakikalık hesaplamada çizgiyi geçenler.",
+  "none": "Şu an yok.",
+  "noCross": "Son 15 dakikada geçiş yok.",
+  "empty": "Bu gösterge için şu an değer yok.",
+  "loading": "Rapor yükleniyor…",
+  "error": "Rapor şu an alınamadı, birazdan yeniden denenecek.",
+  "gapTo": "{t} çizgisine {g}",
+  "unitPt": "{v} puan",
+  "unitX": "{v} kat",
+  "cross": {
+   "rsiDown": "RSI(14)·{tf} 30 altına indi",
+   "rsiUp": "RSI(14)·{tf} 70 üstüne çıktı",
+   "chUp": "24 saatte %10’dan fazla yükseldi",
+   "chDown": "24 saatte %10’dan fazla düştü",
+   "hiUp": "24 saatlik zirvesine %1’den yaklaştı",
+   "vxUp": "15 dk hacmi ortalamanın 3 katını aştı"
+  },
+  "bell": "{s} için alarm",
+  "sheet": {
+   "title": "{s}/USDT için alarm",
+   "close": "Kapat",
+   "stats": [
+    "24s",
+    "Zirveye",
+    "Hacim"
+   ],
+   "now": "şu an {v}",
+   "below": "şu an 30 altında",
+   "above": "şu an 70 üstünde",
+   "how": "Nasıl kurulur",
+   "plan": "MarketAlert abonelikle çalışır; Plus ve Pro 7 gün ücretsiz denenir. Alarmını uygulamada sesle ya da yazarak kurarsın."
+  },
+  "sug": {
+   "rsiLo": "RSI(14)·{tf} 30 altına inince",
+   "rsiHi": "RSI(14)·{tf} 70 üstüne çıkınca",
+   "hi": "24 saatlik zirveyi aşınca",
+   "ch": "24 saatte %10 değişince",
+   "pump": "Ani hacim ve fiyat hareketinde (pump)"
+  },
+  "defs": [
+   [
+    "RSI(14)",
+    "Seçtiğin grafikte son kapanan mumdan hesaplanır, açık mum sayılmaz. 30 altı aşırı satım, 70 üstü aşırı alım. 30 ya da 70’e 3,5 puandan yakın olan eşiğe yakın sayılır."
+   ],
+   [
+    "24 saatlik değişim ve zirve",
+    "Son 24 saatteki yüzde değişim ve 24 saatin en yüksek değerine olan uzaklık. ±%10 ve zirveye %1 eşik alınır."
+   ],
+   [
+    "Hacim katı",
+    "Son kapanan 15 dakikalık mumun hacmi ÷ önceki 20 mumun ortalaması. 3 kat ve üstü ani hacim sayılır."
+   ]
+  ],
+  "source": [
+   "Kaynak ve gecikme:",
+   "Değerler Binance’in herkese açık piyasa verilerinden MarketAlert tarafından dakikada bir hesaplanır; anlık fiyat akışı değildir ve fiyat gösterilmez. MarketAlert, Binance ile bağlantılı değildir. Bu sayfa yatırım tavsiyesi değildir."
+  ],
+  "faqTitle": "Sık sorulan sorular",
+  "faq": [
+   [
+    "Bu rapor ne kadar güncel?",
+    "Rapor dakikada bir yeniden hesaplanır. RSI ve hacim katı kapanmış mumlardan gelir; bir mum kapandıktan yaklaşık bir dakika sonra yeni değer görünür."
+   ],
+   [
+    "Hangi coinler var?",
+    "Binance Spot’ta USDT paritesiyle en çok işlem gören 30 coin. Liste her gün işlem hacmine göre yenilenir, sabit coinler (stablecoin) çıkarılır."
+   ],
+   [
+    "Eşik geçtiği an haber alabilir miyim?",
+    "Evet. Coine dokunup bir öneri seç ya da MarketAlert’te “BTC RSI 1 saatlikte 30 altına inince haber ver” de; koşul gerçekleştiği an push ya da Telegram bildirimi gelir. MarketAlert abonelikle çalışır; Plus ve Pro 7 gün ücretsiz denenir."
+   ]
+  ],
+  "ctaTitle": "Eşik geçtiği an haber al",
+  "cta": "Raporda gördüğün her eşik için MarketAlert’te alarm kur; koşul gerçekleşince telefonuna bildirim gelir."
+ },
+ "en": {
+  "link": "Threshold report",
+  "title": "How close to the threshold? Crypto threshold report | MarketAlert",
+  "description": "RSI, 24h change, distance to the 24h high and volume multiple of the 30 most traded cryptocurrencies on one ruler, computed every minute. Coins past or near a threshold stand out.",
+  "eyebrow": "Live report · {t} · every minute",
+  "h1": "How close to the threshold?",
+  "sub": "Indicators of the 30 most traded coins on one ruler. Coins past the line and coins close to it stand out; tap one to set an alert.",
+  "metricGroup": "Indicator",
+  "tfGroup": "Chart interval",
+  "metrics": {
+   "rsi": "RSI",
+   "ch": "24h %",
+   "hi": "High",
+   "vx": "Volume"
+  },
+  "q": {
+   "rsi": "RSI(14) · {tf} chart: how close are coins to the 30 and 70 lines?",
+   "ch": "Which coins moved more than 10% in 24 hours, and which are getting close?",
+   "hi": "Which coins are within 1% of their 24h high?",
+   "vx": "Which coins traded more than 3× their average volume in the last 15 minutes?"
+  },
+  "zones": {
+   "rsiLo": "Oversold",
+   "rsiHi": "Overbought",
+   "chLo": "10%+ drop",
+   "chHi": "10%+ rise",
+   "hiHi": "Within 1% of high",
+   "vxHi": "Volume spike (3×+)"
+  },
+  "stats": {
+   "watched": "Watched",
+   "near": "Near threshold",
+   "coin": "coins"
+  },
+  "hint": "Top: coins past the line or close to it, with values. Dots below: the other coins. Tap: alert ideas.",
+  "l1": "Past the line",
+  "l1p": "Coins beyond the threshold.",
+  "l2": "Closest to the threshold",
+  "l2s": "top 6",
+  "l2p": "Not crossed yet; set an alert and you hear the moment it crosses.",
+  "l3": "Recent crossings",
+  "l3s": "last 15 min",
+  "l3p": "Coins that crossed in the minute-by-minute calculation.",
+  "none": "None right now.",
+  "noCross": "No crossings in the last 15 minutes.",
+  "empty": "No values for this indicator right now.",
+  "loading": "Loading report…",
+  "error": "The report could not be loaded; trying again shortly.",
+  "gapTo": "{g} to {t}",
+  "unitPt": "{v} pts",
+  "unitX": "{v}×",
+  "cross": {
+   "rsiDown": "RSI(14)·{tf} fell below 30",
+   "rsiUp": "RSI(14)·{tf} rose above 70",
+   "chUp": "up more than 10% in 24h",
+   "chDown": "down more than 10% in 24h",
+   "hiUp": "came within 1% of its 24h high",
+   "vxUp": "15-min volume passed 3× the average"
+  },
+  "bell": "Alert for {s}",
+  "sheet": {
+   "title": "Alert for {s}/USDT",
+   "close": "Close",
+   "stats": [
+    "24h",
+    "To high",
+    "Volume"
+   ],
+   "now": "now {v}",
+   "below": "now below 30",
+   "above": "now above 70",
+   "how": "How to set it",
+   "plan": "MarketAlert works with a subscription; Plus and Pro both come with a 7-day free trial. You set the alert in the app by voice or text."
+  },
+  "sug": {
+   "rsiLo": "When RSI(14)·{tf} falls below 30",
+   "rsiHi": "When RSI(14)·{tf} rises above 70",
+   "hi": "When it breaks the 24h high",
+   "ch": "When it moves 10% in 24h",
+   "pump": "On a sudden volume and price move (pump)"
+  },
+  "defs": [
+   [
+    "RSI(14)",
+    "Calculated from the last closed candle of the chart you pick; the open candle is not counted. Below 30 is oversold, above 70 overbought. Within 3.5 points of 30 or 70 counts as near the threshold."
+   ],
+   [
+    "24h change and high",
+    "Percentage change over the last 24 hours and distance to the highest value of those 24 hours. Thresholds are ±10% and 1% from the high."
+   ],
+   [
+    "Volume multiple",
+    "Volume of the last closed 15-minute candle ÷ the average of the previous 20 candles. 3× or more counts as a volume spike."
+   ]
+  ],
+  "source": [
+   "Source and delay:",
+   "Values are computed every minute by MarketAlert from Binance public market data; this is not a live price feed and no prices are shown. MarketAlert is not affiliated with Binance. This page is not investment advice."
+  ],
+  "faqTitle": "FAQ",
+  "faq": [
+   [
+    "How up to date is this report?",
+    "The report is recalculated every minute. RSI and the volume multiple come from closed candles, so a new value appears about a minute after a candle closes."
+   ],
+   [
+    "Which coins are included?",
+    "The 30 most traded coins on Binance Spot against USDT. The list is refreshed daily by trading volume; stablecoins are left out."
+   ],
+   [
+    "Can I get notified the moment a threshold is crossed?",
+    "Yes. Tap a coin and pick an idea, or tell MarketAlert “notify me when BTC RSI on 1h falls below 30”; a push or Telegram notification arrives the moment it happens. MarketAlert works with a subscription; Plus and Pro both come with a 7-day free trial."
+   ]
+  ],
+  "ctaTitle": "Hear the moment it crosses",
+  "cta": "Set a MarketAlert alert for any threshold you see in the report; your phone is notified when the condition is met."
+ },
+ "zh": {
+  "link": "阈值报告",
+  "title": "离阈值还有多远？加密货币阈值报告 | MarketAlert",
+  "description": "交易量最大的 30 种加密货币的 RSI、24 小时涨跌幅、距 24 小时高点的距离和成交量倍数，集中在一把标尺上，每分钟计算一次。已越过或接近阈值的币种会突出显示。",
+  "eyebrow": "实时报告 · {t} · 每分钟更新",
+  "h1": "离阈值还有多远？",
+  "sub": "交易量最大的 30 个币的指标集中在一把标尺上。越过线的和接近阈值的会突出显示；点一下即可设置提醒。",
+  "metricGroup": "指标",
+  "tfGroup": "图表周期",
+  "metrics": {
+   "rsi": "RSI",
+   "ch": "24h %",
+   "hi": "高点",
+   "vx": "成交量"
+  },
+  "q": {
+   "rsi": "RSI(14) · {tf} 图表：各币离 30 和 70 线还有多远？",
+   "ch": "过去 24 小时哪些币涨跌超过 10%，哪些正在接近？",
+   "hi": "哪些币距 24 小时高点不到 1%？",
+   "vx": "过去 15 分钟哪些币的成交量超过平均值的 3 倍？"
+  },
+  "zones": {
+   "rsiLo": "超卖",
+   "rsiHi": "超买",
+   "chLo": "跌超 10%",
+   "chHi": "涨超 10%",
+   "hiHi": "距高点不到 1%",
+   "vxHi": "放量（3 倍以上）"
+  },
+  "stats": {
+   "watched": "关注",
+   "near": "接近阈值",
+   "coin": "个币"
+  },
+  "hint": "上方：已越过线或接近阈值的币，附数值。下方圆点：其他币。点按：提醒建议。",
+  "l1": "已越过线",
+  "l1p": "已越过阈值的币。",
+  "l2": "最接近阈值",
+  "l2s": "前 6",
+  "l2p": "尚未越过；设置提醒，越过的那一刻就会通知你。",
+  "l3": "最近越线",
+  "l3s": "近 15 分钟",
+  "l3p": "每分钟计算中越过线的币。",
+  "none": "目前没有。",
+  "noCross": "近 15 分钟没有越线。",
+  "empty": "该指标目前没有数值。",
+  "loading": "正在加载报告…",
+  "error": "暂时无法获取报告，稍后会自动重试。",
+  "gapTo": "距 {t} 还差 {g}",
+  "unitPt": "{v} 点",
+  "unitX": "{v} 倍",
+  "cross": {
+   "rsiDown": "RSI(14)·{tf} 跌破 30",
+   "rsiUp": "RSI(14)·{tf} 升破 70",
+   "chUp": "24 小时上涨超过 10%",
+   "chDown": "24 小时下跌超过 10%",
+   "hiUp": "距 24 小时高点不到 1%",
+   "vxUp": "15 分钟成交量超过平均值 3 倍"
+  },
+  "bell": "{s} 的提醒",
+  "sheet": {
+   "title": "{s}/USDT 提醒",
+   "close": "关闭",
+   "stats": [
+    "24h",
+    "距高点",
+    "成交量"
+   ],
+   "now": "当前 {v}",
+   "below": "当前低于 30",
+   "above": "当前高于 70",
+   "how": "如何设置",
+   "plan": "MarketAlert 需要订阅使用；Plus 和 Pro 都可免费试用 7 天。在应用中用语音或文字即可设置提醒。"
+  },
+  "sug": {
+   "rsiLo": "RSI(14)·{tf} 跌破 30 时",
+   "rsiHi": "RSI(14)·{tf} 升破 70 时",
+   "hi": "突破 24 小时高点时",
+   "ch": "24 小时涨跌 10% 时",
+   "pump": "成交量和价格突然异动时（拉盘）"
+  },
+  "defs": [
+   [
+    "RSI(14)",
+    "根据所选图表最后一根已收盘的 K 线计算，未收盘的 K 线不计入。低于 30 为超卖，高于 70 为超买。距 30 或 70 不到 3.5 点视为接近阈值。"
+   ],
+   [
+    "24 小时涨跌幅和高点",
+    "过去 24 小时的涨跌百分比，以及距这 24 小时最高值的距离。阈值为 ±10% 和距高点 1%。"
+   ],
+   [
+    "成交量倍数",
+    "最后一根已收盘 15 分钟 K 线的成交量 ÷ 之前 20 根 K 线的平均值。3 倍及以上视为放量。"
+   ]
+  ],
+  "source": [
+   "来源与延迟：",
+   "数值由 MarketAlert 根据 Binance 公开市场数据每分钟计算一次；这不是实时价格流，也不显示价格。MarketAlert 与 Binance 无关联。本页面不构成投资建议。"
+  ],
+  "faqTitle": "常见问题",
+  "faq": [
+   [
+    "这份报告有多新？",
+    "报告每分钟重新计算。RSI 和成交量倍数来自已收盘的 K 线，因此 K 线收盘约一分钟后会出现新数值。"
+   ],
+   [
+    "包含哪些币？",
+    "Binance 现货中以 USDT 计价、交易量最大的 30 个币。列表每天按交易量更新，稳定币不计入。"
+   ],
+   [
+    "阈值被越过时能立刻收到通知吗？",
+    "可以。点一下币并选择一条建议，或对 MarketAlert 说“BTC 1 小时 RSI 跌破 30 时通知我”；条件满足的那一刻就会收到推送或 Telegram 通知。MarketAlert 需要订阅使用；Plus 和 Pro 都可免费试用 7 天。"
+   ]
+  ],
+  "ctaTitle": "越线那一刻就收到通知",
+  "cta": "报告中看到的任何阈值都可以在 MarketAlert 中设置提醒；条件满足时手机会收到通知。"
+ },
+ "es": {
+  "link": "Informe de umbrales",
+  "title": "¿Cuánto falta para el umbral? Informe cripto | MarketAlert",
+  "description": "RSI, cambio en 24 h, distancia al máximo de 24 h y múltiplo de volumen de las 30 criptomonedas más negociadas en una sola regla, calculados cada minuto. Destacan las que pasaron o se acercan a un umbral.",
+  "eyebrow": "Informe en vivo · {t} · cada minuto",
+  "h1": "¿Cuánto falta para el umbral?",
+  "sub": "Los indicadores de las 30 monedas más negociadas en una sola regla. Destacan las que pasaron la línea y las que se acercan; toca una para crear su alerta.",
+  "metricGroup": "Indicador",
+  "tfGroup": "Intervalo del gráfico",
+  "metrics": {
+   "rsi": "RSI",
+   "ch": "24 h %",
+   "hi": "Máximo",
+   "vx": "Volumen"
+  },
+  "q": {
+   "rsi": "RSI(14) · gráfico {tf}: ¿qué tan cerca están las monedas de las líneas 30 y 70?",
+   "ch": "¿Qué monedas se movieron más de un 10 % en 24 horas y cuáles se acercan?",
+   "hi": "¿Qué monedas están a menos de un 1 % de su máximo de 24 h?",
+   "vx": "¿Qué monedas superaron 3 veces su volumen medio en los últimos 15 minutos?"
+  },
+  "zones": {
+   "rsiLo": "Sobreventa",
+   "rsiHi": "Sobrecompra",
+   "chLo": "Caída de 10 %+",
+   "chHi": "Subida de 10 %+",
+   "hiHi": "A menos de 1 % del máximo",
+   "vxHi": "Pico de volumen (3×+)"
+  },
+  "stats": {
+   "watched": "Seguidas",
+   "near": "Cerca del umbral",
+   "coin": "monedas"
+  },
+  "hint": "Arriba: monedas que pasaron la línea o están cerca, con su valor. Puntos de abajo: el resto. Toca: ideas de alerta.",
+  "l1": "Más allá de la línea",
+  "l1p": "Monedas que pasaron el umbral.",
+  "l2": "Más cerca del umbral",
+  "l2s": "top 6",
+  "l2p": "Aún no lo cruzan; crea una alerta y te enteras en el momento en que lo hagan.",
+  "l3": "Cruces recientes",
+  "l3s": "últimos 15 min",
+  "l3p": "Monedas que cruzaron en el cálculo minuto a minuto.",
+  "none": "Ninguna por ahora.",
+  "noCross": "Sin cruces en los últimos 15 minutos.",
+  "empty": "Ahora no hay valores para este indicador.",
+  "loading": "Cargando informe…",
+  "error": "No se pudo cargar el informe; se volverá a intentar en breve.",
+  "gapTo": "a {g} de {t}",
+  "unitPt": "{v} pts",
+  "unitX": "{v}×",
+  "cross": {
+   "rsiDown": "RSI(14)·{tf} bajó de 30",
+   "rsiUp": "RSI(14)·{tf} superó 70",
+   "chUp": "subió más de un 10 % en 24 h",
+   "chDown": "bajó más de un 10 % en 24 h",
+   "hiUp": "quedó a menos de un 1 % de su máximo de 24 h",
+   "vxUp": "el volumen de 15 min superó 3 veces la media"
+  },
+  "bell": "Alerta para {s}",
+  "sheet": {
+   "title": "Alerta para {s}/USDT",
+   "close": "Cerrar",
+   "stats": [
+    "24 h",
+    "Al máximo",
+    "Volumen"
+   ],
+   "now": "ahora {v}",
+   "below": "ahora por debajo de 30",
+   "above": "ahora por encima de 70",
+   "how": "Cómo crearla",
+   "plan": "MarketAlert funciona con suscripción; Plus y Pro incluyen 7 días de prueba gratis. La alerta se crea en la app por voz o por texto."
+  },
+  "sug": {
+   "rsiLo": "Cuando RSI(14)·{tf} baje de 30",
+   "rsiHi": "Cuando RSI(14)·{tf} supere 70",
+   "hi": "Cuando rompa el máximo de 24 h",
+   "ch": "Cuando se mueva un 10 % en 24 h",
+   "pump": "Ante un movimiento brusco de volumen y precio (pump)"
+  },
+  "defs": [
+   [
+    "RSI(14)",
+    "Se calcula con la última vela cerrada del gráfico elegido; la vela abierta no cuenta. Por debajo de 30 es sobreventa y por encima de 70 sobrecompra. A menos de 3,5 puntos de 30 o 70 se considera cerca del umbral."
+   ],
+   [
+    "Cambio y máximo de 24 h",
+    "Variación porcentual de las últimas 24 horas y distancia al valor más alto de esas 24 horas. Los umbrales son ±10 % y 1 % del máximo."
+   ],
+   [
+    "Múltiplo de volumen",
+    "Volumen de la última vela cerrada de 15 minutos ÷ la media de las 20 velas anteriores. 3× o más se considera un pico de volumen."
+   ]
+  ],
+  "source": [
+   "Fuente y retraso:",
+   "MarketAlert calcula los valores cada minuto a partir de los datos de mercado públicos de Binance; no es un flujo de precios en vivo y no se muestran precios. MarketAlert no está afiliado a Binance. Esta página no es asesoramiento de inversión."
+  ],
+  "faqTitle": "Preguntas frecuentes",
+  "faq": [
+   [
+    "¿Qué tan actualizado está este informe?",
+    "El informe se recalcula cada minuto. El RSI y el múltiplo de volumen salen de velas cerradas, así que un valor nuevo aparece alrededor de un minuto después del cierre de la vela."
+   ],
+   [
+    "¿Qué monedas incluye?",
+    "Las 30 monedas más negociadas en Binance Spot frente a USDT. La lista se renueva cada día según el volumen; las stablecoins quedan fuera."
+   ],
+   [
+    "¿Puedo recibir un aviso en el momento en que se cruza un umbral?",
+    "Sí. Toca una moneda y elige una idea, o dile a MarketAlert “avísame cuando el RSI de BTC en 1h baje de 30”; la notificación push o de Telegram llega en el momento en que ocurre. MarketAlert funciona con suscripción; Plus y Pro incluyen 7 días de prueba gratis."
+   ]
+  ],
+  "ctaTitle": "Entérate en cuanto se cruce",
+  "cta": "Crea en MarketAlert una alerta para cualquier umbral que veas en el informe; tu teléfono recibe el aviso cuando se cumple la condición."
+ },
+ "hi": {
+  "link": "थ्रेशोल्ड रिपोर्ट",
+  "title": "थ्रेशोल्ड से कितनी दूरी? क्रिप्टो थ्रेशोल्ड रिपोर्ट | MarketAlert",
+  "description": "सबसे ज़्यादा ट्रेड होने वाली 30 क्रिप्टोकरेंसी का RSI, 24 घंटे का बदलाव, 24 घंटे के हाई से दूरी और वॉल्यूम मल्टिपल एक ही पैमाने पर, हर मिनट गणना। थ्रेशोल्ड पार या उसके पास वाले कॉइन अलग दिखते हैं।",
+  "eyebrow": "लाइव रिपोर्ट · {t} · हर मिनट",
+  "h1": "थ्रेशोल्ड से कितनी दूरी?",
+  "sub": "सबसे ज़्यादा ट्रेड होने वाले 30 कॉइन के इंडिकेटर एक ही पैमाने पर। रेखा पार करने वाले और उसके पास वाले कॉइन अलग दिखते हैं; किसी पर टैप करें और अलर्ट बनाएँ।",
+  "metricGroup": "इंडिकेटर",
+  "tfGroup": "चार्ट अंतराल",
+  "metrics": {
+   "rsi": "RSI",
+   "ch": "24घं %",
+   "hi": "हाई",
+   "vx": "वॉल्यूम"
+  },
+  "q": {
+   "rsi": "RSI(14) · {tf} चार्ट: कॉइन 30 और 70 की रेखा से कितनी दूर हैं?",
+   "ch": "पिछले 24 घंटे में किन कॉइन में 10% से ज़्यादा बदलाव हुआ और कौन पास आ रहे हैं?",
+   "hi": "कौन से कॉइन अपने 24 घंटे के हाई से 1% से कम दूर हैं?",
+   "vx": "पिछले 15 मिनट में किन कॉइन का वॉल्यूम औसत के 3 गुना से ज़्यादा रहा?"
+  },
+  "zones": {
+   "rsiLo": "ओवरसोल्ड",
+   "rsiHi": "ओवरबॉट",
+   "chLo": "10%+ गिरावट",
+   "chHi": "10%+ बढ़त",
+   "hiHi": "हाई से 1% से कम",
+   "vxHi": "वॉल्यूम उछाल (3×+)"
+  },
+  "stats": {
+   "watched": "निगरानी में",
+   "near": "थ्रेशोल्ड के पास",
+   "coin": "कॉइन"
+  },
+  "hint": "ऊपर: रेखा पार करने वाले या उसके पास वाले कॉइन, मान के साथ। नीचे के बिंदु: बाकी कॉइन। टैप करें: अलर्ट सुझाव।",
+  "l1": "रेखा के पार",
+  "l1p": "थ्रेशोल्ड पार कर चुके कॉइन।",
+  "l2": "थ्रेशोल्ड के सबसे पास",
+  "l2s": "टॉप 6",
+  "l2p": "अभी पार नहीं हुआ; अलर्ट बनाएँ और पार होते ही जानें।",
+  "l3": "हाल के पार",
+  "l3s": "पिछले 15 मिनट",
+  "l3p": "हर मिनट की गणना में रेखा पार करने वाले कॉइन।",
+  "none": "अभी कोई नहीं।",
+  "noCross": "पिछले 15 मिनट में कोई पार नहीं।",
+  "empty": "इस इंडिकेटर के लिए अभी कोई मान नहीं है।",
+  "loading": "रिपोर्ट लोड हो रही है…",
+  "error": "रिपोर्ट अभी नहीं मिल सकी; थोड़ी देर में फिर कोशिश होगी।",
+  "gapTo": "{t} तक {g}",
+  "unitPt": "{v} अंक",
+  "unitX": "{v} गुना",
+  "cross": {
+   "rsiDown": "RSI(14)·{tf} 30 से नीचे गया",
+   "rsiUp": "RSI(14)·{tf} 70 से ऊपर गया",
+   "chUp": "24 घंटे में 10% से ज़्यादा बढ़ा",
+   "chDown": "24 घंटे में 10% से ज़्यादा गिरा",
+   "hiUp": "24 घंटे के हाई से 1% से कम रह गया",
+   "vxUp": "15 मिनट का वॉल्यूम औसत के 3 गुना से ऊपर"
+  },
+  "bell": "{s} के लिए अलर्ट",
+  "sheet": {
+   "title": "{s}/USDT के लिए अलर्ट",
+   "close": "बंद करें",
+   "stats": [
+    "24घं",
+    "हाई तक",
+    "वॉल्यूम"
+   ],
+   "now": "अभी {v}",
+   "below": "अभी 30 से नीचे",
+   "above": "अभी 70 से ऊपर",
+   "how": "कैसे बनाएँ",
+   "plan": "MarketAlert सब्सक्रिप्शन से चलता है; Plus और Pro दोनों में 7 दिन का मुफ़्त ट्रायल है। अलर्ट ऐप में बोलकर या लिखकर बनता है।"
+  },
+  "sug": {
+   "rsiLo": "जब RSI(14)·{tf} 30 से नीचे जाए",
+   "rsiHi": "जब RSI(14)·{tf} 70 से ऊपर जाए",
+   "hi": "जब 24 घंटे का हाई टूटे",
+   "ch": "जब 24 घंटे में 10% बदले",
+   "pump": "वॉल्यूम और कीमत में अचानक हलचल पर (पंप)"
+  },
+  "defs": [
+   [
+    "RSI(14)",
+    "चुने गए चार्ट की आख़िरी बंद कैंडल से निकाला जाता है; खुली कैंडल नहीं गिनी जाती। 30 से नीचे ओवरसोल्ड, 70 से ऊपर ओवरबॉट। 30 या 70 से 3.5 अंक से कम दूरी को थ्रेशोल्ड के पास माना जाता है।"
+   ],
+   [
+    "24 घंटे का बदलाव और हाई",
+    "पिछले 24 घंटे का प्रतिशत बदलाव और उन 24 घंटों के सबसे ऊँचे मान से दूरी। थ्रेशोल्ड ±10% और हाई से 1% हैं।"
+   ],
+   [
+    "वॉल्यूम मल्टिपल",
+    "आख़िरी बंद 15 मिनट की कैंडल का वॉल्यूम ÷ पिछली 20 कैंडल का औसत। 3 गुना या ज़्यादा को वॉल्यूम उछाल माना जाता है।"
+   ]
+  ],
+  "source": [
+   "स्रोत और देरी:",
+   "मान MarketAlert हर मिनट Binance के सार्वजनिक मार्केट डेटा से निकालता है; यह लाइव कीमत फ़ीड नहीं है और कीमतें नहीं दिखाई जातीं। MarketAlert का Binance से कोई संबंध नहीं है। यह पेज निवेश सलाह नहीं है।"
+  ],
+  "faqTitle": "अक्सर पूछे जाने वाले सवाल",
+  "faq": [
+   [
+    "यह रिपोर्ट कितनी ताज़ा है?",
+    "रिपोर्ट हर मिनट फिर से निकाली जाती है। RSI और वॉल्यूम मल्टिपल बंद कैंडल से आते हैं, इसलिए कैंडल बंद होने के करीब एक मिनट बाद नया मान दिखता है।"
+   ],
+   [
+    "कौन से कॉइन शामिल हैं?",
+    "Binance Spot पर USDT के मुकाबले सबसे ज़्यादा ट्रेड होने वाले 30 कॉइन। सूची हर दिन ट्रेडिंग वॉल्यूम से नई होती है; स्टेबलकॉइन शामिल नहीं हैं।"
+   ],
+   [
+    "थ्रेशोल्ड पार होते ही सूचना मिल सकती है?",
+    "हाँ। किसी कॉइन पर टैप करके सुझाव चुनें, या MarketAlert से कहें “जब BTC का 1 घंटे का RSI 30 से नीचे जाए तो बताना”; ऐसा होते ही पुश या Telegram सूचना आती है। MarketAlert सब्सक्रिप्शन से चलता है; Plus और Pro दोनों में 7 दिन का मुफ़्त ट्रायल है।"
+   ]
+  ],
+  "ctaTitle": "पार होते ही जानें",
+  "cta": "रिपोर्ट में दिखने वाले हर थ्रेशोल्ड के लिए MarketAlert में अलर्ट बनाएँ; शर्त पूरी होते ही फ़ोन पर सूचना आती है।"
+ },
+ "ar": {
+  "link": "تقرير العتبات",
+  "title": "كم بقي على العتبة؟ تقرير عتبات العملات الرقمية | MarketAlert",
+  "description": "مؤشر RSI والتغير خلال 24 ساعة والمسافة من أعلى سعر خلال 24 ساعة ومضاعف الحجم لأكثر 30 عملة رقمية تداولًا على مسطرة واحدة، تُحسب كل دقيقة. تبرز العملات التي تجاوزت العتبة أو اقتربت منها.",
+  "eyebrow": "تقرير مباشر · {t} · كل دقيقة",
+  "h1": "كم بقي على العتبة؟",
+  "sub": "مؤشرات أكثر 30 عملة تداولًا على مسطرة واحدة. تبرز العملات التي تجاوزت الخط وتلك القريبة منه؛ اضغط على إحداها لإنشاء تنبيه لها.",
+  "metricGroup": "المؤشر",
+  "tfGroup": "الإطار الزمني",
+  "metrics": {
+   "rsi": "RSI",
+   "ch": "24س %",
+   "hi": "القمة",
+   "vx": "الحجم"
+  },
+  "q": {
+   "rsi": "RSI(14) · رسم {tf}: ما مدى قرب العملات من خطي 30 و70؟",
+   "ch": "أي العملات تحركت أكثر من 10% خلال 24 ساعة، وأيها تقترب؟",
+   "hi": "أي العملات على بعد أقل من 1% من أعلى سعر لها خلال 24 ساعة؟",
+   "vx": "أي العملات تجاوز حجمها 3 أضعاف المتوسط في آخر 15 دقيقة؟"
+  },
+  "zones": {
+   "rsiLo": "تشبع بيعي",
+   "rsiHi": "تشبع شرائي",
+   "chLo": "هبوط 10%+",
+   "chHi": "صعود 10%+",
+   "hiHi": "أقل من 1% من القمة",
+   "vxHi": "قفزة حجم (3×+)"
+  },
+  "stats": {
+   "watched": "قيد المتابعة",
+   "near": "قرب العتبة",
+   "coin": "عملة"
+  },
+  "hint": "في الأعلى: العملات التي تجاوزت الخط أو اقتربت منه مع قيمها. النقاط في الأسفل: بقية العملات. اضغط: اقتراحات التنبيه.",
+  "l1": "بعد الخط",
+  "l1p": "عملات تجاوزت العتبة.",
+  "l2": "الأقرب إلى العتبة",
+  "l2s": "أول 6",
+  "l2p": "لم تتجاوزها بعد؛ أنشئ تنبيهًا لتعرف لحظة تجاوزها.",
+  "l3": "تجاوزات حديثة",
+  "l3s": "آخر 15 دقيقة",
+  "l3p": "عملات تجاوزت الخط في الحساب الدقيقي.",
+  "none": "لا يوجد الآن.",
+  "noCross": "لا تجاوزات في آخر 15 دقيقة.",
+  "empty": "لا توجد قيم لهذا المؤشر الآن.",
+  "loading": "جارٍ تحميل التقرير…",
+  "error": "تعذّر تحميل التقرير؛ ستُعاد المحاولة بعد قليل.",
+  "gapTo": "{g} حتى {t}",
+  "unitPt": "{v} نقطة",
+  "unitX": "{v}×",
+  "cross": {
+   "rsiDown": "RSI(14)·{tf} نزل تحت 30",
+   "rsiUp": "RSI(14)·{tf} صعد فوق 70",
+   "chUp": "ارتفع أكثر من 10% خلال 24 ساعة",
+   "chDown": "انخفض أكثر من 10% خلال 24 ساعة",
+   "hiUp": "اقترب لأقل من 1% من قمة 24 ساعة",
+   "vxUp": "تجاوز حجم 15 دقيقة 3 أضعاف المتوسط"
+  },
+  "bell": "تنبيه لـ {s}",
+  "sheet": {
+   "title": "تنبيه لـ {s}/USDT",
+   "close": "إغلاق",
+   "stats": [
+    "24س",
+    "حتى القمة",
+    "الحجم"
+   ],
+   "now": "الآن {v}",
+   "below": "الآن تحت 30",
+   "above": "الآن فوق 70",
+   "how": "طريقة الإنشاء",
+   "plan": "يعمل MarketAlert بالاشتراك؛ ويمكن تجربة Plus وPro مجانًا لمدة 7 أيام. تُنشئ التنبيه في التطبيق بالصوت أو بالكتابة."
+  },
+  "sug": {
+   "rsiLo": "عندما ينزل RSI(14)·{tf} تحت 30",
+   "rsiHi": "عندما يصعد RSI(14)·{tf} فوق 70",
+   "hi": "عند كسر قمة 24 ساعة",
+   "ch": "عند تغير 10% خلال 24 ساعة",
+   "pump": "عند حركة مفاجئة في الحجم والسعر (ضخ)"
+  },
+  "defs": [
+   [
+    "RSI(14)",
+    "يُحسب من آخر شمعة مغلقة في الرسم الذي تختاره؛ الشمعة المفتوحة لا تُحتسب. تحت 30 تشبع بيعي وفوق 70 تشبع شرائي. ما يبعد أقل من 3.5 نقطة عن 30 أو 70 يُعد قرب العتبة."
+   ],
+   [
+    "تغير وقمة 24 ساعة",
+    "نسبة التغير خلال آخر 24 ساعة والمسافة من أعلى قيمة خلال تلك الساعات. العتبات ±10% و1% من القمة."
+   ],
+   [
+    "مضاعف الحجم",
+    "حجم آخر شمعة 15 دقيقة مغلقة ÷ متوسط الشموع العشرين السابقة. 3 أضعاف أو أكثر تُعد قفزة حجم."
+   ]
+  ],
+  "source": [
+   "المصدر والتأخير:",
+   "يحسب MarketAlert القيم كل دقيقة من بيانات السوق العامة في Binance؛ هذا ليس بثًا مباشرًا للأسعار ولا تُعرض أسعار. MarketAlert غير مرتبط بـ Binance. هذه الصفحة ليست نصيحة استثمارية."
+  ],
+  "faqTitle": "الأسئلة الشائعة",
+  "faq": [
+   [
+    "ما مدى حداثة هذا التقرير؟",
+    "يُعاد حساب التقرير كل دقيقة. يأتي RSI ومضاعف الحجم من شموع مغلقة، لذا تظهر القيمة الجديدة بعد نحو دقيقة من إغلاق الشمعة."
+   ],
+   [
+    "ما العملات المشمولة؟",
+    "أكثر 30 عملة تداولًا في Binance Spot مقابل USDT. تتجدد القائمة يوميًا حسب حجم التداول، والعملات المستقرة مستبعدة."
+   ],
+   [
+    "هل يمكن أن أُنبَّه لحظة تجاوز العتبة؟",
+    "نعم. اضغط على عملة واختر اقتراحًا، أو قل لـ MarketAlert «نبّهني عندما ينزل RSI لـ BTC على إطار ساعة تحت 30»؛ يصل إشعار push أو Telegram لحظة حدوث ذلك. يعمل MarketAlert بالاشتراك؛ ويمكن تجربة Plus وPro مجانًا لمدة 7 أيام."
+   ]
+  ],
+  "ctaTitle": "اعرف لحظة التجاوز",
+  "cta": "أنشئ في MarketAlert تنبيهًا لأي عتبة تراها في التقرير؛ يصلك إشعار على هاتفك عندما يتحقق الشرط."
+ },
+ "pt-br": {
+  "link": "Relatório de limites",
+  "title": "Quanto falta para o limite? Relatório cripto | MarketAlert",
+  "description": "RSI, variação em 24 h, distância da máxima de 24 h e múltiplo de volume das 30 criptomoedas mais negociadas em uma única régua, calculados a cada minuto. As que passaram ou estão perto de um limite se destacam.",
+  "eyebrow": "Relatório ao vivo · {t} · a cada minuto",
+  "h1": "Quanto falta para o limite?",
+  "sub": "Os indicadores das 30 moedas mais negociadas em uma única régua. As que passaram da linha e as que estão perto se destacam; toque em uma para criar o alerta.",
+  "metricGroup": "Indicador",
+  "tfGroup": "Intervalo do gráfico",
+  "metrics": {
+   "rsi": "RSI",
+   "ch": "24 h %",
+   "hi": "Máxima",
+   "vx": "Volume"
+  },
+  "q": {
+   "rsi": "RSI(14) · gráfico de {tf}: quão perto as moedas estão das linhas 30 e 70?",
+   "ch": "Quais moedas variaram mais de 10% em 24 horas e quais estão chegando perto?",
+   "hi": "Quais moedas estão a menos de 1% da máxima de 24 h?",
+   "vx": "Quais moedas passaram de 3 vezes o volume médio nos últimos 15 minutos?"
+  },
+  "zones": {
+   "rsiLo": "Sobrevenda",
+   "rsiHi": "Sobrecompra",
+   "chLo": "Queda de 10%+",
+   "chHi": "Alta de 10%+",
+   "hiHi": "A menos de 1% da máxima",
+   "vxHi": "Pico de volume (3×+)"
+  },
+  "stats": {
+   "watched": "Acompanhadas",
+   "near": "Perto do limite",
+   "coin": "moedas"
+  },
+  "hint": "Em cima: moedas que passaram da linha ou estão perto, com o valor. Pontos embaixo: as demais. Toque: ideias de alerta.",
+  "l1": "Além da linha",
+  "l1p": "Moedas que passaram do limite.",
+  "l2": "Mais perto do limite",
+  "l2s": "top 6",
+  "l2p": "Ainda não cruzaram; crie um alerta e saiba na hora em que cruzarem.",
+  "l3": "Cruzamentos recentes",
+  "l3s": "últimos 15 min",
+  "l3p": "Moedas que cruzaram no cálculo minuto a minuto.",
+  "none": "Nenhuma no momento.",
+  "noCross": "Nenhum cruzamento nos últimos 15 minutos.",
+  "empty": "Sem valores para este indicador no momento.",
+  "loading": "Carregando relatório…",
+  "error": "Não foi possível carregar o relatório; nova tentativa em instantes.",
+  "gapTo": "a {g} de {t}",
+  "unitPt": "{v} pts",
+  "unitX": "{v}×",
+  "cross": {
+   "rsiDown": "RSI(14)·{tf} caiu abaixo de 30",
+   "rsiUp": "RSI(14)·{tf} subiu acima de 70",
+   "chUp": "subiu mais de 10% em 24 h",
+   "chDown": "caiu mais de 10% em 24 h",
+   "hiUp": "ficou a menos de 1% da máxima de 24 h",
+   "vxUp": "volume de 15 min passou de 3 vezes a média"
+  },
+  "bell": "Alerta para {s}",
+  "sheet": {
+   "title": "Alerta para {s}/USDT",
+   "close": "Fechar",
+   "stats": [
+    "24 h",
+    "Até a máxima",
+    "Volume"
+   ],
+   "now": "agora {v}",
+   "below": "agora abaixo de 30",
+   "above": "agora acima de 70",
+   "how": "Como criar",
+   "plan": "O MarketAlert funciona por assinatura; Plus e Pro têm 7 dias de teste grátis. Você cria o alerta no app por voz ou texto."
+  },
+  "sug": {
+   "rsiLo": "Quando o RSI(14)·{tf} cair abaixo de 30",
+   "rsiHi": "Quando o RSI(14)·{tf} subir acima de 70",
+   "hi": "Quando romper a máxima de 24 h",
+   "ch": "Quando variar 10% em 24 h",
+   "pump": "Em um movimento brusco de volume e preço (pump)"
+  },
+  "defs": [
+   [
+    "RSI(14)",
+    "Calculado com o último candle fechado do gráfico escolhido; o candle aberto não conta. Abaixo de 30 é sobrevenda e acima de 70, sobrecompra. A menos de 3,5 pontos de 30 ou 70 conta como perto do limite."
+   ],
+   [
+    "Variação e máxima de 24 h",
+    "Variação percentual das últimas 24 horas e distância do maior valor dessas 24 horas. Os limites são ±10% e 1% da máxima."
+   ],
+   [
+    "Múltiplo de volume",
+    "Volume do último candle fechado de 15 minutos ÷ a média dos 20 candles anteriores. 3× ou mais conta como pico de volume."
+   ]
+  ],
+  "source": [
+   "Fonte e atraso:",
+   "Os valores são calculados a cada minuto pelo MarketAlert com dados públicos de mercado da Binance; não é um fluxo de preços ao vivo e nenhum preço é exibido. O MarketAlert não tem vínculo com a Binance. Esta página não é recomendação de investimento."
+  ],
+  "faqTitle": "Perguntas frequentes",
+  "faq": [
+   [
+    "Quão atualizado é este relatório?",
+    "O relatório é recalculado a cada minuto. O RSI e o múltiplo de volume vêm de candles fechados, então um novo valor aparece cerca de um minuto depois que o candle fecha."
+   ],
+   [
+    "Quais moedas entram?",
+    "As 30 moedas mais negociadas na Binance Spot contra USDT. A lista é renovada todo dia pelo volume; stablecoins ficam de fora."
+   ],
+   [
+    "Posso ser avisado na hora em que um limite é cruzado?",
+    "Sim. Toque em uma moeda e escolha uma ideia, ou diga ao MarketAlert “me avise quando o RSI do BTC em 1h cair abaixo de 30”; a notificação push ou do Telegram chega na hora em que acontece. O MarketAlert funciona por assinatura; Plus e Pro têm 7 dias de teste grátis."
+   ]
+  ],
+  "ctaTitle": "Saiba na hora em que cruzar",
+  "cta": "Crie no MarketAlert um alerta para qualquer limite que você vê no relatório; seu celular recebe o aviso quando a condição acontece."
+ },
+ "fr": {
+  "link": "Rapport des seuils",
+  "title": "À quelle distance du seuil ? Rapport crypto | MarketAlert",
+  "description": "RSI, variation sur 24 h, distance au plus haut de 24 h et multiple de volume des 30 cryptomonnaies les plus échangées sur une seule règle, calculés chaque minute. Celles qui ont franchi un seuil ou s’en approchent ressortent.",
+  "eyebrow": "Rapport en direct · {t} · chaque minute",
+  "h1": "À quelle distance du seuil ?",
+  "sub": "Les indicateurs des 30 cryptos les plus échangées sur une seule règle. Celles qui ont franchi la ligne et celles qui s’en approchent ressortent ; touchez-en une pour créer son alerte.",
+  "metricGroup": "Indicateur",
+  "tfGroup": "Unité de temps",
+  "metrics": {
+   "rsi": "RSI",
+   "ch": "24 h %",
+   "hi": "Plus haut",
+   "vx": "Volume"
+  },
+  "q": {
+   "rsi": "RSI(14) · graphique {tf} : à quelle distance les cryptos sont-elles des lignes 30 et 70 ?",
+   "ch": "Quelles cryptos ont bougé de plus de 10 % en 24 heures, et lesquelles s’en approchent ?",
+   "hi": "Quelles cryptos sont à moins de 1 % de leur plus haut de 24 h ?",
+   "vx": "Quelles cryptos ont dépassé 3 fois leur volume moyen sur les 15 dernières minutes ?"
+  },
+  "zones": {
+   "rsiLo": "Survente",
+   "rsiHi": "Surachat",
+   "chLo": "Baisse de 10 %+",
+   "chHi": "Hausse de 10 %+",
+   "hiHi": "À moins de 1 % du plus haut",
+   "vxHi": "Pic de volume (3×+)"
+  },
+  "stats": {
+   "watched": "Suivies",
+   "near": "Près du seuil",
+   "coin": "cryptos"
+  },
+  "hint": "En haut : les cryptos au-delà de la ligne ou proches, avec leur valeur. Points du bas : les autres. Touchez : idées d’alerte.",
+  "l1": "Au-delà de la ligne",
+  "l1p": "Cryptos qui ont franchi le seuil.",
+  "l2": "Les plus proches du seuil",
+  "l2s": "top 6",
+  "l2p": "Pas encore franchi ; créez une alerte et soyez prévenu au moment où il l’est.",
+  "l3": "Franchissements récents",
+  "l3s": "15 dernières min",
+  "l3p": "Cryptos qui ont franchi la ligne dans le calcul minute par minute.",
+  "none": "Aucune pour le moment.",
+  "noCross": "Aucun franchissement ces 15 dernières minutes.",
+  "empty": "Aucune valeur pour cet indicateur pour le moment.",
+  "loading": "Chargement du rapport…",
+  "error": "Le rapport n’a pas pu être chargé ; nouvel essai dans un instant.",
+  "gapTo": "à {g} de {t}",
+  "unitPt": "{v} pts",
+  "unitX": "{v}×",
+  "cross": {
+   "rsiDown": "RSI(14)·{tf} est passé sous 30",
+   "rsiUp": "RSI(14)·{tf} est passé au-dessus de 70",
+   "chUp": "en hausse de plus de 10 % sur 24 h",
+   "chDown": "en baisse de plus de 10 % sur 24 h",
+   "hiUp": "à moins de 1 % de son plus haut de 24 h",
+   "vxUp": "le volume sur 15 min a dépassé 3 fois la moyenne"
+  },
+  "bell": "Alerte pour {s}",
+  "sheet": {
+   "title": "Alerte pour {s}/USDT",
+   "close": "Fermer",
+   "stats": [
+    "24 h",
+    "Au plus haut",
+    "Volume"
+   ],
+   "now": "actuellement {v}",
+   "below": "actuellement sous 30",
+   "above": "actuellement au-dessus de 70",
+   "how": "Comment la créer",
+   "plan": "MarketAlert fonctionne par abonnement ; Plus et Pro incluent 7 jours d’essai gratuit. Vous créez l’alerte dans l’app, à la voix ou par écrit."
+  },
+  "sug": {
+   "rsiLo": "Quand le RSI(14)·{tf} passe sous 30",
+   "rsiHi": "Quand le RSI(14)·{tf} passe au-dessus de 70",
+   "hi": "Quand il casse le plus haut de 24 h",
+   "ch": "Quand il varie de 10 % en 24 h",
+   "pump": "Lors d’un mouvement brusque du volume et du prix (pump)"
+  },
+  "defs": [
+   [
+    "RSI(14)",
+    "Calculé sur la dernière bougie clôturée du graphique choisi ; la bougie en cours n’est pas comptée. Sous 30 : survente, au-dessus de 70 : surachat. À moins de 3,5 points de 30 ou 70, on parle de proximité du seuil."
+   ],
+   [
+    "Variation et plus haut sur 24 h",
+    "Variation en pourcentage sur les dernières 24 heures et distance à la valeur la plus haute de ces 24 heures. Les seuils sont ±10 % et 1 % du plus haut."
+   ],
+   [
+    "Multiple de volume",
+    "Volume de la dernière bougie de 15 minutes clôturée ÷ la moyenne des 20 bougies précédentes. 3× ou plus compte comme un pic de volume."
+   ]
+  ],
+  "source": [
+   "Source et délai :",
+   "Les valeurs sont calculées chaque minute par MarketAlert à partir des données de marché publiques de Binance ; ce n’est pas un flux de prix en direct et aucun prix n’est affiché. MarketAlert n’est pas affilié à Binance. Cette page n’est pas un conseil en investissement."
+  ],
+  "faqTitle": "Questions fréquentes",
+  "faq": [
+   [
+    "Ce rapport est-il à jour ?",
+    "Le rapport est recalculé chaque minute. Le RSI et le multiple de volume viennent de bougies clôturées : une nouvelle valeur apparaît environ une minute après la clôture d’une bougie."
+   ],
+   [
+    "Quelles cryptos sont incluses ?",
+    "Les 30 cryptos les plus échangées sur Binance Spot contre l’USDT. La liste est renouvelée chaque jour selon le volume ; les stablecoins sont exclus."
+   ],
+   [
+    "Puis-je être prévenu dès qu’un seuil est franchi ?",
+    "Oui. Touchez une crypto et choisissez une idée, ou dites à MarketAlert « préviens-moi quand le RSI de BTC en 1h passe sous 30 » ; la notification push ou Telegram arrive au moment où cela se produit. MarketAlert fonctionne par abonnement ; Plus et Pro incluent 7 jours d’essai gratuit."
+   ]
+  ],
+  "ctaTitle": "Soyez prévenu dès le franchissement",
+  "cta": "Créez dans MarketAlert une alerte pour chaque seuil que vous voyez dans le rapport ; votre téléphone est prévenu quand la condition est remplie."
+ },
+ "ru": {
+  "link": "Отчёт по порогам",
+  "title": "Сколько осталось до порога? Отчёт по криптовалютам | MarketAlert",
+  "description": "RSI, изменение за 24 ч, расстояние до максимума за 24 ч и кратность объёма 30 самых торгуемых криптовалют на одной шкале, расчёт каждую минуту. Монеты за порогом и рядом с ним выделяются.",
+  "eyebrow": "Отчёт в реальном времени · {t} · каждую минуту",
+  "h1": "Сколько осталось до порога?",
+  "sub": "Индикаторы 30 самых торгуемых монет на одной шкале. Монеты за линией и рядом с порогом выделяются; нажмите на монету, чтобы создать оповещение.",
+  "metricGroup": "Индикатор",
+  "tfGroup": "Таймфрейм",
+  "metrics": {
+   "rsi": "RSI",
+   "ch": "24ч %",
+   "hi": "Максимум",
+   "vx": "Объём"
+  },
+  "q": {
+   "rsi": "RSI(14) · график {tf}: насколько монеты близки к линиям 30 и 70?",
+   "ch": "Какие монеты изменились более чем на 10% за 24 часа, а какие приближаются?",
+   "hi": "Какие монеты менее чем в 1% от своего максимума за 24 ч?",
+   "vx": "У каких монет объём за последние 15 минут превысил средний в 3 раза?"
+  },
+  "zones": {
+   "rsiLo": "Перепроданность",
+   "rsiHi": "Перекупленность",
+   "chLo": "Падение 10%+",
+   "chHi": "Рост 10%+",
+   "hiHi": "Меньше 1% до максимума",
+   "vxHi": "Всплеск объёма (3×+)"
+  },
+  "stats": {
+   "watched": "Отслеживается",
+   "near": "Рядом с порогом",
+   "coin": "монет"
+  },
+  "hint": "Сверху: монеты за линией или рядом с порогом, со значениями. Точки снизу: остальные монеты. Нажмите: идеи оповещений.",
+  "l1": "За линией",
+  "l1p": "Монеты, перешедшие порог.",
+  "l2": "Ближе всего к порогу",
+  "l2s": "топ 6",
+  "l2p": "Порог ещё не пройден; создайте оповещение и узнаете в момент перехода.",
+  "l3": "Последние переходы",
+  "l3s": "за 15 мин",
+  "l3p": "Монеты, перешедшие линию в поминутном расчёте.",
+  "none": "Сейчас нет.",
+  "noCross": "За последние 15 минут переходов нет.",
+  "empty": "Для этого индикатора сейчас нет значений.",
+  "loading": "Загрузка отчёта…",
+  "error": "Не удалось загрузить отчёт; скоро будет новая попытка.",
+  "gapTo": "{g} до {t}",
+  "unitPt": "{v} п.",
+  "unitX": "{v}×",
+  "cross": {
+   "rsiDown": "RSI(14)·{tf} опустился ниже 30",
+   "rsiUp": "RSI(14)·{tf} поднялся выше 70",
+   "chUp": "вырос более чем на 10% за 24 ч",
+   "chDown": "упал более чем на 10% за 24 ч",
+   "hiUp": "менее чем в 1% от максимума за 24 ч",
+   "vxUp": "объём за 15 мин превысил средний в 3 раза"
+  },
+  "bell": "Оповещение для {s}",
+  "sheet": {
+   "title": "Оповещение для {s}/USDT",
+   "close": "Закрыть",
+   "stats": [
+    "24ч",
+    "До максимума",
+    "Объём"
+   ],
+   "now": "сейчас {v}",
+   "below": "сейчас ниже 30",
+   "above": "сейчас выше 70",
+   "how": "Как настроить",
+   "plan": "MarketAlert работает по подписке; Plus и Pro можно попробовать бесплатно 7 дней. Оповещение создаётся в приложении голосом или текстом."
+  },
+  "sug": {
+   "rsiLo": "Когда RSI(14)·{tf} опустится ниже 30",
+   "rsiHi": "Когда RSI(14)·{tf} поднимется выше 70",
+   "hi": "Когда пробьёт максимум за 24 ч",
+   "ch": "Когда изменится на 10% за 24 ч",
+   "pump": "При резком движении объёма и цены (памп)"
+  },
+  "defs": [
+   [
+    "RSI(14)",
+    "Считается по последней закрытой свече выбранного графика; открытая свеча не учитывается. Ниже 30 — перепроданность, выше 70 — перекупленность. Ближе 3,5 пункта к 30 или 70 — рядом с порогом."
+   ],
+   [
+    "Изменение и максимум за 24 ч",
+    "Изменение в процентах за последние 24 часа и расстояние до самого высокого значения за эти 24 часа. Пороги: ±10% и 1% от максимума."
+   ],
+   [
+    "Кратность объёма",
+    "Объём последней закрытой 15-минутной свечи ÷ средний объём 20 предыдущих свечей. От 3× считается всплеском объёма."
+   ]
+  ],
+  "source": [
+   "Источник и задержка:",
+   "Значения каждую минуту рассчитывает MarketAlert по публичным рыночным данным Binance; это не поток цен в реальном времени, цены не показываются. MarketAlert не связан с Binance. Эта страница не является инвестиционной рекомендацией."
+  ],
+  "faqTitle": "Частые вопросы",
+  "faq": [
+   [
+    "Насколько свежий этот отчёт?",
+    "Отчёт пересчитывается каждую минуту. RSI и кратность объёма берутся из закрытых свечей, поэтому новое значение появляется примерно через минуту после закрытия свечи."
+   ],
+   [
+    "Какие монеты включены?",
+    "30 самых торгуемых монет на Binance Spot к USDT. Список обновляется каждый день по объёму торгов; стейблкоины исключены."
+   ],
+   [
+    "Можно получить уведомление в момент перехода порога?",
+    "Да. Нажмите на монету и выберите идею или скажите MarketAlert «сообщи, когда RSI BTC на 1h опустится ниже 30»; push- или Telegram-уведомление придёт в момент события. MarketAlert работает по подписке; Plus и Pro можно попробовать бесплатно 7 дней."
+   ]
+  ],
+  "ctaTitle": "Узнайте в момент перехода",
+  "cta": "Создайте в MarketAlert оповещение для любого порога из отчёта; телефон получит уведомление, когда условие выполнится."
+ },
+ "de": {
+  "link": "Schwellenbericht",
+  "title": "Wie weit bis zur Schwelle? Krypto-Schwellenbericht | MarketAlert",
+  "description": "RSI, 24-h-Änderung, Abstand zum 24-h-Hoch und Volumenvielfaches der 30 meistgehandelten Kryptowährungen auf einem Lineal, jede Minute berechnet. Coins jenseits oder nahe einer Schwelle fallen auf.",
+  "eyebrow": "Live-Bericht · {t} · jede Minute",
+  "h1": "Wie weit bis zur Schwelle?",
+  "sub": "Die Indikatoren der 30 meistgehandelten Coins auf einem Lineal. Coins jenseits der Linie und knapp davor fallen auf; tippe auf einen und richte den Alarm ein.",
+  "metricGroup": "Indikator",
+  "tfGroup": "Chart-Intervall",
+  "metrics": {
+   "rsi": "RSI",
+   "ch": "24h %",
+   "hi": "Hoch",
+   "vx": "Volumen"
+  },
+  "q": {
+   "rsi": "RSI(14) · {tf}-Chart: Wie nah sind die Coins an den Linien 30 und 70?",
+   "ch": "Welche Coins haben sich in 24 Stunden um mehr als 10 % bewegt, welche kommen näher?",
+   "hi": "Welche Coins liegen weniger als 1 % unter ihrem 24-h-Hoch?",
+   "vx": "Bei welchen Coins lag das Volumen der letzten 15 Minuten über dem 3-Fachen des Durchschnitts?"
+  },
+  "zones": {
+   "rsiLo": "Überverkauft",
+   "rsiHi": "Überkauft",
+   "chLo": "10 %+ Minus",
+   "chHi": "10 %+ Plus",
+   "hiHi": "Unter 1 % vom Hoch",
+   "vxHi": "Volumenspitze (3×+)"
+  },
+  "stats": {
+   "watched": "Beobachtet",
+   "near": "Nahe der Schwelle",
+   "coin": "Coins"
+  },
+  "hint": "Oben: Coins jenseits der Linie oder knapp davor, mit Wert. Punkte unten: die übrigen Coins. Tippen: Alarmideen.",
+  "l1": "Jenseits der Linie",
+  "l1p": "Coins über die Schwelle hinaus.",
+  "l2": "Am nächsten an der Schwelle",
+  "l2s": "Top 6",
+  "l2p": "Noch nicht überschritten; mit einem Alarm erfährst du es im Moment des Überschreitens.",
+  "l3": "Letzte Überschreitungen",
+  "l3s": "letzte 15 Min.",
+  "l3p": "Coins, die in der minütlichen Berechnung die Linie überschritten haben.",
+  "none": "Derzeit keine.",
+  "noCross": "Keine Überschreitung in den letzten 15 Minuten.",
+  "empty": "Für diesen Indikator gibt es gerade keine Werte.",
+  "loading": "Bericht wird geladen…",
+  "error": "Der Bericht konnte nicht geladen werden; neuer Versuch in Kürze.",
+  "gapTo": "{g} bis {t}",
+  "unitPt": "{v} Pkt.",
+  "unitX": "{v}×",
+  "cross": {
+   "rsiDown": "RSI(14)·{tf} fiel unter 30",
+   "rsiUp": "RSI(14)·{tf} stieg über 70",
+   "chUp": "in 24 h über 10 % gestiegen",
+   "chDown": "in 24 h über 10 % gefallen",
+   "hiUp": "weniger als 1 % unter dem 24-h-Hoch",
+   "vxUp": "15-Min.-Volumen über dem 3-Fachen des Durchschnitts"
+  },
+  "bell": "Alarm für {s}",
+  "sheet": {
+   "title": "Alarm für {s}/USDT",
+   "close": "Schließen",
+   "stats": [
+    "24h",
+    "Bis Hoch",
+    "Volumen"
+   ],
+   "now": "jetzt {v}",
+   "below": "jetzt unter 30",
+   "above": "jetzt über 70",
+   "how": "So richtest du ihn ein",
+   "plan": "MarketAlert funktioniert im Abo; Plus und Pro kannst du 7 Tage kostenlos testen. Den Alarm richtest du in der App per Sprache oder Text ein."
+  },
+  "sug": {
+   "rsiLo": "Wenn RSI(14)·{tf} unter 30 fällt",
+   "rsiHi": "Wenn RSI(14)·{tf} über 70 steigt",
+   "hi": "Wenn das 24-h-Hoch überschritten wird",
+   "ch": "Bei 10 % Bewegung in 24 h",
+   "pump": "Bei plötzlicher Volumen- und Preisbewegung (Pump)"
+  },
+  "defs": [
+   [
+    "RSI(14)",
+    "Berechnet aus der letzten geschlossenen Kerze des gewählten Charts; die offene Kerze zählt nicht. Unter 30 überverkauft, über 70 überkauft. Weniger als 3,5 Punkte von 30 oder 70 gilt als nahe der Schwelle."
+   ],
+   [
+    "24-h-Änderung und Hoch",
+    "Prozentuale Änderung der letzten 24 Stunden und Abstand zum höchsten Wert dieser 24 Stunden. Schwellen sind ±10 % und 1 % vom Hoch."
+   ],
+   [
+    "Volumenvielfaches",
+    "Volumen der letzten geschlossenen 15-Minuten-Kerze ÷ Durchschnitt der 20 Kerzen davor. Ab dem 3-Fachen gilt es als Volumenspitze."
+   ]
+  ],
+  "source": [
+   "Quelle und Verzögerung:",
+   "Die Werte berechnet MarketAlert jede Minute aus öffentlichen Marktdaten von Binance; das ist kein Live-Kursfeed, Kurse werden nicht angezeigt. MarketAlert ist nicht mit Binance verbunden. Diese Seite ist keine Anlageberatung."
+  ],
+  "faqTitle": "Häufige Fragen",
+  "faq": [
+   [
+    "Wie aktuell ist dieser Bericht?",
+    "Der Bericht wird jede Minute neu berechnet. RSI und Volumenvielfaches stammen aus geschlossenen Kerzen; ein neuer Wert erscheint etwa eine Minute nach Kerzenschluss."
+   ],
+   [
+    "Welche Coins sind dabei?",
+    "Die 30 meistgehandelten Coins auf Binance Spot gegen USDT. Die Liste wird täglich nach Handelsvolumen erneuert; Stablecoins sind ausgenommen."
+   ],
+   [
+    "Kann ich sofort benachrichtigt werden, wenn eine Schwelle überschritten wird?",
+    "Ja. Tippe auf einen Coin und wähle eine Idee, oder sag MarketAlert „Sag mir Bescheid, wenn der BTC-RSI im 1h-Chart unter 30 fällt“; die Push- oder Telegram-Nachricht kommt in dem Moment, in dem es passiert. MarketAlert funktioniert im Abo; Plus und Pro kannst du 7 Tage kostenlos testen."
+   ]
+  ],
+  "ctaTitle": "Erfahre es im Moment des Überschreitens",
+  "cta": "Richte in MarketAlert einen Alarm für jede Schwelle ein, die du im Bericht siehst; dein Handy meldet sich, sobald die Bedingung erfüllt ist."
+ },
+ "ja": {
+  "link": "しきい値レポート",
+  "title": "しきい値まであとどれくらい？暗号資産しきい値レポート | MarketAlert",
+  "description": "取引量上位30の暗号資産のRSI、24時間変化率、24時間高値までの距離、出来高倍率を1本の目盛りで表示。毎分計算し、しきい値を超えた銘柄・近い銘柄を目立たせます。",
+  "eyebrow": "ライブレポート · {t} · 毎分更新",
+  "h1": "しきい値まであとどれくらい？",
+  "sub": "取引量上位30銘柄の指標を1本の目盛りに。ラインを超えた銘柄としきい値に近い銘柄が目立ちます。タップしてアラートを設定できます。",
+  "metricGroup": "指標",
+  "tfGroup": "チャート時間足",
+  "metrics": {
+   "rsi": "RSI",
+   "ch": "24h %",
+   "hi": "高値",
+   "vx": "出来高"
+  },
+  "q": {
+   "rsi": "RSI(14) · {tf}足：各銘柄は30と70のラインにどれだけ近い？",
+   "ch": "24時間で10%以上動いた銘柄と、近づいている銘柄は？",
+   "hi": "24時間高値まで1%未満の銘柄は？",
+   "vx": "直近15分の出来高が平均の3倍を超えた銘柄は？"
+  },
+  "zones": {
+   "rsiLo": "売られすぎ",
+   "rsiHi": "買われすぎ",
+   "chLo": "10%以上下落",
+   "chHi": "10%以上上昇",
+   "hiHi": "高値まで1%未満",
+   "vxHi": "出来高急増（3倍以上）"
+  },
+  "stats": {
+   "watched": "対象",
+   "near": "しきい値に近い",
+   "coin": "銘柄"
+  },
+  "hint": "上：ラインを超えた銘柄としきい値に近い銘柄（値つき）。下の点：その他の銘柄。タップ：アラートの提案。",
+  "l1": "ラインの向こう側",
+  "l1p": "しきい値を超えた銘柄。",
+  "l2": "しきい値に最も近い",
+  "l2s": "上位6",
+  "l2p": "まだ超えていません。アラートを設定すれば超えた瞬間に通知されます。",
+  "l3": "最近の超過",
+  "l3s": "直近15分",
+  "l3p": "毎分の計算でラインを超えた銘柄。",
+  "none": "現在ありません。",
+  "noCross": "直近15分の超過はありません。",
+  "empty": "この指標の値は現在ありません。",
+  "loading": "レポートを読み込み中…",
+  "error": "レポートを取得できませんでした。まもなく再試行します。",
+  "gapTo": "{t}まであと{g}",
+  "unitPt": "{v}ポイント",
+  "unitX": "{v}倍",
+  "cross": {
+   "rsiDown": "RSI(14)·{tf}が30を下回った",
+   "rsiUp": "RSI(14)·{tf}が70を上回った",
+   "chUp": "24時間で10%以上上昇",
+   "chDown": "24時間で10%以上下落",
+   "hiUp": "24時間高値まで1%未満に接近",
+   "vxUp": "15分出来高が平均の3倍を超えた"
+  },
+  "bell": "{s}のアラート",
+  "sheet": {
+   "title": "{s}/USDTのアラート",
+   "close": "閉じる",
+   "stats": [
+    "24h",
+    "高値まで",
+    "出来高"
+   ],
+   "now": "現在 {v}",
+   "below": "現在30未満",
+   "above": "現在70超",
+   "how": "設定方法",
+   "plan": "MarketAlert はサブスクリプションで利用します。Plus と Pro はどちらも7日間無料でお試しいただけます。アラートはアプリで音声または文字で設定します。"
+  },
+  "sug": {
+   "rsiLo": "RSI(14)·{tf}が30を下回ったとき",
+   "rsiHi": "RSI(14)·{tf}が70を上回ったとき",
+   "hi": "24時間高値を更新したとき",
+   "ch": "24時間で10%動いたとき",
+   "pump": "出来高と価格が急に動いたとき（パンプ）"
+  },
+  "defs": [
+   [
+    "RSI(14)",
+    "選んだチャートの最後に確定したローソク足から計算し、未確定の足は含みません。30未満は売られすぎ、70超は買われすぎ。30または70まで3.5ポイント未満を「しきい値に近い」とします。"
+   ],
+   [
+    "24時間変化率と高値",
+    "直近24時間の変化率と、その24時間の最高値までの距離。しきい値は±10%と高値から1%です。"
+   ],
+   [
+    "出来高倍率",
+    "最後に確定した15分足の出来高 ÷ その前20本の平均。3倍以上を出来高急増とします。"
+   ]
+  ],
+  "source": [
+   "データ元と遅延：",
+   "値は Binance の公開市場データから MarketAlert が毎分計算しています。リアルタイムの価格配信ではなく、価格は表示しません。MarketAlert は Binance と提携していません。このページは投資助言ではありません。"
+  ],
+  "faqTitle": "よくある質問",
+  "faq": [
+   [
+    "このレポートはどれくらい新しい？",
+    "レポートは毎分再計算されます。RSIと出来高倍率は確定したローソク足から計算するため、足が確定してから約1分後に新しい値が表示されます。"
+   ],
+   [
+    "どの銘柄が対象？",
+    "Binance 現物で USDT 建ての取引量上位30銘柄です。リストは毎日取引量で更新され、ステーブルコインは除外されます。"
+   ],
+   [
+    "しきい値を超えた瞬間に通知を受け取れますか？",
+    "はい。銘柄をタップして提案を選ぶか、MarketAlert に「BTCの1時間足RSIが30を下回ったら知らせて」と伝えれば、条件を満たした瞬間にプッシュまたは Telegram で通知が届きます。MarketAlert はサブスクリプションで利用します。Plus と Pro はどちらも7日間無料でお試しいただけます。"
+   ]
+  ],
+  "ctaTitle": "超えた瞬間に通知を受け取る",
+  "cta": "レポートで見たしきい値ごとに MarketAlert でアラートを設定できます。条件を満たすとスマートフォンに通知が届きます。"
+ }
+}

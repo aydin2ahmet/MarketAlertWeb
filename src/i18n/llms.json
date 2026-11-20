@@ -65,6 +65,27 @@
     ["What if I get too many notifications?", "Switch to Balanced or Digest, raise the threshold, or add a second condition."]
    ]
   },
+  "tools/threshold-report": {
+   "line": "Live report of how close the 30 most traded Binance Spot USDT coins are to common alert thresholds, computed every minute.",
+   "what": "A public page that places the 30 most traded Binance Spot USDT coins on one ruler for RSI(14), 24-hour change, distance to the 24-hour high and volume multiple, and lists coins beyond a threshold, closest to it, and recent crossings. Each coin links to alert ideas that can be set in the app.",
+   "facts": [
+    "Recalculated every minute; RSI uses closed 15m, 1h, 4h and 1d candles.",
+    "Thresholds: RSI 30 and 70, 24-hour change ±10%, within 1% of the 24-hour high, 15-minute volume at least 3× the 20-candle average.",
+    "Shows computed values only; it is not a live price feed and shows no prices.",
+    "Coin list is the day's 30 most traded Binance Spot USDT coins, stablecoins excluded."
+   ],
+   "example": "Notify me when BTC's 1-hour RSI 14 falls below 30.",
+   "faq": [
+    [
+     "How fresh is the report?",
+     "It is recalculated every minute; candle-based values update about a minute after the candle closes."
+    ],
+    [
+     "Can I be notified when a threshold is crossed?",
+     "Yes, by setting the same condition as an alert in MarketAlert (Plus and Pro)."
+    ]
+   ]
+  },
   "features/rsi-alerts": {
    "line": "Scan one coin or a whole Binance market with an RSI rule set by voice or text.",
    "what": "An RSI alert notifies you when a coin's RSI is below or above your threshold, for one coin or across the top 50, 100, 200 or all eligible coins of a market. RSI alerts are available on Plus and Pro.",

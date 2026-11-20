@@ -1,0 +1,111 @@
+---
+/**
+ * Eşik raporu (2026-11-19, Ahmet onayı: tasarım E · önceki grafik): kripto kullanıcıları için hesaplanmış piyasa raporu.
+ * Sunucuda üretilen HTML başlığı, tanımları, SSS'yi ve yasal notu taşır (arama motorları ve yapay zekâ okuyucuları için);
+ * rakamlar tarayıcıda MarketAlert API'den (GET /api/MarketData/ThresholdReport) dakikada bir gelir. Ham fiyat gösterilmez.
+ */
+import { existsSync } from 'node:fs';
+import StoreBadges from '../../../components/StoreBadges.astro';
+import SearchBox from '../../../components/SearchBox.astro';
+import SocialLinks from '../../../components/SocialLinks.astro';
+import Base from '../../../layouts/Base.astro';
+import content from '../../../i18n/content.json';
+import report from '../../../i18n/threshold-report.json';
+import { GA_ID, LOCALES, SITE, SITE_NAME, legalUrl } from '../../../config';
+import '../../../styles/tq.css';
+
+export function getStaticPaths() {
+  return LOCALES.map(locale => ({ params: { lang: locale.code }, props: { locale } }));
+}
+const { locale } = Astro.props;
+const code = locale.code;
+const t = (content as any)[code];
+const r = (report as any)[code];
+const path = `/${code}/tools/threshold-report/`;
+const alternates = LOCALES.map(l => ({ hreflang: l.hreflang, href: `/${l.code}/tools/threshold-report/` }));
+const jsonLd = [
+  { '@context': 'https://schema.org', '@type': 'WebPage', name: r.title, description: r.description, url: SITE + path, inLanguage: locale.hreflang },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: SITE_NAME, item: `${SITE}/${code}/` },
+    { '@type': 'ListItem', position: 2, name: r.link, item: SITE + path },
+  ] },
+  { '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: locale.hreflang, mainEntity: r.faq.map((q: string[]) => ({ '@type': 'Question', name: q[0], acceptedAnswer: { '@type': 'Answer', text: q[1] } })) },
+];
+const ogPage = `/og/tools/threshold-report/${code}.jpg`;
+const ogImage = existsSync(`public${ogPage}`) ? ogPage : `/og/${code}.png`;
+const metrics = ['rsi', 'ch', 'hi', 'vx'];
+const strings = { ...r, title: undefined, description: undefined, faq: undefined, defs: undefined };
+---
+<Base lang={code === 'pt-br' ? 'pt-BR' : code} dir={locale.dir} title={r.title} description={r.description} path={path} ogImage={ogImage} jsonLd={jsonLd} alternates={alternates}>
+  <header class="hd">
+    <a class="logo" href={`/${code}/`}><img src="/icons/logo-96.png" alt="" width="32" height="32" /><b>MarketAlert</b></a>
+    <nav aria-label="MarketAlert"><a href={`/${code}/#features`}>{t.nav[0]}</a><a href={`/${code}/#plans`}>{t.nav[2]}</a><a href="#faq">{t.nav[3]}</a></nav>
+    <div class="hx">
+      <SearchBox code={code} />
+      <label class="lsel"><span class="skip">{t.ui.lang}</span><select id="lang" aria-label={t.ui.lang}>{LOCALES.map(l => <option value={l.code} selected={l.code === code} lang={l.hreflang}>{l.name}</option>)}</select></label>
+      <button class="thm" id="theme" type="button" aria-label={t.ui.theme} title={t.ui.theme}>
+        <svg class="ic i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z" /></svg>
+        <svg class="ic i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+      </button>
+      <a class="btn" href={`/${code}/#download`} data-ev="cta_click">{t.download}</a>
+    </div>
+  </header>
+  <main class="tq" id="tq" data-code={code}>
+    <nav class="breadcrumbs" aria-label="MarketAlert"><a href={`/${code}/`}>MarketAlert</a><span aria-hidden="true"> / </span><span>{r.link}</span></nav>
+    <div class="tq-hd">
+      <span class="tq-ey off" data-ey><i></i><span set:html={r.eyebrow.replace('{t}', '<b data-t>--:--</b>')} /></span>
+      <h1>{r.h1}</h1>
+      <p class="tq-sub">{r.sub}</p>
+      <div class="tq-ct">
+        <div class="tq-sg" role="group" aria-label={r.metricGroup}>{metrics.map((m, i) => <button type="button" data-m={m} aria-pressed={i === 0 ? 'true' : 'false'}>{r.metrics[m]}</button>)}</div>
+        <div class="tq-sg tf" role="group" aria-label={r.tfGroup} data-tg>{['15m', '1h', '4h', '1d'].map(tf => <button type="button" data-tf={tf} aria-pressed={tf === '1h' ? 'true' : 'false'}>{tf}</button>)}</div>
+      </div>
+      <p class="tq-q" data-q aria-live="polite"></p>
+      <div class="tq-st" data-st></div>
+    </div>
+    <div class="tq-vz"><div class="tq-ch" data-ch><div class="tq-in" data-in dir="ltr">
+      <div class="tq-band"><i class="lo"></i><i class="nl"></i><i class="nh"></i><i class="hi"></i></div>
+      <i class="tq-vl lo"></i><i class="tq-vl hi"></i>
+      <div class="tq-th lo"><b></b><span></span></div><div class="tq-th hi"><b></b><span></span></div>
+      <p class="tq-msg" data-msg>{r.loading}</p>
+    </div></div></div>
+    <p class="tq-hint">{r.hint}</p>
+    <div class="tq-cols">
+      <section><h2>{r.l1} <small data-n1></small></h2><p>{r.l1p}</p><ul class="tq-l" data-l1></ul></section>
+      <section><h2>{r.l2} <small>{r.l2s}</small></h2><p>{r.l2p}</p><ul class="tq-l" data-l2></ul></section>
+      <section><h2>{r.l3} <small>{r.l3s}</small></h2><p>{r.l3p}</p><ul class="tq-l" data-l3></ul></section>
+    </div>
+    <div class="tq-def">{r.defs.map((d: string[]) => <div><h2>{d[0]}</h2><p>{d[1]}</p></div>)}</div>
+    <p class="tq-foot"><b>{r.source[0]}</b> {r.source[1]}</p>
+    <section id="faq" class="tq-sec"><h2>{r.faqTitle}</h2><div class="faq">{r.faq.map((q: string[], i: number) => <details open={i === 0}><summary>{q[0]}</summary><p>{q[1]}</p></details>)}</div></section>
+    <section class="tq-cta"><h2>{r.ctaTitle}</h2><p>{r.cta}</p><StoreBadges code={code} class="cta-stores" /></section>
+    <div class="tq-sh-bg"></div>
+    <div class="tq-sh" role="dialog" aria-modal="true" aria-labelledby="tq-sn"><div class="tq-sh-in">
+      <header><span data-sa></span><b id="tq-sn" data-sn></b><button type="button" aria-label={r.sheet.close}>×</button></header>
+      <div class="tq-sh-st" data-ss></div>
+      <ul data-sl></ul>
+      <p class="pl">{r.sheet.plan}</p>
+      <StoreBadges code={code} size="sm" place="report" />
+    </div></div>
+  </main>
+  <footer class="ft"><div class="ftop"><a class="logo" href={`/${code}/`}><img src="/icons/logo-96.png" alt="" width="32" height="32" /><b>MarketAlert</b></a><nav class="legal"><a href={legalUrl('privacy', code)}>{t.legal[0]}</a><a href={legalUrl('terms', code)}>{t.legal[1]}</a>{GA_ID && <button type="button" class="lnk" data-consent-open>{t.consent.prefs}</button>}</nav></div><div class="ft-stores"><b>{t.download}</b><StoreBadges code={code} size="sm" /></div><SocialLinks code={code} /><nav class="langs" aria-label={t.ui.lang}>{LOCALES.map(l => <a href={`/${l.code}/tools/threshold-report/`} hreflang={l.hreflang} lang={l.hreflang} aria-current={l.code === code ? 'page' : undefined} data-ev="language_switch" data-to={l.code}>{l.name}</a>)}</nav><p class="disc">{t.disclaimer}</p><p class="copy">© 2026 MarketAlert · marketalertapp.com</p></footer>
+  <script type="application/json" id="tq-i18n" set:html={JSON.stringify(strings)} />
+  <script>
+    import { mount } from '../../../lib/tq';
+    const root = document.getElementById('tq')!;
+    const T = JSON.parse(document.getElementById('tq-i18n')!.textContent || '{}');
+    mount(root, T, document.documentElement.lang || 'en');
+    const html = document.documentElement;
+    document.getElementById('theme')?.addEventListener('click', () => {
+      const dark = html.dataset.theme ? html.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+      html.dataset.theme = dark ? 'light' : 'dark';
+      try { localStorage.setItem('theme', html.dataset.theme); } catch (e) { /* depolama kapalı olabilir */ }
+      (window as any).maTrack?.('theme_toggle', { theme: html.dataset.theme });
+    });
+    document.getElementById('lang')?.addEventListener('change', e => {
+      const next = (e.target as HTMLSelectElement).value;
+      (window as any).maTrack?.('language_switch', { to_lang: next });
+      location.href = `/${next}/tools/threshold-report/`;
+    });
+  </script>
+</Base>

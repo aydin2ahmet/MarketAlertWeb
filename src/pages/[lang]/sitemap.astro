@@ -7,6 +7,7 @@ import { GA_ID, LOCALES, SITE, SITE_NAME, legalUrl } from '../../config';
 import { SECTIONS } from '../../lib/pages';
 import content from '../../i18n/content.json';
 import rsi from '../../i18n/rsi-alerts.json';
+import thresholdReport from '../../i18n/threshold-report.json';
 import labels from '../../i18n/sitemap.json';
 import documents from '../../legal/documents.json';
 import deletion from '../../legal/account-deletion.json';
@@ -26,6 +27,7 @@ const catalog = LOCALES.map(l => {
   const entries = [
     { title: 'MarketAlert', url: home, group: 'home' },
     { title: (rsi as any)[c].link, url: `${home}features/rsi-alerts/`, group: 'features' },
+    { title: (thresholdReport as any)[c].link, url: `${home}tools/threshold-report/`, group: 'features' },
     ...Object.entries(SECTIONS).flatMap(([section, source]) => Object.entries(source[c]).map(([slug, page]: [string, any]) => ({ title: page.link, url: `${home}${section}/${slug}/`, group: section }))),
     { title: labels[c].legal, url: `${home}legal/`, group: 'legal' },
     { title: d.privacy.title, url: `${home}legal/privacy/`, group: 'legal' },

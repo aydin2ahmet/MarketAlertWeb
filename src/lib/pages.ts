@@ -6,6 +6,7 @@
 import guides from '../i18n/alert-guides.json';
 import coinGuides from '../i18n/coin-guides.json';
 import rsiGuides from '../i18n/rsi-alerts.json';
+import thresholdReport from '../i18n/threshold-report.json';
 
 export const SECTIONS: Record<string, any> = { features: guides, coins: coinGuides };
 
@@ -13,6 +14,7 @@ export const SECTIONS: Record<string, any> = { features: guides, coins: coinGuid
 export function pageLink(code: string, path: string): string | undefined {
   const [section, slug] = path.split('#')[0].split('/');
   if (section === 'features' && slug === 'rsi-alerts') return (rsiGuides as any)[code].link;
+  if (section === 'tools' && slug === 'threshold-report') return (thresholdReport as any)[code].link;
   return SECTIONS[section]?.[code]?.[slug]?.link;
 }
 

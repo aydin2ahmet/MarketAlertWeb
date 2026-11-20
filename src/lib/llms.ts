@@ -19,7 +19,7 @@ const BANNED: [RegExp, string][] = [
 
 /** Sitedeki içerik sayfaları (bölüm/sayfa). Yeni bölüm SECTIONS'a eklenince buraya kendiliğinden girer. */
 export function contentPages(): string[] {
-  const out = ['features/rsi-alerts'];
+  const out = ['features/rsi-alerts', 'tools/threshold-report'];
   for (const [section, src] of Object.entries(SECTIONS)) for (const slug of Object.keys((src as any).en)) out.push(`${section}/${slug}`);
   return [...new Set(out)].sort();
 }
@@ -58,7 +58,7 @@ const url = (p: string) => `${SITE}/en/${p}/`;
 const title = (p: string) => pageLink('en', p) || p;
 
 function buildShort(): string {
-  const groups: Record<string, string> = { features: 'Feature guides', coins: 'Coin guides', guides: 'How-to guides', learn: 'Learn' };
+  const groups: Record<string, string> = { features: 'Feature guides', tools: 'Tools', coins: 'Coin guides', guides: 'How-to guides', learn: 'Learn' };
   const bySection: Record<string, string[]> = {};
   for (const p of contentPages()) (bySection[p.split('/')[0]] ||= []).push(p);
   return [
