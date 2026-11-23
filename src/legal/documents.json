@@ -39,24 +39,28 @@
   },
   "privacy": {
    "title": "Gizlilik Politikası",
-   "effectiveDate": "2026-10-29",
+   "effectiveDate": "2026-11-23",
    "intro": "Bu politika, MarketAlert uygulamasında hangi verileri topladığımızı, neden topladığımızı ve bunlar üzerinde hangi haklara sahip olduğunu açıklar.",
    "sections": [
     {
      "heading": "Topladığımız veriler",
-     "body": "Hesap oluşturduğunda kullanıcı adını ve e-posta adresini saklarız; parolan yalnızca geri döndürülemez bir özet (hash) olarak tutulur. Hesap açmadan devam edersen, uygulamanın cihazında ürettiği rastgele bir cihaz kimliğini saklarız. Ayrıca kurduğun alarmları, tetiklenme geçmişini, bildirim tercihlerini ve dil seçimini tutarız."
+     "body": "Hesap oluşturduğunda kullanıcı adını ve e-posta adresini saklarız; parolan yalnızca geri döndürülemez bir özet (hash) olarak tutulur. Hesap açmadan devam edersen, uygulamanın cihazında ürettiği rastgele bir cihaz kimliğini saklarız. Ayrıca kurduğun alarmları, tetiklenme geçmişini, bildirim tercihlerini ve dil seçimini tutarız. Uygulama açılırken bir hata olursa hata kodunu, uygulama ve işletim sistemi sürümünü, dili ve uygulamanın rastgele ürettiği bir kurulum numarasını teknik hata kaydı olarak sunucumuza göndeririz; bu kayıt hesabına bağlanmaz ve 90 gün sonra silinir. Web destek formundan yazarsan e-posta adresini ve mesajını yalnızca talebini yanıtlamak için saklarız. Kullanım verisi iznin açıksa uygulamayı nasıl kullandığını da kaydederiz: açılan ekranlar; kayıt, alarm kurma, deneme ve satın alma gibi adımlar; uygulama sürümü, dil ve ülke; uygulamayı hangi reklam ya da bağlantıyla yüklediğin (Google Play kurulum kaynağı veya Apple Ads bilgisi). Uygulama çökerse cihaz modelini, işletim sistemi sürümünü ve hatanın teknik ayrıntısını içeren bir çökme raporu gönderilir."
     },
     {
      "heading": "Verileri neden kullanıyoruz",
-     "body": "Verileri yalnızca hizmeti sunmak için kullanırız: alarmlarını değerlendirmek, bildirimlerini iletmek, hesabını doğrulamak, Plus veya Pro aboneliğini yönetmek ve destek taleplerini yanıtlamak. Verilerini reklam amacıyla kullanmıyor ve üçüncü taraflara satmıyoruz."
+     "body": "Verileri hizmeti sunmak için kullanırız: alarmlarını değerlendirmek, bildirimlerini iletmek, hesabını doğrulamak, Plus veya Pro aboneliğini yönetmek ve destek taleplerini yanıtlamak. Kullanım verisini uygulamanın hangi adımında zorlanıldığını bulmak, hataları düzeltmek ve kendi reklam kampanyalarımızın kaç kurulum ve abonelik getirdiğini ölçmek için kullanırız. Uygulamada reklam göstermiyoruz ve verilerini satmıyoruz."
     },
     {
      "heading": "Üçüncü taraf servisler",
-     "body": "Piyasa verilerini Binance üzerinden alırız. Push bildirimleri için Google Firebase, Telegram bildirimleri için Telegram servislerini kullanırız; bu durumda bildirim içeriği ilgili servise iletilir. Yapay zekâ sohbet özelliğini kullanırsan mesajın işlenmek üzere OpenAI servislerine gönderilir. Bu sağlayıcıların kendi gizlilik politikaları geçerlidir."
+     "body": "Piyasa verilerini Binance üzerinden alırız. Push bildirimleri için Google Firebase, Telegram bildirimleri için Telegram servislerini kullanırız; bu durumda bildirim içeriği ilgili servise iletilir. Yapay zekâ sohbet özelliğini kullanırsan mesajın işlenmek üzere OpenAI servislerine gönderilir. Bu sağlayıcıların kendi gizlilik politikaları geçerlidir. Kullanım ölçümü için Google Firebase Analytics, çökme raporları için Firebase Crashlytics kullanırız. Android'de reklam kampanyalarımızın sonucunu ölçmek için kullanım olayları ve cihazın reklam kimliği Google (Google Ads) ile paylaşılır."
+    },
+    {
+     "heading": "Uygulama içi ölçüm ve tercihin",
+     "body": "Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'de kullanım verisi izin vermeden toplanmaz; uygulama önce sorar. Diğer bölgelerde varsayılan olarak açıktır. Her yerde Ayarlar → Kullanım verisi anahtarıyla istediğin zaman kapatabilirsin; kapattığında telefonda bekleyen olaylar da silinir. Çökme raporları bu tercihten bağımsızdır, çünkü yalnızca hataları düzeltmek için kullanılır. iOS'ta reklam kimliği (IDFA) kullanmıyoruz ve seni başka şirketlerin uygulama ve sitelerinde izlemiyoruz. Android'de reklam kimliğini cihaz ayarlarından sıfırlayabilir veya silebilirsin."
     },
     {
      "heading": "Saklama süresi",
-     "body": "Verilerini hesabın aktif olduğu sürece saklarız. Hesabını sildiğinde kişisel verilerin ve alarmların makul bir süre içinde silinir; yasal saklama yükümlülüğü bulunan kayıtlar bu sürenin dışındadır. Oturum tokenları süresi dolduğunda geçersiz hale gelir."
+     "body": "Verilerini hesabın aktif olduğu sürece saklarız. Hesabını sildiğinde kişisel verilerin ve alarmların makul bir süre içinde silinir; yasal saklama yükümlülüğü bulunan kayıtlar bu sürenin dışındadır. Oturum tokenları süresi dolduğunda geçersiz hale gelir. Sunucumuzdaki ham kullanım olayları 90 gün sonra silinir. Kurulum başına hangi adıma ne zaman ulaşıldığını gösteren özet kayıt istatistik için saklanır; hesabını sildiğinde bu kaydın hesabınla bağı da silinir. Firebase'deki veriler Google'ın saklama sürelerine tabidir."
     },
     {
      "heading": "Haklarının kapsamı",
@@ -68,7 +72,7 @@
     },
     {
      "heading": "Web sitesi ve çerezler",
-     "body": "www.marketalertapp.com tanıtım sitesi Google Analytics kullanır. Analytics ziyaret edilen sayfaları, tıklanan butonları, yaklaşık konumu (ülke ve şehir), cihaz ve tarayıcı türünü toplar. Analytics çerezleri yalnızca izin verirsen tarayıcına yazılır; izin vermezsen yalnızca çerez kullanmayan ve seni tanımlamayan sayım sinyalleri gönderilir. Reklam amaçlı izinler her zaman kapalıdır. Bu verileri yalnızca siteyi geliştirmek için kullanırız. Tercihini sitenin altındaki “Çerez tercihleri” bağlantısından istediğin zaman değiştirebilirsin. Uygulamanın kendisi Google Analytics kullanmaz."
+     "body": "www.marketalertapp.com tanıtım sitesi Google Analytics kullanır. Analytics ziyaret edilen sayfaları, tıklanan butonları, yaklaşık konumu (ülke ve şehir), cihaz ve tarayıcı türünü toplar. Analytics çerezleri yalnızca izin verirsen tarayıcına yazılır; izin vermezsen yalnızca çerez kullanmayan ve seni tanımlamayan sayım sinyalleri gönderilir. Reklam amaçlı izinler her zaman kapalıdır. Bu verileri yalnızca siteyi geliştirmek için kullanırız. Tercihini sitenin altındaki “Çerez tercihleri” bağlantısından istediğin zaman değiştirebilirsin. Uygulamadaki ölçüm yukarıdaki “Uygulama içi ölçüm ve tercihin” bölümünde anlatılır."
     },
     {
      "heading": "İletişim ve değişiklikler",
@@ -117,24 +121,28 @@
   },
   "privacy": {
    "title": "Privacy Policy",
-   "effectiveDate": "2026-10-29",
+   "effectiveDate": "2026-11-23",
    "intro": "This policy explains what data MarketAlert collects, why we collect it, and what rights you have over it.",
    "sections": [
     {
      "heading": "Data we collect",
-     "body": "When you create an account we store your username and email address; your password is kept only as an irreversible hash. If you continue without an account, we store a random device identifier generated by the app on your device. We also keep the alerts you create, their trigger history, your notification preferences and your language choice."
+     "body": "When you create an account we store your username and email address; your password is kept only as an irreversible hash. If you continue without an account, we store a random device identifier generated by the app on your device. We also keep the alerts you create, their trigger history, your notification preferences and your language choice. If something goes wrong while the app is starting, we send our server a technical error record with the error code, the app and operating system versions, the language and a random installation number generated by the app; this record is not linked to your account and is deleted after 90 days. If you write to us through the web support form, we keep your email address and message only to answer your request. If usage data is on, we also record how you use the app: the screens you open; steps such as signing up, creating an alert, starting a trial and purchasing; the app version, language and country; and which ad or link you installed the app from (Google Play install source or Apple Ads information). If the app crashes, a crash report with the device model, operating system version and technical details of the error is sent."
     },
     {
      "heading": "Why we use it",
-     "body": "We use your data only to provide the service: to evaluate your alerts, deliver your notifications, authenticate your account, manage your Plus or Pro subscription and answer support requests. We do not use your data for advertising and we do not sell it to third parties."
+     "body": "We use your data to provide the service: to evaluate your alerts, deliver your notifications, authenticate your account, manage your Plus or Pro subscription and answer support requests. We use usage data to find the steps where people get stuck, to fix errors, and to measure how many installs and subscriptions our own ad campaigns bring. We do not show ads in the app and we do not sell your data."
     },
     {
      "heading": "Third party services",
-     "body": "Market data comes from Binance. We use Google Firebase for push notifications and Telegram services for Telegram notifications, which means notification content is passed to those services. If you use the AI chat feature, your message is sent to OpenAI services for processing. Those providers’ own privacy policies apply."
+     "body": "Market data comes from Binance. We use Google Firebase for push notifications and Telegram services for Telegram notifications, which means notification content is passed to those services. If you use the AI chat feature, your message is sent to OpenAI services for processing. Those providers’ own privacy policies apply. We use Google Firebase Analytics for usage measurement and Firebase Crashlytics for crash reports. On Android, usage events and the device’s advertising ID are shared with Google (Google Ads) to measure the results of our ad campaigns."
+    },
+    {
+     "heading": "In-app measurement and your choice",
+     "body": "In the European Economic Area, the United Kingdom and Switzerland, usage data is not collected without your permission; the app asks first. In other regions it is on by default. Everywhere, you can turn it off at any time with the Settings → Usage data switch; when you do, events waiting on your phone are deleted too. Crash reports are independent of this choice because they are used only to fix errors. On iOS we do not use the advertising identifier (IDFA) and we do not track you across other companies’ apps and websites. On Android you can reset or delete your advertising ID in the device settings."
     },
     {
      "heading": "How long we keep it",
-     "body": "We keep your data while your account is active. When you delete your account, your personal data and alerts are deleted within a reasonable period, except for records we are legally required to retain. Session tokens become invalid once they expire."
+     "body": "We keep your data while your account is active. When you delete your account, your personal data and alerts are deleted within a reasonable period, except for records we are legally required to retain. Session tokens become invalid once they expire. Raw usage events on our servers are deleted after 90 days. A summary record per install, showing when each step was reached, is kept for statistics; when you delete your account, its link to your account is deleted too. Data in Firebase is subject to Google’s retention periods."
     },
     {
      "heading": "Your rights",
@@ -146,7 +154,7 @@
     },
     {
      "heading": "Website and cookies",
-     "body": "The www.marketalertapp.com website uses Google Analytics. It collects the pages visited, buttons clicked, approximate location (country and city), and device and browser type. Analytics cookies are stored in your browser only if you allow them; otherwise only cookieless signals that do not identify you are sent. Advertising permissions are always off. We use this data only to improve the website. You can change your choice at any time via the “Cookie settings” link at the bottom of the site. The app itself does not use Google Analytics."
+     "body": "The www.marketalertapp.com website uses Google Analytics. It collects the pages visited, buttons clicked, approximate location (country and city), and device and browser type. Analytics cookies are stored in your browser only if you allow them; otherwise only cookieless signals that do not identify you are sent. Advertising permissions are always off. We use this data only to improve the website. You can change your choice at any time via the “Cookie settings” link at the bottom of the site. Measurement in the app is described in the “In-app measurement and your choice” section above."
     },
     {
      "heading": "Contact and changes",
@@ -195,24 +203,28 @@
   },
   "privacy": {
    "title": "隐私政策",
-   "effectiveDate": "2026-10-29",
+   "effectiveDate": "2026-11-23",
    "intro": "本政策说明 MarketAlert 收集哪些数据、为何收集，以及你对这些数据享有的权利。",
    "sections": [
     {
      "heading": "我们收集的数据",
-     "body": "创建账号时我们保存你的用户名和电子邮箱；密码仅以不可逆的哈希形式存储。若你选择免注册使用，我们会保存应用在你设备上生成的随机设备标识。我们还保存你创建的提醒、触发记录、通知偏好和语言选择。"
+     "body": "创建账号时我们保存你的用户名和电子邮箱；密码仅以不可逆的哈希形式存储。若你选择免注册使用，我们会保存应用在你设备上生成的随机设备标识。我们还保存你创建的提醒、触发记录、通知偏好和语言选择。如果应用启动时出现错误，我们会把错误代码、应用和操作系统版本、语言以及应用随机生成的安装编号作为技术错误记录发送到我们的服务器；该记录不会与你的账号关联，并在 90 天后删除。如果你通过网页支持表单联系我们，我们只会为回复你的请求而保存你的电子邮箱和留言。 如果你开启了使用数据，我们还会记录你如何使用应用：打开的页面；注册、创建提醒、开始试用和购买等步骤；应用版本、语言和国家；以及你通过哪个广告或链接安装了应用（Google Play 安装来源或 Apple Ads 信息）。如果应用崩溃，会发送一份包含设备型号、操作系统版本和错误技术细节的崩溃报告。"
     },
     {
      "heading": "数据用途",
-     "body": "我们仅为提供服务而使用你的数据：评估提醒、发送通知、验证账号、管理 Plus 或 Pro 订阅以及回复支持请求。我们不将你的数据用于广告，也不出售给第三方。"
+     "body": "我们使用数据来提供服务：评估你的提醒、发送通知、验证账户、管理 Plus 或 Pro 订阅以及回复支持请求。我们使用使用数据来找出用户在哪一步遇到困难、修复错误，并衡量我们自己的广告活动带来了多少安装和订阅。我们不在应用中展示广告，也不出售你的数据。"
     },
     {
      "heading": "第三方服务",
-     "body": "市场数据来自 Binance。推送通知使用 Google Firebase，Telegram 通知使用 Telegram 服务，通知内容会传递给相应服务。如果你使用 AI 聊天功能，你的消息会发送至 OpenAI 服务进行处理。上述服务商各自的隐私政策同样适用。"
+     "body": "市场数据来自 Binance。推送通知使用 Google Firebase，Telegram 通知使用 Telegram 服务，通知内容会传递给相应服务。如果你使用 AI 聊天功能，你的消息会发送至 OpenAI 服务进行处理。上述服务商各自的隐私政策同样适用。 我们使用 Google Firebase Analytics 进行使用情况统计，使用 Firebase Crashlytics 收集崩溃报告。在 Android 上，为衡量我们广告活动的效果，使用事件和设备的广告 ID 会与 Google（Google Ads）共享。"
+    },
+    {
+     "heading": "应用内统计与你的选择",
+     "body": "在欧洲经济区、英国和瑞士，未经你的许可不会收集使用数据；应用会先征求同意。在其他地区默认开启。在任何地区，你都可以随时通过“设置 → 使用数据”开关将其关闭；关闭后，手机上等待发送的事件也会被删除。崩溃报告不受此选择影响，因为它们只用于修复错误。在 iOS 上，我们不使用广告标识符（IDFA），也不会在其他公司的应用和网站中跟踪你。在 Android 上，你可以在设备设置中重置或删除广告 ID。"
     },
     {
      "heading": "保存期限",
-     "body": "账号处于活跃状态期间我们会保留你的数据。你删除账号后，个人数据和提醒会在合理期限内删除，法律要求保留的记录除外。会话令牌到期后即失效。"
+     "body": "账号处于活跃状态期间我们会保留你的数据。你删除账号后，个人数据和提醒会在合理期限内删除，法律要求保留的记录除外。会话令牌到期后即失效。 我们服务器上的原始使用事件会在 90 天后删除。每次安装的摘要记录（显示每一步的到达时间）会保留用于统计；删除账户时，该记录与账户的关联也会被删除。Firebase 中的数据遵循 Google 的保存期限。"
     },
     {
      "heading": "你的权利",
@@ -224,7 +236,7 @@
     },
     {
      "heading": "网站与 Cookie",
-     "body": "www.marketalertapp.com 网站使用 Google Analytics，收集访问的页面、点击的按钮、大致位置（国家和城市）以及设备和浏览器类型。只有在你同意后，Analytics Cookie 才会存储在你的浏览器中；否则只会发送不使用 Cookie、无法识别你身份的统计信号。广告相关权限始终关闭。我们仅将这些数据用于改进网站。你可以随时通过网站底部的“Cookie 设置”链接更改选择。应用本身不使用 Google Analytics。"
+     "body": "www.marketalertapp.com 网站使用 Google Analytics，收集访问的页面、点击的按钮、大致位置（国家和城市）以及设备和浏览器类型。只有在你同意后，Analytics Cookie 才会存储在你的浏览器中；否则只会发送不使用 Cookie、无法识别你身份的统计信号。广告相关权限始终关闭。我们仅将这些数据用于改进网站。你可以随时通过网站底部的“Cookie 设置”链接更改选择。应用内的统计方式见上文“应用内统计与你的选择”部分。"
     },
     {
      "heading": "联系方式与政策变更",
@@ -273,24 +285,28 @@
   },
   "privacy": {
    "title": "Política de privacidad",
-   "effectiveDate": "2026-10-29",
+   "effectiveDate": "2026-11-23",
    "intro": "Esta política explica qué datos recoge MarketAlert, por qué los recoge y qué derechos tienes sobre ellos.",
    "sections": [
     {
      "heading": "Datos que recogemos",
-     "body": "Al crear una cuenta guardamos tu nombre de usuario y tu correo electrónico; tu contraseña se conserva solo como un hash irreversible. Si continúas sin cuenta, guardamos un identificador de dispositivo aleatorio generado por la aplicación. También conservamos las alertas que creas, su historial de activación, tus preferencias de notificación y tu idioma."
+     "body": "Al crear una cuenta guardamos tu nombre de usuario y tu correo electrónico; tu contraseña se conserva solo como un hash irreversible. Si continúas sin cuenta, guardamos un identificador de dispositivo aleatorio generado por la aplicación. También conservamos las alertas que creas, su historial de activación, tus preferencias de notificación y tu idioma. Si ocurre un error al abrir la aplicación, enviamos a nuestro servidor un registro técnico de errores con el código del error, las versiones de la aplicación y del sistema operativo, el idioma y un número de instalación aleatorio generado por la aplicación; este registro no se vincula a tu cuenta y se elimina a los 90 días. Si nos escribes desde el formulario de soporte web, guardamos tu correo electrónico y tu mensaje solo para responder a tu solicitud. Si los datos de uso están activados, también registramos cómo usas la app: las pantallas que abres; pasos como registrarte, crear una alerta, empezar la prueba y comprar; la versión de la app, el idioma y el país; y desde qué anuncio o enlace instalaste la app (origen de instalación de Google Play o información de Apple Ads). Si la app se cierra inesperadamente, se envía un informe de fallo con el modelo del dispositivo, la versión del sistema operativo y los detalles técnicos del error."
     },
     {
      "heading": "Para qué los usamos",
-     "body": "Usamos tus datos solo para prestar el servicio: evaluar tus alertas, entregar tus notificaciones, autenticar tu cuenta, gestionar tu suscripción Plus o Pro y responder a solicitudes de soporte. No usamos tus datos con fines publicitarios ni los vendemos a terceros."
+     "body": "Usamos tus datos para prestar el servicio: evaluar tus alertas, enviar tus notificaciones, verificar tu cuenta, gestionar tu suscripción Plus o Pro y responder a solicitudes de soporte. Usamos los datos de uso para encontrar los pasos en los que la gente se atasca, corregir errores y medir cuántas instalaciones y suscripciones traen nuestras propias campañas publicitarias. No mostramos anuncios en la app y no vendemos tus datos."
     },
     {
      "heading": "Servicios de terceros",
-     "body": "Los datos de mercado provienen de Binance. Usamos Google Firebase para notificaciones push y los servicios de Telegram para las notificaciones de Telegram, por lo que el contenido de la notificación se transmite a esos servicios. Si usas la función de chat con IA, tu mensaje se envía a los servicios de OpenAI para su procesamiento. Se aplican las políticas de privacidad de esos proveedores."
+     "body": "Los datos de mercado provienen de Binance. Usamos Google Firebase para notificaciones push y los servicios de Telegram para las notificaciones de Telegram, por lo que el contenido de la notificación se transmite a esos servicios. Si usas la función de chat con IA, tu mensaje se envía a los servicios de OpenAI para su procesamiento. Se aplican las políticas de privacidad de esos proveedores. Usamos Google Firebase Analytics para medir el uso y Firebase Crashlytics para los informes de fallos. En Android, los eventos de uso y el ID de publicidad del dispositivo se comparten con Google (Google Ads) para medir los resultados de nuestras campañas publicitarias."
+    },
+    {
+     "heading": "Medición en la app y tu elección",
+     "body": "En el Espacio Económico Europeo, el Reino Unido y Suiza no se recogen datos de uso sin tu permiso; la app te lo pregunta primero. En otras regiones está activado por defecto. En cualquier lugar puedes desactivarlo cuando quieras con el interruptor Ajustes → Datos de uso; al hacerlo, también se borran los eventos pendientes en tu teléfono. Los informes de fallos no dependen de esta elección, porque solo se usan para corregir errores. En iOS no usamos el identificador de publicidad (IDFA) ni te rastreamos en apps y sitios web de otras empresas. En Android puedes restablecer o eliminar tu ID de publicidad en los ajustes del dispositivo."
     },
     {
      "heading": "Plazo de conservación",
-     "body": "Conservamos tus datos mientras tu cuenta esté activa. Cuando eliminas tu cuenta, tus datos personales y tus alertas se borran en un plazo razonable, salvo los registros que estemos obligados a conservar por ley. Los tokens de sesión dejan de ser válidos al caducar."
+     "body": "Conservamos tus datos mientras tu cuenta esté activa. Cuando eliminas tu cuenta, tus datos personales y tus alertas se borran en un plazo razonable, salvo los registros que estemos obligados a conservar por ley. Los tokens de sesión dejan de ser válidos al caducar. Los eventos de uso sin procesar de nuestros servidores se eliminan a los 90 días. Se conserva con fines estadísticos un registro resumido por instalación que indica cuándo se alcanzó cada paso; al eliminar tu cuenta también se elimina su vínculo con tu cuenta. Los datos de Firebase están sujetos a los plazos de conservación de Google."
     },
     {
      "heading": "Tus derechos",
@@ -302,7 +318,7 @@
     },
     {
      "heading": "Sitio web y cookies",
-     "body": "El sitio www.marketalertapp.com usa Google Analytics, que recoge las páginas visitadas, los botones pulsados, la ubicación aproximada (país y ciudad) y el tipo de dispositivo y navegador. Las cookies de Analytics solo se guardan en tu navegador si lo permites; si no, solo se envían señales sin cookies que no te identifican. Los permisos publicitarios están siempre desactivados. Usamos estos datos solo para mejorar el sitio. Puedes cambiar tu elección en cualquier momento desde el enlace «Preferencias de cookies» al pie del sitio. La app en sí no usa Google Analytics."
+     "body": "El sitio www.marketalertapp.com usa Google Analytics, que recoge las páginas visitadas, los botones pulsados, la ubicación aproximada (país y ciudad) y el tipo de dispositivo y navegador. Las cookies de Analytics solo se guardan en tu navegador si lo permites; si no, solo se envían señales sin cookies que no te identifican. Los permisos publicitarios están siempre desactivados. Usamos estos datos solo para mejorar el sitio. Puedes cambiar tu elección en cualquier momento desde el enlace «Preferencias de cookies» al pie del sitio. La medición en la app se describe arriba, en la sección «Medición en la app y tu elección»."
     },
     {
      "heading": "Contacto y cambios",
@@ -351,24 +367,28 @@
   },
   "privacy": {
    "title": "गोपनीयता नीति",
-   "effectiveDate": "2026-10-29",
+   "effectiveDate": "2026-11-23",
    "intro": "यह नीति बताती है कि MarketAlert कौन-सा डेटा एकत्र करता है, क्यों करता है और उस पर आपके क्या अधिकार हैं।",
    "sections": [
     {
      "heading": "हम कौन-सा डेटा एकत्र करते हैं",
-     "body": "खाता बनाते समय हम आपका उपयोगकर्ता नाम और ईमेल पता सहेजते हैं; आपका पासवर्ड केवल अपरिवर्तनीय हैश के रूप में रखा जाता है। बिना खाते के जारी रखने पर हम ऐप द्वारा आपके डिवाइस पर बनाया गया यादृच्छिक डिवाइस पहचानकर्ता सहेजते हैं। इसके अलावा आपके बनाए अलर्ट, उनका ट्रिगर इतिहास, सूचना प्राथमिकताएँ और भाषा चयन भी रखा जाता है।"
+     "body": "खाता बनाते समय हम आपका उपयोगकर्ता नाम और ईमेल पता सहेजते हैं; आपका पासवर्ड केवल अपरिवर्तनीय हैश के रूप में रखा जाता है। बिना खाते के जारी रखने पर हम ऐप द्वारा आपके डिवाइस पर बनाया गया यादृच्छिक डिवाइस पहचानकर्ता सहेजते हैं। इसके अलावा आपके बनाए अलर्ट, उनका ट्रिगर इतिहास, सूचना प्राथमिकताएँ और भाषा चयन भी रखा जाता है। अगर ऐप खुलते समय कोई त्रुटि होती है, तो हम त्रुटि कोड, ऐप और ऑपरेटिंग सिस्टम का संस्करण, भाषा और ऐप द्वारा बनाया गया एक यादृच्छिक इंस्टॉलेशन नंबर तकनीकी त्रुटि रिकॉर्ड के रूप में अपने सर्वर पर भेजते हैं; यह रिकॉर्ड आपके खाते से नहीं जुड़ता और 90 दिनों के बाद हटा दिया जाता है। अगर आप वेब सहायता फ़ॉर्म से हमें लिखते हैं, तो हम आपका ईमेल पता और संदेश केवल आपके अनुरोध का जवाब देने के लिए रखते हैं। अगर उपयोग डेटा चालू है, तो हम यह भी दर्ज करते हैं कि आप ऐप का उपयोग कैसे करते हैं: आप कौन-सी स्क्रीन खोलते हैं; साइन अप, अलर्ट बनाना, ट्रायल शुरू करना और खरीदारी जैसे चरण; ऐप संस्करण, भाषा और देश; और आपने ऐप किस विज्ञापन या लिंक से इंस्टॉल किया (Google Play इंस्टॉल स्रोत या Apple Ads जानकारी)। अगर ऐप क्रैश होता है, तो डिवाइस मॉडल, ऑपरेटिंग सिस्टम संस्करण और त्रुटि के तकनीकी विवरण वाली क्रैश रिपोर्ट भेजी जाती है।"
     },
     {
      "heading": "हम इसका उपयोग क्यों करते हैं",
-     "body": "हम आपका डेटा केवल सेवा देने के लिए उपयोग करते हैं: आपके अलर्ट का मूल्यांकन, सूचनाएँ भेजना, खाते का सत्यापन, Plus या Pro सदस्यता का प्रबंधन और सहायता अनुरोधों का उत्तर देना। हम आपका डेटा विज्ञापन के लिए उपयोग नहीं करते और न ही तीसरे पक्ष को बेचते हैं।"
+     "body": "हम आपके डेटा का उपयोग सेवा देने के लिए करते हैं: आपके अलर्ट का मूल्यांकन करना, सूचनाएँ भेजना, आपके खाते का सत्यापन करना, Plus या Pro सदस्यता का प्रबंधन करना और सहायता अनुरोधों का उत्तर देना। उपयोग डेटा का उपयोग हम यह पता लगाने के लिए करते हैं कि लोग किस चरण पर अटकते हैं, त्रुटियाँ ठीक करने के लिए, और यह मापने के लिए कि हमारे अपने विज्ञापन अभियान कितने इंस्टॉल और सदस्यताएँ लाते हैं। हम ऐप में विज्ञापन नहीं दिखाते और आपका डेटा नहीं बेचते।"
     },
     {
      "heading": "तृतीय-पक्ष सेवाएँ",
-     "body": "बाज़ार डेटा Binance से आता है। पुश सूचनाओं के लिए Google Firebase और Telegram सूचनाओं के लिए Telegram सेवाओं का उपयोग होता है, जिससे सूचना की सामग्री उन सेवाओं तक पहुँचती है। एआई चैट सुविधा का उपयोग करने पर आपका संदेश प्रसंस्करण हेतु OpenAI सेवाओं को भेजा जाता है। इन प्रदाताओं की अपनी गोपनीयता नीतियाँ लागू होती हैं।"
+     "body": "बाज़ार डेटा Binance से आता है। पुश सूचनाओं के लिए Google Firebase और Telegram सूचनाओं के लिए Telegram सेवाओं का उपयोग होता है, जिससे सूचना की सामग्री उन सेवाओं तक पहुँचती है। एआई चैट सुविधा का उपयोग करने पर आपका संदेश प्रसंस्करण हेतु OpenAI सेवाओं को भेजा जाता है। इन प्रदाताओं की अपनी गोपनीयता नीतियाँ लागू होती हैं। उपयोग मापने के लिए हम Google Firebase Analytics और क्रैश रिपोर्ट के लिए Firebase Crashlytics का उपयोग करते हैं। Android पर हमारे विज्ञापन अभियानों के परिणाम मापने के लिए उपयोग इवेंट और डिवाइस की विज्ञापन ID Google (Google Ads) के साथ साझा की जाती है।"
+    },
+    {
+     "heading": "ऐप में माप और आपकी पसंद",
+     "body": "यूरोपीय आर्थिक क्षेत्र, यूनाइटेड किंगडम और स्विट्ज़रलैंड में आपकी अनुमति के बिना उपयोग डेटा एकत्र नहीं किया जाता; ऐप पहले पूछता है। अन्य क्षेत्रों में यह डिफ़ॉल्ट रूप से चालू है। हर जगह आप इसे सेटिंग → उपयोग डेटा स्विच से कभी भी बंद कर सकते हैं; बंद करने पर फ़ोन पर भेजे जाने के लिए रुके इवेंट भी हटा दिए जाते हैं। क्रैश रिपोर्ट इस पसंद से अलग हैं, क्योंकि उनका उपयोग केवल त्रुटियाँ ठीक करने के लिए होता है। iOS पर हम विज्ञापन पहचानकर्ता (IDFA) का उपयोग नहीं करते और अन्य कंपनियों के ऐप और वेबसाइटों पर आपको ट्रैक नहीं करते। Android पर आप डिवाइस सेटिंग में अपनी विज्ञापन ID रीसेट या हटा सकते हैं।"
     },
     {
      "heading": "डेटा कब तक रखा जाता है",
-     "body": "जब तक आपका खाता सक्रिय है, हम आपका डेटा रखते हैं। खाता हटाने पर आपका व्यक्तिगत डेटा और अलर्ट उचित अवधि के भीतर हटा दिए जाते हैं; कानूनी रूप से रखे जाने वाले रिकॉर्ड इसके अपवाद हैं। सत्र टोकन समाप्त होते ही अमान्य हो जाते हैं।"
+     "body": "जब तक आपका खाता सक्रिय है, हम आपका डेटा रखते हैं। खाता हटाने पर आपका व्यक्तिगत डेटा और अलर्ट उचित अवधि के भीतर हटा दिए जाते हैं; कानूनी रूप से रखे जाने वाले रिकॉर्ड इसके अपवाद हैं। सत्र टोकन समाप्त होते ही अमान्य हो जाते हैं। हमारे सर्वर पर कच्चे उपयोग इवेंट 90 दिनों के बाद हटा दिए जाते हैं। हर इंस्टॉल का एक सारांश रिकॉर्ड, जो दिखाता है कि कौन-सा चरण कब पूरा हुआ, आँकड़ों के लिए रखा जाता है; खाता हटाने पर उसका आपके खाते से संबंध भी हटा दिया जाता है। Firebase में डेटा Google की संग्रहण अवधियों के अधीन है।"
     },
     {
      "heading": "आपके अधिकार",
@@ -380,7 +400,7 @@
     },
     {
      "heading": "वेबसाइट और कुकीज़",
-     "body": "www.marketalertapp.com वेबसाइट Google Analytics का उपयोग करती है, जो देखे गए पेज, क्लिक किए गए बटन, अनुमानित स्थान (देश और शहर) तथा डिवाइस और ब्राउज़र का प्रकार एकत्र करता है। Analytics कुकीज़ आपके ब्राउज़र में केवल आपकी अनुमति से रखी जाती हैं; अन्यथा केवल बिना कुकी वाले, आपकी पहचान न करने वाले संकेत भेजे जाते हैं। विज्ञापन से जुड़ी अनुमतियाँ हमेशा बंद रहती हैं। हम इस डेटा का उपयोग केवल वेबसाइट को बेहतर बनाने के लिए करते हैं। आप साइट के नीचे दिए “कुकी सेटिंग” लिंक से कभी भी अपनी पसंद बदल सकते हैं। ऐप स्वयं Google Analytics का उपयोग नहीं करता।"
+     "body": "www.marketalertapp.com वेबसाइट Google Analytics का उपयोग करती है, जो देखे गए पेज, क्लिक किए गए बटन, अनुमानित स्थान (देश और शहर) तथा डिवाइस और ब्राउज़र का प्रकार एकत्र करता है। Analytics कुकीज़ आपके ब्राउज़र में केवल आपकी अनुमति से रखी जाती हैं; अन्यथा केवल बिना कुकी वाले, आपकी पहचान न करने वाले संकेत भेजे जाते हैं। विज्ञापन से जुड़ी अनुमतियाँ हमेशा बंद रहती हैं। हम इस डेटा का उपयोग केवल वेबसाइट को बेहतर बनाने के लिए करते हैं। आप साइट के नीचे दिए “कुकी सेटिंग” लिंक से कभी भी अपनी पसंद बदल सकते हैं। ऐप में माप का विवरण ऊपर “ऐप में माप और आपकी पसंद” अनुभाग में है।"
     },
     {
      "heading": "संपर्क और परिवर्तन",
@@ -429,24 +449,28 @@
   },
   "privacy": {
    "title": "سياسة الخصوصية",
-   "effectiveDate": "2026-10-29",
+   "effectiveDate": "2026-11-23",
    "intro": "توضح هذه السياسة البيانات التي يجمعها MarketAlert وسبب جمعها وحقوقك تجاهها.",
    "sections": [
     {
      "heading": "البيانات التي نجمعها",
-     "body": "عند إنشاء حساب نحفظ اسم المستخدم والبريد الإلكتروني؛ وتُحفظ كلمة المرور على هيئة بصمة غير قابلة للعكس فقط. وإذا تابعت دون حساب فإننا نحفظ معرّف جهاز عشوائيًا يولده التطبيق على جهازك. كما نحتفظ بالتنبيهات التي تنشئها وسجل تفعيلها وتفضيلات الإشعارات واختيارك للغة."
+     "body": "عند إنشاء حساب نحفظ اسم المستخدم والبريد الإلكتروني؛ وتُحفظ كلمة المرور على هيئة بصمة غير قابلة للعكس فقط. وإذا تابعت دون حساب فإننا نحفظ معرّف جهاز عشوائيًا يولده التطبيق على جهازك. كما نحتفظ بالتنبيهات التي تنشئها وسجل تفعيلها وتفضيلات الإشعارات واختيارك للغة. إذا حدث خطأ أثناء فتح التطبيق، نرسل إلى خادمنا سجل أخطاء تقنيًا يتضمن رمز الخطأ وإصدار التطبيق ونظام التشغيل واللغة ورقم تثبيت عشوائيًا يولده التطبيق؛ لا يرتبط هذا السجل بحسابك ويُحذف بعد 90 يومًا. وإذا راسلتنا عبر نموذج الدعم على الويب، نحتفظ ببريدك الإلكتروني ورسالتك فقط للرد على طلبك. إذا كانت بيانات الاستخدام مفعّلة، فإننا نسجّل أيضًا كيفية استخدامك للتطبيق: الشاشات التي تفتحها؛ وخطوات مثل التسجيل وإنشاء تنبيه وبدء التجربة والشراء؛ وإصدار التطبيق واللغة والبلد؛ والإعلان أو الرابط الذي ثبّتّ منه التطبيق (مصدر التثبيت في Google Play أو معلومات Apple Ads). وإذا تعطّل التطبيق، يُرسَل تقرير أعطال يتضمن طراز الجهاز وإصدار نظام التشغيل والتفاصيل التقنية للخطأ."
     },
     {
      "heading": "سبب استخدام البيانات",
-     "body": "نستخدم بياناتك لتقديم الخدمة فقط: تقييم تنبيهاتك، وإيصال إشعاراتك، والتحقق من حسابك، وإدارة اشتراكك في Plus أو Pro، والرد على طلبات الدعم. لا نستخدم بياناتك لأغراض إعلانية ولا نبيعها لأطراف ثالثة."
+     "body": "نستخدم بياناتك لتقديم الخدمة: تقييم تنبيهاتك، وإرسال إشعاراتك، والتحقق من حسابك، وإدارة اشتراك Plus أو Pro، والرد على طلبات الدعم. ونستخدم بيانات الاستخدام لمعرفة الخطوات التي يتعثر فيها المستخدمون، وإصلاح الأخطاء، وقياس عدد عمليات التثبيت والاشتراكات التي تجلبها حملاتنا الإعلانية. لا نعرض إعلانات داخل التطبيق ولا نبيع بياناتك."
     },
     {
      "heading": "خدمات الأطراف الثالثة",
-     "body": "تأتي بيانات السوق من Binance. نستخدم Google Firebase للإشعارات الفورية وخدمات Telegram لإشعارات Telegram، ما يعني نقل محتوى الإشعار إلى تلك الخدمات. وإذا استخدمت ميزة المحادثة بالذكاء الاصطناعي تُرسل رسالتك إلى خدمات OpenAI للمعالجة. وتسري سياسات الخصوصية الخاصة بتلك الجهات."
+     "body": "تأتي بيانات السوق من Binance. نستخدم Google Firebase للإشعارات الفورية وخدمات Telegram لإشعارات Telegram، ما يعني نقل محتوى الإشعار إلى تلك الخدمات. وإذا استخدمت ميزة المحادثة بالذكاء الاصطناعي تُرسل رسالتك إلى خدمات OpenAI للمعالجة. وتسري سياسات الخصوصية الخاصة بتلك الجهات. نستخدم Google Firebase Analytics لقياس الاستخدام وFirebase Crashlytics لتقارير الأعطال. وعلى Android تتم مشاركة أحداث الاستخدام والمعرّف الإعلاني للجهاز مع Google (Google Ads) لقياس نتائج حملاتنا الإعلانية."
+    },
+    {
+     "heading": "القياس داخل التطبيق واختيارك",
+     "body": "في المنطقة الاقتصادية الأوروبية والمملكة المتحدة وسويسرا لا تُجمع بيانات الاستخدام دون إذنك؛ إذ يسألك التطبيق أولًا. وفي المناطق الأخرى تكون مفعّلة افتراضيًا. ويمكنك في كل مكان إيقافها في أي وقت من مفتاح الإعدادات ← بيانات الاستخدام؛ وعند إيقافها تُحذف أيضًا الأحداث المنتظرة على هاتفك. تقارير الأعطال مستقلة عن هذا الاختيار لأنها تُستخدم لإصلاح الأخطاء فقط. على iOS لا نستخدم المعرّف الإعلاني (IDFA) ولا نتتبعك عبر تطبيقات ومواقع الشركات الأخرى. وعلى Android يمكنك إعادة تعيين المعرّف الإعلاني أو حذفه من إعدادات الجهاز."
     },
     {
      "heading": "مدة الاحتفاظ",
-     "body": "نحتفظ ببياناتك ما دام حسابك نشطًا. وعند حذف حسابك تُحذف بياناتك الشخصية وتنبيهاتك خلال مدة معقولة، باستثناء السجلات التي يلزمنا القانون بالاحتفاظ بها. وتصبح رموز الجلسة غير صالحة فور انتهاء صلاحيتها."
+     "body": "نحتفظ ببياناتك ما دام حسابك نشطًا. وعند حذف حسابك تُحذف بياناتك الشخصية وتنبيهاتك خلال مدة معقولة، باستثناء السجلات التي يلزمنا القانون بالاحتفاظ بها. وتصبح رموز الجلسة غير صالحة فور انتهاء صلاحيتها. تُحذف أحداث الاستخدام الأولية على خوادمنا بعد 90 يومًا. ويُحتفظ لأغراض إحصائية بسجل ملخّص لكل عملية تثبيت يبيّن وقت الوصول إلى كل خطوة؛ وعند حذف حسابك يُحذف أيضًا ارتباط هذا السجل بحسابك. تخضع البيانات في Firebase لمدد الاحتفاظ لدى Google."
     },
     {
      "heading": "حقوقك",
@@ -458,7 +482,7 @@
     },
     {
      "heading": "الموقع الإلكتروني وملفات تعريف الارتباط",
-     "body": "يستخدم موقع www.marketalertapp.com خدمة Google Analytics التي تجمع الصفحات التي تمت زيارتها والأزرار التي نُقر عليها والموقع التقريبي (الدولة والمدينة) ونوع الجهاز والمتصفح. لا تُحفظ ملفات تعريف الارتباط الخاصة بـ Analytics في متصفحك إلا بموافقتك؛ وإلا تُرسل فقط إشارات إحصائية بلا ملفات تعريف ارتباط ولا تحدد هويتك. أذونات الإعلانات معطلة دائمًا. نستخدم هذه البيانات فقط لتحسين الموقع. يمكنك تغيير اختيارك في أي وقت من رابط «إعدادات ملفات تعريف الارتباط» أسفل الموقع. التطبيق نفسه لا يستخدم Google Analytics."
+     "body": "يستخدم موقع www.marketalertapp.com خدمة Google Analytics التي تجمع الصفحات التي تمت زيارتها والأزرار التي نُقر عليها والموقع التقريبي (الدولة والمدينة) ونوع الجهاز والمتصفح. لا تُحفظ ملفات تعريف الارتباط الخاصة بـ Analytics في متصفحك إلا بموافقتك؛ وإلا تُرسل فقط إشارات إحصائية بلا ملفات تعريف ارتباط ولا تحدد هويتك. أذونات الإعلانات معطلة دائمًا. نستخدم هذه البيانات فقط لتحسين الموقع. يمكنك تغيير اختيارك في أي وقت من رابط «إعدادات ملفات تعريف الارتباط» أسفل الموقع. القياس داخل التطبيق موضّح أعلاه في قسم «القياس داخل التطبيق واختيارك»."
     },
     {
      "heading": "التواصل والتغييرات",
@@ -507,24 +531,28 @@
   },
   "privacy": {
    "title": "Política de Privacidade",
-   "effectiveDate": "2026-10-29",
+   "effectiveDate": "2026-11-23",
    "intro": "Esta política explica quais dados o MarketAlert coleta, por que os coleta e quais direitos você tem sobre eles.",
    "sections": [
     {
      "heading": "Dados que coletamos",
-     "body": "Ao criar uma conta guardamos seu nome de usuário e seu e-mail; sua senha é mantida apenas como um hash irreversível. Se você continuar sem conta, guardamos um identificador de dispositivo aleatório gerado pelo aplicativo. Também mantemos os alertas que você cria, o histórico de disparos, suas preferências de notificação e o idioma escolhido."
+     "body": "Ao criar uma conta guardamos seu nome de usuário e seu e-mail; sua senha é mantida apenas como um hash irreversível. Se você continuar sem conta, guardamos um identificador de dispositivo aleatório gerado pelo aplicativo. Também mantemos os alertas que você cria, o histórico de disparos, suas preferências de notificação e o idioma escolhido. Se ocorrer um erro ao abrir o aplicativo, enviamos ao nosso servidor um registro técnico de erro com o código do erro, as versões do aplicativo e do sistema operacional, o idioma e um número de instalação aleatório gerado pelo aplicativo; esse registro não é vinculado à sua conta e é excluído após 90 dias. Se você nos escrever pelo formulário de suporte na web, guardamos seu e-mail e sua mensagem apenas para responder à sua solicitação. Se os dados de uso estiverem ativados, também registramos como você usa o app: as telas que você abre; etapas como cadastro, criação de alerta, início do teste e compra; a versão do app, o idioma e o país; e de qual anúncio ou link você instalou o app (origem da instalação no Google Play ou informações do Apple Ads). Se o app travar, é enviado um relatório de falha com o modelo do aparelho, a versão do sistema operacional e os detalhes técnicos do erro."
     },
     {
      "heading": "Por que usamos",
-     "body": "Usamos seus dados apenas para prestar o serviço: avaliar seus alertas, entregar suas notificações, autenticar sua conta, gerenciar sua assinatura Plus ou Pro e responder a pedidos de suporte. Não usamos seus dados para publicidade e não os vendemos a terceiros."
+     "body": "Usamos seus dados para prestar o serviço: avaliar seus alertas, entregar suas notificações, verificar sua conta, gerenciar sua assinatura Plus ou Pro e responder a pedidos de suporte. Usamos os dados de uso para encontrar as etapas em que as pessoas travam, corrigir erros e medir quantas instalações e assinaturas nossas próprias campanhas de anúncios trazem. Não exibimos anúncios no app e não vendemos seus dados."
     },
     {
      "heading": "Serviços de terceiros",
-     "body": "Os dados de mercado vêm da Binance. Usamos o Google Firebase para notificações push e os serviços do Telegram para notificações no Telegram, o que significa que o conteúdo da notificação é transmitido a esses serviços. Se você usar o chat com IA, sua mensagem é enviada aos serviços da OpenAI para processamento. As políticas de privacidade desses provedores também se aplicam."
+     "body": "Os dados de mercado vêm da Binance. Usamos o Google Firebase para notificações push e os serviços do Telegram para notificações no Telegram, o que significa que o conteúdo da notificação é transmitido a esses serviços. Se você usar o chat com IA, sua mensagem é enviada aos serviços da OpenAI para processamento. As políticas de privacidade desses provedores também se aplicam. Usamos o Google Firebase Analytics para medir o uso e o Firebase Crashlytics para relatórios de falhas. No Android, eventos de uso e o ID de publicidade do aparelho são compartilhados com o Google (Google Ads) para medir os resultados das nossas campanhas de anúncios."
+    },
+    {
+     "heading": "Medição no app e sua escolha",
+     "body": "No Espaço Econômico Europeu, no Reino Unido e na Suíça, os dados de uso não são coletados sem sua permissão; o app pergunta antes. Nas demais regiões, ficam ativados por padrão. Em qualquer lugar, você pode desativá-los quando quiser no botão Ajustes → Dados de uso; ao desativar, os eventos pendentes no seu celular também são apagados. Os relatórios de falhas não dependem dessa escolha, pois são usados apenas para corrigir erros. No iOS não usamos o identificador de publicidade (IDFA) e não rastreamos você em apps e sites de outras empresas. No Android você pode redefinir ou excluir seu ID de publicidade nas configurações do aparelho."
     },
     {
      "heading": "Prazo de retenção",
-     "body": "Mantemos seus dados enquanto sua conta estiver ativa. Quando você exclui a conta, seus dados pessoais e alertas são apagados em prazo razoável, exceto os registros que somos obrigados a guardar por lei. Os tokens de sessão deixam de valer quando expiram."
+     "body": "Mantemos seus dados enquanto sua conta estiver ativa. Quando você exclui a conta, seus dados pessoais e alertas são apagados em prazo razoável, exceto os registros que somos obrigados a guardar por lei. Os tokens de sessão deixam de valer quando expiram. Os eventos de uso brutos em nossos servidores são apagados após 90 dias. Um registro resumido por instalação, que mostra quando cada etapa foi alcançada, é mantido para estatísticas; ao excluir sua conta, o vínculo desse registro com ela também é apagado. Os dados no Firebase seguem os prazos de retenção do Google."
     },
     {
      "heading": "Seus direitos",
@@ -536,7 +564,7 @@
     },
     {
      "heading": "Site e cookies",
-     "body": "O site www.marketalertapp.com usa o Google Analytics, que coleta as páginas visitadas, os botões clicados, a localização aproximada (país e cidade) e o tipo de dispositivo e navegador. Os cookies do Analytics só são gravados no seu navegador se você permitir; caso contrário, são enviados apenas sinais sem cookies que não identificam você. As permissões de publicidade ficam sempre desativadas. Usamos esses dados apenas para melhorar o site. Você pode mudar sua escolha a qualquer momento pelo link “Preferências de cookies” no rodapé do site. O app em si não usa o Google Analytics."
+     "body": "O site www.marketalertapp.com usa o Google Analytics, que coleta as páginas visitadas, os botões clicados, a localização aproximada (país e cidade) e o tipo de dispositivo e navegador. Os cookies do Analytics só são gravados no seu navegador se você permitir; caso contrário, são enviados apenas sinais sem cookies que não identificam você. As permissões de publicidade ficam sempre desativadas. Usamos esses dados apenas para melhorar o site. Você pode mudar sua escolha a qualquer momento pelo link “Preferências de cookies” no rodapé do site. A medição no app está descrita acima, na seção “Medição no app e sua escolha”."
     },
     {
      "heading": "Contato e alterações",
@@ -585,24 +613,28 @@
   },
   "privacy": {
    "title": "Politique de confidentialité",
-   "effectiveDate": "2026-10-29",
+   "effectiveDate": "2026-11-23",
    "intro": "Cette politique explique quelles données MarketAlert collecte, pourquoi elle les collecte et quels droits tu as sur ces données.",
    "sections": [
     {
      "heading": "Données collectées",
-     "body": "À la création du compte, nous conservons ton nom d’utilisateur et ton adresse e-mail ; ton mot de passe n’est stocké que sous forme d’empreinte irréversible. Si tu continues sans compte, nous conservons un identifiant d’appareil aléatoire généré par l’application. Nous conservons également les alertes que tu crées, leur historique de déclenchement, tes préférences de notification et ta langue."
+     "body": "À la création du compte, nous conservons ton nom d’utilisateur et ton adresse e-mail ; ton mot de passe n’est stocké que sous forme d’empreinte irréversible. Si tu continues sans compte, nous conservons un identifiant d’appareil aléatoire généré par l’application. Nous conservons également les alertes que tu crées, leur historique de déclenchement, tes préférences de notification et ta langue. Si une erreur survient à l’ouverture de l’application, nous envoyons à notre serveur un journal d’erreur technique contenant le code d’erreur, les versions de l’application et du système d’exploitation, la langue et un numéro d’installation aléatoire généré par l’application ; ce journal n’est pas lié à ton compte et il est supprimé au bout de 90 jours. Si tu nous écris via le formulaire d’assistance sur le web, nous conservons ton adresse e-mail et ton message uniquement pour répondre à ta demande. Si les données d’utilisation sont activées, nous enregistrons aussi la façon dont tu utilises l’application : les écrans ouverts ; des étapes comme l’inscription, la création d’une alerte, le début de l’essai et l’achat ; la version de l’application, la langue et le pays ; et la publicité ou le lien depuis lequel tu as installé l’application (source d’installation Google Play ou informations Apple Ads). Si l’application plante, un rapport de plantage contenant le modèle de l’appareil, la version du système d’exploitation et les détails techniques de l’erreur est envoyé."
     },
     {
      "heading": "Finalités",
-     "body": "Nous utilisons tes données uniquement pour fournir le service : évaluer tes alertes, acheminer tes notifications, authentifier ton compte, gérer ton abonnement Plus ou Pro et répondre aux demandes d’assistance. Nous n’utilisons pas tes données à des fins publicitaires et ne les vendons pas à des tiers."
+     "body": "Nous utilisons tes données pour fournir le service : évaluer tes alertes, envoyer tes notifications, authentifier ton compte, gérer ton abonnement Plus ou Pro et répondre aux demandes d’assistance. Nous utilisons les données d’utilisation pour repérer les étapes où les utilisateurs bloquent, corriger les erreurs et mesurer combien d’installations et d’abonnements nos propres campagnes publicitaires apportent. Nous n’affichons pas de publicité dans l’application et ne vendons pas tes données."
     },
     {
      "heading": "Services tiers",
-     "body": "Les données de marché proviennent de Binance. Nous utilisons Google Firebase pour les notifications push et les services Telegram pour les notifications Telegram ; le contenu de la notification est donc transmis à ces services. Si tu utilises la fonction de chat IA, ton message est envoyé aux services d’OpenAI pour traitement. Les politiques de confidentialité de ces prestataires s’appliquent."
+     "body": "Les données de marché proviennent de Binance. Nous utilisons Google Firebase pour les notifications push et les services Telegram pour les notifications Telegram ; le contenu de la notification est donc transmis à ces services. Si tu utilises la fonction de chat IA, ton message est envoyé aux services d’OpenAI pour traitement. Les politiques de confidentialité de ces prestataires s’appliquent. Nous utilisons Google Firebase Analytics pour mesurer l’utilisation et Firebase Crashlytics pour les rapports de plantage. Sur Android, les événements d’utilisation et l’identifiant publicitaire de l’appareil sont partagés avec Google (Google Ads) pour mesurer les résultats de nos campagnes publicitaires."
+    },
+    {
+     "heading": "Mesure dans l’application et ton choix",
+     "body": "Dans l’Espace économique européen, au Royaume-Uni et en Suisse, aucune donnée d’utilisation n’est collectée sans ton accord ; l’application te le demande d’abord. Dans les autres régions, elle est activée par défaut. Partout, tu peux la désactiver à tout moment avec l’interrupteur Réglages → Données d’utilisation ; les événements en attente sur ton téléphone sont alors supprimés. Les rapports de plantage ne dépendent pas de ce choix, car ils servent uniquement à corriger les erreurs. Sur iOS, nous n’utilisons pas l’identifiant publicitaire (IDFA) et ne te suivons pas dans les applications et sites d’autres entreprises. Sur Android, tu peux réinitialiser ou supprimer ton identifiant publicitaire dans les réglages de l’appareil."
     },
     {
      "heading": "Durée de conservation",
-     "body": "Nous conservons tes données tant que ton compte est actif. Lorsque tu supprimes ton compte, tes données personnelles et tes alertes sont effacées dans un délai raisonnable, à l’exception des enregistrements que la loi nous oblige à conserver. Les jetons de session deviennent invalides à leur expiration."
+     "body": "Nous conservons tes données tant que ton compte est actif. Lorsque tu supprimes ton compte, tes données personnelles et tes alertes sont effacées dans un délai raisonnable, à l’exception des enregistrements que la loi nous oblige à conserver. Les jetons de session deviennent invalides à leur expiration. Les événements d’utilisation bruts sur nos serveurs sont supprimés après 90 jours. Un enregistrement récapitulatif par installation, indiquant quand chaque étape a été atteinte, est conservé à des fins statistiques ; lorsque tu supprimes ton compte, son lien avec ton compte est aussi supprimé. Les données dans Firebase sont soumises aux durées de conservation de Google."
     },
     {
      "heading": "Tes droits",
@@ -614,7 +646,7 @@
     },
     {
      "heading": "Site web et cookies",
-     "body": "Le site www.marketalertapp.com utilise Google Analytics, qui collecte les pages consultées, les boutons cliqués, la localisation approximative (pays et ville) ainsi que le type d’appareil et de navigateur. Les cookies Analytics ne sont enregistrés dans ton navigateur que si tu l’acceptes ; sinon, seuls des signaux sans cookies qui ne t’identifient pas sont envoyés. Les autorisations publicitaires sont toujours désactivées. Nous utilisons ces données uniquement pour améliorer le site. Tu peux modifier ton choix à tout moment via le lien « Préférences cookies » en bas du site. L’application elle-même n’utilise pas Google Analytics."
+     "body": "Le site www.marketalertapp.com utilise Google Analytics, qui collecte les pages consultées, les boutons cliqués, la localisation approximative (pays et ville) ainsi que le type d’appareil et de navigateur. Les cookies Analytics ne sont enregistrés dans ton navigateur que si tu l’acceptes ; sinon, seuls des signaux sans cookies qui ne t’identifient pas sont envoyés. Les autorisations publicitaires sont toujours désactivées. Nous utilisons ces données uniquement pour améliorer le site. Tu peux modifier ton choix à tout moment via le lien « Préférences cookies » en bas du site. La mesure dans l’application est décrite plus haut, dans la section « Mesure dans l’application et ton choix »."
     },
     {
      "heading": "Contact et modifications",
@@ -663,24 +695,28 @@
   },
   "privacy": {
    "title": "Политика конфиденциальности",
-   "effectiveDate": "2026-10-29",
+   "effectiveDate": "2026-11-23",
    "intro": "Эта политика объясняет, какие данные собирает MarketAlert, зачем он их собирает и какие права у вас есть.",
    "sections": [
     {
      "heading": "Какие данные мы собираем",
-     "body": "При создании аккаунта мы сохраняем имя пользователя и адрес электронной почты; пароль хранится только в виде необратимого хеша. Если вы продолжаете без аккаунта, мы сохраняем случайный идентификатор устройства, созданный приложением. Также мы храним созданные вами оповещения, историю их срабатываний, настройки уведомлений и выбранный язык."
+     "body": "При создании аккаунта мы сохраняем имя пользователя и адрес электронной почты; пароль хранится только в виде необратимого хеша. Если вы продолжаете без аккаунта, мы сохраняем случайный идентификатор устройства, созданный приложением. Также мы храним созданные вами оповещения, историю их срабатываний, настройки уведомлений и выбранный язык. Если при запуске приложения возникает ошибка, мы отправляем на наш сервер технический журнал ошибок с кодом ошибки, версиями приложения и операционной системы, языком и случайным номером установки, созданным приложением; эта запись не связана с вашим аккаунтом и удаляется через 90 дней. Если вы пишете нам через веб-форму поддержки, мы храним ваш адрес электронной почты и сообщение только для ответа на ваш запрос. Если сбор данных об использовании включён, мы также записываем, как вы пользуетесь приложением: открытые экраны; такие шаги, как регистрация, создание оповещения, начало пробного периода и покупка; версию приложения, язык и страну; а также с какой рекламы или по какой ссылке вы установили приложение (источник установки Google Play или данные Apple Ads). При сбое приложения отправляется отчёт о сбое с моделью устройства, версией операционной системы и техническими сведениями об ошибке."
     },
     {
      "heading": "Зачем мы их используем",
-     "body": "Мы используем ваши данные только для предоставления сервиса: оценки оповещений, доставки уведомлений, аутентификации аккаунта, управления подпиской Plus или Pro и ответов на обращения в поддержку. Мы не используем данные для рекламы и не продаём их третьим лицам."
+     "body": "Мы используем ваши данные для работы сервиса: проверки оповещений, доставки уведомлений, подтверждения аккаунта, управления подпиской Plus или Pro и ответов на обращения в поддержку. Данные об использовании нужны нам, чтобы находить шаги, на которых пользователи застревают, исправлять ошибки и измерять, сколько установок и подписок приносят наши собственные рекламные кампании. Мы не показываем рекламу в приложении и не продаём ваши данные."
     },
     {
      "heading": "Сторонние сервисы",
-     "body": "Рыночные данные поступают с Binance. Для push-уведомлений мы используем Google Firebase, для уведомлений в Telegram — сервисы Telegram, поэтому содержимое уведомления передаётся этим сервисам. Если вы пользуетесь ИИ-чатом, ваше сообщение отправляется в сервисы OpenAI для обработки. Действуют политики конфиденциальности этих поставщиков."
+     "body": "Рыночные данные поступают с Binance. Для push-уведомлений мы используем Google Firebase, для уведомлений в Telegram — сервисы Telegram, поэтому содержимое уведомления передаётся этим сервисам. Если вы пользуетесь ИИ-чатом, ваше сообщение отправляется в сервисы OpenAI для обработки. Действуют политики конфиденциальности этих поставщиков. Для измерения использования мы применяем Google Firebase Analytics, для отчётов о сбоях — Firebase Crashlytics. На Android события использования и рекламный идентификатор устройства передаются Google (Google Ads), чтобы измерять результаты наших рекламных кампаний."
+    },
+    {
+     "heading": "Измерения в приложении и ваш выбор",
+     "body": "В Европейской экономической зоне, Великобритании и Швейцарии данные об использовании не собираются без вашего согласия: приложение сначала спрашивает. В других регионах сбор включён по умолчанию. Везде вы можете в любой момент отключить его переключателем Настройки → Данные об использовании; при этом удаляются и события, ожидающие отправки на телефоне. Отчёты о сбоях не зависят от этого выбора, так как используются только для исправления ошибок. На iOS мы не используем рекламный идентификатор (IDFA) и не отслеживаем вас в приложениях и на сайтах других компаний. На Android рекламный идентификатор можно сбросить или удалить в настройках устройства."
     },
     {
      "heading": "Срок хранения",
-     "body": "Мы храним ваши данные, пока аккаунт активен. После удаления аккаунта персональные данные и оповещения удаляются в разумный срок, кроме записей, которые мы обязаны хранить по закону. Токены сессии становятся недействительными по истечении срока действия."
+     "body": "Мы храним ваши данные, пока аккаунт активен. После удаления аккаунта персональные данные и оповещения удаляются в разумный срок, кроме записей, которые мы обязаны хранить по закону. Токены сессии становятся недействительными по истечении срока действия. Необработанные события использования на наших серверах удаляются через 90 дней. Сводная запись по каждой установке, показывающая, когда был пройден каждый шаг, хранится для статистики; при удалении аккаунта её связь с аккаунтом тоже удаляется. Данные в Firebase хранятся в сроки, установленные Google."
     },
     {
      "heading": "Ваши права",
@@ -692,7 +728,7 @@
     },
     {
      "heading": "Сайт и файлы cookie",
-     "body": "Сайт www.marketalertapp.com использует Google Analytics, который собирает просмотренные страницы, нажатые кнопки, примерное местоположение (страна и город), тип устройства и браузера. Файлы cookie Analytics сохраняются в браузере только с вашего согласия; без него отправляются лишь сигналы без cookie, не позволяющие вас идентифицировать. Рекламные разрешения всегда выключены. Мы используем эти данные только для улучшения сайта. Изменить выбор можно в любой момент по ссылке «Настройки cookie» внизу сайта. Само приложение Google Analytics не использует."
+     "body": "Сайт www.marketalertapp.com использует Google Analytics, который собирает просмотренные страницы, нажатые кнопки, примерное местоположение (страна и город), тип устройства и браузера. Файлы cookie Analytics сохраняются в браузере только с вашего согласия; без него отправляются лишь сигналы без cookie, не позволяющие вас идентифицировать. Рекламные разрешения всегда выключены. Мы используем эти данные только для улучшения сайта. Изменить выбор можно в любой момент по ссылке «Настройки cookie» внизу сайта. Измерения в приложении описаны выше, в разделе «Измерения в приложении и ваш выбор»."
     },
     {
      "heading": "Связь и изменения",
@@ -741,24 +777,28 @@
   },
   "privacy": {
    "title": "Datenschutzerklärung",
-   "effectiveDate": "2026-10-29",
+   "effectiveDate": "2026-11-23",
    "intro": "Diese Erklärung beschreibt, welche Daten MarketAlert erhebt, warum wir sie erheben und welche Rechte du daran hast.",
    "sections": [
     {
      "heading": "Erhobene Daten",
-     "body": "Beim Anlegen eines Kontos speichern wir deinen Benutzernamen und deine E-Mail-Adresse; dein Passwort wird ausschließlich als nicht umkehrbarer Hash gespeichert. Wenn du ohne Konto fortfährst, speichern wir eine zufällige Gerätekennung, die die App auf deinem Gerät erzeugt. Außerdem bewahren wir die von dir erstellten Alarme, deren Auslöseverlauf, deine Benachrichtigungseinstellungen und deine Sprachwahl auf."
+     "body": "Beim Anlegen eines Kontos speichern wir deinen Benutzernamen und deine E-Mail-Adresse; dein Passwort wird ausschließlich als nicht umkehrbarer Hash gespeichert. Wenn du ohne Konto fortfährst, speichern wir eine zufällige Gerätekennung, die die App auf deinem Gerät erzeugt. Außerdem bewahren wir die von dir erstellten Alarme, deren Auslöseverlauf, deine Benachrichtigungseinstellungen und deine Sprachwahl auf. Tritt beim Öffnen der App ein Fehler auf, senden wir einen technischen Fehlerbericht mit Fehlercode, App- und Betriebssystemversion, Sprache und einer zufälligen, von der App erzeugten Installationsnummer an unseren Server; dieser Eintrag wird nicht mit deinem Konto verknüpft und nach 90 Tagen gelöscht. Wenn du uns über das Support-Formular im Web schreibst, speichern wir deine E-Mail-Adresse und deine Nachricht nur, um deine Anfrage zu beantworten. Wenn Nutzungsdaten aktiviert sind, erfassen wir auch, wie du die App nutzt: geöffnete Bildschirme; Schritte wie Registrierung, Erstellen eines Alarms, Start der Testphase und Kauf; App-Version, Sprache und Land; sowie über welche Anzeige oder welchen Link du die App installiert hast (Installationsquelle von Google Play oder Apple-Ads-Informationen). Stürzt die App ab, wird ein Absturzbericht mit Gerätemodell, Betriebssystemversion und technischen Details des Fehlers gesendet."
     },
     {
      "heading": "Zweck der Verarbeitung",
-     "body": "Wir nutzen deine Daten ausschließlich zur Erbringung des Dienstes: um deine Alarme auszuwerten, Benachrichtigungen zuzustellen, dein Konto zu authentifizieren, dein Plus- oder Pro-Abonnement zu verwalten und Supportanfragen zu beantworten. Wir nutzen deine Daten nicht für Werbung und verkaufen sie nicht an Dritte."
+     "body": "Wir verwenden deine Daten, um den Dienst bereitzustellen: deine Alarme auszuwerten, Benachrichtigungen zuzustellen, dein Konto zu authentifizieren, dein Plus- oder Pro-Abo zu verwalten und Supportanfragen zu beantworten. Nutzungsdaten verwenden wir, um Schritte zu finden, an denen Nutzer hängen bleiben, Fehler zu beheben und zu messen, wie viele Installationen und Abos unsere eigenen Werbekampagnen bringen. Wir zeigen in der App keine Werbung und verkaufen deine Daten nicht."
     },
     {
      "heading": "Dienste Dritter",
-     "body": "Marktdaten stammen von Binance. Für Push-Benachrichtigungen nutzen wir Google Firebase, für Telegram-Benachrichtigungen die Telegram-Dienste; dabei wird der Inhalt der Benachrichtigung an diese Dienste übermittelt. Wenn du den KI-Chat nutzt, wird deine Nachricht zur Verarbeitung an OpenAI-Dienste gesendet. Es gelten die Datenschutzerklärungen dieser Anbieter."
+     "body": "Marktdaten stammen von Binance. Für Push-Benachrichtigungen nutzen wir Google Firebase, für Telegram-Benachrichtigungen die Telegram-Dienste; dabei wird der Inhalt der Benachrichtigung an diese Dienste übermittelt. Wenn du den KI-Chat nutzt, wird deine Nachricht zur Verarbeitung an OpenAI-Dienste gesendet. Es gelten die Datenschutzerklärungen dieser Anbieter. Für die Nutzungsmessung verwenden wir Google Firebase Analytics, für Absturzberichte Firebase Crashlytics. Unter Android werden Nutzungsereignisse und die Werbe-ID des Geräts mit Google (Google Ads) geteilt, um die Ergebnisse unserer Werbekampagnen zu messen."
+    },
+    {
+     "heading": "Messung in der App und deine Wahl",
+     "body": "Im Europäischen Wirtschaftsraum, im Vereinigten Königreich und in der Schweiz werden Nutzungsdaten nicht ohne deine Einwilligung erhoben; die App fragt zuerst. In anderen Regionen ist die Erfassung standardmäßig aktiviert. Überall kannst du sie jederzeit mit dem Schalter Einstellungen → Nutzungsdaten deaktivieren; dabei werden auch die auf deinem Telefon wartenden Ereignisse gelöscht. Absturzberichte sind von dieser Wahl unabhängig, da sie nur zur Fehlerbehebung dienen. Unter iOS verwenden wir die Werbe-ID (IDFA) nicht und verfolgen dich nicht über Apps und Websites anderer Unternehmen hinweg. Unter Android kannst du deine Werbe-ID in den Geräteeinstellungen zurücksetzen oder löschen."
     },
     {
      "heading": "Speicherdauer",
-     "body": "Wir speichern deine Daten, solange dein Konto aktiv ist. Löschst du dein Konto, werden deine personenbezogenen Daten und Alarme innerhalb einer angemessenen Frist gelöscht; davon ausgenommen sind Aufzeichnungen, zu deren Aufbewahrung wir gesetzlich verpflichtet sind. Sitzungstoken verlieren mit Ablauf ihre Gültigkeit."
+     "body": "Wir speichern deine Daten, solange dein Konto aktiv ist. Löschst du dein Konto, werden deine personenbezogenen Daten und Alarme innerhalb einer angemessenen Frist gelöscht; davon ausgenommen sind Aufzeichnungen, zu deren Aufbewahrung wir gesetzlich verpflichtet sind. Sitzungstoken verlieren mit Ablauf ihre Gültigkeit. Rohe Nutzungsereignisse auf unseren Servern werden nach 90 Tagen gelöscht. Ein zusammenfassender Datensatz pro Installation, der zeigt, wann welcher Schritt erreicht wurde, wird für Statistiken aufbewahrt; wenn du dein Konto löschst, wird auch seine Verknüpfung mit deinem Konto gelöscht. Daten in Firebase unterliegen den Aufbewahrungsfristen von Google."
     },
     {
      "heading": "Deine Rechte",
@@ -770,7 +810,7 @@
     },
     {
      "heading": "Website und Cookies",
-     "body": "Die Website www.marketalertapp.com nutzt Google Analytics. Erfasst werden besuchte Seiten, angeklickte Schaltflächen, ungefährer Standort (Land und Stadt) sowie Geräte- und Browsertyp. Analytics-Cookies werden nur mit deiner Zustimmung in deinem Browser gespeichert; ohne Zustimmung werden nur cookielose Signale gesendet, die dich nicht identifizieren. Werbebezogene Berechtigungen sind immer deaktiviert. Wir nutzen diese Daten nur, um die Website zu verbessern. Du kannst deine Wahl jederzeit über den Link „Cookie-Einstellungen“ unten auf der Seite ändern. Die App selbst verwendet Google Analytics nicht."
+     "body": "Die Website www.marketalertapp.com nutzt Google Analytics. Erfasst werden besuchte Seiten, angeklickte Schaltflächen, ungefährer Standort (Land und Stadt) sowie Geräte- und Browsertyp. Analytics-Cookies werden nur mit deiner Zustimmung in deinem Browser gespeichert; ohne Zustimmung werden nur cookielose Signale gesendet, die dich nicht identifizieren. Werbebezogene Berechtigungen sind immer deaktiviert. Wir nutzen diese Daten nur, um die Website zu verbessern. Du kannst deine Wahl jederzeit über den Link „Cookie-Einstellungen“ unten auf der Seite ändern. Die Messung in der App ist oben im Abschnitt „Messung in der App und deine Wahl“ beschrieben."
     },
     {
      "heading": "Kontakt und Änderungen",
@@ -819,24 +859,28 @@
   },
   "privacy": {
    "title": "プライバシーポリシー",
-   "effectiveDate": "2026-10-29",
+   "effectiveDate": "2026-11-23",
    "intro": "本ポリシーは、MarketAlert が収集するデータ、その目的、および利用者の権利について説明します。",
    "sections": [
     {
      "heading": "収集するデータ",
-     "body": "アカウント作成時にユーザー名とメールアドレスを保存します。パスワードは復元できないハッシュとしてのみ保持します。アカウントを作成せずに利用する場合は、アプリが端末上で生成したランダムな端末識別子を保存します。また、作成したアラート、その発動履歴、通知設定、言語設定も保持します。"
+     "body": "アカウント作成時にユーザー名とメールアドレスを保存します。パスワードは復元できないハッシュとしてのみ保持します。アカウントを作成せずに利用する場合は、アプリが端末上で生成したランダムな端末識別子を保存します。また、作成したアラート、その発動履歴、通知設定、言語設定も保持します。アプリの起動中にエラーが起きた場合、エラーコード、アプリとOSのバージョン、言語、アプリがランダムに生成したインストール番号を技術的なエラー記録として当社のサーバーに送信します。この記録はアカウントと結び付けられず、90日後に削除されます。Webのサポートフォームからお問い合わせいただいた場合、メールアドレスとメッセージはお問い合わせへの回答のためにのみ保存します。 利用データがオンの場合、アプリの使い方も記録します。開いた画面、登録・アラート作成・トライアル開始・購入などのステップ、アプリのバージョン・言語・国、そしてどの広告やリンクからアプリをインストールしたか（Google Play のインストール元または Apple Ads の情報）です。アプリがクラッシュした場合は、端末モデル、OS バージョン、エラーの技術的な詳細を含むクラッシュレポートが送信されます。"
     },
     {
      "heading": "利用目的",
-     "body": "データはサービス提供のためにのみ利用します。アラートの評価、通知の配信、アカウントの認証、Plus または Pro の購読の管理、サポート対応がこれにあたります。広告目的での利用や第三者への販売は行いません。"
+     "body": "データはサービスを提供するために使用します。アラートの判定、通知の配信、アカウントの認証、Plus または Pro サブスクリプションの管理、サポートへの回答です。利用データは、ユーザーがつまずくステップを見つけ、エラーを修正し、当社の広告キャンペーンがどれだけのインストールとサブスクリプションをもたらしたかを測定するために使用します。アプリ内に広告は表示せず、データを販売することもありません。"
     },
     {
      "heading": "第三者サービス",
-     "body": "市場データは Binance から取得しています。プッシュ通知には Google Firebase を、Telegram 通知には Telegram のサービスを利用しており、通知内容はこれらのサービスに送信されます。AI チャット機能を利用した場合、メッセージは処理のため OpenAI のサービスへ送信されます。各提供事業者のプライバシーポリシーが適用されます。"
+     "body": "市場データは Binance から取得しています。プッシュ通知には Google Firebase を、Telegram 通知には Telegram のサービスを利用しており、通知内容はこれらのサービスに送信されます。AI チャット機能を利用した場合、メッセージは処理のため OpenAI のサービスへ送信されます。各提供事業者のプライバシーポリシーが適用されます。 利用状況の測定には Google Firebase Analytics、クラッシュレポートには Firebase Crashlytics を使用します。Android では、広告キャンペーンの成果を測定するため、利用イベントと端末の広告 ID が Google（Google Ads）と共有されます。"
+    },
+    {
+     "heading": "アプリ内の測定と選択",
+     "body": "欧州経済領域、英国、スイスでは、同意なしに利用データを収集しません。アプリが最初に確認します。その他の地域では初期設定でオンです。どの地域でも「設定 → 利用データ」のスイッチでいつでもオフにでき、オフにすると端末で送信待ちのイベントも削除されます。クラッシュレポートはエラー修正のためだけに使用するため、この選択とは関係なく送信されます。iOS では広告識別子（IDFA）を使用せず、他社のアプリやウェブサイトをまたいでトラッキングすることもありません。Android では端末の設定で広告 ID をリセットまたは削除できます。"
     },
     {
      "heading": "保存期間",
-     "body": "アカウントが有効な間、データを保持します。アカウントを削除すると、個人データとアラートは合理的な期間内に削除されます。ただし法令により保存が義務づけられた記録は除きます。セッショントークンは有効期限を過ぎると無効になります。"
+     "body": "アカウントが有効な間、データを保持します。アカウントを削除すると、個人データとアラートは合理的な期間内に削除されます。ただし法令により保存が義務づけられた記録は除きます。セッショントークンは有効期限を過ぎると無効になります。 当社サーバー上の未加工の利用イベントは 90 日後に削除されます。各ステップに到達した時刻を示すインストールごとの要約記録は統計のために保存され、アカウントを削除するとアカウントとの紐付けも削除されます。Firebase 上のデータは Google の保存期間に従います。"
     },
     {
      "heading": "利用者の権利",
@@ -848,7 +892,7 @@
     },
     {
      "heading": "ウェブサイトと Cookie",
-     "body": "www.marketalertapp.com のウェブサイトは Google Analytics を使用し、閲覧ページ、クリックしたボタン、おおよその位置（国・都市）、端末とブラウザの種類を収集します。Analytics の Cookie は同意いただいた場合にのみブラウザに保存されます。同意がない場合は、Cookie を使わず個人を特定しない計測信号のみが送信されます。広告関連の許可は常にオフです。これらのデータはサイトの改善にのみ使用します。選択はサイト下部の「Cookie 設定」リンクからいつでも変更できます。アプリ自体は Google Analytics を使用しません。"
+     "body": "www.marketalertapp.com のウェブサイトは Google Analytics を使用し、閲覧ページ、クリックしたボタン、おおよその位置（国・都市）、端末とブラウザの種類を収集します。Analytics の Cookie は同意いただいた場合にのみブラウザに保存されます。同意がない場合は、Cookie を使わず個人を特定しない計測信号のみが送信されます。広告関連の許可は常にオフです。これらのデータはサイトの改善にのみ使用します。選択はサイト下部の「Cookie 設定」リンクからいつでも変更できます。アプリ内の測定については、上記の「アプリ内の測定と選択」セクションをご覧ください。"
     },
     {
      "heading": "お問い合わせと変更",
