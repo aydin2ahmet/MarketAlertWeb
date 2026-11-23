@@ -341,6 +341,24 @@
       "MarketAlert works with a subscription; Plus and Pro both come with a 7-day free trial, and the Notifications page is in both."
      ]
     ]
-   }
+   },
+  "features/golden-cross-death-cross-alerts": {
+    "line": "Get notified of a golden cross or death cross: MarketAlert's SMA/EMA crossover condition with SMA 50 / SMA 200 on the 1d chart.",
+    "what": "Add the SMA/EMA crossover condition to a coin with Average type SMA, Fast period 50 and Slow period 200 on the 1d timeframe. Choose Crosses above for a golden cross or Crosses below for a death cross. When the daily candle closes and SMA 50 has crossed SMA 200 in that direction, push and Telegram arrive together.",
+    "facts": [
+      "Decided on closed candles: for Crosses above the previous candle has SMA 50 at or below SMA 200 and the current candle above it.",
+      "Any of six timeframes can be used; shorter ones such as 4h cross more often.",
+      "Both directions in one alert: add two conditions joined with OR.",
+      "Works on one coin or on all coins; Plus and Pro.",
+      "The AI assistant understands 'golden cross' and 'death cross' and fills in SMA 50/200 on 1d."
+    ],
+    "example": "Tell me when BTC has a golden cross",
+    "faq": [
+      [
+        "Can I get both golden and death cross in one alert?",
+        "Yes. Add two SMA/EMA crossover conditions, one Crosses above and one Crosses below, and join them with OR."
+      ]
+    ]
+  }
  }
 }

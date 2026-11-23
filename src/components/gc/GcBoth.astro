@@ -1,0 +1,29 @@
+---
+/**
+ * Golden cross mu, death cross mu? Aynı koşulun iki yönü: iki küçük mürekkep çizimi, birinde Zilbe sevinir, ötekinde Zilba şaşırır.
+ * Altta ikisini tek alarmda isteyene VEYA notu.
+ */
+import Zb from '../eth/Zb.astro';
+import '../../styles/gc.css';
+interface Props { gc: any }
+const { gc } = Astro.props;
+const B = gc.both;
+---
+<section class="gc-b" data-gc-b>
+  <h2>{B.t}</h2><p class="gc-lead">{B.lead}</p>
+  <div class="gc-bw">
+    <div class="gc-bc"><Zb who="zilbe" class="gc-bz" /><svg viewBox="0 0 300 140" aria-hidden="true"><path class="gc-p2" d="M10 80 C90 78 170 74 290 70" /><path class="gc-p5" d="M10 120 C80 118 120 100 160 76 C200 52 240 40 290 30" /><circle cx="160" cy="76" r="8" class="gc-cx" /></svg><h3>{B.u[0]}</h3><p>{B.u[1]}</p></div>
+    <div class="gc-bc"><Zb who="zilba" class="gc-bz" /><svg viewBox="0 0 300 140" aria-hidden="true"><path class="gc-p2" d="M10 60 C90 62 170 66 290 70" /><path class="gc-p5" d="M10 20 C80 22 120 40 160 64 C200 88 240 100 290 112" /><circle cx="160" cy="64" r="8" class="gc-cx" /></svg><h3>{B.d[0]}</h3><p>{B.d[1]}</p></div>
+  </div>
+  <p class="gc-lead">{B.or}</p>
+</section>
+<script>
+  import { zbPlay, zbPrime, zbReduce } from '../../lib/zb';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-gc-b]')) {
+    zbPrime(k);
+    if (zbReduce) continue;
+    const z = k.querySelectorAll<HTMLElement>('.gc-bz');
+    const io = new IntersectionObserver(es => { if (!es[0].isIntersecting) return; io.disconnect(); zbPlay(z[0], 'zilbe-sevin'); setTimeout(() => zbPlay(z[1], 'zilba-sasir'), 800); }, { threshold: .35 });
+    io.observe(k);
+  }
+</script>
