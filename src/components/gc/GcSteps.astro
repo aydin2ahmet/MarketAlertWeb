@@ -1,0 +1,49 @@
+---
+/**
+ * Kurulum: iki gerçek ekran (SMA 50/200 koşul sayfası, kaydedilmiş alarm formu) ve üçüncü adımda sunucunun gerçek push ve Telegram metni.
+ * Zilbe ilk adımda, Zilbo son adımda. Çerçeve yok, sayfa zemininde.
+ */
+import Zb from '../eth/Zb.astro';
+import GcShot from './GcShot.astro';
+import TgChat from '../telegram/TgChat.astro';
+import { msgHtml } from '../../lib/telegram';
+import { emLang, num } from '../../lib/ema';
+import { fill, VAL } from '../../lib/gc';
+import '../../styles/gc.css';
+interface Props { code: string; gc: any; steps: string[][]; html: string[] }
+const { code, gc, steps, html } = Astro.props;
+const L = emLang(code), t = L.tg, [f, s, p] = VAL.u;
+const esc = (x: string) => x.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const head = fill(t.u, { 0: 'BTC', 1: 'SMA 50', 2: 'SMA 200' });
+const tg = { text: `🟢 <b>${esc(head)}</b>\n<i>🔔 BTC golden cross</i>\n<blockquote>${esc(t.fast)} SMA 50: <b>${num(L.num, f, 1)}</b>\n${esc(t.slow)} SMA 200: <b>${num(L.num, s, 1)}</b>\n${esc(t.price)}: <b>${num(L.num, p, 1)}</b></blockquote>\n⏱ ${esc(t.tf['1d'])} · ${esc(t.market)}`, button: t.button };
+const pushT = fill(L.push.u.replace('EMA', 'SMA'), { 0: 'BTC', 2: 50, 3: 200 });
+const pushB = `SMA(50)·1d  ${num(L.num, f, 1)}  │  ↗ SMA(200) ${num(L.num, s, 1)}  ✓`;
+const shots = ['ed', 'form'];
+const ICON = [
+  '<path d="M8 50 L60 36" /><path d="M34 44 l-8 16 h16 Z" /><circle cx="14" cy="40" r="6" /><circle cx="54" cy="26" r="8" />',
+  '<path d="M12 14 h44 v44 h-44 Z" /><path d="M20 26 h28 M20 36 h28 M20 46 h16" />',
+  '<path d="M20 54 V30 a14 14 0 0 1 28 0 V54 Z M26 30 h16" /><path d="M34 54 v8" />',
+];
+---
+<div class="gc-c" data-gc-c>
+  <ol>{steps.map((st, i) => <li>
+    <svg class="gc-ic" viewBox="0 0 68 68" aria-hidden="true" set:html={ICON[i]} />
+    <h3>{st[0]}</h3><p set:html={html[i]} />
+    {i < 2 ? <div class="gc-rise"><div class="gc-ph"><GcShot code={code} k={shots[i]} alt={gc.stepAlts[i]} sizes="240px" /></div>{i === 0 && <Zb who="zilbe" />}</div>
+    : <div class="gc-rise gc-nt"><div class="gc-ps"><img src="/icons/logo-96.png" alt="" width="34" height="34" loading="lazy" /><div><div class="gc-pq-h"><b>MarketAlert</b><span>{gc.now}</span></div><b class="gc-pq-t" dir="auto">{pushT}</b><span class="gc-pq-b" dir="ltr">{pushB}</span></div></div>
+      <TgChat code={code} label={`Telegram: ${head}`} class="gc-tg"><div class="tgm" set:html={msgHtml(tg, code === 'tr' ? '03:00' : '00:00')} /></TgChat><Zb who="zilbo" /></div>}
+  </li>)}</ol>
+</div>
+<script>
+  import { zbPlay, zbPrime, zbReduce } from '../../lib/zb';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-gc-c]')) {
+    zbPrime(k);
+    if (zbReduce) continue;
+    k.classList.add('gc-js');
+    for (const r of k.querySelectorAll<HTMLElement>('.gc-rise')) {
+      const show = () => { r.classList.add('in'); const z = r.querySelector<HTMLElement>('.zb'); if (z) setTimeout(() => zbPlay(z, ({ zilbe: 'zilbe-el', zilba: 'zilba-el', zilbo: 'zilbo-zipla' } as Record<string, string>)[z.dataset.who || 'zilbo']), 700); };
+      const io = new IntersectionObserver(es => { if (!es[0].isIntersecting) return; io.disconnect(); show(); }, { threshold: .1 });
+      io.observe(r); setTimeout(() => r.classList.add('in'), 1500);
+    }
+  }
+</script>

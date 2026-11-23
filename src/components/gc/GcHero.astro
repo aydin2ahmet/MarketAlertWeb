@@ -1,0 +1,111 @@
+---
+/**
+ * İlk ekran, tasarım B "Tahterevalli" (2026-11-23, Ahmet). Bir uçta Zilbe (SMA 50, hafif ve çabuk), öbür uçta Zilba (SMA 200, ağır):
+ * tahta iki ortalamanın farkı kadar eğilir. Altta aynı günlerin grafiği soldan sağa çizilir; tahta dengeden geçtiği gün kesişmedir,
+ * Zilbo direkte zili çalar ve push düşer. Seçilmeyen yöndeki geçişte zil çalmaz. Sahne kareli zeminde mürekkep çizgisi, tek vurgu turuncu.
+ * Ayarlar tek satır simge: yön (golden / death), 4h / 1d, coin. JS yoksa ya da hareket azaltma açıksa son kare durur.
+ */
+import Zb from '../eth/Zb.astro';
+import { gcSeries, gcPath, sx, sy, tilt, W, H, fill, dateOf, fmtDate, dateLocale } from '../../lib/gc';
+import { emLang } from '../../lib/ema';
+import '../../styles/gc.css';
+interface Props { code: string; hreflang: string; gc: any; h1: string; introHtml: string; setupTitle: string }
+const { code, hreflang, gc, h1, introHtml, setupTitle } = Astro.props;
+const S = { dir: 'u', tf: '1d', coin: 'BTC' };
+const d = gcSeries(S.coin, S.tf), L = emLang(code);
+const dirs = (s: string) => s.split('').map(c => gc.dirn[c]).join(' + ');
+const cap = fill(gc.cap, { dirs: dirs(S.dir), tf: S.tf, coin: S.coin });
+const IC: Record<string, string> = { u: '<path d="M4 18 10 12l4 3 6-8 M14 7h6v6"/>', d: '<path d="M4 6l6 6 4-3 6 8 M14 17h6v-6"/>' };
+const last = d.n - 1;
+const pushT = (dir: 'u' | 'd') => fill(L.push[dir].replace('EMA', 'SMA'), { 0: '{coin}', 2: 50, 3: 200 });
+const cfg = { dirn: gc.dirn, nick: gc.nick, cap: gc.cap, say: gc.say, loc: dateLocale(hreflang), push: { u: pushT('u'), d: pushT('d') }, num: L.num, now: gc.now };
+---
+<section class="gc-h" data-gc-h data-cfg={JSON.stringify(cfg)}>
+  <div class="gc-bleed gc-st" role="img" aria-label={gc.alt} dir="ltr">
+    <div class="gc-saw" aria-hidden="true">
+      <div class="gc-pl" style={`transform:rotate(${tilt(d, last).toFixed(2)}deg)`}><Zb who="zilbe" class="gc-ze" /><Zb who="zilba" class="gc-za" /><span class="gc-tl gc-t5">SMA 50</span><span class="gc-tl gc-t2">SMA 200</span></div>
+      <div class="gc-fu"></div><Zb who="zilbo" class="gc-zo" />
+    </div>
+    <p class="gc-say" aria-hidden="true"></p>
+    <div class="gc-pq" aria-hidden="true"><img src="/icons/logo-96.png" alt="" width="34" height="34" /><div><div class="gc-pq-h"><b>MarketAlert</b><span>{gc.now}</span></div><b class="gc-pq-t" dir="auto"></b><span class="gc-pq-b" dir="ltr"></span></div></div>
+    <div class="gc-cv" aria-hidden="true">
+      <svg class="gc-ch" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none"><defs><clipPath id="gc-clp"><rect class="gc-clr" x="0" y="-20" width={W + 2} height={H + 40} /></clipPath></defs>
+        <g clip-path="url(#gc-clp)"><path class="gc-pp" d={gcPath(d.P, d)} /><path class="gc-p2" d={gcPath(d.B, d)} /><path class="gc-p5" d={gcPath(d.A, d)} /></g></svg>
+      <div class="gc-xs">{d.X.map(x => <div class={`gc-xb${S.dir.includes(x.dir) ? ' on' : ''}`} style={`left:${(sx(x.i, d) / W * 100).toFixed(2)}%;top:${(sy(d.B[x.i], d) / H * 100).toFixed(2)}%`}><i></i><b>{(x.dir === 'u' ? '↗ ' : '↘ ') + gc.nick[x.dir]}</b></div>)}</div>
+      <span class="gc-cur" style="left:100%"></span>
+    </div>
+    <div class="gc-dt" aria-hidden="true">{fmtDate(dateOf(last, d.n, S.tf), S.tf, dateLocale(hreflang))}</div>
+  </div>
+  <div class="gc-kn">
+    <div class="gc-r">
+      <span class="gc-ig" role="group" aria-label={gc.aria.dir}>{['u', 'd'].map(v => <button type="button" data-d={v} aria-label={`${gc.dirn[v]} (${gc.nick[v]})`} aria-pressed={String(S.dir.includes(v))}><svg viewBox="0 0 24 24" aria-hidden="true" set:html={IC[v]} /></button>)}</span>
+      <span class="gc-ig gc-tx" role="group" aria-label={gc.aria.tf}>{['4h', '1d'].map(v => <button type="button" data-tf={v} aria-pressed={String(S.tf === v)}>{v}</button>)}</span>
+      <span class="gc-ig gc-tx" role="group" aria-label={gc.aria.coin}>{['BTC', 'ETH', 'SOL'].map(v => <button type="button" data-cn={v} aria-pressed={String(S.coin === v)}>{v}</button>)}</span>
+    </div>
+    <p class="gc-cap">{cap}</p>
+  </div>
+  <div class="gc-head">
+    <p class="gc-kick">{gc.kicker}</p><h1>{h1}</h1>
+    <p class="gc-intro" set:html={introHtml} />
+    <a class="btn" href="#setup">{setupTitle} <span aria-hidden="true">↓</span></a>
+  </div>
+</section>
+
+<script>
+  import { zbPlay, zbPrime, zbReduce, sleep } from '../../lib/zb';
+  import { gcSeries, gcPath, sx, sy, tilt, W, H, fill, dateOf, fmtDate } from '../../lib/gc';
+  for (const r of document.querySelectorAll<HTMLElement>('[data-gc-h]')) {
+    const C = JSON.parse(r.dataset.cfg || '{}');
+    const st = r.querySelector<HTMLElement>('.gc-st')!, pl = st.querySelector<HTMLElement>('.gc-pl')!, sb = st.querySelector<HTMLElement>('.gc-say')!;
+    const zo = st.querySelector<HTMLElement>('.gc-zo'), ze = st.querySelector<HTMLElement>('.gc-ze'), za = st.querySelector<HTMLElement>('.gc-za');
+    const svg = st.querySelector<SVGSVGElement>('.gc-ch')!, clr = st.querySelector('.gc-clr')!, xs = st.querySelector<HTMLElement>('.gc-xs')!, cur = st.querySelector<HTMLElement>('.gc-cur')!, dt = st.querySelector<HTMLElement>('.gc-dt')!;
+    const pq = st.querySelector<HTMLElement>('.gc-pq')!;
+    const S = { dir: 'u', tf: '1d', coin: 'BTC' };
+    const N = C.num, nf = (v: number) => { const d = v < 1000 ? 2 : 1; let [a, b] = v.toFixed(d).split('.'); a = N.indian ? a.replace(/(\d)(?=(\d\d)+\d$)/g, '$1' + N.grp) : a.replace(/\B(?=(\d{3})+(?!\d))/g, N.grp); return a + N.dec + b; };
+    const cap = () => fill(C.cap, { dirs: S.dir.split('').map(c => C.dirn[c]).join(' + '), tf: S.tf, coin: S.coin });
+    const upd = () => {
+      r.querySelectorAll<HTMLElement>('[data-d]').forEach(b => b.setAttribute('aria-pressed', String(S.dir.includes(b.dataset.d!))));
+      r.querySelectorAll<HTMLElement>('[data-tf]').forEach(b => b.setAttribute('aria-pressed', String(S.tf === b.dataset.tf)));
+      r.querySelectorAll<HTMLElement>('[data-cn]').forEach(b => b.setAttribute('aria-pressed', String(S.coin === b.dataset.cn)));
+      r.querySelector('.gc-cap')!.textContent = cap();
+    };
+    let run = 0, vis = false, started = false;
+    const go = async () => {
+      const k = ++run, ok = () => k === run;
+      const d = gcSeries(S.coin, S.tf);
+      const ps = svg.querySelectorAll('path'); ps[0].setAttribute('d', gcPath(d.P, d)); ps[1].setAttribute('d', gcPath(d.B, d)); ps[2].setAttribute('d', gcPath(d.A, d));
+      xs.innerHTML = ''; pq.classList.remove('on'); sb.classList.remove('on'); st.classList.remove('ring');
+      const mark = (j: number, dir: string) => { const m = document.createElement('div'); m.className = 'gc-xb' + (S.dir.includes(dir) ? ' on' : ''); m.innerHTML = `<i></i><b>${dir === 'u' ? '↗' : '↘'} ${C.nick[dir]}</b>`; m.style.left = (sx(j, d) / W * 100) + '%'; m.style.top = (sy(d.B[j], d) / H * 100) + '%'; xs.append(m); };
+      const frame = (i: number) => { clr.setAttribute('width', String(sx(i, d) + 2)); cur.style.left = (sx(i, d) / W * 100) + '%'; pl.style.transform = `rotate(${tilt(d, i).toFixed(2)}deg)`; dt.textContent = fmtDate(dateOf(i, d.n, S.tf), S.tf, C.loc); };
+      if (zbReduce) { frame(d.n - 1); d.X.forEach(x => mark(x.i, x.dir)); return; }
+      const xi = new Map(d.X.map(x => [x.i, x.dir]));
+      for (let i = 0; i < d.n && ok(); i += 3) {
+        while (document.hidden || !vis) { await sleep(400); if (!ok()) return; }
+        frame(i);
+        for (let j = Math.max(0, i - 2); j <= i; j++) {
+          const dir = xi.get(j); if (!dir) continue;
+          mark(j, dir);
+          if (S.dir.includes(dir)) {
+            st.classList.add('ring'); zbPlay(zo, 'zilbo-zil'); zbPlay(dir === 'u' ? ze : za, dir === 'u' ? 'zilbe-sevin' : 'zilba-sasir');
+            sb.textContent = C.say[dir];
+            pq.querySelector('.gc-pq-t')!.textContent = fill(C.push[dir], { coin: S.coin });
+            pq.querySelector('.gc-pq-b')!.textContent = `SMA(50)·${S.tf}  ${nf(d.A[j])}  │  ${dir === 'u' ? '↗' : '↘'} SMA(200) ${nf(d.B[j])}  ✓`;
+            sb.classList.add('on'); pq.classList.add('on'); await sleep(2600);
+          } else { sb.textContent = C.say.skip; sb.classList.add('on'); await sleep(1300); }
+          if (!ok()) return; st.classList.remove('ring'); sb.classList.remove('on'); pq.classList.remove('on');
+        }
+        await sleep(18);
+      }
+      if (!ok()) return; frame(d.n - 1); await sleep(4000); if (ok()) go();
+    };
+    new IntersectionObserver(es => { vis = es[0].isIntersecting; if (vis && !started) { started = true; go(); } }, { threshold: .1 }).observe(st);
+    zbPrime(r);
+    r.querySelectorAll<HTMLElement>('[data-d]').forEach(b => b.onclick = () => {
+      const h = new Set(S.dir.split('')); const c = b.dataset.d!;
+      if (h.has(c)) { if (h.size === 1) return; h.delete(c); } else h.add(c);
+      S.dir = ['u', 'd'].filter(x => h.has(x)).join(''); upd(); go();
+    });
+    r.querySelectorAll<HTMLElement>('[data-tf]').forEach(b => b.onclick = () => { S.tf = b.dataset.tf!; upd(); go(); });
+    r.querySelectorAll<HTMLElement>('[data-cn]').forEach(b => b.onclick = () => { S.coin = b.dataset.cn!; upd(); go(); });
+  }
+</script>
