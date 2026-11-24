@@ -172,6 +172,18 @@ const heroBackImages = isLanding ? Object.fromEntries(['light', 'dark'].map(them
   </head>
   <body>
     <slot />
+    <script is:inline>
+      // Üstteki İndir düğmesi: Android'de doğrudan Google Play'e gider (UTM'li adres data-play'de); diğer cihazlarda sitenin indirme bölümüne.
+      (function () {
+        if (!/Android/i.test(navigator.userAgent)) return;
+        document.querySelectorAll('a[data-play]').forEach(function (a) {
+          var u = a.getAttribute('data-play');
+          if (!u) return;
+          a.href = u; a.rel = 'noopener';
+          a.setAttribute('data-ev', 'store_click'); a.setAttribute('data-store', 'play'); a.setAttribute('data-place', 'header');
+        });
+      })();
+    </script>
     {GA_ID && (
       <div class="consent" id="consent" role="dialog" aria-label={cs.prefs} aria-live="polite" hidden>
         <p>{cs.msg}</p>

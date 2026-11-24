@@ -5,17 +5,14 @@
  * Adres src/config.ts STORE içinde boşsa tıklanmayan "Yakında" rozeti çıkar; adres girilince her sayfada kendiliğinden bağlantı olur.
  */
 import content from '../i18n/content.json';
-import { LOCALES, STORE } from '../config';
+import { STORE } from '../config';
+import { playLink } from '../lib/playLink';
 
 /** place: rozetin sayfadaki yeri (hero, cta, bar, footer); Play bağlantısına UTM olarak eklenir. */
 interface Props { code: string; size?: 'md' | 'sm'; class?: string; place?: string }
 const { code, size = 'md', class: extra = '', place = size === 'sm' ? 'footer' : 'cta' } = Astro.props;
 const t = (content as any)[code];
-const appLocale = LOCALES.find(l => l.code === code)?.app ?? 'en';
-// Play Console "Edinme" raporu kaynağı referrer içindeki UTM'den okur: sayfa = campaign, rozet yeri = content, dil = term.
-const page = Astro.url.pathname.split('/').filter(Boolean).slice(1).join('_') || 'home';
-const utm = `utm_source=marketalertapp.com&utm_medium=website&utm_campaign=${page}&utm_content=${place}&utm_term=${code}`;
-const playUrl = STORE.play && `${STORE.play}${STORE.play.includes('?') ? '&' : '?'}hl=${appLocale}&referrer=${encodeURIComponent(utm)}`;
+const playUrl = playLink(code, Astro.url.pathname, place);
 // Play yayında olduğu için önce gelir; App Store adresi girilince sıra aynı kalır.
 const items = [
   { store: 'play', url: playUrl, small: t.store2s, big: t.store2, name: 'Google Play' },

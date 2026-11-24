@@ -1,4 +1,5 @@
 ---
+import { playLink } from '../lib/playLink';
 import StoreBadges from './StoreBadges.astro';
 import SearchBox from './SearchBox.astro';
 import SocialLinks from './SocialLinks.astro';
@@ -72,7 +73,7 @@ const coinLinks = Object.entries((coinGuides as any)[code] || {}).map(([slug, g]
       </select>
     </label>
     <button class="thm" id="theme" type="button" aria-label={t.ui.theme} title={t.ui.theme}><Fragment set:html={svg('moon', 'i-moon') + svg('sun', 'i-sun')} /></button>
-    <a class="btn" href="#download" data-ev="cta_click">{t.download}</a>
+    <a class="btn" href="#download" data-ev="cta_click" data-play={playLink(code, Astro.url.pathname, "header")}>{t.download}</a>
   </div>
 </header>
 
