@@ -1,0 +1,29 @@
+---
+/**
+ * Uygulamadaki şablonların tamamı, üç sekmeyle (uygulamanın kendi ad ve açıklamaları). Sekme başlığı mürekkep çizgisi;
+ * kutu yok, sayfa zemininde liste. Pump, Pump + hacim ve Dump iki sekmede de durduğu için uygulamadaki gibi tekrar eder.
+ * Altta plan notu (tüm coin şablonları tüm coinler hakkından sayılır) ve fiyat kısayolu notu. Zilba sona bakar.
+ */
+import Zb from '../eth/Zb.astro';
+import { tpApp } from '../../lib/tp-data';
+import { ALL_TABS, icon, fill } from '../../lib/tp';
+import '../../styles/tp.css';
+interface Props { code: string; tp: any }
+const { code, tp } = Astro.props;
+const A = tpApp(code), T = tp.all;
+---
+<section class="tp-a" data-tp-a>
+  <h2>{fill(T.t, { count: 12 })}</h2><p class="tp-lead">{T.lead}</p>
+  <div class="tp-aw">{ALL_TABS.map((row, i) => <div class="tp-at"><h3>{A.tabs[i]}</h3><ul>{row.map(k => <li><span class="tp-ai" set:html={icon(k)} /><b>{(A.tpl as any)[k].n}</b><span>{(A.tpl as any)[k].d}</span></li>)}</ul></div>)}</div>
+  <div class="tp-an"><Zb who="zilba" class="tp-az" /><p>{T.note}</p><p>{T.short}</p></div>
+</section>
+<script>
+  import { zbPlay, zbPrime, zbReduce } from '../../lib/zb';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-tp-a]')) {
+    zbPrime(k);
+    if (zbReduce) continue;
+    const z = k.querySelector<HTMLElement>('.tp-az');
+    const io = new IntersectionObserver(es => { if (!es[0].isIntersecting) return; io.disconnect(); zbPlay(z, 'zilba-el'); }, { threshold: .4 });
+    io.observe(k.querySelector('.tp-an')!);
+  }
+</script>

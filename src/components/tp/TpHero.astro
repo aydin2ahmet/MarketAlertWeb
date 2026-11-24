@@ -1,0 +1,114 @@
+---
+/**
+ * İlk ekran, tasarım C "Şablon otomatı" (2026-11-24, Ahmet). Mürekkeple çizilmiş otomatın üç rafı uygulamadaki üç sekmedir
+ * (Hızlı hareket, Göstergeler, Piyasa taraması), raflarda şablon paketleri durur. Zilbo tuşa basar, seçilen paket hazneye düşer;
+ * Zilba yandaki kadranları çevirir (uygulamadaki ayar kutucukları: eşik, süre ya da grafik); Zilbe hazneden alarm kartını alır
+ * ("Şablon: ad" rozeti, kural çipleri, düz cümle) ve sunucunun push metni gelir. Ayarlar tek satır: dört şablon ve tek değer.
+ * JS yoksa ya da hareket azaltma açıksa son kare durur.
+ */
+import Zb from '../eth/Zb.astro';
+import { tpApp } from '../../lib/tp-data';
+import { TP_KEYS, KNOB, SHELVES, icon, knobText, chips, scope, sentence, dials, push, fill } from '../../lib/tp';
+import { dateLocale } from '../../lib/gc';
+import '../../styles/tp.css';
+interface Props { code: string; hreflang: string; tp: any; h1: string; introHtml: string; setupTitle: string }
+const { code, hreflang, tp, h1, introHtml, setupTitle } = Astro.props;
+const A = tpApp(code), loc = dateLocale(hreflang);
+const S = { k: 'pv' as const, v: KNOB.pv.def };
+const name = (k: string) => (A.tpl as any)[k].n as string;
+const capOf = (k: typeof S.k, v: number) => [name(KNOB[k].app), scope(A, k), ...chips(A, loc, k, v)].join(' · ');
+const D = dials(A, loc, S.k, S.v), P = push(A, loc, S.k, S.v);
+const cfg = { A, loc, say: tp.say };
+---
+<section class="tp-h" data-tp-h data-cfg={JSON.stringify(cfg)}>
+  <div class="tp-bleed tp-st" role="img" aria-label={tp.alt}>
+    <div class="tp-vm" aria-hidden="true">
+      <b class="tp-vt">{A.title}</b>
+      {SHELVES.map((row, i) => <div class="tp-sh"><span class="tp-shl">{A.tabs[i]}</span><div class="tp-pk">{row.map(k => <span class={`tp-pi${k === KNOB[S.k].app ? ' sel' : ''}`} data-k={k}><Fragment set:html={icon(k)} /><em>{name(k)}</em></span>)}</div></div>)}
+      <div class="tp-kp"><i></i><i></i><i></i><i class="go"></i></div>
+      <div class="tp-tray full"></div>
+    </div>
+    <div class="tp-dl" aria-hidden="true">{[0, 1].map(j => <span class={`tp-d${D[j] ? '' : ' off'}`}><i style="transform:rotate(30deg)"></i><small>{D[j]?.[0] ?? ''}</small><em>{D[j]?.[1] ?? ''}</em></span>)}</div>
+    <Zb who="zilbo" class="tp-zo" /><Zb who="zilba" class="tp-za" /><Zb who="zilbe" class="tp-ze" />
+    <div class="tp-card on" aria-hidden="true">
+      <span class="tp-cb">{fill(A.badge, { name: name(KNOB[S.k].app) })}</span><span class="tp-ci" set:html={icon(KNOB[S.k].app)} />
+      <b class="tp-cn">{name(KNOB[S.k].app)}</b>
+      <span class="tp-cc"><i class="sc">{scope(A, S.k)}</i>{chips(A, loc, S.k, S.v).map(c => <i>{c}</i>)}</span>
+      <small class="tp-cs">{sentence(A, loc, S.k, S.v)}</small>
+    </div>
+    <p class="tp-say" aria-hidden="true"></p>
+    <div class="tp-pq on" aria-hidden="true"><img src="/icons/logo-96.png" alt="" width="34" height="34" /><div><div class="tp-pq-h"><b>MarketAlert</b><span>{tp.now}</span></div><b class="tp-pq-t" dir="auto">{P[0]}</b><span class="tp-pq-b">{P[1]}</span></div></div>
+  </div>
+  <div class="tp-kn">
+    <div class="tp-r">
+      <span class="tp-ig" role="group" aria-label={tp.aria.tpl}>{TP_KEYS.map(k => <button type="button" data-tk={k} aria-label={name(KNOB[k].app)} aria-pressed={String(S.k === k)} set:html={icon(KNOB[k].app)} />)}</span>
+      <span class="tp-ig tp-st2" role="group" aria-label={tp.aria.val}><button type="button" data-sv="-1" aria-label={tp.aria.dec}>−</button><b class="tp-v" aria-live="polite">{knobText(A, loc, S.k, S.v)}</b><button type="button" data-sv="1" aria-label={tp.aria.inc}>+</button></span>
+    </div>
+    <p class="tp-cap">{capOf(S.k, S.v)}</p>
+  </div>
+  <div class="tp-head">
+    <p class="tp-kick">{tp.kicker}</p><h1>{h1}</h1>
+    <p class="tp-intro" set:html={introHtml} />
+    <a class="btn" href="#setup">{setupTitle} <span aria-hidden="true">↓</span></a>
+  </div>
+</section>
+
+<script>
+  import { zbPlay, zbPrime, zbReduce, sleep } from '../../lib/zb';
+  import { KNOB, icon, knobText, chips, scope, sentence, dials, push, fill, type TpKey, type TpApp } from '../../lib/tp';
+  for (const r of document.querySelectorAll<HTMLElement>('[data-tp-h]')) {
+    const C = JSON.parse(r.dataset.cfg || '{}'), A = C.A as TpApp, loc = C.loc as string;
+    const st = r.querySelector<HTMLElement>('.tp-st')!, sb = st.querySelector<HTMLElement>('.tp-say')!, pq = st.querySelector<HTMLElement>('.tp-pq')!, cd = st.querySelector<HTMLElement>('.tp-card')!, tray = st.querySelector<HTMLElement>('.tp-tray')!, go1 = st.querySelector<HTMLElement>('.tp-kp .go')!;
+    const zo = st.querySelector<HTMLElement>('.tp-zo'), za = st.querySelector<HTMLElement>('.tp-za'), ze = st.querySelector<HTMLElement>('.tp-ze');
+    const S = { k: 'pv' as TpKey, v: KNOB.pv.def };
+    const name = (k: string) => (A.tpl as any)[k].n as string;
+    const upd = () => {
+      const K = KNOB[S.k];
+      r.querySelectorAll<HTMLElement>('[data-tk]').forEach(b => b.setAttribute('aria-pressed', String(S.k === b.dataset.tk)));
+      r.querySelector('.tp-v')!.textContent = knobText(A, loc, S.k, S.v);
+      r.querySelectorAll<HTMLButtonElement>('[data-sv]').forEach(b => { const n = S.v + +b.dataset.sv! * K.step; b.disabled = !K.step || n < K.min || n > K.max; });
+      r.querySelector('.tp-cap')!.textContent = [name(K.app), scope(A, S.k), ...chips(A, loc, S.k, S.v)].join(' · ');
+    };
+    const paint = () => {
+      const app = KNOB[S.k].app;
+      cd.querySelector('.tp-cb')!.textContent = fill(A.badge, { name: name(app) });
+      cd.querySelector('.tp-ci')!.innerHTML = icon(app);
+      cd.querySelector('.tp-cn')!.textContent = name(app);
+      const cc = cd.querySelector('.tp-cc')!; cc.innerHTML = '';
+      [scope(A, S.k), ...chips(A, loc, S.k, S.v)].forEach((c, i) => { const e = document.createElement('i'); if (!i) e.className = 'sc'; e.textContent = c; cc.append(e); });
+      cd.querySelector('.tp-cs')!.textContent = sentence(A, loc, S.k, S.v);
+      const p = push(A, loc, S.k, S.v); pq.querySelector('.tp-pq-t')!.textContent = p[0]; pq.querySelector('.tp-pq-b')!.textContent = p[1];
+    };
+    const setDials = (on: boolean) => {
+      const D = dials(A, loc, S.k, S.v);
+      st.querySelectorAll<HTMLElement>('.tp-d').forEach((d, j) => {
+        d.classList.toggle('off', !D[j]); d.querySelector('small')!.textContent = D[j]?.[0] ?? '';
+        d.querySelector('em')!.textContent = on && D[j] ? D[j][1] : ''; d.querySelector<HTMLElement>('i')!.style.transform = `rotate(${on ? 30 - j * 60 : -120}deg)`;
+      });
+    };
+    upd();
+    let run = 0, vis = false, started = false;
+    const go = async () => {
+      const k = ++run, ok = () => k === run;
+      const app = KNOB[S.k].app, pk = st.querySelector<HTMLElement>(`.tp-pi[data-k="${app}"]`)!;
+      st.querySelectorAll('.tp-pi').forEach(e => e.classList.remove('sel', 'drop'));
+      [cd, pq, sb].forEach(e => e.classList.remove('on')); tray.classList.remove('full'); paint();
+      if (zbReduce) { pk.classList.add('sel'); tray.classList.add('full'); setDials(true); cd.classList.add('on'); pq.classList.add('on'); return; }
+      setDials(false);
+      while (document.hidden || !vis) { await sleep(400); if (!ok()) return; }
+      await sleep(500); if (!ok()) return;
+      zbPlay(zo, 'zilbo-zipla'); go1.classList.add('on'); await sleep(450); go1.classList.remove('on'); if (!ok()) return;
+      pk.classList.add('sel'); await sleep(700); if (!ok()) return; pk.classList.add('drop'); await sleep(550); if (!ok()) return; tray.classList.add('full');
+      const D = dials(A, loc, S.k, S.v);
+      sb.textContent = fill(D.length ? C.say.drop : C.say.none, { name: name(app) }); sb.classList.add('on'); zbPlay(za, D.length ? 'zilba-el' : 'zilba-sasir');
+      await sleep(700); if (!ok()) return; setDials(true); await sleep(1300); if (!ok()) return;
+      sb.classList.remove('on'); zbPlay(ze, 'zilbe-sevin'); cd.classList.add('on'); await sleep(1100); if (!ok()) return;
+      zbPlay(zo, 'zilbo-zil'); pq.classList.add('on'); sb.textContent = C.say.done; sb.classList.add('on'); await sleep(4400); if (!ok()) return;
+      sb.classList.remove('on'); pq.classList.remove('on'); await sleep(900); if (ok()) go();
+    };
+    new IntersectionObserver(es => { vis = es[0].isIntersecting; if (vis && !started) { started = true; go(); } }, { threshold: .1 }).observe(st);
+    zbPrime(r);
+    r.querySelectorAll<HTMLElement>('[data-tk]').forEach(b => b.onclick = () => { S.k = b.dataset.tk as TpKey; S.v = KNOB[S.k].def; upd(); go(); });
+    r.querySelectorAll<HTMLElement>('[data-sv]').forEach(b => b.onclick = () => { const K = KNOB[S.k], n = S.v + +b.dataset.sv! * K.step; if (!K.step || n < K.min || n > K.max) return; S.v = n; upd(); go(); });
+  }
+</script>
