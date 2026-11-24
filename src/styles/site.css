@@ -100,6 +100,14 @@ img { max-width: 100%; }
 .sb span { display: flex; flex-direction: column; line-height: 1.1; text-align: start; }
 .sb small { font-size: 10.5px; opacity: .85; }
 .sb b { font-size: 18px; font-weight: 600; letter-spacing: -.01em; }
+/* Google Play rozeti (A1): renkli logo, büyük "Google Play", sağda marka turuncusunda oklu "İndir" hapı */
+.sb-play { padding-inline-end: 8px; gap: 11px; }
+.sb-play .sbi { width: 30px; height: 30px; }
+.sb-play b { font-size: 19px; }
+.sbg { display: inline-flex; align-items: center; gap: 6px; font-family: var(--f); font-size: 14px; font-weight: 800; line-height: 1; letter-spacing: .01em; font-style: normal; background: #F5A524; color: #231703; box-shadow: inset 0 0 0 1px #FFD27A55; border-radius: 999px; padding: 9px 15px 9px 12px; margin-inline-start: 8px; white-space: nowrap; transition: background .15s; }
+.sbg svg { width: 16px; height: 16px; flex: none; }
+.sb-play:hover .sbg { background: #FFB53D; }
+.stores.sm .sbg, .dlbar .sbg { display: none; }
 .chips { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
 .chips li { display: flex; align-items: center; gap: 6px; font-size: 13.5px; color: var(--mut); }
 .chips .ic { width: 16px; height: 16px; color: var(--up); }
@@ -379,7 +387,11 @@ svg.ar .bx { fill: none; stroke: var(--pri); stroke-width: 2.4; }
   .voice-badge { font-size: 11px; padding: 7px 9px; }
   .hero .prompt { display: none; }
   .hero .stores { margin-top: 18px; flex-wrap: nowrap; gap: 10px; }
-  .hero .sb { flex: 1; padding: 8px 10px; gap: 8px; justify-content: center; }
+  .hero .stores { flex-wrap: wrap; }
+  .hero .sb { flex: 1 1 100%; padding: 8px 10px; gap: 8px; justify-content: center; }
+  .hero .sb-play { padding-inline-end: 8px; }
+  .hero .sb-play .sbg { margin-inline-start: auto; }
+  .hero .sb-play > span { margin-inline-end: auto; }
   .hero .sb b { font-size: 16px; }
   .h-v { height: 595px; margin-top: 22px; }
   .h-v .front { --pw: 212px; inset-inline-end: 2%; top: 0; }
