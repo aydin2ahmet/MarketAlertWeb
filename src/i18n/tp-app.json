@@ -1,0 +1,1047 @@
+{
+ "en": {
+  "title": "Ready-made templates",
+  "lead": "Pick a template; you can change its values before you set it up.",
+  "tabs": [
+   "Fast moves",
+   "Indicators",
+   "Market scan"
+  ],
+  "setUp": "Set up",
+  "popular": "Popular",
+  "badge": "Template: {name}",
+  "subjectTop": "any of the top {count} coins",
+  "push": "a push notification",
+  "rise": "Rise of at least",
+  "fall": "Drop of at least",
+  "window": "Within how many minutes?",
+  "rsiBelow": "RSI below",
+  "rsiAbove": "RSI above",
+  "tf": "Chart",
+  "chipRolling": "{minutes} min {operator} {percent}",
+  "chipVolume": "Volume ≥ {multiplier}×",
+  "chipDayHigh": "24h high broken",
+  "topCoins": "Top {count} coins",
+  "scopeAll": "All coins",
+  "submit": "Set alert",
+  "fromTemplate": "Set up from a template",
+  "tpl": {
+   "pump": {
+    "n": "Pump",
+    "d": "Tells you when any coin rises 5% or more within 5 minutes.",
+    "s": "If {subject} rises {percent} or more within {minutes} minutes, send {channel}."
+   },
+   "pumpVolume": {
+    "n": "Pump + volume",
+    "d": "Catches sharp rises backed by volume and filters out thin spikes.",
+    "s": "If {subject} rises {percent} or more within {minutes} minutes and its volume tops {multiplier}× the average, send {channel}."
+   },
+   "dump": {
+    "n": "Dump",
+    "d": "Tells you when any coin falls 5% or more within 5 minutes.",
+    "s": "If {subject} falls {percent} or more within {minutes} minutes, send {channel}."
+   },
+   "oversold": {
+    "n": "Oversold",
+    "d": "Tells you when your coin enters the oversold zone.",
+    "s": "If RSI(14) of {subject} drops below {level} on the {timeframe} chart, send {channel}."
+   },
+   "overbought": {
+    "n": "Overbought",
+    "d": "Tells you when your coin overheats and enters the overbought zone.",
+    "s": "If RSI(14) of {subject} rises above {level} on the {timeframe} chart, send {channel}."
+   },
+   "emaCross": {
+    "n": "Trend crossover",
+    "d": "When the short-term average crosses above the long-term one; a possible trend reversal.",
+    "s": "If EMA {fast} crosses above EMA {slow} on the {timeframe} chart of {subject}, send {channel}."
+   },
+   "dropOversold": {
+    "n": "Sharp drop + oversold",
+    "d": "When a fast drop and oversold come together; for buying the dip.",
+    "s": "If {subject} falls {percent} or more within {minutes} minutes while RSI(14) is below {level} on the {timeframe} chart, send {channel}."
+   },
+   "rsiScan": {
+    "n": "Market scan",
+    "d": "Finds coins across the market whose RSI drops below 25.",
+    "s": "If RSI(14) of {subject} drops below {level} on the {timeframe} chart, send {channel}."
+   },
+   "coinRise": {
+    "n": "Fast rise",
+    "d": "Tells you when your coin rises 5% or more within an hour."
+   },
+   "dayHigh": {
+    "n": "24-hour high breakout",
+    "d": "Tells you when the price breaks above the highest level of the last 24 hours.",
+    "s": "If {subject} breaks above its 24-hour high, send {channel}."
+   },
+   "priceAbove": {
+    "n": "Target price",
+    "d": "Tells you when the coin rises to the price you set."
+   },
+   "priceBelow": {
+    "n": "Drop limit",
+    "d": "Tells you when the coin falls to the price you set."
+   }
+  },
+  "pushT": {
+   "Push.Event.RollingUp": "{0} rose {1} in {4} min",
+   "Push.Event.RsiBelow": "{0} RSI fell below {1}",
+   "Push.Event.EmaCrossUp": "{0} EMA {2}/{3} crossed up",
+   "Push.Event.High24h": "{0} broke its 24h high",
+   "Push.Volume": "Volume",
+   "Push.Average": "{0}× avg({1})",
+   "Push.High24h": "24h high"
+  }
+ },
+ "tr": {
+  "title": "Hazır şablonlar",
+  "lead": "Bir şablon seç; değerleri kurmadan önce değiştirebilirsin.",
+  "tabs": [
+   "Hızlı hareket",
+   "Göstergeler",
+   "Piyasa taraması"
+  ],
+  "setUp": "Kur",
+  "popular": "Popüler",
+  "badge": "Şablon: {name}",
+  "subjectTop": "İlk {count} coinden biri",
+  "push": "anlık bildirim",
+  "rise": "Yükseliş en az",
+  "fall": "Düşüş en az",
+  "window": "Kaç dakikada?",
+  "rsiBelow": "RSI şunun altında",
+  "rsiAbove": "RSI şunun üstünde",
+  "tf": "Grafik",
+  "chipRolling": "{minutes} dk {operator} {percent}",
+  "chipVolume": "Hacim ≥ {multiplier}×",
+  "chipDayHigh": "24s zirve kırılımı",
+  "topCoins": "İlk {count} coin",
+  "scopeAll": "Tüm coinler",
+  "submit": "Alarmı kur",
+  "fromTemplate": "Şablondan kur",
+  "tpl": {
+   "pump": {
+    "n": "Pump",
+    "d": "Herhangi bir coin 5 dakikada %5 ya da daha fazla yükselirse haber verir.",
+    "s": "{subject} {minutes} dakikada {percent} ya da daha fazla yükselirse {channel} gönder."
+   },
+   "pumpVolume": {
+    "n": "Pump + hacim",
+    "d": "Hacimle desteklenen sert yükselişleri yakalar, hacimsiz sıçramaları eler.",
+    "s": "{subject} {minutes} dakikada {percent} ya da daha fazla yükselir ve hacmi ortalamanın {multiplier} katını geçerse {channel} gönder."
+   },
+   "dump": {
+    "n": "Dump",
+    "d": "Herhangi bir coin 5 dakikada %5 ya da daha fazla düşerse haber verir.",
+    "s": "{subject} {minutes} dakikada {percent} ya da daha fazla düşerse {channel} gönder."
+   },
+   "oversold": {
+    "n": "Aşırı satım",
+    "d": "Seçtiğin coin aşırı satım bölgesine girince haber verir.",
+    "s": "{subject} için {timeframe} grafikte RSI(14) {level} altına inerse {channel} gönder."
+   },
+   "overbought": {
+    "n": "Aşırı alım",
+    "d": "Seçtiğin coin aşırı ısınınca, yani aşırı alım bölgesine girince haber verir.",
+    "s": "{subject} için {timeframe} grafikte RSI(14) {level} üstüne çıkarsa {channel} gönder."
+   },
+   "emaCross": {
+    "n": "Trend kesişmesi",
+    "d": "Kısa vadeli ortalama uzun vadeliyi yukarı keserse; olası trend dönüşü.",
+    "s": "{subject} için {timeframe} grafikte EMA {fast}, EMA {slow} değerini yukarı keserse {channel} gönder."
+   },
+   "dropOversold": {
+    "n": "Sert düşüş + aşırı satım",
+    "d": "Hızlı düşüş ve aşırı satım birlikte gelirse; dipten alım fırsatı için.",
+    "s": "{subject} {minutes} dakikada {percent} ya da daha fazla düşer ve {timeframe} grafikte RSI(14) {level} altındaysa {channel} gönder."
+   },
+   "rsiScan": {
+    "n": "Piyasa taraması",
+    "d": "Tüm piyasada RSI 25’in altına inen coinleri bulur.",
+    "s": "{subject} için {timeframe} grafikte RSI(14) {level} altına inerse {channel} gönder."
+   },
+   "coinRise": {
+    "n": "Hızlı yükseliş",
+    "d": "Seçtiğin coin 1 saatte %5 ya da daha fazla yükselirse haber verir."
+   },
+   "dayHigh": {
+    "n": "24 saatlik zirve kırılımı",
+    "d": "Fiyat son 24 saatin en yükseğini geçerse haber verir.",
+    "s": "{subject} son 24 saatin en yükseğini geçerse {channel} gönder."
+   },
+   "priceAbove": {
+    "n": "Hedef fiyat",
+    "d": "Coin belirlediğin fiyata çıkınca haber verir."
+   },
+   "priceBelow": {
+    "n": "Düşüş sınırı",
+    "d": "Coin belirlediğin fiyata inince haber verir."
+   }
+  },
+  "pushT": {
+   "Push.Event.RollingUp": "{0} {4} dakikada {1} yükseldi",
+   "Push.Event.RsiBelow": "{0} RSI {1} altına indi",
+   "Push.Event.EmaCrossUp": "{0} EMA {2}/{3} yukarı kesişti",
+   "Push.Event.High24h": "{0} 24 saatin zirvesini kırdı",
+   "Push.Volume": "Hacim",
+   "Push.Average": "{0}× ort({1})",
+   "Push.High24h": "24s zirve"
+  }
+ },
+ "de": {
+  "title": "Fertige Vorlagen",
+  "lead": "Wähle eine Vorlage; die Werte kannst du vor dem Einrichten ändern.",
+  "tabs": [
+   "Schnelle Bewegung",
+   "Indikatoren",
+   "Marktscan"
+  ],
+  "setUp": "Einrichten",
+  "popular": "Beliebt",
+  "badge": "Vorlage: {name}",
+  "subjectTop": "einer der Top-{count}-Coins",
+  "push": "eine Push-Benachrichtigung",
+  "rise": "Anstieg mindestens",
+  "fall": "Rückgang mindestens",
+  "window": "In wie vielen Minuten?",
+  "rsiBelow": "RSI unter",
+  "rsiAbove": "RSI über",
+  "tf": "Chart",
+  "chipRolling": "{minutes} Min. {operator} {percent}",
+  "chipVolume": "Volumen ≥ {multiplier}×",
+  "chipDayHigh": "24h-Hoch gebrochen",
+  "topCoins": "Top-{count}-Coins",
+  "scopeAll": "Alle Coins",
+  "submit": "Alarm einrichten",
+  "fromTemplate": "Aus Vorlage einrichten",
+  "tpl": {
+   "pump": {
+    "n": "Pump",
+    "d": "Meldet sich, wenn ein Coin in 5 Minuten um 5 % oder mehr steigt.",
+    "s": "Wenn {subject} in {minutes} Minuten um {percent} oder mehr steigt, sende {channel}."
+   },
+   "pumpVolume": {
+    "n": "Pump + Volumen",
+    "d": "Erfasst starke, volumengestützte Anstiege und filtert Sprünge ohne Volumen heraus.",
+    "s": "Wenn {subject} in {minutes} Minuten um {percent} oder mehr steigt und das Volumen das {multiplier}-Fache des Durchschnitts übersteigt, sende {channel}."
+   },
+   "dump": {
+    "n": "Dump",
+    "d": "Meldet sich, wenn ein Coin in 5 Minuten um 5 % oder mehr fällt.",
+    "s": "Wenn {subject} in {minutes} Minuten um {percent} oder mehr fällt, sende {channel}."
+   },
+   "oversold": {
+    "n": "Überverkauft",
+    "d": "Meldet sich, wenn dein Coin in den überverkauften Bereich kommt.",
+    "s": "Wenn der RSI(14) von {subject} im {timeframe}-Chart unter {level} fällt, sende {channel}."
+   },
+   "overbought": {
+    "n": "Überkauft",
+    "d": "Meldet sich, wenn dein Coin heiß läuft und in den überkauften Bereich kommt.",
+    "s": "Wenn der RSI(14) von {subject} im {timeframe}-Chart über {level} steigt, sende {channel}."
+   },
+   "emaCross": {
+    "n": "Trendkreuzung",
+    "d": "Wenn der kurzfristige Durchschnitt den langfristigen nach oben kreuzt; mögliche Trendwende.",
+    "s": "Wenn im {timeframe}-Chart von {subject} der EMA {fast} den EMA {slow} nach oben kreuzt, sende {channel}."
+   },
+   "dropOversold": {
+    "n": "Starker Fall + überverkauft",
+    "d": "Wenn schneller Fall und Überverkauft zusammenkommen; für Käufe im Tief.",
+    "s": "Wenn {subject} in {minutes} Minuten um {percent} oder mehr fällt und der RSI(14) im {timeframe}-Chart unter {level} liegt, sende {channel}."
+   },
+   "rsiScan": {
+    "n": "Marktscan",
+    "d": "Findet im ganzen Markt Coins, deren RSI unter 25 fällt.",
+    "s": "Wenn der RSI(14) von {subject} im {timeframe}-Chart unter {level} fällt, sende {channel}."
+   },
+   "coinRise": {
+    "n": "Schneller Anstieg",
+    "d": "Meldet sich, wenn dein Coin in einer Stunde um 5 % oder mehr steigt."
+   },
+   "dayHigh": {
+    "n": "24-Stunden-Hoch-Ausbruch",
+    "d": "Meldet sich, wenn der Preis das Hoch der letzten 24 Stunden übersteigt.",
+    "s": "Wenn {subject} das 24-Stunden-Hoch übersteigt, sende {channel}."
+   },
+   "priceAbove": {
+    "n": "Zielkurs",
+    "d": "Meldet sich, wenn der Coin auf deinen Preis steigt."
+   },
+   "priceBelow": {
+    "n": "Verlustgrenze",
+    "d": "Meldet sich, wenn der Coin auf deinen Preis fällt."
+   }
+  },
+  "pushT": {
+   "Push.Event.RollingUp": "{0} in {4} Min. um {1} gestiegen",
+   "Push.Event.RsiBelow": "{0} RSI ist unter {1} gefallen",
+   "Push.Event.EmaCrossUp": "{0} EMA {2}/{3} nach oben gekreuzt",
+   "Push.Event.High24h": "{0} hat das 24h-Hoch gebrochen",
+   "Push.Volume": "Volumen",
+   "Push.Average": "{0}× Ø({1})",
+   "Push.High24h": "24h-Hoch"
+  }
+ },
+ "es": {
+  "title": "Plantillas listas",
+  "lead": "Elige una plantilla; puedes cambiar sus valores antes de crearla.",
+  "tabs": [
+   "Movimiento rápido",
+   "Indicadores",
+   "Escaneo del mercado"
+  ],
+  "setUp": "Crear",
+  "popular": "Popular",
+  "badge": "Plantilla: {name}",
+  "subjectTop": "alguna de las {count} primeras monedas",
+  "push": "una notificación push",
+  "rise": "Subida mínima",
+  "fall": "Bajada mínima",
+  "window": "¿En cuántos minutos?",
+  "rsiBelow": "RSI por debajo de",
+  "rsiAbove": "RSI por encima de",
+  "tf": "Gráfico",
+  "chipRolling": "{minutes} min {operator} {percent}",
+  "chipVolume": "Volumen ≥ {multiplier}×",
+  "chipDayHigh": "Máximo 24 h superado",
+  "topCoins": "Top {count} monedas",
+  "scopeAll": "Todas las monedas",
+  "submit": "Crear alerta",
+  "fromTemplate": "Crear desde plantilla",
+  "tpl": {
+   "pump": {
+    "n": "Pump",
+    "d": "Te avisa cuando cualquier moneda sube un 5 % o más en 5 minutos.",
+    "s": "Si {subject} sube {percent} o más en {minutes} minutos, envía {channel}."
+   },
+   "pumpVolume": {
+    "n": "Pump + volumen",
+    "d": "Detecta subidas fuertes respaldadas por volumen y descarta saltos sin volumen.",
+    "s": "Si {subject} sube {percent} o más en {minutes} minutos y su volumen supera {multiplier}× la media, envía {channel}."
+   },
+   "dump": {
+    "n": "Dump",
+    "d": "Te avisa cuando cualquier moneda baja un 5 % o más en 5 minutos.",
+    "s": "Si {subject} baja {percent} o más en {minutes} minutos, envía {channel}."
+   },
+   "oversold": {
+    "n": "Sobreventa",
+    "d": "Te avisa cuando tu moneda entra en zona de sobreventa.",
+    "s": "Si el RSI(14) de {subject} baja de {level} en el gráfico de {timeframe}, envía {channel}."
+   },
+   "overbought": {
+    "n": "Sobrecompra",
+    "d": "Te avisa cuando tu moneda se recalienta y entra en zona de sobrecompra.",
+    "s": "Si el RSI(14) de {subject} supera {level} en el gráfico de {timeframe}, envía {channel}."
+   },
+   "emaCross": {
+    "n": "Cruce de tendencia",
+    "d": "Cuando la media corta cruza al alza la larga; posible cambio de tendencia.",
+    "s": "Si en el gráfico de {timeframe} de {subject} la EMA {fast} cruza al alza la EMA {slow}, envía {channel}."
+   },
+   "dropOversold": {
+    "n": "Caída fuerte + sobreventa",
+    "d": "Cuando una caída rápida y la sobreventa coinciden; para comprar en el mínimo.",
+    "s": "Si {subject} baja {percent} o más en {minutes} minutos y el RSI(14) está por debajo de {level} en el gráfico de {timeframe}, envía {channel}."
+   },
+   "rsiScan": {
+    "n": "Escaneo del mercado",
+    "d": "Encuentra en todo el mercado las monedas cuyo RSI baja de 25.",
+    "s": "Si el RSI(14) de {subject} baja de {level} en el gráfico de {timeframe}, envía {channel}."
+   },
+   "coinRise": {
+    "n": "Subida rápida",
+    "d": "Te avisa cuando tu moneda sube un 5 % o más en una hora."
+   },
+   "dayHigh": {
+    "n": "Ruptura del máximo de 24 h",
+    "d": "Te avisa cuando el precio supera el máximo de las últimas 24 horas.",
+    "s": "Si {subject} supera su máximo de 24 horas, envía {channel}."
+   },
+   "priceAbove": {
+    "n": "Precio objetivo",
+    "d": "Te avisa cuando la moneda sube al precio que fijaste."
+   },
+   "priceBelow": {
+    "n": "Límite de caída",
+    "d": "Te avisa cuando la moneda baja al precio que fijaste."
+   }
+  },
+  "pushT": {
+   "Push.Event.RollingUp": "{0} subió {1} en {4} min",
+   "Push.Event.RsiBelow": "{0} RSI bajó de {1}",
+   "Push.Event.EmaCrossUp": "{0} EMA {2}/{3} cruzó al alza",
+   "Push.Event.High24h": "{0} rompió su máximo de 24 h",
+   "Push.Volume": "Volumen",
+   "Push.Average": "{0}× prom({1})",
+   "Push.High24h": "Máx. 24 h"
+  }
+ },
+ "fr": {
+  "title": "Modèles prêts à l’emploi",
+  "lead": "Choisis un modèle ; tu peux modifier ses valeurs avant de le créer.",
+  "tabs": [
+   "Mouvement rapide",
+   "Indicateurs",
+   "Scan du marché"
+  ],
+  "setUp": "Créer",
+  "popular": "Populaire",
+  "badge": "Modèle : {name}",
+  "subjectTop": "l’une des {count} premières cryptos",
+  "push": "une notification push",
+  "rise": "Hausse d’au moins",
+  "fall": "Baisse d’au moins",
+  "window": "En combien de minutes ?",
+  "rsiBelow": "RSI sous",
+  "rsiAbove": "RSI au-dessus de",
+  "tf": "Graphique",
+  "chipRolling": "{minutes} min {operator} {percent}",
+  "chipVolume": "Volume ≥ {multiplier}×",
+  "chipDayHigh": "Plus haut 24 h cassé",
+  "topCoins": "Top {count} cryptos",
+  "scopeAll": "Toutes les cryptos",
+  "submit": "Créer l’alerte",
+  "fromTemplate": "Créer depuis un modèle",
+  "tpl": {
+   "pump": {
+    "n": "Pump",
+    "d": "Te prévient quand une crypto monte de 5 % ou plus en 5 minutes.",
+    "s": "Si {subject} monte de {percent} ou plus en {minutes} minutes, envoie {channel}."
+   },
+   "pumpVolume": {
+    "n": "Pump + volume",
+    "d": "Repère les fortes hausses portées par le volume et écarte les sauts sans volume.",
+    "s": "Si {subject} monte de {percent} ou plus en {minutes} minutes et que son volume dépasse {multiplier}× la moyenne, envoie {channel}."
+   },
+   "dump": {
+    "n": "Dump",
+    "d": "Te prévient quand une crypto baisse de 5 % ou plus en 5 minutes.",
+    "s": "Si {subject} baisse de {percent} ou plus en {minutes} minutes, envoie {channel}."
+   },
+   "oversold": {
+    "n": "Survente",
+    "d": "Te prévient quand ta crypto entre en zone de survente.",
+    "s": "Si le RSI(14) de {subject} passe sous {level} sur le graphique {timeframe}, envoie {channel}."
+   },
+   "overbought": {
+    "n": "Surachat",
+    "d": "Te prévient quand ta crypto surchauffe et entre en zone de surachat.",
+    "s": "Si le RSI(14) de {subject} passe au-dessus de {level} sur le graphique {timeframe}, envoie {channel}."
+   },
+   "emaCross": {
+    "n": "Croisement de tendance",
+    "d": "Quand la moyenne courte croise la longue à la hausse ; possible retournement.",
+    "s": "Si sur le graphique {timeframe} de {subject} l’EMA {fast} croise l’EMA {slow} à la hausse, envoie {channel}."
+   },
+   "dropOversold": {
+    "n": "Forte baisse + survente",
+    "d": "Quand une baisse rapide et la survente arrivent ensemble ; pour acheter le creux.",
+    "s": "Si {subject} baisse de {percent} ou plus en {minutes} minutes alors que le RSI(14) est sous {level} sur le graphique {timeframe}, envoie {channel}."
+   },
+   "rsiScan": {
+    "n": "Scan du marché",
+    "d": "Trouve sur tout le marché les cryptos dont le RSI passe sous 25.",
+    "s": "Si le RSI(14) de {subject} passe sous {level} sur le graphique {timeframe}, envoie {channel}."
+   },
+   "coinRise": {
+    "n": "Hausse rapide",
+    "d": "Te prévient quand ta crypto monte de 5 % ou plus en une heure."
+   },
+   "dayHigh": {
+    "n": "Cassure du plus haut 24 h",
+    "d": "Te prévient quand le prix dépasse le plus haut des dernières 24 heures.",
+    "s": "Si {subject} dépasse son plus haut sur 24 heures, envoie {channel}."
+   },
+   "priceAbove": {
+    "n": "Prix cible",
+    "d": "Te prévient quand la crypto monte au prix choisi."
+   },
+   "priceBelow": {
+    "n": "Seuil de baisse",
+    "d": "Te prévient quand la crypto descend au prix choisi."
+   }
+  },
+  "pushT": {
+   "Push.Event.RollingUp": "{0} a progressé de {1} en {4} min",
+   "Push.Event.RsiBelow": "{0} RSI est passé sous {1}",
+   "Push.Event.EmaCrossUp": "{0} EMA {2}/{3} croisement haussier",
+   "Push.Event.High24h": "{0} a franchi son plus haut 24 h",
+   "Push.Volume": "Volume",
+   "Push.Average": "{0}× moy({1})",
+   "Push.High24h": "Plus haut 24 h"
+  }
+ },
+ "pt-br": {
+  "title": "Modelos prontos",
+  "lead": "Escolha um modelo; você pode mudar os valores antes de criar.",
+  "tabs": [
+   "Movimento rápido",
+   "Indicadores",
+   "Varredura do mercado"
+  ],
+  "setUp": "Criar",
+  "popular": "Popular",
+  "badge": "Modelo: {name}",
+  "subjectTop": "alguma das {count} maiores moedas",
+  "push": "uma notificação push",
+  "rise": "Alta de pelo menos",
+  "fall": "Queda de pelo menos",
+  "window": "Em quantos minutos?",
+  "rsiBelow": "RSI abaixo de",
+  "rsiAbove": "RSI acima de",
+  "tf": "Gráfico",
+  "chipRolling": "{minutes} min {operator} {percent}",
+  "chipVolume": "Volume ≥ {multiplier}×",
+  "chipDayHigh": "Máxima de 24 h rompida",
+  "topCoins": "Top {count} moedas",
+  "scopeAll": "Todas as moedas",
+  "submit": "Criar alerta",
+  "fromTemplate": "Criar a partir de modelo",
+  "tpl": {
+   "pump": {
+    "n": "Pump",
+    "d": "Avisa quando qualquer moeda sobe 5% ou mais em 5 minutos.",
+    "s": "Se {subject} subir {percent} ou mais em {minutes} minutos, envie {channel}."
+   },
+   "pumpVolume": {
+    "n": "Pump + volume",
+    "d": "Pega altas fortes apoiadas por volume e descarta saltos sem volume.",
+    "s": "Se {subject} subir {percent} ou mais em {minutes} minutos e o volume passar de {multiplier}× a média, envie {channel}."
+   },
+   "dump": {
+    "n": "Dump",
+    "d": "Avisa quando qualquer moeda cai 5% ou mais em 5 minutos.",
+    "s": "Se {subject} cair {percent} ou mais em {minutes} minutos, envie {channel}."
+   },
+   "oversold": {
+    "n": "Sobrevenda",
+    "d": "Avisa quando sua moeda entra na zona de sobrevenda.",
+    "s": "Se o RSI(14) de {subject} cair abaixo de {level} no gráfico de {timeframe}, envie {channel}."
+   },
+   "overbought": {
+    "n": "Sobrecompra",
+    "d": "Avisa quando sua moeda superaquece e entra na zona de sobrecompra.",
+    "s": "Se o RSI(14) de {subject} subir acima de {level} no gráfico de {timeframe}, envie {channel}."
+   },
+   "emaCross": {
+    "n": "Cruzamento de tendência",
+    "d": "Quando a média curta cruza a longa para cima; possível virada de tendência.",
+    "s": "Se no gráfico de {timeframe} de {subject} a EMA {fast} cruzar a EMA {slow} para cima, envie {channel}."
+   },
+   "dropOversold": {
+    "n": "Queda forte + sobrevenda",
+    "d": "Quando queda rápida e sobrevenda vêm juntas; para comprar no fundo.",
+    "s": "Se {subject} cair {percent} ou mais em {minutes} minutos com o RSI(14) abaixo de {level} no gráfico de {timeframe}, envie {channel}."
+   },
+   "rsiScan": {
+    "n": "Varredura do mercado",
+    "d": "Encontra no mercado todo as moedas cujo RSI cai abaixo de 25.",
+    "s": "Se o RSI(14) de {subject} cair abaixo de {level} no gráfico de {timeframe}, envie {channel}."
+   },
+   "coinRise": {
+    "n": "Alta rápida",
+    "d": "Avisa quando sua moeda sobe 5% ou mais em uma hora."
+   },
+   "dayHigh": {
+    "n": "Rompimento da máxima de 24 h",
+    "d": "Avisa quando o preço passa da máxima das últimas 24 horas.",
+    "s": "Se {subject} passar da máxima de 24 horas, envie {channel}."
+   },
+   "priceAbove": {
+    "n": "Preço-alvo",
+    "d": "Avisa quando a moeda sobe até o preço que você definiu."
+   },
+   "priceBelow": {
+    "n": "Limite de queda",
+    "d": "Avisa quando a moeda cai até o preço que você definiu."
+   }
+  },
+  "pushT": {
+   "Push.Event.RollingUp": "{0} subiu {1} em {4} min",
+   "Push.Event.RsiBelow": "{0} RSI caiu abaixo de {1}",
+   "Push.Event.EmaCrossUp": "{0} EMA {2}/{3} cruzou para cima",
+   "Push.Event.High24h": "{0} rompeu a máxima de 24 h",
+   "Push.Volume": "Volume",
+   "Push.Average": "{0}× méd({1})",
+   "Push.High24h": "Máx. 24 h"
+  }
+ },
+ "ru": {
+  "title": "Готовые шаблоны",
+  "lead": "Выберите шаблон; значения можно изменить до создания.",
+  "tabs": [
+   "Быстрое движение",
+   "Индикаторы",
+   "Сканер рынка"
+  ],
+  "setUp": "Создать",
+  "popular": "Популярно",
+  "badge": "Шаблон: {name}",
+  "subjectTop": "любой из топ-{count} монет",
+  "push": "push-уведомление",
+  "rise": "Рост не менее",
+  "fall": "Падение не менее",
+  "window": "За сколько минут?",
+  "rsiBelow": "RSI ниже",
+  "rsiAbove": "RSI выше",
+  "tf": "График",
+  "chipRolling": "{minutes} мин {operator} {percent}",
+  "chipVolume": "Объём ≥ {multiplier}×",
+  "chipDayHigh": "Пробит максимум 24 ч",
+  "topCoins": "Топ-{count} монет",
+  "scopeAll": "Все монеты",
+  "submit": "Создать алерт",
+  "fromTemplate": "Создать по шаблону",
+  "tpl": {
+   "pump": {
+    "n": "Памп",
+    "d": "Сообщит, когда любая монета вырастет на 5% и более за 5 минут.",
+    "s": "Если {subject} вырастет на {percent} и более за {minutes} мин, отправить {channel}."
+   },
+   "pumpVolume": {
+    "n": "Памп + объём",
+    "d": "Ловит резкие росты с подтверждением объёмом и отсекает скачки без объёма.",
+    "s": "Если {subject} вырастет на {percent} и более за {minutes} мин, а объём превысит среднее в {multiplier} раза, отправить {channel}."
+   },
+   "dump": {
+    "n": "Дамп",
+    "d": "Сообщит, когда любая монета упадёт на 5% и более за 5 минут.",
+    "s": "Если {subject} упадёт на {percent} и более за {minutes} мин, отправить {channel}."
+   },
+   "oversold": {
+    "n": "Перепроданность",
+    "d": "Сообщит, когда ваша монета войдёт в зону перепроданности.",
+    "s": "Если RSI(14) у {subject} опустится ниже {level} на графике {timeframe}, отправить {channel}."
+   },
+   "overbought": {
+    "n": "Перекупленность",
+    "d": "Сообщит, когда ваша монета перегреется и войдёт в зону перекупленности.",
+    "s": "Если RSI(14) у {subject} поднимется выше {level} на графике {timeframe}, отправить {channel}."
+   },
+   "emaCross": {
+    "n": "Пересечение тренда",
+    "d": "Когда короткая средняя пересекает длинную снизу вверх; возможный разворот тренда.",
+    "s": "Если на графике {timeframe} у {subject} EMA {fast} пересечёт EMA {slow} снизу вверх, отправить {channel}."
+   },
+   "dropOversold": {
+    "n": "Резкое падение + перепроданность",
+    "d": "Когда быстрое падение совпадает с перепроданностью; для покупки на дне.",
+    "s": "Если {subject} упадёт на {percent} и более за {minutes} мин при RSI(14) ниже {level} на графике {timeframe}, отправить {channel}."
+   },
+   "rsiScan": {
+    "n": "Сканер рынка",
+    "d": "Находит на всём рынке монеты, у которых RSI опускается ниже 25.",
+    "s": "Если RSI(14) у {subject} опустится ниже {level} на графике {timeframe}, отправить {channel}."
+   },
+   "coinRise": {
+    "n": "Быстрый рост",
+    "d": "Сообщит, когда монета вырастет на 5% и больше за час."
+   },
+   "dayHigh": {
+    "n": "Пробой 24-часового максимума",
+    "d": "Сообщит, когда цена превысит максимум последних 24 часов.",
+    "s": "Если {subject} превысит 24-часовой максимум, отправить {channel}."
+   },
+   "priceAbove": {
+    "n": "Целевая цена",
+    "d": "Сообщит, когда монета вырастет до заданной цены."
+   },
+   "priceBelow": {
+    "n": "Порог падения",
+    "d": "Сообщит, когда монета опустится до заданной цены."
+   }
+  },
+  "pushT": {
+   "Push.Event.RollingUp": "{0} вырос на {1} за {4} мин",
+   "Push.Event.RsiBelow": "{0} RSI опустился ниже {1}",
+   "Push.Event.EmaCrossUp": "{0} EMA {2}/{3} пересечение вверх",
+   "Push.Event.High24h": "{0} обновил максимум за 24 ч",
+   "Push.Volume": "Объём",
+   "Push.Average": "{0}× ср({1})",
+   "Push.High24h": "Макс. 24 ч"
+  }
+ },
+ "zh": {
+  "title": "现成模板",
+  "lead": "选择一个模板；创建前可以修改其中的数值。",
+  "tabs": [
+   "快速波动",
+   "指标",
+   "市场扫描"
+  ],
+  "setUp": "创建",
+  "popular": "热门",
+  "badge": "模板：{name}",
+  "subjectTop": "前 {count} 个币种中的任意一个",
+  "push": "推送通知",
+  "rise": "至少上涨",
+  "fall": "至少下跌",
+  "window": "多少分钟内？",
+  "rsiBelow": "RSI 低于",
+  "rsiAbove": "RSI 高于",
+  "tf": "图表",
+  "chipRolling": "{minutes} 分钟 {operator} {percent}",
+  "chipVolume": "成交量 ≥ {multiplier}×",
+  "chipDayHigh": "突破 24 小时高点",
+  "topCoins": "前 {count} 个币种",
+  "scopeAll": "所有币种",
+  "submit": "创建提醒",
+  "fromTemplate": "从模板创建",
+  "tpl": {
+   "pump": {
+    "n": "拉升",
+    "d": "任何币种在 5 分钟内上涨 5% 或以上时通知你。",
+    "s": "如果{subject}在 {minutes} 分钟内上涨 {percent} 或以上，发送{channel}。"
+   },
+   "pumpVolume": {
+    "n": "拉升 + 成交量",
+    "d": "捕捉有成交量支撑的急涨，过滤无量跳涨。",
+    "s": "如果{subject}在 {minutes} 分钟内上涨 {percent} 或以上，且成交量超过均值的 {multiplier} 倍，发送{channel}。"
+   },
+   "dump": {
+    "n": "砸盘",
+    "d": "任何币种在 5 分钟内下跌 5% 或以上时通知你。",
+    "s": "如果{subject}在 {minutes} 分钟内下跌 {percent} 或以上，发送{channel}。"
+   },
+   "oversold": {
+    "n": "超卖",
+    "d": "你选的币种进入超卖区时通知你。",
+    "s": "如果{subject}在 {timeframe} 图上的 RSI(14) 跌破 {level}，发送{channel}。"
+   },
+   "overbought": {
+    "n": "超买",
+    "d": "你选的币种过热、进入超买区时通知你。",
+    "s": "如果{subject}在 {timeframe} 图上的 RSI(14) 升破 {level}，发送{channel}。"
+   },
+   "emaCross": {
+    "n": "趋势交叉",
+    "d": "短期均线向上穿过长期均线时；可能的趋势反转。",
+    "s": "如果{subject}在 {timeframe} 图上 EMA {fast} 向上穿过 EMA {slow}，发送{channel}。"
+   },
+   "dropOversold": {
+    "n": "急跌 + 超卖",
+    "d": "快速下跌与超卖同时出现时；适合抄底。",
+    "s": "如果{subject}在 {minutes} 分钟内下跌 {percent} 或以上，且 {timeframe} 图上的 RSI(14) 低于 {level}，发送{channel}。"
+   },
+   "rsiScan": {
+    "n": "市场扫描",
+    "d": "在整个市场中找出 RSI 跌破 25 的币种。",
+    "s": "如果{subject}在 {timeframe} 图上的 RSI(14) 跌破 {level}，发送{channel}。"
+   },
+   "coinRise": {
+    "n": "快速上涨",
+    "d": "你的币在 1 小时内上涨 5% 或更多时提醒你。"
+   },
+   "dayHigh": {
+    "n": "突破 24 小时高点",
+    "d": "价格突破过去 24 小时最高点时通知你。",
+    "s": "如果{subject}突破 24 小时高点，发送{channel}。"
+   },
+   "priceAbove": {
+    "n": "目标价",
+    "d": "币价涨到你设定的价格时提醒你。"
+   },
+   "priceBelow": {
+    "n": "跌破价",
+    "d": "币价跌到你设定的价格时提醒你。"
+   }
+  },
+  "pushT": {
+   "Push.Event.RollingUp": "{0} {4} 分钟内上涨 {1}",
+   "Push.Event.RsiBelow": "{0} RSI 跌破 {1}",
+   "Push.Event.EmaCrossUp": "{0} EMA {2}/{3} 向上交叉",
+   "Push.Event.High24h": "{0} 突破 24 小时最高价",
+   "Push.Volume": "成交量",
+   "Push.Average": "{0}× 均值({1})",
+   "Push.High24h": "24 小时最高"
+  }
+ },
+ "ja": {
+  "title": "テンプレート",
+  "lead": "テンプレートを選びましょう。作成前に値を変更できます。",
+  "tabs": [
+   "急な値動き",
+   "インジケーター",
+   "マーケットスキャン"
+  ],
+  "setUp": "作成",
+  "popular": "人気",
+  "badge": "テンプレート：{name}",
+  "subjectTop": "上位{count}コインのいずれか",
+  "push": "プッシュ通知",
+  "rise": "上昇率（以上）",
+  "fall": "下落率（以上）",
+  "window": "何分以内？",
+  "rsiBelow": "RSIがこれ未満",
+  "rsiAbove": "RSIがこれ超",
+  "tf": "チャート",
+  "chipRolling": "{minutes}分 {operator} {percent}",
+  "chipVolume": "出来高 ≥ {multiplier}×",
+  "chipDayHigh": "24時間高値ブレイク",
+  "topCoins": "上位 {count} コイン",
+  "scopeAll": "すべてのコイン",
+  "submit": "アラートを作成",
+  "fromTemplate": "テンプレートから作成",
+  "tpl": {
+   "pump": {
+    "n": "パンプ",
+    "d": "いずれかのコインが5分で5%以上上昇したら通知します。",
+    "s": "{subject}が{minutes}分以内に{percent}以上上昇したら、{channel}を送信。"
+   },
+   "pumpVolume": {
+    "n": "パンプ＋出来高",
+    "d": "出来高を伴う急騰をとらえ、出来高のない急騰を除外します。",
+    "s": "{subject}が{minutes}分以内に{percent}以上上昇し、出来高が平均の{multiplier}倍を超えたら、{channel}を送信。"
+   },
+   "dump": {
+    "n": "ダンプ",
+    "d": "いずれかのコインが5分で5%以上下落したら通知します。",
+    "s": "{subject}が{minutes}分以内に{percent}以上下落したら、{channel}を送信。"
+   },
+   "oversold": {
+    "n": "売られすぎ",
+    "d": "選んだコインが売られすぎゾーンに入ったら通知します。",
+    "s": "{subject}の{timeframe}チャートでRSI(14)が{level}を下回ったら、{channel}を送信。"
+   },
+   "overbought": {
+    "n": "買われすぎ",
+    "d": "選んだコインが過熱し、買われすぎゾーンに入ったら通知します。",
+    "s": "{subject}の{timeframe}チャートでRSI(14)が{level}を上回ったら、{channel}を送信。"
+   },
+   "emaCross": {
+    "n": "トレンドクロス",
+    "d": "短期平均が長期平均を上抜けたとき。トレンド転換の可能性。",
+    "s": "{subject}の{timeframe}チャートでEMA {fast}がEMA {slow}を上抜けたら、{channel}を送信。"
+   },
+   "dropOversold": {
+    "n": "急落＋売られすぎ",
+    "d": "急落と売られすぎが重なったとき。押し目買いのチャンスに。",
+    "s": "{subject}が{minutes}分以内に{percent}以上下落し、{timeframe}チャートのRSI(14)が{level}未満なら、{channel}を送信。"
+   },
+   "rsiScan": {
+    "n": "マーケットスキャン",
+    "d": "市場全体からRSIが25を下回ったコインを見つけます。",
+    "s": "{subject}の{timeframe}チャートでRSI(14)が{level}を下回ったら、{channel}を送信。"
+   },
+   "coinRise": {
+    "n": "急上昇",
+    "d": "コインが1時間で5%以上上がると通知します。"
+   },
+   "dayHigh": {
+    "n": "24時間高値ブレイク",
+    "d": "価格が過去24時間の高値を超えたら通知します。",
+    "s": "{subject}が24時間高値を超えたら、{channel}を送信。"
+   },
+   "priceAbove": {
+    "n": "目標価格",
+    "d": "コインが設定した価格まで上がると通知します。"
+   },
+   "priceBelow": {
+    "n": "下落ライン",
+    "d": "コインが設定した価格まで下がると通知します。"
+   }
+  },
+  "pushT": {
+   "Push.Event.RollingUp": "{0} が {4} 分で {1} 上昇",
+   "Push.Event.RsiBelow": "{0} の RSI が {1} を下回りました",
+   "Push.Event.EmaCrossUp": "{0} の EMA {2}/{3} が上抜けしました",
+   "Push.Event.High24h": "{0} が 24 時間高値を更新しました",
+   "Push.Volume": "出来高",
+   "Push.Average": "{0}× 平均({1})",
+   "Push.High24h": "24h 高値"
+  }
+ },
+ "hi": {
+  "title": "तैयार टेम्पलेट",
+  "lead": "कोई टेम्पलेट चुनें; बनाने से पहले आप मान बदल सकते हैं।",
+  "tabs": [
+   "तेज़ हलचल",
+   "इंडिकेटर",
+   "मार्केट स्कैन"
+  ],
+  "setUp": "बनाएँ",
+  "popular": "लोकप्रिय",
+  "badge": "टेम्पलेट: {name}",
+  "subjectTop": "शीर्ष {count} कॉइन में से कोई",
+  "push": "पुश सूचना",
+  "rise": "कम से कम बढ़त",
+  "fall": "कम से कम गिरावट",
+  "window": "कितने मिनट में?",
+  "rsiBelow": "RSI इससे नीचे",
+  "rsiAbove": "RSI इससे ऊपर",
+  "tf": "चार्ट",
+  "chipRolling": "{minutes} मिनट {operator} {percent}",
+  "chipVolume": "वॉल्यूम ≥ {multiplier}×",
+  "chipDayHigh": "24 घंटे का हाई टूटा",
+  "topCoins": "शीर्ष {count} कॉइन",
+  "scopeAll": "सभी कॉइन",
+  "submit": "अलर्ट बनाएँ",
+  "fromTemplate": "टेम्पलेट से बनाएँ",
+  "tpl": {
+   "pump": {
+    "n": "पंप",
+    "d": "कोई भी कॉइन 5 मिनट में 5% या ज़्यादा बढ़े तो बताता है।",
+    "s": "अगर {subject} {minutes} मिनट में {percent} या ज़्यादा बढ़े, तो {channel} भेजें।"
+   },
+   "pumpVolume": {
+    "n": "पंप + वॉल्यूम",
+    "d": "वॉल्यूम के साथ आई तेज़ बढ़त पकड़ता है, बिना वॉल्यूम की उछाल छोड़ देता है।",
+    "s": "अगर {subject} {minutes} मिनट में {percent} या ज़्यादा बढ़े और वॉल्यूम औसत का {multiplier} गुना पार करे, तो {channel} भेजें।"
+   },
+   "dump": {
+    "n": "डंप",
+    "d": "कोई भी कॉइन 5 मिनट में 5% या ज़्यादा गिरे तो बताता है।",
+    "s": "अगर {subject} {minutes} मिनट में {percent} या ज़्यादा गिरे, तो {channel} भेजें।"
+   },
+   "oversold": {
+    "n": "ओवरसोल्ड",
+    "d": "आपका चुना कॉइन ओवरसोल्ड ज़ोन में आए तो बताता है।",
+    "s": "अगर {timeframe} चार्ट पर {subject} का RSI(14) {level} से नीचे जाए, तो {channel} भेजें।"
+   },
+   "overbought": {
+    "n": "ओवरबॉट",
+    "d": "आपका चुना कॉइन ज़्यादा गरम होकर ओवरबॉट ज़ोन में आए तो बताता है।",
+    "s": "अगर {timeframe} चार्ट पर {subject} का RSI(14) {level} से ऊपर जाए, तो {channel} भेजें।"
+   },
+   "emaCross": {
+    "n": "ट्रेंड क्रॉसओवर",
+    "d": "छोटी अवधि का औसत लंबी अवधि वाले को ऊपर की ओर काटे; संभावित ट्रेंड बदलाव।",
+    "s": "अगर {subject} के {timeframe} चार्ट पर EMA {fast} EMA {slow} को ऊपर की ओर काटे, तो {channel} भेजें।"
+   },
+   "dropOversold": {
+    "n": "तेज़ गिरावट + ओवरसोल्ड",
+    "d": "तेज़ गिरावट और ओवरसोल्ड साथ आएँ तब; नीचे से खरीदने के मौके के लिए।",
+    "s": "अगर {subject} {minutes} मिनट में {percent} या ज़्यादा गिरे और {timeframe} चार्ट पर RSI(14) {level} से नीचे हो, तो {channel} भेजें।"
+   },
+   "rsiScan": {
+    "n": "मार्केट स्कैन",
+    "d": "पूरे मार्केट में वे कॉइन ढूँढता है जिनका RSI 25 से नीचे जाए।",
+    "s": "अगर {timeframe} चार्ट पर {subject} का RSI(14) {level} से नीचे जाए, तो {channel} भेजें।"
+   },
+   "coinRise": {
+    "n": "तेज़ उछाल",
+    "d": "आपका कॉइन 1 घंटे में 5% या अधिक बढ़े तो सूचना देता है।"
+   },
+   "dayHigh": {
+    "n": "24 घंटे का हाई ब्रेकआउट",
+    "d": "कीमत पिछले 24 घंटे के सबसे ऊँचे स्तर को पार करे तो बताता है।",
+    "s": "अगर {subject} 24 घंटे का हाई पार करे, तो {channel} भेजें।"
+   },
+   "priceAbove": {
+    "n": "लक्ष्य कीमत",
+    "d": "कॉइन आपकी तय कीमत तक पहुँचे तो सूचना देता है।"
+   },
+   "priceBelow": {
+    "n": "गिरावट सीमा",
+    "d": "कॉइन आपकी तय कीमत तक गिरे तो सूचना देता है।"
+   }
+  },
+  "pushT": {
+   "Push.Event.RollingUp": "{0} {4} मिनट में {1} बढ़ा",
+   "Push.Event.RsiBelow": "{0} RSI {1} से नीचे गया",
+   "Push.Event.EmaCrossUp": "{0} EMA {2}/{3} ऊपर की ओर क्रॉस हुआ",
+   "Push.Event.High24h": "{0} ने 24 घंटे का उच्च स्तर तोड़ा",
+   "Push.Volume": "वॉल्यूम",
+   "Push.Average": "{0}× औसत({1})",
+   "Push.High24h": "24 घं. उच्च"
+  }
+ },
+ "ar": {
+  "title": "قوالب جاهزة",
+  "lead": "اختر قالبًا؛ يمكنك تغيير قيمه قبل الإنشاء.",
+  "tabs": [
+   "حركة سريعة",
+   "المؤشرات",
+   "مسح السوق"
+  ],
+  "setUp": "إنشاء",
+  "popular": "شائع",
+  "badge": "القالب: {name}",
+  "subjectTop": "إحدى أعلى {count} عملة",
+  "push": "إشعارًا فوريًا",
+  "rise": "ارتفاع لا يقل عن",
+  "fall": "انخفاض لا يقل عن",
+  "window": "خلال كم دقيقة؟",
+  "rsiBelow": "RSI أقل من",
+  "rsiAbove": "RSI أعلى من",
+  "tf": "الرسم البياني",
+  "chipRolling": "{minutes} د {operator} {percent}",
+  "chipVolume": "الحجم ≥ {multiplier}×",
+  "chipDayHigh": "اختراق أعلى 24 ساعة",
+  "topCoins": "أعلى {count} عملة",
+  "scopeAll": "كل العملات",
+  "submit": "إنشاء التنبيه",
+  "fromTemplate": "إنشاء من قالب",
+  "tpl": {
+   "pump": {
+    "n": "ضخ",
+    "d": "ينبهك عندما ترتفع أي عملة 5% أو أكثر خلال 5 دقائق.",
+    "s": "إذا ارتفعت {subject} بنسبة {percent} أو أكثر خلال {minutes} دقيقة، أرسل {channel}."
+   },
+   "pumpVolume": {
+    "n": "ضخ + حجم",
+    "d": "يلتقط الارتفاعات الحادة المدعومة بالحجم ويستبعد القفزات بلا حجم.",
+    "s": "إذا ارتفعت {subject} بنسبة {percent} أو أكثر خلال {minutes} دقيقة وتجاوز حجمها {multiplier} أضعاف المتوسط، أرسل {channel}."
+   },
+   "dump": {
+    "n": "تفريغ",
+    "d": "ينبهك عندما تنخفض أي عملة 5% أو أكثر خلال 5 دقائق.",
+    "s": "إذا انخفضت {subject} بنسبة {percent} أو أكثر خلال {minutes} دقيقة، أرسل {channel}."
+   },
+   "oversold": {
+    "n": "تشبع بيعي",
+    "d": "ينبهك عندما تدخل عملتك منطقة التشبع البيعي.",
+    "s": "إذا انخفض RSI(14) لـ {subject} تحت {level} على رسم {timeframe}، أرسل {channel}."
+   },
+   "overbought": {
+    "n": "تشبع شرائي",
+    "d": "ينبهك عندما ترتفع حرارة عملتك وتدخل منطقة التشبع الشرائي.",
+    "s": "إذا ارتفع RSI(14) لـ {subject} فوق {level} على رسم {timeframe}، أرسل {channel}."
+   },
+   "emaCross": {
+    "n": "تقاطع الاتجاه",
+    "d": "عندما يتقاطع المتوسط القصير صعودًا مع الطويل؛ انعكاس محتمل للاتجاه.",
+    "s": "إذا تقاطع EMA {fast} صعودًا مع EMA {slow} على رسم {timeframe} لـ {subject}، أرسل {channel}."
+   },
+   "dropOversold": {
+    "n": "هبوط حاد + تشبع بيعي",
+    "d": "عندما يجتمع الهبوط السريع والتشبع البيعي؛ لفرص الشراء من القاع.",
+    "s": "إذا انخفضت {subject} بنسبة {percent} أو أكثر خلال {minutes} دقيقة وكان RSI(14) تحت {level} على رسم {timeframe}، أرسل {channel}."
+   },
+   "rsiScan": {
+    "n": "مسح السوق",
+    "d": "يجد في السوق كله العملات التي ينخفض RSI لها تحت 25.",
+    "s": "إذا انخفض RSI(14) لـ {subject} تحت {level} على رسم {timeframe}، أرسل {channel}."
+   },
+   "coinRise": {
+    "n": "صعود سريع",
+    "d": "ينبهك عندما ترتفع عملتك 5% أو أكثر خلال ساعة."
+   },
+   "dayHigh": {
+    "n": "اختراق أعلى 24 ساعة",
+    "d": "ينبهك عندما يتجاوز السعر أعلى مستوى في آخر 24 ساعة.",
+    "s": "إذا تجاوزت {subject} أعلى سعر في 24 ساعة، أرسل {channel}."
+   },
+   "priceAbove": {
+    "n": "السعر المستهدف",
+    "d": "ينبهك عندما ترتفع العملة إلى السعر الذي حددته."
+   },
+   "priceBelow": {
+    "n": "حد الهبوط",
+    "d": "ينبهك عندما تنخفض العملة إلى السعر الذي حددته."
+   }
+  },
+  "pushT": {
+   "Push.Event.RollingUp": "ارتفع {0} بنسبة {1} خلال {4} دقيقة",
+   "Push.Event.RsiBelow": "{0} RSI هبط دون {1}",
+   "Push.Event.EmaCrossUp": "{0} EMA {2}/{3} تقاطع صاعد",
+   "Push.Event.High24h": "{0} كسر أعلى سعر في 24 ساعة",
+   "Push.Volume": "الحجم",
+   "Push.Average": "{0}× متوسط({1})",
+   "Push.High24h": "أعلى 24 س"
+  }
+ }
+}

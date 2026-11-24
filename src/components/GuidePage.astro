@@ -60,6 +60,9 @@ import NhMore from './nh/NhMore.astro';
 import GcHero from './gc/GcHero.astro';
 import GcSteps from './gc/GcSteps.astro';
 import GcBoth from './gc/GcBoth.astro';
+import TpHero from './tp/TpHero.astro';
+import TpSteps from './tp/TpSteps.astro';
+import TpAll from './tp/TpAll.astro';
 import logicCards from '../i18n/logic-cards.json';
 import content from '../i18n/content.json';
 import guides from '../i18n/alert-guides.json';
@@ -78,7 +81,7 @@ const r = (rsiGuides as any)[code];
 const lcAll = (logicCards as any)[code];
 const lc = lcAll?.[`${section}/${slug}`];
 // Rehber başına görsel ve kod satırları. Yeni rehber eklerken buraya da bir kayıt ekle.
-const VISUAL: Record<string, { kicker: string; exampleKicker: string; condition: string[]; foot: string; shot: string; version: string; width: number; height: number | null; logic?: string[][]; hook?: { pair: string; market: string; from: number; target: number; touch: number; last: number; op: '<' | '>'; unit?: 'pct' }; stepShots?: [string, number][]; voice?: true; tg?: true; mc?: true; hl?: true; em?: true; ai?: true; fu?: true; et?: true; pm?: true; ro?: true; pa?: true; nh?: true; gc?: true }> = {
+const VISUAL: Record<string, { kicker: string; exampleKicker: string; condition: string[]; foot: string; shot: string; version: string; width: number; height: number | null; logic?: string[][]; hook?: { pair: string; market: string; from: number; target: number; touch: number; last: number; op: '<' | '>'; unit?: 'pct' }; stepShots?: [string, number][]; voice?: true; tg?: true; mc?: true; hl?: true; em?: true; ai?: true; fu?: true; et?: true; pm?: true; ro?: true; pa?: true; nh?: true; gc?: true; tp?: true }> = {
   'features/price-alerts': { kicker: 'BINANCE · PRICE · PUSH', exampleKicker: 'BTC/USDT · 70,000 · ONCE', condition: ['BTC/USDT', '≥', '70,000 USDT'], foot: 'BINANCE SPOT · USDT · ONCE → PUSH', shot: 'price', version: 'cat2', width: 1080, height: 2280,
     logic: [['HIGH 69,990 · LAST 69,880', '→ ✕'], ['HIGH 70,012 · LAST 69,880', 'TOUCH → ✓']] },
   'features/volume-spike-alerts': { kicker: 'BINANCE · VOLUME / SMA · TELEGRAM', exampleKicker: '15m · SMA(20) · 3×', condition: ['VOLUME', '>', '3 × SMA(20)'], foot: 'BINANCE SPOT · USDT · TOP 100 → TELEGRAM', shot: 'rsi/volume-result', version: 'volume1', width: 390, height: null },
@@ -118,6 +121,8 @@ const VISUAL: Record<string, { kicker: string; exampleKicker: string; condition:
   // 16. gün: bildirim geçmişi sayfası posta kutusu (A) bloklarını kullanır (components/nh, metinler rehberin `nh` alanında).
   // 17. gün: golden / death cross sayfası tahterevalli (B) bloklarını kullanır (components/gc, metinler rehberin `gc` alanında).
   'features/golden-cross-death-cross-alerts': { kicker: 'GOLDEN CROSS', exampleKicker: '', condition: [], foot: '', shot: 'gc-ed', version: 'gc1', width: 720, height: 1522, gc: true },
+  // 18. gün: hazır şablonlar sayfası şablon otomatı (C) bloklarını kullanır (components/tp, metinler rehberin `tp` alanında, uygulama metinleri tp-app.json).
+  'features/alert-templates': { kicker: 'HAZIR ŞABLONLAR', exampleKicker: '', condition: [], foot: '', shot: 'tp-gal', version: 'tp1', width: 720, height: 1522, tp: true },
   'features/notification-history': { kicker: 'NOTIFICATION HISTORY', exampleKicker: '', condition: [], foot: '', shot: 'nh-list', version: 'nh1', width: 720, height: 1520, nh: true },
   'features/price-crosses-moving-average': { kicker: 'PRICE VS EMA / SMA · PLUS / PRO', exampleKicker: '', condition: [], foot: '', shot: 'pa-ed', version: 'pa1', width: 720, height: 1520, pa: true },
   'coins/ethereum-price-alert': { kicker: 'ETH/USDT · PRICE OR RSI', exampleKicker: '', condition: [], foot: '', shot: 'et-quick', version: 'et1', width: 720, height: 1522, et: true },
@@ -136,6 +141,7 @@ const ro = v.ro ? g.ro : undefined;
 const pa = v.pa ? g.pa : undefined;
 const nh = v.nh ? g.nh : undefined;
 const gc = v.gc ? g.gc : undefined;
+const tp = v.tp ? g.tp : undefined;
 const shotKind = v.shot.split('/').pop() as string;
 const shotHeight = (theme: 'light' | 'dark') => v.height ? Math.round(390 * v.height / v.width) : (screenSizes as any)[code][theme][shotKind];
 const plans: string[][] = g.plans || r.plans;
@@ -174,7 +180,9 @@ const ogImage = existsSync(`public${ogPage}`) ? ogPage : `/og/${code}.png`;
   </header>
   <main class="alert-guide">
     <nav class="breadcrumbs" aria-label="MarketAlert"><a href={`/${code}/`}>MarketAlert</a><span aria-hidden="true"> / </span><span>{g.link}</span></nav>
-    {gc ? <>
+    {tp ? <>
+    <TpHero code={code} hreflang={locale.hreflang} tp={tp} h1={g.h1} introHtml={L(g.intro)} setupTitle={setupTitle} />
+    </> : gc ? <>
     <GcHero code={code} hreflang={locale.hreflang} gc={gc} h1={g.h1} introHtml={L(g.intro)} setupTitle={setupTitle} />
     </> : nh ? <>
     <NhHero code={code} nh={nh} h1={g.h1} introHtml={L(g.intro)} setupTitle={setupTitle} />
@@ -234,12 +242,13 @@ const ogImage = existsSync(`public${ogPage}`) ? ogPage : `/og/${code}.png`;
       </figure>
     </section>
     </>}
-    <section id="setup" class="guide-section"><p class="kicker">{`01 → ${String(g.steps.length).padStart(2, '0')}`}</p><h2>{setupTitle}</h2>{gc ? <GcSteps code={code} gc={gc} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : nh ? <NhSteps code={code} nh={nh} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : pa ? <PaSteps code={code} pa={pa} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : ro ? <RoSteps code={code} ro={ro} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : pm ? <PmSteps code={code} pm={pm} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : et ? <EtPaths code={code} et={et} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : ai ? <AiPath code={code} ai={ai} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : tg ? <TgLanes code={code} lanes={tg.lanes} cells={tg.cells} alts={tg.alts} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : vo ? <VoiceSteps code={code} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : v.stepShots && g.stepActions ? <>
+    <section id="setup" class="guide-section"><p class="kicker">{`01 → ${String(g.steps.length).padStart(2, '0')}`}</p><h2>{setupTitle}</h2>{tp ? <TpSteps code={code} hreflang={locale.hreflang} tp={tp} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : gc ? <GcSteps code={code} gc={gc} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : nh ? <NhSteps code={code} nh={nh} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : pa ? <PaSteps code={code} pa={pa} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : ro ? <RoSteps code={code} ro={ro} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : pm ? <PmSteps code={code} pm={pm} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : et ? <EtPaths code={code} et={et} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : ai ? <AiPath code={code} ai={ai} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : tg ? <TgLanes code={code} lanes={tg.lanes} cells={tg.cells} alts={tg.alts} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : vo ? <VoiceSteps code={code} steps={g.steps} html={g.steps.map((st: string[]) => L(st[1]))} /> : v.stepShots && g.stepActions ? <>
       <StepArc code={code} titles={g.steps.map((s: string[]) => s[0])} actions={g.stepActions} ready={g.ready} shots={v.stepShots} version={v.version} />
       <ol class="step-notes">{g.steps.map((step: string[], i: number) => <li><span class="step-number" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><div><h3>{step[0]}</h3><p set:html={L(step[1])} /></div></li>)}</ol>
     </> : <ol class="steps">{g.steps.map((step: string[], i: number) => <li><span class="step-number" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><div><h3>{step[0]}</h3><p set:html={L(step[1])} /></div></li>)}</ol>}{mc && <McSetup code={code} mc={mc} />}{hl && <HlSetup code={code} hl={hl} />}{em && <EmSetup code={code} em={em} />}</section>
     {nh && <NhMore code={code} nh={nh} />}
     {gc && <GcBoth gc={gc} />}
+    {tp && <TpAll code={code} tp={tp} />}
     <section class="guide-section explain">{g.details.map((section: string[]) => <article><h2>{section[0]}</h2><p set:html={L(section[1])} /></article>)}</section>
     {mc && <McCandle code={code} mc={mc} />}
     {hl && <HlDay code={code} hl={hl} />}

@@ -359,6 +359,23 @@
         "Yes. Add two SMA/EMA crossover conditions, one Crosses above and one Crosses below, and join them with OR."
       ]
     ]
+  },
+  "features/alert-templates": {
+    "line": "Set up a crypto alert in about a minute from a ready-made template in MarketAlert.",
+    "what": "In My alerts tap Create alert, then Set up from a template. Ready-made templates opens with three tabs: Fast moves, Indicators and Market scan. Pick a template, change its value with the tiles (threshold, minutes or chart) and tap Set alert. Conditions, coin scope and notification channel come prefilled; the saved alert is a normal alert you can edit later.",
+    "facts": [
+      "Templates: Pump, Pump + volume, Dump, Fast rise, 24-hour high breakout, Oversold, Overbought, Trend crossover (EMA 20/50), Sharp drop + oversold, Market scan (RSI below 25); Target price and Drop limit open the quick alert 5% from the last price.",
+      "Pump, Pump + volume, Dump and Market scan watch the top 100 coins and count toward all-coins alerts (Plus 2, Pro 10).",
+      "Edit with all details opens the same alert in the full alert form.",
+      "All templates work on Plus and Pro."
+    ],
+    "example": "Set up the Pump + volume template",
+    "faq": [
+      [
+        "Is an alert from a template different from a normal alert?",
+        "No. The template only fills in conditions, coin scope and channel; the saved alert can be edited, paused or deleted like any other."
+      ]
+    ]
   }
  }
 }

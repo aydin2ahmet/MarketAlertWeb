@@ -1,0 +1,42 @@
+---
+/**
+ * Kurulum: iki gerçek ekran (şablon galerisi SCR-TPL-01, ayar sayfası SCR-TPL-02) ve üçüncü adımda sunucunun gerçek push metni
+ * (Pump + hacim, iki koşul "∧" ile). Zilbo ilk adımda, Zilbe son adımda. Çerçeve yok, sayfa zemininde.
+ */
+import Zb from '../eth/Zb.astro';
+import TpShot from './TpShot.astro';
+import { tpApp } from '../../lib/tp-data';
+import { push, KNOB } from '../../lib/tp';
+import { dateLocale } from '../../lib/gc';
+import '../../styles/tp.css';
+interface Props { code: string; hreflang: string; tp: any; steps: string[][]; html: string[] }
+const { code, hreflang, tp, steps, html } = Astro.props;
+const A = tpApp(code), P = push(A, dateLocale(hreflang), 'pv', KNOB.pv.def);
+const shots = ['gal', 'set'];
+const ICON = [
+  '<path d="M14 10 h40 v48 h-40 Z" /><path d="M20 18 h12 v10 h-12 Z M36 18 h12 v10 h-12 Z M20 34 h12 v10 h-12 Z M36 34 h12 v10 h-12 Z" /><path d="M22 52 h24" />',
+  '<circle cx="24" cy="34" r="12" /><path d="M24 34 l6 -7" /><circle cx="48" cy="40" r="9" /><path d="M48 40 l-4 -6" />',
+  '<path d="M20 54 V30 a14 14 0 0 1 28 0 V54 Z M26 30 h16" /><path d="M34 54 v8" />',
+];
+---
+<div class="tp-c" data-tp-c>
+  <ol>{steps.map((st, i) => <li>
+    <svg class="tp-ic" viewBox="0 0 68 68" aria-hidden="true" set:html={ICON[i]} />
+    <h3>{st[0]}</h3><p set:html={html[i]} />
+    {i < 2 ? <div class="tp-rise"><div class="tp-ph"><TpShot code={code} k={shots[i]} alt={tp.stepAlts[i]} sizes="240px" /></div>{i === 0 && <Zb who="zilbo" />}</div>
+    : <div class="tp-rise tp-nt"><div class="tp-ps"><img src="/icons/logo-96.png" alt="" width="34" height="34" loading="lazy" /><div><div class="tp-pq-h"><b>MarketAlert</b><span>{tp.now}</span></div><b class="tp-pq-t" dir="auto">{P[0]}</b><span class="tp-pq-b">{P[1]}</span></div></div><Zb who="zilbe" /></div>}
+  </li>)}</ol>
+</div>
+<script>
+  import { zbPlay, zbPrime, zbReduce } from '../../lib/zb';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-tp-c]')) {
+    zbPrime(k);
+    if (zbReduce) continue;
+    k.classList.add('tp-js');
+    for (const r of k.querySelectorAll<HTMLElement>('.tp-rise')) {
+      const show = () => { r.classList.add('in'); const z = r.querySelector<HTMLElement>('.zb'); if (z) setTimeout(() => zbPlay(z, ({ zilbe: 'zilbe-sevin', zilba: 'zilba-el', zilbo: 'zilbo-zipla' } as Record<string, string>)[z.dataset.who || 'zilbo']), 700); };
+      const io = new IntersectionObserver(es => { if (!es[0].isIntersecting) return; io.disconnect(); show(); }, { threshold: .1 });
+      io.observe(r); setTimeout(() => r.classList.add('in'), 1500);
+    }
+  }
+</script>
