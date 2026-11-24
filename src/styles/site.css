@@ -100,6 +100,15 @@ img { max-width: 100%; }
 .sb span { display: flex; flex-direction: column; line-height: 1.1; text-align: start; }
 .sb small { font-size: 10.5px; opacity: .85; }
 .sb b { font-size: 18px; font-weight: 600; letter-spacing: -.01em; }
+/* Google Play rozeti: Play Store'daki gibi renkli logo, büyük "Google Play" ve yeşil "İndir" düğmesi */
+.sb-play { padding-inline-end: 8px; gap: 11px; position: relative; }
+.sb-play::after { content: ""; position: absolute; inset-inline: 14px; bottom: -1px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, #00D7FE 0 25%, #00F076 25% 50%, #FFD500 50% 75%, #FF3A44 75%); opacity: .9; }
+.sb-play .sbi { width: 30px; height: 30px; }
+.sb-play b { font-size: 19px; }
+.sbg { font-family: var(--f); font-size: 14px; font-weight: 700; line-height: 1; font-style: normal; background: #01875F; color: #fff; border-radius: 8px; padding: 10px 14px; margin-inline-start: 6px; white-space: nowrap; transition: background .15s; }
+.sb-play:hover .sbg { background: #016E4D; }
+.stores.sm .sbg, .dlbar .sbg { display: none; }
+.stores.sm .sb-play::after, .dlbar .sb-play::after { inset-inline: 10px; }
 .chips { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
 .chips li { display: flex; align-items: center; gap: 6px; font-size: 13.5px; color: var(--mut); }
 .chips .ic { width: 16px; height: 16px; color: var(--up); }
@@ -379,7 +388,11 @@ svg.ar .bx { fill: none; stroke: var(--pri); stroke-width: 2.4; }
   .voice-badge { font-size: 11px; padding: 7px 9px; }
   .hero .prompt { display: none; }
   .hero .stores { margin-top: 18px; flex-wrap: nowrap; gap: 10px; }
-  .hero .sb { flex: 1; padding: 8px 10px; gap: 8px; justify-content: center; }
+  .hero .stores { flex-wrap: wrap; }
+  .hero .sb { flex: 1 1 100%; padding: 8px 10px; gap: 8px; justify-content: center; }
+  .hero .sb-play { padding-inline-end: 8px; }
+  .hero .sb-play .sbg { margin-inline-start: auto; }
+  .hero .sb-play > span { margin-inline-end: auto; }
   .hero .sb b { font-size: 16px; }
   .h-v { height: 595px; margin-top: 22px; }
   .h-v .front { --pw: 212px; inset-inline-end: 2%; top: 0; }
