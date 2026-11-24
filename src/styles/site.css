@@ -100,15 +100,14 @@ img { max-width: 100%; }
 .sb span { display: flex; flex-direction: column; line-height: 1.1; text-align: start; }
 .sb small { font-size: 10.5px; opacity: .85; }
 .sb b { font-size: 18px; font-weight: 600; letter-spacing: -.01em; }
-/* Google Play rozeti: Play Store'daki gibi renkli logo, büyük "Google Play" ve yeşil "İndir" düğmesi */
-.sb-play { padding-inline-end: 8px; gap: 11px; position: relative; }
-.sb-play::after { content: ""; position: absolute; inset-inline: 14px; bottom: -1px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, #00D7FE 0 25%, #00F076 25% 50%, #FFD500 50% 75%, #FF3A44 75%); opacity: .9; }
+/* Google Play rozeti (A1): renkli logo, büyük "Google Play", sağda marka turuncusunda oklu "İndir" hapı */
+.sb-play { padding-inline-end: 8px; gap: 11px; }
 .sb-play .sbi { width: 30px; height: 30px; }
 .sb-play b { font-size: 19px; }
-.sbg { font-family: var(--f); font-size: 14px; font-weight: 700; line-height: 1; font-style: normal; background: #01875F; color: #fff; border-radius: 8px; padding: 10px 14px; margin-inline-start: 6px; white-space: nowrap; transition: background .15s; }
-.sb-play:hover .sbg { background: #016E4D; }
+.sbg { display: inline-flex; align-items: center; gap: 6px; font-family: var(--f); font-size: 14px; font-weight: 800; line-height: 1; letter-spacing: .01em; font-style: normal; background: #F5A524; color: #231703; box-shadow: inset 0 0 0 1px #FFD27A55; border-radius: 999px; padding: 9px 15px 9px 12px; margin-inline-start: 8px; white-space: nowrap; transition: background .15s; }
+.sbg svg { width: 16px; height: 16px; flex: none; }
+.sb-play:hover .sbg { background: #FFB53D; }
 .stores.sm .sbg, .dlbar .sbg { display: none; }
-.stores.sm .sb-play::after, .dlbar .sb-play::after { inset-inline: 10px; }
 .chips { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
 .chips li { display: flex; align-items: center; gap: 6px; font-size: 13.5px; color: var(--mut); }
 .chips .ic { width: 16px; height: 16px; color: var(--up); }
