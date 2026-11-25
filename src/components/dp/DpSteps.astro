@@ -1,0 +1,43 @@
+---
+/**
+ * Kurulum: iki gerçek ekran (galeri Piyasa taraması sekmesi SCR-TPL-01, Dump ayar sayfası SCR-TPL-02) ve üçüncü adımda sunucunun
+ * gerçek push metinleri: ilk düşen coin anında, aynı dakikalarda düşen diğerleri sessiz özette. Zilbo ilk adımda, Zilbe son adımda.
+ */
+import Zb from '../eth/Zb.astro';
+import DpShot from './DpShot.astro';
+import { dpText } from '../../lib/dp-data';
+import { hits, push1, pushN } from '../../lib/dp';
+import { dateLocale } from '../../lib/gc';
+import '../../styles/dp.css';
+interface Props { code: string; hreflang: string; dp: any; steps: string[][]; html: string[] }
+const { code, hreflang, dp, steps, html } = Astro.props;
+const T = dpText(code), loc = dateLocale(hreflang), H = hits(5, 5);
+const P = [push1(T, loc, H[0], 5), pushN(T, loc, H.slice(1))];
+const shots = ['gal', 'set'];
+const ICON = [
+  '<path d="M14 10 h40 v48 h-40 Z" /><path d="M20 18 h28 M20 30 h28 M20 42 h28" /><path class="o" d="M34 46 v8 M30 50 l4 4 4 -4" />',
+  '<circle cx="24" cy="34" r="12" /><path d="M24 34 l6 -7" /><path class="o" d="M42 22 h14 M49 15 v14" /><path d="M42 44 h14" />',
+  '<path d="M20 54 V30 a14 14 0 0 1 28 0 V54 Z M26 30 h16" /><path class="o" d="M34 54 v8" />',
+];
+---
+<div class="dp-c" data-dp-c>
+  <ol>{steps.map((st, i) => <li>
+    <svg class="dp-ic" viewBox="0 0 68 68" aria-hidden="true" set:html={ICON[i]} />
+    <h3>{st[0]}</h3><p set:html={html[i]} />
+    {i < 2 ? <div class="dp-rise"><div class="dp-ph"><DpShot code={code} k={shots[i]} alt={dp.stepAlts[i]} sizes="240px" /></div>{i === 0 && <Zb who="zilbo" />}</div>
+    : <div class="dp-rise dp-nt">{P.map((t, j) => <div class={`dp-ps${j ? ' sil' : ''}`}><img src="/icons/logo-96.png" alt="" width="34" height="34" loading="lazy" /><div><div class="dp-ps-h"><b>MarketAlert</b><span>{j ? dp.silent : dp.now}</span></div><b class="dp-ps-t" dir="auto">{t[0]}</b><span class="dp-ps-b">{t[1]}</span></div></div>)}<Zb who="zilbe" /></div>}
+  </li>)}</ol>
+</div>
+<script>
+  import { zbPlay, zbPrime, zbReduce } from '../../lib/zb';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-dp-c]')) {
+    zbPrime(k);
+    if (zbReduce) continue;
+    k.classList.add('dp-js');
+    for (const r of k.querySelectorAll<HTMLElement>('.dp-rise')) {
+      const show = () => { r.classList.add('in'); const z = r.querySelector<HTMLElement>('.zb'); if (z) setTimeout(() => zbPlay(z, ({ zilbe: 'zilbe-sevin', zilba: 'zilba-el', zilbo: 'zilbo-zipla' } as Record<string, string>)[z.dataset.who || 'zilbo']), 700); };
+      const io = new IntersectionObserver(es => { if (!es[0].isIntersecting) return; io.disconnect(); show(); }, { threshold: .1 });
+      io.observe(r); setTimeout(() => r.classList.add('in'), 1500);
+    }
+  }
+</script>

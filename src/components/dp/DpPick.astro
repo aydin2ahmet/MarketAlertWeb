@@ -1,0 +1,35 @@
+---
+/**
+ * "Hangi düşüş alarmı?": uygulamadaki üç düşüş şablonu yan yana (Dump, Sert düşüş + aşırı satım, Düşüş sınırı).
+ * Ad, açıklama ve kural çipleri uygulamanın kendi metinlerinden; "ne zaman" cümlesi sayfa metninden. Zilba köşede.
+ */
+import Zb from '../eth/Zb.astro';
+import { dpApp } from '../../lib/dp-data';
+import { icon } from '../../lib/tp';
+import { fill } from '../../lib/dp';
+import { dateLocale } from '../../lib/gc';
+import '../../styles/dp.css';
+interface Props { code: string; hreflang: string; dp: any; html: string[]; leadHtml: string }
+const { code, hreflang, dp, html, leadHtml } = Astro.props;
+const A = dpApp(code), loc = dateLocale(hreflang);
+const pc = (v: number) => '-' + new Intl.NumberFormat(loc, { style: 'percent', maximumFractionDigits: 1 }).format(v / 100);
+const roll = (m: number, v: number) => fill(A.chipRolling, { minutes: m, operator: '≤', percent: pc(v) });
+const rows: [string, string[]][] = [
+  ['dump', [`${A.scopeAll} · ${fill(A.topCoins, { count: 100 })}`, roll(5, 5)]],
+  ['dropOversold', ['BTC', roll(60, 3), 'RSI(14) < 30 · 1h']],
+  ['priceBelow', ['BTC']],
+];
+---
+<section class="dp-k guide-section" id="which">
+  <h2>{dp.pick.t}</h2>
+  <p class="dp-lead" set:html={leadHtml} />
+  <div class="dp-kw">
+    {rows.map(([k, ch], i) => <div class={`dp-kc${i === 0 ? ' on' : ''}`}>
+      <span class="dp-ki" set:html={icon(k)} />
+      <b>{A.tpl[k].n}</b><small>{A.tpl[k].d}</small>
+      <span class="dp-kch">{ch.map((c, j) => <i class={j === 0 ? 'sc' : ''}>{c}</i>)}</span>
+      <p set:html={html[i]} />
+    </div>)}
+    <Zb who="zilba" class="dp-kz" />
+  </div>
+</section>
