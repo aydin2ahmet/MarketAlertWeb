@@ -1,0 +1,10 @@
+---
+/** Bir uygulama ekranının açık ve koyu hâli (temaya göre biri görünür). */
+import ProgressiveShot from '../ProgressiveShot.astro';
+import { dpSize, dpSrc } from '../../lib/dp-data';
+interface Props { code: string; k: string; alt: string; sizes: string }
+const { code, k, alt, sizes } = Astro.props;
+const l = dpSize(code, 'light', k), d = dpSize(code, 'dark', k);
+---
+<ProgressiveShot class="sh-l" src={dpSrc(code, 'light', k)} alt={alt} width={String(l[0])} height={String(l[1])} loading="lazy" decoding="async" sizes={sizes} />
+<ProgressiveShot class="sh-d" src={dpSrc(code, 'dark', k)} alt="" width={String(d[0])} height={String(d[1])} loading="lazy" decoding="async" sizes={sizes} />

@@ -1,0 +1,57 @@
+{
+ "tr": {
+  "down": "{0} {4} dakikada {1} düştü",
+  "sumT": "{0}: {1} coin daha",
+  "sumMore": "+{0} coin daha"
+ },
+ "en": {
+  "down": "{0} fell {1} in {4} min",
+  "sumT": "{0}: {1} more coins",
+  "sumMore": "+{0} more coins"
+ },
+ "de": {
+  "down": "{0} in {4} Min. um {1} gefallen",
+  "sumT": "{0}: {1} weitere Coins",
+  "sumMore": "+{0} weitere Coins"
+ },
+ "es": {
+  "down": "{0} bajó {1} en {4} min",
+  "sumT": "{0}: {1} monedas más",
+  "sumMore": "+{0} monedas más"
+ },
+ "fr": {
+  "down": "{0} a reculé de {1} en {4} min",
+  "sumT": "{0} : {1} cryptos de plus",
+  "sumMore": "+{0} cryptos de plus"
+ },
+ "pt-br": {
+  "down": "{0} caiu {1} em {4} min",
+  "sumT": "{0}: mais {1} moedas",
+  "sumMore": "+{0} moedas"
+ },
+ "ru": {
+  "down": "{0} упал на {1} за {4} мин",
+  "sumT": "{0}: ещё {1} монет",
+  "sumMore": "+{0} монет"
+ },
+ "zh": {
+  "down": "{0} {4} 分钟内下跌 {1}",
+  "sumT": "{0}：另有 {1} 个币种",
+  "sumMore": "+{0} 个币种"
+ },
+ "ja": {
+  "down": "{0} が {4} 分で {1} 下落",
+  "sumT": "{0}：ほか {1} 銘柄",
+  "sumMore": "+{0} 銘柄"
+ },
+ "hi": {
+  "down": "{0} {4} मिनट में {1} घटा",
+  "sumT": "{0}: {1} और कॉइन",
+  "sumMore": "+{0} और कॉइन"
+ },
+ "ar": {
+  "down": "انخفض {0} بنسبة {1} خلال {4} دقيقة",
+  "sumT": "{0}: {1} عملات أخرى",
+  "sumMore": "+{0} عملات أخرى"
+ }
+}

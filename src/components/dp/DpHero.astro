@@ -1,0 +1,127 @@
+---
+/**
+ * İlk ekran, tasarım C "Asansörler" (2026-11-25, Ahmet). Mürekkeple çizilmiş binada altı asansör = altı coin; katlar yüzde düşüştür,
+ * turuncu kesik çizgi eşik katı. Zilba çatıda kronometreyle süreyi tutar, asansörler o süre boyunca iner; eşiği geçen ilk coin
+ * için sunucunun anlık push'u, aynı dakikalarda geçen diğerleri için sessiz özet gelir (Dengeli). Zilba ilk geçişte şaşırır, Zilbo zili çalar, Zilbe lobiden el sallar.
+ * Ayarlar tek satır: yüzde (%1–20) ve süre (5/15/60 dk), uygulamadaki Dump ayar kutucuklarıyla aynı sınırlar.
+ * JS yoksa ya da hareket azaltma açıksa son kare durur.
+ */
+import Zb from '../eth/Zb.astro';
+import { dpText } from '../../lib/dp-data';
+import { MINS, drops, hits, depth, pct, neg, minLabel, caption, push1, pushN, fill } from '../../lib/dp';
+import { dateLocale } from '../../lib/gc';
+import '../../styles/dp.css';
+interface Props { code: string; hreflang: string; dp: any; h1: string; introHtml: string; setupTitle: string }
+const { code, hreflang, dp, h1, introHtml, setupTitle } = Astro.props;
+const T = dpText(code), loc = dateLocale(hreflang);
+const p = 5, m = 5, mx = depth(p), D = drops(m), H = hits(p, m);
+const P1 = push1(T, loc, H[0], m), PN = pushN(T, loc, H.slice(1));
+const floors = [0, 1, 2, 3, 4, 5].map(i => Math.round(mx * i / 5));
+const cfg = { T, loc, dp: { say: dp.say, floor: dp.floor, now: dp.now, silent: dp.silent } };
+---
+<section class="dp-h" data-dp-h data-cfg={JSON.stringify(cfg)}>
+  <div class="dp-bleed dp-st" role="img" aria-label={dp.alt}>
+    <div class="dp-bld" dir="ltr" aria-hidden="true">
+      <div class="dp-roof"><span class="dp-sw"><i></i><b>{m}:00</b></span></div>
+      <div class="dp-sh" style={`--mx:${mx}`}>
+        {D.map(c => <div class={`dp-sf${c.d >= p ? ' hit' : ''}`} data-s={c.s}><span class="dp-ind">{neg(loc, c.d)}</span><div class="dp-well"><span class="dp-car" style={`--y:${Math.min(c.d / mx, 1)}`}><b>{c.s}</b></span></div></div>)}
+        <div class="dp-flr">{floors.map(v => <i style={`--y:${v / mx}`}>{v ? neg(loc, v) : '0'}</i>)}</div>
+        <div class="dp-thr" style={`--y:${p / mx}`}><em dir="auto">{fill(dp.floor, { p: neg(loc, p) })}</em></div>
+      </div>
+      <div class="dp-lob"></div>
+    </div>
+    <Zb who="zilba" class="dp-za" /><Zb who="zilbe" class="dp-ze" /><Zb who="zilbo" class="dp-zo" />
+    <p class="dp-say" aria-hidden="true"></p>
+    <div class="dp-pq on" aria-hidden="true">
+      <div class="dp-ps"><img src="/icons/logo-96.png" alt="" width="34" height="34" /><div><div class="dp-ps-h"><b>MarketAlert</b><span>{dp.now}</span></div><b class="dp-ps-t" dir="auto">{P1[0]}</b><span class="dp-ps-b">{P1[1]}</span></div></div>
+      <div class={`dp-ps sil${H.length > 1 ? ' in' : ''}`}><img src="/icons/logo-96.png" alt="" width="34" height="34" /><div><div class="dp-ps-h"><b>MarketAlert</b><span>{dp.silent}</span></div><b class="dp-ps-t" dir="auto">{PN[0]}</b><span class="dp-ps-b">{PN[1]}</span></div></div>
+    </div>
+  </div>
+  <div class="dp-kn">
+    <div class="dp-r">
+      <span class="dp-ig dp-st2" role="group" aria-label={dp.aria.val}><button type="button" data-dv="-1" aria-label={dp.aria.dec}>−</button><b class="dp-v" aria-live="polite">{pct(loc, p)}</b><button type="button" data-dv="1" aria-label={dp.aria.inc}>+</button></span>
+      <span class="dp-ig dp-seg" role="group" aria-label={dp.aria.min}>{MINS.map(n => <button type="button" data-dm={n} aria-pressed={String(n === m)}>{minLabel(T, n)}</button>)}</span>
+    </div>
+    <p class="dp-cap">{caption(T, loc, p, m)}</p>
+  </div>
+  <div class="dp-head">
+    <p class="dp-kick">{dp.kicker}</p><h1>{h1}</h1>
+    <p class="dp-intro" set:html={introHtml} />
+    <a class="btn" href="#setup">{setupTitle} <span aria-hidden="true">↓</span></a>
+  </div>
+</section>
+
+<script>
+  import { zbPlay, zbPrime, zbReduce, sleep } from '../../lib/zb';
+  import { drops, hits, depth, pct, neg, caption, push1, pushN, fill, P_MIN, P_MAX, type DpText } from '../../lib/dp';
+  for (const r of document.querySelectorAll<HTMLElement>('[data-dp-h]')) {
+    const C = JSON.parse(r.dataset.cfg || '{}'), T = C.T as DpText, loc = C.loc as string, X = C.dp;
+    const st = r.querySelector<HTMLElement>('.dp-st')!, sh = st.querySelector<HTMLElement>('.dp-sh')!, sb = st.querySelector<HTMLElement>('.dp-say')!, pq = st.querySelector<HTMLElement>('.dp-pq')!;
+    const ps = pq.querySelectorAll<HTMLElement>('.dp-ps'), sw = st.querySelector<HTMLElement>('.dp-sw b')!, hand = st.querySelector<HTMLElement>('.dp-sw i')!;
+    const za = st.querySelector<HTMLElement>('.dp-za'), ze = st.querySelector<HTMLElement>('.dp-ze'), zo = st.querySelector<HTMLElement>('.dp-zo');
+    const S = { p: 5, m: 5 };
+    const upd = () => {
+      r.querySelector('.dp-v')!.textContent = pct(loc, S.p);
+      r.querySelectorAll<HTMLButtonElement>('[data-dv]').forEach(b => { const n = S.p + +b.dataset.dv!; b.disabled = n < P_MIN || n > P_MAX; });
+      r.querySelectorAll<HTMLElement>('[data-dm]').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.dm! === S.m)));
+      r.querySelector('.dp-cap')!.textContent = caption(T, loc, S.p, S.m);
+    };
+    const setPush = (el: HTMLElement, t: [string, string]) => { el.querySelector('.dp-ps-t')!.textContent = t[0]; el.querySelector('.dp-ps-b')!.textContent = t[1]; };
+    const frame = (mx: number, D: { s: string; d: number }[], f: number) => {
+      for (const c of D) {
+        const sf = sh.querySelector<HTMLElement>(`.dp-sf[data-s="${c.s}"]`)!, fast = c.d >= S.p;
+        const k = fast ? Math.min(1, (f / .72) ** 2) : f, v = c.d * k;
+        sf.querySelector<HTMLElement>('.dp-car')!.style.setProperty('--y', String(Math.min(v / mx, 1)));
+        sf.querySelector('.dp-ind')!.textContent = v > .05 ? neg(loc, v) : '0';
+        if (fast && v >= S.p) sf.classList.add('hit');
+      }
+    };
+    const layout = () => {
+      const mx = depth(S.p); sh.style.setProperty('--mx', String(mx));
+      sh.querySelectorAll<HTMLElement>('.dp-flr i').forEach((e, i) => { const v = Math.round(mx * i / 5); e.style.setProperty('--y', String(v / mx)); e.textContent = v ? neg(loc, v) : '0'; });
+      const th = sh.querySelector<HTMLElement>('.dp-thr')!; th.style.setProperty('--y', String(S.p / mx)); th.querySelector('em')!.textContent = fill(X.floor, { p: neg(loc, S.p) });
+      return mx;
+    };
+    const finale = (ok: () => boolean) => {
+      const H = hits(S.p, S.m);
+      if (!H.length) { sb.textContent = fill(X.say.none, { p: pct(loc, S.p), m: S.m }); sb.classList.add('on'); zbPlay(za, 'zilba-sasir'); return; }
+      setPush(ps[0], push1(T, loc, H[0], S.m));
+      if (H.length > 1) setPush(ps[1], pushN(T, loc, H.slice(1)));
+      pq.classList.add('on'); zbPlay(zo, 'zilbo-zil'); zbPlay(ze, 'zilbe-el');
+      sb.textContent = H.length > 1 ? fill(X.say.many, { coin: H[0].s, rest: H.slice(1).map(c => c.s).join(', ') }) : fill(X.say.one, { coin: H[0].s }); sb.classList.add('on');
+      setTimeout(() => { if (ok() && H.length > 1) ps[1].classList.add('in'); }, 1100);
+    };
+    upd();
+    let run = 0, vis = false, started = false;
+    const go = async () => {
+      const k = ++run, ok = () => k === run;
+      const mx = layout(), D = drops(S.m);
+      pq.classList.remove('on'); ps[1].classList.remove('in'); sb.classList.remove('on');
+      sh.querySelectorAll('.dp-sf').forEach(e => e.classList.remove('hit'));
+      if (zbReduce) { frame(mx, D, 1); sw.textContent = S.m + ':00'; hand.style.transform = 'rotate(360deg)'; finale(ok); return; }
+      frame(mx, D, 0); sw.textContent = '0:00'; hand.style.transform = 'rotate(0deg)';
+      while (document.hidden || !vis) { await sleep(400); if (!ok()) return; }
+      await sleep(500); if (!ok()) return;
+      zbPlay(za, 'zilba-el'); sb.textContent = fill(X.say.start, { m: S.m }); sb.classList.add('on');
+      const dur = 4200, t0 = performance.now(); let first = false;
+      await new Promise<void>(done => {
+        const tick = () => {
+          if (!ok()) return done();
+          const f = Math.min(1, (performance.now() - t0) / dur), s = Math.round(f * S.m * 60);
+          sw.textContent = Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); hand.style.transform = `rotate(${f * 360}deg)`;
+          frame(mx, D, f);
+          if (!first && sh.querySelector('.dp-sf.hit')) { first = true; sb.classList.remove('on'); zbPlay(za, 'zilba-sasir'); }
+          if (f < 1) requestAnimationFrame(tick); else done();
+        };
+        requestAnimationFrame(tick);
+      });
+      if (!ok()) return;
+      finale(ok); await sleep(5200); if (!ok()) return;
+      sb.classList.remove('on'); pq.classList.remove('on'); await sleep(900); if (ok()) go();
+    };
+    new IntersectionObserver(es => { vis = es[0].isIntersecting; if (vis && !started) { started = true; go(); } }, { threshold: .1 }).observe(st);
+    zbPrime(r);
+    r.querySelectorAll<HTMLElement>('[data-dv]').forEach(b => b.onclick = () => { const n = S.p + +b.dataset.dv!; if (n < P_MIN || n > P_MAX) return; S.p = n; upd(); go(); });
+    r.querySelectorAll<HTMLElement>('[data-dm]').forEach(b => b.onclick = () => { S.m = +b.dataset.dm!; upd(); go(); });
+  }
+</script>

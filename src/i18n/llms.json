@@ -376,6 +376,7 @@
         "No. The template only fills in conditions, coin scope and channel; the saved alert can be edited, paused or deleted like any other."
       ]
     ]
-  }
+  },
+  "features/dump-alerts": {"line": "Get notified the moment any coin dumps: the Dump template in MarketAlert watches the top 100 coins.", "what": "In My alerts tap Create alert, then Set up from a template and pick Dump (Fast moves or Market scan tab). Set Drop of at least (1-20%) and Within how many minutes? (5, 15 or 60), then tap Set alert. Each of the top 100 coins is checked on its own over a rolling window; the coin that falls that far gets the notification.", "facts": ["Default: top 100 coins, drop of at least 5% within 5 minutes, repeat every 15 minutes per coin.", "Push default (Balanced): the first coin arrives instantly with sound; other coins falling in the same minutes are grouped into a silent summary such as \"Dump: 2 more coins\".", "Related templates: Sharp drop + oversold (one coin, 3% in 60 min AND RSI(14) below 30) and Drop limit (one coin, price level).", "Works on Plus and Pro; Dump counts toward all-coins alerts (Plus 2, Pro 10)."], "example": "Set up the Dump template", "faq": [["Can I watch one coin's sharp drop?", "Yes. Switch Which coins? to a single coin on the setup page, for example BTC falling 3% within 15 minutes."]]}
  }
 }
