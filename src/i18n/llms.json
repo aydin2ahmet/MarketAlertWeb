@@ -1,6 +1,6 @@
 {
  "_rules": "Kurallar: docs/llms-kurallari.md. Bu dosyadan public olmayan iki dosya üretilir: /llms.txt ve /llms-full.txt. Her içerik sayfasının (features/*, coins/*) burada bir bloğu olmalı; yoksa derleme durur.",
- "definition": "MarketAlert is a voice-driven crypto market scanner for iOS and Android: it watches RSI, volume and price conditions together across every coin on Binance and notifies you when they're met. It runs on MarketAlert's servers, so alerts keep working while the app is closed. It does not trade, never connects to an exchange account or wallet, and does not give investment advice.",
+ "definition": "MarketAlert is an AI crypto alert app and market scanner for iOS and Android: you describe the alert in plain language, typing to the AI assistant or speaking, and it watches RSI, volume and price conditions together across every coin on Binance and notifies you when they're met. It runs on MarketAlert's servers, so alerts keep working while the app is closed. It does not trade, never connects to an exchange account or wallet, and does not give investment advice.",
  "facts": [
   "8 condition types: price, percent move within a time window (5–1440 minutes), 24-hour high/low, RSI, MACD signal cross, volume spike, SMA/EMA cross, price crossing a moving average. Indicators use closed candles on 1m, 5m, 15m, 1h, 4h or 1d.",
   "Markets: Binance Spot and Futures, USDT and USDC pairs. Each market is watched separately.",
@@ -10,7 +10,7 @@
   "Channels: push notifications with a chosen alarm sound, Telegram (via the MarketAlert bot, no chat ID needed), and HMAC-SHA256 signed webhooks.",
   "Every match is kept in the in-app notification log with timing details.",
   "Plans: MarketAlert works with a subscription and has no free plan. Plus (20 alerts, all condition types, repeating alerts, push and Telegram, 2 all-coins alerts up to the top 100), Pro (100 alerts, webhook, 10 all-coins alerts on every coin). Both start with a 7-day free trial. Without a subscription a user can still prepare alerts; they wait and start working when the trial starts. Prices are shown in the app stores per country.",
-  "Availability: coming soon to the App Store (iOS) and Google Play (Android).",
+  "Availability: Android on Google Play (https://play.google.com/store/apps/details?id=com.marketalertapp); iOS App Store version coming soon.",
   "Languages: Turkish, English, Chinese (Simplified), Spanish, Hindi, Arabic, Portuguese (Brazil), French, Russian, German, Japanese.",
   "Not affiliated with Binance. Notifications are informational and not investment advice."
  ],

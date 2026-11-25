@@ -25,6 +25,7 @@ const jsonLd = [
     image: SITE + '/icons/icon-512.png',
     dateModified: UPDATED,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    ...(STORE.play ? { installUrl: STORE.play, downloadUrl: STORE.play } : {}),
     // Düz olgular (slogan değil). Yeni bir özellik sayfası eklenince buraya da 11 dilde bir olgu eklenir.
     featureList: t.facts,
     sameAs: [STORE.play, STORE.appStore, ...SOCIAL.map(s => s.url)].filter(Boolean),

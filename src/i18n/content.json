@@ -13,7 +13,7 @@
   "store2": "Google Play",
   "heroKicker": "Konuş veya yaz. MarketAlert kursun.",
   "heroTitle": "Söyle, alarmın hazır olsun.",
-  "heroSub": "Form doldurma. Karmaşık alarmını bile konuşarak ya da yazarak saniyeler içinde kur. MarketAlert, seçtiğin Binance piyasasındaki tüm coinleri RSI, MACD, hacim ve SMA/EMA koşullarıyla sürekli tarasın.",
+  "heroSub": "Form doldurma. Karmaşık alarmını bile yapay zekâ asistanına konuşarak ya da yazarak anlat, saniyeler içinde kurulsun. MarketAlert, seçtiğin Binance piyasasındaki tüm coinleri RSI, MACD, hacim ve SMA/EMA koşullarıyla sürekli tarasın.",
   "chips": [
    "7 gün ücretsiz deneme",
    "Uygulama kapalıyken de takipte"
@@ -276,10 +276,10 @@
   "heroListAlt": "Çok koşullu alarmlar ve canlı değerleri",
   "heroVoiceAlt": "Sesli komutla kurulan iki koşullu alarm",
   "rsiGuideLink": "Tüm coinlerde RSI alarmı",
-  "heroDef": "MarketAlert, sesle kurulan bir kripto piyasa tarayıcısıdır: Binance'teki tüm coinlerde RSI, hacim ve fiyat koşullarını birlikte izler, koşul gerçekleşince bildirim gönderir.",
+  "heroDef": "MarketAlert, yapay zekâ asistanına konuşarak ya da yazarak kurulan bir kripto alarm uygulaması ve piyasa tarayıcısıdır: Binance'teki tüm coinlerde RSI, hacim ve fiyat koşullarını birlikte izler, koşul gerçekleşince bildirim gönderir.",
   "what": {
    "title": "MarketAlert nedir, ne değildir?",
-   "def": "MarketAlert, sesle kurulan bir kripto piyasa tarayıcısıdır: Binance'teki tüm coinlerde RSI, hacim ve fiyat koşullarını birlikte izler, koşul gerçekleşince bildirim gönderir.",
+   "def": "MarketAlert, yapay zekâ asistanına konuşarak ya da yazarak kurulan bir kripto alarm uygulaması ve piyasa tarayıcısıdır: Binance'teki tüm coinlerde RSI, hacim ve fiyat koşullarını birlikte izler, koşul gerçekleşince bildirim gönderir.",
    "yesT": "Yapar",
    "noT": "Yapmaz",
    "yes": [
@@ -319,7 +319,7 @@
   "store2": "Google Play",
   "heroKicker": "Speak or type. MarketAlert sets it up.",
   "heroTitle": "Say it. Your alert is ready.",
-  "heroSub": "Skip the forms. Create even complex alerts in seconds by speaking or typing. MarketAlert continuously scans every coin in your selected Binance market for RSI, MACD, volume and SMA/EMA conditions.",
+  "heroSub": "Skip the forms. Describe even complex alerts in plain words to the AI assistant, by voice or text, and they are set up in seconds. MarketAlert continuously scans every coin in your selected Binance market for RSI, MACD, volume and SMA/EMA conditions.",
   "chips": [
    "7-day free trial",
    "Monitoring even when the app is closed"
@@ -582,10 +582,10 @@
   "heroListAlt": "Multi-condition alerts with live values",
   "heroVoiceAlt": "A two-condition alert created by voice",
   "rsiGuideLink": "RSI alerts across all coins",
-  "heroDef": "MarketAlert is a voice-driven crypto market scanner: it watches RSI, volume and price conditions together across every coin on Binance and notifies you when they're met.",
+  "heroDef": "MarketAlert is an AI crypto alert app and market scanner you set up by talking or typing to its AI assistant: it watches RSI, volume and price conditions together across every coin on Binance and notifies you when they're met.",
   "what": {
    "title": "What MarketAlert is, and what it isn't",
-   "def": "MarketAlert is a voice-driven crypto market scanner: it watches RSI, volume and price conditions together across every coin on Binance and notifies you when they're met.",
+   "def": "MarketAlert is an AI crypto alert app and market scanner you set up by talking or typing to its AI assistant: it watches RSI, volume and price conditions together across every coin on Binance and notifies you when they're met.",
    "yesT": "Does",
    "noT": "Doesn't",
    "yes": [
@@ -625,7 +625,7 @@
   "store2": "Google Play",
   "heroKicker": "说出来或打出来，MarketAlert 帮你设置。",
   "heroTitle": "说出条件，提醒即刻就绪。",
-  "heroSub": "无需填写表单。通过语音或文字，几秒内即可创建复杂提醒。MarketAlert 持续扫描所选币安市场的所有币种，监控 RSI、MACD、成交量及 SMA/EMA 条件。",
+  "heroSub": "无需填写表单。用语音或文字把需求告诉 AI 助手，几秒内即可创建复杂提醒。MarketAlert 持续扫描所选币安市场的所有币种，监控 RSI、MACD、成交量及 SMA/EMA 条件。",
   "chips": [
    "7 天免费试用",
    "关闭应用也能持续监控"
@@ -888,10 +888,10 @@
   "heroListAlt": "多条件提醒及实时数值",
   "heroVoiceAlt": "通过语音创建的双条件提醒",
   "rsiGuideLink": "全币种 RSI 提醒",
-  "heroDef": "MarketAlert 是一款用语音设置的加密货币市场扫描工具：在币安的所有币种上同时监控 RSI、成交量和价格条件，条件满足时通知你。",
+  "heroDef": "MarketAlert 是一款加密货币 AI 提醒应用和市场扫描工具，用语音或文字告诉 AI 助手即可设置：在币安的所有币种上同时监控 RSI、成交量和价格条件，条件满足时通知你。",
   "what": {
    "title": "MarketAlert 是什么，不是什么",
-   "def": "MarketAlert 是一款用语音设置的加密货币市场扫描工具：在币安的所有币种上同时监控 RSI、成交量和价格条件，条件满足时通知你。",
+   "def": "MarketAlert 是一款加密货币 AI 提醒应用和市场扫描工具，用语音或文字告诉 AI 助手即可设置：在币安的所有币种上同时监控 RSI、成交量和价格条件，条件满足时通知你。",
    "yesT": "会做",
    "noT": "不会做",
    "yes": [
@@ -931,7 +931,7 @@
   "store2": "Google Play",
   "heroKicker": "Habla o escribe. MarketAlert lo configura.",
   "heroTitle": "Dilo y tu alerta estará lista.",
-  "heroSub": "Sin formularios. Crea incluso alertas complejas en segundos hablando o escribiendo. MarketAlert analiza continuamente todas las monedas del mercado de Binance que elijas según condiciones de RSI, MACD, volumen y SMA/EMA.",
+  "heroSub": "Sin formularios. Cuéntale al asistente de IA incluso alertas complejas, hablando o escribiendo, y quedan creadas en segundos. MarketAlert analiza continuamente todas las monedas del mercado de Binance que elijas según condiciones de RSI, MACD, volumen y SMA/EMA.",
   "chips": [
    "Prueba gratis de 7 días",
    "Sigue vigilando con la app cerrada"
@@ -1194,10 +1194,10 @@
   "heroListAlt": "Alertas con varias condiciones y valores en vivo",
   "heroVoiceAlt": "Alerta de dos condiciones creada por voz",
   "rsiGuideLink": "Alertas RSI en todas las monedas",
-  "heroDef": "MarketAlert es un escáner del mercado cripto que se configura con la voz: vigila a la vez condiciones de RSI, volumen y precio en todas las monedas de Binance y te avisa cuando se cumplen.",
+  "heroDef": "MarketAlert es una app de alertas cripto con IA y escáner del mercado que se configura hablando o escribiendo a su asistente de IA: vigila a la vez condiciones de RSI, volumen y precio en todas las monedas de Binance y te avisa cuando se cumplen.",
   "what": {
    "title": "Qué es MarketAlert y qué no es",
-   "def": "MarketAlert es un escáner del mercado cripto que se configura con la voz: vigila a la vez condiciones de RSI, volumen y precio en todas las monedas de Binance y te avisa cuando se cumplen.",
+   "def": "MarketAlert es una app de alertas cripto con IA y escáner del mercado que se configura hablando o escribiendo a su asistente de IA: vigila a la vez condiciones de RSI, volumen y precio en todas las monedas de Binance y te avisa cuando se cumplen.",
    "yesT": "Hace",
    "noT": "No hace",
    "yes": [
@@ -1237,7 +1237,7 @@
   "store2": "Google Play",
   "heroKicker": "बोलें या लिखें। MarketAlert सेट कर देगा।",
   "heroTitle": "बस बोलें, आपका अलर्ट तैयार।",
-  "heroSub": "फ़ॉर्म भरने की ज़रूरत नहीं। बोलकर या लिखकर जटिल अलर्ट भी सेकंडों में बनाएँ। MarketAlert आपके चुने हुए Binance बाज़ार के सभी कॉइन को RSI, MACD, वॉल्यूम और SMA/EMA की शर्तों पर लगातार स्कैन करता है।",
+  "heroSub": "फ़ॉर्म भरने की ज़रूरत नहीं। AI असिस्टेंट को बोलकर या लिखकर बताएँ, जटिल अलर्ट भी सेकंडों में बन जाता है। MarketAlert आपके चुने हुए Binance बाज़ार के सभी कॉइन को RSI, MACD, वॉल्यूम और SMA/EMA की शर्तों पर लगातार स्कैन करता है।",
   "chips": [
    "7 दिन का मुफ़्त ट्रायल",
    "ऐप बंद होने पर भी निगरानी जारी"
@@ -1500,10 +1500,10 @@
   "heroListAlt": "कई शर्तों वाले अलर्ट और लाइव मान",
   "heroVoiceAlt": "बोलकर बनाया गया दो शर्तों वाला अलर्ट",
   "rsiGuideLink": "सभी कॉइन के लिए RSI अलर्ट",
-  "heroDef": "MarketAlert आवाज़ से सेट होने वाला क्रिप्टो मार्केट स्कैनर है: यह Binance के सभी कॉइन पर RSI, वॉल्यूम और कीमत की शर्तें एक साथ देखता है और शर्त पूरी होने पर सूचना भेजता है।",
+  "heroDef": "MarketAlert एक AI क्रिप्टो अलर्ट ऐप और मार्केट स्कैनर है, जिसे AI असिस्टेंट से बोलकर या लिखकर सेट किया जाता है: यह Binance के सभी कॉइन पर RSI, वॉल्यूम और कीमत की शर्तें एक साथ देखता है और शर्त पूरी होने पर सूचना भेजता है।",
   "what": {
    "title": "MarketAlert क्या है, क्या नहीं",
-   "def": "MarketAlert आवाज़ से सेट होने वाला क्रिप्टो मार्केट स्कैनर है: यह Binance के सभी कॉइन पर RSI, वॉल्यूम और कीमत की शर्तें एक साथ देखता है और शर्त पूरी होने पर सूचना भेजता है।",
+   "def": "MarketAlert एक AI क्रिप्टो अलर्ट ऐप और मार्केट स्कैनर है, जिसे AI असिस्टेंट से बोलकर या लिखकर सेट किया जाता है: यह Binance के सभी कॉइन पर RSI, वॉल्यूम और कीमत की शर्तें एक साथ देखता है और शर्त पूरी होने पर सूचना भेजता है।",
    "yesT": "करता है",
    "noT": "नहीं करता",
    "yes": [
@@ -1543,7 +1543,7 @@
   "store2": "Google Play",
   "heroKicker": "تحدث أو اكتب. وMarketAlert يتولى الإعداد.",
   "heroTitle": "قلها، وتنبيهك جاهز.",
-  "heroSub": "بلا تعبئة نماذج. أنشئ حتى التنبيهات المعقدة خلال ثوانٍ بالكلام أو الكتابة. يفحص MarketAlert جميع عملات سوق Binance الذي تختاره باستمرار وفق شروط RSI وMACD وحجم التداول وSMA/EMA.",
+  "heroSub": "بلا تعبئة نماذج. صِف حتى التنبيهات المعقدة لمساعد الذكاء الاصطناعي بالكلام أو الكتابة، فتُنشأ خلال ثوانٍ. يفحص MarketAlert جميع عملات سوق Binance الذي تختاره باستمرار وفق شروط RSI وMACD وحجم التداول وSMA/EMA.",
   "chips": [
    "تجربة مجانية 7 أيام",
    "تستمر المراقبة حتى مع إغلاق التطبيق"
@@ -1806,10 +1806,10 @@
   "heroListAlt": "تنبيهات متعددة الشروط بقيم مباشرة",
   "heroVoiceAlt": "تنبيه بشرطين تم إنشاؤه بالصوت",
   "rsiGuideLink": "تنبيهات RSI لجميع العملات",
-  "heroDef": "MarketAlert ماسح لسوق العملات الرقمية يُضبط بالصوت: يراقب شروط RSI والحجم والسعر معًا على كل العملات في Binance ويرسل لك إشعارًا عند تحققها.",
+  "heroDef": "MarketAlert تطبيق تنبيهات للعملات الرقمية بالذكاء الاصطناعي وماسح للسوق، يُضبط بالكلام أو الكتابة لمساعد الذكاء الاصطناعي: يراقب شروط RSI والحجم والسعر معًا على كل العملات في Binance ويرسل لك إشعارًا عند تحققها.",
   "what": {
    "title": "ما هو MarketAlert وما ليس هو",
-   "def": "MarketAlert ماسح لسوق العملات الرقمية يُضبط بالصوت: يراقب شروط RSI والحجم والسعر معًا على كل العملات في Binance ويرسل لك إشعارًا عند تحققها.",
+   "def": "MarketAlert تطبيق تنبيهات للعملات الرقمية بالذكاء الاصطناعي وماسح للسوق، يُضبط بالكلام أو الكتابة لمساعد الذكاء الاصطناعي: يراقب شروط RSI والحجم والسعر معًا على كل العملات في Binance ويرسل لك إشعارًا عند تحققها.",
    "yesT": "يفعل",
    "noT": "لا يفعل",
    "yes": [
@@ -1849,7 +1849,7 @@
   "store2": "Google Play",
   "heroKicker": "Fale ou escreva. O MarketAlert configura.",
   "heroTitle": "É só falar. Seu alerta está pronto.",
-  "heroSub": "Sem preencher formulários. Crie até alertas complexos em segundos, falando ou digitando. O MarketAlert analisa continuamente todas as moedas do mercado da Binance escolhido, com condições de RSI, MACD, volume e SMA/EMA.",
+  "heroSub": "Sem preencher formulários. Descreva até alertas complexos ao assistente de IA, falando ou digitando, e eles ficam prontos em segundos. O MarketAlert analisa continuamente todas as moedas do mercado da Binance escolhido, com condições de RSI, MACD, volume e SMA/EMA.",
   "chips": [
    "7 dias de teste grátis",
    "Monitora mesmo com o app fechado"
@@ -2112,10 +2112,10 @@
   "heroListAlt": "Alertas com várias condições e valores ao vivo",
   "heroVoiceAlt": "Alerta com duas condições criado por voz",
   "rsiGuideLink": "Alertas RSI em todas as moedas",
-  "heroDef": "O MarketAlert é um scanner do mercado cripto configurado por voz: monitora juntos condições de RSI, volume e preço em todas as moedas da Binance e avisa quando elas se cumprem.",
+  "heroDef": "O MarketAlert é um app de alertas cripto com IA e scanner do mercado, configurado falando ou digitando para o assistente de IA: monitora juntos condições de RSI, volume e preço em todas as moedas da Binance e avisa quando elas se cumprem.",
   "what": {
    "title": "O que o MarketAlert é, e o que não é",
-   "def": "O MarketAlert é um scanner do mercado cripto configurado por voz: monitora juntos condições de RSI, volume e preço em todas as moedas da Binance e avisa quando elas se cumprem.",
+   "def": "O MarketAlert é um app de alertas cripto com IA e scanner do mercado, configurado falando ou digitando para o assistente de IA: monitora juntos condições de RSI, volume e preço em todas as moedas da Binance e avisa quando elas se cumprem.",
    "yesT": "Faz",
    "noT": "Não faz",
    "yes": [
@@ -2155,7 +2155,7 @@
   "store2": "Google Play",
   "heroKicker": "Parlez ou écrivez. MarketAlert s’en charge.",
   "heroTitle": "Dites-le, votre alerte est prête.",
-  "heroSub": "Plus de formulaire. Créez même des alertes complexes en quelques secondes, à la voix ou par écrit. MarketAlert analyse en continu toutes les cryptos du marché Binance choisi selon vos conditions de RSI, MACD, volume et SMA/EMA.",
+  "heroSub": "Plus de formulaire. Décrivez même des alertes complexes à l’assistant IA, à la voix ou par écrit, et elles sont créées en quelques secondes. MarketAlert analyse en continu toutes les cryptos du marché Binance choisi selon vos conditions de RSI, MACD, volume et SMA/EMA.",
   "chips": [
    "Essai gratuit de 7 jours",
    "Surveille même lorsque l’app est fermée"
@@ -2418,10 +2418,10 @@
   "heroListAlt": "Alertes à plusieurs conditions et valeurs en direct",
   "heroVoiceAlt": "Alerte à deux conditions créée à la voix",
   "rsiGuideLink": "Alertes RSI sur toutes les cryptos",
-  "heroDef": "MarketAlert est un scanner du marché crypto qui se configure à la voix : il surveille ensemble des conditions de RSI, de volume et de prix sur toutes les cryptos de Binance et vous prévient quand elles sont réunies.",
+  "heroDef": "MarketAlert est une app d’alertes crypto avec IA et un scanner du marché, qui se configure en parlant ou en écrivant à son assistant IA : il surveille ensemble des conditions de RSI, de volume et de prix sur toutes les cryptos de Binance et vous prévient quand elles sont réunies.",
   "what": {
    "title": "Ce que MarketAlert est, et ce qu’il n’est pas",
-   "def": "MarketAlert est un scanner du marché crypto qui se configure à la voix : il surveille ensemble des conditions de RSI, de volume et de prix sur toutes les cryptos de Binance et vous prévient quand elles sont réunies.",
+   "def": "MarketAlert est une app d’alertes crypto avec IA et un scanner du marché, qui se configure en parlant ou en écrivant à son assistant IA : il surveille ensemble des conditions de RSI, de volume et de prix sur toutes les cryptos de Binance et vous prévient quand elles sont réunies.",
    "yesT": "Il fait",
    "noT": "Il ne fait pas",
    "yes": [
@@ -2461,7 +2461,7 @@
   "store2": "Google Play",
   "heroKicker": "Скажите или напишите. MarketAlert настроит.",
   "heroTitle": "Скажите — и оповещение готово.",
-  "heroSub": "Без заполнения форм. Создавайте даже сложные оповещения за секунды голосом или текстом. MarketAlert непрерывно проверяет все монеты выбранного рынка Binance по условиям RSI, MACD, объёма и SMA/EMA.",
+  "heroSub": "Без заполнения форм. Опишите даже сложное оповещение ИИ-ассистенту голосом или текстом, и оно будет создано за секунды. MarketAlert непрерывно проверяет все монеты выбранного рынка Binance по условиям RSI, MACD, объёма и SMA/EMA.",
   "chips": [
    "7 дней бесплатно",
    "Следит за рынком даже при закрытом приложении"
@@ -2724,10 +2724,10 @@
   "heroListAlt": "Оповещения с несколькими условиями и текущими значениями",
   "heroVoiceAlt": "Оповещение с двумя условиями, созданное голосом",
   "rsiGuideLink": "RSI-оповещения по всем монетам",
-  "heroDef": "MarketAlert — сканер криптовалютного рынка, который настраивается голосом: он следит сразу за условиями RSI, объёма и цены на всех монетах Binance и присылает уведомление, когда они выполнены.",
+  "heroDef": "MarketAlert — приложение крипто-оповещений с ИИ и сканер рынка, которое настраивается голосом или текстом через ИИ-ассистента: он следит сразу за условиями RSI, объёма и цены на всех монетах Binance и присылает уведомление, когда они выполнены.",
   "what": {
    "title": "Что такое MarketAlert и чем он не является",
-   "def": "MarketAlert — сканер криптовалютного рынка, который настраивается голосом: он следит сразу за условиями RSI, объёма и цены на всех монетах Binance и присылает уведомление, когда они выполнены.",
+   "def": "MarketAlert — приложение крипто-оповещений с ИИ и сканер рынка, которое настраивается голосом или текстом через ИИ-ассистента: он следит сразу за условиями RSI, объёма и цены на всех монетах Binance и присылает уведомление, когда они выполнены.",
    "yesT": "Делает",
    "noT": "Не делает",
    "yes": [
@@ -2767,7 +2767,7 @@
   "store2": "Google Play",
   "heroKicker": "Sprich oder schreib. MarketAlert richtet es ein.",
   "heroTitle": "Sag es. Dein Alarm ist bereit.",
-  "heroSub": "Keine Formulare. Erstelle selbst komplexe Alarme in Sekunden per Sprache oder Text. MarketAlert prüft kontinuierlich alle Coins im gewählten Binance-Markt auf RSI-, MACD-, Volumen- und SMA/EMA-Bedingungen.",
+  "heroSub": "Keine Formulare. Beschreibe selbst komplexe Alarme dem KI-Assistenten per Sprache oder Text, und sie sind in Sekunden eingerichtet. MarketAlert prüft kontinuierlich alle Coins im gewählten Binance-Markt auf RSI-, MACD-, Volumen- und SMA/EMA-Bedingungen.",
   "chips": [
    "7 Tage kostenlos testen",
    "Überwacht auch bei geschlossener App"
@@ -3030,10 +3030,10 @@
   "heroListAlt": "Alarme mit mehreren Bedingungen und Live-Werten",
   "heroVoiceAlt": "Per Sprache erstellter Alarm mit zwei Bedingungen",
   "rsiGuideLink": "RSI-Alarme für alle Coins",
-  "heroDef": "MarketAlert ist ein per Sprache eingerichteter Krypto-Marktscanner: Er überwacht RSI-, Volumen- und Preisbedingungen zusammen über alle Coins auf Binance und benachrichtigt dich, sobald sie erfüllt sind.",
+  "heroDef": "MarketAlert ist eine Krypto-Alarm-App mit KI und ein Marktscanner, den du per Sprache oder Text über den KI-Assistenten einrichtest: Er überwacht RSI-, Volumen- und Preisbedingungen zusammen über alle Coins auf Binance und benachrichtigt dich, sobald sie erfüllt sind.",
   "what": {
    "title": "Was MarketAlert ist – und was nicht",
-   "def": "MarketAlert ist ein per Sprache eingerichteter Krypto-Marktscanner: Er überwacht RSI-, Volumen- und Preisbedingungen zusammen über alle Coins auf Binance und benachrichtigt dich, sobald sie erfüllt sind.",
+   "def": "MarketAlert ist eine Krypto-Alarm-App mit KI und ein Marktscanner, den du per Sprache oder Text über den KI-Assistenten einrichtest: Er überwacht RSI-, Volumen- und Preisbedingungen zusammen über alle Coins auf Binance und benachrichtigt dich, sobald sie erfüllt sind.",
    "yesT": "Macht",
    "noT": "Macht nicht",
    "yes": [
@@ -3073,7 +3073,7 @@
   "store2": "Google Play",
   "heroKicker": "話すだけ、入力するだけ。設定はMarketAlertに。",
   "heroTitle": "話せば、アラートの準備完了。",
-  "heroSub": "フォーム入力は不要。複雑なアラートも、音声やテキストで数秒で作成。MarketAlertは選択したBinance市場の全コインを、RSI・MACD・出来高・SMA/EMAの条件で継続的にスキャンします。",
+  "heroSub": "フォーム入力は不要。複雑なアラートも、AIアシスタントに音声やテキストで伝えるだけで数秒で作成。MarketAlertは選択したBinance市場の全コインを、RSI・MACD・出来高・SMA/EMAの条件で継続的にスキャンします。",
   "chips": [
    "7日間無料トライアル",
    "アプリを閉じても監視を継続"
@@ -3336,10 +3336,10 @@
   "heroListAlt": "複数条件のアラートとリアルタイム値",
   "heroVoiceAlt": "音声で作成した2条件のアラート",
   "rsiGuideLink": "全コインのRSIアラート",
-  "heroDef": "MarketAlert は音声で設定できる暗号資産マーケットスキャナーです。Binance の全銘柄で RSI・出来高・価格の条件を同時に監視し、条件がそろうと通知します。",
+  "heroDef": "MarketAlert は、AIアシスタントに音声や文字で伝えて設定する、AI搭載の暗号資産アラートアプリ兼マーケットスキャナーです。Binance の全銘柄で RSI・出来高・価格の条件を同時に監視し、条件がそろうと通知します。",
   "what": {
    "title": "MarketAlert とは、そして何ではないか",
-   "def": "MarketAlert は音声で設定できる暗号資産マーケットスキャナーです。Binance の全銘柄で RSI・出来高・価格の条件を同時に監視し、条件がそろうと通知します。",
+   "def": "MarketAlert は、AIアシスタントに音声や文字で伝えて設定する、AI搭載の暗号資産アラートアプリ兼マーケットスキャナーです。Binance の全銘柄で RSI・出来高・価格の条件を同時に監視し、条件がそろうと通知します。",
    "yesT": "すること",
    "noT": "しないこと",
    "yes": [
