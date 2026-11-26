@@ -1,0 +1,99 @@
+---
+/**
+ * İlk ekran, tasarım B "Sunucu günlüğü" (2026-11-26, Ahmet). Sayfanın kareli zemininde mürekkeple çizilmiş bir terminal: alarm çalınca
+ * sunucuya gelen istek satır satır akar (POST, X-MarketAlert başlıkları, JSON gövde). İmza satırı turuncu; tarayıcı imzayı gerçekten
+ * hesaplar (HMAC-SHA256, "zaman damgası.gövde"). Zilbo kabloyu takar, Zilba günlüğü okur, Zilbe yanıt tabelasını kaldırır.
+ * Ayarlar tek satır: sunucu yanıtı (200 / 500 / yanıt yok) ve gizli anahtar (var / yok). Hata yanıtında sunucunun gerçek yeniden deneme
+ * aralıkları (5 sn, 30 sn, 2 dk, 10 dk, 1 sa; en çok 6 deneme) düşer. JS yoksa ya da hareket azaltma açıksa son kare durur.
+ */
+import Zb from '../eth/Zb.astro';
+import { whMsg, signOf } from '../../lib/wh-data';
+import { TS, short, fill } from '../../lib/wh';
+import { dateLocale } from '../../lib/gc';
+import '../../styles/wh.css';
+interface Props { code: string; hreflang: string; wh: any; h1: string; introHtml: string; setupTitle: string }
+const { code, hreflang, wh, h1, introHtml, setupTitle } = Astro.props;
+const loc = dateLocale(hreflang), M = whMsg(code, loc), sig = signOf(M);
+const lines: [string, string][] = [
+  ['g', '09:15:00  ← POST /marketalert'], ['', 'X-MarketAlert-Format: alarm-trigger-v1'], ['', `X-MarketAlert-Timestamp: ${TS}`],
+  ['', 'X-MarketAlert-Signature-Version: v1'], ['o', `X-MarketAlert-Signature: sha256=${short(sig)}`],
+  ['', '{"Format":"alarm-trigger-v1","DeliveryCount":1,"Events":[…]}'], ['', `  Symbol: BTCUSDT  ·  Title: ${M.title}`],
+  ['ok', `✓ ${wh.log.ok}  sha256=${short(sig)}`], ['ok', '→ 200 OK'],
+];
+const cap = (r: number, k: boolean) => fill(wh.cap, { res: wh.res[r], sig: k ? wh.signed : wh.unsigned });
+const cfg = { M, X: { log: wh.log, say: wh.say, res: wh.res, cap: wh.cap, signed: wh.signed, unsigned: wh.unsigned, retry: wh.retry } };
+---
+<section class="wh-h" data-wh-h data-cfg={JSON.stringify(cfg)}>
+  <div class="wh-bleed wh-st" role="img" aria-label={wh.alt}>
+    <div class="wh-term" aria-hidden="true"><div class="wh-tb"><i></i><i></i><i></i><span>{wh.term}</span></div><pre class="wh-tl" dir="ltr">{lines.map(([c, s]) => <span class={c}>{s + '\n'}</span>)}</pre></div>
+    <span class="wh-cable" aria-hidden="true"></span>
+    <Zb who="zilbo" class="wh-zo" /><Zb who="zilba" class="wh-za" /><Zb who="zilbe" class="wh-ze" />
+    <span class="wh-sign on ok" aria-hidden="true">200</span>
+    <p class="wh-say" aria-hidden="true"></p>
+  </div>
+  <div class="wh-kn">
+    <div class="wh-r">
+      <span class="wh-ig" role="group" aria-label={wh.aria.res}>{wh.res.map((l: string, i: number) => <button type="button" data-r={i} aria-pressed={String(i === 0)}>{l}</button>)}</span>
+      <span class="wh-ig" role="group" aria-label={wh.aria.key}>{wh.key.map((l: string, i: number) => <button type="button" data-k={1 - i} aria-pressed={String(i === 0)}>{l}</button>)}</span>
+    </div>
+    <p class="wh-cap">{cap(0, true)}</p>
+  </div>
+  <div class="wh-head">
+    <p class="wh-kick">{wh.kicker}</p><h1>{h1}</h1>
+    <p class="wh-intro" set:html={introHtml} />
+    <a class="btn" href="#setup">{setupTitle} <span aria-hidden="true">↓</span></a>
+  </div>
+</section>
+
+<script>
+  import { zbPlay, zbPrime, zbReduce, sleep } from '../../lib/zb';
+  import { bodyOf, hmacHex, short, fill, TS, DEMO_KEY, type WhMsg } from '../../lib/wh';
+  for (const r of document.querySelectorAll<HTMLElement>('[data-wh-h]')) {
+    const C = JSON.parse(r.dataset.cfg || '{}'), M = C.M as WhMsg, X = C.X;
+    const st = r.querySelector<HTMLElement>('.wh-st')!, tl = st.querySelector<HTMLElement>('.wh-tl')!, sb = st.querySelector<HTMLElement>('.wh-say')!, sign = st.querySelector<HTMLElement>('.wh-sign')!;
+    const zo = st.querySelector<HTMLElement>('.wh-zo'), za = st.querySelector<HTMLElement>('.wh-za'), ze = st.querySelector<HTMLElement>('.wh-ze');
+    const S = { r: 0, k: 1 };
+    const upd = () => {
+      r.querySelectorAll<HTMLElement>('[data-r]').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.r! === S.r)));
+      r.querySelectorAll<HTMLElement>('[data-k]').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.k! === S.k)));
+      r.querySelector('.wh-cap')!.textContent = fill(X.cap, { res: X.res[S.r], sig: S.k ? X.signed : X.unsigned });
+    };
+    const add = (c: string, s: string) => { const d = document.createElement('span'); d.className = c; d.textContent = s + '\n'; tl.append(d); tl.scrollTop = tl.scrollHeight; };
+    let run = 0, vis = false, started = false, sigHex = '';
+    const linesFor = (): [string, string][] => {
+      const L: [string, string][] = [['g', '09:15:00  ← POST /marketalert'], ['', 'X-MarketAlert-Format: alarm-trigger-v1'], ['', `X-MarketAlert-Timestamp: ${TS}`]];
+      if (S.k) L.push(['', 'X-MarketAlert-Signature-Version: v1'], ['o', `X-MarketAlert-Signature: sha256=${short(sigHex)}`]);
+      L.push(['', '{"Format":"alarm-trigger-v1","DeliveryCount":1,"Events":[…]}'], ['', `  Symbol: BTCUSDT  ·  Title: ${M.title}`]);
+      L.push(S.k ? ['ok', `✓ ${X.log.ok}  sha256=${short(sigHex)}`] : ['w', `! ${X.log.none}`]);
+      L.push(S.r === 0 ? ['ok', '→ 200 OK'] : S.r === 1 ? ['bad', '→ 500 Internal Server Error'] : ['bad', `… ${X.log.timeout}`]);
+      return L;
+    };
+    const retries = () => X.retry.map((t: string, i: number) => `↻ ${fill(X.log.retry, { t, n: i + 2 })} ✗${i === 4 ? '  · ' + X.log.dead : ''}`);
+    const go = async () => {
+      const k = ++run, ok = () => k === run;
+      if (!sigHex) sigHex = (await hmacHex(DEMO_KEY, TS + '.' + bodyOf(M))) || sigHex;
+      if (!ok()) return;
+      sb.classList.remove('on'); sign.className = 'wh-sign'; tl.textContent = '';
+      const L = linesFor();
+      const showSign = () => { sign.textContent = S.r === 0 ? '200' : S.r === 1 ? '500' : '…'; sign.className = 'wh-sign on ' + (S.r === 0 ? 'ok' : 'bad'); };
+      if (zbReduce) { L.forEach(l => add(...l)); if (S.r) retries().forEach((s: string) => add('r', s)); showSign(); return; }
+      while (document.hidden || !vis) { await sleep(400); if (!ok()) return; }
+      await sleep(500); if (!ok()) return;
+      zbPlay(zo, 'zilbo-zipla'); sb.textContent = X.say.start; sb.classList.add('on');
+      for (const l of L) { if (!ok()) return; add(...l); if (l[0] === 'o') { sb.textContent = X.say.sig; zbPlay(za, 'zilba-el'); } await sleep(['ok', 'bad', 'w'].includes(l[0]) ? 700 : 320); }
+      if (!ok()) return; showSign();
+      if (S.r === 0) { zbPlay(ze, 'zilbe-sevin'); sb.textContent = S.k ? X.say.ok : X.say.okNo; }
+      else {
+        zbPlay(za, 'zilba-sasir'); await sleep(800);
+        for (const s of retries()) { if (!ok()) return; add('r', s); await sleep(520); }
+        zbPlay(ze, 'zilbe-el'); sb.textContent = X.say.fail;
+      }
+      sb.classList.add('on'); await sleep(5200); if (!ok()) return;
+      sb.classList.remove('on'); await sleep(800); if (ok()) go();
+    };
+    new IntersectionObserver(es => { vis = es[0].isIntersecting; if (vis && !started) { started = true; go(); } }, { threshold: .1 }).observe(st);
+    zbPrime(r);
+    r.querySelectorAll<HTMLElement>('[data-r]').forEach(b => b.onclick = () => { S.r = +b.dataset.r!; upd(); go(); });
+    r.querySelectorAll<HTMLElement>('[data-k]').forEach(b => b.onclick = () => { S.k = +b.dataset.k!; upd(); go(); });
+  }
+</script>

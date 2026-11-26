@@ -1,0 +1,35 @@
+{
+ "tr": {
+  "above": "{0} {1} üstüne çıktı"
+ },
+ "en": {
+  "above": "{0} rose above {1}"
+ },
+ "de": {
+  "above": "{0} ist über {1} gestiegen"
+ },
+ "es": {
+  "above": "{0} subió de {1}"
+ },
+ "fr": {
+  "above": "{0} est passé au-dessus de {1}"
+ },
+ "pt-br": {
+  "above": "{0} subiu acima de {1}"
+ },
+ "ru": {
+  "above": "{0} поднялся выше {1}"
+ },
+ "zh": {
+  "above": "{0} 突破 {1}"
+ },
+ "ja": {
+  "above": "{0} が {1} を上回りました"
+ },
+ "hi": {
+  "above": "{0} {1} से ऊपर गया"
+ },
+ "ar": {
+  "above": "{0} صعد فوق {1}"
+ }
+}

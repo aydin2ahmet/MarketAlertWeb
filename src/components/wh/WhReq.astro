@@ -1,0 +1,53 @@
+---
+/**
+ * "Sunucuna gelen istek": sunucunun gerçek başlıkları ve alarm-trigger-v1 gövdesi; imza derlemede örnek anahtarla gerçekten hesaplanır.
+ * Altında doğrulama kodu (Node.js, Python) ve yanıt kodlarına göre ne olduğu (2xx teslim, 408/429/5xx/yanıt yok yeniden dener, diğer 4xx durur).
+ * Zilba köşede kodu okur.
+ */
+import Zb from '../eth/Zb.astro';
+import { whMsg, signOf } from '../../lib/wh-data';
+import { bodyPretty, TS, DEMO_KEY } from '../../lib/wh';
+import { dateLocale } from '../../lib/gc';
+import '../../styles/wh.css';
+interface Props { code: string; hreflang: string; wh: any; leadHtml: string; noteHtml: string }
+const { code, hreflang, wh, leadHtml, noteHtml } = Astro.props;
+const M = whMsg(code, dateLocale(hreflang)), sig = signOf(M);
+const body = bodyPretty(M);
+const node = `// Node.js (Express: express.raw({ type: 'application/json' }))
+const ts = req.get('X-MarketAlert-Timestamp');
+const expected = 'sha256=' + crypto.createHmac('sha256', SECRET)
+  .update(ts + '.' + req.body.toString('utf8')).digest('hex');
+const got = req.get('X-MarketAlert-Signature') || '';
+const ok = got.length === expected.length &&
+  crypto.timingSafeEqual(Buffer.from(got), Buffer.from(expected));
+if (!ok || Math.abs(Date.now() / 1000 - Number(ts)) > 300) return res.sendStatus(401);
+res.sendStatus(200);`;
+const py = `# Python
+expected = "sha256=" + hmac.new(SECRET.encode(), (ts + "." + raw_body).encode(), hashlib.sha256).hexdigest()
+ok = hmac.compare_digest(expected, request.headers.get("X-MarketAlert-Signature", ""))`;
+---
+<section class="wh-q guide-section" id="request">
+  <h2>{wh.req.t}</h2>
+  <p class="wh-lead" set:html={leadHtml} />
+  <div class="wh-qw">
+    <pre class="wh-rq" dir="ltr"><b>POST</b> https://your-server.com/marketalert
+Content-Type: application/json; charset=utf-8
+X-MarketAlert-Delivery-Count: 1
+X-MarketAlert-Format: alarm-trigger-v1
+X-MarketAlert-Timestamp: {TS}
+X-MarketAlert-Signature-Version: v1
+<em>X-MarketAlert-Signature: sha256={sig}</em>
+
+{body}</pre>
+    <Zb who="zilba" class="wh-qz" />
+  </div>
+  <p class="wh-key">{wh.req.key} <code dir="ltr">{DEMO_KEY}</code></p>
+  <h3>{wh.req.codeT}</h3>
+  <pre class="wh-code" dir="ltr">{node}</pre>
+  <pre class="wh-code" dir="ltr">{py}</pre>
+  <h3>{wh.tbl.t}</h3>
+  <div class="wh-tbl" role="table">
+    {wh.tbl.rows.map((row: string[], i: number) => <div class="wh-tr" role="row"><b role="cell" dir="ltr" class={['ok', 'rt', 'st'][i]}>{row[0]}</b><span role="cell">{row[1]}</span></div>)}
+  </div>
+  <p class="wh-note" set:html={noteHtml} />
+</section>

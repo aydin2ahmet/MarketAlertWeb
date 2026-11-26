@@ -1,0 +1,39 @@
+---
+/**
+ * Kurulum: 1) Ayarlar › Webhook gerçek ekranı (SCR-SET-04, tanımlı), 2) alarm formunda kanal seçimi (mürekkep çizimi: Push, Telegram,
+ * Webhook işaretli), 3) "İmza nasıl doğrulanır?" açık gerçek ekranı (SCR-SET-04 S12). Zilbo ilk adımda, Zilbe ikincide, Zilba üçüncüde.
+ */
+import Zb from '../eth/Zb.astro';
+import WhShot from './WhShot.astro';
+import '../../styles/wh.css';
+interface Props { code: string; wh: any; steps: string[][]; html: string[] }
+const { code, wh, steps, html } = Astro.props;
+const ICON = [
+  '<circle cx="34" cy="34" r="9" /><path d="M34 14v6M34 48v6M14 34h6M48 34h6M20 20l4 4M44 44l4 4M20 48l4-4M44 24l4-4" /><path class="o" d="M30 34l3 3 6-6" />',
+  '<path d="M14 22h40M14 34h40M14 46h40" /><circle class="o" cx="48" cy="46" r="5" />',
+  '<path d="M22 30V24a12 12 0 0 1 24 0v6" /><rect x="16" y="30" width="36" height="26" rx="5" /><path class="o" d="M34 40v6" />',
+];
+const who = ['zilbo', 'zilbe', 'zilba'];
+---
+<div class="wh-c" data-wh-c>
+  <ol>{steps.map((st, i) => <li>
+    <svg class="wh-ic" viewBox="0 0 68 68" aria-hidden="true" set:html={ICON[i]} />
+    <h3>{st[0]}</h3><p set:html={html[i]} />
+    {i === 1
+      ? <div class="wh-rise wh-chs"><span class="wh-chl">{wh.chTitle}</span>{wh.ch.map((c: string, j: number) => <span class={`wh-ch${j === 2 ? ' on' : ''}`}><i aria-hidden="true">{j === 2 ? '✓' : ''}</i>{c}</span>)}<Zb who="zilbe" /></div>
+      : <div class="wh-rise"><div class="wh-ph"><WhShot code={code} k={i === 0 ? 'set' : 'sig'} alt={wh.stepAlts[i === 0 ? 0 : 1]} sizes="240px" /></div><Zb who={who[i]} /></div>}
+  </li>)}</ol>
+</div>
+<script>
+  import { zbPlay, zbPrime, zbReduce } from '../../lib/zb';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-wh-c]')) {
+    zbPrime(k);
+    if (zbReduce) continue;
+    k.classList.add('wh-js');
+    for (const r of k.querySelectorAll<HTMLElement>('.wh-rise')) {
+      const show = () => { r.classList.add('in'); const z = r.querySelector<HTMLElement>('.zb'); if (z) setTimeout(() => zbPlay(z, ({ zilbe: 'zilbe-el', zilba: 'zilba-el', zilbo: 'zilbo-zipla' } as Record<string, string>)[z.dataset.who || 'zilbo']), 700); };
+      const io = new IntersectionObserver(es => { if (!es[0].isIntersecting) return; io.disconnect(); show(); }, { threshold: .1 });
+      io.observe(r); setTimeout(() => r.classList.add('in'), 1500);
+    }
+  }
+</script>
