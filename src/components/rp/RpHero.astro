@@ -1,0 +1,123 @@
+---
+/**
+ * İlk ekran, tasarım A "Kum saati" (2026-11-27, Ahmet). Sayfanın kareli zemininde bir günü baştan sona oynatan RSI şeridi: mürekkep çizgi
+ * BTC'nin 15 dakikalık RSI'ı, turuncu kesik çizgi 70. Saat ilerler; çizgi 70'i her yukarı kestiğinde Zilbo zili çalar ve sunucunun push'u düşer,
+ * Zilba kum saatini çevirir. Kumun aktığı süre turuncu bant olur; bandın içindeki geçişler gri, üstü çizili zil (sessiz an, sonradan gönderilmez).
+ * "Bir kez"de ilk zilden sonra "Alarm kapandı" tabelası asılır, çizginin kalanı soluklaşır. Ayarlar tek satır: uygulamadaki seçenekler.
+ * JS yoksa ya da hareket azaltma açıksa son kare durur.
+ */
+import Zb from '../eth/Zb.astro';
+import { rpTitle } from '../../lib/rp-data';
+import { CW, CH, cx, cy, rsiPath, plan, cnt, caption, tally, pushBody, hm, type RpText } from '../../lib/rp';
+import { dateLocale } from '../../lib/gc';
+import '../../styles/rp.css';
+interface Props { code: string; hreflang: string; rp: any; h1: string; introHtml: string; setupTitle: string }
+const { code, hreflang, rp, h1, introHtml, setupTitle } = Astro.props;
+const loc = dateLocale(hreflang), M0 = 2;
+const T: RpText = { modes: rp.modes, cap0: rp.cap0, capN: rp.capN, tally: rp.tally, title: rpTitle(code) };
+const P = plan(M0), C = cnt(P);
+const BELL = '<path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/>';
+const marks = P.filter(p => p.s !== 'off').map(p => `<g class="b ${p.s}" transform="translate(${cx(p.x) - 12} ${cy(70) - 44})"><svg width="24" height="24" viewBox="0 0 24 24">${BELL}${p.s === 'mute' ? '<path d="M3 3l18 18"/>' : ''}</svg></g><circle class="dt ${p.s}" cx="${cx(p.x)}" cy="${cy(70)}" r="5"/>`).join('');
+const bands = P.filter(p => p.s === 'ok' && p.end! > p.x).map(p => `<rect class="bd" x="${cx(p.x)}" y="-20" height="${CH + 20}" width="${Math.min(cx(p.end!) - cx(p.x), CW - cx(p.x))}"/>`).join('');
+const last = P.filter(p => p.s === 'ok').pop()!;
+const cfg = { T, loc, X: { say: rp.say, shut: rp.shut } };
+---
+<section class="rp-h" data-rp-h data-cfg={JSON.stringify(cfg)}>
+  <div class="rp-bleed rp-st" role="img" aria-label={rp.alt}>
+    <div class="rp-cw" aria-hidden="true" dir="ltr">
+      <svg class="rp-ch" preserveAspectRatio="none" viewBox={`-10 -30 ${CW + 20} ${CH + 60}`}><g class="bands" set:html={bands} />
+        <line class="l70" x1="0" x2={CW} y1={cy(70)} y2={cy(70)} /><text class="t70" x={CW + 4} y={cy(70) + 4}>70</text>
+        <path class="rp-l" d={rsiPath()} /><line class="ph0" x1={CW} x2={CW} y1="-20" y2={CH} />
+        {[0, 6, 12, 18, 24].map(h => <text class="tk" x={cx(h * 60)} y={CH + 22}>{String(h).padStart(2, '0')}:00</text>)}
+        <g class="mk" set:html={marks} /></svg>
+      <span class="rp-clk">23:59</span>
+      <span class="rp-tag">BTC · RSI(14) · 15m</span>
+    </div>
+    <svg class="rp-hg" viewBox="0 0 60 90" aria-hidden="true"><path d="M8 4h44M8 86h44M12 4c0 26 36 26 36 41S12 60 12 86M48 4c0 26-36 26-36 41s36 15 36 41" /><path class="sa" d="M16 10h28c0 12-14 18-14 30 0-12-14-18-14-30z" /><path class="sb" d="M30 50c0 8 16 18 16 32H14c0-14 16-24 16-32z" /></svg>
+    <Zb who="zilbo" class="rp-zo" /><Zb who="zilba" class="rp-za" /><Zb who="zilbe" class="rp-ze" />
+    <span class="rp-shut" aria-hidden="true" dir="auto">{rp.shut}</span>
+    <div class="rp-pop on" aria-hidden="true"><div class="rp-ps"><img src="/icons/logo-96.png" alt="" width="34" height="34" /><div><div class="rp-ps-h"><b>MarketAlert</b><span class="rp-t">{hm(last.x)}</span></div><b class="rp-ps-t" dir="auto">{T.title}</b><span class="rp-ps-b" dir="ltr">{pushBody(loc, last.x)}</span></div></div></div>
+    <p class="rp-say" aria-hidden="true"></p>
+    <p class="rp-tally" aria-hidden="true">{tally(T, C.ok, C.mute)}</p>
+  </div>
+  <div class="rp-kn">
+    <div class="rp-r"><span class="rp-ig" role="group" aria-label={rp.aria}>{rp.modes.map((l: string, i: number) => <button type="button" data-m={i} aria-pressed={String(i === M0)}>{l}</button>)}</span></div>
+    <p class="rp-cap">{caption(T, M0)}</p>
+  </div>
+  <div class="rp-head">
+    <p class="rp-kick">{rp.kicker}</p><h1>{h1}</h1>
+    <p class="rp-intro" set:html={introHtml} />
+    <a class="btn" href="#setup">{setupTitle} <span aria-hidden="true">↓</span></a>
+  </div>
+</section>
+
+<script>
+  import { zbPlay, zbPrime, zbReduce, sleep } from '../../lib/zb';
+  import { CW, CH, CD, cx, cy, plan, cnt, caption, tally, pushBody, hm, fill, type RpText, type Pt } from '../../lib/rp';
+  const NS = 'http://www.w3.org/2000/svg';
+  const BELL = '<path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/>';
+  const MS = 7.5; // bir dakikanın ekrandaki süresi (ms)
+  for (const r of document.querySelectorAll<HTMLElement>('[data-rp-h]')) {
+    const C = JSON.parse(r.dataset.cfg || '{}'), T = C.T as RpText, loc = C.loc as string, X = C.X;
+    const st = r.querySelector<HTMLElement>('.rp-st')!, svg = st.querySelector<SVGSVGElement>('.rp-ch')!, bands = svg.querySelector('.bands')!, mk = svg.querySelector('.mk')!, line = svg.querySelector('.ph0')!;
+    const clk = st.querySelector<HTMLElement>('.rp-clk')!, hg = st.querySelector<SVGElement>('.rp-hg')!, sb = st.querySelector<HTMLElement>('.rp-say')!, pop = st.querySelector<HTMLElement>('.rp-pop')!, shut = st.querySelector<HTMLElement>('.rp-shut')!, tl = st.querySelector<HTMLElement>('.rp-tally')!;
+    const zo = st.querySelector<HTMLElement>('.rp-zo'), za = st.querySelector<HTMLElement>('.rp-za'), ze = st.querySelector<HTMLElement>('.rp-ze');
+    const S = { m: 2 };
+    let run = 0, vis = false, started = false;
+    const mark = (p: Pt) => {
+      const g = document.createElementNS(NS, 'g'); g.setAttribute('class', 'b ' + p.s); g.setAttribute('transform', `translate(${cx(p.x) - 12} ${cy(70) - 44})`);
+      g.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24">${BELL}${p.s === 'mute' ? '<path d="M3 3l18 18"/>' : ''}</svg>`; mk.append(g);
+      const d = document.createElementNS(NS, 'circle'); d.setAttribute('class', 'dt ' + p.s); d.setAttribute('cx', String(cx(p.x))); d.setAttribute('cy', String(cy(70))); d.setAttribute('r', '5'); mk.append(d);
+    };
+    const band = (p: Pt) => { if (!(p.end! > p.x)) return null; const e = document.createElementNS(NS, 'rect'); e.setAttribute('class', 'bd'); e.setAttribute('x', String(cx(p.x))); e.setAttribute('y', '-20'); e.setAttribute('height', String(CH + 20)); e.setAttribute('width', '0'); bands.append(e); return e; };
+    const setPush = (x: number) => { pop.querySelector('.rp-t')!.textContent = hm(x); pop.querySelector('.rp-ps-b')!.textContent = pushBody(loc, x); };
+    const final = () => {
+      const P = plan(S.m), c = cnt(P); bands.innerHTML = ''; mk.innerHTML = '';
+      P.forEach(p => { if (p.s === 'off') return; mark(p); if (p.s === 'ok') { const e = band(p); if (e) e.setAttribute('width', String(Math.min(cx(p.end!) - cx(p.x), CW - cx(p.x)))); } });
+      tl.textContent = tally(T, c.ok, c.mute); svg.classList.toggle('dim', S.m === 0); shut.classList.toggle('on', S.m === 0);
+      line.setAttribute('x1', String(CW)); line.setAttribute('x2', String(CW)); clk.textContent = '23:59';
+      const lastOk = P.filter(p => p.s === 'ok').pop(); if (lastOk) setPush(lastOk.x); pop.classList.add('on');
+    };
+    const go = async () => {
+      const k = ++run, ok = () => k === run;
+      r.querySelector('.rp-cap')!.textContent = caption(T, S.m);
+      if (zbReduce) { final(); return; }
+      while (document.hidden || !vis) { await sleep(400); if (!ok()) return; }
+      const P = plan(S.m), c = cnt(P), w = T.modes[S.m];
+      bands.innerHTML = ''; mk.innerHTML = ''; shut.classList.remove('on'); svg.classList.remove('dim'); sb.classList.remove('on'); pop.classList.remove('on'); hg.classList.remove('run');
+      let n = 0, s = 0, cur: { p: Pt; e: Element } | null = null; tl.textContent = tally(T, 0, 0);
+      const onT = (m: number) => {
+        line.setAttribute('x1', String(cx(m))); line.setAttribute('x2', String(cx(m))); clk.textContent = hm(Math.min(1439, Math.round(m)));
+        if (cur) cur.e.setAttribute('width', String(Math.max(0, Math.min(cx(Math.min(m, cur.p.end!, 1440)) - cx(cur.p.x), CW - cx(cur.p.x)))));
+      };
+      const say = (t: string) => { sb.textContent = t; sb.classList.add('on'); };
+      await sleep(400); if (!ok()) return;
+      let t0 = 0;
+      const walk = async (to: number) => { const steps = Math.max(1, Math.round((to - t0) / 5)); for (let i = 1; i <= steps; i++) { if (!ok()) return false; onT(t0 + (to - t0) * i / steps); await sleep(MS * 5); } t0 = to; return true; };
+      for (const p of P) {
+        if (!(await walk(p.x))) return;
+        if (p.s === 'off') continue;
+        mark(p);
+        if (p.s === 'ok') {
+          n++; tl.textContent = tally(T, n, s); zbPlay(zo, 'zilbo-zil'); setPush(p.x); pop.classList.add('on');
+          if (S.m > 0) {
+            const e = band(p); if (e) cur = { p, e };
+            hg.classList.remove('run'); void hg.getBoundingClientRect(); hg.style.setProperty('--d', Math.min(CD[S.m], 1440 - p.x) * MS + 'ms'); hg.classList.add('run');
+            zbPlay(za, 'zilba-el'); say(fill(X.say.turn, { w }));
+          } else { svg.classList.add('dim'); shut.classList.add('on'); zbPlay(ze, 'zilbe-el'); say(X.say.once); }
+          await sleep(900); if (!ok()) return; pop.classList.remove('on');
+        } else { s++; tl.textContent = tally(T, n, s); zbPlay(za, 'zilba-sasir'); say(fill(X.say.mute, { t: hm(p.x) })); await sleep(500); }
+      }
+      if (!(await walk(1440))) return;
+      say(S.m === 0 ? X.say.end0 : fill(X.say.endN, { ok: c.ok, mute: c.mute })); zbPlay(ze, 'zilbe-sevin');
+      await sleep(3800); if (ok()) go();
+    };
+    new IntersectionObserver(es => { vis = es[0].isIntersecting; if (vis && !started) { started = true; go(); } }, { threshold: .1 }).observe(st);
+    zbPrime(r);
+    if (zbReduce) final();
+    r.querySelectorAll<HTMLElement>('[data-m]').forEach(b => b.onclick = () => {
+      S.m = +b.dataset.m!; r.querySelectorAll<HTMLElement>('[data-m]').forEach(x => x.setAttribute('aria-pressed', String(+x.dataset.m! === S.m)));
+      if (zbReduce) { r.querySelector('.rp-cap')!.textContent = caption(T, S.m); final(); } else go();
+    });
+  }
+</script>

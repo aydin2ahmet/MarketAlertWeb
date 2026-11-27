@@ -1,0 +1,37 @@
+---
+/**
+ * Kurulum: üç gerçek ekran. 1) Tetikleme sayfası, Bir kez seçili (SCR-AFRM-01 S21), 2) Tekrarla ve 15 dk seçili, altında not (S20),
+ * 3) alarm detayında "Bekleme süresinde" şeridi (SCR-ALRT-02 S12). Zilbo birincide, Zilba ikincide, Zilbe üçüncüde.
+ */
+import Zb from '../eth/Zb.astro';
+import RpShot from './RpShot.astro';
+import '../../styles/rp.css';
+interface Props { code: string; rp: any; steps: string[][]; html: string[] }
+const { code, rp, steps, html } = Astro.props;
+const ICON = [
+  '<rect x="14" y="14" width="40" height="40" rx="8" /><path class="o" d="M26 34l6 6 12-12" />',
+  '<path d="M18 30a16 16 0 0 1 28-8M50 38a16 16 0 0 1-28 8" /><path class="o" d="M46 14v8h-8M22 54v-8h8" />',
+  '<path d="M22 12h24M22 56h24M25 12c0 14 18 14 18 22S25 42 25 56M43 12c0 14-18 14-18 22s18 8 18 22" /><path class="o" d="M30 50h8" />',
+];
+const K = ['bir', 'tek', 'bek'], who = ['zilbo', 'zilba', 'zilbe'] as const;
+---
+<div class="rp-c" data-rp-c>
+  <ol>{steps.map((st, i) => <li>
+    <svg class="rp-ic" viewBox="0 0 68 68" aria-hidden="true" set:html={ICON[i]} />
+    <h3>{st[0]}</h3><p set:html={html[i]} />
+    <div class="rp-rise"><div class="rp-ph"><RpShot code={code} k={K[i]} alt={rp.stepAlts[i]} sizes="240px" /></div><Zb who={who[i]} /></div>
+  </li>)}</ol>
+</div>
+<script>
+  import { zbPlay, zbPrime, zbReduce } from '../../lib/zb';
+  for (const k of document.querySelectorAll<HTMLElement>('[data-rp-c]')) {
+    zbPrime(k);
+    if (zbReduce) continue;
+    k.classList.add('rp-js');
+    for (const r of k.querySelectorAll<HTMLElement>('.rp-rise')) {
+      const show = () => { r.classList.add('in'); const z = r.querySelector<HTMLElement>('.zb'); if (z) setTimeout(() => zbPlay(z, ({ zilbe: 'zilbe-el', zilba: 'zilba-el', zilbo: 'zilbo-zil' } as Record<string, string>)[z.dataset.who || 'zilbo']), 700); };
+      const io = new IntersectionObserver(es => { if (!es[0].isIntersecting) return; io.disconnect(); show(); }, { threshold: .1 });
+      io.observe(r); setTimeout(() => r.classList.add('in'), 1500);
+    }
+  }
+</script>

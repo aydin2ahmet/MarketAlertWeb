@@ -1,0 +1,24 @@
+---
+/**
+ * "Tekrar nasıl işler?": sunucunun kuralları satır satır (sessiz an sonradan gönderilmez, fiyat eşiği yalnız bir kez, tüm coinlerde aralık
+ * coin başına, yüzde değişimde yarı eşikte yeniden kurulma, teknik koşullar geçişle çalar). Her satırın başında küçük mürekkep simge; Zilba köşede.
+ */
+import Zb from '../eth/Zb.astro';
+import '../../styles/rp.css';
+interface Props { rp: any; html: string[] }
+const { rp, html } = Astro.props;
+const ICON = [
+  '<path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z" /><path class="o" d="M3 3l18 18" />',
+  '<path d="M4 18h16" /><path class="o" d="M4 9h16" stroke-dasharray="3 3" /><path d="M6 15l4-3 3 2 5-7" />',
+  '<circle cx="8" cy="9" r="4" /><circle cx="16" cy="15" r="4" /><path class="o" d="M14 5h6M17 2v6" />',
+  '<path d="M4 18l5-9 4 5 3-4 4 8" /><path class="o" d="M4 6h16" stroke-dasharray="3 3" />',
+  '<path d="M3 15c3-8 6-8 9 0s6 8 9 0" /><path class="o" d="M3 12h18" stroke-dasharray="3 3" />',
+];
+---
+<section class="rp-q guide-section" id="rules">
+  <h2>{rp.rules.t}</h2>
+  <div class="rp-qw">
+    <ul class="rp-tbl">{rp.rules.rows.map((row: string[], i: number) => <li><svg viewBox="0 0 24 24" aria-hidden="true" set:html={ICON[i]} /><div><b>{row[0]}</b><span set:html={html[i]} /></div></li>)}</ul>
+    <Zb who="zilba" class="rp-qz" />
+  </div>
+</section>

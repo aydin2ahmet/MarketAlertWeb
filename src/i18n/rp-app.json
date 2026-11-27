@@ -1,0 +1,35 @@
+{
+ "tr": {
+  "rsiAbove": "{0} RSI {1} üstüne çıktı"
+ },
+ "en": {
+  "rsiAbove": "{0} RSI rose above {1}"
+ },
+ "de": {
+  "rsiAbove": "{0} RSI ist über {1} gestiegen"
+ },
+ "es": {
+  "rsiAbove": "{0} RSI subió de {1}"
+ },
+ "fr": {
+  "rsiAbove": "{0} RSI est passé au-dessus de {1}"
+ },
+ "pt-br": {
+  "rsiAbove": "{0} RSI subiu acima de {1}"
+ },
+ "ru": {
+  "rsiAbove": "{0} RSI поднялся выше {1}"
+ },
+ "zh": {
+  "rsiAbove": "{0} RSI 升破 {1}"
+ },
+ "ja": {
+  "rsiAbove": "{0} の RSI が {1} を上回りました"
+ },
+ "hi": {
+  "rsiAbove": "{0} RSI {1} से ऊपर गया"
+ },
+ "ar": {
+  "rsiAbove": "{0} RSI صعد فوق {1}"
+ }
+}
